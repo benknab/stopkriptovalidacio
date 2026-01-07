@@ -5,7 +5,7 @@
 		"build:css": "deno run -A npm:@tailwindcss/cli -i ./src/styles/input.css -o ./public/styles.css --minify",
 		"build": "deno task build:css",
 		"start": "deno run --allow-net --allow-read --allow-env src/server.tsx",
-		"check": "deno check src/**/*.tsx",
+		"check": "deno check src/**/*.tsx src/**/*.ts",
 		"fmt": "deno fmt",
 		"lint": "deno lint"
 	},
@@ -15,7 +15,9 @@
 		"react/jsx-runtime": "npm:react@^19/jsx-runtime",
 		"react-dom/server": "npm:react-dom@^19/server",
 		"@types/react": "npm:@types/react@^19",
-		"tailwindcss": "npm:tailwindcss@^4"
+		"tailwindcss": "npm:tailwindcss@^4",
+		"i18next": "npm:i18next@^24",
+		"react-i18next": "npm:react-i18next@^15"
 	},
 	"compilerOptions": {
 		"jsx": "react-jsx",

@@ -1,0 +1,14 @@
+{
+	"site": {
+		"title": "Kriptovalidáció",
+		"description": "A magyar kriptovaluta \"validációs\" törvények idővonala és következményei"
+	},
+	"nav": {
+		"timeline": "Idővonal",
+		"exchanges": "Tőzsdék",
+		"mp_search": "Képviselő keresés"
+	},
+	"common": {
+		"coming_soon": "Hamarosan..."
+	}
+}

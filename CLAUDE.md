@@ -18,7 +18,7 @@ will include:
 - **Server**: Hono
 - **UI**: React 19 (SSR)
 - **Styling**: Tailwind CSS
-- **Internationalization**: i18n support (Hungarian primary)
+- **Internationalization**: i18next + react-i18next (Hungarian primary, English secondary)
 
 ## Development Commands
 
@@ -37,11 +37,23 @@ deno lint             # Lint code
 
 ## Architecture
 
-- `src/server.tsx` - Hono server entry point with SSR rendering
+- `src/server.tsx` - Hono server entry point with SSR rendering and language middleware
 - `src/components/document.tsx` - HTML document wrapper
 - `src/components/app.tsx` - Main React application
+- `src/components/language-switch.tsx` - Language toggle component
+- `src/i18n/index.ts` - i18next configuration and `SupportedLanguage` type
+- `src/i18n/locales/hu.json` - Hungarian translations
+- `src/i18n/locales/en.json` - English translations
 - `src/styles/input.css` - Tailwind input file
 - `public/styles.css` - Built CSS output (generated)
+
+## Internationalization
+
+- Languages: `"hu" | "en"` (strictly typed as `SupportedLanguage`)
+- Detection: Accept-Language header, then cookie (`lang`)
+- Switching: `/set-lang?lang=hu&redirect=/` sets cookie and redirects
+- Usage: `const { t } = useTranslation()` then `t("key.path")`
+- Add new strings to both `src/i18n/locales/hu.json` and `en.json`
 
 ## Design Guidelines
 

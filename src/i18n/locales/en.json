@@ -1,0 +1,14 @@
+{
+	"site": {
+		"title": "Crypto Validation",
+		"description": "Timeline and repercussions of Hungarian cryptocurrency \"validation\" laws"
+	},
+	"nav": {
+		"timeline": "Timeline",
+		"exchanges": "Exchanges",
+		"mp_search": "MP Search"
+	},
+	"common": {
+		"coming_soon": "Coming soon..."
+	}
+}
