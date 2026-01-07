@@ -35,6 +35,10 @@ deno lint             # Lint code
 
 - All file names must be **kebab-case** (e.g., `my-component.tsx`, not `MyComponent.tsx`)
 - URLs and query params must be in **Hungarian** (e.g., `/rolunk`, `?osszes=true`)
+- Code identifiers use **English** (e.g., `status: "leaving"`, not `status: "tavozik"`)
+- User-facing text uses **Hungarian** via i18n (e.g., `t("hero.leaving")` → "Távozik")
+- Use `Set<T>` for collections of slugs, not arrays
+- Define constants that are not dynamic during render outside of components (module-level)
 
 ## Architecture
 

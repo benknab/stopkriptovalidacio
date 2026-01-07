@@ -1,3 +1,6 @@
+import type { ExchangeSlug } from "./exchanges.ts";
+import type { SourceSlug } from "./sources.ts";
+
 export type TextI18n = {
 	hu: string;
 	en: string;
@@ -5,19 +8,14 @@ export type TextI18n = {
 
 export type EventType = "primary" | "secondary";
 
-export type Source = {
-	title: string;
-	originalUrl: string;
-	archivedUrl?: string;
-};
-
 export type TimelineEvent = {
 	date: Date;
 	type: EventType;
 	title: TextI18n;
 	summary?: TextI18n;
 	text?: TextI18n;
-	sources: Source[];
+	sourceSlugs: Set<SourceSlug>;
+	exchangeSlugs: Set<ExchangeSlug>;
 };
 
 export type TimelineEvents = Record<string, TimelineEvent>;

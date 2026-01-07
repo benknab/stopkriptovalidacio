@@ -12,22 +12,8 @@ export const events: TimelineEvents = {
 			hu: "Magyarország versenyképességének javítása érdekében egyes törvények módosításáról. A kriptovalidáció még nem szerepel ebben a verzióban.",
 			en: "Amendment of certain laws to improve Hungary's competitiveness. Crypto validation not yet included in this version.",
 		},
-		text: {
-			hu: "",
-			en: "",
-		},
-		sources: [
-			{
-				title: "Eredeti dokumentum (PDF)",
-				originalUrl: "https://www.parlament.hu/irom42/11922/11922.pdf",
-				archivedUrl: "/archivum/11922.pdf",
-			},
-			{
-				title: "Parlament.hu",
-				originalUrl:
-					"https://www.parlament.hu/web/guest/szavazasok-adott-idoszakban?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=yn2Czm3g&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D42%26p_izon%3D11922",
-			},
-		],
+		sourceSlugs: new Set(["parlament-11922", "parlament-11922-oldal"]),
+		exchangeSlugs: new Set(),
 	},
 	"t-11922-13-modosito": {
 		date: new Date("2025-05-20"),
@@ -40,17 +26,8 @@ export const events: TimelineEvents = {
 			hu: "A kriptovalidátor kifejezés először jelenik meg a módosító javaslatban.",
 			en: "The term 'crypto validator' first appears in the amendment.",
 		},
-		text: {
-			hu: "",
-			en: "",
-		},
-		sources: [
-			{
-				title: "Módosító javaslat (PDF)",
-				originalUrl: "https://www.parlament.hu/irom42/11922/11922-0013.pdf",
-				archivedUrl: "/archivum/11922-0013.pdf",
-			},
-		],
+		sourceSlugs: new Set(["parlament-11922-13"]),
+		exchangeSlugs: new Set(),
 	},
 	"telex-kripto-kriptodeviza-bitcoin-revolut-btk": {
 		date: new Date("2025-07-01"),
@@ -63,16 +40,8 @@ export const events: TimelineEvents = {
 			hu: "telex-kripto-kriptodeviza-bitcoin-revolut-btk",
 			en: "telex-kripto-kriptodeviza-bitcoin-revolut-btk",
 		},
-		text: {
-			hu: "",
-			en: "",
-		},
-		sources: [
-			{
-				title: "Telex",
-				originalUrl: "https://telex.hu/gazdasag/2025/07/01/kripto-kriptodeviza-bitcoin-revolut-btk",
-			},
-		],
+		sourceSlugs: new Set(["telex-kripto-btk"]),
+		exchangeSlugs: new Set(["revolut"]),
 	},
 	"telex-revolut-mica-engedely-kriptovaluta": {
 		date: new Date("2025-10-23"),
@@ -85,15 +54,7 @@ export const events: TimelineEvents = {
 			hu: "telex-revolut-mica-engedely-kriptovaluta",
 			en: "telex-revolut-mica-engedely-kriptovaluta",
 		},
-		text: {
-			hu: "",
-			en: "",
-		},
-		sources: [
-			{
-				title: "Telex",
-				originalUrl: "https://telex.hu/gazdasag/2025/10/23/revolut-mica-engedely-kriptovaluta",
-			},
-		],
+		sourceSlugs: new Set(["telex-revolut-mica"]),
+		exchangeSlugs: new Set(["revolut"]),
 	},
 };

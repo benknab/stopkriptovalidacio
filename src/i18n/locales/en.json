@@ -4,10 +4,19 @@
 		"description": "Timeline and repercussions of Hungarian cryptocurrency \"validation\" laws"
 	},
 	"nav": {
+		"overview": "Overview",
 		"timeline": "Timeline",
 		"exchanges": "Exchanges",
 		"mp_search": "MP Search",
 		"about": "About"
+	},
+	"hero": {
+		"title": "Hungarian crypto regulation is at risk",
+		"description": "The \"crypto validation\" law may force numerous cryptocurrency service providers out of Hungary. Track the developments.",
+		"operating": "Operating",
+		"leaving": "Leaving",
+		"unknown": "Unknown",
+		"cta_timeline": "View Timeline"
 	},
 	"about": {
 		"title": "About",

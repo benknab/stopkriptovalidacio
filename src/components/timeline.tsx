@@ -1,7 +1,8 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import { events } from "../data/events.ts";
-import type { Source, TimelineEvent } from "../data/types.ts";
+import { type Source, sources } from "../data/sources.ts";
+import type { TimelineEvent } from "../data/types.ts";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
 function formatDate(date: Date, lang: SupportedLanguage): string {
@@ -64,9 +65,9 @@ function TimelineItem({
 
 				{event.summary && <p className="text-slate-600 leading-relaxed">{event.summary[lang]}</p>}
 
-				{event.sources.length > 0 && (
+				{event.sourceSlugs.size > 0 && (
 					<div className="flex flex-wrap gap-3 pt-1">
-						{event.sources.map((source, i) => <TimelineSource key={i} source={source} />)}
+						{[...event.sourceSlugs].map((slug) => <TimelineSource key={slug} source={sources[slug]} />)}
 					</div>
 				)}
 			</div>

@@ -4,10 +4,19 @@
 		"description": "A magyar kriptovaluta \"validációs\" törvények idővonala és következményei"
 	},
 	"nav": {
+		"overview": "Áttekintés",
 		"timeline": "Idővonal",
 		"exchanges": "Tőzsdék",
 		"mp_search": "Képviselő keresés",
 		"about": "Rólunk"
+	},
+	"hero": {
+		"title": "A magyar kriptovaluta szabályozás veszélyben van",
+		"description": "A \"kriptovalidáció\" törvény számos kriptovaluta szolgáltatót kiszoríthat Magyarországról. Kövesd nyomon a fejleményeket.",
+		"operating": "Működik",
+		"leaving": "Távozik",
+		"unknown": "Ismeretlen",
+		"cta_timeline": "Idővonal megtekintése"
 	},
 	"about": {
 		"title": "Rólunk",
