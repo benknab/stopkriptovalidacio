@@ -1,4 +1,6 @@
 {
+	"name": "kriptovalidacio",
+	"exports": "./src/server.tsx",
 	"nodeModulesDir": "auto",
 	"tasks": {
 		"dev": "deno run --allow-net --allow-read --allow-env --watch src/server.tsx",
