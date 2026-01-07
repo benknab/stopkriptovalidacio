@@ -15,18 +15,26 @@ Simple, light-themed, accessible design for a civic advocacy website.
 
 ## Color Palette
 
-| Token           | Tailwind    | Usage                       |
-| --------------- | ----------- | --------------------------- |
-| Background      | `white`     | Page background             |
-| Surface         | `slate-50`  | Cards, elevated content     |
-| Primary Text    | `slate-900` | Headings, body text         |
-| Secondary Text  | `slate-600` | Descriptions, metadata      |
-| Muted Text      | `slate-500` | Timestamps, labels          |
-| Accent          | `blue-600`  | Links, buttons, interactive |
-| Accent Hover    | `blue-700`  | Hover states                |
-| Primary Event   | `amber-500` | Important timeline events   |
-| Secondary Event | `slate-400` | Secondary timeline events   |
-| Border          | `slate-200` | Dividers, card borders      |
+### Brand Colors (defined in `input.css`)
+
+| Token         | Class              | Usage                       |
+| ------------- | ------------------ | --------------------------- |
+| Brand         | `text-brand`       | Links, buttons, interactive |
+| Brand Hover   | `text-brand-hover` | Hover states                |
+| Primary       | `border-primary`   | Important timeline events   |
+| Primary Light | `bg-primary-light` | Event dot background        |
+
+### Base Colors (Tailwind defaults)
+
+| Token           | Tailwind    | Usage                     |
+| --------------- | ----------- | ------------------------- |
+| Background      | `white`     | Page background           |
+| Surface         | `slate-50`  | Cards, elevated content   |
+| Primary Text    | `slate-900` | Headings, body text       |
+| Secondary Text  | `slate-600` | Descriptions, metadata    |
+| Muted Text      | `slate-500` | Timestamps, labels        |
+| Secondary Event | `slate-400` | Secondary timeline events |
+| Border          | `slate-200` | Dividers, card borders    |
 
 ---
 
@@ -41,7 +49,7 @@ Simple, light-themed, accessible design for a civic advocacy website.
 | Card Title    | `text-lg font-medium`                               |
 | Body          | `text-base leading-relaxed`                         |
 | Small/Meta    | `text-sm`                                           |
-| Link          | `text-blue-600 hover:text-blue-700 hover:underline` |
+| Link          | `text-brand hover:text-brand-hover hover:underline` |
 
 ---
 
@@ -70,30 +78,29 @@ Simple, light-themed, accessible design for a civic advocacy website.
 ```
 - Vertical line: slate-200
 - Event dot:
-  - Primary: amber-500 fill, amber-500 border
-  - Secondary: slate-300 fill, slate-400 border
-- Card: white bg, slate-200 border, rounded-lg
+  - Primary: bg-primary-light border-primary
+  - Secondary: bg-slate-100 border-slate-400
 - Date: text-sm text-slate-500
 - Title: text-lg font-medium text-slate-900
 - Summary: text-slate-600
-- Sources: text-sm text-blue-600
+- Sources: text-sm text-brand
 ```
 
 ### Source Link
 
 ```
 - Inline link with external icon
-- text-blue-600 hover:underline
+- text-brand hover:text-brand-hover hover:underline
 - Small external link icon (w-3 h-3)
 ```
 
 ### Button (future)
 
 ```
-- Primary: bg-blue-600 text-white hover:bg-blue-700
+- Primary: bg-brand text-white hover:bg-brand-hover
 - Padding: px-4 py-2
 - Rounded: rounded-md
-- Focus: ring-2 ring-blue-500 ring-offset-2
+- Focus: ring-2 ring-brand ring-offset-2
 ```
 
 ---
@@ -101,7 +108,7 @@ Simple, light-themed, accessible design for a civic advocacy website.
 ## Accessibility
 
 - **Contrast**: All text meets 4.5:1 ratio minimum
-- **Focus states**: `focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`
+- **Focus states**: `focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2`
 - **Touch targets**: Minimum 44x44px for interactive elements
 - **Semantic HTML**: Proper heading hierarchy (h1 > h2 > h3)
 - **Links**: Distinguishable by color + underline on hover
@@ -122,7 +129,5 @@ Simple, light-themed, accessible design for a civic advocacy website.
 
 ## Implementation Notes
 
-1. Switch current dark theme (zinc-950) to light (white/slate)
-2. Update timeline component colors
-3. Update app.tsx background and text colors
-4. Rebuild CSS after changes
+Brand colors are defined in `src/styles/input.css` using Tailwind v4's `@theme` directive. This allows using semantic
+color names like `text-brand` instead of `text-blue-600` everywhere.

@@ -7,8 +7,10 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [ ] readme (hungarian)
 - [x] i18n
 - [ ] timeline
+- [ ] about page content
 - [ ] exchanges
 - [ ] MP search
 - [ ] MP email template + send
 - [ ] contact page
 - [ ] analytics
+- [ ] deploy

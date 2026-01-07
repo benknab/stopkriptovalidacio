@@ -6,7 +6,12 @@
 	"nav": {
 		"timeline": "Timeline",
 		"exchanges": "Exchanges",
-		"mp_search": "MP Search"
+		"mp_search": "MP Search",
+		"about": "About"
+	},
+	"about": {
+		"title": "About",
+		"description": "This website tracks changes in Hungarian cryptocurrency regulation to help citizens stay informed about legislative developments and their consequences."
 	},
 	"common": {
 		"coming_soon": "Coming soon..."

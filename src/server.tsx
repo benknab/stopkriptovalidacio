@@ -1,9 +1,12 @@
+import type { Context } from "@hono/hono";
+import type { JSX } from "react";
 import { Hono } from "@hono/hono";
 import { serveStatic } from "@hono/hono/deno";
 import { languageDetector } from "@hono/hono/language";
 import { setCookie } from "@hono/hono/cookie";
 import { renderToReadableStream } from "react-dom/server";
 import { I18nextProvider } from "react-i18next";
+import { About } from "./components/about.tsx";
 import { App } from "./components/app.tsx";
 import { Document } from "./components/document.tsx";
 import {
@@ -21,6 +24,24 @@ type AppEnv = {
 };
 
 const app = new Hono<AppEnv>();
+
+async function renderPage(c: Context<AppEnv>, Page: () => JSX.Element): Promise<Response> {
+	const detectedLang = c.get("language");
+	const lang: SupportedLanguage = isValidLanguage(detectedLang) ? detectedLang : fallbackLanguage;
+	const i18n = createI18nInstance(lang);
+
+	const stream = await renderToReadableStream(
+		<I18nextProvider i18n={i18n}>
+			<Document lang={lang}>
+				<Page />
+			</Document>
+		</I18nextProvider>,
+	);
+
+	return new Response(stream, {
+		headers: { "Content-Type": "text/html; charset=utf-8" },
+	});
+}
 
 // Language detection middleware
 app.use(
@@ -52,24 +73,9 @@ app.get("/set-lang", (c) => {
 	return c.redirect(redirect);
 });
 
-// Main route
-app.get("/", async (c) => {
-	const detectedLang = c.get("language");
-	const lang: SupportedLanguage = isValidLanguage(detectedLang) ? detectedLang : fallbackLanguage;
-	const i18n = createI18nInstance(lang);
-
-	const stream = await renderToReadableStream(
-		<I18nextProvider i18n={i18n}>
-			<Document lang={lang}>
-				<App />
-			</Document>
-		</I18nextProvider>,
-	);
-
-	return new Response(stream, {
-		headers: { "Content-Type": "text/html; charset=utf-8" },
-	});
-});
+// Routes
+app.get("/", (c) => renderPage(c, App));
+app.get("/rolunk", (c) => renderPage(c, About));
 
 const port = Number.parseInt(Deno.env.get("PORT") || "8000");
 console.log(`Server running at http://localhost:${port}`);

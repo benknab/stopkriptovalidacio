@@ -7,14 +7,15 @@ interface LanguageSwitchProps {
 
 export function LanguageSwitch({ currentLang }: LanguageSwitchProps): JSX.Element {
 	const otherLang: SupportedLanguage = currentLang === "hu" ? "en" : "hu";
-	const label = otherLang.toUpperCase();
+	const label = currentLang === "hu" ? "Magyar" : "English";
 
 	return (
 		<a
 			href={`/set-lang?lang=${otherLang}&redirect=/`}
-			className="text-sm font-medium text-zinc-400 hover:text-zinc-100 transition-colors"
+			className="inline-flex items-center gap-1.5 text-sm font-medium text-slate-600 hover:text-brand transition-colors"
 		>
-			{label}
+			<span>🌐</span>
+			<span>{label}</span>
 		</a>
 	);
 }

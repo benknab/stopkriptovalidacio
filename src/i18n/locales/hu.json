@@ -6,7 +6,12 @@
 	"nav": {
 		"timeline": "Idővonal",
 		"exchanges": "Tőzsdék",
-		"mp_search": "Képviselő keresés"
+		"mp_search": "Képviselő keresés",
+		"about": "Rólunk"
+	},
+	"about": {
+		"title": "Rólunk",
+		"description": "Ez az oldal a magyar kriptovaluta szabályozás változásait követi nyomon, hogy a polgárok tájékozódhassanak a jogszabályok alakulásáról és azok következményeiről."
 	},
 	"common": {
 		"coming_soon": "Hamarosan..."

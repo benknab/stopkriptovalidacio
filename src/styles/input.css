@@ -1,2 +1,12 @@
 @import "tailwindcss";
 @source "../../src/**/*.tsx";
+
+@theme {
+	/* Brand colors - used for interactive elements */
+	--color-brand: oklch(54.6% 0.245 262.881);
+	--color-brand-hover: oklch(48.8% 0.243 264.376);
+
+	/* Primary event color - used for important timeline events */
+	--color-primary: oklch(76.9% 0.188 70.08);
+	--color-primary-light: oklch(90.5% 0.094 70.7);
+}
