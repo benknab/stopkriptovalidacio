@@ -3,6 +3,7 @@
 	"exports": "./src/server.tsx",
 	"nodeModulesDir": "auto",
 	"tasks": {
+		"setup": "cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit",
 		"dev": "deno run --allow-net --allow-read --allow-env --watch src/server.tsx",
 		"build:css": "deno run -A npm:@tailwindcss/cli -i ./src/styles/input.css -o ./public/styles.css --minify",
 		"build": "deno task build:css",

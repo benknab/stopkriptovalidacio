@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Format staged files with deno fmt
+deno fmt
+
+# Add any files that were reformatted back to staging
+git add -u
