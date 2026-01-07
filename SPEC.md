@@ -1,9 +1,9 @@
 Website that shows the timeline of crypto "validation" law changes and repercussions in Hungary.
 
-- [ ] deno, SSR, react, tailwind scaffold
-- [ ] license
+- [X] deno, SSR, react, tailwind scaffold
+- [X] license
 - [ ] readme (hungarian)
-- [ ] i18n
+- [X] i18n
 - [ ] timeline
 - [ ] exchanges
 - [ ] MP search
