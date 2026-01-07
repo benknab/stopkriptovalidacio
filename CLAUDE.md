@@ -34,6 +34,7 @@ deno lint             # Lint code
 ## Code Style
 
 - All file names must be **kebab-case** (e.g., `my-component.tsx`, not `MyComponent.tsx`)
+- URLs and query params must be in **Hungarian** (e.g., `/rolunk`, `?osszes=true`)
 
 ## Architecture
 

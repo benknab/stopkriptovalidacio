@@ -62,7 +62,7 @@ function TimelineItem({
 					{event.title[lang]}
 				</h3>
 
-				<p className="text-slate-600 leading-relaxed">{event.summary[lang]}</p>
+				{event.summary && <p className="text-slate-600 leading-relaxed">{event.summary[lang]}</p>}
 
 				{event.sources.length > 0 && (
 					<div className="flex flex-wrap gap-3 pt-1">
@@ -74,11 +74,17 @@ function TimelineItem({
 	);
 }
 
-export function Timeline(): JSX.Element {
+interface TimelineProps {
+	showAll?: boolean;
+}
+
+export function Timeline({ showAll = false }: TimelineProps): JSX.Element {
 	const { i18n } = useTranslation();
 	const lang = i18n.language as SupportedLanguage;
 
-	const sortedEvents = Object.entries(events).sort(([, a], [, b]) => b.date.getTime() - a.date.getTime());
+	const sortedEvents = Object.entries(events)
+		.filter(([, event]) => showAll || event.type === "primary")
+		.sort(([, a], [, b]) => b.date.getTime() - a.date.getTime());
 
 	return (
 		<div className="space-y-0">

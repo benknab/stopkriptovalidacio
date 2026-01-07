@@ -4,7 +4,11 @@ import { Layout } from "./layout.tsx";
 import { Timeline } from "./timeline.tsx";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
-export function App(): JSX.Element {
+interface AppProps {
+	showAllEvents?: boolean;
+}
+
+export function App({ showAllEvents = false }: AppProps): JSX.Element {
 	const { t, i18n } = useTranslation();
 	const currentLang = i18n.language as SupportedLanguage;
 
@@ -16,8 +20,16 @@ export function App(): JSX.Element {
 			</div>
 
 			<section>
-				<h2 className="mb-6 text-xl font-semibold text-slate-900">{t("nav.timeline")}</h2>
-				<Timeline />
+				<div className="mb-6 flex items-center justify-between">
+					<h2 className="text-xl font-semibold text-slate-900">{t("nav.timeline")}</h2>
+					<a
+						href={showAllEvents ? "/" : "/?osszes=true"}
+						className="text-sm text-brand hover:text-brand-hover transition-colors"
+					>
+						{showAllEvents ? t("timeline.show_primary") : t("timeline.show_all")}
+					</a>
+				</div>
+				<Timeline showAll={showAllEvents} />
 			</section>
 		</Layout>
 	);

@@ -15,8 +15,8 @@ export type TimelineEvent = {
 	date: Date;
 	type: EventType;
 	title: TextI18n;
-	summary: TextI18n;
-	text: TextI18n;
+	summary?: TextI18n;
+	text?: TextI18n;
 	sources: Source[];
 };
 

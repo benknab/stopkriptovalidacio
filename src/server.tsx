@@ -74,7 +74,10 @@ app.get("/set-lang", (c) => {
 });
 
 // Routes
-app.get("/", (c) => renderPage(c, App));
+app.get("/", (c) => {
+	const showAll = c.req.query("osszes") === "true";
+	return renderPage(c, () => <App showAllEvents={showAll} />);
+});
 app.get("/rolunk", (c) => renderPage(c, About));
 
 const port = Number.parseInt(Deno.env.get("PORT") || "8000");

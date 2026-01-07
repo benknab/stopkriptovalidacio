@@ -13,6 +13,10 @@
 		"title": "Rólunk",
 		"description": "Ez az oldal a magyar kriptovaluta szabályozás változásait követi nyomon, hogy a polgárok tájékozódhassanak a jogszabályok alakulásáról és azok következményeiről."
 	},
+	"timeline": {
+		"show_all": "Összes esemény",
+		"show_primary": "Csak főbb események"
+	},
 	"common": {
 		"coming_soon": "Hamarosan..."
 	}
