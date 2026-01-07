@@ -18,12 +18,6 @@ const colorClasses = {
 	orange: "text-amber-400",
 } as const;
 
-const icons = {
-	green: "✅",
-	red: "🚨",
-	orange: "⚠️",
-} as const;
-
 interface StatBoxProps {
 	count: number;
 	labelKey: string;
@@ -35,12 +29,7 @@ function StatBox({ count, labelKey, color }: StatBoxProps): JSX.Element {
 
 	return (
 		<div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center min-w-[140px]">
-			<div className="relative">
-				<span className={`absolute -top-1 -right-1 text-sm ${colorClasses[color]}`}>
-					{icons[color]}
-				</span>
-				<div className={`text-5xl font-bold ${colorClasses[color]}`}>{count}</div>
-			</div>
+			<div className={`text-5xl font-bold ${colorClasses[color]}`}>{count}</div>
 			<div className="mt-2 text-sm text-white/90 uppercase tracking-wide font-medium">
 				{t(labelKey)}
 			</div>
