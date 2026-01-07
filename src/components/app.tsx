@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import { LanguageSwitch } from "./language-switch.tsx";
+import { Timeline } from "./timeline.tsx";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
 export function App(): JSX.Element {
@@ -19,8 +20,8 @@ export function App(): JSX.Element {
 				</header>
 
 				<section>
-					<h2 className="mb-6 text-2xl font-semibold">{t("nav.timeline")}</h2>
-					<p className="text-zinc-400">{t("common.coming_soon")}</p>
+					<h2 className="mb-8 text-2xl font-semibold">{t("nav.timeline")}</h2>
+					<Timeline />
 				</section>
 			</div>
 		</main>
