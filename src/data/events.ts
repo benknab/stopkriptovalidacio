@@ -29,32 +29,50 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["parlament-11922-13"]),
 		exchangeSlugs: new Set(),
 	},
-	"telex-kripto-kriptodeviza-bitcoin-revolut-btk": {
-		date: new Date("2025-07-01"),
+	"revolut-korlatozas-kezdete": {
+		date: new Date("2025-07-04"),
 		type: "secondary",
 		title: {
-			hu: "telex-kripto-kriptodeviza-bitcoin-revolut-btk",
-			en: "telex-kripto-kriptodeviza-bitcoin-revolut-btk",
+			hu: "Revolut kriptovaluta-korlátozások kezdete",
+			en: "Revolut cryptocurrency restrictions begin",
 		},
 		summary: {
-			hu: "telex-kripto-kriptodeviza-bitcoin-revolut-btk",
-			en: "telex-kripto-kriptodeviza-bitcoin-revolut-btk",
+			hu: "A Revolut értesítette magyar ügyfeleit a kriptovaluta-szolgáltatások részleges szüneteltetéséről. A vételi megbízások, staking indítása és befizetések nem voltak elérhetők.",
+			en: "Revolut notified Hungarian customers about partial suspension of cryptocurrency services. Buy orders, staking initiation, and deposits were unavailable.",
 		},
-		sourceSlugs: new Set(["telex-kripto-btk"]),
+		sourceSlugs: new Set(["revolut-24hu-2025-07-04"]),
 		exchangeSlugs: new Set(["revolut"]),
 	},
-	"telex-revolut-mica-engedely-kriptovaluta": {
-		date: new Date("2025-10-23"),
+	"revolut-befagyasztas": {
+		date: new Date("2025-07-07"),
 		type: "secondary",
 		title: {
-			hu: "telex-revolut-mica-engedely-kriptovaluta",
-			en: "telex-revolut-mica-engedely-kriptovaluta",
+			hu: "Revolut teljes kriptovaluta-befagyasztás",
+			en: "Revolut complete cryptocurrency freeze",
 		},
 		summary: {
-			hu: "telex-revolut-mica-engedely-kriptovaluta",
-			en: "telex-revolut-mica-engedely-kriptovaluta",
+			hu: "A korlátozások a legszigorúbbá váltak: a meglévő ügyfelek kiszolgálása is leállt. Sem vásárlás, sem eladás, sem átutalás nem volt lehetséges.",
+			en: "Restrictions reached their strictest level: service to existing customers also stopped. No purchases, sales, or transfers were possible.",
 		},
-		sourceSlugs: new Set(["telex-revolut-mica"]),
+		sourceSlugs: new Set(["revolut-telex-2025-07-09"]),
+		exchangeSlugs: new Set(["revolut"]),
+	},
+	"revolut-kivonulas": {
+		date: new Date("2025-12-08"),
+		type: "primary",
+		title: {
+			hu: "Revolut bejelenti a teljes kivonulást",
+			en: "Revolut announces complete withdrawal",
+		},
+		summary: {
+			hu: "A Revolut bejelentette kriptovaluta-szolgáltatásainak teljes megszüntetését Magyarországon. December 18-ig lehetett eladni a kriptoeszközöket, ezt követően automatikus értékesítés történt.",
+			en: "Revolut announced the complete termination of cryptocurrency services in Hungary. Crypto assets could be sold until December 18, after which automatic liquidation occurred.",
+		},
+		sourceSlugs: new Set([
+			"revolut-telex-2025-12-08",
+			"revolut-help-hu",
+			"revolut-24hu-2025-12-08",
+		]),
 		exchangeSlugs: new Set(["revolut"]),
 	},
 };

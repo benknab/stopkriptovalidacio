@@ -1,6 +1,6 @@
-import type {JSX} from "react";
-import {useTranslation} from "react-i18next";
-import {exchanges, type ExchangeStatus} from "../data/exchanges.ts";
+import type { JSX } from "react";
+import { useTranslation } from "react-i18next";
+import { exchanges, type ExchangeStatus } from "../data/exchanges.ts";
 
 function countByStatus(status: ExchangeStatus): number {
 	return Object.values(exchanges).filter((e) => e.status === status).length;
@@ -30,8 +30,8 @@ interface StatBoxProps {
 	color: "green" | "red" | "orange";
 }
 
-function StatBox({count, labelKey, color}: StatBoxProps): JSX.Element {
-	const {t} = useTranslation();
+function StatBox({ count, labelKey, color }: StatBoxProps): JSX.Element {
+	const { t } = useTranslation();
 
 	return (
 		<div className="bg-white/10 backdrop-blur rounded-xl p-6 text-center min-w-[140px]">
@@ -49,7 +49,7 @@ function StatBox({count, labelKey, color}: StatBoxProps): JSX.Element {
 }
 
 export function Hero(): JSX.Element {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
 	return (
 		<section id="attekintes" className="bg-brand text-white py-16 sm:py-24">

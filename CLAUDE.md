@@ -69,3 +69,14 @@ When building frontend components, follow the frontend-design skill principles:
 - Create cohesive color themes with dominant colors and sharp accents
 - Implement meaningful animations and micro-interactions
 - Consider unconventional layouts with intentional asymmetry and spatial composition
+
+## Content Tone
+
+When writing summaries, event descriptions, or any user-facing content:
+
+- Use **serious, professional tone** - this is a documentation site about legal/regulatory changes
+- Avoid sensationalist or informal language
+- Be factual and precise with dates, entities, and actions
+- Use neutral, objective phrasing (e.g., "A szolgáltatás megszűnt" not "Bezárták a boltot")
+- Reference official terms and legal language where appropriate
+- Keep summaries concise: max 3 sentences, focus on what/when/why
