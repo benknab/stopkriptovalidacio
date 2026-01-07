@@ -32,8 +32,9 @@ app.use(
 	}),
 );
 
-// Serve static files from /public
+// Serve static files
 app.use("/public/*", serveStatic({ root: "./" }));
+app.get("/bitcoin.pdf", serveStatic({ path: "./public/bitcoin.pdf" }));
 
 // Language switch route
 app.get("/set-lang", (c) => {
