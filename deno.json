@@ -1,0 +1,60 @@
+{
+	"nodeModulesDir": "auto",
+	"tasks": {
+		"dev": "deno run --allow-net --allow-read --allow-env --watch src/server.tsx",
+		"build:css": "deno run -A npm:@tailwindcss/cli -i ./src/styles/input.css -o ./public/styles.css --minify",
+		"build": "deno task build:css",
+		"start": "deno run --allow-net --allow-read --allow-env src/server.tsx",
+		"check": "deno check src/**/*.tsx",
+		"fmt": "deno fmt",
+		"lint": "deno lint"
+	},
+	"imports": {
+		"@hono/hono": "jsr:@hono/hono@^4",
+		"react": "npm:react@^19",
+		"react/jsx-runtime": "npm:react@^19/jsx-runtime",
+		"react-dom/server": "npm:react-dom@^19/server",
+		"@types/react": "npm:@types/react@^19",
+		"tailwindcss": "npm:tailwindcss@^4"
+	},
+	"compilerOptions": {
+		"jsx": "react-jsx",
+		"jsxImportSource": "react"
+	},
+	"fmt": {
+		"useTabs": true,
+		"lineWidth": 120,
+		"indentWidth": 4
+	},
+	"lint": {
+		"rules": {
+			"tags": ["recommended"],
+			"include": [
+				"ban-untagged-todo",
+				"camelcase",
+				"default-param-last",
+				"eqeqeq",
+				"explicit-function-return-type",
+				"explicit-module-boundary-types",
+				"guard-for-in",
+				"no-boolean-literal-for-arguments",
+				"no-const-assign",
+				"no-eval",
+				"no-external-import",
+				"no-implicit-declare-namespace-export",
+				"no-non-null-asserted-optional-chain",
+				"no-non-null-assertion",
+				"no-self-compare",
+				"no-sparse-arrays",
+				"no-sync-fn-in-async-fn",
+				"no-throw-literal",
+				"no-top-level-await",
+				"no-undef",
+				"prefer-as-const",
+				"single-var-declarator",
+				"triple-slash-reference",
+				"verbatim-module-syntax"
+			]
+		}
+	}
+}
