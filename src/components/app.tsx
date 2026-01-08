@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
+import { ExchangesSection } from "./exchanges-section.tsx";
 import { Hero } from "./hero.tsx";
 import { ImpactSection } from "./impact-section.tsx";
 import { Layout } from "./layout.tsx";
@@ -21,6 +22,7 @@ export function App({ showAllEvents = false }: AppProps): JSX.Element {
 				<>
 					<Hero />
 					<ImpactSection />
+					<ExchangesSection />
 				</>
 			}
 		>

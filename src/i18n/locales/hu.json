@@ -58,5 +58,32 @@
 				"description": "A törvény nemcsak a szolgáltatókat szabályozza, hanem az egyéni kriptotulajdonosokat is bünteti."
 			}
 		}
+	},
+	"exchanges": {
+		"title": "Tőzsdék",
+		"description": "A kriptotőzsdék és szolgáltatók helyzete Magyarországon.",
+		"status": {
+			"operating": "Megfelel",
+			"leaving": "Távozik",
+			"unknown": "Ismeretlen"
+		},
+		"revolut": { "summary": "Kriptoszolgáltatások megszűntek." },
+		"strike": { "summary": "Vásárlás és eladás megszűnt." },
+		"etoro": { "summary": "Csak kripto CFD-k maradtak elérhetők." },
+		"coincash": { "summary": "Szolgáltatások ideiglenesen felfüggesztve." },
+		"bitstamp": { "summary": "Kereskedés felfüggesztve." },
+		"kriptomat": { "summary": "Kereskedés ideiglenesen szünetel." },
+		"bitvavo": { "summary": "Kereskedés és befizetés felfüggesztve." },
+		"coinbase": { "summary": "Státusz ismeretlen." },
+		"kraken": { "summary": "Státusz ismeretlen." },
+		"binance": { "summary": "Státusz ismeretlen." },
+		"crypto-com": { "summary": "Státusz ismeretlen." },
+		"bitpanda": { "summary": "Státusz ismeretlen." },
+		"bybit": { "summary": "Státusz ismeretlen." },
+		"bitgo": { "summary": "Státusz ismeretlen." },
+		"okcoin": { "summary": "Státusz ismeretlen." },
+		"okx": { "summary": "Státusz ismeretlen." },
+		"mrcoin": { "summary": "Státusz ismeretlen." },
+		"nexo": { "summary": "Státusz ismeretlen." }
 	}
 }

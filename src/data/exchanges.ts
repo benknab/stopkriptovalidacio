@@ -82,6 +82,10 @@ export const exchanges = {
 		name: "MrCoin",
 		status: "unknown",
 	},
+	nexo: {
+		name: "Nexo",
+		status: "unknown",
+	},
 } as const satisfies Record<string, Exchange>;
 
 export type ExchangeSlug = keyof typeof exchanges;

@@ -58,5 +58,32 @@
 				"description": "The law does not just regulate service providers—it punishes individual crypto owners too."
 			}
 		}
+	},
+	"exchanges": {
+		"title": "Exchanges",
+		"description": "Status of crypto exchanges and service providers in Hungary.",
+		"status": {
+			"operating": "Compliant",
+			"leaving": "Leaving",
+			"unknown": "Unknown"
+		},
+		"revolut": { "summary": "Crypto services ended." },
+		"strike": { "summary": "Buy/sell discontinued." },
+		"etoro": { "summary": "Only crypto CFDs available." },
+		"coincash": { "summary": "Services temporarily suspended." },
+		"bitstamp": { "summary": "Trading suspended." },
+		"kriptomat": { "summary": "Trading temporarily paused." },
+		"bitvavo": { "summary": "Trading and deposits suspended." },
+		"coinbase": { "summary": "Status unknown." },
+		"kraken": { "summary": "Status unknown." },
+		"binance": { "summary": "Status unknown." },
+		"crypto-com": { "summary": "Status unknown." },
+		"bitpanda": { "summary": "Status unknown." },
+		"bybit": { "summary": "Status unknown." },
+		"bitgo": { "summary": "Status unknown." },
+		"okcoin": { "summary": "Status unknown." },
+		"okx": { "summary": "Status unknown." },
+		"mrcoin": { "summary": "Status unknown." },
+		"nexo": { "summary": "Status unknown." }
 	}
 }
