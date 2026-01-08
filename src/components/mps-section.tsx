@@ -88,21 +88,17 @@ function MpCard({ mp }: MpCardProps): JSX.Element {
 
 			<div className="space-y-1 text-sm text-slate-600">
 				{mp.district && <div>📍 {mp.district}</div>}
-				{emails.length > 0 && (
-					<div>
-						📧 {emails.map((email, i) => (
-							<span key={email}>
-								{i > 0 && ", "}
-								<a
-									href={`mailto:${email}`}
-									className="text-brand hover:text-brand-hover transition-colors break-all"
-								>
-									{email}
-								</a>
-							</span>
-						))}
+				{emails.map((email) => (
+					<div key={email}>
+						📧{" "}
+						<a
+							href={`mailto:${email}`}
+							className="text-brand hover:text-brand-hover transition-colors break-all"
+						>
+							{email}
+						</a>
 					</div>
-				)}
+				))}
 				{mp.phone && (
 					<div>
 						📞{" "}

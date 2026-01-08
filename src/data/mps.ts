@@ -917,9 +917,10 @@ export const mps = {
 		name: "Vitályos Eszter",
 		party: "Fidesz",
 		vote: "yes",
-		emails: new Set(["vitalyos.eszter@parlament.hu"]),
+		emails: new Set(["vitalyos.eszter@parlament.hu", "vitalyos.eszter@fidesz.hu"]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/z014.jpg",
 		district: "Pest 3. OEVK",
+		phone: "+36 20 265 8801",
 	},
 	"vitanyi-istvan": {
 		name: "Dr. Vitányi István",
