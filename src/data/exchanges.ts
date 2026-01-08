@@ -17,6 +17,11 @@ export const exchanges = {
 		status: "leaving",
 		leaveDate: new Date("2026-01-09"),
 	},
+	etoro: {
+		name: "eToro",
+		status: "leaving",
+		leaveDate: new Date("2025-12-26"),
+	},
 } as const satisfies Record<string, Exchange>;
 
 export type ExchangeSlug = keyof typeof exchanges;

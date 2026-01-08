@@ -71,6 +71,24 @@ export const sources = {
 			en: "Revolut completely terminates cryptocurrency services in Hungary. Customers can sell or transfer crypto to external wallets until December 18; staking ends automatically on December 10.",
 		},
 	},
+	"etoro-portfolio-2025-12-19": {
+		title: "Portfolio.hu",
+		originalUrl:
+			"https://www.portfolio.hu/uzlet/20251219/felfuggeszti-kriptoszolgaltatasait-magyarorszagon-az-etoro-mutatjuk-meddig-tudsz-meg-adni-es-venni-807122",
+		summary: {
+			hu: "Az eToro bejelentette, hogy 2025. december 26-tól felfüggeszti a hagyományos kriptovaluta-kereskedést Magyarországon. A kripto CFD-k továbbra is elérhetők maradnak.",
+			en: "eToro announced that it will suspend traditional cryptocurrency trading in Hungary from December 26, 2025. Crypto CFDs will remain available.",
+		},
+	},
+	"etoro-vg-2025-12-18": {
+		title: "VG",
+		originalUrl:
+			"https://www.vg.hu/penz-es-tokepiac/2025/12/etoro-kriptokereskedelem-kivonulas-magyarorszag-revolut",
+		summary: {
+			hu: "A VG beszámolója az eToro magyarországi kriptokereskedelem megszüntetéséről a szigorodó hazai szabályozás miatt.",
+			en: "VG report on eToro's termination of cryptocurrency trading in Hungary due to stricter domestic regulations.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;

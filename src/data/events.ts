@@ -89,4 +89,32 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(),
 		exchangeSlugs: new Set(["strike"]),
 	},
+	"etoro-bejelentes": {
+		date: new Date("2025-12-18"),
+		type: "secondary",
+		title: {
+			hu: "eToro bejelenti a kriptokereskedés felfüggesztését",
+			en: "eToro announces suspension of crypto trading",
+		},
+		summary: {
+			hu: "Az eToro bejelentette, hogy december 26-tól megszünteti a hagyományos kriptovaluta vásárlást és eladást Magyarországon. A kripto CFD-k továbbra is elérhetők maradnak.",
+			en: "eToro announced that it will discontinue traditional cryptocurrency buying and selling in Hungary from December 26. Crypto CFDs will remain available.",
+		},
+		sourceSlugs: new Set(["etoro-portfolio-2025-12-19", "etoro-vg-2025-12-18"]),
+		exchangeSlugs: new Set(["etoro"]),
+	},
+	"etoro-kivonulas": {
+		date: new Date("2025-12-26"),
+		type: "primary",
+		title: {
+			hu: "eToro kriptokereskedés megszűnése Magyarországon",
+			en: "eToro crypto trading ends in Hungary",
+		},
+		summary: {
+			hu: "Az eToro-nál megszűnt a hagyományos kriptovaluta-kereskedés Magyarországon. A felhasználók lezárhatták pozícióikat, ezt követően csak kripto CFD-k maradtak elérhetők.",
+			en: "Traditional cryptocurrency trading ended at eToro in Hungary. Users could close their positions, after which only crypto CFDs remained available.",
+		},
+		sourceSlugs: new Set(["etoro-portfolio-2025-12-19"]),
+		exchangeSlugs: new Set(["etoro"]),
+	},
 };
