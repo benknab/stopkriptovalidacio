@@ -11,9 +11,9 @@
 		"about": "Rólunk"
 	},
 	"hero": {
-		"title": "A magyar kriptovaluta szabályozás veszélyben van",
-		"description": "A \"kriptovalidáció\" törvény számos kriptovaluta szolgáltatót kiszoríthat Magyarországról. Kövesd nyomon a fejleményeket.",
-		"operating": "Működik",
+		"title": "A magyar kriptotulajdonosok veszélyben vannak",
+		"description": "A \"kriptovalidáció\" törvény miatt szolgáltatók vonulnak ki Magyarországról. A kriptotulajdonosok elveszíthetik hozzáférésüket eszközeikhez.",
+		"operating": "Megfelelő",
 		"leaving": "Távozik",
 		"unknown": "Ismeretlen",
 		"cta_timeline": "Idővonal megtekintése"
