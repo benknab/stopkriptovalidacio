@@ -38,6 +38,90 @@ const votePriority: Record<VoteType, number> = {
 	banned: 5,
 };
 
+const NATIONAL_LIST = "Országos lista";
+const MINORITY_LIST = "Országos nemzetiségi lista";
+export const ALL_OPTION = "__osszes__";
+
+type ParsedDistrict = {
+	county: string;
+	districtNum: string | null;
+	isNationalList: boolean;
+};
+
+function parseDistrict(district: string | undefined): ParsedDistrict | null {
+	if (!district) return null;
+
+	if (district === NATIONAL_LIST) {
+		return { county: NATIONAL_LIST, districtNum: null, isNationalList: true };
+	}
+	if (district === MINORITY_LIST) {
+		return { county: MINORITY_LIST, districtNum: null, isNationalList: true };
+	}
+
+	const lastSpaceIndex = district.lastIndexOf(" ");
+	if (lastSpaceIndex === -1) return null;
+
+	const withoutOevk = district.substring(0, lastSpaceIndex);
+	const spaceBeforeNum = withoutOevk.lastIndexOf(" ");
+
+	if (spaceBeforeNum === -1) return null;
+
+	const county = withoutOevk.substring(0, spaceBeforeNum);
+	const districtNum = withoutOevk.substring(spaceBeforeNum + 1) + " OEVK";
+
+	return { county, districtNum, isNationalList: false };
+}
+
+type CountyData = {
+	name: string;
+	districts: string[];
+	isNationalList: boolean;
+};
+
+function buildCountyData(): CountyData[] {
+	const countyMap = new Map<string, Set<string>>();
+	const nationalLists: string[] = [];
+
+	for (const mp of Object.values(mps)) {
+		const parsed = parseDistrict(mp.district);
+		if (!parsed) continue;
+
+		if (parsed.isNationalList) {
+			if (!nationalLists.includes(parsed.county)) {
+				nationalLists.push(parsed.county);
+			}
+		} else {
+			if (!countyMap.has(parsed.county)) {
+				countyMap.set(parsed.county, new Set());
+			}
+			if (parsed.districtNum) {
+				countyMap.get(parsed.county)!.add(parsed.districtNum);
+			}
+		}
+	}
+
+	const result: CountyData[] = [];
+
+	for (const name of nationalLists) {
+		result.push({ name, districts: [], isNationalList: true });
+	}
+
+	const sortedCounties = Array.from(countyMap.entries()).sort((a, b) => a[0].localeCompare(b[0], "hu"));
+
+	for (const [name, districts] of sortedCounties) {
+		const sortedDistricts = Array.from(districts).sort((a, b) => {
+			const numA = parseInt(a);
+			const numB = parseInt(b);
+			return numA - numB;
+		});
+		result.push({ name, districts: sortedDistricts, isNationalList: false });
+	}
+
+	return result;
+}
+
+export const countyData = buildCountyData();
+
 function getSortedMps(): Array<{ slug: MpSlug; mp: Mp }> {
 	const entries = Object.entries(mps) as Array<[MpSlug, Mp]>;
 
@@ -112,11 +196,88 @@ function MpCard({ mp }: MpCardProps): JSX.Element {
 	);
 }
 
-export function MpsSection(): JSX.Element {
+const mpListSource = {
+	label: "Aktív képviselői névsor",
+	url: "https://www.parlament.hu/web/guest/aktiv-kepviseloi-nevsor",
+};
+
+export interface MpsSectionProps {
+	selectedCounty: string;
+	selectedDistrict: string;
+}
+
+export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps): JSX.Element {
 	const { t } = useTranslation();
+
+	const isAllSelected = selectedCounty === ALL_OPTION;
+	const currentCountyData = countyData.find((c) => c.name === selectedCounty);
+	const isNationalList = currentCountyData?.isNationalList ?? false;
+
+	const filteredMps = sortedMps.filter(({ mp }) => {
+		if (isAllSelected) return true;
+		if (!selectedCounty) return false;
+
+		const parsed = parseDistrict(mp.district);
+		if (!parsed) return false;
+
+		if (isNationalList) {
+			return parsed.county === selectedCounty;
+		}
+
+		if (parsed.county !== selectedCounty) return false;
+		if (selectedDistrict && parsed.districtNum !== selectedDistrict) return false;
+
+		return true;
+	});
+
+	const filterScript = `
+		document.addEventListener('DOMContentLoaded', function() {
+			var scrollY = sessionStorage.getItem('scrollY');
+			if (scrollY) {
+				sessionStorage.removeItem('scrollY');
+				window.scrollTo(0, parseInt(scrollY));
+			}
+
+			var countySelect = document.getElementById('mp-county-select');
+			var districtSelect = document.getElementById('mp-district-select');
+
+			if (countySelect) {
+				countySelect.addEventListener('change', function() {
+					var value = this.value;
+					var url = new URL(window.location.href);
+					url.hash = 'kepviselok';
+					if (value) {
+						url.searchParams.set('megye', value);
+						url.searchParams.delete('kerulet');
+					} else {
+						url.searchParams.delete('megye');
+						url.searchParams.delete('kerulet');
+					}
+					sessionStorage.setItem('scrollY', window.scrollY.toString());
+					window.location.href = url.toString();
+				});
+			}
+
+			if (districtSelect) {
+				districtSelect.addEventListener('change', function() {
+					var value = this.value;
+					var url = new URL(window.location.href);
+					url.hash = 'kepviselok';
+					if (value) {
+						url.searchParams.set('kerulet', value);
+					} else {
+						url.searchParams.delete('kerulet');
+					}
+					sessionStorage.setItem('scrollY', window.scrollY.toString());
+					window.location.href = url.toString();
+				});
+			}
+		});
+	`;
 
 	return (
 		<section id="kepviselok" className="bg-slate-50 py-16 sm:py-20">
+			<script dangerouslySetInnerHTML={{ __html: filterScript }} />
 			<div className="mx-auto max-w-4xl px-4 sm:px-6">
 				<h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center">
 					{t("mps.title")}
@@ -136,12 +297,75 @@ export function MpsSection(): JSX.Element {
 						>
 							{voteSource.label}
 						</a>
+						{" | "}
+						<a
+							href={mpListSource.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-brand hover:text-brand-hover transition-colors underline"
+						>
+							{t("mps.mp_list_source")}
+						</a>
 					</p>
 				</div>
 
-				<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-					{sortedMps.map(({ slug, mp }) => <MpCard key={slug} mp={mp} />)}
+				<div className="mt-6 flex flex-col sm:flex-row gap-3">
+					<select
+						id="mp-county-select"
+						defaultValue={selectedCounty}
+						className="flex-1 px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+					>
+						<option value="">{t("mps.filter.select_county")}</option>
+						<option value={ALL_OPTION}>{t("mps.filter.all")}</option>
+						{countyData.map((county) => (
+							<option key={county.name} value={county.name}>
+								{county.isNationalList
+									? t(`mps.filter.${
+										county.name === NATIONAL_LIST ? "national_list" : "minority_list"
+									}`)
+									: county.name}
+							</option>
+						))}
+					</select>
+
+					<select
+						id="mp-district-select"
+						defaultValue={selectedDistrict}
+						disabled={!selectedCounty || isNationalList || isAllSelected}
+						className="flex-1 px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed"
+					>
+						<option value="">{t("mps.filter.select_district")}</option>
+						{currentCountyData?.districts.map((district) => (
+							<option key={district} value={district}>
+								{district}
+							</option>
+						))}
+					</select>
 				</div>
+
+				{selectedCounty && (
+					<p className="mt-4 text-sm text-slate-600 text-center">
+						{t("mps.showing", { shown: filteredMps.length, total: sortedMps.length })}
+					</p>
+				)}
+
+				{!selectedCounty && (
+					<p className="mt-8 text-slate-500 text-center">
+						{t("mps.filter.select_to_show")}
+					</p>
+				)}
+
+				{selectedCounty && filteredMps.length > 0 && (
+					<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+						{filteredMps.map(({ slug, mp }) => <MpCard key={slug} mp={mp} />)}
+					</div>
+				)}
+
+				{selectedCounty && filteredMps.length === 0 && (
+					<p className="mt-8 text-slate-500 text-center">
+						{t("mps.no_results")}
+					</p>
+				)}
 			</div>
 		</section>
 	);

@@ -93,7 +93,7 @@
 		"search_placeholder": "Search by name or party...",
 		"showing": "Showing: {{shown}}/{{total}} representatives",
 		"no_results": "No results match your search criteria.",
-		"source": "Source",
+		"source": "Sources",
 		"call": "Call",
 		"vote": {
 			"yes": "Yes",
@@ -106,6 +106,17 @@
 		"party": {
 			"független": "independent",
 			"nemzetiségi": "minority"
-		}
+		},
+		"filter": {
+			"county": "County",
+			"district": "Voting District",
+			"all": "All",
+			"national_list": "National list",
+			"minority_list": "National minority list",
+			"select_county": "Select county...",
+			"select_district": "Select voting district...",
+			"select_to_show": "Select a county or click \"All\" to show representatives."
+		},
+		"mp_list_source": "MP Directory"
 	}
 }

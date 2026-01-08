@@ -76,7 +76,9 @@ app.get("/set-lang", (c) => {
 // Routes
 app.get("/", (c) => {
 	const showAll = c.req.query("osszes") === "true";
-	return renderPage(c, () => <App showAllEvents={showAll} />);
+	const mpCounty = c.req.query("megye") || "";
+	const mpDistrict = c.req.query("kerulet") || "";
+	return renderPage(c, () => <App showAllEvents={showAll} mpCounty={mpCounty} mpDistrict={mpDistrict} />);
 });
 app.get("/rolunk", (c) => renderPage(c, About));
 

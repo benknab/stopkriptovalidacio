@@ -93,7 +93,7 @@
 		"search_placeholder": "Keresés név vagy párt alapján...",
 		"showing": "{{shown}}/{{total}} képviselő",
 		"no_results": "Nincs találat a keresési feltételeknek megfelelően.",
-		"source": "Forrás",
+		"source": "Források",
 		"call": "Hívás",
 		"vote": {
 			"yes": "Igen",
@@ -106,6 +106,17 @@
 		"party": {
 			"független": "független",
 			"nemzetiségi": "nemzetiségi"
-		}
+		},
+		"filter": {
+			"county": "Megye",
+			"district": "Választókerület",
+			"all": "Összes",
+			"national_list": "Országos lista",
+			"minority_list": "Országos nemzetiségi lista",
+			"select_county": "Válasszon megyét...",
+			"select_district": "Válasszon választókerületet...",
+			"select_to_show": "Válasszon megyét vagy kattintson az \"Összes\" gombra a képviselők megjelenítéséhez."
+		},
+		"mp_list_source": "Képviselői névsor"
 	}
 }

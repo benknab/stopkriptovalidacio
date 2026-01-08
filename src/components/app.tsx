@@ -10,9 +10,11 @@ import type { SupportedLanguage } from "../i18n/index.ts";
 
 interface AppProps {
 	showAllEvents?: boolean;
+	mpCounty?: string;
+	mpDistrict?: string;
 }
 
-export function App({ showAllEvents = false }: AppProps): JSX.Element {
+export function App({ showAllEvents = false, mpCounty = "", mpDistrict = "" }: AppProps): JSX.Element {
 	const { t, i18n } = useTranslation();
 	const currentLang = i18n.language as SupportedLanguage;
 
@@ -26,7 +28,7 @@ export function App({ showAllEvents = false }: AppProps): JSX.Element {
 					<ExchangesSection />
 				</>
 			}
-			afterContent={<MpsSection />}
+			afterContent={<MpsSection selectedCounty={mpCounty} selectedDistrict={mpDistrict} />}
 		>
 			<section id="idovonal">
 				<div className="mb-6 flex items-center justify-between">
