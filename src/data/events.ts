@@ -117,4 +117,37 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["etoro-portfolio-2025-12-19"]),
 		exchangeSlugs: new Set(["etoro"]),
 	},
+	"coincash-regisztracio-szunetel": {
+		date: new Date("2025-07-08"),
+		type: "secondary",
+		title: {
+			hu: "CoinCash regisztráció szünetel",
+			en: "CoinCash registration suspended",
+		},
+		summary: {
+			hu: "A CoinCash felfüggesztette az új regisztrációkat, de a meglévő ügyfelek továbbra is használhatták a webes váltási szolgáltatást.",
+			en: "CoinCash suspended new registrations, but existing customers could continue using the web exchange service.",
+		},
+		sourceSlugs: new Set(["coincash-blog-2025-07-08", "coincash-telex-2025-07-08"]),
+		exchangeSlugs: new Set(["coincash"]),
+	},
+	"coincash-felfuggesztes": {
+		date: new Date("2025-12-18"),
+		type: "primary",
+		title: {
+			hu: "CoinCash szolgáltatások ideiglenes felfüggesztése",
+			en: "CoinCash services temporarily suspended",
+		},
+		summary: {
+			hu: "A CoinCash ideiglenesen felfüggesztette szolgáltatásait Magyarországon. Új váltási megbízás nem adható le a felületeken.",
+			en: "CoinCash temporarily suspended services in Hungary. New exchange orders cannot be placed on the platforms.",
+		},
+		sourceSlugs: new Set([
+			"coincash-blog-2025-12-17",
+			"coincash-telex-2025-12-18",
+			"coincash-portfolio-2025-12-18",
+			"coincash-hvg-2025-12-18",
+		]),
+		exchangeSlugs: new Set(["coincash"]),
+	},
 };

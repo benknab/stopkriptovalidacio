@@ -8,6 +8,7 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [x] deploy
 - [x] timeline
 - [x] icons
+- [ ] favicon + logo
 - [ ] copy
 - [ ] MP search
 - [ ] MP email template + send
@@ -19,7 +20,7 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 
 - [x] revolut
 - [x] strike
-- [ ] coincash
+- [x] coincash
 - [x] etoro
 - [ ] bitstamp
 - [ ] bringin

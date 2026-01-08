@@ -89,6 +89,56 @@ export const sources = {
 			en: "VG report on eToro's termination of cryptocurrency trading in Hungary due to stricter domestic regulations.",
 		},
 	},
+	"coincash-blog-2025-07-08": {
+		title: "CoinCash Blog",
+		originalUrl: "https://coincash.eu/hu/blog/tovabbra-is-zavartalanul-mukodunk",
+		summary: {
+			hu: "A CoinCash közleménye szerint a regisztráció szünetel, de a meglévő ügyfelek továbbra is használhatják a webes váltási szolgáltatást.",
+			en: "According to CoinCash's announcement, registration is suspended, but existing customers can continue to use the web exchange service.",
+		},
+	},
+	"coincash-telex-2025-07-08": {
+		title: "Telex",
+		originalUrl: "https://telex.hu/gazdasag/2025/07/08/kriptopiac-revolut-bitcoin-befektetes-megtakaritas",
+		summary: {
+			hu: "A Telex beszámolója a CoinCash közleményéről: a webes váltás elérhető maradt, miközben a regisztráció szünetelt.",
+			en: "Telex report on CoinCash's announcement: web exchange remained available while registration was suspended.",
+		},
+	},
+	"coincash-blog-2025-12-17": {
+		title: "CoinCash Blog",
+		originalUrl: "https://coincash.eu/hu/blog/ideiglenesen-felfuggeszti-a-szolgaltatasait-a-coincash",
+		summary: {
+			hu: "A CoinCash bejelentette, hogy 2025. december 18-tól ideiglenesen felfüggeszti szolgáltatásait. Új váltási megbízás nem adható le.",
+			en: "CoinCash announced temporary suspension of services from December 18, 2025. New exchange orders cannot be placed.",
+		},
+	},
+	"coincash-telex-2025-12-18": {
+		title: "Telex",
+		originalUrl:
+			"https://telex.hu/gazdasag/2025/12/18/coincash-kivonul-magyarorszagrol-kriptovaluta-kozvetito-revolut-szabalyozas",
+		summary: {
+			hu: "A Telex összefoglalója: a Revolut után a CoinCash is leállítja kriptós szolgáltatásait Magyarországon.",
+			en: "Telex summary: after Revolut, CoinCash also suspends crypto services in Hungary.",
+		},
+	},
+	"coincash-portfolio-2025-12-18": {
+		title: "Portfolio.hu",
+		originalUrl:
+			"https://www.portfolio.hu/befektetes/20251218/breking-ma-nemcsak-a-revolut-de-a-coincash-is-felfuggeszti-kriptoszolgaltatasait-magyarorszagon-806822",
+		summary: {
+			hu: "A Portfolio beszámolója a CoinCash magyarországi kriptoszolgáltatásainak felfüggesztéséről.",
+			en: "Portfolio report on CoinCash's suspension of cryptocurrency services in Hungary.",
+		},
+	},
+	"coincash-hvg-2025-12-18": {
+		title: "HVG",
+		originalUrl: "https://hvg.hu/kkv/20251218_Felfuggesztes-magyar-kripto-CoinCash",
+		summary: {
+			hu: "A HVG összefoglalója a CoinCash szolgáltatásainak felfüggesztéséről.",
+			en: "HVG summary on the suspension of CoinCash services.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
