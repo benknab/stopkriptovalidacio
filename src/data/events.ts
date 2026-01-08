@@ -150,4 +150,22 @@ export const events: TimelineEvents = {
 		]),
 		exchangeSlugs: new Set(["coincash"]),
 	},
+	"bitstamp-kereskedes-felfuggesztve": {
+		date: new Date("2025-07-09"),
+		type: "primary",
+		title: {
+			hu: "Bitstamp felfüggeszti a kriptokereskedést Magyarországon",
+			en: "Bitstamp suspends crypto trading in Hungary",
+		},
+		summary: {
+			hu: "A Bitstamp felfüggesztette a kriptoeszközök vételét és eladását magyar ügyfelek számára. A befizetés, kiutalás, staking és kölcsönzés ideiglenesen elérhető maradt.",
+			en: "Bitstamp suspended buying and selling of crypto assets for Hungarian customers. Deposits, withdrawals, staking, and lending temporarily remained available.",
+		},
+		sourceSlugs: new Set([
+			"bitstamp-kriptoakademia-2025-07-09",
+			"bitstamp-cryptofalka-2025-07-09",
+			"bitstamp-origo-2025-07",
+		]),
+		exchangeSlugs: new Set(["bitstamp"]),
+	},
 };

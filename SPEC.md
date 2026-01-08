@@ -22,5 +22,5 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [x] strike
 - [x] coincash
 - [x] etoro
-- [ ] bitstamp
+- [x] bitstamp
 - [ ] bringin

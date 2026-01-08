@@ -27,6 +27,11 @@ export const exchanges = {
 		status: "leaving",
 		leaveDate: new Date("2025-12-18"),
 	},
+	bitstamp: {
+		name: "Bitstamp",
+		status: "leaving",
+		leaveDate: new Date("2025-07-09"),
+	},
 } as const satisfies Record<string, Exchange>;
 
 export type ExchangeSlug = keyof typeof exchanges;

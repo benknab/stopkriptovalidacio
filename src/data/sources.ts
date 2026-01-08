@@ -139,6 +139,31 @@ export const sources = {
 			en: "HVG summary on the suspension of CoinCash services.",
 		},
 	},
+	"bitstamp-kriptoakademia-2025-07-09": {
+		title: "KriptoAkadémia",
+		originalUrl:
+			"https://kriptoakademia.com/2025/07/09/a-revolut-utan-a-bitstamp-is-felfuggesztette-a-kriptokereskedest-magyarorszagon",
+		summary: {
+			hu: "A Revolut után a Bitstamp is felfüggesztette a kriptokereskedést Magyarországon a szabályozási változások miatt.",
+			en: "After Revolut, Bitstamp also suspended cryptocurrency trading in Hungary due to regulatory changes.",
+		},
+	},
+	"bitstamp-cryptofalka-2025-07-09": {
+		title: "CryptoFalka",
+		originalUrl: "https://cryptofalka.hu/tozsde/revolut-utan-bitstamp-szunetelteti-szolgaltatasat-magyarorszagon",
+		summary: {
+			hu: "A CryptoFalka beszámolója a Bitstamp magyarországi szolgáltatáskorlátozásáról a jogszabályváltozás miatt.",
+			en: "CryptoFalka report on Bitstamp's service restrictions in Hungary due to legislative changes.",
+		},
+	},
+	"bitstamp-origo-2025-07": {
+		title: "Origo",
+		originalUrl: "https://www.origo.hu/gazdasag/2025/07/bitstamp-revolut-kriptovaluta-szolgaltatas",
+		summary: {
+			hu: "A Bitstamp leállította a digitális eszközök vételét és eladását magyar ügyfeleknek. A befizetés, kiutalás, staking és kölcsönzés továbbra is elérhető maradt.",
+			en: "Bitstamp suspended buying and selling of digital assets for Hungarian customers. Deposits, withdrawals, staking, and lending remained available.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
