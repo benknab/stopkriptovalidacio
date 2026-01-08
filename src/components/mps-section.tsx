@@ -59,80 +59,54 @@ interface MpCardProps {
 function MpCard({ mp }: MpCardProps): JSX.Element {
 	const { t } = useTranslation();
 	const colors = voteColors[mp.vote];
-	const emails = Array.from(mp.emails);
+	const emails = Array.from(mp.emails).filter((e) => e);
 
 	return (
 		<div
-			className={`bg-white rounded-xl border-2 ${colors.border} p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col`}
+			className={`relative bg-white rounded-xl border-2 ${colors.border} p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col items-center text-center`}
 		>
-			<div className="flex items-start justify-between w-full mb-2">
-				<h3 className="font-semibold text-slate-900">{mp.name}</h3>
-				<span
-					className={`text-xs font-medium px-2.5 py-1 rounded-full shrink-0 ml-2 ${colors.badge}`}
-				>
-					{t(`mps.vote.${mp.vote}`)}
-				</span>
-			</div>
+			<span className={`absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}>
+				{t(`mps.vote.${mp.vote}`)}
+			</span>
 
-			<p className="text-sm text-slate-500 mb-3">{mp.party}</p>
-
-			<div className="space-y-1.5 text-sm">
-				{mp.district && (
-					<div className="flex items-center gap-2 text-slate-600">
-						<svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-							/>
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-							/>
-						</svg>
-						<span>{mp.district}</span>
+			{mp.imageUrl
+				? (
+					<img
+						src={mp.imageUrl}
+						alt={mp.name}
+						className="w-12 h-12 rounded-full object-cover mb-3 border-2 border-slate-200"
+					/>
+				)
+				: (
+					<div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center mb-3 border-2 border-slate-300">
+						<span className="text-slate-500 text-lg">👤</span>
 					</div>
 				)}
+
+			<h3 className="font-semibold text-slate-900">{mp.name}</h3>
+			<p className="text-sm text-slate-500 mb-3">{mp.party}</p>
+
+			<div className="space-y-1 text-sm text-slate-600">
+				{mp.district && <div>📍 {mp.district}</div>}
 				{emails.length > 0 && (
-					<div className="flex items-start gap-2 text-slate-600">
-						<svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-							/>
-						</svg>
-						<div className="flex flex-col gap-0.5">
-							{emails.map((email) => (
+					<div>
+						📧 {emails.map((email, i) => (
+							<span key={email}>
+								{i > 0 && ", "}
 								<a
-									key={email}
 									href={`mailto:${email}`}
 									className="text-brand hover:text-brand-hover transition-colors break-all"
 								>
 									{email}
 								</a>
-							))}
-						</div>
+							</span>
+						))}
 					</div>
 				)}
 				{mp.phone && (
-					<div className="flex items-center gap-2 text-slate-600">
-						<svg className="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path
-								strokeLinecap="round"
-								strokeLinejoin="round"
-								strokeWidth={2}
-								d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-							/>
-						</svg>
-						<a
-							href={`tel:${mp.phone}`}
-							className="text-brand hover:text-brand-hover transition-colors"
-						>
+					<div>
+						📞{" "}
+						<a href={`tel:${mp.phone}`} className="text-brand hover:text-brand-hover transition-colors">
 							{mp.phone}
 						</a>
 					</div>
