@@ -32,6 +32,46 @@ export const exchanges = {
 		status: "leaving",
 		leaveDate: new Date("2025-07-09"),
 	},
+	coinbase: {
+		name: "Coinbase",
+		status: "unknown",
+	},
+	kraken: {
+		name: "Kraken",
+		status: "unknown",
+	},
+	binance: {
+		name: "Binance",
+		status: "unknown",
+	},
+	"crypto-com": {
+		name: "Crypto.com",
+		status: "unknown",
+	},
+	bitpanda: {
+		name: "Bitpanda",
+		status: "unknown",
+	},
+	bybit: {
+		name: "Bybit",
+		status: "unknown",
+	},
+	bitgo: {
+		name: "BitGo",
+		status: "unknown",
+	},
+	okcoin: {
+		name: "OKCoin",
+		status: "unknown",
+	},
+	okx: {
+		name: "OKX",
+		status: "unknown",
+	},
+	mrcoin: {
+		name: "MrCoin",
+		status: "unknown",
+	},
 } as const satisfies Record<string, Exchange>;
 
 export type ExchangeSlug = keyof typeof exchanges;
