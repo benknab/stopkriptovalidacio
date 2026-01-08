@@ -102,6 +102,10 @@
 			"absent": "Absent",
 			"not_voted": "Did not vote",
 			"banned": "Banned"
+		},
+		"party": {
+			"független": "independent",
+			"nemzetiségi": "minority"
 		}
 	}
 }

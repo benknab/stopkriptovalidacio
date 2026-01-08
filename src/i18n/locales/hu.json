@@ -102,6 +102,10 @@
 			"absent": "Hiányzott",
 			"not_voted": "Nem szavazott",
 			"banned": "Kitiltott"
+		},
+		"party": {
+			"független": "független",
+			"nemzetiségi": "nemzetiségi"
 		}
 	}
 }
