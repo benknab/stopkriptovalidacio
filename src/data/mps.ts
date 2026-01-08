@@ -35,11 +35,13 @@ export type Mp = {
 };
 
 export function formatPhoneForDisplay(phone: string): string {
+	// Budapest landline: 361 + 7 digits = 10 chars
+	if (phone.length === 10 && phone.startsWith("361")) {
+		return `+36 1 ${phone.slice(3, 6)} ${phone.slice(6)}`;
+	}
+	// Mobile: 36 + 2-digit prefix + 7 digits = 11 chars
 	if (phone.length === 11 && phone.startsWith("36")) {
 		return `+36 ${phone.slice(2, 4)} ${phone.slice(4, 7)} ${phone.slice(7)}`;
-	}
-	if (phone.length === 10) {
-		return `+36 ${phone.slice(0, 2)} ${phone.slice(2, 5)} ${phone.slice(5)}`;
 	}
 	return `+${phone}`;
 }
