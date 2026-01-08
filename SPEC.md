@@ -5,9 +5,7 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [ ] MP email template + send
 - [ ] favicon + logo
 - [ ] copy
-- [ ] seo
 - [ ] about + contact page content
-- [ ] email contact setup
 - [ ] analytics: https://www.simpleanalytics.com/ or https://usefathom.com/
 - [ ] readme (hungarian)
 - [ ] verify mobile works

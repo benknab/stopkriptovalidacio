@@ -3,6 +3,16 @@
 		"title": "Kriptovalidáció",
 		"description": "A magyar kriptovaluta \"validációs\" törvények idővonala és következményei"
 	},
+	"seo": {
+		"home": {
+			"title": "Kriptovalidáció - A magyar kriptotörvények idővonala",
+			"description": "A magyar kriptovaluta \"validációs\" törvény változásainak és következményeinek részletes dokumentációja."
+		},
+		"about": {
+			"title": "Rólunk - Kriptovalidáció",
+			"description": "Tájékozódjon a magyar kriptovaluta szabályozás változásairól és azok következményeiről."
+		}
+	},
 	"nav": {
 		"overview": "Áttekintés",
 		"timeline": "Idővonal",

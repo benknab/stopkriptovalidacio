@@ -3,6 +3,16 @@
 		"title": "Crypto Validation",
 		"description": "Timeline and repercussions of Hungarian cryptocurrency \"validation\" laws"
 	},
+	"seo": {
+		"home": {
+			"title": "Crypto Validation - Timeline of Hungarian Crypto Laws",
+			"description": "Detailed documentation of changes and consequences of Hungary's cryptocurrency \"validation\" law."
+		},
+		"about": {
+			"title": "About - Crypto Validation",
+			"description": "Learn about changes in Hungarian cryptocurrency regulation and their consequences."
+		}
+	},
 	"nav": {
 		"overview": "Overview",
 		"timeline": "Timeline",
