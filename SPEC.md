@@ -16,8 +16,3 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [ ] users cannot lose access to their assets but access to purchasing
 - [ ] explain megfelel category: exchange only gets it if publicly announced compliance, or SZTFH/Caudecus said so
 - [ ] cta
-
-## mps
-
-- [ ] more direct emails, not just parlament
-- [ ] phone numbers
