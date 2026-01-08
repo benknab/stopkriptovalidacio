@@ -164,6 +164,40 @@ export const sources = {
 			en: "Bitstamp suspended buying and selling of digital assets for Hungarian customers. Deposits, withdrawals, staking, and lending remained available.",
 		},
 	},
+	"kriptomat-official-2025-12-22": {
+		title: "Kriptomat",
+		originalUrl: "https://kriptomat.io/temporary-suspension-of-trading-services-in-hungary/",
+		summary: {
+			hu: "A Kriptomat hivatalos közleménye: 2025. december 26-tól 23:00-tól ideiglenesen felfüggesztik a kereskedési szolgáltatásokat Magyarországon. A vétel, eladás, váltás, KriptoEarn és Intelligent Portfolios szünetel, de a kifizetések elérhetők maradnak.",
+			en: "Official Kriptomat announcement: trading services temporarily suspended in Hungary from December 26, 2025 at 23:00 CET. Buy, sell, exchange, KriptoEarn, and Intelligent Portfolios paused, but withdrawals remain available.",
+		},
+	},
+	"kriptomat-index-2025-12-25": {
+		title: "Index.hu",
+		originalUrl:
+			"https://index.hu/gazdasag/2025/12/25/kriptopiac-kriptomat-kivonulas-magyarorszag-revolut-szabalyozas",
+		summary: {
+			hu: "Az Index beszámolója a Kriptomat magyarországi szolgáltatásainak felfüggesztéséről december 26-tól a szigorodó szabályozási környezet miatt.",
+			en: "Index report on Kriptomat's suspension of Hungarian services from December 26 due to stricter regulatory environment.",
+		},
+	},
+	"kriptomat-revb-2025-12-24": {
+		title: "RevB.hu",
+		originalUrl: "https://revb.hu/karacsonyi-sokk-a-magyar-kriptopiacon-a-kriptomat-is-bedobja-a-torolkozot/",
+		summary: {
+			hu: "A RevB beszámolója: a Kriptomat is felfüggeszti magyarországi szolgáltatásait december 26-tól, annak ellenére, hogy december 19-én elindult az első validátor.",
+			en: "RevB report: Kriptomat also suspends Hungarian services from December 26, despite the first validator launching on December 19.",
+		},
+	},
+	"kriptomat-privatbankar-2025-12-25": {
+		title: "Privátbankár.hu",
+		originalUrl:
+			"https://privatbankar.hu/cikkek/vallalat/eros-kritika-nagy-martoneknak-a-kriptoceg-labbal-szavaz.html",
+		summary: {
+			hu: "A Privátbankár beszámolója a Kriptomat magyarországi szolgáltatásainak felfüggesztéséről december 26-tól 23:00-tól.",
+			en: "Privátbankár report on Kriptomat's suspension of Hungarian services from December 26 at 23:00 CET.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;

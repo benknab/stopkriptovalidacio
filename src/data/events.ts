@@ -168,4 +168,23 @@ export const events: TimelineEvents = {
 		]),
 		exchangeSlugs: new Set(["bitstamp"]),
 	},
+	"kriptomat-felfuggesztes": {
+		date: new Date("2025-12-26"),
+		type: "primary",
+		title: {
+			hu: "Kriptomat felfüggeszti kereskedési szolgáltatásait Magyarországon",
+			en: "Kriptomat suspends trading services in Hungary",
+		},
+		summary: {
+			hu: "A Kriptomat ideiglenesen felfüggesztette kereskedési szolgáltatásait Magyarországon december 26-tól 23:00-tól. A vétel, eladás, váltás, KriptoEarn és Intelligent Portfolios szünetel, de a kifizetések elérhetők maradnak.",
+			en: "Kriptomat temporarily suspended trading services in Hungary from December 26 at 23:00 CET. Buy, sell, exchange, KriptoEarn, and Intelligent Portfolios paused, but withdrawals remain available.",
+		},
+		sourceSlugs: new Set([
+			"kriptomat-official-2025-12-22",
+			"kriptomat-index-2025-12-25",
+			"kriptomat-revb-2025-12-24",
+			"kriptomat-privatbankar-2025-12-25",
+		]),
+		exchangeSlugs: new Set(["kriptomat"]),
+	},
 };

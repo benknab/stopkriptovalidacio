@@ -32,6 +32,11 @@ export const exchanges = {
 		status: "leaving",
 		leaveDate: new Date("2025-07-09"),
 	},
+	kriptomat: {
+		name: "Kriptomat",
+		status: "leaving",
+		leaveDate: new Date("2025-12-26"),
+	},
 	coinbase: {
 		name: "Coinbase",
 		status: "unknown",
