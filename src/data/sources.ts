@@ -439,6 +439,62 @@ Activities triggering validation requirement:
 			en: "Official Bitvavo announcement on the suspension of services for Hungarian residents. From December 26 (17:00 CET), trading and deposits are disabled, only withdrawals and crypto transfers to external wallets remain available.",
 		},
 	},
+	"caduceus-cegkivonat": {
+		title: "Caduceus Zrt. tárolt cégkivonat",
+		originalUrl: "https://www.e-cegjegyzek.hu/?cegadatlap/0110143354/TaroltCegkivonat",
+		summary: {
+			hu: "A Caduceus Zártkörűen Működő Részvénytársaság hivatalos cégkivonata. Bejegyezve: 2025.07.25. Székhely: 1039 Budapest, Zöld utca 2. Jegyzett tőke: 100 000 000 Ft. Többségi tulajdonos és igazgatóság elnöke: Vesszős Bence Marcell.",
+			en: "Official company registry extract for Caduceus Zrt. Registered: 2025.07.25. Headquarters: 1039 Budapest, Zöld utca 2. Registered capital: 100,000,000 HUF. Majority owner and chairman: Bence Marcell Vesszős.",
+		},
+		text: {
+			hu: `Caduceus Zártkörűen Működő Részvénytársaság (Caduceus Zrt.)
+Cégjegyzékszám: 01-10-143354
+Bejegyezve: 2025.07.25.
+Székhely: 1039 Budapest, Zöld utca 2.
+Adószám: 32858187-2-41
+Jegyzett tőke: 100 000 000 HUF
+
+Létesítő okirat kelte: 2025. július 11.
+
+Főtevékenység: 6220 - Információtechnológiai szaktanácsadás és számítástechnikai eszközök, rendszerek üzemeltetése
+
+Igazgatóság elnöke (önálló képviselet): Vesszős Bence Marcell (szül: 1993.06.16.)
+Igazgatósági tag (együttes képviselet): Hatvani Andrea (szül: 1977.12.29.)
+Igazgatósági tag (együttes képviselet): Kollár József (szül: 1986.06.16.)
+
+Felügyelőbizottsági tagok:
+- Dr. Vida Marianna Sarolta
+- Dr. Vámosi-Nagy Zsolt
+- Dr. Szécsényi István
+
+Részvényes (50%+ szavazati jog): Vesszős Bence Marcell
+
+Könyvvizsgáló: CORRECT Pénzügyi-és Könyvszakértő Kft.`,
+			en: `Caduceus Private Limited Company (Caduceus Zrt.)
+Company registration number: 01-10-143354
+Registered: 2025.07.25.
+Headquarters: 1039 Budapest, Zöld utca 2.
+Tax number: 32858187-2-41
+Registered capital: 100,000,000 HUF
+
+Founding document date: July 11, 2025
+
+Main activity: 6220 - IT consulting and operation of computing equipment and systems
+
+Chairman of the Board (independent representation): Bence Marcell Vesszős (born: 1993.06.16.)
+Board member (joint representation): Andrea Hatvani (born: 1977.12.29.)
+Board member (joint representation): József Kollár (born: 1986.06.16.)
+
+Supervisory Board members:
+- Dr. Marianna Sarolta Vida
+- Dr. Zsolt Vámosi-Nagy
+- Dr. István Szécsényi
+
+Shareholder (50%+ voting rights): Bence Marcell Vesszős
+
+Auditor: CORRECT Financial and Accounting Expert Ltd.`,
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
