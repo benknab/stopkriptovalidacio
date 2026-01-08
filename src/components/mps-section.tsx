@@ -148,71 +148,111 @@ interface MpCardProps {
 	mp: Mp;
 }
 
+function DataRow({
+	icon,
+	children,
+	isEmpty = false,
+}: {
+	icon: string;
+	children: React.ReactNode;
+	isEmpty?: boolean;
+}): JSX.Element {
+	return (
+		<div className="flex items-start gap-2 text-sm">
+			<span className="w-5 shrink-0 text-center opacity-60">{icon}</span>
+			<span className={isEmpty ? "text-slate-300 font-mono" : ""}>{children}</span>
+		</div>
+	);
+}
+
 function MpCard({ mp }: MpCardProps): JSX.Element {
 	const { t } = useTranslation();
 	const colors = voteColors[mp.vote];
-	const partyEmail = partyEmails[mp.party];
-	const emails = [...Array.from(mp.emails), ...(partyEmail ? [partyEmail] : [])].filter((e) => e);
+	const emails = Array.from(mp.emails);
 
 	return (
 		<div
-			className={`relative bg-white rounded-xl border-2 ${colors.border} p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col items-center text-center`}
+			className={`relative bg-white rounded-lg border-2 ${colors.border} p-5 transition-all duration-200 hover:shadow-md`}
 		>
-			<span className={`absolute top-3 right-3 text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}>
-				{t(`mps.vote.${mp.vote}`)}
-			</span>
+			{/* Header: Photo + Name + Party */}
+			<div className="flex items-start gap-4 mb-4">
+				{mp.imageUrl
+					? (
+						<img
+							src={mp.imageUrl}
+							alt={mp.name}
+							className="w-14 h-14 rounded-full object-cover border-2 border-slate-200 shrink-0"
+						/>
+					)
+					: (
+						<div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center border-2 border-slate-200 shrink-0">
+							<span className="text-slate-400 text-xl">👤</span>
+						</div>
+					)}
+				<div className="min-w-0 flex-1 pt-1">
+					<h3 className="font-semibold text-slate-900 leading-tight">{mp.name}</h3>
+					<p className="text-sm text-slate-500">{t(`mps.party.${mp.party}`, mp.party)}</p>
+				</div>
+				<span
+					className={`shrink-0 text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}
+				>
+					{t(`mps.vote.${mp.vote}`)}
+				</span>
+			</div>
 
-			{mp.imageUrl
-				? (
-					<img
-						src={mp.imageUrl}
-						alt={mp.name}
-						className="w-12 h-12 rounded-full object-cover mb-3 border-2 border-slate-200"
-					/>
-				)
-				: (
-					<div className="w-12 h-12 rounded-full bg-slate-200 flex items-center justify-center mb-3 border-2 border-slate-300">
-						<span className="text-slate-500 text-lg">👤</span>
-					</div>
+			{/* Data rows */}
+			<div className="space-y-1.5 text-slate-600">
+				{mp.district && (
+					<DataRow icon="📍">
+						<span className="text-slate-700">{mp.district}</span>
+					</DataRow>
 				)}
 
-			<h3 className="font-semibold text-slate-900">{mp.name}</h3>
-			<p className="text-sm text-slate-500 mb-3">{t(`mps.party.${mp.party}`, mp.party)}</p>
+				{/* Website - always show */}
+				<DataRow icon="🌐" isEmpty={!mp.website}>
+					{mp.website
+						? (
+							<a
+								href={mp.website}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="font-mono text-sm text-brand hover:text-brand-hover transition-colors break-all"
+							>
+								{mp.website.replace(/^https?:\/\//, "")}
+							</a>
+						)
+						: "–"}
+				</DataRow>
 
-			<div className="space-y-1 text-sm text-slate-600">
-				{mp.district && <div>📍 {mp.district}</div>}
+				{/* Emails */}
 				{emails.map((email) => (
-					<div key={email}>
-						📧{" "}
+					<DataRow key={email} icon="📧">
 						<a
 							href={`mailto:${email}`}
-							className="font-mono text-brand hover:text-brand-hover transition-colors break-all"
+							className="font-mono text-sm text-brand hover:text-brand-hover transition-colors break-all"
 						>
 							{email}
 						</a>
-					</div>
+					</DataRow>
 				))}
-				{mp.phones.size > 0 && Array.from(mp.phones).map((phone) => (
-					<div key={phone}>
-						📞{" "}
-						<a href={`tel:+${phone}`} className="text-brand hover:text-brand-hover transition-colors">
-							{formatPhoneForDisplay(phone)}
-						</a>
-					</div>
-				))}
-				{mp.website && (
-					<div>
-						🌐{" "}
-						<a
-							href={mp.website}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-brand hover:text-brand-hover transition-colors break-all"
-						>
-							{mp.website.replace(/^https?:\/\//, "")}
-						</a>
-					</div>
-				)}
+
+				{/* Phones */}
+				{mp.phones.size > 0
+					? Array.from(mp.phones).map((phone) => (
+						<DataRow key={phone} icon="📞">
+							<a
+								href={`tel:+${phone}`}
+								className="font-mono text-sm text-brand hover:text-brand-hover transition-colors"
+							>
+								{formatPhoneForDisplay(phone)}
+							</a>
+						</DataRow>
+					))
+					: (
+						<DataRow icon="📞" isEmpty>
+							–
+						</DataRow>
+					)}
 			</div>
 		</div>
 	);
@@ -300,7 +340,7 @@ export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps
 	return (
 		<section id="kepviselok" className="bg-slate-50 py-16 sm:py-20">
 			<script dangerouslySetInnerHTML={{ __html: filterScript }} />
-			<div className="mx-auto max-w-4xl px-4 sm:px-6">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center">
 					{t("mps.title")}
 				</h2>
@@ -435,7 +475,7 @@ export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps
 				)}
 
 				{selectedCounty && filteredMps.length > 0 && (
-					<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 						{filteredMps.map(({ slug, mp }) => <MpCard key={slug} mp={mp} />)}
 					</div>
 				)}
