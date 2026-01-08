@@ -53,7 +53,7 @@ export function Hero(): JSX.Element {
 				<div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-6">
 					<StatBox
 						count={exchangeCounts.operating}
-						labelKey="hero.operating"
+						labelKey="hero.compliant"
 						color="green"
 					/>
 					<StatBox count={exchangeCounts.leaving} labelKey="hero.leaving" color="red" />

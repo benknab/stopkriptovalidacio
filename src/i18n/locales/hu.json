@@ -13,7 +13,7 @@
 	"hero": {
 		"title": "A magyar kriptotulajdonosok veszélyben vannak",
 		"description": "A \"kriptovalidáció\" törvény miatt szolgáltatók vonulnak ki Magyarországról. A kriptotulajdonosok elveszíthetik hozzáférésüket eszközeikhez.",
-		"operating": "Megfelelő",
+		"compliant": "Megfelel",
 		"leaving": "Távozik",
 		"unknown": "Ismeretlen",
 		"cta_timeline": "Idővonal megtekintése"

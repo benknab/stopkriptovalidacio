@@ -13,7 +13,7 @@
 	"hero": {
 		"title": "Hungarian crypto owners are at risk",
 		"description": "The \"crypto validation\" law is forcing service providers out of Hungary. Crypto owners may lose access to their assets.",
-		"operating": "Compliant",
+		"compliant": "Compliant",
 		"leaving": "Leaving",
 		"unknown": "Unknown",
 		"cta_timeline": "View Timeline"
