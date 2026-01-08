@@ -4,6 +4,7 @@ import { ExchangesSection } from "./exchanges-section.tsx";
 import { Hero } from "./hero.tsx";
 import { ImpactSection } from "./impact-section.tsx";
 import { Layout } from "./layout.tsx";
+import { MpsSection } from "./mps-section.tsx";
 import { Timeline } from "./timeline.tsx";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
@@ -23,6 +24,7 @@ export function App({ showAllEvents = false }: AppProps): JSX.Element {
 					<Hero />
 					<ImpactSection />
 					<ExchangesSection />
+					<MpsSection />
 				</>
 			}
 		>

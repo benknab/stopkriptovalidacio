@@ -7,6 +7,7 @@
 		"overview": "Áttekintés",
 		"timeline": "Idővonal",
 		"exchanges": "Tőzsdék",
+		"mps": "Képviselők",
 		"mp_search": "Képviselő keresés",
 		"about": "Rólunk"
 	},
@@ -85,5 +86,22 @@
 		"okx": { "summary": "Státusz ismeretlen." },
 		"mrcoin": { "summary": "Státusz ismeretlen." },
 		"nexo": { "summary": "Státusz ismeretlen." }
+	},
+	"mps": {
+		"title": "Képviselők",
+		"description": "Keresse meg, hogyan szavazott az Ön képviselője a T/11922 törvényjavaslatról.",
+		"search_placeholder": "Keresés név vagy párt alapján...",
+		"showing": "{{shown}}/{{total}} képviselő",
+		"no_results": "Nincs találat a keresési feltételeknek megfelelően.",
+		"source": "Forrás",
+		"call": "Hívás",
+		"vote": {
+			"yes": "Igen",
+			"no": "Nem",
+			"abstain": "Tartózkodott",
+			"absent": "Hiányzott",
+			"not_voted": "Nem szavazott",
+			"banned": "Kitiltott"
+		}
 	}
 }

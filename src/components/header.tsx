@@ -36,6 +36,7 @@ export function Header({ currentLang }: HeaderProps): JSX.Element {
 					<nav className="hidden sm:flex items-center gap-6">
 						<NavLink href="#attekintes">{t("nav.overview")}</NavLink>
 						<NavLink href="#tozsdek">{t("nav.exchanges")}</NavLink>
+						<NavLink href="#kepviselok">{t("nav.mps")}</NavLink>
 						<NavLink href="#idovonal">{t("nav.timeline")}</NavLink>
 					</nav>
 				</div>

@@ -7,6 +7,7 @@
 		"overview": "Overview",
 		"timeline": "Timeline",
 		"exchanges": "Exchanges",
+		"mps": "MPs",
 		"mp_search": "MP Search",
 		"about": "About"
 	},
@@ -85,5 +86,22 @@
 		"okx": { "summary": "Status unknown." },
 		"mrcoin": { "summary": "Status unknown." },
 		"nexo": { "summary": "Status unknown." }
+	},
+	"mps": {
+		"title": "Members of Parliament",
+		"description": "Find out how your representative voted on the T/11922 bill.",
+		"search_placeholder": "Search by name or party...",
+		"showing": "Showing: {{shown}}/{{total}} representatives",
+		"no_results": "No results match your search criteria.",
+		"source": "Source",
+		"call": "Call",
+		"vote": {
+			"yes": "Yes",
+			"no": "No",
+			"abstain": "Abstained",
+			"absent": "Absent",
+			"not_voted": "Did not vote",
+			"banned": "Banned"
+		}
 	}
 }
