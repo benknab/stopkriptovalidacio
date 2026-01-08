@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
-import { type Mp, mps, type MpSlug, voteSource, type VoteType } from "../data/mps.ts";
+import { formatPhoneForDisplay, type Mp, mps, type MpSlug, voteSource, type VoteType } from "../data/mps.ts";
 
 const voteColors: Record<VoteType, { badge: string; border: string }> = {
 	yes: {
@@ -183,14 +183,14 @@ function MpCard({ mp }: MpCardProps): JSX.Element {
 						</a>
 					</div>
 				))}
-				{mp.phone && (
-					<div>
+				{mp.phones.size > 0 && Array.from(mp.phones).map((phone) => (
+					<div key={phone}>
 						📞{" "}
-						<a href={`tel:${mp.phone}`} className="text-brand hover:text-brand-hover transition-colors">
-							{mp.phone}
+						<a href={`tel:+${phone}`} className="text-brand hover:text-brand-hover transition-colors">
+							{formatPhoneForDisplay(phone)}
 						</a>
 					</div>
-				)}
+				))}
 			</div>
 		</div>
 	);
