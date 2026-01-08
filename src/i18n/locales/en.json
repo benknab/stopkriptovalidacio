@@ -6,7 +6,7 @@
 	"nav": {
 		"overview": "Overview",
 		"timeline": "Timeline",
-		"exchanges": "Exchanges",
+		"exchanges": "Service Providers",
 		"mps": "MPs",
 		"mp_search": "MP Search",
 		"about": "About"
@@ -61,8 +61,8 @@
 		}
 	},
 	"exchanges": {
-		"title": "Exchanges",
-		"description": "Status of crypto exchanges and service providers in Hungary.",
+		"title": "Service Providers",
+		"description": "Status of crypto service providers in Hungary.",
 		"status": {
 			"operating": "Compliant",
 			"leaving": "Leaving",

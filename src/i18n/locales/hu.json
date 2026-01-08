@@ -6,7 +6,7 @@
 	"nav": {
 		"overview": "Áttekintés",
 		"timeline": "Idővonal",
-		"exchanges": "Tőzsdék",
+		"exchanges": "Szolgáltatók",
 		"mps": "Képviselők",
 		"mp_search": "Képviselő keresés",
 		"about": "Rólunk"
@@ -61,8 +61,8 @@
 		}
 	},
 	"exchanges": {
-		"title": "Tőzsdék",
-		"description": "A kriptotőzsdék és szolgáltatók helyzete Magyarországon.",
+		"title": "Szolgáltatók",
+		"description": "A kriptoszolgáltatók helyzete Magyarországon.",
 		"status": {
 			"operating": "Megfelel",
 			"leaving": "Távozik",
