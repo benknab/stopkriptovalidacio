@@ -19,3 +19,7 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 
 - [x] revolut
 - [x] strike
+- [ ] coincash
+- [ ] etoro
+- [ ] bitstamp
+- [ ] bringin
