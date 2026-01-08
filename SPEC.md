@@ -10,6 +10,7 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [x] icons
 - [ ] law timeline
 - [ ] rendelet timeline
+- [ ] caduceus timeline
 - [ ] favicon + logo
 - [ ] copy
 - [ ] MP search
@@ -17,3 +18,8 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [ ] about + contact page content
 - [ ] analytics
 - [ ] readme (hungarian)
+
+## copy
+
+- [ ] explain why 0 complaint
+- [ ] users cannot lose access to their assets but access to purchasing
