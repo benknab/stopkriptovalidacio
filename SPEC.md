@@ -7,7 +7,7 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [x] i18n
 - [x] deploy
 - [x] timeline
-- [ ] icons
+- [x] icons
 - [ ] copy
 - [ ] MP search
 - [ ] MP email template + send

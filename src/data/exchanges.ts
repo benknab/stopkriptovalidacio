@@ -12,6 +12,11 @@ export const exchanges = {
 		status: "leaving",
 		leaveDate: undefined,
 	},
+	strike: {
+		name: "Strike",
+		status: "leaving",
+		leaveDate: new Date("2026-01-09"),
+	},
 } as const satisfies Record<string, Exchange>;
 
 export type ExchangeSlug = keyof typeof exchanges;

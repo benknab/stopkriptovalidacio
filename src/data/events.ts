@@ -75,4 +75,18 @@ export const events: TimelineEvents = {
 		]),
 		exchangeSlugs: new Set(["revolut"]),
 	},
+	"strike-kivonulas": {
+		date: new Date("2026-01-09"),
+		type: "primary",
+		title: {
+			hu: "Strike bejelenti a magyarországi szolgáltatások korlátozását",
+			en: "Strike announces restriction of Hungarian services",
+		},
+		summary: {
+			hu: "A Strike értesítette ügyfeleit, hogy 2026. január 9-től csak EUR és BTC kivétel lesz elérhető Magyarországon. A vásárlás és eladás funkciók megszűnnek.",
+			en: "Strike notified customers that starting January 9, 2026, only EUR and BTC withdrawals will be available in Hungary. Buy and sell features will be discontinued.",
+		},
+		sourceSlugs: new Set(),
+		exchangeSlugs: new Set(["strike"]),
+	},
 };
