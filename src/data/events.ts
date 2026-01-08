@@ -12,7 +12,7 @@ export const events: TimelineEvents = {
 			hu: "A Kormány benyújtotta a Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényjavaslatot. A kriptoeszköz-átváltást validáló szolgáltatásra vonatkozó szabályozás még nem szerepel ebben a változatban.",
 			en: "The Government submitted a bill on the amendment of certain laws to improve Hungary's competitiveness. Regulations on crypto-asset exchange validation services are not yet included in this version.",
 		},
-		sourceSlugs: new Set(["parlament-11922", "parlament-11922-oldal"]),
+		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922"]),
 		exchangeSlugs: new Set(),
 	},
 	"t-11922-13-egysegesirasba": {
@@ -26,7 +26,7 @@ export const events: TimelineEvents = {
 			hu: "A Törvényalkotási Bizottság benyújtotta a túlterjeszkedő módosító javaslatot tartalmazó egységes javaslatot. A dokumentum első alkalommal tartalmazza a kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket.",
 			en: "The Legislation Committee submitted the unified proposal containing overreaching amendments. The document contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse for the first time.",
 		},
-		sourceSlugs: new Set(["parlament-11922-13", "parlament-11922-oldal"]),
+		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-13"]),
 		exchangeSlugs: new Set(),
 	},
 	"t-11922-ind03": {
@@ -40,7 +40,7 @@ export const events: TimelineEvents = {
 			hu: "Az egységes javaslathoz készített előterjesztői indokolás részletezi a kriptoeszközzel visszaélés bűncselekményi tényállását (Btk. 408/A. §), valamint a kriptoeszköz-átváltást validáló szolgáltatókra vonatkozó követelményeket.",
 			en: "The explanatory memorandum for the unified proposal details the criminal offense of crypto-asset abuse (Criminal Code Section 408/A) and requirements for crypto-asset exchange validation service providers.",
 		},
-		sourceSlugs: new Set(["parlament-11922-ind03", "parlament-11922-oldal"]),
+		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind03"]),
 		exchangeSlugs: new Set(),
 	},
 	"t-11922-ind05": {
@@ -54,7 +54,81 @@ export const events: TimelineEvents = {
 			hu: "Az elfogadott törvényhez készített előterjesztői indokolás megjelent az Indokolások Tárában. A kriptoeszközökre vonatkozó rendelkezések változatlanok maradtak.",
 			en: "The explanatory memorandum for the adopted law was published in the Indokolások Tára. Provisions on crypto-assets remained unchanged.",
 		},
-		sourceSlugs: new Set(["parlament-11922-ind05", "parlament-11922-oldal"]),
+		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind05"]),
+		exchangeSlugs: new Set(),
+	},
+	"t-11922-szavazas": {
+		date: new Date("2025-06-17"),
+		type: "primary",
+		title: {
+			hu: "T/11922 törvényjavaslat elfogadása",
+			en: "T/11922 bill adopted",
+		},
+		summary: {
+			hu: "Az Országgyűlés rendkívüli ülésén elfogadta a törvényjavaslatot. Minősített többséget igénylő rész: 162 igen, 94 nem (14:39:54). Egyszerű többséget igénylő rész: 162 igen, 94 nem (14:40:29).",
+			en: "The National Assembly adopted the bill at an extraordinary session. Qualified majority part: 162 yes, 94 no (14:39:54). Simple majority part: 162 yes, 94 no (14:40:29).",
+		},
+		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind05"]),
+		exchangeSlugs: new Set(),
+	},
+	"t-11922-hazelnok-alairas": {
+		date: new Date("2025-06-17"),
+		type: "secondary",
+		title: {
+			hu: "Országgyűlés elnöke aláírta",
+			en: "Speaker of the National Assembly signed",
+		},
+		summary: {
+			hu: "Az Országgyűlés elnöke aláírta a törvényt és megküldte a köztársasági elnöknek.",
+			en: "The Speaker of the National Assembly signed the law and sent it to the President of the Republic.",
+		},
+		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind05"]),
+		exchangeSlugs: new Set(),
+	},
+	"t-11922-koztarsasagi-elnok-alairas": {
+		date: new Date("2025-06-22"),
+		type: "secondary",
+		title: {
+			hu: "Köztársasági elnök aláírta a 2025. évi LXVII. törvényt",
+			en: "President of the Republic signed Act LXVII of 2025",
+		},
+		summary: {
+			hu: "A köztársasági elnök aláírta a Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényt.",
+			en: "The President of the Republic signed the Act on the amendment of certain laws to improve Hungary's competitiveness.",
+		},
+		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind05"]),
+		exchangeSlugs: new Set(),
+	},
+	"t-11922-kihirdetes": {
+		date: new Date("2025-06-23"),
+		type: "primary",
+		title: {
+			hu: "2025. évi LXVII. törvény kihirdetése",
+			en: "Act LXVII of 2025 promulgated",
+		},
+		summary: {
+			hu: "A törvény megjelent a Magyar Közlöny 2025/75. számában mint 2025. évi LXVII. törvény Magyarország versenyképességének javítása érdekében egyes törvények módosításáról.",
+			en: "The law was published in Magyar Közlöny issue 2025/75 as Act LXVII of 2025 on the amendment of certain laws to improve Hungary's competitiveness.",
+		},
+		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind05"]),
+		exchangeSlugs: new Set(),
+	},
+	"t-11922-hatalyba-lepes": {
+		date: new Date("2025-07-01"),
+		type: "primary",
+		title: {
+			hu: "2025. évi LXVII. törvény hatálybalépése",
+			en: "Act LXVII of 2025 enters into force",
+		},
+		summary: {
+			hu: "A törvény hatályba lépett. <b>A kriptoeszköz-átváltást validáló szolgáltatásra vonatkozó végrehajtási rendelet az SZTFH részéről ekkor még nem létezett.</b> A törvény 259. §-a szerint a validálási kötelezettség az SZTFH elnöki rendelet hatálybalépését követő 60. naptól alkalmazandó.",
+			en: "The law entered into force. <b>The implementing regulation for crypto-asset exchange validation services from SZTFH did not exist at this time.</b> According to Section 259 of the law, the validation requirement applies from the 60th day after the SZTFH presidential decree enters into force.",
+		},
+		sourceSlugs: new Set([
+			"parlament-11922-oldal",
+			"parlament-11922-ind03",
+			"parlament-11922-ind05",
+		]),
 		exchangeSlugs: new Set(),
 	},
 	"revolut-korlatozas-kezdete": {

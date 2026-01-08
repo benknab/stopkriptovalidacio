@@ -63,7 +63,12 @@ function TimelineItem({
 					{event.title[lang]}
 				</h3>
 
-				{event.summary && <p className="text-slate-600 leading-relaxed">{event.summary[lang]}</p>}
+				{event.summary && (
+					<p
+						className="text-slate-600 leading-relaxed"
+						dangerouslySetInnerHTML={{ __html: event.summary[lang] }}
+					/>
+				)}
 
 				{event.sourceSlugs.size > 0 && (
 					<div className="flex flex-wrap gap-3 pt-1">
