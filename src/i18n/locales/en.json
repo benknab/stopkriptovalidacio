@@ -19,7 +19,8 @@
 		"exchanges": "Service Providers",
 		"mps": "MPs",
 		"mp_search": "MP Search",
-		"about": "About"
+		"about": "About",
+		"contact": "Contact"
 	},
 	"hero": {
 		"title": "Hungarian crypto owners are at risk",
@@ -31,7 +32,17 @@
 	},
 	"about": {
 		"title": "About",
-		"description": "This website tracks changes in Hungarian cryptocurrency regulation to help citizens stay informed about legislative developments and their consequences."
+		"mission": {
+			"title": "Our Mission",
+			"description": "Crypto Validation is a citizen-led initiative created to raise awareness about Hungary's \"crypto validation\" law. Our mission is to inform Hungarian citizens about this legislation, which threatens financial freedom and digital security by mandating globally unique validation requirements on cryptocurrency transactions.",
+			"privacy": "We believe that financial freedom is a fundamental right, and that maintaining free competition among crypto service providers is essential for protecting the interests of Hungarian crypto owners. The crypto validation law undermines these protections, exposing citizens to new risks and forcing service providers to leave the country.",
+			"platform": "Our platform provides easy-to-understand information about the crypto validation law, tracks service provider status, and helps citizens contact their representatives to express their concerns.",
+			"disclaimer": "We are not affiliated with any political party."
+		},
+		"contact": {
+			"title": "Contact",
+			"description": "If you have any questions, corrections, clarifications, update requests, or feedback, please reach out:"
+		}
 	},
 	"timeline": {
 		"show_all": "All events",

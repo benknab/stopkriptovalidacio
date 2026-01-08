@@ -177,7 +177,7 @@ function MpCard({ mp }: MpCardProps): JSX.Element {
 						📧{" "}
 						<a
 							href={`mailto:${email}`}
-							className="text-brand hover:text-brand-hover transition-colors break-all"
+							className="font-mono text-brand hover:text-brand-hover transition-colors break-all"
 						>
 							{email}
 						</a>

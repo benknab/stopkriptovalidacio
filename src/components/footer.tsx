@@ -17,12 +17,20 @@ export function Footer(): JSX.Element {
 						<h3 className="text-white font-semibold mb-3">
 							{t("nav.about")}
 						</h3>
-						<a
-							href="/rolunk"
-							className="text-slate-400 hover:text-white transition-colors text-sm"
-						>
-							{t("footer.aboutSite")}
-						</a>
+						<div className="space-y-2">
+							<a
+								href="/rolunk"
+								className="block text-slate-400 hover:text-white transition-colors text-sm"
+							>
+								{t("footer.aboutSite")}
+							</a>
+							<a
+								href="/rolunk#kontakt"
+								className="block text-slate-400 hover:text-white transition-colors text-sm"
+							>
+								{t("nav.contact")}
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

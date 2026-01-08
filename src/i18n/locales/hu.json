@@ -19,7 +19,8 @@
 		"exchanges": "Szolgáltatók",
 		"mps": "Képviselők",
 		"mp_search": "Képviselő keresés",
-		"about": "Rólunk"
+		"about": "Rólunk",
+		"contact": "Kapcsolat"
 	},
 	"hero": {
 		"title": "A magyar kriptotulajdonosok veszélyben vannak",
@@ -31,7 +32,17 @@
 	},
 	"about": {
 		"title": "Rólunk",
-		"description": "Ez az oldal a magyar kriptovaluta szabályozás változásait követi nyomon, hogy a polgárok tájékozódhassanak a jogszabályok alakulásáról és azok következményeiről."
+		"mission": {
+			"title": "Küldetésünk",
+			"description": "A Kriptovalidáció egy polgári kezdeményezés, amelynek célja, hogy felhívja a figyelmet a magyar \"kriptovalidációs\" törvényre. Küldetésünk, hogy tájékoztassuk a magyar állampolgárokat erről a jogszabályról, amely veszélyezteti a pénzügyi szabadságot és a digitális biztonságot azzal, hogy világszinten egyedülálló validációs követelményeket ír elő a kriptovaluta-tranzakciókra.",
+			"privacy": "Meggyőződésünk, hogy a pénzügyi szabadság alapvető jog, és hogy a kripto szolgáltatók szabad versenyének fenntartása elengedhetetlen a magyar kriptotulajdonosok érdekeinek védelméhez. A kriptovalidációs törvény aláássa ezeket a védelmet, új kockázatoknak teszi ki az állampolgárokat, és arra kényszeríti a szolgáltatókat, hogy elhagyják az országot.",
+			"platform": "Platformunk könnyen érthető információkat nyújt a kriptovalidációs törvényről, nyomon követi a szolgáltatók helyzetét, és segít az állampolgároknak kapcsolatba lépni képviselőikkel, hogy kifejezzék aggályaikat.",
+			"disclaimer": "Nem vagyunk semmilyen politikai párttal kapcsolatban."
+		},
+		"contact": {
+			"title": "Kapcsolat",
+			"description": "Ha kérdése, észrevétele, pontosítási igénye, frissítési kérése vagy visszajelzése van, keressen minket:"
+		}
 	},
 	"timeline": {
 		"show_all": "Összes esemény",

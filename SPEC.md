@@ -2,13 +2,14 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 
 **Design inspiration**: [fightchatcontrol.eu](https://fightchatcontrol.eu/)
 
-- [ ] MP email template + send
-- [ ] favicon + logo
-- [ ] copy
-- [ ] about + contact page content
-- [ ] analytics: https://www.simpleanalytics.com/ or https://usefathom.com/
-- [ ] readme (hungarian)
+- [ ] MP email template + send: if they voted yes, ask them why, and more info + moratorium etc.
 - [ ] verify mobile works
+- [ ] copy
+- [ ] favicon + logo
+- [ ] analytics: https://www.simpleanalytics.com/ or https://usefathom.com/
+- [ ] privacy policy?
+- [ ] do I need to add about/impressum?
+- [ ] readme (hungarian)
 
 ## hero
 
