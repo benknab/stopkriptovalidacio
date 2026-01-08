@@ -1,6 +1,14 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
-import { formatPhoneForDisplay, type Mp, mps, type MpSlug, voteSource, type VoteType } from "../data/mps.ts";
+import {
+	formatPhoneForDisplay,
+	type Mp,
+	mps,
+	type MpSlug,
+	partyEmails,
+	voteSource,
+	type VoteType,
+} from "../data/mps.ts";
 
 const voteColors: Record<VoteType, { badge: string; border: string }> = {
 	yes: {
@@ -143,7 +151,8 @@ interface MpCardProps {
 function MpCard({ mp }: MpCardProps): JSX.Element {
 	const { t } = useTranslation();
 	const colors = voteColors[mp.vote];
-	const emails = Array.from(mp.emails).filter((e) => e);
+	const partyEmail = partyEmails[mp.party];
+	const emails = [...Array.from(mp.emails), ...(partyEmail ? [partyEmail] : [])].filter((e) => e);
 
 	return (
 		<div
