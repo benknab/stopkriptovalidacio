@@ -101,7 +101,7 @@ export const events: TimelineEvents = {
 	},
 	"t-11922-kihirdetes": {
 		date: new Date("2025-06-23"),
-		type: "primary",
+		type: "tertiary",
 		title: {
 			hu: "2025. évi LXVII. törvény kihirdetése",
 			en: "Act LXVII of 2025 promulgated",
