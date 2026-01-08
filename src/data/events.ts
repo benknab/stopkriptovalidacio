@@ -5,28 +5,56 @@ export const events: TimelineEvents = {
 		date: new Date("2025-05-13"),
 		type: "primary",
 		title: {
-			hu: "T/11922 Benyújtva",
-			en: "T/11922 Submitted",
+			hu: "T/11922 törvényjavaslat benyújtása",
+			en: "T/11922 bill submitted",
 		},
 		summary: {
-			hu: "Magyarország versenyképességének javítása érdekében egyes törvények módosításáról. A kriptovalidáció még nem szerepel ebben a verzióban.",
-			en: "Amendment of certain laws to improve Hungary's competitiveness. Crypto validation not yet included in this version.",
+			hu: "A Kormány benyújtotta a Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényjavaslatot. A kriptoeszköz-átváltást validáló szolgáltatásra vonatkozó szabályozás még nem szerepel ebben a változatban.",
+			en: "The Government submitted a bill on the amendment of certain laws to improve Hungary's competitiveness. Regulations on crypto-asset exchange validation services are not yet included in this version.",
 		},
 		sourceSlugs: new Set(["parlament-11922", "parlament-11922-oldal"]),
 		exchangeSlugs: new Set(),
 	},
-	"t-11922-13-modosito": {
-		date: new Date("2025-05-20"),
+	"t-11922-13-egysegesirasba": {
+		date: new Date("2025-06-10"),
 		type: "primary",
 		title: {
-			hu: "T/11922/13 Módosító javaslat - Kriptovalidáció első megjelenése",
-			en: "T/11922/13 Amendment - First appearance of crypto validation",
+			hu: "T/11922/13 egységes javaslat benyújtása",
+			en: "T/11922/13 unified proposal submitted",
 		},
 		summary: {
-			hu: "A kriptovalidátor kifejezés először jelenik meg a módosító javaslatban.",
-			en: "The term 'crypto validator' first appears in the amendment.",
+			hu: "A Törvényalkotási Bizottság benyújtotta a túlterjeszkedő módosító javaslatot tartalmazó egységes javaslatot. A dokumentum első alkalommal tartalmazza a kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket.",
+			en: "The Legislation Committee submitted the unified proposal containing overreaching amendments. The document contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse for the first time.",
 		},
-		sourceSlugs: new Set(["parlament-11922-13"]),
+		sourceSlugs: new Set(["parlament-11922-13", "parlament-11922-oldal"]),
+		exchangeSlugs: new Set(),
+	},
+	"t-11922-ind03": {
+		date: new Date("2025-06-10"),
+		type: "primary",
+		title: {
+			hu: "T/11922 egységes javaslat indokolásának közzététele",
+			en: "T/11922 unified proposal explanatory memorandum published",
+		},
+		summary: {
+			hu: "Az egységes javaslathoz készített előterjesztői indokolás részletezi a kriptoeszközzel visszaélés bűncselekményi tényállását (Btk. 408/A. §), valamint a kriptoeszköz-átváltást validáló szolgáltatókra vonatkozó követelményeket.",
+			en: "The explanatory memorandum for the unified proposal details the criminal offense of crypto-asset abuse (Criminal Code Section 408/A) and requirements for crypto-asset exchange validation service providers.",
+		},
+		sourceSlugs: new Set(["parlament-11922-ind03", "parlament-11922-oldal"]),
+		exchangeSlugs: new Set(),
+	},
+	"t-11922-ind05": {
+		date: new Date("2025-06-17"),
+		type: "secondary",
+		title: {
+			hu: "T/11922 elfogadott törvény indokolásának közzététele",
+			en: "T/11922 adopted law explanatory memorandum published",
+		},
+		summary: {
+			hu: "Az elfogadott törvényhez készített előterjesztői indokolás megjelent az Indokolások Tárában. A kriptoeszközökre vonatkozó rendelkezések változatlanok maradtak.",
+			en: "The explanatory memorandum for the adopted law was published in the Indokolások Tára. Provisions on crypto-assets remained unchanged.",
+		},
+		sourceSlugs: new Set(["parlament-11922-ind05", "parlament-11922-oldal"]),
 		exchangeSlugs: new Set(),
 	},
 	"revolut-korlatozas-kezdete": {

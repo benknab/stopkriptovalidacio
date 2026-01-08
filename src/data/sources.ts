@@ -5,23 +5,152 @@ export type Source = {
 	originalUrl: string;
 	archivedUrl?: string;
 	summary?: TextI18n;
+	text?: TextI18n;
 };
 
 export const sources = {
 	"parlament-11922": {
-		title: "Eredeti dokumentum (PDF)",
+		title: "T/11922 Törvényjavaslat (PDF)",
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922.pdf",
 		archivedUrl: "/archivum/11922.pdf",
+		summary: {
+			hu: "Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényjavaslat. Benyújtó: Dr. Semjén Zsolt, miniszterelnök-helyettes. Előadó: Tuzson Bence, igazságügyi miniszter.",
+			en: "Bill on the amendment of certain laws to improve Hungary's competitiveness. Submitted by: Dr. Zsolt Semjén, Deputy Prime Minister. Presenter: Bence Tuzson, Minister of Justice.",
+		},
+		text: {
+			hu: `66. A kriptoeszközök piacáról szóló 2024. évi VII. törvény módosítása
+
+180. §
+A kriptoeszközök piacáról szóló 2024. évi VII. törvény 10. § (2) bekezdésében „és az ügyfél" szövegrész helyébe „valamint az ügyfél" szöveg lép.
+
+[Indokolás]
+180. §
+A kriptoeszközök piacáról szóló 2024. évi VII. törvény módosítását jogtechnikai pontosítás indokolja.`,
+			en: `66. Amendment of Act VII of 2024 on the Market in Crypto-assets
+
+Section 180
+In Section 10(2) of Act VII of 2024 on the Market in Crypto-assets, the text "and the customer" shall be replaced by "as well as the customer".
+
+[Reasoning]
+Section 180
+The amendment to Act VII of 2024 on the Market in Crypto-assets is justified by legal-technical clarification.`,
+		},
 	},
 	"parlament-11922-oldal": {
-		title: "Parlament.hu",
+		title: "T/11922 Iromány adatai (Parlament.hu)",
 		originalUrl:
 			"https://www.parlament.hu/web/guest/szavazasok-adott-idoszakban?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=yn2Czm3g&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D42%26p_izon%3D11922",
+		summary: {
+			hu: "Az iromány teljes története: benyújtástól a kihirdetésig. Állapot: kihirdetve. Kihirdetés: 2025. évi LXVII. törvény, Magyar Közlöny 2025/75. szám, 2025.06.23.",
+			en: "Full document history: from submission to promulgation. Status: promulgated. Promulgation: Act LXVII of 2025, Magyar Közlöny issue 2025/75, 2025.06.23.",
+		},
 	},
 	"parlament-11922-13": {
-		title: "Módosító javaslat (PDF)",
+		title: "T/11922/13 Egységes javaslat (PDF)",
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922-0013.pdf",
 		archivedUrl: "/archivum/11922-0013.pdf",
+		summary: {
+			hu: "Túlterjeszkedő módosító javaslatot tartalmazó egységes javaslat. Benyújtó: Törvényalkotási Bizottság. A kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket tartalmazza.",
+			en: "Unified proposal containing overreaching amendments. Submitted by: Legislation Committee. Contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse.",
+		},
+	},
+	"parlament-11922-ind03": {
+		title: "T/11922 Egységes javaslat indokolása (PDF)",
+		originalUrl: "https://www.parlament.hu/irom42/11922/11922ind03.pdf",
+		archivedUrl: "/archivum/11922ind03.pdf",
+		summary: {
+			hu: "Az egységes javaslattervezethez készített előterjesztői indokolás (2025.06.10.). Részletes indokolás a kriptoeszközzel visszaélés bűncselekményi tényállásáról és a validálási kötelezettségről.",
+			en: "Explanatory memorandum for the unified proposal (2025.06.10.). Detailed reasoning on the criminal offense of crypto-asset abuse and validation requirements.",
+		},
+		text: {
+			hu: `101. §
+A kriptoeszközzel visszaélésre külön bűncselekményi tényállást állapít meg a javaslat.
+
+A kriptoeszközzel visszaélés bűncselekményének tényállása szerint a jogosulatlan kriptoeszköz-átváltási szolgáltatás igénybe vevője bűncselekményt követ el. Az igénybe vevő lehet jogi személy vagy magánszemély, amely, illetve aki jogosulatlan szolgáltatótól vesz át nem validált kriptoeszköz átváltásából származó pénzegyenértéket.
+
+A bűncselekmény elkövetési magatartása az ágazati szabályok szándékos kijátszásával végrehajtott, nem validált kriptoeszköz váltás. A tényállás jogosulatlan kriptoeszköz-átváltási szolgáltatás igénybevétele fogalmat használja, amely a törvénnyel bevezetett 408/A. § szerinti új bűncselekmény elkövetési magatartására, tehát az ott meghatározott módon nyújtott tiltott kriptoeszköz váltó szolgáltatás igénybevételét jelenti.
+
+A több részletben, rövid időn belül, egységes akaratelhatározással végrehajtott átváltás, illetve átváltások bűncselekményegység keretében nyerhetnek értékelést, ideértve különösen azt az esetet, amikor az átváltások összegszerűségének meghatározása a tényállásban szereplő értékhatár kijátszását célozná.
+
+A bűncselekmény szubszidiárius bűncselekmény, így amennyiben a nem validált kriptoeszköz váltás más, súlyosabb bűncselekményt valósít meg (így különösen vagyon elleni bűncselekményt, pénzmosást), úgy a súlyosabb bűncselekmény megállapításának van helye.
+
+102. §
+A javaslat szerint a jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása során mindazok a kriptoeszköz-átváltási szolgáltatást végzők, akik ügyfél-, és ügylet-validálás nélkül kriptoeszköz-átváltási szolgáltatást nyújtanak, bűncselekményt követnek el.
+
+A bűncselekmény elkövetési magatartása a validálási szabályok megsértésével folytatott átváltási tevékenység folytatása. Az elkövetés két formában valósulhat meg: egyrészt az eleve engedély nélkül történő pénzügyi szolgáltatási tevékenység keretei között folytatott átváltási tevékenységgel, másrészt az engedéllyel rendelkező pénzügyi szolgáltató által végzett - ágazati szabályt sértő - nem validált tevékenységgel.
+
+198-201. §
+A módosítás a kriptoeszköz-átváltást validáló szolgáltatók felügyeletével kapcsolatos feladatokat - a kriptoeszközök piacáról szóló 2024. évi VII. törvény módosítására vonatkozó javaslatokkal összhangban - a Szabályozott Tevékenységek Felügyeleti Hatóságához telepíti.
+
+253-256. §
+A módosítás célja biztosítani a kriptoeszközök transzparens és biztonságos átváltó szolgáltatását. A kriptoeszközök technikai jellemzőik miatt gyakran kerülnek felhasználásra jogellenes tevékenységek során, valamint gyakran jogellenesen szerzik meg azokat. Az ily módon megszerzett vagy felhasználni kívánt kriptoeszközök jelentős károkat okoznak mind a gazdaságnak mind pedig az állampolgároknak, ezért szükséges egy olyan rendszer bevezetése, amely ezen eszközök pénzre vagy más kriptoeszközre váltását kontroll alá helyezi.
+
+Az új szabályozási keret ösztönzi a jogkövető piaci szereplőket, miközben visszaszorítja azokat a szolgáltatókat, amelyek nem felelnek meg a minimális biztonsági és átláthatósági normáknak. Ez nemcsak a fogyasztók védelmét szolgálja, hanem hozzájárul a pénzügyi rendszer integritásának megőrzéséhez.
+
+A javaslat:
+- kiegészíti a törvény fogalmi készletét,
+- meghatározza a kriptoeszköz-átváltást validáló szolgáltató igénybevételére vonatkozó követelményt,
+- rögzíti a kriptoeszköz-átváltási szolgáltatást végző kriptoeszköz szolgáltatókra vonatkozó követelményeket,
+- megállapítja a kriptoeszköz-átváltást validáló szolgáltatás minimum követelményeit (ügyfél- és ügylet azonosítás),
+- meghatározza a kriptoeszköz átváltást validáló szolgáltató szervezetére vonatkozó követelményeket.
+
+257. §
+A javaslat a Szabályozott Tevékenységek Felügyeleti Hatóságát jelöli ki a kriptoeszköz-átváltást validáló szolgáltatók felügyeletére, valamint biztosítja a felügyeleti hatásköröket részére.
+
+258. §
+A Kormány, valamint a Szabályozott Tevékenységek Felügyeleti Hatósága elnöke részére felhatalmazó rendelkezést állapít meg a kriptoeszköz-átváltást validáló szolgáltatás felügyeletével kapcsolatos részletes szabályokra.
+
+259. §
+Átmeneti rendelkezés: a kriptoeszköz-átváltási szolgáltatást végző kriptoeszköz szolgáltatóknak a kriptoeszköz-átváltást validáló szolgáltató igénybevételére vonatkozó rendelkezéseket a Szabályozott Tevékenységek Felügyeleti Hatósága elnökének a kriptoeszköz-átváltást validáló szolgáltató tevékenységek engedélyezésére vonatkozó rendeletének hatálybalépését követő 60. naptól kell alkalmazni.`,
+			en: `Section 101
+The proposal establishes a separate criminal offense for crypto-asset abuse.
+
+According to the criminal offense of crypto-asset abuse, a user of unauthorized crypto-asset exchange services commits a crime. The user may be a legal entity or natural person who receives monetary equivalent from non-validated crypto-asset exchange from an unauthorized provider.
+
+The criminal conduct is the execution of non-validated crypto-asset exchange through deliberate circumvention of sectoral rules. The offense uses the concept of "using unauthorized crypto-asset exchange service," which refers to the use of prohibited crypto exchange services provided in the manner specified in the new Section 408/A introduced by the law.
+
+Multiple exchanges executed in installments within a short period under unified intent may be assessed as a single criminal unit, including cases where the amounts were structured to circumvent the value threshold in the offense.
+
+The offense is subsidiary; if the non-validated crypto exchange constitutes another, more serious crime (particularly property crimes or money laundering), the more serious crime shall be established.
+
+Section 102
+According to the proposal, all crypto-asset exchange service providers who provide crypto-asset exchange services without customer and transaction validation commit a crime.
+
+The criminal conduct is conducting exchange activities in violation of validation rules. Commission may occur in two forms: through exchange activities conducted without authorization for financial services, or through non-validated activities by licensed financial service providers in violation of sectoral rules.
+
+Sections 198-201
+The amendment assigns tasks related to the supervision of crypto-asset exchange validation service providers to the Regulated Activities Supervisory Authority, in line with the proposed amendments to Act VII of 2024 on the Market in Crypto-assets.
+
+Sections 253-256
+The purpose of the amendment is to ensure transparent and secure crypto-asset exchange services. Due to their technical characteristics, crypto-assets are frequently used in illegal activities and are often acquired illegally. Such acquired or intended crypto-assets cause significant damage to both the economy and citizens, therefore it is necessary to introduce a system that controls the exchange of these assets for money or other crypto-assets.
+
+The new regulatory framework encourages compliant market participants while suppressing providers that do not meet minimum security and transparency standards. This serves not only consumer protection but also contributes to maintaining the integrity of the financial system.
+
+The proposal:
+- supplements the law's conceptual framework,
+- defines requirements for using crypto-asset exchange validation service providers,
+- establishes requirements for crypto service providers conducting crypto-asset exchange services,
+- sets minimum requirements for crypto-asset exchange validation services (customer and transaction identification),
+- defines organizational requirements for crypto-asset exchange validation service providers.
+
+Section 257
+The proposal designates the Regulated Activities Supervisory Authority for the supervision of crypto-asset exchange validation service providers and grants supervisory powers.
+
+Section 258
+The proposal establishes authorizing provisions for the Government and the President of the Regulated Activities Supervisory Authority regarding detailed rules on the supervision of crypto-asset exchange validation services.
+
+Section 259
+Transitional provision: crypto service providers conducting crypto-asset exchange services must apply the provisions on using crypto-asset exchange validation service providers from the 60th day after the entry into force of the decree of the President of the Regulated Activities Supervisory Authority on licensing crypto-asset exchange validation service provider activities.`,
+		},
+	},
+	"parlament-11922-ind05": {
+		title: "T/11922 Elfogadott törvény indokolása (PDF)",
+		originalUrl: "https://www.parlament.hu/irom42/11922/11922ind05.pdf",
+		archivedUrl: "/archivum/11922ind05.pdf",
+		summary: {
+			hu: "Az elfogadott törvényhez készített előterjesztői indokolás. Közzététel: Indokolások Tára, 2025. évi 56. szám. A kriptoeszközökre vonatkozó rendelkezések változatlanok maradtak az egységes javaslathoz képest.",
+			en: "Explanatory memorandum for the adopted law. Published in: Indokolások Tára, 2025 issue 56. Provisions on crypto-assets remained unchanged compared to the unified proposal.",
+		},
 	},
 	"telex-kripto-btk": {
 		title: "Telex",
