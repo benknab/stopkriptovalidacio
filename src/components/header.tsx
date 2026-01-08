@@ -29,18 +29,18 @@ export function Header({ currentLang }: HeaderProps): JSX.Element {
 	return (
 		<header className="sticky top-0 z-50 bg-white border-b border-slate-200">
 			<div className="mx-auto max-w-4xl px-4 sm:px-6 py-4 flex items-center justify-between">
-				<div className="flex items-center gap-8">
-					<a href="/" className="text-xl font-bold text-slate-900 hover:text-brand transition-colors">
-						Kriptovalidáció
-					</a>
+				<a href="/" className="text-xl font-bold text-slate-900 hover:text-brand transition-colors">
+					Kriptovalidáció
+				</a>
+				<div className="flex items-center gap-6">
 					<nav className="hidden sm:flex items-center gap-6">
 						<NavLink href="#attekintes">{t("nav.overview")}</NavLink>
 						<NavLink href="#tozsdek">{t("nav.exchanges")}</NavLink>
 						<NavLink href="#idovonal">{t("nav.timeline")}</NavLink>
 						<NavLink href="#kepviselok">{t("nav.mps")}</NavLink>
 					</nav>
+					<LanguageSwitch currentLang={currentLang} />
 				</div>
-				<LanguageSwitch currentLang={currentLang} />
 			</div>
 		</header>
 	);
