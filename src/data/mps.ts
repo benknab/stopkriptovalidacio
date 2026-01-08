@@ -39,6 +39,10 @@ export function formatPhoneForDisplay(phone: string): string {
 	if (phone.length === 10 && phone.startsWith("361")) {
 		return `+36 1 ${phone.slice(3, 6)} ${phone.slice(6)}`;
 	}
+	// Regional landline: 36 + 2-digit area code + 6 digits = 10 chars
+	if (phone.length === 10 && phone.startsWith("36")) {
+		return `+36 ${phone.slice(2, 4)} ${phone.slice(4, 7)} ${phone.slice(7)}`;
+	}
 	// Mobile: 36 + 2-digit prefix + 7 digits = 11 chars
 	if (phone.length === 11 && phone.startsWith("36")) {
 		return `+36 ${phone.slice(2, 4)} ${phone.slice(4, 7)} ${phone.slice(7)}`;
@@ -1842,7 +1846,7 @@ export const mps = {
 		party: "független",
 		vote: "banned",
 		emails: new Set(["hadhazyakos@gmail.com", "hadhazy.akos@parlament.hu"]),
-		phones: new Set(["204378108"]),
+		phones: new Set(["36204378108"]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/h080.jpg",
 		district: "Budapest 8. OEVK",
 		website: "https://hadhazyakos.hu",
