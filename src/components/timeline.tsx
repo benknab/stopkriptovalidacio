@@ -34,6 +34,28 @@ function TimelineSource({ source }: { source: Source }): JSX.Element {
 	);
 }
 
+function getDotClassName(type: TimelineEvent["type"]): string {
+	switch (type) {
+		case "primary":
+			return "bg-primary border-primary";
+		case "secondary":
+			return "bg-primary-light border-primary";
+		case "tertiary":
+			return "bg-slate-100 border-slate-400";
+	}
+}
+
+function getTitleClassName(type: TimelineEvent["type"]): string {
+	switch (type) {
+		case "primary":
+			return "text-slate-900";
+		case "secondary":
+			return "text-slate-800";
+		case "tertiary":
+			return "text-slate-700";
+	}
+}
+
 function TimelineItem({
 	event,
 	lang,
@@ -41,8 +63,6 @@ function TimelineItem({
 	event: TimelineEvent;
 	lang: SupportedLanguage;
 }): JSX.Element {
-	const isPrimary = event.type === "primary";
-
 	return (
 		<div className="relative pl-8 pb-8 last:pb-0">
 			{/* Vertical line */}
@@ -50,16 +70,14 @@ function TimelineItem({
 
 			{/* Dot */}
 			<div
-				className={`absolute left-0 top-1.5 w-6 h-6 rounded-full border-2 ${
-					isPrimary ? "bg-primary-light border-primary" : "bg-slate-100 border-slate-400"
-				}`}
+				className={`absolute left-0 top-1.5 w-6 h-6 rounded-full border-2 ${getDotClassName(event.type)}`}
 			/>
 
 			{/* Content */}
 			<div className="space-y-2">
 				<time className="text-sm text-slate-500">{formatDate(event.date, lang)}</time>
 
-				<h3 className={`text-lg font-medium ${isPrimary ? "text-slate-900" : "text-slate-700"}`}>
+				<h3 className={`text-lg font-medium ${getTitleClassName(event.type)}`}>
 					{event.title[lang]}
 				</h3>
 
@@ -89,7 +107,7 @@ export function Timeline({ showAll = false }: TimelineProps): JSX.Element {
 	const lang = i18n.language as SupportedLanguage;
 
 	const sortedEvents = Object.entries(events)
-		.filter(([, event]) => showAll || event.type === "primary")
+		.filter(([, event]) => showAll || event.type !== "tertiary")
 		.sort(([, a], [, b]) => b.date.getTime() - a.date.getTime());
 
 	return (

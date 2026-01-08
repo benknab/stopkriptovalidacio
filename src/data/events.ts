@@ -45,7 +45,7 @@ export const events: TimelineEvents = {
 	},
 	"t-11922-ind05": {
 		date: new Date("2025-06-17"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "T/11922 elfogadott törvény indokolásának közzététele",
 			en: "T/11922 adopted law explanatory memorandum published",
@@ -73,7 +73,7 @@ export const events: TimelineEvents = {
 	},
 	"t-11922-hazelnok-alairas": {
 		date: new Date("2025-06-17"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Országgyűlés elnöke aláírta a T/11922 törvényjavaslatot",
 			en: "Speaker of the National Assembly signed bill T/11922",
@@ -87,7 +87,7 @@ export const events: TimelineEvents = {
 	},
 	"t-11922-koztarsasagi-elnok-alairas": {
 		date: new Date("2025-06-22"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Köztársasági elnök aláírta a 2025. évi LXVII. törvényt",
 			en: "President of the Republic signed Act LXVII of 2025",
@@ -133,7 +133,7 @@ export const events: TimelineEvents = {
 	},
 	"revolut-korlatozas-kezdete": {
 		date: new Date("2025-07-04"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Revolut kriptovaluta-korlátozások kezdete",
 			en: "Revolut cryptocurrency restrictions begin",
@@ -147,7 +147,7 @@ export const events: TimelineEvents = {
 	},
 	"revolut-befagyasztas": {
 		date: new Date("2025-07-07"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Revolut teljes kriptovaluta-befagyasztás",
 			en: "Revolut complete cryptocurrency freeze",
@@ -193,7 +193,7 @@ export const events: TimelineEvents = {
 	},
 	"revolut-bejelentes": {
 		date: new Date("2025-12-08"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Revolut bejelenti a teljes kivonulást",
 			en: "Revolut announces complete withdrawal",
@@ -211,7 +211,7 @@ export const events: TimelineEvents = {
 	},
 	"revolut-kivonulas": {
 		date: new Date("2025-12-18"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "Revolut kriptovaluta-szolgáltatások megszűnése Magyarországon",
 			en: "Revolut cryptocurrency services end in Hungary",
@@ -229,7 +229,7 @@ export const events: TimelineEvents = {
 	},
 	"strike-bejelentes": {
 		date: new Date("2026-01-08"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Strike bejelenti a magyarországi szolgáltatások korlátozását",
 			en: "Strike announces restriction of Hungarian services",
@@ -243,7 +243,7 @@ export const events: TimelineEvents = {
 	},
 	"strike-kivonulas": {
 		date: new Date("2026-01-09"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "Strike szolgáltatások korlátozása Magyarországon",
 			en: "Strike services restricted in Hungary",
@@ -257,7 +257,7 @@ export const events: TimelineEvents = {
 	},
 	"etoro-bejelentes": {
 		date: new Date("2025-12-18"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "eToro bejelenti a kriptokereskedés felfüggesztését",
 			en: "eToro announces suspension of crypto trading",
@@ -271,7 +271,7 @@ export const events: TimelineEvents = {
 	},
 	"etoro-kivonulas": {
 		date: new Date("2025-12-26"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "eToro kriptokereskedés megszűnése Magyarországon",
 			en: "eToro crypto trading ends in Hungary",
@@ -285,7 +285,7 @@ export const events: TimelineEvents = {
 	},
 	"coincash-regisztracio-szunetel": {
 		date: new Date("2025-07-08"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "CoinCash regisztráció szünetel",
 			en: "CoinCash registration suspended",
@@ -299,7 +299,7 @@ export const events: TimelineEvents = {
 	},
 	"coincash-bejelentes": {
 		date: new Date("2025-12-17"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "CoinCash bejelenti szolgáltatásainak felfüggesztését",
 			en: "CoinCash announces suspension of services",
@@ -313,7 +313,7 @@ export const events: TimelineEvents = {
 	},
 	"coincash-felfuggesztes": {
 		date: new Date("2025-12-18"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "CoinCash szolgáltatások ideiglenes felfüggesztése",
 			en: "CoinCash services temporarily suspended",
@@ -331,7 +331,7 @@ export const events: TimelineEvents = {
 	},
 	"bitstamp-kereskedes-felfuggesztve": {
 		date: new Date("2025-07-09"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "Bitstamp felfüggeszti a kriptokereskedést Magyarországon",
 			en: "Bitstamp suspends crypto trading in Hungary",
@@ -349,7 +349,7 @@ export const events: TimelineEvents = {
 	},
 	"kriptomat-bejelentes": {
 		date: new Date("2025-12-22"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Kriptomat bejelenti kereskedési szolgáltatásainak felfüggesztését",
 			en: "Kriptomat announces suspension of trading services",
@@ -366,7 +366,7 @@ export const events: TimelineEvents = {
 	},
 	"kriptomat-felfuggesztes": {
 		date: new Date("2025-12-26"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "Kriptomat kereskedési szolgáltatások felfüggesztése Magyarországon",
 			en: "Kriptomat trading services suspended in Hungary",
@@ -383,7 +383,7 @@ export const events: TimelineEvents = {
 	},
 	"bitvavo-bejelentes": {
 		date: new Date("2025-12-20"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Bitvavo bejelenti szolgáltatásainak felfüggesztését Magyarországon",
 			en: "Bitvavo announces suspension of services in Hungary",
@@ -397,7 +397,7 @@ export const events: TimelineEvents = {
 	},
 	"bitvavo-felfuggesztes": {
 		date: new Date("2025-12-26"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "Bitvavo kereskedés és befizetés felfüggesztése Magyarországon",
 			en: "Bitvavo trading and deposits suspended in Hungary",

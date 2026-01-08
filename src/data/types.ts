@@ -6,7 +6,7 @@ export type TextI18n = {
 	en: string;
 };
 
-export type EventType = "primary" | "secondary";
+export type EventType = "primary" | "secondary" | "tertiary";
 
 export type TimelineEvent = {
 	date: Date;
