@@ -159,16 +159,16 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["revolut-telex-2025-07-09"]),
 		exchangeSlugs: new Set(["revolut"]),
 	},
-	"revolut-kivonulas": {
+	"revolut-bejelentes": {
 		date: new Date("2025-12-08"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "Revolut bejelenti a teljes kivonulást",
 			en: "Revolut announces complete withdrawal",
 		},
 		summary: {
-			hu: "A Revolut bejelentette kriptovaluta-szolgáltatásainak teljes megszüntetését Magyarországon. December 18-ig lehetett eladni a kriptoeszközöket, ezt követően automatikus értékesítés történt.",
-			en: "Revolut announced the complete termination of cryptocurrency services in Hungary. Crypto assets could be sold until December 18, after which automatic liquidation occurred.",
+			hu: "A Revolut bejelentette kriptovaluta-szolgáltatásainak teljes megszüntetését Magyarországon. Az ügyfeleknek december 18-ig kell rendelkezniük kriptoeszközeikről.",
+			en: "Revolut announced the complete termination of cryptocurrency services in Hungary. Customers must manage their crypto assets by December 18.",
 		},
 		sourceSlugs: new Set([
 			"revolut-telex-2025-12-08",
@@ -177,9 +177,27 @@ export const events: TimelineEvents = {
 		]),
 		exchangeSlugs: new Set(["revolut"]),
 	},
-	"strike-kivonulas": {
-		date: new Date("2026-01-09"),
+	"revolut-kivonulas": {
+		date: new Date("2025-12-18"),
 		type: "primary",
+		title: {
+			hu: "Revolut kriptovaluta-szolgáltatások megszűnése Magyarországon",
+			en: "Revolut cryptocurrency services end in Hungary",
+		},
+		summary: {
+			hu: "A Revolut kriptovaluta-szolgáltatásai megszűntek Magyarországon. A határidőig el nem adott kriptoeszközök automatikus értékesítésre kerültek.",
+			en: "Revolut cryptocurrency services ended in Hungary. Crypto assets not sold by the deadline were automatically liquidated.",
+		},
+		sourceSlugs: new Set([
+			"revolut-telex-2025-12-08",
+			"revolut-help-hu",
+			"revolut-24hu-2025-12-08",
+		]),
+		exchangeSlugs: new Set(["revolut"]),
+	},
+	"strike-bejelentes": {
+		date: new Date("2026-01-08"),
+		type: "secondary",
 		title: {
 			hu: "Strike bejelenti a magyarországi szolgáltatások korlátozását",
 			en: "Strike announces restriction of Hungarian services",
@@ -187,6 +205,20 @@ export const events: TimelineEvents = {
 		summary: {
 			hu: "A Strike értesítette ügyfeleit, hogy 2026. január 9-től csak EUR és BTC kivétel lesz elérhető Magyarországon. A vásárlás és eladás funkciók megszűnnek.",
 			en: "Strike notified customers that starting January 9, 2026, only EUR and BTC withdrawals will be available in Hungary. Buy and sell features will be discontinued.",
+		},
+		sourceSlugs: new Set(),
+		exchangeSlugs: new Set(["strike"]),
+	},
+	"strike-kivonulas": {
+		date: new Date("2026-01-09"),
+		type: "primary",
+		title: {
+			hu: "Strike szolgáltatások korlátozása Magyarországon",
+			en: "Strike services restricted in Hungary",
+		},
+		summary: {
+			hu: "A Strike-nál megszűnt a vásárlás és eladás funkció Magyarországon. Csak EUR és BTC kivétel maradt elérhető.",
+			en: "Strike discontinued buy and sell features in Hungary. Only EUR and BTC withdrawals remain available.",
 		},
 		sourceSlugs: new Set(),
 		exchangeSlugs: new Set(["strike"]),
@@ -233,6 +265,20 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["coincash-blog-2025-07-08", "coincash-telex-2025-07-08"]),
 		exchangeSlugs: new Set(["coincash"]),
 	},
+	"coincash-bejelentes": {
+		date: new Date("2025-12-17"),
+		type: "secondary",
+		title: {
+			hu: "CoinCash bejelenti szolgáltatásainak felfüggesztését",
+			en: "CoinCash announces suspension of services",
+		},
+		summary: {
+			hu: "A CoinCash bejelentette, hogy december 18-tól ideiglenesen felfüggeszti szolgáltatásait Magyarországon.",
+			en: "CoinCash announced the temporary suspension of services in Hungary from December 18.",
+		},
+		sourceSlugs: new Set(["coincash-blog-2025-12-17"]),
+		exchangeSlugs: new Set(["coincash"]),
+	},
 	"coincash-felfuggesztes": {
 		date: new Date("2025-12-18"),
 		type: "primary",
@@ -245,7 +291,6 @@ export const events: TimelineEvents = {
 			en: "CoinCash temporarily suspended services in Hungary. New exchange orders cannot be placed on the platforms.",
 		},
 		sourceSlugs: new Set([
-			"coincash-blog-2025-12-17",
 			"coincash-telex-2025-12-18",
 			"coincash-portfolio-2025-12-18",
 			"coincash-hvg-2025-12-18",
@@ -270,21 +315,36 @@ export const events: TimelineEvents = {
 		]),
 		exchangeSlugs: new Set(["bitstamp"]),
 	},
+	"kriptomat-bejelentes": {
+		date: new Date("2025-12-22"),
+		type: "secondary",
+		title: {
+			hu: "Kriptomat bejelenti kereskedési szolgáltatásainak felfüggesztését",
+			en: "Kriptomat announces suspension of trading services",
+		},
+		summary: {
+			hu: "A Kriptomat bejelentette, hogy december 26-tól 23:00-tól ideiglenesen felfüggeszti kereskedési szolgáltatásait Magyarországon.",
+			en: "Kriptomat announced the temporary suspension of trading services in Hungary from December 26 at 23:00 CET.",
+		},
+		sourceSlugs: new Set([
+			"kriptomat-official-2025-12-22",
+			"kriptomat-revb-2025-12-24",
+		]),
+		exchangeSlugs: new Set(["kriptomat"]),
+	},
 	"kriptomat-felfuggesztes": {
 		date: new Date("2025-12-26"),
 		type: "primary",
 		title: {
-			hu: "Kriptomat felfüggeszti kereskedési szolgáltatásait Magyarországon",
-			en: "Kriptomat suspends trading services in Hungary",
+			hu: "Kriptomat kereskedési szolgáltatások felfüggesztése Magyarországon",
+			en: "Kriptomat trading services suspended in Hungary",
 		},
 		summary: {
-			hu: "A Kriptomat ideiglenesen felfüggesztette kereskedési szolgáltatásait Magyarországon december 26-tól 23:00-tól. A vétel, eladás, váltás, KriptoEarn és Intelligent Portfolios szünetel, de a kifizetések elérhetők maradnak.",
-			en: "Kriptomat temporarily suspended trading services in Hungary from December 26 at 23:00 CET. Buy, sell, exchange, KriptoEarn, and Intelligent Portfolios paused, but withdrawals remain available.",
+			hu: "A Kriptomat ideiglenesen felfüggesztette kereskedési szolgáltatásait Magyarországon. A vétel, eladás, váltás, KriptoEarn és Intelligent Portfolios szünetel, de a kifizetések elérhetők maradnak.",
+			en: "Kriptomat temporarily suspended trading services in Hungary. Buy, sell, exchange, KriptoEarn, and Intelligent Portfolios paused, but withdrawals remain available.",
 		},
 		sourceSlugs: new Set([
-			"kriptomat-official-2025-12-22",
 			"kriptomat-index-2025-12-25",
-			"kriptomat-revb-2025-12-24",
 			"kriptomat-privatbankar-2025-12-25",
 		]),
 		exchangeSlugs: new Set(["kriptomat"]),
