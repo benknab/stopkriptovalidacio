@@ -440,7 +440,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"bitcoinbazis-caduceus": {
-		title: "BitcoinBázis - Így fogadta a magyar kriptoközösség az első hazai validátort",
+		title: "BitcoinBázis",
 		originalUrl: "https://www.bitcoinbazis.hu/kriptovaluta-validacio-magyarorszag-velemenyek/",
 		summary: {
 			hu: "Részletes elemzés a Caduceus Zrt.-ről, Magyarország egyetlen kriptovaluta validátoráról. A cég háttere, vezetősége, a Vesszős család kapcsolatai és a közösségi reakciók.",
