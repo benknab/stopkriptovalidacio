@@ -8,7 +8,7 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [ ] seo
 - [ ] about + contact page content
 - [ ] email contact setup
-- [ ] analytics
+- [ ] analytics: https://www.simpleanalytics.com/ or https://usefathom.com/
 - [ ] readme (hungarian)
 - [ ] verify mobile works
 
