@@ -117,6 +117,7 @@
 			"select_district": "Válasszon választókerületet...",
 			"select_to_show": "Válasszon megyét vagy kattintson az \"Összes\" gombra a képviselők megjelenítéséhez."
 		},
-		"mp_list_source": "Képviselői névsor"
+		"mp_list_source": "Képviselői névsor",
+		"district_lookup_hint": "Nem tudja melyik választókerületben lakik? Keresse ki itt:"
 	}
 }

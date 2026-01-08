@@ -117,6 +117,7 @@
 			"select_district": "Select voting district...",
 			"select_to_show": "Select a county or click \"All\" to show representatives."
 		},
-		"mp_list_source": "MP Directory"
+		"mp_list_source": "MP Directory",
+		"district_lookup_hint": "Don't know your voting district? Look it up here:"
 	}
 }

@@ -286,7 +286,7 @@ export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps
 					{t("mps.description")}
 				</p>
 
-				<div className="mt-8 p-4 bg-white rounded-lg border border-slate-200">
+				<div className="mt-8 p-4 bg-white rounded-lg border border-slate-200 space-y-2">
 					<p className="text-sm text-slate-600">
 						<strong>{t("mps.source")}:</strong>{" "}
 						<a
@@ -307,40 +307,97 @@ export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps
 							{t("mps.mp_list_source")}
 						</a>
 					</p>
+					<p className="text-sm text-slate-500">
+						{t("mps.district_lookup_hint")}{" "}
+						<a
+							href="https://vtr.valasztas.hu/ogy2022/egyeni-valasztokeruletek"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-brand hover:text-brand-hover transition-colors underline"
+						>
+							valasztas.hu
+						</a>
+					</p>
 				</div>
 
-				<div className="mt-6 flex flex-col sm:flex-row gap-3">
-					<select
-						id="mp-county-select"
-						defaultValue={selectedCounty}
-						className="flex-1 px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
-					>
-						<option value="">{t("mps.filter.select_county")}</option>
-						<option value={ALL_OPTION}>{t("mps.filter.all")}</option>
-						{countyData.map((county) => (
-							<option key={county.name} value={county.name}>
-								{county.isNationalList
-									? t(`mps.filter.${
-										county.name === NATIONAL_LIST ? "national_list" : "minority_list"
-									}`)
-									: county.name}
-							</option>
-						))}
-					</select>
+				<div className="mt-6 grid grid-cols-2 gap-3">
+					<div className="relative">
+						<label
+							htmlFor="mp-county-select"
+							className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5"
+						>
+							{t("mps.filter.county")}
+						</label>
+						<select
+							id="mp-county-select"
+							defaultValue={selectedCounty}
+							className="w-full h-11 pl-3 pr-8 bg-white border-2 border-slate-200 rounded-md text-sm text-slate-900 font-medium appearance-none cursor-pointer transition-all duration-150 hover:border-brand/50 focus:outline-none focus:border-brand focus:ring-4 focus:ring-brand/10"
+						>
+							<option value="">{t("mps.filter.select_county")}</option>
+							<option value={ALL_OPTION}>{t("mps.filter.all")}</option>
+							{countyData.map((county) => (
+								<option key={county.name} value={county.name}>
+									{county.isNationalList
+										? t(`mps.filter.${
+											county.name === NATIONAL_LIST ? "national_list" : "minority_list"
+										}`)
+										: county.name}
+								</option>
+							))}
+						</select>
+						<div className="pointer-events-none absolute right-3 bottom-3.5">
+							<svg
+								className="w-4 h-4 text-slate-400"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+							</svg>
+						</div>
+					</div>
 
-					<select
-						id="mp-district-select"
-						defaultValue={selectedDistrict}
-						disabled={!selectedCounty || isNationalList || isAllSelected}
-						className="flex-1 px-4 py-2.5 bg-white border border-slate-300 rounded-lg text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed"
-					>
-						<option value="">{t("mps.filter.select_district")}</option>
-						{currentCountyData?.districts.map((district) => (
-							<option key={district} value={district}>
-								{district}
-							</option>
-						))}
-					</select>
+					<div className="relative">
+						<label
+							htmlFor="mp-district-select"
+							className={`block text-xs font-semibold uppercase tracking-wider mb-1.5 transition-colors ${
+								!selectedCounty || isNationalList || isAllSelected ? "text-slate-300" : "text-slate-500"
+							}`}
+						>
+							{t("mps.filter.district")}
+						</label>
+						<select
+							id="mp-district-select"
+							defaultValue={selectedDistrict}
+							disabled={!selectedCounty || isNationalList || isAllSelected}
+							className={`w-full h-11 pl-3 pr-8 border-2 rounded-md text-sm font-medium appearance-none transition-all duration-150 focus:outline-none ${
+								!selectedCounty || isNationalList || isAllSelected
+									? "bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed"
+									: "bg-white border-slate-200 text-slate-900 cursor-pointer hover:border-brand/50 focus:border-brand focus:ring-4 focus:ring-brand/10"
+							}`}
+						>
+							<option value="">{t("mps.filter.select_district")}</option>
+							{currentCountyData?.districts.map((district) => (
+								<option key={district} value={district}>
+									{district}
+								</option>
+							))}
+						</select>
+						<div
+							className={`pointer-events-none absolute right-3 bottom-3.5 transition-opacity ${
+								!selectedCounty || isNationalList || isAllSelected ? "opacity-30" : ""
+							}`}
+						>
+							<svg
+								className="w-4 h-4 text-slate-400"
+								fill="none"
+								stroke="currentColor"
+								viewBox="0 0 24 24"
+							>
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+							</svg>
+						</div>
+					</div>
 				</div>
 
 				{selectedCounty && (
