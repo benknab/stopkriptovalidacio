@@ -173,6 +173,24 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["sztfh-rendelet-10-2025", "sztfh-kozlemeny-2025-10-27"]),
 		exchangeSlugs: new Set(),
 	},
+	"sztfh-elso-validator": {
+		date: new Date("2025-12-19"),
+		type: "primary",
+		title: {
+			hu: "Első kriptoeszköz-átváltást validáló szolgáltató engedélyezése",
+			en: "First crypto-asset exchange validation service provider licensed",
+		},
+		summary: {
+			hu: "Az SZTFH engedélyezte és nyilvántartásba vette az első validáló szolgáltatót. <b>Egyetlen magáncég, a Caduceus Zrt. lett felelős az összes magyarországi kriptoeszköz-átváltás validálásáért.</b> Az SZTFH iránymutatást is közzétett a rendelet alkalmazásáról. <b>A validálás pontos tartalma továbbra sincs definiálva.</b>",
+			en: "SZTFH licensed and registered the first validation service provider. <b>A single private company, Caduceus Zrt., became responsible for validating all crypto-asset exchanges in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of validation remains undefined.</b>",
+		},
+		sourceSlugs: new Set([
+			"sztfh-kozlemeny-2025-12-19",
+			"sztfh-validator-nyilvantartas",
+			"sztfh-iranymutatas-2025-12-19",
+		]),
+		exchangeSlugs: new Set(),
+	},
 	"revolut-bejelentes": {
 		date: new Date("2025-12-08"),
 		type: "secondary",

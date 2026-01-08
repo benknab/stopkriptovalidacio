@@ -168,6 +168,85 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 			en: "Official SZTFH announcement on the publication of SZTFH Regulation 10/2025 (X. 27.). The implementing regulation must be applied from the 60th day after its publication.",
 		},
 	},
+	"sztfh-kozlemeny-2025-12-19": {
+		title: "SZTFH közlemény (2025.12.19.)",
+		originalUrl: "https://sztfh.hu/megtortent-az-elso-kriptoeszkoz-atvaltast-validalo-szolgaltato-engedelyezese/",
+		summary: {
+			hu: "Az SZTFH közleménye az első kriptoeszköz-átváltást validáló szolgáltató engedélyezéséről. A Caduceus Zrt. lett az első és egyetlen engedélyezett validátor.",
+			en: "SZTFH announcement on the licensing of the first crypto-asset exchange validation service provider. Caduceus Zrt. became the first and only licensed validator.",
+		},
+	},
+	"sztfh-validator-nyilvantartas": {
+		title: "SZTFH validátor nyilvántartás",
+		originalUrl: "https://sztfh.hu/nyilvantartasok/kriptoeszkoz-atvaltast-validalo-szolgaltatok/",
+		summary: {
+			hu: "Az SZTFH által vezetett kriptoeszköz-átváltást validáló szolgáltatók nyilvántartása.",
+			en: "Registry of crypto-asset exchange validation service providers maintained by SZTFH.",
+		},
+	},
+	"sztfh-iranymutatas-2025-12-19": {
+		title: "SZTFH iránymutatás (PDF)",
+		originalUrl: "https://sztfh.hu/downloads/kiberbiztonsag/kripto/sztfh_rendelet_hatalya_hun.pdf",
+		archivedUrl: "/archivum/sztfh_rendelet_hatalya_hun.pdf",
+		summary: {
+			hu: "Iránymutatás a 10/2025. (X. 27.) SZTFH rendelet alkalmazására vonatkozóan. A rendelet hatályának értelmezése.",
+			en: "Guidance on the application of SZTFH Regulation 10/2025 (X. 27.). Interpretation of the scope of the regulation.",
+		},
+		text: {
+			hu: `IRÁNYMUTATÁS
+A kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól szóló 10/2025 (X.27.) SZTFH rendelet alkalmazására vonatkozóan.
+
+A rendelet hatálya:
+- Kiterjed az MNB által nyilvántartásba vett kriptoeszköz váltási tevékenység végzésére jogosult szervezetekre
+- Kiterjed a határon átnyúló váltási tevékenység végzésére jogosult MiCA engedéllyel rendelkező szervezetekre
+- Területi hatály: minden olyan váltási tevékenység, mely Magyarország területén lévő igénybe vevők felé irányul
+
+Az SZTFH rendelet 2025. december 27-től alkalmazandó.
+
+Az SZTFH által nyilvántartásba vett validáló szolgáltató a validálás eredményéről megfelelőségi nyilatkozatot állít ki.
+
+Rendeletben meghatározott kivételek (nem szükséges validálni):
+a) nem ellenérték fejében nyújtott szolgáltatás
+b) nem rendszeres jelleggel nyújtott szolgáltatás
+c) titkos információgyűjtésre feljogosított szerv tagja kezdeményezi
+d) természetes személy kizárólag saját célra, saját kriptoeszközök más kriptoeszközre váltása
+e) decentralizált szolgáltatás (DeFi, bridging, liquidity pooling)
+
+Validálási kötelezettséget kiváltó tevékenységek:
+1. Magyarországon bejegyzett MiCA engedélyes váltás
+2. Határon átnyúló MiCA engedélyes váltás
+3. Magyarországi pénzügyi szolgáltató részvétele
+4. Magyar pénzügyi rendszerben adat keletkezik
+5. Magyarországi informatikai rendszer igénybevétele
+6. Magyarországi igénybe vevők felé irányuló szolgáltatás`,
+			en: `GUIDANCE
+On the application of SZTFH Regulation 10/2025 (X.27.) on detailed rules for licensing and registration of crypto-asset exchange validation service providers.
+
+Scope of the regulation:
+- Extends to organizations registered by MNB for crypto-asset exchange activities
+- Extends to organizations with MiCA license for cross-border exchange activities
+- Territorial scope: all exchange activities directed at users in Hungary
+
+The SZTFH regulation is applicable from December 27, 2025.
+
+The validation service provider registered by SZTFH issues a compliance statement on the result of validation.
+
+Exceptions defined in the regulation (validation not required):
+a) services not provided for consideration
+b) services not provided on a regular basis
+c) initiated by authorized covert intelligence personnel
+d) natural person exclusively for own use, exchanging own crypto-assets
+e) decentralized services (DeFi, bridging, liquidity pooling)
+
+Activities triggering validation requirement:
+1. Exchange by Hungary-registered MiCA licensee
+2. Cross-border exchange by MiCA licensee
+3. Participation of Hungarian financial service provider
+4. Data generated in Hungarian financial system
+5. Use of IT systems operated in Hungary
+6. Services directed at users in Hungary`,
+		},
+	},
 	"telex-kripto-btk": {
 		title: "Telex",
 		originalUrl: "https://telex.hu/gazdasag/2025/07/01/kripto-kriptodeviza-bitcoin-revolut-btk",
