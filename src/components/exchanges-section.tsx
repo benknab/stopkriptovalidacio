@@ -42,13 +42,24 @@ interface ExchangeCardProps {
 	exchange: Exchange;
 }
 
+function formatDate(date: Date, lang: string): string {
+	return date.toLocaleDateString(lang === "hu" ? "hu-HU" : "en-US", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+	});
+}
+
 function ExchangeCard({ slug, exchange }: ExchangeCardProps): JSX.Element {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 	const colors = statusColors[exchange.status];
+	const now = new Date();
+	const hasLeft = exchange.leaveDate && exchange.leaveDate <= now;
+	const willLeave = exchange.leaveDate && exchange.leaveDate > now;
 
 	return (
 		<div
-			className={`bg-white rounded-xl border border-slate-200 border-t-4 ${colors.border} p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg`}
+			className={`bg-white rounded-xl border border-slate-200 border-t-4 ${colors.border} p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full`}
 		>
 			<div className="flex justify-between items-start gap-3 mb-2">
 				<h3 className="font-semibold text-slate-900">{exchange.name}</h3>
@@ -58,9 +69,14 @@ function ExchangeCard({ slug, exchange }: ExchangeCardProps): JSX.Element {
 					{t(`exchanges.status.${exchange.status}`)}
 				</span>
 			</div>
-			<p className="text-sm text-slate-600 leading-relaxed">
+			<p className="text-sm text-slate-600 leading-relaxed mb-4">
 				{t(`exchanges.${slug}.summary`)}
 			</p>
+			{exchange.leaveDate && (
+				<p className="mt-auto text-xs text-slate-500 font-medium">
+					{formatDate(exchange.leaveDate, i18n.language)}
+				</p>
+			)}
 		</div>
 	);
 }

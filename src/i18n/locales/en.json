@@ -68,6 +68,8 @@
 			"leaving": "Leaving",
 			"unknown": "Unknown"
 		},
+		"left_on": "Left:",
+		"leaving_on": "Leaving:",
 		"revolut": { "summary": "Crypto services ended." },
 		"strike": { "summary": "Buy/sell discontinued." },
 		"etoro": { "summary": "Only crypto CFDs available." },

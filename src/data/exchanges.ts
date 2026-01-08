@@ -10,7 +10,7 @@ export const exchanges = {
 	revolut: {
 		name: "Revolut",
 		status: "leaving",
-		leaveDate: undefined,
+		leaveDate: new Date("2025-12-18"),
 	},
 	strike: {
 		name: "Strike",

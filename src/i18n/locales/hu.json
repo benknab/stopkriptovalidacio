@@ -68,6 +68,8 @@
 			"leaving": "Távozik",
 			"unknown": "Ismeretlen"
 		},
+		"left_on": "Távozott:",
+		"leaving_on": "Távozik:",
 		"revolut": { "summary": "Kriptoszolgáltatások megszűntek." },
 		"strike": { "summary": "Vásárlás és eladás megszűnt." },
 		"etoro": { "summary": "Csak kripto CFD-k maradtak elérhetők." },
