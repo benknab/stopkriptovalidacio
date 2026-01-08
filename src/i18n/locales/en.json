@@ -28,5 +28,35 @@
 	},
 	"common": {
 		"coming_soon": "Coming soon..."
+	},
+	"impact": {
+		"title": "You Are Impacted",
+		"description": "This regulation affects not just service providers, but every Hungarian crypto owner directly.",
+		"cards": {
+			"zero_compliant": {
+				"title": "Zero Compliant",
+				"description": "No exchange can achieve compliance because the requirements are unclear. Despite government claims, service providers continue to leave."
+			},
+			"stricter_than_mica": {
+				"title": "Stricter Than MiCA",
+				"description": "The EU's MiCA regulation does not require this type of validation. There is no explanation for why Hungary needs stricter rules."
+			},
+			"criminal": {
+				"title": "Criminal Liability",
+				"description": "Violating the regulation can result in criminal prosecution, not just administrative sanctions."
+			},
+			"unique_validator": {
+				"title": "Unique Requirement",
+				"description": "The 'validator' concept does not exist anywhere else in the world. Hungary alone introduced this burden."
+			},
+			"private_monopoly": {
+				"title": "Private Monopoly",
+				"description": "Validation is handled by a single privately owned company, Caduceus Zrt. An allegedly 'important' public interest task is now a private monopoly."
+			},
+			"individual_punishment": {
+				"title": "Individual Punishment",
+				"description": "The law does not just regulate service providers—it punishes individual crypto owners too."
+			}
+		}
 	}
 }

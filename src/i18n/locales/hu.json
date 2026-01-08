@@ -28,5 +28,35 @@
 	},
 	"common": {
 		"coming_soon": "Hamarosan..."
+	},
+	"impact": {
+		"title": "Érintve vagy",
+		"description": "A szabályozás nem csak a szolgáltatókat, hanem minden magyar kriptotulajdonost közvetlenül érint.",
+		"cards": {
+			"zero_compliant": {
+				"title": "Nulla megfelelő",
+				"description": "Egyetlen tőzsde sem tudja teljesíteni a megfelelőséget, mert a követelmények tisztázatlanok. A kormány állításai ellenére a szolgáltatók folyamatosan távoznak."
+			},
+			"stricter_than_mica": {
+				"title": "Szigorúbb mint a MiCA",
+				"description": "Az EU MiCA rendelete nem követel meg ilyen típusú validációt. Nincs magyarázat arra, miért van szükség az EU-nál szigorúbb szabályozásra."
+			},
+			"criminal": {
+				"title": "Büntetőjogi következmények",
+				"description": "A szabályozás megsértése büntetőjogi felelősséget vonhat maga után, nem csak közigazgatási szankciót."
+			},
+			"unique_validator": {
+				"title": "Egyedülálló követelmény",
+				"description": "A \"validátor\" fogalma sehol máshol nem létezik a világon. Magyarország egyedül vezette be ezt a terhet."
+			},
+			"private_monopoly": {
+				"title": "Magánkézben a validálás",
+				"description": "A validálást egyetlen magántulajdonú cég, a Caduceus Zrt. végzi. Egy \"fontos\" közérdekű feladat magánmonopóliumba került."
+			},
+			"individual_punishment": {
+				"title": "Egyének büntetése",
+				"description": "A törvény nemcsak a szolgáltatókat szabályozza, hanem az egyéni kriptotulajdonosokat is bünteti."
+			}
+		}
 	}
 }

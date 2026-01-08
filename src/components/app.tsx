@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import { Hero } from "./hero.tsx";
+import { ImpactSection } from "./impact-section.tsx";
 import { Layout } from "./layout.tsx";
 import { Timeline } from "./timeline.tsx";
 import type { SupportedLanguage } from "../i18n/index.ts";
@@ -14,7 +15,15 @@ export function App({ showAllEvents = false }: AppProps): JSX.Element {
 	const currentLang = i18n.language as SupportedLanguage;
 
 	return (
-		<Layout currentLang={currentLang} hero={<Hero />}>
+		<Layout
+			currentLang={currentLang}
+			hero={
+				<>
+					<Hero />
+					<ImpactSection />
+				</>
+			}
+		>
 			<section id="idovonal">
 				<div className="mb-6 flex items-center justify-between">
 					<h2 className="text-xl font-semibold text-slate-900">{t("nav.timeline")}</h2>
