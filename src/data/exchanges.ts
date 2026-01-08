@@ -37,6 +37,11 @@ export const exchanges = {
 		status: "leaving",
 		leaveDate: new Date("2025-12-26"),
 	},
+	bitvavo: {
+		name: "Bitvavo",
+		status: "leaving",
+		leaveDate: new Date("2025-12-26"),
+	},
 	coinbase: {
 		name: "Coinbase",
 		status: "unknown",

@@ -381,4 +381,32 @@ export const events: TimelineEvents = {
 		]),
 		exchangeSlugs: new Set(["kriptomat"]),
 	},
+	"bitvavo-bejelentes": {
+		date: new Date("2025-12-20"),
+		type: "secondary",
+		title: {
+			hu: "Bitvavo bejelenti szolgáltatásainak felfüggesztését Magyarországon",
+			en: "Bitvavo announces suspension of services in Hungary",
+		},
+		summary: {
+			hu: "A Bitvavo bejelentette, hogy december 26-tól (17:00 CET) felfüggeszti a kereskedést és befizetést magyar ügyfelek számára. A kereskedési célú (trade-only) eszközöket a határidőig el kell adni.",
+			en: "Bitvavo announced the suspension of trading and deposits for Hungarian customers from December 26 (17:00 CET). Trade-only assets must be sold before the deadline.",
+		},
+		sourceSlugs: new Set(["bitvavo-support-2025-12"]),
+		exchangeSlugs: new Set(["bitvavo"]),
+	},
+	"bitvavo-felfuggesztes": {
+		date: new Date("2025-12-26"),
+		type: "primary",
+		title: {
+			hu: "Bitvavo kereskedés és befizetés felfüggesztése Magyarországon",
+			en: "Bitvavo trading and deposits suspended in Hungary",
+		},
+		summary: {
+			hu: "A Bitvavo felfüggesztette a kereskedést és befizetést magyar ügyfelek számára. Csak euró kifizetés és kriptoeszközök külső tárcába utalása lehetséges. A kereskedési célú eszközök eladhatatlanná váltak.",
+			en: "Bitvavo suspended trading and deposits for Hungarian customers. Only euro withdrawals and crypto transfers to external wallets remain available. Trade-only assets became unsellable.",
+		},
+		sourceSlugs: new Set(["bitvavo-support-2025-12"]),
+		exchangeSlugs: new Set(["bitvavo"]),
+	},
 };
