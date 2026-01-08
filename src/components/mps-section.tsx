@@ -191,6 +191,19 @@ function MpCard({ mp }: MpCardProps): JSX.Element {
 						</a>
 					</div>
 				))}
+				{mp.website && (
+					<div>
+						🌐{" "}
+						<a
+							href={mp.website}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-brand hover:text-brand-hover transition-colors break-all"
+						>
+							{mp.website.replace(/^https?:\/\//, "")}
+						</a>
+					</div>
+				)}
 			</div>
 		</div>
 	);
