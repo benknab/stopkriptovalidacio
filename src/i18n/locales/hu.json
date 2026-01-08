@@ -89,6 +89,9 @@
 		"mrcoin": { "summary": "Státusz ismeretlen." },
 		"nexo": { "summary": "Státusz ismeretlen." }
 	},
+	"footer": {
+		"aboutSite": "Az oldalról"
+	},
 	"mps": {
 		"title": "Képviselők",
 		"description": "Keresse meg, hogyan szavazott az Ön képviselője a T/11922 törvényjavaslatról.",

@@ -89,6 +89,9 @@
 		"mrcoin": { "summary": "Status unknown." },
 		"nexo": { "summary": "Status unknown." }
 	},
+	"footer": {
+		"aboutSite": "About This Site"
+	},
 	"mps": {
 		"title": "Members of Parliament",
 		"description": "Find out how your representative voted on the T/11922 bill.",
