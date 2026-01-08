@@ -10,6 +10,7 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [ ] email contact setup
 - [ ] analytics
 - [ ] readme (hungarian)
+- [ ] verify mobile works
 
 ## hero
 
