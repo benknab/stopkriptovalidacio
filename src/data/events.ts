@@ -187,6 +187,44 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["sztfh-rendelet-12-2025"]),
 		exchangeSlugs: new Set(),
 	},
+	"caduceus-alapitas": {
+		date: new Date("2025-07-11"),
+		type: "tertiary",
+		title: {
+			hu: "Caduceus Zrt. alapítása",
+			en: "Caduceus Zrt. founded",
+		},
+		summary: {
+			hu: "Megalakult a Caduceus Zártkörűen Működő Részvénytársaság 100 millió Ft jegyzett tőkével. Igazgatóság elnöke és többségi tulajdonos: Vesszős Bence Marcell. Igazgatósági tagok: Kollár József és Hatvani Andrea. <b>A vezetőségnek nincs ismert kriptovaluta- vagy pénzügyi szektorbeli tapasztalata.</b> Az elnök testvére, Vesszős Gergely, a NAV Bűnügyi Főigazgatóságának egykori munkatársa, aki a virtuális fizetőeszközök szabályozásában vett részt.",
+			en: "Caduceus Private Limited Company was founded with 100 million HUF registered capital. Chairman and majority owner: Bence Marcell Vesszős. Board members: József Kollár and Andrea Hatvani. <b>The leadership has no known cryptocurrency or financial sector experience.</b> The chairman's brother, Gergely Vesszős, is a former employee of NAV's Criminal Directorate who worked on virtual currency regulation.",
+		},
+		sourceSlugs: new Set([
+			"caduceus-cegkivonat",
+			"caduceus-cegbetekintes",
+			"caduceus-cegkozlony",
+			"bitcoinbazis-caduceus",
+		]),
+		exchangeSlugs: new Set(),
+	},
+	"caduceus-bejegyzes": {
+		date: new Date("2025-07-25"),
+		type: "tertiary",
+		title: {
+			hu: "Caduceus Zrt. cégbejegyzése",
+			en: "Caduceus Zrt. company registration",
+		},
+		summary: {
+			hu: "A Caduceus Zrt.-t bejegyezték a cégnyilvántartásba. A cég a bejegyzés előtt ismeretlen volt a kriptovaluta-iparágban: nem volt jelen helyi kripto találkozókon, fórumokon, és nem rendelkezett jelentős szakmai múlttal a szektorban.",
+			en: "Caduceus Zrt. was registered in the company registry. Prior to registration, the company was unknown in the crypto industry: it had no presence at local crypto meetups, forums, and no notable track record in the sector.",
+		},
+		sourceSlugs: new Set([
+			"caduceus-cegkivonat",
+			"caduceus-cegbetekintes",
+			"caduceus-cegkozlony",
+			"bitcoinbazis-caduceus",
+		]),
+		exchangeSlugs: new Set(),
+	},
 	"sztfh-elso-validator": {
 		date: new Date("2025-12-19"),
 		type: "primary",
@@ -202,7 +240,23 @@ export const events: TimelineEvents = {
 			"sztfh-kozlemeny-2025-12-19",
 			"sztfh-validator-nyilvantartas",
 			"sztfh-iranymutatas-2025-12-19",
+			"bitcoinbazis-caduceus",
+			"caduceus-cegkivonat",
 		]),
+		exchangeSlugs: new Set(),
+	},
+	"caduceus-weboldal": {
+		date: new Date("2025-12-19"),
+		type: "tertiary",
+		title: {
+			hu: "Caduceus Zrt. weboldal indítása",
+			en: "Caduceus Zrt. website launch",
+		},
+		summary: {
+			hu: "A Caduceus Zrt. elindította weboldalát (caduceus.hu) – mindössze napokkal az új szabályok hatálybalépése előtt. A weboldal minimális információt tartalmazott: hiányoztak az EU-s előírásoknak megfelelő adatvédelmi és süti-szabályzatok, részletes szolgáltatásleírások. Csak bejelentkezési portál, ÁSZF és elérhetőség volt elérhető.",
+			en: "Caduceus Zrt. launched its website (caduceus.hu) – just days before the new rules took effect. The website was minimal: it lacked EU-compliant privacy and cookie policies, detailed service descriptions. Only a login portal, terms of service, and contact information were available.",
+		},
+		sourceSlugs: new Set(["caduceus-weboldal", "bitcoinbazis-caduceus"]),
 		exchangeSlugs: new Set(),
 	},
 	"revolut-bejelentes": {

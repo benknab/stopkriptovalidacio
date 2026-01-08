@@ -439,6 +439,14 @@ Activities triggering validation requirement:
 			en: "Official Bitvavo announcement on the suspension of services for Hungarian residents. From December 26 (17:00 CET), trading and deposits are disabled, only withdrawals and crypto transfers to external wallets remain available.",
 		},
 	},
+	"bitcoinbazis-caduceus": {
+		title: "BitcoinBázis - Így fogadta a magyar kriptoközösség az első hazai validátort",
+		originalUrl: "https://www.bitcoinbazis.hu/kriptovaluta-validacio-magyarorszag-velemenyek/",
+		summary: {
+			hu: "Részletes elemzés a Caduceus Zrt.-ről, Magyarország egyetlen kriptovaluta validátoráról. A cég háttere, vezetősége, a Vesszős család kapcsolatai és a közösségi reakciók.",
+			en: "Detailed analysis of Caduceus Zrt., Hungary's only cryptocurrency validator. Company background, leadership, Vesszős family connections, and community reactions.",
+		},
+	},
 	"caduceus-cegbetekintes": {
 		title: "Caduceus Zrt. cégbetekintés",
 		originalUrl: "https://www.e-cegjegyzek.hu/?cegadatlap/0110143354/Cegbetekintes",
@@ -509,6 +517,14 @@ Supervisory Board members:
 Shareholder (50%+ voting rights): Bence Marcell Vesszős
 
 Auditor: CORRECT Financial and Accounting Expert Ltd.`,
+		},
+	},
+	"caduceus-weboldal": {
+		title: "Caduceus Zrt. weboldal",
+		originalUrl: "https://caduceus.hu/",
+		summary: {
+			hu: "A Caduceus Zrt. hivatalos weboldala. A 2025. december 19-én indított oldal minimális információt tartalmaz: bejelentkezési portál, ÁSZF és elérhetőség. EU-s előírásoknak megfelelő adatvédelmi szabályzat nincs.",
+			en: "Official website of Caduceus Zrt. Launched on December 19, 2025, the site contains minimal information: login portal, terms of service, and contact details. No EU-compliant privacy policy.",
 		},
 	},
 } as const;
