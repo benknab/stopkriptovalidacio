@@ -152,6 +152,22 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 			en: "Explanatory memorandum for the adopted law. Published in: Indokolások Tára, 2025 issue 56. Provisions on crypto-assets remained unchanged compared to the unified proposal.",
 		},
 	},
+	"sztfh-rendelet-10-2025": {
+		title: "10/2025. (X. 27.) SZTFH rendelet (Jogtar)",
+		originalUrl: "https://net.jogtar.hu/jogszabaly?docid=a2500010.stf",
+		summary: {
+			hu: "A kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól szóló rendelet. Hatályba lép a kihirdetést követő 3. napon, alkalmazni a kihirdetést követő 60. naptól kell.",
+			en: "Regulation on the detailed rules for licensing and registration of crypto-asset exchange validation service providers. Enters into force on the 3rd day after publication, applicable from the 60th day after publication.",
+		},
+	},
+	"sztfh-kozlemeny-2025-10-27": {
+		title: "SZTFH közlemény (2025.10.27.)",
+		originalUrl: "https://sztfh.hu/megjelentek-a-kripto-tv-hez-kapcsolodo-reszletszabalyok/",
+		summary: {
+			hu: "Az SZTFH hivatalos közleménye a 10/2025. (X. 27.) SZTFH rendelet megjelenéséről. A végrehajtási rendeletet a kihirdetését követő 60. naptól kell alkalmazni.",
+			en: "Official SZTFH announcement on the publication of SZTFH Regulation 10/2025 (X. 27.). The implementing regulation must be applied from the 60th day after its publication.",
+		},
+	},
 	"telex-kripto-btk": {
 		title: "Telex",
 		originalUrl: "https://telex.hu/gazdasag/2025/07/01/kripto-kriptodeviza-bitcoin-revolut-btk",

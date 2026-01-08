@@ -159,6 +159,20 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["revolut-telex-2025-07-09"]),
 		exchangeSlugs: new Set(["revolut"]),
 	},
+	"sztfh-rendelet-kihirdetes": {
+		date: new Date("2025-10-27"),
+		type: "primary",
+		title: {
+			hu: "10/2025. (X. 27.) SZTFH rendelet kihirdetése",
+			en: "SZTFH Regulation 10/2025 (X. 27.) published",
+		},
+		summary: {
+			hu: "Megjelent a kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól szóló rendelet. A rendelet a kihirdetést követő 3. napon lép hatályba, alkalmazni a 60. naptól kell. <b>A rendelet a validátor engedélyezési feltételeit határozza meg, de hogy pontosan mit is csinál egy validátor, az továbbra sincs definiálva.</b>",
+			en: "The regulation on detailed rules for licensing and registration of crypto-asset exchange validation service providers was published. The regulation enters into force on the 3rd day after publication, applicable from the 60th day. <b>The regulation defines licensing requirements for validators, but what exactly a validator does remains undefined.</b>",
+		},
+		sourceSlugs: new Set(["sztfh-rendelet-10-2025", "sztfh-kozlemeny-2025-10-27"]),
+		exchangeSlugs: new Set(),
+	},
 	"revolut-bejelentes": {
 		date: new Date("2025-12-08"),
 		type: "secondary",
