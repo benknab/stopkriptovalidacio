@@ -69,7 +69,7 @@ export function ExchangesSection(): JSX.Element {
 	const { t } = useTranslation();
 
 	return (
-		<section id="tozsdek" className="bg-white py-16 sm:py-20">
+		<section id="tozsdek" className="bg-slate-50 py-16 sm:py-20">
 			<div className="mx-auto max-w-4xl px-4 sm:px-6">
 				<h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center">
 					{t("exchanges.title")}

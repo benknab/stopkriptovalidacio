@@ -7,9 +7,10 @@ interface LayoutProps {
 	children: ReactNode;
 	currentLang: SupportedLanguage;
 	hero?: ReactNode;
+	afterContent?: ReactNode;
 }
 
-export function Layout({ children, currentLang, hero }: LayoutProps): JSX.Element {
+export function Layout({ children, currentLang, hero, afterContent }: LayoutProps): JSX.Element {
 	return (
 		<div className="min-h-screen flex flex-col bg-white text-slate-900">
 			<Header currentLang={currentLang} />
@@ -18,6 +19,7 @@ export function Layout({ children, currentLang, hero }: LayoutProps): JSX.Elemen
 				<div className="mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
 					{children}
 				</div>
+				{afterContent}
 			</main>
 			<Footer />
 		</div>

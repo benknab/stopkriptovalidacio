@@ -24,9 +24,9 @@ export function App({ showAllEvents = false }: AppProps): JSX.Element {
 					<Hero />
 					<ImpactSection />
 					<ExchangesSection />
-					<MpsSection />
 				</>
 			}
+			afterContent={<MpsSection />}
 		>
 			<section id="idovonal">
 				<div className="mb-6 flex items-center justify-between">
