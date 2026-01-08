@@ -184,6 +184,14 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 			en: "Registry of crypto-asset exchange validation service providers maintained by SZTFH.",
 		},
 	},
+	"sztfh-rendelet-12-2025": {
+		title: "12/2025. (XI. 28.) SZTFH rendelet (NJT)",
+		originalUrl: "https://njt.hu/jogszabaly/2025-12-20-8K",
+		summary: {
+			hu: "A kriptoeszköz-átváltást validáló szolgáltató engedélyezésével összefüggő eljárások igazgatási szolgáltatási díjairól szóló rendelet. Az engedélyezési eljárás díja: 620 000 Ft.",
+			en: "Regulation on administrative service fees for procedures related to licensing of crypto-asset exchange validation service providers. Licensing fee: 620,000 HUF.",
+		},
+	},
 	"sztfh-iranymutatas-2025-12-19": {
 		title: "SZTFH iránymutatás (PDF)",
 		originalUrl: "https://sztfh.hu/downloads/kiberbiztonsag/kripto/sztfh_rendelet_hatalya_hun.pdf",

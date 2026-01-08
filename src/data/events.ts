@@ -173,6 +173,20 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["sztfh-rendelet-10-2025", "sztfh-kozlemeny-2025-10-27"]),
 		exchangeSlugs: new Set(),
 	},
+	"sztfh-rendelet-12-2025-kihirdetes": {
+		date: new Date("2025-11-28"),
+		type: "tertiary",
+		title: {
+			hu: "12/2025. (XI. 28.) SZTFH rendelet kihirdetése",
+			en: "SZTFH Regulation 12/2025 (XI. 28.) published",
+		},
+		summary: {
+			hu: "Megjelent a kriptoeszköz-átváltást validáló szolgáltató engedélyezésével összefüggő eljárások igazgatási szolgáltatási díjairól szóló rendelet. Az engedélyezési eljárás díja 620 000 Ft. A rendelet a kihirdetést követő 31. napon lép hatályba.",
+			en: "The regulation on administrative service fees for crypto-asset exchange validation service provider licensing procedures was published. The licensing fee is 620,000 HUF. The regulation enters into force on the 31st day after publication.",
+		},
+		sourceSlugs: new Set(["sztfh-rendelet-12-2025"]),
+		exchangeSlugs: new Set(),
+	},
 	"sztfh-elso-validator": {
 		date: new Date("2025-12-19"),
 		type: "primary",
