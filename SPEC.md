@@ -8,6 +8,8 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [x] deploy
 - [x] timeline
 - [x] icons
+- [ ] law timeline
+- [ ] rendelet timeline
 - [ ] favicon + logo
 - [ ] copy
 - [ ] MP search
@@ -15,12 +17,3 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [ ] about + contact page content
 - [ ] analytics
 - [ ] readme (hungarian)
-
-## exchanges
-
-- [x] revolut
-- [x] strike
-- [x] coincash
-- [x] etoro
-- [x] bitstamp
-- [ ] bringin
