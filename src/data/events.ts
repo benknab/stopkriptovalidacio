@@ -75,12 +75,12 @@ export const events: TimelineEvents = {
 		date: new Date("2025-06-17"),
 		type: "secondary",
 		title: {
-			hu: "Országgyűlés elnöke aláírta",
-			en: "Speaker of the National Assembly signed",
+			hu: "Országgyűlés elnöke aláírta a T/11922 törvényjavaslatot",
+			en: "Speaker of the National Assembly signed bill T/11922",
 		},
 		summary: {
-			hu: "Az Országgyűlés elnöke aláírta a törvényt és megküldte a köztársasági elnöknek.",
-			en: "The Speaker of the National Assembly signed the law and sent it to the President of the Republic.",
+			hu: "Az Országgyűlés elnöke aláírta a Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényjavaslatot és megküldte a köztársasági elnöknek.",
+			en: "The Speaker of the National Assembly signed the bill on the amendment of certain laws to improve Hungary's competitiveness and sent it to the President of the Republic.",
 		},
 		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind05"]),
 		exchangeSlugs: new Set(),
