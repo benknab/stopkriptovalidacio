@@ -439,6 +439,14 @@ Activities triggering validation requirement:
 			en: "Official Bitvavo announcement on the suspension of services for Hungarian residents. From December 26 (17:00 CET), trading and deposits are disabled, only withdrawals and crypto transfers to external wallets remain available.",
 		},
 	},
+	"caduceus-cegbetekintes": {
+		title: "Caduceus Zrt. cégbetekintés",
+		originalUrl: "https://www.e-cegjegyzek.hu/?cegadatlap/0110143354/Cegbetekintes",
+		summary: {
+			hu: "A Caduceus Zrt. ingyenes céginformációi. Cégjegyzékszám: 01-10-143354. Székhely: 1039 Budapest, Zöld utca 2. Jegyzett tőke: 100 000 000 Ft. Főtevékenység: IT szaktanácsadás.",
+			en: "Free company information for Caduceus Zrt. Registration number: 01-10-143354. Headquarters: 1039 Budapest, Zöld utca 2. Registered capital: 100,000,000 HUF. Main activity: IT consulting.",
+		},
+	},
 	"caduceus-cegkivonat": {
 		title: "Caduceus Zrt. tárolt cégkivonat",
 		originalUrl: "https://www.e-cegjegyzek.hu/?cegadatlap/0110143354/TaroltCegkivonat",
