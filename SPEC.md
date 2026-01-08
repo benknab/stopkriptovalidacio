@@ -2,15 +2,6 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 
 **Design inspiration**: [fightchatcontrol.eu](https://fightchatcontrol.eu/)
 
-- [x] deno, SSR, react, tailwind scaffold
-- [x] license
-- [x] i18n
-- [x] deploy
-- [x] timeline
-- [x] icons
-- [ ] law timeline
-- [ ] rendelet timeline
-- [ ] caduceus timeline
 - [ ] favicon + logo
 - [ ] copy
 - [ ] MP search
@@ -18,8 +9,9 @@ Website that shows the timeline of crypto "validation" law changes and repercuss
 - [ ] about + contact page content
 - [ ] analytics
 - [ ] readme (hungarian)
+- [ ] seo
+- [ ] email contact setup
 
-## copy
+## hero
 
-- [ ] explain why 0 complaint
 - [ ] users cannot lose access to their assets but access to purchasing
