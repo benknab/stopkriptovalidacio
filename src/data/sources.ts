@@ -447,6 +447,14 @@ Activities triggering validation requirement:
 			en: "Free company information for Caduceus Zrt. Registration number: 01-10-143354. Headquarters: 1039 Budapest, Zöld utca 2. Registered capital: 100,000,000 HUF. Main activity: IT consulting.",
 		},
 	},
+	"caduceus-cegkozlony": {
+		title: "Caduceus Zrt. cégközlöny",
+		originalUrl: "https://cegkozlony.hu/lista/cegnev/2485523",
+		summary: {
+			hu: "A Caduceus Zrt. Cégközlönyben megjelent bejegyzései.",
+			en: "Caduceus Zrt. entries published in the Company Gazette.",
+		},
+	},
 	"caduceus-cegkivonat": {
 		title: "Caduceus Zrt. tárolt cégkivonat",
 		originalUrl: "https://www.e-cegjegyzek.hu/?cegadatlap/0110143354/TaroltCegkivonat",
