@@ -1818,7 +1818,7 @@ export const mps = {
 		party: "független",
 		vote: "no",
 		emails: new Set(["bakos.bernadett@lehetmas.hu", "bakos.bernadett@parlament.hu"]),
-		phones: new Set(["305910727"]),
+		phones: new Set(["36305910727"]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/b138.jpg",
 		district: "Országos lista",
 	},
