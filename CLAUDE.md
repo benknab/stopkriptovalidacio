@@ -80,3 +80,8 @@ When writing summaries, event descriptions, or any user-facing content:
 - Use neutral, objective phrasing (e.g., "A szolgáltatás megszűnt" not "Bezárták a boltot")
 - Reference official terms and legal language where appropriate
 - Keep summaries concise: max 3 sentences, focus on what/when/why
+
+## Verification
+
+- Never run `deno task dev` unprompted - let the developer verify manually
+- Only run `deno task dev` if the developer explicitly asks

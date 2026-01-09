@@ -1906,8 +1906,3 @@ export const mps = {
 		district: "Országos nemzetiségi lista",
 	},
 } as const satisfies Record<string, Mp>;
-
-export const voteSource = {
-	label: "Szavazás lekérdezés T/11922",
-	url: "https://www.parlament.hu/web/guest/szavazasok-adott-idoszakban?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=c2yHA3iZ&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_szav.szav_lap_egy%3Fp_szavdatum%3D2025.06.17.14%3A40%3A29%26p_szavkepv%3DI%26p_szavkpvcsop%3DI%26p_ckl%3D42%26p_osszefuz%3DI",
-};

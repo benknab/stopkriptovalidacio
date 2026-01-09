@@ -1,14 +1,8 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
-import {
-	formatPhoneForDisplay,
-	type Mp,
-	mps,
-	type MpSlug,
-	partyEmails,
-	voteSource,
-	type VoteType,
-} from "../data/mps.ts";
+import { formatPhoneForDisplay, type Mp, mps, type MpSlug, partyEmails, type VoteType } from "../data/mps.ts";
+import { sources } from "../data/sources.ts";
+import type { SupportedLanguage } from "../i18n/index.ts";
 
 const voteColors: Record<VoteType, { badge: string; border: string }> = {
 	yes: {
@@ -269,7 +263,9 @@ export interface MpsSectionProps {
 }
 
 export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps): JSX.Element {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const lang = i18n.language as SupportedLanguage;
+	const voteSource = sources["parlament-szavazas-11922"];
 
 	const isAllSelected = selectedCounty === ALL_OPTION;
 	const currentCountyData = countyData.find((c) => c.name === selectedCounty);
@@ -352,12 +348,12 @@ export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps
 					<p className="text-sm text-slate-600">
 						<strong>{t("mps.source")}:</strong>{" "}
 						<a
-							href={voteSource.url}
+							href={voteSource.originalUrl}
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-brand hover:text-brand-hover transition-colors underline"
 						>
-							{voteSource.label}
+							{voteSource.title[lang]}
 						</a>
 						{" | "}
 						<a

@@ -1,7 +1,7 @@
 import type { TextI18n } from "./types.ts";
 
 export type Source = {
-	title: string;
+	title: TextI18n;
 	originalUrl: string;
 	archivedUrl?: string;
 	summary?: TextI18n;
@@ -10,7 +10,7 @@ export type Source = {
 
 export const sources = {
 	"parlament-11922": {
-		title: "T/11922 Törvényjavaslat (PDF)",
+		title: { hu: "T/11922 Törvényjavaslat (PDF)", en: "T/11922 Bill (PDF)" },
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922.pdf",
 		archivedUrl: "/archivum/11922.pdf",
 		summary: {
@@ -37,7 +37,7 @@ The amendment to Act VII of 2024 on the Market in Crypto-assets is justified by 
 		},
 	},
 	"parlament-11922-oldal": {
-		title: "T/11922 Iromány adatai (Parlament.hu)",
+		title: { hu: "T/11922 Iromány adatai (Parlament.hu)", en: "T/11922 Document Details (Parlament.hu)" },
 		originalUrl:
 			"https://www.parlament.hu/web/guest/szavazasok-adott-idoszakban?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=yn2Czm3g&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D42%26p_izon%3D11922",
 		summary: {
@@ -46,7 +46,7 @@ The amendment to Act VII of 2024 on the Market in Crypto-assets is justified by 
 		},
 	},
 	"parlament-11922-13": {
-		title: "T/11922/13 Egységes javaslat (PDF)",
+		title: { hu: "T/11922/13 Egységes javaslat (PDF)", en: "T/11922/13 Unified Proposal (PDF)" },
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922-0013.pdf",
 		archivedUrl: "/archivum/11922-0013.pdf",
 		summary: {
@@ -55,7 +55,10 @@ The amendment to Act VII of 2024 on the Market in Crypto-assets is justified by 
 		},
 	},
 	"parlament-11922-ind03": {
-		title: "T/11922 Egységes javaslat indokolása (PDF)",
+		title: {
+			hu: "T/11922 Egységes javaslat indokolása (PDF)",
+			en: "T/11922 Unified Proposal Explanatory Memorandum (PDF)",
+		},
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922ind03.pdf",
 		archivedUrl: "/archivum/11922ind03.pdf",
 		summary: {
@@ -144,7 +147,10 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"parlament-11922-ind05": {
-		title: "T/11922 Elfogadott törvény indokolása (PDF)",
+		title: {
+			hu: "T/11922 Elfogadott törvény indokolása (PDF)",
+			en: "T/11922 Adopted Law Explanatory Memorandum (PDF)",
+		},
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922ind05.pdf",
 		archivedUrl: "/archivum/11922ind05.pdf",
 		summary: {
@@ -153,7 +159,7 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"sztfh-rendelet-10-2025": {
-		title: "10/2025. (X. 27.) SZTFH rendelet (Jogtar)",
+		title: { hu: "10/2025. (X. 27.) SZTFH rendelet (Jogtar)", en: "SZTFH Regulation 10/2025 (X. 27.) (Jogtar)" },
 		originalUrl: "https://net.jogtar.hu/jogszabaly?docid=a2500010.stf",
 		summary: {
 			hu: "A kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól szóló rendelet. Hatályba lép a kihirdetést követő 3. napon, alkalmazni a kihirdetést követő 60. naptól kell.",
@@ -161,7 +167,7 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"sztfh-kozlemeny-2025-10-27": {
-		title: "SZTFH közlemény (2025.10.27.)",
+		title: { hu: "SZTFH közlemény (2025.10.27.)", en: "SZTFH Announcement (2025.10.27.)" },
 		originalUrl: "https://sztfh.hu/megjelentek-a-kripto-tv-hez-kapcsolodo-reszletszabalyok/",
 		summary: {
 			hu: "Az SZTFH hivatalos közleménye a 10/2025. (X. 27.) SZTFH rendelet megjelenéséről. A végrehajtási rendeletet a kihirdetését követő 60. naptól kell alkalmazni.",
@@ -169,7 +175,7 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"sztfh-kozlemeny-2025-12-19": {
-		title: "SZTFH közlemény (2025.12.19.)",
+		title: { hu: "SZTFH közlemény (2025.12.19.)", en: "SZTFH Announcement (2025.12.19.)" },
 		originalUrl: "https://sztfh.hu/megtortent-az-elso-kriptoeszkoz-atvaltast-validalo-szolgaltato-engedelyezese/",
 		summary: {
 			hu: "Az SZTFH közleménye az első kriptoeszköz-átváltást validáló szolgáltató engedélyezéséről. A Caduceus Zrt. lett az első és egyetlen engedélyezett validátor.",
@@ -177,7 +183,7 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"sztfh-validator-nyilvantartas": {
-		title: "SZTFH validátor nyilvántartás",
+		title: { hu: "SZTFH validátor nyilvántartás", en: "SZTFH Validator Registry" },
 		originalUrl: "https://sztfh.hu/nyilvantartasok/kriptoeszkoz-atvaltast-validalo-szolgaltatok/",
 		summary: {
 			hu: "Az SZTFH által vezetett kriptoeszköz-átváltást validáló szolgáltatók nyilvántartása.",
@@ -185,7 +191,7 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"sztfh-rendelet-12-2025": {
-		title: "12/2025. (XI. 28.) SZTFH rendelet (NJT)",
+		title: { hu: "12/2025. (XI. 28.) SZTFH rendelet (NJT)", en: "SZTFH Regulation 12/2025 (XI. 28.) (NJT)" },
 		originalUrl: "https://njt.hu/jogszabaly/2025-12-20-8K",
 		summary: {
 			hu: "A kriptoeszköz-átváltást validáló szolgáltató engedélyezésével összefüggő eljárások igazgatási szolgáltatási díjairól szóló rendelet. Az engedélyezési eljárás díja: 620 000 Ft.",
@@ -193,7 +199,7 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"sztfh-iranymutatas-2025-12-19": {
-		title: "SZTFH iránymutatás (PDF)",
+		title: { hu: "SZTFH iránymutatás (PDF)", en: "SZTFH Guidance (PDF)" },
 		originalUrl: "https://sztfh.hu/downloads/kiberbiztonsag/kripto/sztfh_rendelet_hatalya_hun.pdf",
 		archivedUrl: "/archivum/sztfh_rendelet_hatalya_hun.pdf",
 		summary: {
@@ -256,15 +262,15 @@ Activities triggering validation requirement:
 		},
 	},
 	"telex-kripto-btk": {
-		title: "Telex",
+		title: { hu: "Telex", en: "Telex" },
 		originalUrl: "https://telex.hu/gazdasag/2025/07/01/kripto-kriptodeviza-bitcoin-revolut-btk",
 	},
 	"telex-revolut-mica": {
-		title: "Telex",
+		title: { hu: "Telex", en: "Telex" },
 		originalUrl: "https://telex.hu/gazdasag/2025/10/23/revolut-mica-engedely-kriptovaluta",
 	},
 	"revolut-24hu-2025-07-04": {
-		title: "24.hu",
+		title: { hu: "24.hu", en: "24.hu" },
 		originalUrl: "https://24.hu/fn/gazdasag/2025/07/04/revolut-kriptovaluta-szolgaltatas-szunetel-magyarorszagon/",
 		summary: {
 			hu: "A Revolut azonnali hatállyal szüneteltette kriptovaluta-szolgáltatásait Magyarországon. A közelmúltbeli jogszabályváltozások miatt vételi megbízások, staking és befizetések nem lehetségesek, de az eladás és külső pénztárcába utalás továbbra is elérhető.",
@@ -272,7 +278,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"revolut-telex-2025-07-09": {
-		title: "Telex",
+		title: { hu: "Telex", en: "Telex" },
 		originalUrl: "https://telex.hu/gazdasag/2025/07/09/kriptopiac-revolut-bitcoin-befektetes-megtakaritas",
 		summary: {
 			hu: "2025. július 2-án hatályba lépett szabályozás értelmében a kriptovaluta-kereskedelem engedélykötelessé vált Magyarországon. A Revolut ezt követően felfüggesztette szolgáltatásait, több százezer magyar ügyfél nem férhetett hozzá kriptoeszközeihez.",
@@ -280,7 +286,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"revolut-telex-2025-12-08": {
-		title: "Telex",
+		title: { hu: "Telex", en: "Telex" },
 		originalUrl: "https://telex.hu/gazdasag/2025/12/08/revolut-kripto-szolgaltatas-magyarorszag-kivonul",
 		summary: {
 			hu: "A Revolut 2025. december 8-án bejelentette kriptovaluta-szolgáltatásainak teljes megszüntetését Magyarországon. Az ügyfeleknek december 18-ig kellett rendelkezniük kriptoeszközeikről, ezt követően automatikus értékesítés és számla lezárás következett.",
@@ -288,7 +294,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"revolut-help-hu": {
-		title: "Revolut Súgó",
+		title: { hu: "Revolut Súgó", en: "Revolut Help Center" },
 		originalUrl: "https://help.revolut.com/hu-HU/help/crypto/question-crypto-hungary-pausing-services-retail/",
 		summary: {
 			hu: "A Revolut hivatalos tájékoztatója a kriptovaluta-szolgáltatások leállításáról a magyar jogszabályi változások miatt. Határidők: staking megszüntetése december 10., kriptó eladása december 18., átváltás befejezése december 25.",
@@ -296,7 +302,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"revolut-24hu-2025-12-08": {
-		title: "24.hu",
+		title: { hu: "24.hu", en: "24.hu" },
 		originalUrl: "https://24.hu/tech/2025/12/08/kripto-megszunes-revolut-magyarorszag/",
 		summary: {
 			hu: "A Revolut teljesen beszünteti kriptovaluta-szolgáltatásait Magyarországon. Az ügyfelek december 18-ig eladhatják vagy külső pénztárcába utalhatják kriptoeszközeiket, a staking december 10-én automatikusan megszűnik.",
@@ -304,7 +310,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"etoro-portfolio-2025-12-19": {
-		title: "Portfolio.hu",
+		title: { hu: "Portfolio.hu", en: "Portfolio.hu" },
 		originalUrl:
 			"https://www.portfolio.hu/uzlet/20251219/felfuggeszti-kriptoszolgaltatasait-magyarorszagon-az-etoro-mutatjuk-meddig-tudsz-meg-adni-es-venni-807122",
 		summary: {
@@ -313,7 +319,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"etoro-vg-2025-12-18": {
-		title: "VG",
+		title: { hu: "VG", en: "VG" },
 		originalUrl:
 			"https://www.vg.hu/penz-es-tokepiac/2025/12/etoro-kriptokereskedelem-kivonulas-magyarorszag-revolut",
 		summary: {
@@ -322,7 +328,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"coincash-blog-2025-07-08": {
-		title: "CoinCash Blog",
+		title: { hu: "CoinCash Blog", en: "CoinCash Blog" },
 		originalUrl: "https://coincash.eu/hu/blog/tovabbra-is-zavartalanul-mukodunk",
 		summary: {
 			hu: "A CoinCash közleménye szerint a regisztráció szünetel, de a meglévő ügyfelek továbbra is használhatják a webes váltási szolgáltatást.",
@@ -330,7 +336,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"coincash-telex-2025-07-08": {
-		title: "Telex",
+		title: { hu: "Telex", en: "Telex" },
 		originalUrl: "https://telex.hu/gazdasag/2025/07/08/kriptopiac-revolut-bitcoin-befektetes-megtakaritas",
 		summary: {
 			hu: "A Telex beszámolója a CoinCash közleményéről: a webes váltás elérhető maradt, miközben a regisztráció szünetelt.",
@@ -338,7 +344,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"coincash-blog-2025-12-17": {
-		title: "CoinCash Blog",
+		title: { hu: "CoinCash Blog", en: "CoinCash Blog" },
 		originalUrl: "https://coincash.eu/hu/blog/ideiglenesen-felfuggeszti-a-szolgaltatasait-a-coincash",
 		summary: {
 			hu: "A CoinCash bejelentette, hogy 2025. december 18-tól ideiglenesen felfüggeszti szolgáltatásait. Új váltási megbízás nem adható le.",
@@ -346,7 +352,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"coincash-telex-2025-12-18": {
-		title: "Telex",
+		title: { hu: "Telex", en: "Telex" },
 		originalUrl:
 			"https://telex.hu/gazdasag/2025/12/18/coincash-kivonul-magyarorszagrol-kriptovaluta-kozvetito-revolut-szabalyozas",
 		summary: {
@@ -355,7 +361,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"coincash-portfolio-2025-12-18": {
-		title: "Portfolio.hu",
+		title: { hu: "Portfolio.hu", en: "Portfolio.hu" },
 		originalUrl:
 			"https://www.portfolio.hu/befektetes/20251218/breking-ma-nemcsak-a-revolut-de-a-coincash-is-felfuggeszti-kriptoszolgaltatasait-magyarorszagon-806822",
 		summary: {
@@ -364,7 +370,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"coincash-hvg-2025-12-18": {
-		title: "HVG",
+		title: { hu: "HVG", en: "HVG" },
 		originalUrl: "https://hvg.hu/kkv/20251218_Felfuggesztes-magyar-kripto-CoinCash",
 		summary: {
 			hu: "A HVG összefoglalója a CoinCash szolgáltatásainak felfüggesztéséről.",
@@ -372,7 +378,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"bitstamp-kriptoakademia-2025-07-09": {
-		title: "KriptoAkadémia",
+		title: { hu: "KriptoAkadémia", en: "KriptoAkadémia" },
 		originalUrl:
 			"https://kriptoakademia.com/2025/07/09/a-revolut-utan-a-bitstamp-is-felfuggesztette-a-kriptokereskedest-magyarorszagon",
 		summary: {
@@ -381,7 +387,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"bitstamp-cryptofalka-2025-07-09": {
-		title: "CryptoFalka",
+		title: { hu: "CryptoFalka", en: "CryptoFalka" },
 		originalUrl: "https://cryptofalka.hu/tozsde/revolut-utan-bitstamp-szunetelteti-szolgaltatasat-magyarorszagon",
 		summary: {
 			hu: "A CryptoFalka beszámolója a Bitstamp magyarországi szolgáltatáskorlátozásáról a jogszabályváltozás miatt.",
@@ -389,7 +395,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"bitstamp-origo-2025-07": {
-		title: "Origo",
+		title: { hu: "Origo", en: "Origo" },
 		originalUrl: "https://www.origo.hu/gazdasag/2025/07/bitstamp-revolut-kriptovaluta-szolgaltatas",
 		summary: {
 			hu: "A Bitstamp leállította a digitális eszközök vételét és eladását magyar ügyfeleknek. A befizetés, kiutalás, staking és kölcsönzés továbbra is elérhető maradt.",
@@ -397,7 +403,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"kriptomat-official-2025-12-22": {
-		title: "Kriptomat",
+		title: { hu: "Kriptomat", en: "Kriptomat" },
 		originalUrl: "https://kriptomat.io/temporary-suspension-of-trading-services-in-hungary/",
 		summary: {
 			hu: "A Kriptomat hivatalos közleménye: 2025. december 26-tól 23:00-tól ideiglenesen felfüggesztik a kereskedési szolgáltatásokat Magyarországon. A vétel, eladás, váltás, KriptoEarn és Intelligent Portfolios szünetel, de a kifizetések elérhetők maradnak.",
@@ -405,7 +411,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"kriptomat-index-2025-12-25": {
-		title: "Index.hu",
+		title: { hu: "Index.hu", en: "Index.hu" },
 		originalUrl:
 			"https://index.hu/gazdasag/2025/12/25/kriptopiac-kriptomat-kivonulas-magyarorszag-revolut-szabalyozas",
 		summary: {
@@ -414,7 +420,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"kriptomat-revb-2025-12-24": {
-		title: "RevB.hu",
+		title: { hu: "RevB.hu", en: "RevB.hu" },
 		originalUrl: "https://revb.hu/karacsonyi-sokk-a-magyar-kriptopiacon-a-kriptomat-is-bedobja-a-torolkozot/",
 		summary: {
 			hu: "A RevB beszámolója: a Kriptomat is felfüggeszti magyarországi szolgáltatásait december 26-tól, annak ellenére, hogy december 19-én elindult az első validátor.",
@@ -422,7 +428,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"kriptomat-privatbankar-2025-12-25": {
-		title: "Privátbankár.hu",
+		title: { hu: "Privátbankár.hu", en: "Privátbankár.hu" },
 		originalUrl:
 			"https://privatbankar.hu/cikkek/vallalat/eros-kritika-nagy-martoneknak-a-kriptoceg-labbal-szavaz.html",
 		summary: {
@@ -431,7 +437,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"bitvavo-support-2025-12": {
-		title: "Bitvavo Help Center",
+		title: { hu: "Bitvavo Súgó", en: "Bitvavo Help Center" },
 		originalUrl:
 			"https://support.bitvavo.com/hc/en-us/articles/42230921168145-Why-are-Bitvavo-services-being-suspended-for-Hungarian-residents",
 		summary: {
@@ -440,7 +446,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"bitcoinbazis-caduceus": {
-		title: "BitcoinBázis",
+		title: { hu: "BitcoinBázis", en: "BitcoinBázis" },
 		originalUrl: "https://www.bitcoinbazis.hu/kriptovaluta-validacio-magyarorszag-velemenyek/",
 		summary: {
 			hu: "Részletes elemzés a Caduceus Zrt.-ről, Magyarország egyetlen kriptovaluta validátoráról. A cég háttere, vezetősége, a Vesszős család kapcsolatai és a közösségi reakciók.",
@@ -448,7 +454,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"caduceus-cegbetekintes": {
-		title: "Caduceus Zrt. cégbetekintés",
+		title: { hu: "Caduceus Zrt. cégbetekintés", en: "Caduceus Zrt. Company Overview" },
 		originalUrl: "https://www.e-cegjegyzek.hu/?cegadatlap/0110143354/Cegbetekintes",
 		summary: {
 			hu: "A Caduceus Zrt. ingyenes céginformációi. Cégjegyzékszám: 01-10-143354. Székhely: 1039 Budapest, Zöld utca 2. Jegyzett tőke: 100 000 000 Ft. Főtevékenység: IT szaktanácsadás.",
@@ -456,7 +462,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"caduceus-cegkozlony": {
-		title: "Caduceus Zrt. cégközlöny",
+		title: { hu: "Caduceus Zrt. cégközlöny", en: "Caduceus Zrt. Company Gazette" },
 		originalUrl: "https://cegkozlony.hu/lista/cegnev/2485523",
 		summary: {
 			hu: "A Caduceus Zrt. Cégközlönyben megjelent bejegyzései.",
@@ -464,7 +470,7 @@ Activities triggering validation requirement:
 		},
 	},
 	"caduceus-cegkivonat": {
-		title: "Caduceus Zrt. tárolt cégkivonat",
+		title: { hu: "Caduceus Zrt. tárolt cégkivonat", en: "Caduceus Zrt. Company Extract" },
 		originalUrl: "https://www.e-cegjegyzek.hu/?cegadatlap/0110143354/TaroltCegkivonat",
 		summary: {
 			hu: "A Caduceus Zártkörűen Működő Részvénytársaság hivatalos cégkivonata. Bejegyezve: 2025.07.25. Székhely: 1039 Budapest, Zöld utca 2. Jegyzett tőke: 100 000 000 Ft. Többségi tulajdonos és igazgatóság elnöke: Vesszős Bence Marcell.",
@@ -520,11 +526,20 @@ Auditor: CORRECT Financial and Accounting Expert Ltd.`,
 		},
 	},
 	"caduceus-weboldal": {
-		title: "Caduceus Zrt. weboldal",
+		title: { hu: "Caduceus Zrt. weboldal", en: "Caduceus Zrt. Website" },
 		originalUrl: "https://caduceus.hu/",
 		summary: {
 			hu: "A Caduceus Zrt. hivatalos weboldala. A 2025. december 19-én indított oldal minimális információt tartalmaz: bejelentkezési portál, ÁSZF és elérhetőség. EU-s előírásoknak megfelelő adatvédelmi szabályzat nincs.",
 			en: "Official website of Caduceus Zrt. Launched on December 19, 2025, the site contains minimal information: login portal, terms of service, and contact details. No EU-compliant privacy policy.",
+		},
+	},
+	"parlament-szavazas-11922": {
+		title: { hu: "Szavazás lekérdezés T/11922", en: "Vote Query T/11922" },
+		originalUrl:
+			"https://www.parlament.hu/web/guest/szavazasok-adott-idoszakban?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=c2yHA3iZ&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_szav.szav_lap_egy%3Fp_szavdatum%3D2025.06.17.14%3A40%3A29%26p_szavkepv%3DI%26p_szavkpvcsop%3DI%26p_ckl%3D42%26p_osszefuz%3DI",
+		summary: {
+			hu: "A T/11922 törvényjavaslat szavazási eredményeinek lekérdezése a Parlament.hu oldalon.",
+			en: "Vote query results for the T/11922 bill on Parlament.hu.",
 		},
 	},
 } as const;

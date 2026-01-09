@@ -13,7 +13,7 @@ function formatDate(date: Date, lang: SupportedLanguage): string {
 	});
 }
 
-function TimelineSource({ source }: { source: Source }): JSX.Element {
+function TimelineSource({ source, lang }: { source: Source; lang: SupportedLanguage }): JSX.Element {
 	return (
 		<a
 			href={source.originalUrl}
@@ -21,7 +21,7 @@ function TimelineSource({ source }: { source: Source }): JSX.Element {
 			rel="noopener noreferrer"
 			className="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover hover:underline transition-colors"
 		>
-			<span>{source.title}</span>
+			<span>{source.title[lang]}</span>
 			<svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path
 					strokeLinecap="round"
@@ -90,7 +90,9 @@ function TimelineItem({
 
 				{event.sourceSlugs.size > 0 && (
 					<div className="flex flex-wrap gap-3 pt-1">
-						{[...event.sourceSlugs].map((slug) => <TimelineSource key={slug} source={sources[slug]} />)}
+						{[...event.sourceSlugs].map((slug) => (
+							<TimelineSource key={slug} source={sources[slug]} lang={lang} />
+						))}
 					</div>
 				)}
 			</div>
