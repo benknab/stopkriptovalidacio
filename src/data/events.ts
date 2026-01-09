@@ -31,7 +31,7 @@ export const events: TimelineEvents = {
 	},
 	"t-11922-ind03": {
 		date: new Date("2025-06-10"),
-		type: "primary",
+		type: "tertiary",
 		title: {
 			hu: "T/11922 egységes javaslat indokolásának közzététele",
 			en: "T/11922 unified proposal explanatory memorandum published",
