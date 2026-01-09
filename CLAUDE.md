@@ -41,6 +41,9 @@ deno lint             # Lint code
 - Use `Set<T>` for collections of slugs, not arrays
 - Define constants that are not dynamic during render outside of components (module-level)
 - **No barrel files** (index.ts that re-export) - import directly from source files
+- **Function style**: Use `function` declarations for named functions, arrow functions for anonymous callbacks
+  - Good: `function handleClick() {}`, `array.map((x) => x * 2)`
+  - Bad: `const handleClick = () => {}`, `array.map(function (x) { return x * 2; })`
 
 ## Architecture
 

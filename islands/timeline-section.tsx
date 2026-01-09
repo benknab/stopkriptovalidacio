@@ -114,11 +114,22 @@ function TimelineItem({
 
 interface TimelineSectionProps {
 	lang: SupportedLanguage;
+	showSecondary: boolean;
+	showTertiary: boolean;
 }
 
-export default function TimelineSection({ lang }: TimelineSectionProps): JSX.Element {
-	const showSecondary = useBooleanQueryParam({ key: "masodlagos", defaultValue: true });
-	const showTertiary = useBooleanQueryParam({ key: "harmadlagos", defaultValue: false });
+export default function TimelineSection(props: TimelineSectionProps): JSX.Element {
+	const { lang } = props;
+	const showSecondary = useBooleanQueryParam({
+		key: "masodlagos",
+		defaultValue: true,
+		initialValue: props.showSecondary,
+	});
+	const showTertiary = useBooleanQueryParam({
+		key: "harmadlagos",
+		defaultValue: false,
+		initialValue: props.showTertiary,
+	});
 
 	const filteredEvents = Object.entries(events)
 		.filter(([, event]) => {
@@ -128,6 +139,14 @@ export default function TimelineSection({ lang }: TimelineSectionProps): JSX.Ele
 			return false;
 		})
 		.sort(([, a], [, b]) => b.date.getTime() - a.date.getTime());
+
+	function handleSecondaryChange(e: Event): void {
+		showSecondary.value = (e.target as HTMLInputElement).checked;
+	}
+
+	function handleTertiaryChange(e: Event): void {
+		showTertiary.value = (e.target as HTMLInputElement).checked;
+	}
 
 	return (
 		<div>
@@ -147,9 +166,7 @@ export default function TimelineSection({ lang }: TimelineSectionProps): JSX.Ele
 					<input
 						type="checkbox"
 						checked={showSecondary.value}
-						onChange={(e): void => {
-							showSecondary.value = (e.target as HTMLInputElement).checked;
-						}}
+						onChange={handleSecondaryChange}
 						class="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
 					/>
 					<TimelineDot type="secondary" size="sm" />
@@ -159,9 +176,7 @@ export default function TimelineSection({ lang }: TimelineSectionProps): JSX.Ele
 					<input
 						type="checkbox"
 						checked={showTertiary.value}
-						onChange={(e): void => {
-							showTertiary.value = (e.target as HTMLInputElement).checked;
-						}}
+						onChange={handleTertiaryChange}
 						class="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
 					/>
 					<TimelineDot type="tertiary" size="sm" />

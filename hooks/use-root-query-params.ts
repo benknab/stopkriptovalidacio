@@ -3,18 +3,11 @@ import { type Signal, useSignal, useSignalEffect } from "@preact/signals";
 type BooleanParamConfig = {
 	key: string;
 	defaultValue: boolean;
+	initialValue: boolean;
 };
 
 export function useBooleanQueryParam(config: BooleanParamConfig): Signal<boolean> {
-	const getInitialValue = (): boolean => {
-		if (typeof globalThis.location === "undefined") return config.defaultValue;
-		const params = new URLSearchParams(globalThis.location.search);
-		const value = params.get(config.key);
-		if (value === null) return config.defaultValue;
-		return value === "true";
-	};
-
-	const signal = useSignal(getInitialValue());
+	const signal = useSignal(config.initialValue);
 
 	useSignalEffect(() => {
 		if (typeof globalThis.history === "undefined") return;
