@@ -45,14 +45,14 @@
 		},
 		"contact": {
 			"title": "Kapcsolat",
-			"description": "Ha kérdése, észrevétele, pontosítási igénye, frissítési kérése vagy visszajelzése van, keressen minket:"
+			"description": "Ha kérdése, észrevétele, pontosítási igénye, frissítési kérése vagy visszajelzése van, keressen minket az <emailLink>info@kriptovalidacio.hu</emailLink> címen."
 		},
 		"privacy": {
 			"title": "Adatvédelem",
-			"analytics": "Adatvédelmi szempontból előnyös elemzést használunk a Plausible szolgáltatásán keresztül, amely nem használ sütiket és nem gyűjt személyes adatokat. További információért tekintse meg a <plausibleLink>Plausible adatvédelmi irányelveit</plausibleLink>.",
-			"email": "Amikor a kapcsolatfelvételi eszközünket használja képviselőknek küldött emailekhez, minden feldolgozás a böngészőjében történik. Nem tároljuk és nem továbbítjuk az üzenetek tartalmát.",
-			"cloudflare": "A weboldal teljesítményének és megbízhatóságának javítása érdekében a Cloudflare gyorsítótárazási szolgáltatását használjuk. A Cloudflare a szolgáltatás részeként ideiglenesen feldolgozhatja az IP-címeket és alapvető kérési információkat, de ezeket az adatokat nem használjuk elemzési célokra. További információért tekintse meg a <cloudflareLink>Cloudflare adatvédelmi irányelveit</cloudflareLink>.",
-			"changes": "Ha bármilyen változtatást eszközölünk ezen az adatvédelmi irányelven, frissítjük ezt az oldalt.",
+			"email": "A képviselőknek küldött emailek feldolgozása teljes egészében a böngészőben történik. Az üzenetek tartalmát nem tároljuk és nem továbbítjuk.",
+			"analytics": "Adatvédelmi célú analitikához a Plausible szolgáltatását használjuk, amely nem használ sütiket és nem gyűjt személyes adatokat. További információ: <plausibleLink>Plausible adatvédelmi irányelvek</plausibleLink>.",
+			"cloudflare": "A weboldal teljesítményének javításához a Cloudflare gyorsítótárazó szolgáltatását használjuk. A Cloudflare ideiglenesen feldolgozhat IP-címeket és alapvető kérési információkat, de ezeket az adatokat mi nem használjuk elemzési célokra. További információ: <cloudflareLink>Cloudflare adatvédelmi irányelvek</cloudflareLink>.",
+			"changes": "Az adatvédelmi irányelvek változása esetén frissítjük ezt az oldalt.",
 			"updated": "Utolsó frissítés: 2025. január 9."
 		}
 	},

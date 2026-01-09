@@ -33,6 +33,7 @@ export function About({ currentPath }: AboutProps): JSX.Element {
 			<section id="adatvedelem" className="mb-12">
 				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("about.privacy.title")}</H2>
 				<div className="space-y-4 text-slate-600 leading-relaxed">
+					<p>{t("about.privacy.email")}</p>
 					<p>
 						<Trans
 							i18nKey="about.privacy.analytics"
@@ -43,7 +44,6 @@ export function About({ currentPath }: AboutProps): JSX.Element {
 							}}
 						/>
 					</p>
-					<p>{t("about.privacy.email")}</p>
 					<p>
 						<Trans
 							i18nKey="about.privacy.cloudflare"
@@ -65,10 +65,14 @@ export function About({ currentPath }: AboutProps): JSX.Element {
 			{/* Contact Section */}
 			<section id="kontakt">
 				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("about.contact.title")}</H2>
-				<p className="text-slate-600 leading-relaxed mb-4">{t("about.contact.description")}</p>
-				<Link href="mailto:info@kriptovalidacio.hu" className="font-mono">
-					info@kriptovalidacio.hu
-				</Link>
+				<p className="text-slate-600 leading-relaxed">
+					<Trans
+						i18nKey="about.contact.description"
+						components={{
+							emailLink: <Link href="mailto:info@kriptovalidacio.hu" />,
+						}}
+					/>
+				</p>
 			</section>
 		</Layout>
 	);
