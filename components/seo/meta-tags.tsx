@@ -32,6 +32,7 @@ export function MetaTags({
 			<meta name="description" content={description} />
 			<meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
 			<link rel="canonical" href={canonicalUrl} />
+			<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		</>
 	);
 }
