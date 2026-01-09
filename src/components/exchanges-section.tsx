@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import { type Exchange, exchanges, type ExchangeSlug, type ExchangeStatus } from "../data/exchanges.ts";
+import { H2 } from "./h2.tsx";
 
 const statusPriority: Record<ExchangeStatus, number> = {
 	operating: 0,
@@ -87,9 +88,7 @@ export function ExchangesSection(): JSX.Element {
 	return (
 		<section id="tozsdek" className="bg-slate-50 py-16 sm:py-20">
 			<div className="mx-auto max-w-4xl px-4 sm:px-6">
-				<h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center">
-					{t("exchanges.title")}
-				</h2>
+				<H2>{t("exchanges.title")}</H2>
 				<p className="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
 					{t("exchanges.description")}
 				</p>

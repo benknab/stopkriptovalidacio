@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
+import { H2 } from "./h2.tsx";
 import { Layout } from "./layout.tsx";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
@@ -13,7 +14,7 @@ export function About(): JSX.Element {
 
 			{/* Mission Section */}
 			<section className="mb-12">
-				<h2 className="text-2xl font-bold text-slate-900 mb-4">{t("about.mission.title")}</h2>
+				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("about.mission.title")}</H2>
 				<div className="space-y-4 text-slate-600 leading-relaxed">
 					<p>{t("about.mission.description")}</p>
 					<p>{t("about.mission.privacy")}</p>
@@ -24,7 +25,7 @@ export function About(): JSX.Element {
 
 			{/* Contact Section */}
 			<section id="kontakt">
-				<h2 className="text-2xl font-bold text-slate-900 mb-4">{t("about.contact.title")}</h2>
+				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("about.contact.title")}</H2>
 				<p className="text-slate-600 leading-relaxed mb-4">{t("about.contact.description")}</p>
 				<a
 					href="mailto:info@kriptovalidacio.hu"

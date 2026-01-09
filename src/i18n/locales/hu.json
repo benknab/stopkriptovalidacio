@@ -50,6 +50,7 @@
 	},
 	"timeline": {
 		"filter": {
+			"primary": "Főbb események",
 			"related": "Kapcsolódó események",
 			"background": "Háttéresemények"
 		}

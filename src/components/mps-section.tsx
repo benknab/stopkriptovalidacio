@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { type Mp, mps, type MpSlug, type VoteType } from "../data/mps.ts";
 import { sources } from "../data/sources.ts";
 import type { SupportedLanguage } from "../i18n/index.ts";
+import { H2 } from "./h2.tsx";
 
 export const voteColors: Record<VoteType, { badge: string; border: string }> = {
 	yes: {
@@ -379,9 +380,7 @@ export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps
 		<section id="kepviselok" className="bg-slate-50 py-16 sm:py-20">
 			<script dangerouslySetInnerHTML={{ __html: filterScript }} />
 			<div className="mx-auto max-w-6xl px-4 sm:px-6">
-				<h2 className="text-2xl sm:text-3xl font-bold text-slate-900 text-center">
-					{t("mps.title")}
-				</h2>
+				<H2>{t("mps.title")}</H2>
 				<p className="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
 					{t("mps.description")}
 				</p>

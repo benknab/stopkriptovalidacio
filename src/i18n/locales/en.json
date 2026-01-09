@@ -50,6 +50,7 @@
 	},
 	"timeline": {
 		"filter": {
+			"primary": "Primary events",
 			"related": "Related events",
 			"background": "Background events"
 		}

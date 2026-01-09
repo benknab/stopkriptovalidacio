@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import { ExchangesSection } from "./exchanges-section.tsx";
+import { H2 } from "./h2.tsx";
 import { Hero } from "./hero.tsx";
 import { ImpactSection } from "./impact-section.tsx";
 import { Layout } from "./layout.tsx";
@@ -37,7 +38,7 @@ export function App({
 			afterContent={<MpsSection selectedCounty={mpCounty} selectedDistrict={mpDistrict} />}
 		>
 			<section id="idovonal">
-				<h2 className="text-xl font-semibold text-slate-900 mb-6">{t("nav.timeline")}</h2>
+				<H2 className="mb-6">{t("nav.timeline")}</H2>
 				<Timeline
 					showSecondary={showSecondary}
 					showTertiary={showTertiary}

@@ -2,7 +2,7 @@ import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import { events } from "../data/events.ts";
 import { type Source, sources } from "../data/sources.ts";
-import type { TimelineEvent } from "../data/types.ts";
+import type { EventType, TimelineEvent } from "../data/types.ts";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
 function formatDate(date: Date, lang: SupportedLanguage): string {
@@ -34,15 +34,30 @@ function TimelineSource({ source, lang }: { source: Source; lang: SupportedLangu
 	);
 }
 
-function getDotClassName(type: TimelineEvent["type"]): string {
-	switch (type) {
-		case "primary":
-			return "bg-primary border-primary";
-		case "secondary":
-			return "bg-primary-light border-primary";
-		case "tertiary":
-			return "bg-slate-100 border-slate-400";
-	}
+type DotSize = "sm" | "md";
+
+const dotColorClasses: Record<EventType, string> = {
+	primary: "bg-primary border-primary",
+	secondary: "bg-primary-light border-primary",
+	tertiary: "bg-slate-100 border-slate-400",
+};
+
+const dotSizeClasses: Record<DotSize, string> = {
+	sm: "w-4 h-4",
+	md: "w-6 h-6",
+};
+
+interface TimelineDotProps {
+	type: EventType;
+	size?: DotSize;
+}
+
+function TimelineDot({ type, size = "md" }: TimelineDotProps): JSX.Element {
+	return (
+		<div
+			className={`rounded-full border-2 shrink-0 ${dotSizeClasses[size]} ${dotColorClasses[type]}`}
+		/>
+	);
 }
 
 function getTitleClassName(type: TimelineEvent["type"]): string {
@@ -69,9 +84,9 @@ function TimelineItem({
 			<div className="absolute left-[11px] top-3 bottom-0 w-px bg-slate-200" />
 
 			{/* Dot */}
-			<div
-				className={`absolute left-0 top-1.5 w-6 h-6 rounded-full border-2 ${getDotClassName(event.type)}`}
-			/>
+			<div className="absolute left-0 top-1.5">
+				<TimelineDot type={event.type} />
+			</div>
 
 			{/* Content */}
 			<div className="space-y-2">
@@ -171,6 +186,16 @@ export function Timeline({
 
 			{/* Filter checkboxes */}
 			<div className="flex flex-wrap gap-4 mb-6">
+				<label className="inline-flex items-center gap-2 select-none cursor-default">
+					<input
+						type="checkbox"
+						checked
+						disabled
+						className="w-4 h-4 rounded border-slate-300 text-brand cursor-default"
+					/>
+					<TimelineDot type="primary" size="sm" />
+					<span className="text-sm text-slate-700">{t("timeline.filter.primary")}</span>
+				</label>
 				<label className="inline-flex items-center gap-2 cursor-pointer select-none">
 					<input
 						type="checkbox"
@@ -178,6 +203,7 @@ export function Timeline({
 						defaultChecked={showSecondary}
 						className="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
 					/>
+					<TimelineDot type="secondary" size="sm" />
 					<span className="text-sm text-slate-700">{t("timeline.filter.related")}</span>
 				</label>
 				<label className="inline-flex items-center gap-2 cursor-pointer select-none">
@@ -187,6 +213,7 @@ export function Timeline({
 						defaultChecked={showTertiary}
 						className="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
 					/>
+					<TimelineDot type="tertiary" size="sm" />
 					<span className="text-sm text-slate-700">{t("timeline.filter.background")}</span>
 				</label>
 			</div>
