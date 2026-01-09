@@ -15,30 +15,25 @@ export function Footer({ lang }: FooterProps): JSX.Element {
 							Stop Kripto Validáció
 						</span>
 					</div>
-					<div>
-						<h3 class="text-white font-semibold mb-3">
-							{t("nav.about", lang)}
-						</h3>
-						<div class="space-y-2">
-							<a
-								href="/rolunk"
-								class="block text-slate-400 hover:text-white transition-colors text-sm"
-							>
-								{t("footer.aboutSite", lang)}
-							</a>
-							<a
-								href="/rolunk#adatvedelem"
-								class="block text-slate-400 hover:text-white transition-colors text-sm"
-							>
-								{t("footer.privacy", lang)}
-							</a>
-							<a
-								href="/rolunk#kontakt"
-								class="block text-slate-400 hover:text-white transition-colors text-sm"
-							>
-								{t("nav.contact", lang)}
-							</a>
-						</div>
+					<div class="flex flex-wrap items-center gap-6">
+						<a
+							href="/rolunk"
+							class="text-slate-400 hover:text-white transition-colors text-sm"
+						>
+							{t("footer.aboutSite", lang)}
+						</a>
+						<a
+							href="/rolunk#adatvedelem"
+							class="text-slate-400 hover:text-white transition-colors text-sm"
+						>
+							{t("footer.privacy", lang)}
+						</a>
+						<a
+							href="/rolunk#kontakt"
+							class="text-slate-400 hover:text-white transition-colors text-sm"
+						>
+							{t("nav.contact", lang)}
+						</a>
 					</div>
 				</div>
 				<div class="border-t border-slate-700 mt-8 pt-6">
