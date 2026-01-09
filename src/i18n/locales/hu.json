@@ -121,9 +121,11 @@
 		"no_results": "Nincs találat a keresési feltételeknek megfelelően.",
 		"source": "Források",
 		"call": "Hívás",
+		"email": "Email",
+		"phone": "Telefon",
 		"vote": {
-			"yes": "Igen",
-			"no": "Nem",
+			"yes": "Igennel szavazott",
+			"no": "Nemmel szavazott",
 			"abstain": "Tartózkodott",
 			"absent": "Hiányzott",
 			"not_voted": "Nem szavazott",

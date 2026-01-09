@@ -121,9 +121,11 @@
 		"no_results": "No results match your search criteria.",
 		"source": "Sources",
 		"call": "Call",
+		"email": "Email",
+		"phone": "Phone",
 		"vote": {
-			"yes": "Yes",
-			"no": "No",
+			"yes": "Voted Yes",
+			"no": "Voted No",
 			"abstain": "Abstained",
 			"absent": "Absent",
 			"not_voted": "Did not vote",

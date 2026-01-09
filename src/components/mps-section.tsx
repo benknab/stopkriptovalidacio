@@ -1,6 +1,6 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
-import { formatPhoneForDisplay, type Mp, mps, type MpSlug, partyEmails, type VoteType } from "../data/mps.ts";
+import { type Mp, mps, type MpSlug, type VoteType } from "../data/mps.ts";
 import { sources } from "../data/sources.ts";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
@@ -138,114 +138,127 @@ function getSortedMps(): Array<{ slug: MpSlug; mp: Mp }> {
 
 const sortedMps = getSortedMps();
 
-interface MpCardProps {
-	mp: Mp;
+function buildMailtoUrl(emails: Set<string>): string | null {
+	const [primary, ...cc] = Array.from(emails);
+	if (!primary) return null;
+	const params = cc.length > 0 ? `?cc=${cc.join(",")}` : "";
+	return `mailto:${primary}${params}`;
 }
 
-function DataRow({
-	icon,
-	children,
-	isEmpty = false,
-}: {
-	icon: string;
-	children: React.ReactNode;
-	isEmpty?: boolean;
-}): JSX.Element {
+function EmailIcon(): JSX.Element {
 	return (
-		<div className="flex items-start gap-2 text-sm">
-			<span className="w-5 shrink-0 text-center opacity-60">{icon}</span>
-			<span className={isEmpty ? "text-slate-300 font-mono" : ""}>{children}</span>
-		</div>
+		<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth={2}
+				d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+			/>
+		</svg>
 	);
+}
+
+function PhoneIcon(): JSX.Element {
+	return (
+		<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth={2}
+				d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+			/>
+		</svg>
+	);
+}
+
+interface MpCardProps {
+	mp: Mp;
 }
 
 function MpCard({ mp }: MpCardProps): JSX.Element {
 	const { t } = useTranslation();
 	const colors = voteColors[mp.vote];
-	const emails = Array.from(mp.emails);
+	const mailtoUrl = buildMailtoUrl(mp.emails);
+	const firstPhone = mp.phones.size > 0 ? Array.from(mp.phones)[0] : null;
 
 	return (
 		<div
-			className={`relative bg-white rounded-lg border-2 ${colors.border} p-5 transition-all duration-200 hover:shadow-md`}
+			className={`relative bg-white rounded-xl border-2 ${colors.border} p-5 transition-all duration-200 hover:shadow-md flex flex-col`}
 		>
-			{/* Header: Photo + Name + Party */}
-			<div className="flex items-start gap-4 mb-4">
+			{/* Vote Badge - Top Right */}
+			<span
+				className={`absolute top-4 right-4 text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}
+			>
+				{t(`mps.vote.${mp.vote}`)}
+			</span>
+
+			{/* Photo */}
+			<div className="flex justify-center mb-4">
 				{mp.imageUrl
 					? (
 						<img
 							src={mp.imageUrl}
 							alt={mp.name}
-							className="w-14 h-14 rounded-full object-cover border-2 border-slate-200 shrink-0"
+							className="w-16 h-16 rounded-full object-cover border-2 border-slate-200"
 						/>
 					)
 					: (
-						<div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center border-2 border-slate-200 shrink-0">
-							<span className="text-slate-400 text-xl">👤</span>
+						<div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center border-2 border-slate-200">
+							<span className="text-slate-400 text-2xl">👤</span>
 						</div>
 					)}
-				<div className="min-w-0 flex-1 pt-1">
-					<h3 className="font-semibold text-slate-900 leading-tight">{mp.name}</h3>
-					<p className="text-sm text-slate-500">{t(`mps.party.${mp.party}`, mp.party)}</p>
-				</div>
-				<span
-					className={`shrink-0 text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}
-				>
-					{t(`mps.vote.${mp.vote}`)}
-				</span>
 			</div>
 
-			{/* Data rows */}
-			<div className="space-y-1.5 text-slate-600">
-				{mp.district && (
-					<DataRow icon="📍">
-						<span className="text-slate-700">{mp.district}</span>
-					</DataRow>
+			{/* Content */}
+			<div className="flex-1 space-y-1 text-center">
+				<h3 className="font-bold text-slate-900 text-lg leading-tight">{mp.name}</h3>
+				<p className="text-sm text-slate-500">{t(`mps.party.${mp.party}`, mp.party)}</p>
+				{mp.district && <p className="text-sm text-slate-600">{mp.district}</p>}
+				{mp.website && (
+					<a
+						href={mp.website}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="block text-sm text-brand hover:text-brand-hover transition-colors truncate"
+					>
+						{mp.website.replace(/^https?:\/\//, "")}
+					</a>
 				)}
+			</div>
 
-				{/* Website - always show */}
-				<DataRow icon="🌐" isEmpty={!mp.website}>
-					{mp.website
-						? (
-							<a
-								href={mp.website}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="font-mono text-sm text-brand hover:text-brand-hover transition-colors break-all"
-							>
-								{mp.website.replace(/^https?:\/\//, "")}
-							</a>
-						)
-						: "–"}
-				</DataRow>
-
-				{/* Emails */}
-				{emails.map((email) => (
-					<DataRow key={email} icon="📧">
+			{/* Button Row */}
+			<div className="flex gap-2 mt-4">
+				{mailtoUrl
+					? (
 						<a
-							href={`mailto:${email}`}
-							className="font-mono text-sm text-brand hover:text-brand-hover transition-colors break-all"
+							href={mailtoUrl}
+							className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
 						>
-							{email}
+							<EmailIcon />
+							{t("mps.email")}
 						</a>
-					</DataRow>
-				))}
-
-				{/* Phones */}
-				{mp.phones.size > 0
-					? Array.from(mp.phones).map((phone) => (
-						<DataRow key={phone} icon="📞">
-							<a
-								href={`tel:+${phone}`}
-								className="font-mono text-sm text-brand hover:text-brand-hover transition-colors"
-							>
-								{formatPhoneForDisplay(phone)}
-							</a>
-						</DataRow>
-					))
+					)
 					: (
-						<DataRow icon="📞" isEmpty>
-							–
-						</DataRow>
+						<span className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+							<EmailIcon />
+							{t("mps.email")}
+						</span>
+					)}
+				{firstPhone
+					? (
+						<a
+							href={`tel:+${firstPhone}`}
+							className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-white bg-brand rounded-lg hover:bg-brand-hover transition-colors"
+						>
+							<PhoneIcon />
+							{t("mps.phone")}
+						</a>
+					)
+					: (
+						<span className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+							<PhoneIcon />
+							{t("mps.phone")}
+						</span>
 					)}
 			</div>
 		</div>
