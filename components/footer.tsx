@@ -34,6 +34,12 @@ export function Footer({ lang }: FooterProps): JSX.Element {
 						>
 							{t("nav.contact", lang)}
 						</a>
+						<a
+							href="/rolunk#kozremukodes"
+							class="text-slate-400 hover:text-white transition-colors text-sm"
+						>
+							{t("footer.contributions", lang)}
+						</a>
 					</div>
 				</div>
 				<div class="border-t border-slate-700 mt-8 pt-6">

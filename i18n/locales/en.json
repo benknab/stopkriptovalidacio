@@ -44,6 +44,7 @@
 			"description": "Stop Crypto Validation is a citizen-led initiative created to raise awareness about Hungary's \"crypto validation\" law. Our mission is to inform Hungarian citizens about this legislation, which threatens financial freedom and digital security by mandating globally unique validation requirements on cryptocurrency transactions.",
 			"privacy": "We believe that financial freedom is a fundamental right, and that maintaining free competition among crypto service providers is essential for protecting the interests of Hungarian crypto owners. The crypto validation law undermines these protections, exposing citizens to new risks and forcing service providers to leave the country.",
 			"platform": "Our platform provides easy-to-understand information about the crypto validation law, tracks service provider status, and helps citizens contact their representatives to express their concerns.",
+			"inspiration": "This website was inspired by the <fightChatPolicyLink>Fight Chat Control</fightChatPolicyLink> project, which fights against the EU Chat Control regulation. We encourage everyone to participate in that initiative as well.",
 			"disclaimer": "We are not affiliated with any political party."
 		},
 		"contact": {
@@ -57,6 +58,11 @@
 			"cloudflare": "We use Cloudflare as a caching service to improve website performance and reliability. Cloudflare may temporarily process IP addresses and basic request information as part of its service, but this data is not used by us for analytics purposes. For more information, see <cloudflareLink>Cloudflare's privacy policy</cloudflareLink>.",
 			"changes": "If we make any changes to this privacy policy, we will update this page.",
 			"updated": "Last updated: January 9, 2025."
+		},
+		"contributions": {
+			"title": "Contribute",
+			"description": "This project is open source and we welcome contributions. If you would like to suggest bug fixes, new features, or content updates, visit our <githubLink>GitHub repository</githubLink>.",
+			"howto": "Open an issue with your suggestion, or submit a pull request with your changes."
 		}
 	},
 	"timeline": {
@@ -134,6 +140,7 @@
 	"footer": {
 		"aboutSite": "About This Site",
 		"privacy": "Privacy Policy",
+		"contributions": "Contribute",
 		"citizenLed": "This is a citizen-led information platform."
 	},
 	"mps": {

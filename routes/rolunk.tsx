@@ -77,6 +77,11 @@ export default define.page(function About(ctx): JSX.Element {
 					<p>{t("about.mission.description", lang)}</p>
 					<p>{t("about.mission.privacy", lang)}</p>
 					<p>{t("about.mission.platform", lang)}</p>
+					<p>
+						{parseTextWithLinks(t("about.mission.inspiration", lang), lang, {
+							fightChatPolicyLink: { href: "https://fightchatcontrol.eu", external: true },
+						})}
+					</p>
 					<p class="font-medium">{t("about.mission.disclaimer", lang)}</p>
 				</div>
 			</section>
@@ -102,13 +107,26 @@ export default define.page(function About(ctx): JSX.Element {
 			</section>
 
 			{/* Contact Section */}
-			<section id="kontakt">
+			<section id="kontakt" class="mb-12">
 				<H2 class="mb-4 text-left text-2xl sm:text-2xl">{t("about.contact.title", lang)}</H2>
 				<p class="text-slate-600 leading-relaxed">
 					{parseTextWithLinks(t("about.contact.description", lang), lang, {
 						emailLink: { href: "mailto:info@stopkriptovalidacio.hu" },
 					})}
 				</p>
+			</section>
+
+			{/* Contributions Section */}
+			<section id="kozremukodes">
+				<H2 class="mb-4 text-left text-2xl sm:text-2xl">{t("about.contributions.title", lang)}</H2>
+				<div class="space-y-4 text-slate-600 leading-relaxed">
+					<p>
+						{parseTextWithLinks(t("about.contributions.description", lang), lang, {
+							githubLink: { href: "https://github.com/bkiac/kriptovalidacio", external: true },
+						})}
+					</p>
+					<p>{t("about.contributions.howto", lang)}</p>
+				</div>
 			</section>
 		</Layout>
 	);

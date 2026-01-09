@@ -44,6 +44,7 @@
 			"description": "A Stop Kripto Validáció egy polgári kezdeményezés, amelynek célja, hogy felhívja a figyelmet a magyar \"kriptovalidációs\" törvényre. Küldetésünk, hogy tájékoztassuk a magyar állampolgárokat erről a jogszabályról, amely veszélyezteti a pénzügyi szabadságot és a digitális biztonságot azzal, hogy világszinten egyedülálló validációs követelményeket ír elő a kriptovaluta-tranzakciókra.",
 			"privacy": "Meggyőződésünk, hogy a pénzügyi szabadság alapvető jog, és hogy a kripto szolgáltatók szabad versenyének fenntartása elengedhetetlen a magyar kriptotulajdonosok érdekeinek védelméhez. A kriptovalidációs törvény aláássa ezeket a védelmet, új kockázatoknak teszi ki az állampolgárokat, és arra kényszeríti a szolgáltatókat, hogy elhagyják az országot.",
 			"platform": "Platformunk könnyen érthető információkat nyújt a kriptovalidációs törvényről, nyomon követi a szolgáltatók helyzetét, és segít az állampolgároknak kapcsolatba lépni képviselőikkel, hogy kifejezzék aggályaikat.",
+			"inspiration": "Ezt a weboldalt a <fightChatPolicyLink>Fight Chat Control</fightChatPolicyLink> projekt inspirálta, amely az EU Chat Control szabályozása ellen küzd. Bátorítunk mindenkit, hogy vegyen részt abban a kezdeményezésben is.",
 			"disclaimer": "Nem vagyunk semmilyen politikai párttal kapcsolatban."
 		},
 		"contact": {
@@ -57,6 +58,11 @@
 			"cloudflare": "A weboldal teljesítményének javításához a Cloudflare gyorsítótárazó szolgáltatását használjuk. A Cloudflare ideiglenesen feldolgozhat IP-címeket és alapvető kérési információkat, de ezeket az adatokat mi nem használjuk elemzési célokra. További információ: <cloudflareLink>Cloudflare adatvédelmi irányelvek</cloudflareLink>.",
 			"changes": "Az adatvédelmi irányelvek változása esetén frissítjük ezt az oldalt.",
 			"updated": "Utolsó frissítés: 2025. január 9."
+		},
+		"contributions": {
+			"title": "Közreműködés",
+			"description": "Ez a projekt nyílt forráskódú és örömmel fogadjuk a közreműködéseket. Ha hibajavítást, új funkciót vagy tartalmi frissítést szeretnél javasolni, látogass el a <githubLink>GitHub tárhelyünkre</githubLink>.",
+			"howto": "Nyiss egy issue-t a javaslatoddal, vagy küldj pull requestet a módosításokkal."
 		}
 	},
 	"timeline": {
@@ -134,6 +140,7 @@
 	"footer": {
 		"aboutSite": "Az oldalról",
 		"privacy": "Adatvédelem",
+		"contributions": "Közreműködés",
 		"citizenLed": "Ez egy polgári kezdeményezésű információs platform."
 	},
 	"mps": {
