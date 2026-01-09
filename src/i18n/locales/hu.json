@@ -49,8 +49,10 @@
 		}
 	},
 	"timeline": {
-		"show_all": "Összes esemény",
-		"show_primary": "Csak főbb események"
+		"filter": {
+			"related": "Kapcsolódó események",
+			"background": "Háttéresemények"
+		}
 	},
 	"common": {
 		"coming_soon": "Hamarosan..."

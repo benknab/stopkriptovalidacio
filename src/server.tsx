@@ -137,10 +137,22 @@ ${urls.join("\n")}
 
 // Routes
 app.get("/", (c) => {
-	const showAll = c.req.query("osszes") === "true";
+	const showSecondary = c.req.query("masodlagos") !== "false";
+	const showTertiary = c.req.query("harmadlagos") === "true";
 	const mpCounty = c.req.query("megye") || "";
 	const mpDistrict = c.req.query("kerulet") || "";
-	return renderPage(c, () => <App showAllEvents={showAll} mpCounty={mpCounty} mpDistrict={mpDistrict} />, "home");
+	return renderPage(
+		c,
+		() => (
+			<App
+				showSecondary={showSecondary}
+				showTertiary={showTertiary}
+				mpCounty={mpCounty}
+				mpDistrict={mpDistrict}
+			/>
+		),
+		"home",
+	);
 });
 app.get("/rolunk", (c) => renderPage(c, About, "about"));
 

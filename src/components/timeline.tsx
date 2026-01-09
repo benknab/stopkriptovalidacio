@@ -101,20 +101,100 @@ function TimelineItem({
 }
 
 interface TimelineProps {
-	showAll?: boolean;
+	showSecondary?: boolean;
+	showTertiary?: boolean;
+	mpCounty?: string;
+	mpDistrict?: string;
 }
 
-export function Timeline({ showAll = false }: TimelineProps): JSX.Element {
-	const { i18n } = useTranslation();
+export function Timeline({
+	showSecondary = true,
+	showTertiary = false,
+	mpCounty = "",
+	mpDistrict = "",
+}: TimelineProps): JSX.Element {
+	const { t, i18n } = useTranslation();
 	const lang = i18n.language as SupportedLanguage;
 
 	const sortedEvents = Object.entries(events)
-		.filter(([, event]) => showAll || event.type !== "tertiary")
+		.filter(([, event]) => {
+			if (event.type === "primary") return true;
+			if (event.type === "secondary") return showSecondary;
+			if (event.type === "tertiary") return showTertiary;
+			return false;
+		})
 		.sort(([, a], [, b]) => b.date.getTime() - a.date.getTime());
 
+	const filterScript = `
+		document.addEventListener('DOMContentLoaded', function() {
+			var scrollY = sessionStorage.getItem('timelineScrollY');
+			if (scrollY) {
+				sessionStorage.removeItem('timelineScrollY');
+				window.scrollTo(0, parseInt(scrollY));
+			}
+
+			var secondaryCheckbox = document.getElementById('timeline-secondary');
+			var tertiaryCheckbox = document.getElementById('timeline-tertiary');
+
+			function updateUrl() {
+				var url = new URL(window.location.origin + '/');
+				url.hash = 'idovonal';
+
+				// Preserve MP filter params
+				${mpCounty ? `url.searchParams.set('megye', '${mpCounty}');` : ""}
+				${mpDistrict ? `url.searchParams.set('kerulet', '${mpDistrict}');` : ""}
+
+				if (!secondaryCheckbox.checked) {
+					url.searchParams.set('masodlagos', 'false');
+				}
+
+				if (tertiaryCheckbox.checked) {
+					url.searchParams.set('harmadlagos', 'true');
+				}
+
+				sessionStorage.setItem('timelineScrollY', window.scrollY.toString());
+				window.location.href = url.toString();
+			}
+
+			if (secondaryCheckbox) {
+				secondaryCheckbox.addEventListener('change', updateUrl);
+			}
+			if (tertiaryCheckbox) {
+				tertiaryCheckbox.addEventListener('change', updateUrl);
+			}
+		});
+	`;
+
 	return (
-		<div className="space-y-0">
-			{sortedEvents.map(([slug, event]) => <TimelineItem key={slug} event={event} lang={lang} />)}
+		<div>
+			<script dangerouslySetInnerHTML={{ __html: filterScript }} />
+
+			{/* Filter checkboxes */}
+			<div className="flex flex-wrap gap-4 mb-6">
+				<label className="inline-flex items-center gap-2 cursor-pointer select-none">
+					<input
+						type="checkbox"
+						id="timeline-secondary"
+						defaultChecked={showSecondary}
+						className="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
+					/>
+					<span className="text-sm text-slate-700">{t("timeline.filter.related")}</span>
+				</label>
+				<label className="inline-flex items-center gap-2 cursor-pointer select-none">
+					<input
+						type="checkbox"
+						id="timeline-tertiary"
+						defaultChecked={showTertiary}
+						className="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
+					/>
+					<span className="text-sm text-slate-700">{t("timeline.filter.background")}</span>
+				</label>
+			</div>
+
+			{/* Timeline events */}
+			<div className="space-y-0">
+				{sortedEvents.map(([slug, event]) => <TimelineItem key={slug} event={event} lang={lang} />)}
+			</div>
 		</div>
 	);
 }

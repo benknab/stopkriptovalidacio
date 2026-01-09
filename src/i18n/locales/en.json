@@ -49,8 +49,10 @@
 		}
 	},
 	"timeline": {
-		"show_all": "All events",
-		"show_primary": "Primary events only"
+		"filter": {
+			"related": "Related events",
+			"background": "Background events"
+		}
 	},
 	"common": {
 		"coming_soon": "Coming soon..."
