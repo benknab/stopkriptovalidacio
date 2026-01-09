@@ -296,7 +296,7 @@ export const events: TimelineEvents = {
 		exchangeSlugs: new Set(["revolut"]),
 	},
 	"strike-bejelentes": {
-		date: new Date("2026-01-08"),
+		date: new Date("2026-01-07"),
 		type: "tertiary",
 		title: {
 			hu: "Strike bejelenti a magyarországi szolgáltatások korlátozását",
