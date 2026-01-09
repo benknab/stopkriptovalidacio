@@ -35,7 +35,7 @@ interface ActionButtonsProps {
 }
 
 export function ActionButtons({ selectedMps, subject, message, lang, onBack }: ActionButtonsProps): JSX.Element {
-	const copyFeedback = useSignal<"emails" | "message" | null>(null);
+	const copyFeedback = useSignal<"emails" | "message" | "subject" | null>(null);
 
 	const emails = getSelectedEmails(selectedMps);
 	const emailCount = emails.length;
@@ -60,31 +60,41 @@ export function ActionButtons({ selectedMps, subject, message, lang, onBack }: A
 		}, 2000);
 	}
 
+	async function copySubject(): Promise<void> {
+		await navigator.clipboard.writeText(subject);
+		copyFeedback.value = "subject";
+		setTimeout(() => {
+			copyFeedback.value = null;
+		}, 2000);
+	}
+
 	return (
 		<div class="mt-8 space-y-4">
 			{/* Warning */}
 			{showWarning && (
-				<div class="p-4 bg-amber-500/20 border border-amber-400/50 rounded-lg flex items-start gap-3">
-					<WarningIcon />
-					<p class="text-amber-100 text-sm">
+				<div class="p-4 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-3">
+					<span class="text-amber-600">
+						<WarningIcon />
+					</span>
+					<p class="text-amber-800 text-sm">
 						{t("action.email_warning", lang, { count: emailCount.toString() })}
 					</p>
 				</div>
 			)}
 
 			{/* Email count */}
-			<p class="text-white/80 text-center">
+			<p class="text-slate-600 text-center">
 				{hasSelection
 					? t("action.email_count", lang, { count: emailCount.toString() })
 					: t("action.no_selection", lang)}
 			</p>
 
-			{/* Buttons */}
-			<div class="flex flex-wrap justify-center gap-4">
+			{/* Main buttons */}
+			<div class="flex justify-center gap-4">
 				<button
 					type="button"
 					onClick={onBack}
-					class="px-6 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors"
+					class="px-6 py-3 border-2 border-slate-300 text-slate-700 font-medium rounded-lg hover:border-slate-400 transition-colors"
 				>
 					← {t("action.back", lang)}
 				</button>
@@ -93,39 +103,46 @@ export function ActionButtons({ selectedMps, subject, message, lang, onBack }: A
 					? (
 						<a
 							href={mailtoUrl}
-							class="px-6 py-3 bg-white text-brand font-semibold rounded-lg hover:bg-white/90 transition-colors"
+							class="px-6 py-3 bg-brand text-white font-semibold rounded-lg hover:bg-brand/90 transition-colors"
 						>
 							{t("action.send", lang)}
 						</a>
 					)
 					: (
-						<span class="px-6 py-3 bg-white/20 text-white/50 font-semibold rounded-lg cursor-not-allowed">
+						<span class="px-6 py-3 bg-slate-200 text-slate-400 font-semibold rounded-lg cursor-not-allowed">
 							{t("action.send", lang)}
 						</span>
 					)}
+			</div>
 
+			{/* Copy section */}
+			<p class="text-slate-500 text-sm text-center mt-6">
+				{t("action.copy_manual_hint", lang)}
+			</p>
+			<div class="flex flex-wrap justify-center gap-3 mt-3">
+				<button
+					type="button"
+					onClick={copySubject}
+					class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg hover:bg-brand/5 transition-colors"
+				>
+					{copyFeedback.value === "subject" ? t("action.copied", lang) : t("action.copy_subject", lang)}
+				</button>
+				<button
+					type="button"
+					onClick={copyMessage}
+					class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg hover:bg-brand/5 transition-colors"
+				>
+					{copyFeedback.value === "message" ? t("action.copied", lang) : t("action.copy_message", lang)}
+				</button>
 				<button
 					type="button"
 					onClick={copyEmails}
 					disabled={!hasSelection}
-					class="px-6 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+					class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg hover:bg-brand/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400"
 				>
 					{copyFeedback.value === "emails" ? t("action.copied", lang) : t("action.copy_emails", lang)}
 				</button>
-
-				<button
-					type="button"
-					onClick={copyMessage}
-					class="px-6 py-3 bg-white/10 text-white font-medium rounded-lg hover:bg-white/20 transition-colors"
-				>
-					{copyFeedback.value === "message" ? t("action.copied", lang) : t("action.copy_message", lang)}
-				</button>
 			</div>
-
-			{/* Outlook hint */}
-			<p class="text-white/50 text-xs text-center">
-				{t("action.copy_hint", lang)}
-			</p>
 		</div>
 	);
 }

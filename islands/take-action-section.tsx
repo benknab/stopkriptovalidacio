@@ -45,43 +45,51 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 		step.value = 1;
 	}
 
+	function handleStepChange(newStep: 1 | 2): void {
+		step.value = newStep;
+	}
+
 	return (
 		<section id="cselekedj" class="bg-brand text-white py-16 sm:py-24">
 			<div class="mx-auto max-w-6xl px-4 sm:px-6">
 				<H2 class="text-white">{t("action.title", lang)}</H2>
-				<p class="mt-4 text-white/80 text-center max-w-2xl mx-auto">
+				<p class="mt-4 text-white/90 text-center max-w-2xl mx-auto font-semibold text-lg">
 					{t("action.intro", lang)}
 				</p>
 
-				<ActionStepTabs step={step.value} lang={lang} />
+				<ActionStepTabs step={step.value} lang={lang} onStepChange={handleStepChange} />
 
-				{step.value === 1 && (
-					<MessageForm
-						subject={subject}
-						message={message}
-						lang={lang}
-						onNext={handleNext}
-					/>
-				)}
+				{/* White content container */}
+				<div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900">
+					{step.value === 1 && (
+						<MessageForm
+							subject={subject}
+							message={message}
+							lang={lang}
+							onNext={handleNext}
+						/>
+					)}
 
-				{step.value === 2 && (
-					<>
-						<MpSelector
-							selectedMps={selectedMps}
-							selectedCounty={selectedCounty}
-							selectedDistrict={selectedDistrict}
-							searchQuery={searchQuery}
-							lang={lang}
-						/>
-						<ActionButtons
-							selectedMps={selectedMps.value}
-							subject={subject.value}
-							message={message.value}
-							lang={lang}
-							onBack={handleBack}
-						/>
-					</>
-				)}
+					{step.value === 2 && (
+						<>
+							<MpSelector
+								selectedMps={selectedMps}
+								selectedCounty={selectedCounty}
+								selectedDistrict={selectedDistrict}
+								searchQuery={searchQuery}
+								message={message.value}
+								lang={lang}
+							/>
+							<ActionButtons
+								selectedMps={selectedMps.value}
+								subject={subject.value}
+								message={message.value}
+								lang={lang}
+								onBack={handleBack}
+							/>
+						</>
+					)}
+				</div>
 			</div>
 		</section>
 	);

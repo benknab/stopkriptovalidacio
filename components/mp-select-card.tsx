@@ -30,12 +30,14 @@ export function MpSelectCard({ slug, mp, selected, onToggle, lang }: MpSelectCar
 		<button
 			type="button"
 			onClick={onToggle}
-			class={`relative bg-white/10 rounded-xl p-4 transition-all duration-200 text-left w-full ${
-				selected ? "border-2 border-emerald-400 bg-white/20" : "border-2 border-white/20 hover:border-white/40"
+			class={`relative bg-slate-50 rounded-xl p-4 transition-all duration-200 text-left w-full ${
+				selected
+					? "border-2 border-brand ring-2 ring-brand/20"
+					: "border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-100"
 			}`}
 		>
 			{selected && (
-				<div class="absolute top-2 right-2 w-6 h-6 bg-emerald-400 rounded-full flex items-center justify-center">
+				<div class="absolute top-2 right-2 w-6 h-6 bg-brand rounded-full flex items-center justify-center">
 					<CheckIcon />
 				</div>
 			)}
@@ -43,8 +45,8 @@ export function MpSelectCard({ slug, mp, selected, onToggle, lang }: MpSelectCar
 			<div class="flex items-center gap-3">
 				<MpImage slug={slug} name={mp.name} size="sm" class="shrink-0" />
 				<div class="min-w-0 flex-1">
-					<h4 class="font-medium text-white truncate">{mp.name}</h4>
-					<p class="text-sm text-white/70 truncate">
+					<h4 class="font-medium text-slate-900 truncate">{mp.name}</h4>
+					<p class="text-sm text-slate-500 truncate">
 						{t(`mps.party.${mp.party}`, lang, { defaultValue: mp.party })}
 					</p>
 				</div>
