@@ -11,6 +11,10 @@
 		"about": {
 			"title": "About - Crypto Validation",
 			"description": "Learn about changes in Hungarian cryptocurrency regulation and their consequences."
+		},
+		"mp_detail": {
+			"title": "{{name}} - MP",
+			"description": "{{name}} MP details and vote on the T/11922 bill."
 		}
 	},
 	"nav": {
@@ -146,6 +150,10 @@
 			"select_to_show": "Select a county or click \"All\" to show representatives."
 		},
 		"mp_list_source": "MP Directory",
-		"district_lookup_hint": "Don't know your voting district? Look it up here:"
+		"district_lookup_hint": "Don't know your voting district? Look it up here:",
+		"more": "More",
+		"back_to_list": "Back to list",
+		"address": "Address",
+		"contact": "Contact"
 	}
 }

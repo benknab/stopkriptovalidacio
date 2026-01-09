@@ -7,6 +7,8 @@ interface MetaTagsProps {
 	descriptionKey: string;
 	canonicalPath: string;
 	noIndex?: boolean;
+	titleParams?: Record<string, string>;
+	descriptionParams?: Record<string, string>;
 }
 
 export function MetaTags({
@@ -14,10 +16,12 @@ export function MetaTags({
 	descriptionKey,
 	canonicalPath,
 	noIndex = false,
+	titleParams,
+	descriptionParams,
 }: MetaTagsProps): JSX.Element {
 	const { t } = useTranslation();
-	const title = t(titleKey);
-	const description = t(descriptionKey);
+	const title = t(titleKey, titleParams);
+	const description = t(descriptionKey, descriptionParams);
 	const canonicalUrl = buildCanonicalUrl(canonicalPath);
 
 	return (

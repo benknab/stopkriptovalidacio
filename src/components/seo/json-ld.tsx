@@ -1,12 +1,12 @@
 import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import type { SupportedLanguage } from "../../i18n/index.ts";
-import { SITE_NAME, SITE_URL } from "../../constants/seo.ts";
+import { type PageId, SITE_NAME, SITE_URL } from "../../constants/seo.ts";
 import { getPrimaryEvents } from "../../utils/seo.ts";
 
 interface JsonLdProps {
 	lang: SupportedLanguage;
-	pageId: "home" | "about";
+	pageId: PageId;
 }
 
 function buildWebSiteSchema(siteName: string): object {

@@ -9,7 +9,9 @@ interface OpenGraphProps {
 	titleKey: string;
 	descriptionKey: string;
 	path: string;
-	type: "website" | "article";
+	type: "website" | "article" | "profile";
+	titleParams?: Record<string, string>;
+	descriptionParams?: Record<string, string>;
 }
 
 export function OpenGraph({
@@ -18,10 +20,12 @@ export function OpenGraph({
 	descriptionKey,
 	path,
 	type,
+	titleParams,
+	descriptionParams,
 }: OpenGraphProps): JSX.Element {
 	const { t } = useTranslation();
-	const title = t(titleKey);
-	const description = t(descriptionKey);
+	const title = t(titleKey, titleParams);
+	const description = t(descriptionKey, descriptionParams);
 	const url = buildCanonicalUrl(path);
 	const imageUrl = `${SITE_URL}${DEFAULT_OG_IMAGE}`;
 

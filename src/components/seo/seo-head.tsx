@@ -10,9 +10,11 @@ interface SeoHeadProps {
 	lang: SupportedLanguage;
 	pageId: PageId;
 	path: string;
+	titleParams?: Record<string, string>;
+	descriptionParams?: Record<string, string>;
 }
 
-export function SeoHead({ lang, pageId, path }: SeoHeadProps): JSX.Element {
+export function SeoHead({ lang, pageId, path, titleParams, descriptionParams }: SeoHeadProps): JSX.Element {
 	const config = PAGE_SEO_CONFIG[pageId];
 
 	return (
@@ -21,6 +23,8 @@ export function SeoHead({ lang, pageId, path }: SeoHeadProps): JSX.Element {
 				titleKey={config.titleKey}
 				descriptionKey={config.descriptionKey}
 				canonicalPath={path}
+				titleParams={titleParams}
+				descriptionParams={descriptionParams}
 			/>
 
 			<OpenGraph
@@ -29,6 +33,8 @@ export function SeoHead({ lang, pageId, path }: SeoHeadProps): JSX.Element {
 				descriptionKey={config.descriptionKey}
 				path={path}
 				type={config.type}
+				titleParams={titleParams}
+				descriptionParams={descriptionParams}
 			/>
 
 			<Hreflang path={path} />

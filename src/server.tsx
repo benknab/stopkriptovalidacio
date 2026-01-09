@@ -9,6 +9,8 @@ import { I18nextProvider } from "react-i18next";
 import { About } from "./components/about.tsx";
 import { App } from "./components/app.tsx";
 import { Document } from "./components/document.tsx";
+import { MpDetailPage } from "./components/mp-detail-page.tsx";
+import { mps, type MpSlug } from "./data/mps.ts";
 import {
 	createI18nInstance,
 	fallbackLanguage,
@@ -27,7 +29,19 @@ type AppEnv = {
 
 const app = new Hono<AppEnv>();
 
-async function renderPage(c: Context<AppEnv>, Page: () => JSX.Element, pageId: PageId): Promise<Response> {
+interface RenderPageOptions {
+	seoParams?: {
+		titleParams?: Record<string, string>;
+		descriptionParams?: Record<string, string>;
+	};
+}
+
+async function renderPage(
+	c: Context<AppEnv>,
+	Page: () => JSX.Element,
+	pageId: PageId,
+	options?: RenderPageOptions,
+): Promise<Response> {
 	const detectedLang = c.get("language");
 	const lang: SupportedLanguage = isValidLanguage(detectedLang) ? detectedLang : fallbackLanguage;
 	const i18n = createI18nInstance(lang);
@@ -35,7 +49,7 @@ async function renderPage(c: Context<AppEnv>, Page: () => JSX.Element, pageId: P
 
 	const stream = await renderToReadableStream(
 		<I18nextProvider i18n={i18n}>
-			<Document lang={lang} pageId={pageId} path={path}>
+			<Document lang={lang} pageId={pageId} path={path} seoParams={options?.seoParams}>
 				<Page />
 			</Document>
 		</I18nextProvider>,
@@ -129,6 +143,37 @@ app.get("/", (c) => {
 	return renderPage(c, () => <App showAllEvents={showAll} mpCounty={mpCounty} mpDistrict={mpDistrict} />, "home");
 });
 app.get("/rolunk", (c) => renderPage(c, About, "about"));
+
+app.get("/parlament/:slug", (c) => {
+	const slug = c.req.param("slug") as MpSlug;
+	const mp = mps[slug];
+
+	if (!mp) {
+		return c.notFound();
+	}
+
+	const selectedCounty = c.req.query("megye") || "";
+	const selectedDistrict = c.req.query("kerulet") || "";
+
+	const seoParams = {
+		titleParams: { name: mp.name },
+		descriptionParams: { name: mp.name },
+	};
+
+	return renderPage(
+		c,
+		() => (
+			<MpDetailPage
+				slug={slug}
+				mp={mp}
+				selectedCounty={selectedCounty}
+				selectedDistrict={selectedDistrict}
+			/>
+		),
+		"mp-detail",
+		{ seoParams },
+	);
+});
 
 const port = Number.parseInt(Deno.env.get("PORT") || "8000");
 console.log(`Server running at http://localhost:${port}`);

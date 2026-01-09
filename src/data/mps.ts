@@ -32,6 +32,7 @@ export type Mp = {
 	imageUrl?: string;
 	district?: string;
 	website?: string;
+	address?: string;
 };
 
 export function formatPhoneForDisplay(phone: string): string {

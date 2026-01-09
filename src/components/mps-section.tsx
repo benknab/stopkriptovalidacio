@@ -4,7 +4,7 @@ import { type Mp, mps, type MpSlug, type VoteType } from "../data/mps.ts";
 import { sources } from "../data/sources.ts";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
-const voteColors: Record<VoteType, { badge: string; border: string }> = {
+export const voteColors: Record<VoteType, { badge: string; border: string }> = {
 	yes: {
 		badge: "bg-red-100 text-red-700",
 		border: "border-red-400",
@@ -171,15 +171,37 @@ function PhoneIcon(): JSX.Element {
 	);
 }
 
-interface MpCardProps {
-	mp: Mp;
+function MoreIcon(): JSX.Element {
+	return (
+		<svg className="w-1 h-4" fill="currentColor" viewBox="0 0 4 16">
+			<circle cx="2" cy="2" r="2" />
+			<circle cx="2" cy="8" r="2" />
+			<circle cx="2" cy="14" r="2" />
+		</svg>
+	);
 }
 
-function MpCard({ mp }: MpCardProps): JSX.Element {
+interface MpCardProps {
+	slug: MpSlug;
+	mp: Mp;
+	selectedCounty: string;
+	selectedDistrict: string;
+}
+
+function buildMoreUrl(slug: MpSlug, county: string, district: string): string {
+	const params = new URLSearchParams();
+	if (county) params.set("megye", county);
+	if (district) params.set("kerulet", district);
+	const query = params.toString();
+	return `/parlament/${slug}${query ? `?${query}` : ""}`;
+}
+
+function MpCard({ slug, mp, selectedCounty, selectedDistrict }: MpCardProps): JSX.Element {
 	const { t } = useTranslation();
 	const colors = voteColors[mp.vote];
 	const mailtoUrl = buildMailtoUrl(mp.emails);
 	const firstPhone = mp.phones.size > 0 ? Array.from(mp.phones)[0] : null;
+	const moreUrl = buildMoreUrl(slug, selectedCounty, selectedDistrict);
 
 	return (
 		<div
@@ -260,6 +282,13 @@ function MpCard({ mp }: MpCardProps): JSX.Element {
 							{t("mps.phone")}
 						</span>
 					)}
+				<a
+					href={moreUrl}
+					className="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+				>
+					<MoreIcon />
+					{t("mps.more")}
+				</a>
 			</div>
 		</div>
 	);
@@ -485,7 +514,15 @@ export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps
 
 				{selectedCounty && filteredMps.length > 0 && (
 					<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-						{filteredMps.map(({ slug, mp }) => <MpCard key={slug} mp={mp} />)}
+						{filteredMps.map(({ slug, mp }) => (
+							<MpCard
+								key={slug}
+								slug={slug}
+								mp={mp}
+								selectedCounty={selectedCounty}
+								selectedDistrict={selectedDistrict}
+							/>
+						))}
 					</div>
 				)}
 

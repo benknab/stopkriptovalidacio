@@ -8,15 +8,25 @@ interface DocumentProps {
 	lang: SupportedLanguage;
 	pageId: PageId;
 	path: string;
+	seoParams?: {
+		titleParams?: Record<string, string>;
+		descriptionParams?: Record<string, string>;
+	};
 }
 
-export function Document({ children, lang, pageId, path }: DocumentProps): JSX.Element {
+export function Document({ children, lang, pageId, path, seoParams }: DocumentProps): JSX.Element {
 	return (
 		<html lang={lang}>
 			<head>
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<SeoHead lang={lang} pageId={pageId} path={path} />
+				<SeoHead
+					lang={lang}
+					pageId={pageId}
+					path={path}
+					titleParams={seoParams?.titleParams}
+					descriptionParams={seoParams?.descriptionParams}
+				/>
 				<link rel="stylesheet" href="/public/styles.css" />
 			</head>
 			<body>{children}</body>

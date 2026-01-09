@@ -20,6 +20,12 @@ export const PAGE_SEO_CONFIG = {
 		descriptionKey: "seo.about.description",
 		type: "website",
 	},
+	"mp-detail": {
+		path: "/parlament/:slug",
+		titleKey: "seo.mp_detail.title",
+		descriptionKey: "seo.mp_detail.description",
+		type: "profile",
+	},
 } as const;
 
 export type PageId = keyof typeof PAGE_SEO_CONFIG;
