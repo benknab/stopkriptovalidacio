@@ -8,8 +8,8 @@ function countByStatus(status: ExchangeStatus): number {
 
 const exchangeCounts = {
 	operating: countByStatus("operating"),
-	leaving: countByStatus("leaving"),
-	unknown: countByStatus("unknown"),
+	restricted: countByStatus("restricted"),
+	uncertain: countByStatus("uncertain"),
 } as const;
 
 const colorClasses = {
@@ -56,10 +56,10 @@ export function Hero(): JSX.Element {
 						labelKey="hero.compliant"
 						color="green"
 					/>
-					<StatBox count={exchangeCounts.leaving} labelKey="hero.leaving" color="red" />
+					<StatBox count={exchangeCounts.restricted} labelKey="hero.restricted" color="red" />
 					<StatBox
-						count={exchangeCounts.unknown}
-						labelKey="hero.unknown"
+						count={exchangeCounts.uncertain}
+						labelKey="hero.uncertain"
 						color="orange"
 					/>
 				</div>

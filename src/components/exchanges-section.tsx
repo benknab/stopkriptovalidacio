@@ -5,8 +5,8 @@ import { H2 } from "./h2.tsx";
 
 const statusPriority: Record<ExchangeStatus, number> = {
 	operating: 0,
-	leaving: 1,
-	unknown: 2,
+	restricted: 1,
+	uncertain: 2,
 };
 
 const statusColors: Record<ExchangeStatus, { border: string; badge: string }> = {
@@ -14,11 +14,11 @@ const statusColors: Record<ExchangeStatus, { border: string; badge: string }> = 
 		border: "border-t-emerald-500",
 		badge: "bg-emerald-100 text-emerald-700",
 	},
-	leaving: {
+	restricted: {
 		border: "border-t-red-500",
 		badge: "bg-red-100 text-red-700",
 	},
-	unknown: {
+	uncertain: {
 		border: "border-t-amber-500",
 		badge: "bg-amber-100 text-amber-700",
 	},

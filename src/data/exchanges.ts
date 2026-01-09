@@ -1,4 +1,4 @@
-export type ExchangeStatus = "operating" | "leaving" | "unknown";
+export type ExchangeStatus = "operating" | "restricted" | "uncertain";
 
 export type Exchange = {
 	name: string;
@@ -9,95 +9,95 @@ export type Exchange = {
 export const exchanges = {
 	revolut: {
 		name: "Revolut",
-		status: "leaving",
+		status: "restricted",
 		leaveDate: new Date("2025-12-18"),
 	},
 	strike: {
 		name: "Strike",
-		status: "leaving",
+		status: "restricted",
 		leaveDate: new Date("2026-01-09"),
 	},
 	etoro: {
 		name: "eToro",
-		status: "leaving",
+		status: "restricted",
 		leaveDate: new Date("2025-12-26"),
 	},
 	coincash: {
 		name: "CoinCash",
-		status: "leaving",
+		status: "restricted",
 		leaveDate: new Date("2025-12-18"),
 	},
 	bitstamp: {
 		name: "Bitstamp",
-		status: "leaving",
+		status: "restricted",
 		leaveDate: new Date("2025-07-09"),
 	},
 	kriptomat: {
 		name: "Kriptomat",
-		status: "leaving",
+		status: "restricted",
 		leaveDate: new Date("2025-12-26"),
 	},
 	bitvavo: {
 		name: "Bitvavo",
-		status: "leaving",
+		status: "restricted",
 		leaveDate: new Date("2025-12-26"),
 	},
 	coinbase: {
 		name: "Coinbase",
-		status: "unknown",
+		status: "uncertain",
 	},
 	kraken: {
 		name: "Kraken",
-		status: "unknown",
+		status: "uncertain",
 	},
 	binance: {
 		name: "Binance",
-		status: "unknown",
+		status: "uncertain",
 	},
 	"crypto-com": {
 		name: "Crypto.com",
-		status: "unknown",
+		status: "uncertain",
 	},
 	bitpanda: {
 		name: "Bitpanda",
-		status: "unknown",
+		status: "uncertain",
 	},
 	bybit: {
 		name: "Bybit",
-		status: "unknown",
+		status: "uncertain",
 	},
 	bitgo: {
 		name: "BitGo",
-		status: "unknown",
+		status: "uncertain",
 	},
 	okcoin: {
 		name: "OKCoin",
-		status: "unknown",
+		status: "uncertain",
 	},
 	okx: {
 		name: "OKX",
-		status: "unknown",
+		status: "uncertain",
 	},
 	mrcoin: {
 		name: "MrCoin",
-		status: "unknown",
+		status: "uncertain",
 	},
 	nexo: {
 		name: "Nexo",
-		status: "unknown",
+		status: "uncertain",
 	},
 	moonpay: {
 		name: "MoonPay",
-		status: "leaving",
+		status: "restricted",
 		leaveDate: new Date("2026-01-02"),
 	},
 	gemini: {
 		name: "Gemini",
-		status: "unknown",
+		status: "uncertain",
 	},
 	kucoin: {
 		name: "KuCoin",
-		status: "unknown",
+		status: "uncertain",
 	},
 } as const satisfies Record<string, Exchange>;
 

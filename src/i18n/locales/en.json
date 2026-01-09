@@ -30,8 +30,8 @@
 		"title": "Hungarian crypto owners are at risk",
 		"description": "The \"crypto validation\" law is forcing service providers out of Hungary. Crypto owners may lose access to their assets.",
 		"compliant": "Compliant",
-		"leaving": "Leaving",
-		"unknown": "Unknown",
+		"restricted": "Restricted",
+		"uncertain": "Uncertain",
 		"cta_timeline": "View Timeline"
 	},
 	"about": {
@@ -93,8 +93,8 @@
 		"description": "Status of crypto service providers in Hungary.",
 		"status": {
 			"operating": "Compliant",
-			"leaving": "Leaving",
-			"unknown": "Unknown"
+			"restricted": "Restricted",
+			"uncertain": "Uncertain"
 		},
 		"left_on": "Left:",
 		"leaving_on": "Leaving:",
@@ -105,20 +105,20 @@
 		"bitstamp": { "summary": "Trading suspended." },
 		"kriptomat": { "summary": "Trading temporarily paused." },
 		"bitvavo": { "summary": "Trading and deposits suspended." },
-		"coinbase": { "summary": "Status unknown." },
-		"kraken": { "summary": "Status unknown." },
-		"binance": { "summary": "Status unknown." },
-		"crypto-com": { "summary": "Status unknown." },
-		"bitpanda": { "summary": "Status unknown." },
-		"bybit": { "summary": "Status unknown." },
-		"bitgo": { "summary": "Status unknown." },
-		"okcoin": { "summary": "Status unknown." },
-		"okx": { "summary": "Status unknown." },
-		"mrcoin": { "summary": "Status unknown." },
-		"nexo": { "summary": "Status unknown." },
+		"coinbase": { "summary": "Status uncertain." },
+		"kraken": { "summary": "Status uncertain." },
+		"binance": { "summary": "Status uncertain." },
+		"crypto-com": { "summary": "Status uncertain." },
+		"bitpanda": { "summary": "Status uncertain." },
+		"bybit": { "summary": "Status uncertain." },
+		"bitgo": { "summary": "Status uncertain." },
+		"okcoin": { "summary": "Status uncertain." },
+		"okx": { "summary": "Status uncertain." },
+		"mrcoin": { "summary": "Status uncertain." },
+		"nexo": { "summary": "Status uncertain." },
 		"moonpay": { "summary": "Hungary listed as unsupported country." },
-		"gemini": { "summary": "Status unknown." },
-		"kucoin": { "summary": "Status unknown." }
+		"gemini": { "summary": "Status uncertain." },
+		"kucoin": { "summary": "Status uncertain." }
 	},
 	"footer": {
 		"aboutSite": "About This Site",
