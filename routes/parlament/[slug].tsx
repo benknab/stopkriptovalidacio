@@ -7,6 +7,7 @@ import { Layout } from "../../components/layout.tsx";
 import { Link } from "../../components/link.tsx";
 import { SeoHead } from "../../components/seo/seo-head.tsx";
 import { formatPhoneForDisplay, mps, type MpSlug } from "../../data/mps.ts";
+import { MpImage } from "../../components/mp-image.tsx";
 import { detectLanguage, t } from "../../i18n/index.ts";
 import { voteColors } from "../../islands/mps-section.tsx";
 
@@ -127,19 +128,7 @@ export default define.page(function MpDetailPage(ctx): JSX.Element {
 			<div class={`bg-white rounded-xl border-2 ${colors.border} p-6 sm:p-8`}>
 				{/* Header: Photo + Basic Info */}
 				<div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-					{mp.imageUrl
-						? (
-							<img
-								src={mp.imageUrl}
-								alt={mp.name}
-								class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border-2 border-slate-200"
-							/>
-						)
-						: (
-							<div class="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-slate-100 flex items-center justify-center border-2 border-slate-200">
-								<span class="text-slate-400 text-4xl">👤</span>
-							</div>
-						)}
+					<MpImage slug={slug} name={mp.name} size="lg" />
 
 					<div class="text-center sm:text-left flex-1">
 						<h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{mp.name}</h1>

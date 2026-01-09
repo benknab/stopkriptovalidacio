@@ -29,6 +29,7 @@ export type Mp = {
 	vote: VoteType;
 	emails: Set<string>;
 	phones: Set<string>;
+	/** Original image URL from parlament.hu - used by download script only */
 	imageUrl?: string;
 	district?: string;
 	website?: string;

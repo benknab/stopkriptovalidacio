@@ -5,6 +5,7 @@ import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { ExternalLink } from "../components/external-link.tsx";
 import { H2 } from "../components/h2.tsx";
+import { MpImage } from "../components/mp-image.tsx";
 
 export const voteColors: Record<VoteType, { badge: string; border: string }> = {
 	yes: {
@@ -221,19 +222,7 @@ function MpCard({ slug, mp, lang, selectedCounty, selectedDistrict }: MpCardProp
 
 			{/* Photo */}
 			<div class="flex justify-center mb-4">
-				{mp.imageUrl
-					? (
-						<img
-							src={mp.imageUrl}
-							alt={mp.name}
-							class="w-16 h-16 rounded-full object-cover border-2 border-slate-200"
-						/>
-					)
-					: (
-						<div class="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center border-2 border-slate-200">
-							<span class="text-slate-400 text-2xl">👤</span>
-						</div>
-					)}
+				<MpImage slug={slug} name={mp.name} size="sm" />
 			</div>
 
 			{/* Content */}
