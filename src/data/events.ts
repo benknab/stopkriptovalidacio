@@ -23,8 +23,8 @@ export const events: TimelineEvents = {
 			en: "T/11922/13 unified proposal submitted",
 		},
 		summary: {
-			hu: "A Törvényalkotási Bizottság benyújtotta a túlterjeszkedő módosító javaslatot tartalmazó egységes javaslatot. A dokumentum első alkalommal tartalmazza a kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket.",
-			en: "The Legislation Committee submitted the unified proposal containing overreaching amendments. The document contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse for the first time.",
+			hu: "A Törvényalkotási Bizottság benyújtotta a túlterjeszkedő módosító javaslatot tartalmazó egységes javaslatot. <b>A dokumentum első alkalommal tartalmazza a kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket.</b>",
+			en: "The Legislation Committee submitted the unified proposal containing overreaching amendments. <b>The document contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse for the first time.</b>",
 		},
 		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-13"]),
 		exchangeSlugs: new Set(),
@@ -65,8 +65,8 @@ export const events: TimelineEvents = {
 			en: "T/11922 bill adopted",
 		},
 		summary: {
-			hu: "Az Országgyűlés rendkívüli ülésén elfogadta a törvényjavaslatot. Minősített többséget igénylő rész: 162 igen, 94 nem (14:39:54). Egyszerű többséget igénylő rész: 162 igen, 94 nem (14:40:29).",
-			en: "The National Assembly adopted the bill at an extraordinary session. Qualified majority part: 162 yes, 94 no (14:39:54). Simple majority part: 162 yes, 94 no (14:40:29).",
+			hu: "<b>Az Országgyűlés rendkívüli ülésén elfogadta a törvényjavaslatot.</b> Minősített többséget igénylő rész: 162 igen, 94 nem (14:39:54). Egyszerű többséget igénylő rész: 162 igen, 94 nem (14:40:29).",
+			en: "<b>The National Assembly adopted the bill at an extraordinary session.</b> Qualified majority part: 162 yes, 94 no (14:39:54). Simple majority part: 162 yes, 94 no (14:40:29).",
 		},
 		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind05"]),
 		exchangeSlugs: new Set(),
