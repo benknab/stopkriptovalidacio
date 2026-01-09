@@ -36,9 +36,10 @@ export function MpImage({ slug, name, size = "md", class: className }: MpImagePr
 			loading="lazy"
 			class={twMerge(
 				sizeClasses[size],
-				"rounded-full object-cover border-2 border-slate-200 bg-slate-100",
+				"rounded-full object-cover border-2 border-slate-200 bg-slate-100 opacity-0 transition-opacity duration-200",
 				className,
 			)}
+			onLoad={(e) => e.currentTarget.classList.replace("opacity-0", "opacity-100")}
 		/>
 	);
 }
