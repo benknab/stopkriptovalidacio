@@ -1,5 +1,5 @@
 {
-	"name": "kriptovalidacio",
+	"name": "stopkriptovalidacio",
 	"exports": "./main.tsx",
 	"nodeModulesDir": "manual",
 	"tasks": {

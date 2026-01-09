@@ -1,15 +1,15 @@
 {
 	"site": {
-		"title": "Kriptovalidáció",
+		"title": "Stop Kripto Validáció",
 		"description": "A magyar kriptovaluta \"validációs\" törvények idővonala és következményei"
 	},
 	"seo": {
 		"home": {
-			"title": "Kriptovalidáció - A magyar kriptotörvények idővonala",
+			"title": "Stop Kripto Validáció - A magyar kriptotörvények idővonala",
 			"description": "A magyar kriptovaluta \"validációs\" törvény változásainak és következményeinek részletes dokumentációja."
 		},
 		"about": {
-			"title": "Rólunk - Kriptovalidáció",
+			"title": "Rólunk - Stop Kripto Validáció",
 			"description": "Tájékozódjon a magyar kriptovaluta szabályozás változásairól és azok következményeiről."
 		},
 		"mp_detail": {
@@ -39,14 +39,14 @@
 		"title": "Rólunk",
 		"mission": {
 			"title": "Küldetésünk",
-			"description": "A Kriptovalidáció egy polgári kezdeményezés, amelynek célja, hogy felhívja a figyelmet a magyar \"kriptovalidációs\" törvényre. Küldetésünk, hogy tájékoztassuk a magyar állampolgárokat erről a jogszabályról, amely veszélyezteti a pénzügyi szabadságot és a digitális biztonságot azzal, hogy világszinten egyedülálló validációs követelményeket ír elő a kriptovaluta-tranzakciókra.",
+			"description": "A Stop Kripto Validáció egy polgári kezdeményezés, amelynek célja, hogy felhívja a figyelmet a magyar \"kriptovalidációs\" törvényre. Küldetésünk, hogy tájékoztassuk a magyar állampolgárokat erről a jogszabályról, amely veszélyezteti a pénzügyi szabadságot és a digitális biztonságot azzal, hogy világszinten egyedülálló validációs követelményeket ír elő a kriptovaluta-tranzakciókra.",
 			"privacy": "Meggyőződésünk, hogy a pénzügyi szabadság alapvető jog, és hogy a kripto szolgáltatók szabad versenyének fenntartása elengedhetetlen a magyar kriptotulajdonosok érdekeinek védelméhez. A kriptovalidációs törvény aláássa ezeket a védelmet, új kockázatoknak teszi ki az állampolgárokat, és arra kényszeríti a szolgáltatókat, hogy elhagyják az országot.",
 			"platform": "Platformunk könnyen érthető információkat nyújt a kriptovalidációs törvényről, nyomon követi a szolgáltatók helyzetét, és segít az állampolgároknak kapcsolatba lépni képviselőikkel, hogy kifejezzék aggályaikat.",
 			"disclaimer": "Nem vagyunk semmilyen politikai párttal kapcsolatban."
 		},
 		"contact": {
 			"title": "Kapcsolat",
-			"description": "Ha kérdése, észrevétele, pontosítási igénye, frissítési kérése vagy visszajelzése van, keressen minket az <emailLink>info@kriptovalidacio.hu</emailLink> címen."
+			"description": "Ha kérdése, észrevétele, pontosítási igénye, frissítési kérése vagy visszajelzése van, keressen minket az <emailLink>info@stopkriptovalidacio.hu</emailLink> címen."
 		},
 		"privacy": {
 			"title": "Adatvédelem",

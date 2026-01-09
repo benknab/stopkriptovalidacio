@@ -12,7 +12,7 @@ export function Footer({ lang }: FooterProps): JSX.Element {
 				<div class="flex flex-col sm:flex-row sm:justify-between gap-8">
 					<div>
 						<span class="text-white font-semibold text-lg">
-							Kriptovalidáció
+							Stop Kripto Validáció
 						</span>
 					</div>
 					<div>

@@ -106,7 +106,7 @@ export default define.page(function About(ctx): JSX.Element {
 				<H2 class="mb-4 text-left text-2xl sm:text-2xl">{t("about.contact.title", lang)}</H2>
 				<p class="text-slate-600 leading-relaxed">
 					{parseTextWithLinks(t("about.contact.description", lang), lang, {
-						emailLink: { href: "mailto:info@kriptovalidacio.hu" },
+						emailLink: { href: "mailto:info@stopkriptovalidacio.hu" },
 					})}
 				</p>
 			</section>
