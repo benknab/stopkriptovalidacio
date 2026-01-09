@@ -4,7 +4,9 @@
 	"nodeModulesDir": "auto",
 	"tasks": {
 		"setup": "cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit",
-		"dev": "deno run --allow-net --allow-read --allow-env --watch src/server.tsx",
+		"dev:css": "deno run -A npm:@tailwindcss/cli -i ./src/styles/input.css -o ./public/styles.css --watch",
+		"dev:server": "deno run --allow-net --allow-read --allow-env --watch src/server.tsx",
+		"dev": "deno run -A npm:concurrently \"deno task dev:css\" \"deno task dev:server\"",
 		"build:css": "deno run -A npm:@tailwindcss/cli -i ./src/styles/input.css -o ./public/styles.css --minify",
 		"build": "deno task build:css",
 		"start": "deno run --allow-net --allow-read --allow-env src/server.tsx",
