@@ -24,7 +24,9 @@
 		"mps": "MPs",
 		"mp_search": "MP Search",
 		"about": "About",
-		"contact": "Contact"
+		"contact": "Contact",
+		"menu": "Menu",
+		"close": "Close"
 	},
 	"hero": {
 		"title": "Hungarian crypto owners are at risk",

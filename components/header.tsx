@@ -1,5 +1,6 @@
 import type { ComponentChildren, JSX } from "preact";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
+import { MobileNav } from "../islands/mobile-nav.tsx";
 import { LanguageSwitch } from "./language-switch.tsx";
 
 interface NavLinkProps {
@@ -30,7 +31,7 @@ export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 				<a href="/" class="text-xl font-bold text-slate-900 hover:text-brand transition-colors">
 					Stop Kripto Validáció
 				</a>
-				<div class="flex items-center gap-6">
+				<div class="flex items-center gap-4 sm:gap-6">
 					<nav class="hidden sm:flex items-center gap-6">
 						<NavLink href="/#attekintes">{t("nav.overview", lang)}</NavLink>
 						<NavLink href="/#tozsdek">{t("nav.exchanges", lang)}</NavLink>
@@ -38,7 +39,10 @@ export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 						<NavLink href="/#kepviselok">{t("nav.mps", lang)}</NavLink>
 						<NavLink href="/#cselekedj">{t("action.nav_title", lang)}</NavLink>
 					</nav>
-					<LanguageSwitch currentLang={lang} currentPath={currentPath} />
+					<div class="hidden sm:block">
+						<LanguageSwitch currentLang={lang} currentPath={currentPath} />
+					</div>
+					<MobileNav lang={lang} currentPath={currentPath} />
 				</div>
 			</div>
 		</header>

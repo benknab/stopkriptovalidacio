@@ -24,7 +24,9 @@
 		"mps": "Képviselők",
 		"mp_search": "Képviselő keresés",
 		"about": "Rólunk",
-		"contact": "Kapcsolat"
+		"contact": "Kapcsolat",
+		"menu": "Menü",
+		"close": "Bezárás"
 	},
 	"hero": {
 		"title": "A magyar kriptotulajdonosok veszélyben vannak",
