@@ -2,7 +2,7 @@
 node_modules/
 
 # Build output
-public/styles.css
+_fresh/
 
 # Deno
 .deno/

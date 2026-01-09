@@ -1,43 +1,52 @@
 {
 	"name": "kriptovalidacio",
-	"exports": "./src/server.tsx",
-	"nodeModulesDir": "auto",
+	"exports": "./main.tsx",
+	"nodeModulesDir": "manual",
 	"tasks": {
 		"setup": "cp scripts/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit",
-		"dev:css": "deno run -A npm:@tailwindcss/cli -i ./src/styles/input.css -o ./public/styles.css --watch",
-		"dev:server": "deno run --allow-net --allow-read --allow-env --watch src/server.tsx",
-		"dev": "deno run -A npm:concurrently \"deno task dev:css\" \"deno task dev:server\"",
-		"build:css": "deno run -A npm:@tailwindcss/cli -i ./src/styles/input.css -o ./public/styles.css --minify",
-		"build": "deno task build:css",
-		"start": "deno run --allow-net --allow-read --allow-env src/server.tsx",
-		"check": "deno check src/**/*.tsx src/**/*.ts",
+		"check": "deno fmt --check . && deno lint . && deno check",
+		"dev": "vite",
+		"build": "vite build",
+		"start": "deno serve -A _fresh/server.js",
 		"fmt": "deno fmt",
 		"lint": "deno lint"
 	},
 	"imports": {
-		"@hono/hono": "jsr:@hono/hono@^4",
-		"react": "npm:react@^19",
-		"react/jsx-runtime": "npm:react@^19/jsx-runtime",
-		"react-dom/server": "npm:react-dom@^19/server",
-		"@types/react": "npm:@types/react@^19",
+		"@/": "./",
+		"fresh": "jsr:@fresh/core@^2.2.0",
+		"@fresh/plugin-vite": "jsr:@fresh/plugin-vite@^1.0.8",
+		"preact": "npm:preact@^10.27.2",
+		"@preact/signals": "npm:@preact/signals@^2.5.0",
 		"tailwindcss": "npm:tailwindcss@^4",
-		"i18next": "npm:i18next@^24",
-		"react-i18next": "npm:react-i18next@^15",
-		"tailwind-merge": "npm:tailwind-merge@^2"
+		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4",
+		"tailwind-merge": "npm:tailwind-merge@^2",
+		"vite": "npm:vite@^7.1.3"
 	},
 	"compilerOptions": {
-		"jsx": "react-jsx",
-		"jsxImportSource": "react",
-		"lib": ["deno.window", "dom", "dom.iterable"]
-	},
-	"fmt": {
-		"useTabs": true,
-		"lineWidth": 120,
-		"indentWidth": 4
+		"lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
+		"jsx": "precompile",
+		"jsxImportSource": "preact",
+		"jsxPrecompileSkipElements": [
+			"a",
+			"img",
+			"source",
+			"body",
+			"html",
+			"head",
+			"title",
+			"meta",
+			"script",
+			"link",
+			"style",
+			"base",
+			"noscript",
+			"template"
+		],
+		"types": ["vite/client"]
 	},
 	"lint": {
 		"rules": {
-			"tags": ["recommended"],
+			"tags": ["fresh", "recommended"],
 			"include": [
 				"ban-untagged-todo",
 				"camelcase",
@@ -57,7 +66,6 @@
 				"no-sparse-arrays",
 				"no-sync-fn-in-async-fn",
 				"no-throw-literal",
-				"no-top-level-await",
 				"no-undef",
 				"prefer-as-const",
 				"single-var-declarator",
@@ -65,5 +73,11 @@
 				"verbatim-module-syntax"
 			]
 		}
-	}
+	},
+	"fmt": {
+		"useTabs": true,
+		"lineWidth": 120,
+		"indentWidth": 4
+	},
+	"exclude": ["**/_fresh/*", "node_modules/**"]
 }

@@ -15,18 +15,19 @@ will include:
 ## Tech Stack
 
 - **Runtime**: Deno
-- **Server**: Hono
-- **UI**: React 19 (SSR)
-- **Styling**: Tailwind CSS
-- **Internationalization**: i18next + react-i18next (Hungarian primary, English secondary)
+- **Framework**: Fresh 2.0 with islands architecture
+- **UI**: Preact (with Preact Signals for state)
+- **Styling**: Tailwind CSS v4
+- **Build**: Vite
+- **Internationalization**: Custom i18n with `t(key, lang)` function
 
 ## Development Commands
 
 ```bash
-deno task build:css   # Build Tailwind CSS (run before dev/start)
-deno task dev         # Start dev server with watch mode
+deno task dev         # Start dev server (Vite)
+deno task build       # Build for production
 deno task start       # Start production server
-deno task check       # Type check
+deno task check       # Format, lint, and type check
 deno fmt              # Format code
 deno lint             # Lint code
 ```
@@ -36,29 +37,54 @@ deno lint             # Lint code
 - All file names must be **kebab-case** (e.g., `my-component.tsx`, not `MyComponent.tsx`)
 - URLs and query params must be in **Hungarian** (e.g., `/rolunk`, `?osszes=true`)
 - Code identifiers use **English** (e.g., `status: "leaving"`, not `status: "tavozik"`)
-- User-facing text uses **Hungarian** via i18n (e.g., `t("hero.leaving")` → "Távozik")
+- User-facing text uses **Hungarian** via i18n (e.g., `t("hero.leaving", lang)` → "Távozik")
 - Use `Set<T>` for collections of slugs, not arrays
 - Define constants that are not dynamic during render outside of components (module-level)
+- **No barrel files** (index.ts that re-export) - import directly from source files
 
 ## Architecture
 
-- `src/server.tsx` - Hono server entry point with SSR rendering and language middleware
-- `src/components/document.tsx` - HTML document wrapper
-- `src/components/app.tsx` - Main React application
-- `src/components/language-switch.tsx` - Language toggle component
-- `src/i18n/index.ts` - i18next configuration and `SupportedLanguage` type
-- `src/i18n/locales/hu.json` - Hungarian translations
-- `src/i18n/locales/en.json` - English translations
-- `src/styles/input.css` - Tailwind input file
-- `public/styles.css` - Built CSS output (generated)
+- `main.ts` - Fresh server entry point
+- `utils.ts` - Fresh `define` helper created with `createDefine<State>()`
+- `vite.config.ts` - Vite configuration with Fresh and Tailwind plugins
+- `routes/` - File-based routing (Fresh 2.0)
+- `islands/` - Interactive components that ship JavaScript to client
+- `components/` - Static components (no client JS)
+- `data/` - Data files (events, mps, exchanges, sources)
+- `i18n/` - Translation system with `t(key, lang)` function
+- `constants/` - Shared constants
+- `static/` - Static assets
+
+## Fresh 2.0 Patterns
+
+Routes use `define.page()` pattern:
+
+```tsx
+import { define } from "@/utils.ts";
+
+export default define.page(function PageName(ctx): JSX.Element {
+	const lang = detectLanguage(ctx.req);
+	return <Layout lang={lang}>...</Layout>;
+});
+```
+
+Handlers use `define.handlers()`:
+
+```tsx
+export const handler = define.handlers({
+	GET(): Response {
+		return new Response("...");
+	},
+});
+```
 
 ## Internationalization
 
 - Languages: `"hu" | "en"` (strictly typed as `SupportedLanguage`)
-- Detection: Accept-Language header, then cookie (`lang`)
+- Detection: Cookie (`lang`) first, then Accept-Language header
 - Switching: `/set-lang?lang=hu&redirect=/` sets cookie and redirects
-- Usage: `const { t } = useTranslation()` then `t("key.path")`
-- Add new strings to both `src/i18n/locales/hu.json` and `en.json`
+- Usage: `t("key.path", lang)` - pass language as second argument
+- Add new strings to both `i18n/locales/hu.json` and `en.json`
 
 ## Design Guidelines
 
