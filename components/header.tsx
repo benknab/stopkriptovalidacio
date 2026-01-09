@@ -36,7 +36,7 @@ export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 						<NavLink href="/#tozsdek">{t("nav.exchanges", lang)}</NavLink>
 						<NavLink href="/#idovonal">{t("nav.timeline", lang)}</NavLink>
 						<NavLink href="/#kepviselok">{t("nav.mps", lang)}</NavLink>
-						<NavLink href="/#cselekedj">{t("action.title", lang)}</NavLink>
+						<NavLink href="/#cselekedj">{t("action.nav_title", lang)}</NavLink>
 					</nav>
 					<LanguageSwitch currentLang={lang} currentPath={currentPath} />
 				</div>

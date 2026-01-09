@@ -174,6 +174,7 @@
 	},
 	"action": {
 		"title": "Cselekedj!",
+		"nav_title": "Cselekedj",
 		"intro": "A kriptovaluta validációs törvény veszélybe sodorja a magyar felhasználók hozzáférését a kriptovaluta szolgáltatásokhoz. A tőzsdék sorra vonulnak ki Magyarországról. Írj a képviselődnek, és kérd, hogy állítsák meg ezt a káros szabályozást.",
 		"step1": "Üzenet",
 		"step2": "Képviselők",
