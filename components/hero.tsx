@@ -1,6 +1,7 @@
 import type { JSX } from "preact";
 import { exchanges, type ExchangeStatus } from "../data/exchanges.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
+import { ButtonLink } from "./button-link.tsx";
 
 function countByStatus(status: ExchangeStatus): number {
 	return Object.values(exchanges).filter((e) => e.status === status).length;
@@ -64,13 +65,13 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 					/>
 				</div>
 
-				<div class="mt-10 flex flex-wrap justify-center gap-4">
-					<a
-						href="#idovonal"
-						class="inline-flex items-center px-6 py-3 bg-white text-brand font-semibold rounded-lg hover:bg-white/90 transition-colors"
-					>
-						{t("hero.cta_timeline", lang)}
-					</a>
+				<div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+					<ButtonLink href="#cselekedj">
+						{t("hero.cta_contact", lang)}
+					</ButtonLink>
+					<ButtonLink href="#idovonal">
+						{t("hero.cta_learn_more", lang)}
+					</ButtonLink>
 				</div>
 			</div>
 		</section>

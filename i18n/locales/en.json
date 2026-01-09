@@ -32,7 +32,8 @@
 		"compliant": "Compliant",
 		"restricted": "Restricted",
 		"uncertain": "Uncertain",
-		"cta_timeline": "View Timeline"
+		"cta_contact": "Contact Your MP",
+		"cta_learn_more": "Learn More"
 	},
 	"about": {
 		"title": "About",

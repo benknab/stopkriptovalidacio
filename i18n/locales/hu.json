@@ -32,7 +32,8 @@
 		"compliant": "Megfelel",
 		"restricted": "Korlátozott",
 		"uncertain": "Bizonytalan",
-		"cta_timeline": "Idővonal megtekintése"
+		"cta_contact": "Írd meg a képviselődnek",
+		"cta_learn_more": "Tudj meg többet"
 	},
 	"about": {
 		"title": "Rólunk",
