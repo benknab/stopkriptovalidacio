@@ -14,8 +14,6 @@ import MpsSection from "../islands/mps-section.tsx";
 export default define.page(function Home(ctx): JSX.Element {
 	const url = new URL(ctx.req.url);
 	const lang = detectLanguage(ctx.req);
-	const showSecondary = url.searchParams.get("masodlagos") !== "false";
-	const showTertiary = url.searchParams.get("harmadlagos") === "true";
 	const mpCounty = url.searchParams.get("megye") || "";
 	const mpDistrict = url.searchParams.get("kerulet") || "";
 	const currentPath = url.pathname + url.search;
@@ -44,13 +42,7 @@ export default define.page(function Home(ctx): JSX.Element {
 			</Head>
 			<section id="idovonal">
 				<H2 class="mb-6">{t("nav.timeline", lang)}</H2>
-				<TimelineSection
-					lang={lang}
-					showSecondary={showSecondary}
-					showTertiary={showTertiary}
-					mpCounty={mpCounty}
-					mpDistrict={mpDistrict}
-				/>
+				<TimelineSection lang={lang} />
 			</section>
 		</Layout>
 	);

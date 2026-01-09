@@ -1,8 +1,8 @@
 import type { JSX } from "preact";
-import { useSignal } from "@preact/signals";
 import { events } from "../data/events.ts";
 import { type Source, sources } from "../data/sources.ts";
 import type { EventType, TimelineEvent } from "../data/types.ts";
+import { useBooleanQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { ExternalLink } from "../components/external-link.tsx";
 
@@ -114,21 +114,11 @@ function TimelineItem({
 
 interface TimelineSectionProps {
 	lang: SupportedLanguage;
-	showSecondary: boolean;
-	showTertiary: boolean;
-	mpCounty: string;
-	mpDistrict: string;
 }
 
-export default function TimelineSection({
-	lang,
-	showSecondary: initialSecondary,
-	showTertiary: initialTertiary,
-	mpCounty,
-	mpDistrict,
-}: TimelineSectionProps): JSX.Element {
-	const showSecondary = useSignal(initialSecondary);
-	const showTertiary = useSignal(initialTertiary);
+export default function TimelineSection({ lang }: TimelineSectionProps): JSX.Element {
+	const showSecondary = useBooleanQueryParam({ key: "masodlagos", defaultValue: true });
+	const showTertiary = useBooleanQueryParam({ key: "harmadlagos", defaultValue: false });
 
 	const filteredEvents = Object.entries(events)
 		.filter(([, event]) => {
@@ -138,29 +128,6 @@ export default function TimelineSection({
 			return false;
 		})
 		.sort(([, a], [, b]) => b.date.getTime() - a.date.getTime());
-
-	const updateUrl = (): void => {
-		const url = new URL(globalThis.location.href);
-		url.hash = "idovonal";
-
-		// Preserve MP filter params
-		if (mpCounty) url.searchParams.set("megye", mpCounty);
-		if (mpDistrict) url.searchParams.set("kerulet", mpDistrict);
-
-		if (!showSecondary.value) {
-			url.searchParams.set("masodlagos", "false");
-		} else {
-			url.searchParams.delete("masodlagos");
-		}
-
-		if (showTertiary.value) {
-			url.searchParams.set("harmadlagos", "true");
-		} else {
-			url.searchParams.delete("harmadlagos");
-		}
-
-		globalThis.history.pushState({}, "", url);
-	};
 
 	return (
 		<div>
@@ -182,7 +149,6 @@ export default function TimelineSection({
 						checked={showSecondary.value}
 						onChange={(e): void => {
 							showSecondary.value = (e.target as HTMLInputElement).checked;
-							updateUrl();
 						}}
 						class="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
 					/>
@@ -195,7 +161,6 @@ export default function TimelineSection({
 						checked={showTertiary.value}
 						onChange={(e): void => {
 							showTertiary.value = (e.target as HTMLInputElement).checked;
-							updateUrl();
 						}}
 						class="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
 					/>

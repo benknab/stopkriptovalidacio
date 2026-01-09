@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+	scroll-behavior: smooth;
+}
+
 @theme {
 	/* Brand colors - used for interactive elements */
 	--color-brand: oklch(54.6% 0.245 262.881);
