@@ -118,7 +118,8 @@
 		"nexo": { "summary": "Status unknown." }
 	},
 	"footer": {
-		"aboutSite": "About This Site"
+		"aboutSite": "About This Site",
+		"citizenLed": "This is a citizen-led information platform."
 	},
 	"mps": {
 		"title": "Members of Parliament",

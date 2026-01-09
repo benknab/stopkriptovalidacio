@@ -33,6 +33,11 @@ export function Footer(): JSX.Element {
 						</div>
 					</div>
 				</div>
+				<div className="border-t border-slate-700 mt-8 pt-6">
+					<p className="text-slate-400 text-sm text-center">
+						{t("footer.citizenLed")}
+					</p>
+				</div>
 			</div>
 		</footer>
 	);

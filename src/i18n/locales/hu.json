@@ -118,7 +118,8 @@
 		"nexo": { "summary": "Státusz ismeretlen." }
 	},
 	"footer": {
-		"aboutSite": "Az oldalról"
+		"aboutSite": "Az oldalról",
+		"citizenLed": "Ez egy polgári kezdeményezésű információs platform."
 	},
 	"mps": {
 		"title": "Képviselők",
