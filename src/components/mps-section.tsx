@@ -237,16 +237,6 @@ function MpCard({ slug, mp, selectedCounty, selectedDistrict }: MpCardProps): JS
 				<h3 className="font-bold text-slate-900 text-lg leading-tight">{mp.name}</h3>
 				<p className="text-sm text-slate-500">{t(`mps.party.${mp.party}`, mp.party)}</p>
 				{mp.district && <p className="text-sm text-slate-600">{mp.district}</p>}
-				{mp.website && (
-					<a
-						href={mp.website}
-						target="_blank"
-						rel="noopener noreferrer"
-						className="block text-sm text-brand hover:text-brand-hover transition-colors truncate"
-					>
-						{mp.website.replace(/^https?:\/\//, "")}
-					</a>
-				)}
 			</div>
 
 			{/* Button Row */}

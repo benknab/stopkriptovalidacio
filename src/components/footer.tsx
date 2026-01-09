@@ -6,7 +6,7 @@ export function Footer(): JSX.Element {
 
 	return (
 		<footer className="bg-slate-900 mt-auto">
-			<div className="mx-auto max-w-5xl px-4 sm:px-6 py-12">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
 				<div className="flex flex-col sm:flex-row sm:justify-between gap-8">
 					<div>
 						<span className="text-white font-semibold text-lg">

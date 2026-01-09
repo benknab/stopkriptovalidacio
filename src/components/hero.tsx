@@ -42,7 +42,7 @@ export function Hero(): JSX.Element {
 
 	return (
 		<section id="attekintes" className="bg-brand text-white py-16 sm:py-24">
-			<div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6 text-center">
 				<h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight">
 					{t("hero.title")}
 				</h1>

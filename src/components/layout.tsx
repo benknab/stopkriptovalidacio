@@ -16,7 +16,7 @@ export function Layout({ children, currentLang, hero, afterContent }: LayoutProp
 			<Header currentLang={currentLang} />
 			<main className="flex-1">
 				{hero}
-				<div className="mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
+				<div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
 					{children}
 				</div>
 				{afterContent}

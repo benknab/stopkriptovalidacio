@@ -87,7 +87,7 @@ export function ExchangesSection(): JSX.Element {
 
 	return (
 		<section id="tozsdek" className="bg-slate-50 py-16 sm:py-20">
-			<div className="mx-auto max-w-4xl px-4 sm:px-6">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<H2>{t("exchanges.title")}</H2>
 				<p className="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
 					{t("exchanges.description")}
