@@ -21,9 +21,10 @@ function NavLink({ href, children }: NavLinkProps): JSX.Element {
 
 interface HeaderProps {
 	currentLang: SupportedLanguage;
+	currentPath: string;
 }
 
-export function Header({ currentLang }: HeaderProps): JSX.Element {
+export function Header({ currentLang, currentPath }: HeaderProps): JSX.Element {
 	const { t } = useTranslation();
 
 	return (
@@ -39,7 +40,7 @@ export function Header({ currentLang }: HeaderProps): JSX.Element {
 						<NavLink href="/#idovonal">{t("nav.timeline")}</NavLink>
 						<NavLink href="/#kepviselok">{t("nav.mps")}</NavLink>
 					</nav>
-					<LanguageSwitch currentLang={currentLang} />
+					<LanguageSwitch currentLang={currentLang} currentPath={currentPath} />
 				</div>
 			</div>
 		</header>

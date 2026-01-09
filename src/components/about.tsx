@@ -6,12 +6,16 @@ import { Layout } from "./layout.tsx";
 import { Link } from "./link.tsx";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
-export function About(): JSX.Element {
+interface AboutProps {
+	currentPath: string;
+}
+
+export function About({ currentPath }: AboutProps): JSX.Element {
 	const { t, i18n } = useTranslation();
 	const currentLang = i18n.language as SupportedLanguage;
 
 	return (
-		<Layout currentLang={currentLang}>
+		<Layout currentLang={currentLang} currentPath={currentPath}>
 			<h1 className="text-3xl font-bold tracking-tight text-slate-900 mb-8">{t("about.title")}</h1>
 
 			{/* Mission Section */}

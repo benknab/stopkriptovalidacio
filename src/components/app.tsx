@@ -10,6 +10,7 @@ import { Timeline } from "./timeline.tsx";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
 interface AppProps {
+	currentPath: string;
 	showSecondary?: boolean;
 	showTertiary?: boolean;
 	mpCounty?: string;
@@ -17,6 +18,7 @@ interface AppProps {
 }
 
 export function App({
+	currentPath,
 	showSecondary = true,
 	showTertiary = false,
 	mpCounty = "",
@@ -28,6 +30,7 @@ export function App({
 	return (
 		<Layout
 			currentLang={currentLang}
+			currentPath={currentPath}
 			hero={
 				<>
 					<Hero />

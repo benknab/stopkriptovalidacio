@@ -141,10 +141,12 @@ app.get("/", (c) => {
 	const showTertiary = c.req.query("harmadlagos") === "true";
 	const mpCounty = c.req.query("megye") || "";
 	const mpDistrict = c.req.query("kerulet") || "";
+	const path = new URL(c.req.url).pathname + new URL(c.req.url).search;
 	return renderPage(
 		c,
 		() => (
 			<App
+				currentPath={path}
 				showSecondary={showSecondary}
 				showTertiary={showTertiary}
 				mpCounty={mpCounty}
@@ -154,7 +156,10 @@ app.get("/", (c) => {
 		"home",
 	);
 });
-app.get("/rolunk", (c) => renderPage(c, About, "about"));
+app.get("/rolunk", (c) => {
+	const path = new URL(c.req.url).pathname;
+	return renderPage(c, () => <About currentPath={path} />, "about");
+});
 
 app.get("/parlament/:slug", (c) => {
 	const slug = c.req.param("slug") as MpSlug;
@@ -166,6 +171,7 @@ app.get("/parlament/:slug", (c) => {
 
 	const selectedCounty = c.req.query("megye") || "";
 	const selectedDistrict = c.req.query("kerulet") || "";
+	const path = new URL(c.req.url).pathname + new URL(c.req.url).search;
 
 	const seoParams = {
 		titleParams: { name: mp.name },
@@ -178,6 +184,7 @@ app.get("/parlament/:slug", (c) => {
 			<MpDetailPage
 				slug={slug}
 				mp={mp}
+				currentPath={path}
 				selectedCounty={selectedCounty}
 				selectedDistrict={selectedDistrict}
 			/>

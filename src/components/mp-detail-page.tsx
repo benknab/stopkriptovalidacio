@@ -10,6 +10,7 @@ import { voteColors } from "./mps-section.tsx";
 interface MpDetailPageProps {
 	slug: MpSlug;
 	mp: Mp;
+	currentPath: string;
 	selectedCounty: string;
 	selectedDistrict: string;
 }
@@ -83,7 +84,7 @@ function BackIcon(): JSX.Element {
 	);
 }
 
-export function MpDetailPage({ mp, selectedCounty, selectedDistrict }: MpDetailPageProps): JSX.Element {
+export function MpDetailPage({ mp, currentPath, selectedCounty, selectedDistrict }: MpDetailPageProps): JSX.Element {
 	const { t, i18n } = useTranslation();
 	const currentLang = i18n.language as SupportedLanguage;
 	const colors = voteColors[mp.vote];
@@ -92,7 +93,7 @@ export function MpDetailPage({ mp, selectedCounty, selectedDistrict }: MpDetailP
 	const backUrl = buildBackUrl(selectedCounty, selectedDistrict);
 
 	return (
-		<Layout currentLang={currentLang}>
+		<Layout currentLang={currentLang} currentPath={currentPath}>
 			{/* Back link */}
 			<a
 				href={backUrl}
