@@ -11,12 +11,12 @@ type CardKey =
 	| "individual_punishment";
 
 const cardIcons: Record<CardKey, string> = {
-	zero_compliant: "0️⃣",
-	stricter_than_mica: "🇪🇺",
-	criminal: "⚖️",
-	unique_validator: "🔍",
-	private_monopoly: "🏢",
-	individual_punishment: "👤",
+	"zero_compliant": "0️⃣",
+	"stricter_than_mica": "🇪🇺",
+	"criminal": "⚖️",
+	"unique_validator": "🔍",
+	"private_monopoly": "🏢",
+	"individual_punishment": "👤",
 };
 
 const cardKeys: CardKey[] = [

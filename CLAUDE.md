@@ -83,5 +83,7 @@ When writing summaries, event descriptions, or any user-facing content:
 
 ## Verification
 
+- Run `deno lint` after making code changes to verify no lint errors were introduced
 - Never run `deno task dev` unprompted - let the developer verify manually
 - Only run `deno task dev` if the developer explicitly asks
+- Never offer to commit changes unless explicitly asked - let the developer decide when to commit

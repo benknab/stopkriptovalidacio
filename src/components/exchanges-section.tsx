@@ -54,9 +54,6 @@ function formatDate(date: Date, lang: string): string {
 function ExchangeCard({ slug, exchange }: ExchangeCardProps): JSX.Element {
 	const { t, i18n } = useTranslation();
 	const colors = statusColors[exchange.status];
-	const now = new Date();
-	const hasLeft = exchange.leaveDate && exchange.leaveDate <= now;
-	const willLeave = exchange.leaveDate && exchange.leaveDate > now;
 
 	return (
 		<div

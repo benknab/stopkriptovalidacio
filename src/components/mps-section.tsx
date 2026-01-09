@@ -22,7 +22,7 @@ export const voteColors: Record<VoteType, { badge: string; border: string }> = {
 		badge: "bg-slate-100 text-slate-600",
 		border: "border-red-400",
 	},
-	not_voted: {
+	"not_voted": {
 		badge: "bg-slate-100 text-slate-600",
 		border: "border-red-400",
 	},
@@ -35,7 +35,7 @@ export const voteColors: Record<VoteType, { badge: string; border: string }> = {
 const votePriority: Record<VoteType, number> = {
 	yes: 0,
 	abstain: 1,
-	not_voted: 2,
+	"not_voted": 2,
 	absent: 3,
 	no: 4,
 	banned: 5,
@@ -98,7 +98,10 @@ function buildCountyData(): CountyData[] {
 				countyMap.set(parsed.county, new Set());
 			}
 			if (parsed.districtNum) {
-				countyMap.get(parsed.county)!.add(parsed.districtNum);
+				const districts = countyMap.get(parsed.county);
+				if (districts) {
+					districts.add(parsed.districtNum);
+				}
 			}
 		}
 	}
