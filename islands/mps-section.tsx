@@ -1,8 +1,8 @@
 import type { JSX } from "preact";
-import { useSignal } from "@preact/signals";
 import { type Mp, mps, type MpSlug, type VoteType } from "../data/mps.ts";
 import { sources } from "../data/sources.ts";
-import { t, type SupportedLanguage } from "../i18n/index.ts";
+import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
+import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { ExternalLink } from "../components/external-link.tsx";
 import { H2 } from "../components/h2.tsx";
 
@@ -300,9 +300,18 @@ export interface MpsSectionProps {
 	selectedDistrict: string;
 }
 
-export default function MpsSection({ lang, selectedCounty: initialCounty, selectedDistrict: initialDistrict }: MpsSectionProps): JSX.Element {
-	const selectedCounty = useSignal(initialCounty);
-	const selectedDistrict = useSignal(initialDistrict);
+export default function MpsSection(props: MpsSectionProps): JSX.Element {
+	const { lang } = props;
+	const selectedCounty = useStringQueryParam({
+		key: "megye",
+		defaultValue: "",
+		initialValue: props.selectedCounty,
+	});
+	const selectedDistrict = useStringQueryParam({
+		key: "kerulet",
+		defaultValue: "",
+		initialValue: props.selectedDistrict,
+	});
 	const voteSource = sources["parlament-szavazas-11922"];
 
 	const isAllSelected = selectedCounty.value === ALL_OPTION;
@@ -326,24 +335,14 @@ export default function MpsSection({ lang, selectedCounty: initialCounty, select
 		return true;
 	});
 
-	const updateUrl = (): void => {
-		const url = new URL(globalThis.location.href);
-		url.hash = "kepviselok";
+	function handleCountyChange(e: Event): void {
+		selectedCounty.value = (e.target as HTMLSelectElement).value;
+		selectedDistrict.value = "";
+	}
 
-		if (selectedCounty.value) {
-			url.searchParams.set("megye", selectedCounty.value);
-		} else {
-			url.searchParams.delete("megye");
-		}
-
-		if (selectedDistrict.value && !isNationalList && !isAllSelected) {
-			url.searchParams.set("kerulet", selectedDistrict.value);
-		} else {
-			url.searchParams.delete("kerulet");
-		}
-
-		globalThis.history.pushState({}, "", url);
-	};
+	function handleDistrictChange(e: Event): void {
+		selectedDistrict.value = (e.target as HTMLSelectElement).value;
+	}
 
 	return (
 		<section id="kepviselok" class="bg-slate-50 py-16 sm:py-20">
@@ -386,11 +385,7 @@ export default function MpsSection({ lang, selectedCounty: initialCounty, select
 						<select
 							id="mp-county-select"
 							value={selectedCounty.value}
-							onChange={(e): void => {
-								selectedCounty.value = (e.target as HTMLSelectElement).value;
-								selectedDistrict.value = "";
-								updateUrl();
-							}}
+							onChange={handleCountyChange}
 							class="w-full h-11 pl-3 pr-8 bg-white border-2 border-slate-200 rounded-md text-sm text-slate-900 font-medium appearance-none cursor-pointer transition-all duration-150 hover:border-brand/50 focus:outline-none focus:border-brand focus:ring-4 focus:ring-brand/10"
 						>
 							<option value="">{t("mps.filter.select_county", lang)}</option>
@@ -398,9 +393,12 @@ export default function MpsSection({ lang, selectedCounty: initialCounty, select
 							{countyData.map((county) => (
 								<option key={county.name} value={county.name}>
 									{county.isNationalList
-										? t(`mps.filter.${
-											county.name === NATIONAL_LIST ? "national_list" : "minority_list"
-										}`, lang)
+										? t(
+											`mps.filter.${
+												county.name === NATIONAL_LIST ? "national_list" : "minority_list"
+											}`,
+											lang,
+										)
 										: county.name}
 								</option>
 							))}
@@ -412,7 +410,12 @@ export default function MpsSection({ lang, selectedCounty: initialCounty, select
 								stroke="currentColor"
 								viewBox="0 0 24 24"
 							>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width={2}
+									d="M19 9l-7 7-7-7"
+								/>
 							</svg>
 						</div>
 					</div>
@@ -421,7 +424,9 @@ export default function MpsSection({ lang, selectedCounty: initialCounty, select
 						<label
 							for="mp-district-select"
 							class={`block text-xs font-semibold uppercase tracking-wider mb-1.5 transition-colors ${
-								!selectedCounty.value || isNationalList || isAllSelected ? "text-slate-300" : "text-slate-500"
+								!selectedCounty.value || isNationalList || isAllSelected
+									? "text-slate-300"
+									: "text-slate-500"
 							}`}
 						>
 							{t("mps.filter.district", lang)}
@@ -430,10 +435,7 @@ export default function MpsSection({ lang, selectedCounty: initialCounty, select
 							id="mp-district-select"
 							value={selectedDistrict.value}
 							disabled={!selectedCounty.value || isNationalList || isAllSelected}
-							onChange={(e): void => {
-								selectedDistrict.value = (e.target as HTMLSelectElement).value;
-								updateUrl();
-							}}
+							onChange={handleDistrictChange}
 							class={`w-full h-11 pl-3 pr-8 border-2 rounded-md text-sm font-medium appearance-none transition-all duration-150 focus:outline-none ${
 								!selectedCounty.value || isNationalList || isAllSelected
 									? "bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed"
@@ -458,7 +460,12 @@ export default function MpsSection({ lang, selectedCounty: initialCounty, select
 								stroke="currentColor"
 								viewBox="0 0 24 24"
 							>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width={2}
+									d="M19 9l-7 7-7-7"
+								/>
 							</svg>
 						</div>
 					</div>
@@ -466,7 +473,10 @@ export default function MpsSection({ lang, selectedCounty: initialCounty, select
 
 				{selectedCounty.value && (
 					<p class="mt-4 text-sm text-slate-600 text-center">
-						{t("mps.showing", lang, { shown: filteredMps.length.toString(), total: sortedMps.length.toString() })}
+						{t("mps.showing", lang, {
+							shown: filteredMps.length.toString(),
+							total: sortedMps.length.toString(),
+						})}
 					</p>
 				)}
 
