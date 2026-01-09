@@ -100,7 +100,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/b053.jpg",
 		district: "Bács-Kiskun 5. OEVK",
-		website: "http://www.banyaigabor.fidesz.hu",
 	},
 	"barcza-attila": {
 		name: "Barcza Attila",
@@ -119,7 +118,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/b087.jpg",
 		district: "Országos lista",
-		website: "http://www.bartosmonika.hu",
 	},
 	"becso-zsolt": {
 		name: "Becsó Zsolt",
@@ -148,7 +146,6 @@ export const mps = {
 		phones: new Set(["36205132653"]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/b103.jpg",
 		district: "Hajdú-Bihar 5. OEVK",
-		website: "http://bodosandor.fidesz.hu",
 	},
 	"bona-zoltan": {
 		name: "Bóna Zoltán",
@@ -177,7 +174,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/c014.jpg",
 		district: "Zala 3. OEVK",
-		website: "https://cseresnyespeter.com",
 	},
 	"csibi-krisztina": {
 		name: "Dr. Csibi Krisztina",
@@ -232,7 +228,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/d030.jpg",
 		district: "Békés 2. OEVK",
-		website: "http://www.dankobela.fidesz.hu",
 	},
 	"demeter-andras": {
 		name: "Dr. Demeter András",
@@ -260,7 +255,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/d751.jpg",
 		district: "Budapest 14. OEVK",
-		website: "http://www.dunaimonika.fidesz.hu",
 	},
 	"erdos-norbert": {
 		name: "Erdős Norbert",
@@ -306,7 +300,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/f001.jpg",
 		district: "Csongrád 3. OEVK",
-		website: "http://www.farkassandor.fidesz.hu",
 	},
 	"fazekas-sandor": {
 		name: "Dr. Fazekas Sándor",
@@ -316,7 +309,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/f002.jpg",
 		district: "Országos lista",
-		website: "http://www.fazekassandor.fidesz.hu",
 	},
 	"ferencz-orsolya": {
 		name: "Dr. Ferencz Orsolya",
@@ -446,7 +438,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/h074.jpg",
 		district: "Országos lista",
-		website: "https://hidveghi.fidesz-eu.hu",
 	},
 	"hoppal-peter": {
 		name: "Dr. Hoppál Péter",
@@ -456,7 +447,6 @@ export const mps = {
 		phones: new Set(["3672481319"]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/h050.jpg",
 		district: "Baranya 2. OEVK",
-		website: "http://hoppalpeter.fidesz.hu",
 	},
 	"hornung-agnes": {
 		name: "Hornung Ágnes",
@@ -530,7 +520,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/k098.jpg",
 		district: "Győr-Moson-Sopron 2. OEVK",
-		website: "http://www.karaakos.hu",
 	},
 	"kiraly-nora": {
 		name: "Király Nóra",
@@ -745,7 +734,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/n322.jpg",
 		district: "Országos lista",
-		website: "http://www.nemethzsolt22.hu",
 	},
 	"nyitrai-zsolt": {
 		name: "Nyitrai Zsolt",
@@ -784,7 +772,6 @@ export const mps = {
 		phones: new Set(["36205533377"]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/o014.jpg",
 		district: "Veszprém 1. OEVK",
-		website: "http://www.ovadipeter.hu",
 	},
 	"pajtok-gabor": {
 		name: "Dr. Pajtók Gábor",
@@ -965,7 +952,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/t002.jpg",
 		district: "Borsod-Abaúj-Zemplén 7. OEVK",
-		website: "https://tallaiandras.fidesz.hu",
 	},
 	"tapolczai-gergely": {
 		name: "Dr. Tapolczai Gergely",
@@ -984,7 +970,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/t021.jpg",
 		district: "Hajdú-Bihar 3. OEVK",
-		website: "https://tasolaszlo.hu",
 	},
 	"tessely-zoltan": {
 		name: "Tessely Zoltán",
@@ -994,7 +979,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/t038.jpg",
 		district: "Fejér 3. OEVK",
-		website: "https://tesselyzoltan.fidesz.hu",
 	},
 	"tiba-istvan": {
 		name: "Dr. Tiba István",
@@ -1059,7 +1043,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/v045.jpg",
 		district: "Fejér 1. OEVK",
-		website: "https://varghatamas.fidesz.hu",
 	},
 	"vecsey-laszlo": {
 		name: "Vécsey László",
@@ -1309,7 +1292,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/v055.jpg",
 		district: "Országos lista",
-		website: "https://parlamentiimacsoport.hu",
 	},
 	"arato-gergely": {
 		name: "Arató Gergely",
@@ -1420,7 +1402,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/s175.jpg",
 		district: "Országos lista",
-		website: "https://sebianpetrovszkilaszlo.hu",
 	},
 	"vadai-agnes": {
 		name: "Dr. Vadai Ágnes",
@@ -1605,7 +1586,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/m037.jpg",
 		district: "Országos lista",
-		website: "https://molnarzsolt.hu",
 	},
 	"szabo-sandor": {
 		name: "Szabó Sándor",
@@ -1634,7 +1614,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/v073.jpg",
 		district: "Budapest 13. OEVK",
-		website: "https://vajdazoltan.hu",
 	},
 	"ander-balazs": {
 		name: "Ander Balázs",
@@ -1860,7 +1839,6 @@ export const mps = {
 		phones: new Set([]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/j020.jpg",
 		district: "Országos lista",
-		website: "https://jakabpeter.info",
 	},
 	"kanasz-nagy-mate": {
 		name: "Kanász-Nagy Máté",
