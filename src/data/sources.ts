@@ -559,6 +559,31 @@ Auditor: CORRECT Financial and Accounting Expert Ltd.`,
 			en: "MoonPay's official list of unsupported countries. Hungary is on the list, meaning MoonPay services are not available to Hungarian customers.",
 		},
 	},
+	"telex-kripto-2025-12-25": {
+		title: { hu: "Telex", en: "Telex" },
+		originalUrl: "https://telex.hu/gazdasag/2025/12/25/kripto-sztfh-legalis-magyar-kereskedelem",
+		summary: {
+			hu: "A Telex összefoglalója a december 27-től érvényes kriptoeszköz-szabályozásról. A cikk áttekinti, hogy mit szabad és mit nem a magyar kriptopiac szereplőinek az új szabályok szerint.",
+			en: "Telex summary of crypto-asset regulations effective from December 27. The article reviews what is and isn't allowed for Hungarian crypto market participants under the new rules.",
+		},
+	},
+	"cryptofalka-szabalyozas-2026": {
+		title: { hu: "CryptoFalka", en: "CryptoFalka" },
+		originalUrl:
+			"https://cryptofalka.hu/blokklanc/magyar-kripto-szabalyozas-2026-mit-szabad-mit-nem-maganszemelykent",
+		summary: {
+			hu: "A CryptoFalka elemzése a 2026-os kriptoszabályozásról és a december 27-i alkalmazási határidőről. Részletezi, hogy magánszemélyként mi engedélyezett és mi tiltott.",
+			en: "CryptoFalka analysis of 2026 crypto regulations and the December 27 application deadline. Details what is permitted and prohibited for private individuals.",
+		},
+	},
+	"hvg-kripto-2026-01-08": {
+		title: { hu: "HVG", en: "HVG" },
+		originalUrl: "https://hvg.hu/gazdasag/20260108_ujabb-kriptoszolgaltatas-all-le-magyarorszagon",
+		summary: {
+			hu: "A HVG beszámolója újabb kriptoszolgáltatások magyarországi leállásáról a szabályozási környezet miatt.",
+			en: "HVG report on more cryptocurrency services shutting down in Hungary due to the regulatory environment.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;

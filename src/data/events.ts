@@ -245,6 +245,25 @@ export const events: TimelineEvents = {
 		]),
 		exchangeSlugs: new Set(),
 	},
+	"sztfh-rendelet-alkalmazas-kezdete": {
+		date: new Date("2025-12-27"),
+		type: "primary",
+		title: {
+			hu: "SZTFH rendelet alkalmazásának kezdete",
+			en: "SZTFH regulation application begins",
+		},
+		summary: {
+			hu: "A 10/2025. (X. 27.) SZTFH rendelet alkalmazása megkezdődik – 60 nappal a kihirdetés után. <b>Ettől a naptól minden kriptoeszköz-átváltási szolgáltatónak SZTFH által nyilvántartott validátort kell igénybe vennie.</b> A validátor nélküli szolgáltatás nyújtása bűncselekménynek minősül. A gyakorlatban ez a szabályozatlan kriptokereskedelem végét jelenti Magyarországon.",
+			en: "Application of SZTFH Regulation 10/2025 (X. 27.) begins – 60 days after publication. <b>From this date, all crypto-asset exchange service providers must use an SZTFH-registered validator.</b> Providing services without a validator constitutes a criminal offense. In practice, this marks the end of unregulated crypto trading in Hungary.",
+		},
+		sourceSlugs: new Set([
+			"sztfh-rendelet-10-2025",
+			"sztfh-iranymutatas-2025-12-19",
+			"telex-kripto-2025-12-25",
+			"cryptofalka-szabalyozas-2026",
+		]),
+		exchangeSlugs: new Set(),
+	},
 	"caduceus-weboldal": {
 		date: new Date("2025-12-19"),
 		type: "tertiary",
