@@ -10,6 +10,7 @@
     "npm:react-dom@19": "19.2.3_react@19.2.3",
     "npm:react-i18next@15": "15.7.4_i18next@24.2.3_react@19.2.3",
     "npm:react@19": "19.2.3",
+    "npm:tailwind-merge@2": "2.6.0",
     "npm:tailwindcss@4": "4.1.18"
   },
   "jsr": {
@@ -533,6 +534,9 @@
         "has-flag"
       ]
     },
+    "tailwind-merge@2.6.0": {
+      "integrity": "sha512-P+Vu1qXfzediirmHOC3xKGAYeZtPcV9g76X+xg2FD4tYgR71ewMA35Y3sCz3zhiN/dwefRpJX0yBcgwi1fXNQA=="
+    },
     "tailwindcss@4.1.18": {
       "integrity": "sha512-4+Z+0yiYyEtUVCScyfHCxOYP06L5Ne+JiHhY2IjR2KWMIWhJOYZKLSGZaP5HkZ8+bY0cxfzwDE5uOmzFXyIwxw=="
     },
@@ -593,6 +597,7 @@
       "npm:react-dom@19",
       "npm:react-i18next@15",
       "npm:react@19",
+      "npm:tailwind-merge@2",
       "npm:tailwindcss@4"
     ]
   }

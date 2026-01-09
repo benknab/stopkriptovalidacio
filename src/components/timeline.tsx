@@ -4,6 +4,7 @@ import { events } from "../data/events.ts";
 import { type Source, sources } from "../data/sources.ts";
 import type { EventType, TimelineEvent } from "../data/types.ts";
 import type { SupportedLanguage } from "../i18n/index.ts";
+import { ExternalLink } from "./external-link.tsx";
 
 function formatDate(date: Date, lang: SupportedLanguage): string {
 	return date.toLocaleDateString(lang === "hu" ? "hu-HU" : "en-US", {
@@ -15,12 +16,7 @@ function formatDate(date: Date, lang: SupportedLanguage): string {
 
 function TimelineSource({ source, lang }: { source: Source; lang: SupportedLanguage }): JSX.Element {
 	return (
-		<a
-			href={source.originalUrl}
-			target="_blank"
-			rel="noopener noreferrer"
-			className="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover hover:underline transition-colors"
-		>
+		<ExternalLink href={source.originalUrl} className="inline-flex items-center gap-1 text-sm hover:underline">
 			<span>{source.title[lang]}</span>
 			<svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 				<path
@@ -30,7 +26,7 @@ function TimelineSource({ source, lang }: { source: Source; lang: SupportedLangu
 					d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
 				/>
 			</svg>
-		</a>
+		</ExternalLink>
 	);
 }
 

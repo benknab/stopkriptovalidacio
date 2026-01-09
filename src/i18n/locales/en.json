@@ -46,6 +46,14 @@
 		"contact": {
 			"title": "Contact",
 			"description": "If you have any questions, corrections, clarifications, update requests, or feedback, please reach out:"
+		},
+		"privacy": {
+			"title": "Privacy Policy",
+			"analytics": "We use privacy-preserving analytics through Plausible, which does not use cookies and does not collect personal data. For more information, see <plausibleLink>Plausible's privacy policy</plausibleLink>.",
+			"email": "When you use our contact tool to email representatives, all processing happens locally in your browser. We do not store or transmit the content of your messages.",
+			"cloudflare": "We use Cloudflare as a caching service to improve website performance and reliability. Cloudflare may temporarily process IP addresses and basic request information as part of its service, but this data is not used by us for analytics purposes. For more information, see <cloudflareLink>Cloudflare's privacy policy</cloudflareLink>.",
+			"changes": "If we make any changes to this privacy policy, we will update this page.",
+			"updated": "Last updated: January 9, 2025."
 		}
 	},
 	"timeline": {
@@ -122,6 +130,7 @@
 	},
 	"footer": {
 		"aboutSite": "About This Site",
+		"privacy": "Privacy Policy",
 		"citizenLed": "This is a citizen-led information platform."
 	},
 	"mps": {

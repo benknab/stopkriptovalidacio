@@ -46,6 +46,14 @@
 		"contact": {
 			"title": "Kapcsolat",
 			"description": "Ha kérdése, észrevétele, pontosítási igénye, frissítési kérése vagy visszajelzése van, keressen minket:"
+		},
+		"privacy": {
+			"title": "Adatvédelem",
+			"analytics": "Adatvédelmi szempontból előnyös elemzést használunk a Plausible szolgáltatásán keresztül, amely nem használ sütiket és nem gyűjt személyes adatokat. További információért tekintse meg a <plausibleLink>Plausible adatvédelmi irányelveit</plausibleLink>.",
+			"email": "Amikor a kapcsolatfelvételi eszközünket használja képviselőknek küldött emailekhez, minden feldolgozás a böngészőjében történik. Nem tároljuk és nem továbbítjuk az üzenetek tartalmát.",
+			"cloudflare": "A weboldal teljesítményének és megbízhatóságának javítása érdekében a Cloudflare gyorsítótárazási szolgáltatását használjuk. A Cloudflare a szolgáltatás részeként ideiglenesen feldolgozhatja az IP-címeket és alapvető kérési információkat, de ezeket az adatokat nem használjuk elemzési célokra. További információért tekintse meg a <cloudflareLink>Cloudflare adatvédelmi irányelveit</cloudflareLink>.",
+			"changes": "Ha bármilyen változtatást eszközölünk ezen az adatvédelmi irányelven, frissítjük ezt az oldalt.",
+			"updated": "Utolsó frissítés: 2025. január 9."
 		}
 	},
 	"timeline": {
@@ -122,6 +130,7 @@
 	},
 	"footer": {
 		"aboutSite": "Az oldalról",
+		"privacy": "Adatvédelem",
 		"citizenLed": "Ez egy polgári kezdeményezésű információs platform."
 	},
 	"mps": {

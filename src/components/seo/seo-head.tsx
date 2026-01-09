@@ -5,6 +5,7 @@ import { MetaTags } from "./meta-tags.tsx";
 import { OpenGraph } from "./open-graph.tsx";
 import { Hreflang } from "./hreflang.tsx";
 import { JsonLd } from "./json-ld.tsx";
+import { Plausible } from "./plausible.tsx";
 
 interface SeoHeadProps {
 	lang: SupportedLanguage;
@@ -42,6 +43,8 @@ export function SeoHead({ lang, pageId, path, titleParams, descriptionParams }: 
 			<JsonLd lang={lang} pageId={pageId} />
 
 			<link rel="preload" href="/public/styles.css" as="style" />
+
+			<Plausible />
 		</>
 	);
 }

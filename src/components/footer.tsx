@@ -25,6 +25,12 @@ export function Footer(): JSX.Element {
 								{t("footer.aboutSite")}
 							</a>
 							<a
+								href="/rolunk#adatvedelem"
+								className="block text-slate-400 hover:text-white transition-colors text-sm"
+							>
+								{t("footer.privacy")}
+							</a>
+							<a
 								href="/rolunk#kontakt"
 								className="block text-slate-400 hover:text-white transition-colors text-sm"
 							>

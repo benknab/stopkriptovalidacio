@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { type Mp, mps, type MpSlug, type VoteType } from "../data/mps.ts";
 import { sources } from "../data/sources.ts";
 import type { SupportedLanguage } from "../i18n/index.ts";
+import { ExternalLink } from "./external-link.tsx";
 import { H2 } from "./h2.tsx";
 
 export const voteColors: Record<VoteType, { badge: string; border: string }> = {
@@ -381,34 +382,22 @@ export function MpsSection({ selectedCounty, selectedDistrict }: MpsSectionProps
 				<div className="mt-8 p-4 bg-white rounded-lg border border-slate-200 space-y-2">
 					<p className="text-sm text-slate-600">
 						<strong>{t("mps.source")}:</strong>{" "}
-						<a
-							href={voteSource.originalUrl}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-brand hover:text-brand-hover transition-colors underline"
-						>
+						<ExternalLink href={voteSource.originalUrl} className="underline">
 							{voteSource.title[lang]}
-						</a>
+						</ExternalLink>
 						{" | "}
-						<a
-							href={mpListSource.url}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-brand hover:text-brand-hover transition-colors underline"
-						>
+						<ExternalLink href={mpListSource.url} className="underline">
 							{t("mps.mp_list_source")}
-						</a>
+						</ExternalLink>
 					</p>
 					<p className="text-sm text-slate-500">
 						{t("mps.district_lookup_hint")}{" "}
-						<a
+						<ExternalLink
 							href="https://vtr.valasztas.hu/ogy2022/egyeni-valasztokeruletek"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="text-brand hover:text-brand-hover transition-colors underline"
+							className="underline"
 						>
 							valasztas.hu
-						</a>
+						</ExternalLink>
 					</p>
 				</div>
 

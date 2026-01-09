@@ -22,7 +22,8 @@
 		"@types/react": "npm:@types/react@^19",
 		"tailwindcss": "npm:tailwindcss@^4",
 		"i18next": "npm:i18next@^24",
-		"react-i18next": "npm:react-i18next@^15"
+		"react-i18next": "npm:react-i18next@^15",
+		"tailwind-merge": "npm:tailwind-merge@^2"
 	},
 	"compilerOptions": {
 		"jsx": "react-jsx",

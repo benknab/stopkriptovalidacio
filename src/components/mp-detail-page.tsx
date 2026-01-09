@@ -2,7 +2,9 @@ import type { JSX } from "react";
 import { useTranslation } from "react-i18next";
 import { formatPhoneForDisplay, type Mp, type MpSlug } from "../data/mps.ts";
 import type { SupportedLanguage } from "../i18n/index.ts";
+import { ExternalLink } from "./external-link.tsx";
 import { Layout } from "./layout.tsx";
+import { Link } from "./link.tsx";
 import { voteColors } from "./mps-section.tsx";
 
 interface MpDetailPageProps {
@@ -141,14 +143,9 @@ export function MpDetailPage({ mp, selectedCounty, selectedDistrict }: MpDetailP
 								<span className="text-slate-400 mt-0.5">
 									<WebsiteIcon />
 								</span>
-								<a
-									href={mp.website}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="text-brand hover:text-brand-hover transition-colors break-all"
-								>
+								<ExternalLink href={mp.website} className="break-all">
 									{mp.website.replace(/^https?:\/\//, "")}
-								</a>
+								</ExternalLink>
 							</div>
 						)}
 
@@ -160,13 +157,9 @@ export function MpDetailPage({ mp, selectedCounty, selectedDistrict }: MpDetailP
 								</span>
 								<div className="space-y-1">
 									{emails.map((email) => (
-										<a
-											key={email}
-											href={`mailto:${email}`}
-											className="block text-brand hover:text-brand-hover transition-colors break-all"
-										>
+										<Link key={email} href={`mailto:${email}`} className="block break-all">
 											{email}
-										</a>
+										</Link>
 									))}
 								</div>
 							</div>
@@ -180,13 +173,9 @@ export function MpDetailPage({ mp, selectedCounty, selectedDistrict }: MpDetailP
 								</span>
 								<div className="space-y-1">
 									{phones.map((phone) => (
-										<a
-											key={phone}
-											href={`tel:+${phone}`}
-											className="block text-brand hover:text-brand-hover transition-colors font-mono"
-										>
+										<Link key={phone} href={`tel:+${phone}`} className="block font-mono">
 											{formatPhoneForDisplay(phone)}
-										</a>
+										</Link>
 									))}
 								</div>
 							</div>
