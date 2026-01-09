@@ -86,6 +86,19 @@ export const exchanges = {
 		name: "Nexo",
 		status: "unknown",
 	},
+	moonpay: {
+		name: "MoonPay",
+		status: "leaving",
+		leaveDate: new Date("2026-01-02"),
+	},
+	gemini: {
+		name: "Gemini",
+		status: "unknown",
+	},
+	kucoin: {
+		name: "KuCoin",
+		status: "unknown",
+	},
 } as const satisfies Record<string, Exchange>;
 
 export type ExchangeSlug = keyof typeof exchanges;

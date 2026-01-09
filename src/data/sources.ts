@@ -551,6 +551,14 @@ Auditor: CORRECT Financial and Accounting Expert Ltd.`,
 			en: "Vote query results for the T/11922 bill on Parlament.hu.",
 		},
 	},
+	"moonpay-unsupported-countries": {
+		title: { hu: "MoonPay nem támogatott országok", en: "MoonPay Unsupported Countries" },
+		originalUrl: "https://support.moonpay.com/en/articles/380968-moonpay-s-unsupported-countries",
+		summary: {
+			hu: "A MoonPay hivatalos listája a nem támogatott országokról. Magyarország szerepel a listán, a MoonPay szolgáltatásai nem elérhetők magyar ügyfelek számára.",
+			en: "MoonPay's official list of unsupported countries. Hungary is on the list, meaning MoonPay services are not available to Hungarian customers.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;

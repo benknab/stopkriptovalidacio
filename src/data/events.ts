@@ -471,4 +471,18 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["bitvavo-support-2025-12"]),
 		exchangeSlugs: new Set(["bitvavo"]),
 	},
+	"moonpay-nem-tamogatott": {
+		date: new Date("2026-01-02"),
+		type: "secondary",
+		title: {
+			hu: "MoonPay nem támogatja Magyarországot",
+			en: "MoonPay does not support Hungary",
+		},
+		summary: {
+			hu: "A MoonPay hivatalos oldala szerint Magyarország a nem támogatott országok listáján szerepel. A szolgáltatás – beleértve a kriptovaluta vásárlást bankkártyával – nem elérhető magyar ügyfelek számára.",
+			en: "According to MoonPay's official page, Hungary is listed among unsupported countries. The service – including cryptocurrency purchases via card – is not available to Hungarian customers.",
+		},
+		sourceSlugs: new Set(["moonpay-unsupported-countries"]),
+		exchangeSlugs: new Set(["moonpay"]),
+	},
 };

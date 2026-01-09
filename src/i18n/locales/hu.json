@@ -115,7 +115,10 @@
 		"okcoin": { "summary": "Státusz ismeretlen." },
 		"okx": { "summary": "Státusz ismeretlen." },
 		"mrcoin": { "summary": "Státusz ismeretlen." },
-		"nexo": { "summary": "Státusz ismeretlen." }
+		"nexo": { "summary": "Státusz ismeretlen." },
+		"moonpay": { "summary": "Magyarország a nem támogatott országok listáján." },
+		"gemini": { "summary": "Státusz ismeretlen." },
+		"kucoin": { "summary": "Státusz ismeretlen." }
 	},
 	"footer": {
 		"aboutSite": "Az oldalról",

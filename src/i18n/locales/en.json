@@ -115,7 +115,10 @@
 		"okcoin": { "summary": "Status unknown." },
 		"okx": { "summary": "Status unknown." },
 		"mrcoin": { "summary": "Status unknown." },
-		"nexo": { "summary": "Status unknown." }
+		"nexo": { "summary": "Status unknown." },
+		"moonpay": { "summary": "Hungary listed as unsupported country." },
+		"gemini": { "summary": "Status unknown." },
+		"kucoin": { "summary": "Status unknown." }
 	},
 	"footer": {
 		"aboutSite": "About This Site",
