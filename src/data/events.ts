@@ -233,8 +233,8 @@ export const events: TimelineEvents = {
 			en: "First crypto-asset exchange validation service provider licensed",
 		},
 		summary: {
-			hu: "Az SZTFH engedélyezte és nyilvántartásba vette az első validáló szolgáltatót. <b>Egyetlen magáncég, a Caduceus Zrt. lett felelős az összes magyarországi kriptoeszköz-átváltás validálásáért.</b> Az SZTFH iránymutatást is közzétett a rendelet alkalmazásáról. <b>A validálás pontos tartalma továbbra sincs definiálva.</b>",
-			en: "SZTFH licensed and registered the first validation service provider. <b>A single private company, Caduceus Zrt., became responsible for validating all crypto-asset exchanges in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of validation remains undefined.</b>",
+			hu: "Az SZTFH engedélyezte és nyilvántartásba vette az első validáló szolgáltatót. <b>Egyetlen magáncég, a Caduceus lett felelős az összes magyarországi kriptoeszköz-átváltás validálásáért.</b> Az SZTFH iránymutatást is közzétett a rendelet alkalmazásáról. <b>A validálás pontos tartalma továbbra sincs definiálva.</b>",
+			en: "SZTFH licensed and registered the first validation service provider. <b>A single private company, Caduceus, became responsible for validating all crypto-asset exchanges in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of validation remains undefined.</b>",
 		},
 		sourceSlugs: new Set([
 			"sztfh-kozlemeny-2025-12-19",
@@ -249,12 +249,12 @@ export const events: TimelineEvents = {
 		date: new Date("2025-12-19"),
 		type: "tertiary",
 		title: {
-			hu: "Caduceus Zrt. weboldal indítása",
-			en: "Caduceus Zrt. website launch",
+			hu: "Caduceus weboldal indítása",
+			en: "Caduceus website launch",
 		},
 		summary: {
-			hu: "A Caduceus Zrt. elindította weboldalát (caduceus.hu) – mindössze napokkal az új szabályok hatálybalépése előtt. A weboldal minimális információt tartalmazott: hiányoztak az EU-s előírásoknak megfelelő adatvédelmi és süti-szabályzatok, részletes szolgáltatásleírások. Csak bejelentkezési portál, ÁSZF és elérhetőség volt elérhető.",
-			en: "Caduceus Zrt. launched its website (caduceus.hu) – just days before the new rules took effect. The website was minimal: it lacked EU-compliant privacy and cookie policies, detailed service descriptions. Only a login portal, terms of service, and contact information were available.",
+			hu: "Caduceus elindította weboldalát (caduceus.hu) – mindössze napokkal az új szabályok hatálybalépése előtt. A weboldal minimális információt tartalmazott: hiányoztak az EU-s előírásoknak megfelelő adatvédelmi és süti-szabályzatok, részletes szolgáltatásleírások. Csak bejelentkezési portál, ÁSZF és elérhetőség volt elérhető.",
+			en: "Caduceus launched its website (caduceus.hu) – just days before the new rules took effect. The website was minimal: it lacked EU-compliant privacy and cookie policies, detailed service descriptions. Only a login portal, terms of service, and contact information were available.",
 		},
 		sourceSlugs: new Set(["caduceus-weboldal", "bitcoinbazis-caduceus"]),
 		exchangeSlugs: new Set(),
@@ -426,10 +426,7 @@ export const events: TimelineEvents = {
 			hu: "A Kriptomat bejelentette, hogy december 26-tól 23:00-tól ideiglenesen felfüggeszti kereskedési szolgáltatásait Magyarországon.",
 			en: "Kriptomat announced the temporary suspension of trading services in Hungary from December 26 at 23:00 CET.",
 		},
-		sourceSlugs: new Set([
-			"kriptomat-official-2025-12-22",
-			"kriptomat-revb-2025-12-24",
-		]),
+		sourceSlugs: new Set(["kriptomat-official-2025-12-22", "kriptomat-revb-2025-12-24"]),
 		exchangeSlugs: new Set(["kriptomat"]),
 	},
 	"kriptomat-felfuggesztes": {
@@ -443,10 +440,7 @@ export const events: TimelineEvents = {
 			hu: "A Kriptomat ideiglenesen felfüggesztette kereskedési szolgáltatásait Magyarországon. A vétel, eladás, váltás, KriptoEarn és Intelligent Portfolios szünetel, de a kifizetések elérhetők maradnak.",
 			en: "Kriptomat temporarily suspended trading services in Hungary. Buy, sell, exchange, KriptoEarn, and Intelligent Portfolios paused, but withdrawals remain available.",
 		},
-		sourceSlugs: new Set([
-			"kriptomat-index-2025-12-25",
-			"kriptomat-privatbankar-2025-12-25",
-		]),
+		sourceSlugs: new Set(["kriptomat-index-2025-12-25", "kriptomat-privatbankar-2025-12-25"]),
 		exchangeSlugs: new Set(["kriptomat"]),
 	},
 	"bitvavo-bejelentes": {

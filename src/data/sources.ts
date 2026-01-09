@@ -37,7 +37,10 @@ The amendment to Act VII of 2024 on the Market in Crypto-assets is justified by 
 		},
 	},
 	"parlament-11922-oldal": {
-		title: { hu: "T/11922 Iromány adatai (Parlament.hu)", en: "T/11922 Document Details (Parlament.hu)" },
+		title: {
+			hu: "T/11922 Iromány adatai (Parlament.hu)",
+			en: "T/11922 Document Details (Parlament.hu)",
+		},
 		originalUrl:
 			"https://www.parlament.hu/web/guest/szavazasok-adott-idoszakban?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=yn2Czm3g&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D42%26p_izon%3D11922",
 		summary: {
@@ -159,7 +162,10 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"sztfh-rendelet-10-2025": {
-		title: { hu: "10/2025. (X. 27.) SZTFH rendelet (Jogtar)", en: "SZTFH Regulation 10/2025 (X. 27.) (Jogtar)" },
+		title: {
+			hu: "10/2025. (X. 27.) SZTFH rendelet (Jogtar)",
+			en: "SZTFH Regulation 10/2025 (X. 27.) (Jogtar)",
+		},
 		originalUrl: "https://net.jogtar.hu/jogszabaly?docid=a2500010.stf",
 		summary: {
 			hu: "A kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól szóló rendelet. Hatályba lép a kihirdetést követő 3. napon, alkalmazni a kihirdetést követő 60. naptól kell.",
@@ -178,8 +184,8 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		title: { hu: "SZTFH közlemény (2025.12.19.)", en: "SZTFH Announcement (2025.12.19.)" },
 		originalUrl: "https://sztfh.hu/megtortent-az-elso-kriptoeszkoz-atvaltast-validalo-szolgaltato-engedelyezese/",
 		summary: {
-			hu: "Az SZTFH közleménye az első kriptoeszköz-átváltást validáló szolgáltató engedélyezéséről. A Caduceus Zrt. lett az első és egyetlen engedélyezett validátor.",
-			en: "SZTFH announcement on the licensing of the first crypto-asset exchange validation service provider. Caduceus Zrt. became the first and only licensed validator.",
+			hu: "Az SZTFH közleménye az első kriptoeszköz-átváltást validáló szolgáltató engedélyezéséről. Caduceus lett az első és egyetlen engedélyezett validátor.",
+			en: "SZTFH announcement on the licensing of the first crypto-asset exchange validation service provider. Caduceus became the first and only licensed validator.",
 		},
 	},
 	"sztfh-validator-nyilvantartas": {
@@ -191,7 +197,10 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 		},
 	},
 	"sztfh-rendelet-12-2025": {
-		title: { hu: "12/2025. (XI. 28.) SZTFH rendelet (NJT)", en: "SZTFH Regulation 12/2025 (XI. 28.) (NJT)" },
+		title: {
+			hu: "12/2025. (XI. 28.) SZTFH rendelet (NJT)",
+			en: "SZTFH Regulation 12/2025 (XI. 28.) (NJT)",
+		},
 		originalUrl: "https://njt.hu/jogszabaly/2025-12-20-8K",
 		summary: {
 			hu: "A kriptoeszköz-átváltást validáló szolgáltató engedélyezésével összefüggő eljárások igazgatási szolgáltatási díjairól szóló rendelet. Az engedélyezési eljárás díja: 620 000 Ft.",
@@ -449,8 +458,8 @@ Activities triggering validation requirement:
 		title: { hu: "BitcoinBázis", en: "BitcoinBázis" },
 		originalUrl: "https://www.bitcoinbazis.hu/kriptovaluta-validacio-magyarorszag-velemenyek/",
 		summary: {
-			hu: "Részletes elemzés a Caduceus Zrt.-ről, Magyarország egyetlen kriptovaluta validátoráról. A cég háttere, vezetősége, a Vesszős család kapcsolatai és a közösségi reakciók.",
-			en: "Detailed analysis of Caduceus Zrt., Hungary's only cryptocurrency validator. Company background, leadership, Vesszős family connections, and community reactions.",
+			hu: "Részletes elemzés a Caduceus-ről, Magyarország egyetlen kriptovaluta validátoráról. A cég háttere, vezetősége, a Vesszős család kapcsolatai és a közösségi reakciók.",
+			en: "Detailed analysis of Caduceus, Hungary's only cryptocurrency validator. Company background, leadership, Vesszős family connections, and community reactions.",
 		},
 	},
 	"caduceus-cegbetekintes": {
@@ -526,11 +535,11 @@ Auditor: CORRECT Financial and Accounting Expert Ltd.`,
 		},
 	},
 	"caduceus-weboldal": {
-		title: { hu: "Caduceus Zrt. weboldal", en: "Caduceus Zrt. Website" },
+		title: { hu: "Caduceus weboldal", en: "Caduceus Website" },
 		originalUrl: "https://caduceus.hu/",
 		summary: {
-			hu: "A Caduceus Zrt. hivatalos weboldala. A 2025. december 19-én indított oldal minimális információt tartalmaz: bejelentkezési portál, ÁSZF és elérhetőség. EU-s előírásoknak megfelelő adatvédelmi szabályzat nincs.",
-			en: "Official website of Caduceus Zrt. Launched on December 19, 2025, the site contains minimal information: login portal, terms of service, and contact details. No EU-compliant privacy policy.",
+			hu: "Caduceus hivatalos weboldala. A 2025. december 19-én indított oldal minimális információt tartalmaz: bejelentkezési portál, ÁSZF és elérhetőség. EU-s előírásoknak megfelelő adatvédelmi szabályzat nincs.",
+			en: "Official website of Caduceus. Launched on December 19, 2025, the site contains minimal information: login portal, terms of service, and contact details. No EU-compliant privacy policy.",
 		},
 	},
 	"parlament-szavazas-11922": {
