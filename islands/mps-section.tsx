@@ -6,33 +6,7 @@ import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { ExternalLink } from "../components/external-link.tsx";
 import { H2 } from "../components/h2.tsx";
 import { MpImage } from "../components/mp-image.tsx";
-
-export const voteColors: Record<VoteType, { badge: string; border: string }> = {
-	yes: {
-		badge: "bg-red-100 text-red-700",
-		border: "border-red-400",
-	},
-	no: {
-		badge: "bg-emerald-100 text-emerald-700",
-		border: "border-slate-200",
-	},
-	abstain: {
-		badge: "bg-amber-100 text-amber-700",
-		border: "border-red-400",
-	},
-	absent: {
-		badge: "bg-slate-100 text-slate-600",
-		border: "border-red-400",
-	},
-	"not_voted": {
-		badge: "bg-slate-100 text-slate-600",
-		border: "border-red-400",
-	},
-	banned: {
-		badge: "bg-purple-100 text-purple-700",
-		border: "border-slate-200",
-	},
-};
+import { voteColors } from "../components/vote-badge.tsx";
 
 const votePriority: Record<VoteType, number> = {
 	yes: 0,
@@ -43,17 +17,17 @@ const votePriority: Record<VoteType, number> = {
 	banned: 5,
 };
 
-const NATIONAL_LIST = "Országos lista";
-const MINORITY_LIST = "Országos nemzetiségi lista";
+export const NATIONAL_LIST = "Országos lista";
+export const MINORITY_LIST = "Országos nemzetiségi lista";
 export const ALL_OPTION = "__osszes__";
 
-type ParsedDistrict = {
+export type ParsedDistrict = {
 	county: string;
 	districtNum: string | null;
 	isNationalList: boolean;
 };
 
-function parseDistrict(district: string | undefined): ParsedDistrict | null {
+export function parseDistrict(district: string | undefined): ParsedDistrict | null {
 	if (!district) return null;
 
 	if (district === NATIONAL_LIST) {
@@ -77,7 +51,7 @@ function parseDistrict(district: string | undefined): ParsedDistrict | null {
 	return { county, districtNum, isNationalList: false };
 }
 
-type CountyData = {
+export type CountyData = {
 	name: string;
 	districts: string[];
 	isNationalList: boolean;
@@ -128,7 +102,7 @@ function buildCountyData(): CountyData[] {
 	return result;
 }
 
-const countyData = buildCountyData();
+export const countyData = buildCountyData();
 
 function getSortedMps(): Array<{ slug: MpSlug; mp: Mp }> {
 	const entries = Object.entries(mps) as Array<[MpSlug, Mp]>;
@@ -142,7 +116,7 @@ function getSortedMps(): Array<{ slug: MpSlug; mp: Mp }> {
 		});
 }
 
-const sortedMps = getSortedMps();
+export const sortedMps = getSortedMps();
 
 function buildMailtoUrl(emails: Set<string>): string | null {
 	const [primary, ...cc] = Array.from(emails);

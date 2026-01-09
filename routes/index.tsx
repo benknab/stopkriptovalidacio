@@ -10,6 +10,7 @@ import { SeoHead } from "../components/seo/seo-head.tsx";
 import { detectLanguage, t } from "../i18n/index.ts";
 import TimelineSection from "../islands/timeline-section.tsx";
 import MpsSection from "../islands/mps-section.tsx";
+import TakeActionSection from "../islands/take-action-section.tsx";
 
 export default define.page(function Home(ctx): JSX.Element {
 	const url = new URL(ctx.req.url);
@@ -32,11 +33,14 @@ export default define.page(function Home(ctx): JSX.Element {
 				</>
 			}
 			afterContent={
-				<MpsSection
-					lang={lang}
-					selectedCounty={mpCounty}
-					selectedDistrict={mpDistrict}
-				/>
+				<>
+					<MpsSection
+						lang={lang}
+						selectedCounty={mpCounty}
+						selectedDistrict={mpDistrict}
+					/>
+					<TakeActionSection lang={lang} />
+				</>
 			}
 		>
 			<Head>

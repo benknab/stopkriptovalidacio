@@ -1,6 +1,6 @@
 import type { JSX } from "preact";
 import { type Exchange, exchanges, type ExchangeSlug, type ExchangeStatus } from "../data/exchanges.ts";
-import { t, type SupportedLanguage } from "../i18n/index.ts";
+import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "./h2.tsx";
 
 const statusPriority: Record<ExchangeStatus, number> = {

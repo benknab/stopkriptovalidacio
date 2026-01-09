@@ -171,5 +171,27 @@
 		"back_to_list": "Back to list",
 		"address": "Address",
 		"contact": "Contact"
+	},
+	"action": {
+		"title": "Take Action!",
+		"intro": "The crypto validation law is putting Hungarian users' access to crypto services at risk. Exchanges are leaving Hungary one by one. Write to your representative and ask them to stop this harmful regulation.",
+		"step1": "Message",
+		"step2": "Representatives",
+		"subject_label": "Subject",
+		"message_label": "Message",
+		"next": "Next",
+		"back": "Back",
+		"select_all": "Select All",
+		"deselect_all": "Deselect All",
+		"selected_count": "{{count}} representatives selected",
+		"email_count": "{{count}} email addresses",
+		"send": "Send",
+		"copy_emails": "Copy Emails",
+		"copy_message": "Copy Message",
+		"copied": "Copied!",
+		"email_warning": "You selected many recipients ({{count}} emails). Some email clients cannot handle this many recipients. Use the \"Copy\" buttons instead.",
+		"no_selection": "Select at least one representative",
+		"copy_hint": "Outlook users: replace commas with semicolons",
+		"search_placeholder": "Search representative..."
 	}
 }

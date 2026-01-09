@@ -171,5 +171,27 @@
 		"back_to_list": "Vissza a listához",
 		"address": "Cím",
 		"contact": "Kapcsolat"
+	},
+	"action": {
+		"title": "Cselekedj!",
+		"intro": "A kriptovaluta validációs törvény veszélybe sodorja a magyar felhasználók hozzáférését a kriptovaluta szolgáltatásokhoz. A tőzsdék sorra vonulnak ki Magyarországról. Írj a képviselődnek, és kérd, hogy állítsák meg ezt a káros szabályozást.",
+		"step1": "Üzenet",
+		"step2": "Képviselők",
+		"subject_label": "Tárgy",
+		"message_label": "Üzenet",
+		"next": "Tovább",
+		"back": "Vissza",
+		"select_all": "Összes kijelölése",
+		"deselect_all": "Kijelölés törlése",
+		"selected_count": "{{count}} képviselő kiválasztva",
+		"email_count": "{{count}} e-mail cím",
+		"send": "Küldés",
+		"copy_emails": "E-mailek másolása",
+		"copy_message": "Üzenet másolása",
+		"copied": "Másolva!",
+		"email_warning": "Sok címzettet választottál ({{count}} e-mail). Egyes levelezőprogramok nem tudják kezelni ennyi címzettet. Használd a \"Másolás\" gombokat.",
+		"no_selection": "Válassz ki legalább egy képviselőt",
+		"copy_hint": "Outlook felhasználóknak: cseréld a vesszőket pontosvesszőre",
+		"search_placeholder": "Képviselő keresése..."
 	}
 }

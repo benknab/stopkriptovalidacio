@@ -9,7 +9,7 @@ import { SeoHead } from "../../components/seo/seo-head.tsx";
 import { formatPhoneForDisplay, mps, type MpSlug } from "../../data/mps.ts";
 import { MpImage } from "../../components/mp-image.tsx";
 import { detectLanguage, t } from "../../i18n/index.ts";
-import { voteColors } from "../../islands/mps-section.tsx";
+import { voteColors } from "../../components/vote-badge.tsx";
 
 function buildBackUrl(county: string, district: string): string {
 	const params = new URLSearchParams();
