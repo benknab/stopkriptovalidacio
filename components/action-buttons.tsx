@@ -82,7 +82,9 @@ function getEmailLists(
 }
 
 function generateMailtoUrl(to: string[], cc: string[], subject: string, body: string): string {
-	const params = new URLSearchParams({ subject, body });
+	// Normalize line breaks to CRLF for mailto compatibility (RFC 6068)
+	const normalizedBody = body.replace(/\r?\n/g, "\r\n");
+	const params = new URLSearchParams({ subject, body: normalizedBody });
 	let url = `mailto:${to.map(encodeURIComponent).join(",")}?${params.toString()}`;
 	if (cc.length > 0) {
 		url += `&cc=${cc.map(encodeURIComponent).join(",")}`;
