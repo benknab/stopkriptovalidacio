@@ -83,10 +83,11 @@ function getEmailLists(
 
 function generateMailtoUrl(to: string[], cc: string[], subject: string, body: string): string {
 	const params = new URLSearchParams({ subject, body });
+	let url = `mailto:${to.map(encodeURIComponent).join(",")}?${params.toString()}`;
 	if (cc.length > 0) {
-		params.set("cc", cc.join(","));
+		url += `&cc=${cc.map(encodeURIComponent).join(",")}`;
 	}
-	return `mailto:${to.join(",")}?${params.toString()}`;
+	return url;
 }
 
 interface ActionButtonsProps {
