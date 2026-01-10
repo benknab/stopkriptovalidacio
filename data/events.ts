@@ -234,7 +234,7 @@ export const events: TimelineEvents = {
 		},
 		summary: {
 			hu: "Az SZTFH engedélyezte és nyilvántartásba vette az első validáló szolgáltatót. <b>Egyetlen magáncég, a Caduceus lett felelős az összes magyarországi kriptoeszköz-átváltás validálásáért.</b> Az SZTFH iránymutatást is közzétett a rendelet alkalmazásáról. <b>A validálás pontos tartalma továbbra sincs definiálva.</b>",
-			en: "SZTFH licensed and registered the first validation service provider. <b>A single private company, Caduceus, became responsible for validating all crypto-asset exchanges in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of validation remains undefined.</b>",
+			en: "SZTFH licensed and registered the first validation service provider. <b>A single private company, Caduceus, became responsible for validating all crypto-asset exchange services in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of validation remains undefined.</b>",
 		},
 		sourceSlugs: new Set([
 			"sztfh-kozlemeny-2025-12-19",
@@ -273,7 +273,7 @@ export const events: TimelineEvents = {
 		},
 		summary: {
 			hu: "Caduceus elindította weboldalát (caduceus.hu) – mindössze napokkal az új szabályok hatálybalépése előtt. A weboldal minimális információt tartalmazott: hiányoztak az EU-s előírásoknak megfelelő adatvédelmi és süti-szabályzatok, részletes szolgáltatásleírások. Csak bejelentkezési portál, ÁSZF és elérhetőség volt elérhető.",
-			en: "Caduceus launched its website (caduceus.hu) – just days before the new rules took effect. The website was minimal: it lacked EU-compliant privacy and cookie policies, detailed service descriptions. Only a login portal, terms of service, and contact information were available.",
+			en: "Caduceus launched its website (caduceus.hu) – just days before the new rules took effect. The website was minimal, lacking EU-compliant privacy and cookie policies as well as detailed service descriptions. Only a login portal, terms of service, and contact information were available.",
 		},
 		sourceSlugs: new Set(["caduceus-weboldal", "bitcoinbazis-caduceus"]),
 		exchangeSlugs: new Set(),
@@ -499,7 +499,7 @@ export const events: TimelineEvents = {
 		},
 		summary: {
 			hu: "A MoonPay hivatalos oldala szerint Magyarország a nem támogatott országok listáján szerepel. A szolgáltatás – beleértve a kriptovaluta vásárlást bankkártyával – nem elérhető magyar ügyfelek számára.",
-			en: "According to MoonPay's official page, Hungary is listed among unsupported countries. The service – including cryptocurrency purchases via card – is not available to Hungarian customers.",
+			en: "According to MoonPay's official page, Hungary is listed as an unsupported country. The service – including cryptocurrency purchases via card – is not available to Hungarian customers.",
 		},
 		sourceSlugs: new Set(["moonpay-unsupported-countries"]),
 		exchangeSlugs: new Set(["moonpay"]),

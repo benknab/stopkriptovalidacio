@@ -539,7 +539,7 @@ Auditor: CORRECT Financial and Accounting Expert Ltd.`,
 		originalUrl: "https://caduceus.hu/",
 		summary: {
 			hu: "Caduceus hivatalos weboldala. A 2025. december 19-én indított oldal minimális információt tartalmaz: bejelentkezési portál, ÁSZF és elérhetőség. EU-s előírásoknak megfelelő adatvédelmi szabályzat nincs.",
-			en: "Official website of Caduceus. Launched on December 19, 2025, the site contains minimal information: login portal, terms of service, and contact details. No EU-compliant privacy policy.",
+			en: "Official Caduceus website. Launched on December 19, 2025, the site contains minimal information: login portal, terms of service, and contact details. No EU-compliant privacy policy is available.",
 		},
 	},
 	"parlament-szavazas-11922": {

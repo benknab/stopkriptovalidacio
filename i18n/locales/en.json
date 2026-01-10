@@ -139,7 +139,7 @@
 		"okx": { "summary": "Status uncertain." },
 		"mrcoin": { "summary": "Status uncertain." },
 		"nexo": { "summary": "Status uncertain." },
-		"moonpay": { "summary": "Hungary listed as unsupported country." },
+		"moonpay": { "summary": "Hungary is listed as an unsupported country." },
 		"gemini": { "summary": "Status uncertain." },
 		"kucoin": { "summary": "Status uncertain." }
 	},
@@ -191,7 +191,7 @@
 	"action": {
 		"title": "Take Action!",
 		"nav_title": "Take Action",
-		"intro": "The crypto validation law is putting Hungarian users' access to crypto services at risk. Exchanges are leaving Hungary one by one. Select your district representative and send them a message.",
+		"intro": "The crypto validation law is putting Hungarian users' access to crypto services at risk. Service providers are leaving Hungary one by one. Select your district representative and send them a message.",
 		"subject_label": "Subject",
 		"message_label": "Message",
 		"back": "Back",
