@@ -34,7 +34,7 @@ Köszönöm figyelmét és segítségét.
 
 Tisztelettel,
 [Név]
-[Település, választókerület megjelölése]`;
+[Település]`;
 
 // Default to include national and minority lists
 const DEFAULT_INCLUDE_LISTS = true;
