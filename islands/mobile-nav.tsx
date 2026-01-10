@@ -12,22 +12,21 @@ interface MobileNavProps {
 }
 
 interface NavLinkProps {
-	href: string;
+	anchor: string;
+	currentPath: string;
 	children: string;
 	onClick: () => void;
 }
 
-function NavLink({ href, children, onClick }: NavLinkProps): JSX.Element {
-	function handleClick(): void {
-		// Delay close to ensure iOS WebKit processes the anchor navigation
-		// before the component unmounts
-		setTimeout(onClick, 10);
-	}
+function NavLink({ anchor, currentPath, children, onClick }: NavLinkProps): JSX.Element {
+	// Use same-page anchor if on home, otherwise full path
+	const isHomePage = currentPath === "/" || currentPath.startsWith("/?");
+	const href = isHomePage ? `#${anchor}` : `/#${anchor}`;
 
 	return (
 		<a
 			href={href}
-			onClick={handleClick}
+			onClick={onClick}
 			class="block py-3 px-4 text-lg font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors"
 		>
 			{children}
@@ -136,19 +135,19 @@ export function MobileNav({ lang, currentPath }: MobileNavProps): JSX.Element {
 
 						{/* Navigation Links */}
 						<div class="py-2">
-							<NavLink href="/#attekintes" onClick={close}>
+							<NavLink anchor="attekintes" currentPath={currentPath} onClick={close}>
 								{t("nav.overview", lang)}
 							</NavLink>
-							<NavLink href="/#tozsdek" onClick={close}>
+							<NavLink anchor="tozsdek" currentPath={currentPath} onClick={close}>
 								{t("nav.exchanges", lang)}
 							</NavLink>
-							<NavLink href="/#idovonal" onClick={close}>
+							<NavLink anchor="idovonal" currentPath={currentPath} onClick={close}>
 								{t("nav.timeline", lang)}
 							</NavLink>
-							<NavLink href="/#kepviselok" onClick={close}>
+							<NavLink anchor="kepviselok" currentPath={currentPath} onClick={close}>
 								{t("nav.mps", lang)}
 							</NavLink>
-							<NavLink href="/#cselekedj" onClick={close}>
+							<NavLink anchor="cselekedj" currentPath={currentPath} onClick={close}>
 								{t("action.nav_title", lang)}
 							</NavLink>
 						</div>

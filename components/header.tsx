@@ -4,11 +4,16 @@ import { MobileNav } from "../islands/mobile-nav.tsx";
 import { LanguageSwitch } from "./language-switch.tsx";
 
 interface NavLinkProps {
-	href: string;
+	anchor: string;
+	currentPath: string;
 	children: ComponentChildren;
 }
 
-function NavLink({ href, children }: NavLinkProps): JSX.Element {
+function NavLink({ anchor, currentPath, children }: NavLinkProps): JSX.Element {
+	// Use same-page anchor if on home, otherwise full path
+	const isHomePage = currentPath === "/" || currentPath.startsWith("/?");
+	const href = isHomePage ? `#${anchor}` : `/#${anchor}`;
+
 	return (
 		<a
 			href={href}
@@ -33,11 +38,11 @@ export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 				</a>
 				<div class="flex items-center gap-4 sm:gap-6">
 					<nav class="hidden sm:flex items-center gap-6">
-						<NavLink href="/#attekintes">{t("nav.overview", lang)}</NavLink>
-						<NavLink href="/#tozsdek">{t("nav.exchanges", lang)}</NavLink>
-						<NavLink href="/#idovonal">{t("nav.timeline", lang)}</NavLink>
-						<NavLink href="/#kepviselok">{t("nav.mps", lang)}</NavLink>
-						<NavLink href="/#cselekedj">{t("action.nav_title", lang)}</NavLink>
+						<NavLink anchor="attekintes" currentPath={currentPath}>{t("nav.overview", lang)}</NavLink>
+						<NavLink anchor="tozsdek" currentPath={currentPath}>{t("nav.exchanges", lang)}</NavLink>
+						<NavLink anchor="idovonal" currentPath={currentPath}>{t("nav.timeline", lang)}</NavLink>
+						<NavLink anchor="kepviselok" currentPath={currentPath}>{t("nav.mps", lang)}</NavLink>
+						<NavLink anchor="cselekedj" currentPath={currentPath}>{t("action.nav_title", lang)}</NavLink>
 					</nav>
 					<div class="hidden sm:block">
 						<LanguageSwitch currentLang={lang} currentPath={currentPath} />
