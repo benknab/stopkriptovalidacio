@@ -4,19 +4,6 @@ import { mps, type MpSlug } from "../data/mps.ts";
 import { minorityListMps, nationalListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 
-function WarningIcon(): JSX.Element {
-	return (
-		<svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width={2}
-				d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-			/>
-		</svg>
-	);
-}
-
 interface CopyButtonProps {
 	onClick: () => void;
 	disabled?: boolean;
@@ -36,48 +23,70 @@ function CopyButton({ onClick, disabled, children }: CopyButtonProps): JSX.Eleme
 	);
 }
 
-function getAllEmails(
+interface EmailLists {
+	to: string[];
+	cc: string[];
+	all: string[];
+}
+
+function getEmailLists(
 	selectedRep: MpSlug | null,
 	includeNationalList: boolean,
 	includeMinorityList: boolean,
-): string[] {
-	const emails: Set<string> = new Set();
+): EmailLists {
+	const toEmails: Set<string> = new Set();
+	const ccEmails: Set<string> = new Set();
 
-	// Add selected representative's emails
+	// Selected representative's emails go to "To:"
 	if (selectedRep) {
 		const mp = mps[selectedRep];
 		if (mp) {
 			for (const email of mp.emails) {
-				emails.add(email);
+				toEmails.add(email);
 			}
 		}
 	}
 
-	// Add national list MPs' emails
+	// National list MPs' emails go to "CC:"
 	if (includeNationalList) {
 		for (const { mp } of nationalListMps) {
 			for (const email of mp.emails) {
-				emails.add(email);
+				// Don't add to CC if already in To
+				if (!toEmails.has(email)) {
+					ccEmails.add(email);
+				}
 			}
 		}
 	}
 
-	// Add minority list MPs' emails
+	// Minority list MPs' emails go to "CC:"
 	if (includeMinorityList) {
 		for (const { mp } of minorityListMps) {
 			for (const email of mp.emails) {
-				emails.add(email);
+				// Don't add to CC if already in To
+				if (!toEmails.has(email)) {
+					ccEmails.add(email);
+				}
 			}
 		}
 	}
 
-	return Array.from(emails);
+	const to = Array.from(toEmails);
+	const cc = Array.from(ccEmails);
+
+	return {
+		to,
+		cc,
+		all: [...to, ...cc],
+	};
 }
 
-function generateMailtoUrl(emails: string[], subject: string, body: string): string {
-	const to = emails.join(",");
+function generateMailtoUrl(to: string[], cc: string[], subject: string, body: string): string {
 	const params = new URLSearchParams({ subject, body });
-	return `mailto:${to}?${params.toString()}`;
+	if (cc.length > 0) {
+		params.set("cc", cc.join(","));
+	}
+	return `mailto:${to.join(",")}?${params.toString()}`;
 }
 
 interface ActionButtonsProps {
@@ -93,15 +102,14 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 	const { selectedRep, includeNationalList, includeMinorityList, subject, message, lang } = props;
 	const copyFeedback = useSignal<"emails" | "message" | "subject" | null>(null);
 
-	const emails = getAllEmails(selectedRep, includeNationalList, includeMinorityList);
-	const emailCount = emails.length;
+	const emailLists = getEmailLists(selectedRep, includeNationalList, includeMinorityList);
+	const emailCount = emailLists.all.length;
 	const hasSelection = selectedRep !== null;
-	const showWarning = hasSelection && emailCount > 30;
 
-	const mailtoUrl = hasSelection ? generateMailtoUrl(emails, subject, message) : undefined;
+	const mailtoUrl = hasSelection ? generateMailtoUrl(emailLists.to, emailLists.cc, subject, message) : undefined;
 
 	async function copyEmails(): Promise<void> {
-		await navigator.clipboard.writeText(emails.join(","));
+		await navigator.clipboard.writeText(emailLists.all.join(","));
 		copyFeedback.value = "emails";
 		setTimeout(() => {
 			copyFeedback.value = null;
@@ -126,18 +134,6 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 
 	return (
 		<div class="mt-8 space-y-4">
-			{/* Warning */}
-			{showWarning && (
-				<div class="p-4 bg-amber-50 border border-amber-200 rounded-lg flex items-start gap-3">
-					<span class="text-amber-600">
-						<WarningIcon />
-					</span>
-					<p class="text-amber-800 text-sm">
-						{t("action.email_warning", lang, { count: emailCount.toString() })}
-					</p>
-				</div>
-			)}
-
 			{/* Email count */}
 			<p class="text-slate-600 text-center">
 				{hasSelection
