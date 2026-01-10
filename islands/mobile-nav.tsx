@@ -18,10 +18,16 @@ interface NavLinkProps {
 }
 
 function NavLink({ href, children, onClick }: NavLinkProps): JSX.Element {
+	function handleClick(): void {
+		// Delay close to ensure iOS WebKit processes the anchor navigation
+		// before the component unmounts
+		setTimeout(onClick, 10);
+	}
+
 	return (
 		<a
 			href={href}
-			onClick={onClick}
+			onClick={handleClick}
 			class="block py-3 px-4 text-lg font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors"
 		>
 			{children}
