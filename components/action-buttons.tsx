@@ -3,6 +3,7 @@ import { useSignal } from "@preact/signals";
 import { mps, type MpSlug } from "../data/mps.ts";
 import { minorityListMps, nationalListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
+import { buildMailtoUrl } from "../utils/mailto.ts";
 
 interface CopyButtonProps {
 	onClick: () => void;
@@ -81,25 +82,6 @@ function getEmailLists(
 	};
 }
 
-function generateMailtoUrl(to: string[], cc: string[], subject: string, body: string): string {
-	// RFC 6068 compliant line break handling for mailto URLs
-	// 1. Normalize all line endings to \n
-	// 2. Replace \n with pre-encoded %0D%0A
-	// 3. Encode the result, then undo double-encoding of line breaks
-	// NOTE: Protonmail doesn't handle mailto body correctly - users should use copy buttons instead
-	const normalizedBody = body.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
-	const bodyWithLineBreaks = normalizedBody.replace(/\n/g, "%0D%0A");
-	const encodedBody = encodeURIComponent(bodyWithLineBreaks).replace(/%250D%250A/g, "%0D%0A");
-
-	let url = `mailto:${to.map(encodeURIComponent).join(",")}?subject=${
-		encodeURIComponent(subject)
-	}&body=${encodedBody}`;
-	if (cc.length > 0) {
-		url += `&cc=${cc.map(encodeURIComponent).join(",")}`;
-	}
-	return url;
-}
-
 interface ActionButtonsProps {
 	selectedRep: MpSlug | null;
 	includeNationalList: boolean;
@@ -116,7 +98,7 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 	const emailLists = getEmailLists(selectedRep, includeNationalList, includeMinorityList);
 	const hasSelection = selectedRep !== null;
 
-	const mailtoUrl = hasSelection ? generateMailtoUrl(emailLists.to, emailLists.cc, subject, message) : undefined;
+	const mailtoUrl = hasSelection ? buildMailtoUrl({ to: emailLists.all, subject, body: message }) : undefined;
 
 	async function copyEmails(): Promise<void> {
 		await navigator.clipboard.writeText(emailLists.all.join(","));

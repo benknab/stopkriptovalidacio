@@ -7,6 +7,7 @@ import { ExternalLink } from "../components/external-link.tsx";
 import { H2 } from "../components/h2.tsx";
 import { MpImage } from "../components/mp-image.tsx";
 import { voteColors } from "../components/vote-badge.tsx";
+import { buildMailtoUrl } from "../utils/mailto.ts";
 
 const votePriority: Record<VoteType, number> = {
 	yes: 0,
@@ -131,13 +132,6 @@ function getSortedMps(): Array<{ slug: MpSlug; mp: Mp }> {
 
 export const sortedMps = getSortedMps();
 
-function buildMailtoUrl(emails: Set<string>): string | null {
-	const [primary, ...cc] = Array.from(emails);
-	if (!primary) return null;
-	const params = cc.length > 0 ? `?cc=${cc.join(",")}` : "";
-	return `mailto:${primary}${params}`;
-}
-
 function EmailIcon(): JSX.Element {
 	return (
 		<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,7 +186,7 @@ function buildMoreUrl(slug: MpSlug, county: string, district: string): string {
 
 function MpCard({ slug, mp, lang, selectedCounty, selectedDistrict }: MpCardProps): JSX.Element {
 	const colors = voteColors[mp.vote];
-	const mailtoUrl = buildMailtoUrl(mp.emails);
+	const mailtoUrl = mp.emails.size > 0 ? buildMailtoUrl({ to: Array.from(mp.emails) }) : null;
 	const firstPhone = mp.phones.size > 0 ? Array.from(mp.phones)[0] : null;
 	const moreUrl = buildMoreUrl(slug, selectedCounty, selectedDistrict);
 
