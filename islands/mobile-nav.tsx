@@ -104,7 +104,7 @@ export function MobileNav({ lang, currentPath }: MobileNavProps): JSX.Element {
 						{/* Header with close button */}
 						<div class="flex items-center justify-between px-4 py-4 border-b border-slate-100">
 							<span class="text-xl font-bold text-slate-900">
-								Stop Kripto Validáció
+								Stop Kriptovalidáció
 							</span>
 							<button
 								type="button"

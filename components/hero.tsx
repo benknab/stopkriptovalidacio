@@ -65,6 +65,16 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 					/>
 				</div>
 
+				<div class="mt-12 bg-white/5 backdrop-blur rounded-xl p-6 sm:p-8 text-left max-w-3xl mx-auto">
+					<h2 class="text-xl sm:text-2xl font-bold mb-4 text-center">
+						{t("hero.overview.title", lang)}
+					</h2>
+					<div class="space-y-4 text-white/90">
+						<p>{t("hero.overview.law_summary", lang)}</p>
+						<p>{t("hero.overview.compliant_explanation", lang)}</p>
+					</div>
+				</div>
+
 				<div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
 					<ButtonLink href="#cselekedj">
 						{t("hero.cta_contact", lang)}

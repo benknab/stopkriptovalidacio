@@ -5,10 +5,13 @@ import tailwindcss from "@tailwindcss/vite";
 function reloadOnI18nChange(): Plugin {
 	return {
 		name: "reload-on-i18n-change",
-		handleHotUpdate({ file, server }): void {
-			if (file.includes("/i18n/locales/")) {
-				server.hot.send({ type: "full-reload" });
-			}
+		configureServer(server): void {
+			server.watcher.on("change", (file) => {
+				if (file.includes("/i18n/locales/")) {
+					// Restart the server to reload SSR modules with new translations
+					server.restart();
+				}
+			});
 		},
 	};
 }

@@ -30,18 +30,23 @@
 	},
 	"hero": {
 		"title": "Hungarian crypto owners are at risk",
-		"description": "The \"crypto validation\" law is forcing service providers out of Hungary. Crypto owners may lose access to their assets.",
+		"description": "Users are losing access to crypto services because the crypto validation law is forcing service providers out of Hungary.",
 		"compliant": "Compliant",
 		"restricted": "Restricted",
 		"uncertain": "Uncertain",
 		"cta_contact": "Contact Your MP",
-		"cta_learn_more": "Learn More"
+		"cta_learn_more": "Learn More",
+		"overview": {
+			"title": "What's Happening?",
+			"law_summary": "As of July 2025, Hungary has unique crypto validation requirements in effect. The regulation creates uncertainty: neither individuals nor businesses can follow the rules, while violations may result in criminal liability.",
+			"compliant_explanation": "On this website, only service providers that have publicly announced compliance, or have been confirmed compliant by SZTFH or Caduceus, are marked as \"Compliant.\""
+		}
 	},
 	"about": {
 		"title": "About",
 		"mission": {
 			"title": "Our Mission",
-			"description": "Stop Crypto Validation is a citizen-led initiative created to raise awareness about Hungary's \"crypto validation\" law. Our mission is to inform Hungarian citizens about this legislation, which threatens financial freedom and digital security by mandating globally unique validation requirements on cryptocurrency transactions.",
+			"description": "Stop Crypto Validation is a citizen-led initiative created to raise awareness about Hungary's crypto validation law. Our mission is to inform Hungarian citizens about this legislation, which threatens financial freedom and digital security by mandating globally unique validation requirements on cryptocurrency transactions.",
 			"privacy": "We believe that financial freedom is a fundamental right, and that maintaining free competition among crypto service providers is essential for protecting the interests of Hungarian crypto owners. The crypto validation law undermines these protections, exposing citizens to new risks and forcing service providers to leave the country.",
 			"platform": "Our platform provides easy-to-understand information about the crypto validation law, tracks service provider status, and helps citizens contact their representatives to express their concerns.",
 			"inspiration": "This website was inspired by the <fightChatPolicyLink>Fight Chat Control</fightChatPolicyLink> project, which fights against the EU Chat Control regulation. We encourage everyone to participate in that initiative as well.",

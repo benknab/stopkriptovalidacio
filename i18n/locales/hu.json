@@ -1,15 +1,15 @@
 {
 	"site": {
-		"title": "Stop Kripto Validáció",
+		"title": "Stop Kriptovalidáció",
 		"description": "A magyar kriptovaluta \"validációs\" törvények idővonala és következményei"
 	},
 	"seo": {
 		"home": {
-			"title": "Stop Kripto Validáció - A magyar kriptotörvények idővonala",
+			"title": "Stop Kriptovalidáció - A magyar kriptotörvények idővonala",
 			"description": "A magyar kriptovaluta \"validációs\" törvény változásainak és következményeinek részletes dokumentációja."
 		},
 		"about": {
-			"title": "Rólunk - Stop Kripto Validáció",
+			"title": "Rólunk - Stop Kriptovalidáció",
 			"description": "Tájékozódjon a magyar kriptovaluta szabályozás változásairól és azok következményeiről."
 		},
 		"mp_detail": {
@@ -30,19 +30,24 @@
 	},
 	"hero": {
 		"title": "A magyar kriptotulajdonosok veszélyben vannak",
-		"description": "A \"kriptovalidáció\" törvény miatt szolgáltatók vonulnak ki Magyarországról. A kriptotulajdonosok elveszíthetik hozzáférésüket eszközeikhez.",
+		"description": "A felhasználók elveszítik a hozzáférést a kriptoszolgáltatásokhoz, mert a kriptovalidáció törvény miatt a szolgáltatók kivonulnak Magyarországról.",
 		"compliant": "Megfelel",
 		"restricted": "Korlátozott",
 		"uncertain": "Bizonytalan",
 		"cta_contact": "Írd meg a képviselődnek",
-		"cta_learn_more": "Tudj meg többet"
+		"cta_learn_more": "Tudj meg többet",
+		"overview": {
+			"title": "Mi történik?",
+			"law_summary": "2025 júliusától Magyarországon egyedülálló kriptovalidációs követelmények léptek életbe. A szabályozás bizonytalanságot teremt: sem a magánszemélyek, sem a vállalkozások nem tudják követni a szabályokat, miközben a megsértés büntetőjogi következményekkel járhat.",
+			"compliant_explanation": "Ezen az oldalon a \"Megfelel\" kategóriába csak azok a szolgáltatók kerülnek, akik nyilvánosan bejelentették, vagy az SZTFH vagy a validáló szolgáltatók megerősítették megfelelőségüket."
+		}
 	},
 	"about": {
 		"title": "Rólunk",
 		"mission": {
 			"title": "Küldetésünk",
-			"description": "A Stop Kripto Validáció egy polgári kezdeményezés, amelynek célja, hogy felhívja a figyelmet a magyar \"kriptovalidációs\" törvényre. Küldetésünk, hogy tájékoztassuk a magyar állampolgárokat erről a jogszabályról, amely veszélyezteti a pénzügyi szabadságot és a digitális biztonságot azzal, hogy világszinten egyedülálló validációs követelményeket ír elő a kriptovaluta-tranzakciókra.",
-			"privacy": "Meggyőződésünk, hogy a pénzügyi szabadság alapvető jog, és hogy a kripto szolgáltatók szabad versenyének fenntartása elengedhetetlen a magyar kriptotulajdonosok érdekeinek védelméhez. A kriptovalidációs törvény aláássa ezeket a védelmet, új kockázatoknak teszi ki az állampolgárokat, és arra kényszeríti a szolgáltatókat, hogy elhagyják az országot.",
+			"description": "A Stop Kriptovalidáció egy polgári kezdeményezés, amelynek célja, hogy felhívja a figyelmet a magyar kriptovalidációs törvényre. Küldetésünk, hogy tájékoztassuk a magyar állampolgárokat erről a jogszabályról, amely veszélyezteti a pénzügyi szabadságot és a digitális biztonságot azzal, hogy világszinten egyedülálló validációs követelményeket ír elő a kriptovaluta-tranzakciókra.",
+			"privacy": "Meggyőződésünk, hogy a pénzügyi szabadság alapvető jog, és hogy a kriptoszolgáltatók szabad versenyének fenntartása elengedhetetlen a magyar kriptotulajdonosok érdekeinek védelméhez. A kriptovalidációs törvény aláássa ezeket a védelmet, új kockázatoknak teszi ki az állampolgárokat, és arra kényszeríti a szolgáltatókat, hogy elhagyják az országot.",
 			"platform": "Platformunk könnyen érthető információkat nyújt a kriptovalidációs törvényről, nyomon követi a szolgáltatók helyzetét, és segít az állampolgároknak kapcsolatba lépni képviselőikkel, hogy kifejezzék aggályaikat.",
 			"inspiration": "Ezt a weboldalt a <fightChatPolicyLink>Fight Chat Control</fightChatPolicyLink> projekt inspirálta, amely az EU Chat Control szabályozása ellen küzd. Bátorítunk mindenkit, hogy vegyen részt abban a kezdeményezésben is.",
 			"disclaimer": "Nem vagyunk semmilyen politikai párttal kapcsolatban."

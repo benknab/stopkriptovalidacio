@@ -214,7 +214,7 @@ export const events: TimelineEvents = {
 			en: "Caduceus Zrt. company registration",
 		},
 		summary: {
-			hu: "A Caduceus Zrt.-t bejegyezték a cégnyilvántartásba. A cég a bejegyzés előtt ismeretlen volt a kriptovaluta-iparágban: nem volt jelen helyi kripto találkozókon, fórumokon, és nem rendelkezett jelentős szakmai múlttal a szektorban.",
+			hu: "A Caduceus Zrt.-t bejegyezték a cégnyilvántartásba. A cég a bejegyzés előtt ismeretlen volt a kriptovaluta-iparágban: nem volt jelen helyi kriptotalálkozókon, fórumokon, és nem rendelkezett jelentős szakmai múlttal a szektorban.",
 			en: "Caduceus Zrt. was registered in the company registry. Prior to registration, the company was unknown in the crypto industry: it had no presence at local crypto meetups, forums, and no notable track record in the sector.",
 		},
 		sourceSlugs: new Set([
