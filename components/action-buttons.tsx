@@ -1,6 +1,7 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
 import { mps, type MpSlug } from "../data/mps.ts";
+import { minorityListMps, nationalListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 
 function WarningIcon(): JSX.Element {
@@ -16,8 +17,61 @@ function WarningIcon(): JSX.Element {
 	);
 }
 
-function getSelectedEmails(selectedMps: Set<MpSlug>): string[] {
-	return Array.from(selectedMps).flatMap((slug) => Array.from(mps[slug].emails));
+interface CopyButtonProps {
+	onClick: () => void;
+	disabled?: boolean;
+	children: string;
+}
+
+function CopyButton({ onClick, disabled, children }: CopyButtonProps): JSX.Element {
+	return (
+		<button
+			type="button"
+			onClick={onClick}
+			disabled={disabled}
+			class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg hover:bg-brand/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400"
+		>
+			{children}
+		</button>
+	);
+}
+
+function getAllEmails(
+	selectedRep: MpSlug | null,
+	includeNationalList: boolean,
+	includeMinorityList: boolean,
+): string[] {
+	const emails: Set<string> = new Set();
+
+	// Add selected representative's emails
+	if (selectedRep) {
+		const mp = mps[selectedRep];
+		if (mp) {
+			for (const email of mp.emails) {
+				emails.add(email);
+			}
+		}
+	}
+
+	// Add national list MPs' emails
+	if (includeNationalList) {
+		for (const { mp } of nationalListMps) {
+			for (const email of mp.emails) {
+				emails.add(email);
+			}
+		}
+	}
+
+	// Add minority list MPs' emails
+	if (includeMinorityList) {
+		for (const { mp } of minorityListMps) {
+			for (const email of mp.emails) {
+				emails.add(email);
+			}
+		}
+	}
+
+	return Array.from(emails);
 }
 
 function generateMailtoUrl(emails: string[], subject: string, body: string): string {
@@ -27,20 +81,22 @@ function generateMailtoUrl(emails: string[], subject: string, body: string): str
 }
 
 interface ActionButtonsProps {
-	selectedMps: Set<MpSlug>;
+	selectedRep: MpSlug | null;
+	includeNationalList: boolean;
+	includeMinorityList: boolean;
 	subject: string;
 	message: string;
 	lang: SupportedLanguage;
-	onBack: () => void;
 }
 
-export function ActionButtons({ selectedMps, subject, message, lang, onBack }: ActionButtonsProps): JSX.Element {
+export function ActionButtons(props: ActionButtonsProps): JSX.Element {
+	const { selectedRep, includeNationalList, includeMinorityList, subject, message, lang } = props;
 	const copyFeedback = useSignal<"emails" | "message" | "subject" | null>(null);
 
-	const emails = getSelectedEmails(selectedMps);
+	const emails = getAllEmails(selectedRep, includeNationalList, includeMinorityList);
 	const emailCount = emails.length;
-	const showWarning = emailCount > 30;
-	const hasSelection = selectedMps.size > 0;
+	const hasSelection = selectedRep !== null;
+	const showWarning = hasSelection && emailCount > 30;
 
 	const mailtoUrl = hasSelection ? generateMailtoUrl(emails, subject, message) : undefined;
 
@@ -89,16 +145,8 @@ export function ActionButtons({ selectedMps, subject, message, lang, onBack }: A
 					: t("action.no_selection", lang)}
 			</p>
 
-			{/* Main buttons */}
-			<div class="flex justify-center gap-4">
-				<button
-					type="button"
-					onClick={onBack}
-					class="px-6 py-3 border-2 border-slate-300 text-slate-700 font-medium rounded-lg hover:border-slate-400 transition-colors"
-				>
-					← {t("action.back", lang)}
-				</button>
-
+			{/* Main button */}
+			<div class="flex justify-center">
 				{hasSelection
 					? (
 						<a
@@ -120,28 +168,15 @@ export function ActionButtons({ selectedMps, subject, message, lang, onBack }: A
 				{t("action.copy_manual_hint", lang)}
 			</p>
 			<div class="flex flex-wrap justify-center gap-3 mt-3">
-				<button
-					type="button"
-					onClick={copySubject}
-					class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg hover:bg-brand/5 transition-colors"
-				>
-					{copyFeedback.value === "subject" ? t("action.copied", lang) : t("action.copy_subject", lang)}
-				</button>
-				<button
-					type="button"
-					onClick={copyMessage}
-					class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg hover:bg-brand/5 transition-colors"
-				>
-					{copyFeedback.value === "message" ? t("action.copied", lang) : t("action.copy_message", lang)}
-				</button>
-				<button
-					type="button"
-					onClick={copyEmails}
-					disabled={!hasSelection}
-					class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg hover:bg-brand/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400"
-				>
+				<CopyButton onClick={copyEmails} disabled={!hasSelection}>
 					{copyFeedback.value === "emails" ? t("action.copied", lang) : t("action.copy_emails", lang)}
-				</button>
+				</CopyButton>
+				<CopyButton onClick={copySubject}>
+					{copyFeedback.value === "subject" ? t("action.copied", lang) : t("action.copy_subject", lang)}
+				</CopyButton>
+				<CopyButton onClick={copyMessage}>
+					{copyFeedback.value === "message" ? t("action.copied", lang) : t("action.copy_message", lang)}
+				</CopyButton>
 			</div>
 		</div>
 	);

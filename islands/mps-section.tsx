@@ -104,6 +104,19 @@ function buildCountyData(): CountyData[] {
 
 export const countyData = buildCountyData();
 
+// County data filtered to only include districts (no national lists)
+export const districtCountyData = countyData.filter((c) => !c.isNationalList);
+
+// Get MPs from national lists for group selection cards
+function getMpsByList(listName: string): Array<{ slug: MpSlug; mp: Mp }> {
+	return (Object.entries(mps) as Array<[MpSlug, Mp]>)
+		.filter(([, mp]) => mp.district === listName)
+		.map(([slug, mp]) => ({ slug, mp }));
+}
+
+export const nationalListMps = getMpsByList(NATIONAL_LIST);
+export const minorityListMps = getMpsByList(MINORITY_LIST);
+
 function getSortedMps(): Array<{ slug: MpSlug; mp: Mp }> {
 	const entries = Object.entries(mps) as Array<[MpSlug, Mp]>;
 
@@ -315,7 +328,7 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 					{t("mps.description", lang)}
 				</p>
 
-				<div class="mt-8 p-4 bg-white rounded-lg border border-slate-200 space-y-2">
+				<div class="mt-8 p-4 bg-white rounded-lg border border-slate-200">
 					<p class="text-sm text-slate-600">
 						<strong>{t("mps.source", lang)}:</strong>{" "}
 						<ExternalLink href={voteSource.originalUrl} class="underline">
@@ -324,15 +337,6 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 						{" | "}
 						<ExternalLink href={mpListSource.url} class="underline">
 							{t("mps.mp_list_source", lang)}
-						</ExternalLink>
-					</p>
-					<p class="text-sm text-slate-500">
-						{t("mps.district_lookup_hint", lang)}{" "}
-						<ExternalLink
-							href="https://vtr.valasztas.hu/ogy2022/egyeni-valasztokeruletek"
-							class="underline"
-						>
-							valasztas.hu
 						</ExternalLink>
 					</p>
 				</div>

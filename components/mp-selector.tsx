@@ -1,30 +1,101 @@
 import type { JSX } from "preact";
-import { type Signal, useComputed, useSignalEffect } from "@preact/signals";
-import type { MpSlug } from "../data/mps.ts";
-import { ALL_OPTION, countyData, NATIONAL_LIST, parseDistrict, sortedMps } from "../islands/mps-section.tsx";
+import { type Signal, useComputed } from "@preact/signals";
+import { type Mp, mps, type MpSlug } from "../data/mps.ts";
+import {
+	districtCountyData,
+	minorityListMps,
+	nationalListMps,
+	parseDistrict,
+	sortedMps,
+} from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { MpSelectCard } from "./mp-select-card.tsx";
-import { Label, SearchInput, Select, SelectWrapper, Textarea } from "./form.tsx";
+import { GroupSelectCard } from "./group-select-card.tsx";
+import { MpImage } from "./mp-image.tsx";
+import { VoteBadge } from "./vote-badge.tsx";
+import { Label, SearchInput, Select, SelectWrapper } from "./form.tsx";
+import { ExternalLink } from "./external-link.tsx";
+
+// Default value for including lists
+const DEFAULT_INCLUDE = true;
+
+function CheckIcon(): JSX.Element {
+	return (
+		<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width={3}
+				d="M5 13l4 4L19 7"
+			/>
+		</svg>
+	);
+}
+
+interface SelectedMpCardProps {
+	slug: MpSlug;
+	mp: Mp;
+	lang: SupportedLanguage;
+}
+
+function SelectedMpCard({ slug, mp, lang }: SelectedMpCardProps): JSX.Element {
+	return (
+		<div class="relative bg-slate-50 rounded-xl p-4 border-2 border-brand ring-2 ring-brand/20">
+			<div class="absolute top-2 right-2 w-6 h-6 bg-brand rounded-full flex items-center justify-center">
+				<CheckIcon />
+			</div>
+
+			<div class="flex items-center gap-3">
+				<MpImage slug={slug} name={mp.name} size="sm" class="shrink-0" />
+				<div class="min-w-0 flex-1">
+					<h4 class="font-medium text-slate-900 truncate">{mp.name}</h4>
+					<p class="text-sm text-slate-500 truncate">
+						{t(`mps.party.${mp.party}`, lang, { defaultValue: mp.party })}
+					</p>
+					{mp.district && <p class="text-sm text-slate-400 truncate">{mp.district}</p>}
+				</div>
+			</div>
+
+			<div class="mt-3">
+				<VoteBadge vote={mp.vote} lang={lang} />
+			</div>
+		</div>
+	);
+}
 
 interface MpSelectorProps {
-	selectedMps: Signal<Set<MpSlug>>;
+	selectedRep: Signal<MpSlug | null>;
 	selectedCounty: Signal<string>;
 	selectedDistrict: Signal<string>;
 	searchQuery: Signal<string>;
-	message: string;
+	includeNationalList: Signal<boolean>;
+	includeMinorityList: Signal<boolean>;
 	lang: SupportedLanguage;
 }
 
 export function MpSelector(props: MpSelectorProps): JSX.Element {
-	const { selectedMps, selectedCounty, selectedDistrict, searchQuery, message, lang } = props;
+	const {
+		selectedRep,
+		selectedCounty,
+		selectedDistrict,
+		searchQuery,
+		includeNationalList,
+		includeMinorityList,
+		lang,
+	} = props;
 
-	const isAllSelected = useComputed(() => selectedCounty.value === ALL_OPTION);
-	const currentCountyData = useComputed(() => countyData.find((c) => c.name === selectedCounty.value));
-	const isNationalList = useComputed(() => currentCountyData.value?.isNationalList ?? false);
+	const currentCountyData = useComputed(() => districtCountyData.find((c) => c.name === selectedCounty.value));
 
+	// Filter MPs based on county, district, and search query (AND logic)
 	const filteredMps = useComputed(() => {
 		return sortedMps.filter(({ mp }) => {
-			// Name search filter (always applied)
+			const parsed = parseDistrict(mp.district);
+			if (!parsed) return false;
+
+			// Exclude national list MPs from the selection grid
+			if (parsed.isNationalList) return false;
+
+			// Name search filter (always AND with county if both are set)
 			if (searchQuery.value) {
 				const query = searchQuery.value.toLowerCase();
 				if (!mp.name.toLowerCase().includes(query)) {
@@ -32,76 +103,101 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 				}
 			}
 
-			// If searching by name without county filter, show matches
-			if (searchQuery.value && !selectedCounty.value) {
-				return true;
+			// County filter
+			if (selectedCounty.value) {
+				if (parsed.county !== selectedCounty.value) return false;
+
+				// District filter (only if county is selected)
+				if (selectedDistrict.value && parsed.districtNum !== selectedDistrict.value) {
+					return false;
+				}
 			}
 
-			// County/district filter
-			if (isAllSelected.value) return true;
-			if (!selectedCounty.value) return false;
-
-			const parsed = parseDistrict(mp.district);
-			if (!parsed) return false;
-
-			if (isNationalList.value) {
-				return parsed.county === selectedCounty.value;
+			// If no filters are set, show nothing (require at least a search or county)
+			if (!selectedCounty.value && !searchQuery.value) {
+				return false;
 			}
-
-			if (parsed.county !== selectedCounty.value) return false;
-			if (selectedDistrict.value && parsed.districtNum !== selectedDistrict.value) return false;
 
 			return true;
 		});
 	});
 
-	// Reset selection when filters change
-	useSignalEffect(() => {
-		// Track dependencies
-		selectedCounty.value;
-		selectedDistrict.value;
-		searchQuery.value;
-		// Reset selection
-		selectedMps.value = new Set();
-	});
+	function resetSelection(): void {
+		selectedRep.value = null;
+		includeNationalList.value = DEFAULT_INCLUDE;
+		includeMinorityList.value = DEFAULT_INCLUDE;
+	}
 
 	function handleCountyChange(e: Event): void {
 		selectedCounty.value = (e.target as HTMLSelectElement).value;
 		selectedDistrict.value = "";
+		resetSelection();
 	}
 
 	function handleDistrictChange(e: Event): void {
-		selectedDistrict.value = (e.target as HTMLSelectElement).value;
+		const district = (e.target as HTMLSelectElement).value;
+		selectedDistrict.value = district;
+		resetSelection();
+
+		// Auto-select the MP for this district
+		if (district && selectedCounty.value) {
+			const mpEntry = sortedMps.find(({ mp }) => {
+				const parsed = parseDistrict(mp.district);
+				return (
+					parsed &&
+					!parsed.isNationalList &&
+					parsed.county === selectedCounty.value &&
+					parsed.districtNum === district
+				);
+			});
+			if (mpEntry) {
+				selectedRep.value = mpEntry.slug;
+			}
+		}
 	}
 
 	function handleSearchInput(e: Event): void {
 		searchQuery.value = (e.target as HTMLInputElement).value;
 	}
 
-	function handleSelectAll(): void {
-		selectedMps.value = new Set(filteredMps.value.map(({ slug }) => slug));
-	}
-
-	function handleDeselectAll(): void {
-		selectedMps.value = new Set();
-	}
-
-	function toggleMp(slug: MpSlug): void {
-		const newSet = new Set(selectedMps.value);
-		if (newSet.has(slug)) {
-			newSet.delete(slug);
-		} else {
-			newSet.add(slug);
+	function selectMp(slug: MpSlug): void {
+		// If already selected, deselect
+		if (selectedRep.value === slug) {
+			resetSelection();
+			return;
 		}
-		selectedMps.value = newSet;
+
+		// Select the new representative
+		selectedRep.value = slug;
+		includeNationalList.value = DEFAULT_INCLUDE;
+		includeMinorityList.value = DEFAULT_INCLUDE;
+
+		// Auto-fill county and district from the selected MP
+		const mp = mps[slug];
+		if (mp?.district) {
+			const parsed = parseDistrict(mp.district);
+			if (parsed && !parsed.isNationalList) {
+				selectedCounty.value = parsed.county;
+				selectedDistrict.value = parsed.districtNum ?? "";
+			}
+		}
 	}
 
-	const districtDisabled = !selectedCounty.value || isNationalList.value || isAllSelected.value;
+	function handleToggleNational(): void {
+		includeNationalList.value = !includeNationalList.value;
+	}
+
+	function handleToggleMinority(): void {
+		includeMinorityList.value = !includeMinorityList.value;
+	}
+
+	const districtDisabled = !selectedCounty.value;
+	const selectedMp = selectedRep.value ? mps[selectedRep.value] : null;
 
 	return (
 		<div>
-			{/* Filters */}
-			<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+			{/* Filters - Row 1: County + District */}
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
 				{/* County dropdown */}
 				<div>
 					<Label for="action-county-select" uppercase>
@@ -114,17 +210,9 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 							onChange={handleCountyChange}
 						>
 							<option value="">{t("mps.filter.select_county", lang)}</option>
-							<option value={ALL_OPTION}>{t("mps.filter.all", lang)}</option>
-							{countyData.map((county) => (
+							{districtCountyData.map((county) => (
 								<option key={county.name} value={county.name}>
-									{county.isNationalList
-										? t(
-											`mps.filter.${
-												county.name === NATIONAL_LIST ? "national_list" : "minority_list"
-											}`,
-											lang,
-										)
-										: county.name}
+									{county.name}
 								</option>
 							))}
 						</Select>
@@ -152,87 +240,92 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 						</Select>
 					</SelectWrapper>
 				</div>
+			</div>
 
-				{/* Search input */}
-				<div>
-					<Label for="action-search" uppercase>
-						{t("action.search_placeholder", lang)}
-					</Label>
-					<SearchInput
-						id="action-search"
-						value={searchQuery.value}
-						onInput={handleSearchInput}
-						placeholder={t("action.search_placeholder", lang)}
+			{/* Filters - Row 2: Name search */}
+			<div class="mb-4">
+				<Label for="action-search" uppercase>
+					{t("action.search_placeholder", lang)}
+				</Label>
+				<SearchInput
+					id="action-search"
+					value={searchQuery.value}
+					onInput={handleSearchInput}
+					placeholder={t("action.search_placeholder", lang)}
+				/>
+			</div>
+
+			{/* District lookup hint */}
+			<p class="text-sm text-slate-500 mb-6">
+				{t("mps.district_lookup_hint", lang)}{" "}
+				<ExternalLink
+					href="https://vtr.valasztas.hu/ogy2022/egyeni-valasztokeruletek"
+					class="underline"
+				>
+					valasztas.hu
+				</ExternalLink>
+			</p>
+
+			{/* Selected MP + Group cards (when MP is selected) */}
+			{selectedRep.value && selectedMp && (
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+					<SelectedMpCard slug={selectedRep.value} mp={selectedMp} lang={lang} />
+
+					<GroupSelectCard
+						title={t("action.national_list_title", lang)}
+						subtitle={t("action.national_list_subtitle", lang)}
+						contactCount={nationalListMps.length}
+						selected={includeNationalList.value}
+						onToggle={handleToggleNational}
+						colorVariant="gold"
+						lang={lang}
+					/>
+
+					<GroupSelectCard
+						title={t("action.minority_list_title", lang)}
+						subtitle={t("action.minority_list_subtitle", lang)}
+						contactCount={minorityListMps.length}
+						selected={includeMinorityList.value}
+						onToggle={handleToggleMinority}
+						colorVariant="silver"
+						lang={lang}
 					/>
 				</div>
-			</div>
+			)}
 
-			{/* Selection controls */}
-			<div class="flex flex-wrap items-center gap-4 mb-6">
-				<button
-					type="button"
-					onClick={handleSelectAll}
-					disabled={filteredMps.value.length === 0}
-					class="px-4 py-2 text-sm font-medium bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					{t("action.select_all", lang)}
-				</button>
-				<button
-					type="button"
-					onClick={handleDeselectAll}
-					disabled={selectedMps.value.size === 0}
-					class="px-4 py-2 text-sm font-medium bg-slate-100 text-slate-700 rounded-lg hover:bg-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-				>
-					{t("action.deselect_all", lang)}
-				</button>
-				<span class="text-slate-600 text-sm">
-					{t("action.selected_of_total", lang, {
-						selected: selectedMps.value.size.toString(),
-						total: filteredMps.value.length.toString(),
-					})}
-				</span>
-			</div>
-
-			{/* No filter selected message */}
-			{!selectedCounty.value && !searchQuery.value && (
+			{/* No filter selected message (only when no rep selected) */}
+			{!selectedRep.value && !selectedCounty.value && !searchQuery.value && (
 				<p class="text-slate-400 text-center py-8">
-					{t("mps.filter.select_to_show", lang)}
+					{t("action.select_prompt", lang)}
 				</p>
 			)}
 
-			{/* MP grid */}
-			{(selectedCounty.value || searchQuery.value) && filteredMps.value.length > 0 && (
+			{/* MP grid (only when no rep selected and filters active) */}
+			{!selectedRep.value &&
+				(selectedCounty.value || searchQuery.value) &&
+				filteredMps.value.length > 0 && (
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 					{filteredMps.value.map(({ slug, mp }) => (
 						<MpSelectCard
 							key={slug}
 							slug={slug}
 							mp={mp}
-							selected={selectedMps.value.has(slug)}
-							onToggle={() => toggleMp(slug)}
+							selected={selectedRep.value === slug}
+							onToggle={() => selectMp(slug)}
 							lang={lang}
 						/>
 					))}
 				</div>
 			)}
 
-			{/* No results message */}
-			{(selectedCounty.value || searchQuery.value) && filteredMps.value.length === 0 && (
+			{/* No results message (only when no rep selected) */}
+			{!selectedRep.value &&
+				(selectedCounty.value || searchQuery.value) &&
+				filteredMps.value.length === 0 && (
 				<p class="text-slate-400 text-center py-8">
 					{t("mps.no_results", lang)}
 				</p>
 			)}
-
-			{/* Message preview */}
-			<div class="mt-8">
-				<Label for="action-message-preview">{t("action.message_preview", lang)}</Label>
-				<Textarea
-					id="action-message-preview"
-					value={message}
-					disabled
-					resizable={false}
-				/>
-			</div>
 		</div>
 	);
 }

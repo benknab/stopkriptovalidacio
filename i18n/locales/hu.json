@@ -185,17 +185,10 @@
 	"action": {
 		"title": "Cselekedj!",
 		"nav_title": "Cselekedj",
-		"intro": "A kriptovaluta validációs törvény veszélybe sodorja a magyar felhasználók hozzáférését a kriptovaluta szolgáltatásokhoz. A tőzsdék sorra vonulnak ki Magyarországról. Írj a képviselődnek, és kérd, hogy állítsák meg ezt a káros szabályozást.",
-		"step1": "Testreszabás",
-		"step2": "Küldés",
+		"intro": "A kriptovaluta validációs törvény veszélybe sodorja a magyar felhasználók hozzáférését a kriptovaluta szolgáltatásokhoz. A tőzsdék sorra vonulnak ki Magyarországról. Válaszd ki a választókerületed képviselőjét, és küldj neki levelet.",
 		"subject_label": "Tárgy",
 		"message_label": "Üzenet",
-		"next": "Ellenőrzés és küldés",
 		"back": "Vissza",
-		"select_all": "Összes kijelölése",
-		"deselect_all": "Kijelölés törlése",
-		"selected_count": "{{count}} képviselő kiválasztva",
-		"selected_of_total": "{{selected}}/{{total}} képviselő kiválasztva",
 		"email_count": "{{count}} e-mail cím",
 		"send": "E-mailek küldése",
 		"copy_emails": "E-mailek másolása",
@@ -203,9 +196,15 @@
 		"copy_subject": "Tárgy másolása",
 		"copied": "Másolva!",
 		"email_warning": "Sok címzettet választottál ({{count}} e-mail). Egyes levelezőprogramok nem biztos, hogy kezelik ennyi címzettet. Használd a másolás gombokat, ha szükséges.",
-		"no_selection": "Válassz ki legalább egy képviselőt",
+		"no_selection": "Válaszd ki a választókerületed képviselőjét",
 		"copy_manual_hint": "Manuálisan is elküldheted az üzenetet a címek és szöveg másolásával.",
-		"message_preview": "Üzenet előnézete",
-		"search_placeholder": "Képviselő keresése..."
+		"search_placeholder": "Képviselő keresése...",
+		"select_prompt": "Válaszd ki a választókerületed képviselőjét",
+		"selected_recipients": "Kiválasztott címzettek",
+		"national_list_title": "Országos lista",
+		"national_list_subtitle": "Listás képviselők",
+		"minority_list_title": "Nemzetiségi képviselők",
+		"minority_list_subtitle": "Nemzetiségi lista képviselői",
+		"contacts_count": "{{count}} képviselő"
 	}
 }

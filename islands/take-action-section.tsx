@@ -3,10 +3,9 @@ import { useSignal } from "@preact/signals";
 import type { MpSlug } from "../data/mps.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
-import { ActionStepTabs } from "../components/action-step-tabs.tsx";
-import { MessageForm } from "../components/message-form.tsx";
 import { MpSelector } from "../components/mp-selector.tsx";
 import { ActionButtons } from "../components/action-buttons.tsx";
+import { Input, Label, Textarea } from "../components/form.tsx";
 
 // Hungarian-only email content (recipients are Hungarian MPs)
 const DEFAULT_SUBJECT = "Kérem, állítsák meg a kriptovaluta validációs törvényt";
@@ -17,36 +16,36 @@ const DEFAULT_MESSAGE = `Tisztelt Képviselő Úr/Asszony!
 Tisztelettel,
 [Név]`;
 
+// Default to include national and minority lists
+const DEFAULT_INCLUDE_LISTS = true;
+
 interface TakeActionSectionProps {
 	lang: SupportedLanguage;
 }
 
 export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX.Element {
-	// Wizard state
-	const step = useSignal<1 | 2>(1);
-
 	// Message state (Hungarian only)
 	const subject = useSignal(DEFAULT_SUBJECT);
 	const message = useSignal(DEFAULT_MESSAGE);
 
-	// Selection state
-	const selectedMps = useSignal<Set<MpSlug>>(new Set());
+	// Selection state - single representative
+	const selectedRep = useSignal<MpSlug | null>(null);
+
+	// Group selection state (default: include both lists)
+	const includeNationalList = useSignal(DEFAULT_INCLUDE_LISTS);
+	const includeMinorityList = useSignal(DEFAULT_INCLUDE_LISTS);
 
 	// Filter state
 	const selectedCounty = useSignal("");
 	const selectedDistrict = useSignal("");
 	const searchQuery = useSignal("");
 
-	function handleNext(): void {
-		step.value = 2;
+	function handleSubjectInput(e: Event): void {
+		subject.value = (e.target as HTMLInputElement).value;
 	}
 
-	function handleBack(): void {
-		step.value = 1;
-	}
-
-	function handleStepChange(newStep: 1 | 2): void {
-		step.value = newStep;
+	function handleMessageInput(e: Event): void {
+		message.value = (e.target as HTMLTextAreaElement).value;
 	}
 
 	return (
@@ -57,38 +56,50 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 					{t("action.intro", lang)}
 				</p>
 
-				<ActionStepTabs step={step.value} lang={lang} onStepChange={handleStepChange} />
-
 				{/* White content container */}
-				<div class="bg-white rounded-2xl p-6 sm:p-8 text-slate-900">
-					{step.value === 1 && (
-						<MessageForm
-							subject={subject}
-							message={message}
-							lang={lang}
-							onNext={handleNext}
-						/>
-					)}
+				<div class="mt-10 bg-white rounded-2xl p-6 sm:p-8 text-slate-900">
+					{/* Search/Filter Section with integrated selection display */}
+					<MpSelector
+						selectedRep={selectedRep}
+						selectedCounty={selectedCounty}
+						selectedDistrict={selectedDistrict}
+						searchQuery={searchQuery}
+						includeNationalList={includeNationalList}
+						includeMinorityList={includeMinorityList}
+						lang={lang}
+					/>
 
-					{step.value === 2 && (
-						<>
-							<MpSelector
-								selectedMps={selectedMps}
-								selectedCounty={selectedCounty}
-								selectedDistrict={selectedDistrict}
-								searchQuery={searchQuery}
-								message={message.value}
-								lang={lang}
+					{/* Email Form */}
+					<div class="mt-8 border-t border-slate-200 pt-8 space-y-6">
+						<div>
+							<Label for="action-subject">{t("action.subject_label", lang)}</Label>
+							<Input
+								id="action-subject"
+								value={subject.value}
+								onInput={handleSubjectInput}
 							/>
-							<ActionButtons
-								selectedMps={selectedMps.value}
-								subject={subject.value}
-								message={message.value}
-								lang={lang}
-								onBack={handleBack}
+						</div>
+
+						<div>
+							<Label for="action-message">{t("action.message_label", lang)}</Label>
+							<Textarea
+								id="action-message"
+								value={message.value}
+								onInput={handleMessageInput}
+								rows={10}
 							/>
-						</>
-					)}
+						</div>
+					</div>
+
+					{/* Action Buttons */}
+					<ActionButtons
+						selectedRep={selectedRep.value}
+						includeNationalList={includeNationalList.value}
+						includeMinorityList={includeMinorityList.value}
+						subject={subject.value}
+						message={message.value}
+						lang={lang}
+					/>
 				</div>
 			</div>
 		</section>

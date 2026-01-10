@@ -185,17 +185,10 @@
 	"action": {
 		"title": "Take Action!",
 		"nav_title": "Take Action",
-		"intro": "The crypto validation law is putting Hungarian users' access to crypto services at risk. Exchanges are leaving Hungary one by one. Write to your representative and ask them to stop this harmful regulation.",
-		"step1": "Customize",
-		"step2": "Send",
+		"intro": "The crypto validation law is putting Hungarian users' access to crypto services at risk. Exchanges are leaving Hungary one by one. Select your district representative and send them a message.",
 		"subject_label": "Subject",
 		"message_label": "Message",
-		"next": "Review and Send",
 		"back": "Back",
-		"select_all": "Select All",
-		"deselect_all": "Deselect All",
-		"selected_count": "{{count}} representatives selected",
-		"selected_of_total": "{{selected}}/{{total}} representatives selected",
 		"email_count": "{{count}} email addresses",
 		"send": "Send Emails",
 		"copy_emails": "Copy Emails",
@@ -203,9 +196,15 @@
 		"copy_subject": "Copy Subject",
 		"copied": "Copied!",
 		"email_warning": "You selected many recipients ({{count}} emails). Some email clients may not handle this many recipients. Use the copy buttons as a workaround if needed.",
-		"no_selection": "Select at least one representative",
+		"no_selection": "Select your district representative",
 		"copy_manual_hint": "You can also copy the message and email addresses to send manually.",
-		"message_preview": "Message Preview",
-		"search_placeholder": "Search representative..."
+		"search_placeholder": "Search representative...",
+		"select_prompt": "Select your district representative",
+		"selected_recipients": "Selected recipients",
+		"national_list_title": "National list",
+		"national_list_subtitle": "List representatives",
+		"minority_list_title": "Minority representatives",
+		"minority_list_subtitle": "Minority list representatives",
+		"contacts_count": "{{count}} representatives"
 	}
 }
