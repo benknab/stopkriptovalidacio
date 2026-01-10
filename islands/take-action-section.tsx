@@ -8,13 +8,31 @@ import { ActionButtons } from "../components/action-buttons.tsx";
 import { Input, Label, Textarea } from "../components/form.tsx";
 
 // Hungarian-only email content (recipients are Hungarian MPs)
-const DEFAULT_SUBJECT = "Kérem, állítsák meg a kriptovaluta validációs törvényt";
+const DEFAULT_SUBJECT = "Sürgős: T/11922 sz. törvény - kriptoeszköz-szabályozás";
 const DEFAULT_MESSAGE = `Tisztelt Képviselő Úr/Asszony!
 
-[Placeholder message body - a felhasználó által megadott sablonnal lesz kitöltve]
+Az Ön választókerületének lakosaként fordulok Önhöz a T/11922. számú, "Magyarország versenyképességének javítása érdekében egyes törvények módosításáról" szóló törvény kriptoeszközökre vonatkozó rendelkezései ügyében.
+
+A szabályozás becslések szerint 500 000 magyar állampolgárt érint közvetlenül, és súlyos jogbizonytalanságot okoz. A törvény 2025 júliusában lépett hatályba, de a mai napig nem egyértelmű, hogy a "kriptoeszköz-átváltást validáló szolgáltató" pontosan milyen tevékenységet végez. Sem az SZTFH, sem a piaci szereplők, sem a jogi szakértők nem tudnak egyértelmű útmutatást adni arról, hogyan lehet a törvénynek megfelelni.
+
+A főbb problémák:
+
+- Jogbizonytalanság: A "validáló szolgáltató" fogalma kizárólag magyar sajátosság - sem az uniós MiCA-rendelet, sem a nemzetközi kriptoszektor nem ismeri ezt a kategóriát. A törvény és a végrehajtási rendelet sem határozza meg egyértelműen, hogy ez a szolgáltató mit csinál a gyakorlatban.
+- Szolgáltatók kivonulása: A szabályozás hatálybalépése óta több jelentős, uniós engedéllyel rendelkező szolgáltató szüntette meg vagy korlátozta a magyar ügyfelek kiszolgálását. Egy versenyképességi törvény részeként ez ellentétes eredmény.
+- Monopolhelyzet: Jelenleg egyetlen validáló szolgáltató szerepel az SZTFH nyilvántartásában - egy újonnan alapított, a szakmában ismeretlen, minimális kapacitású cég. Egy kvázi közhatalmi funkció egyetlen magánvállalkozás kezében összpontosul, miközben félmillió állampolgár érintett.
+- Büntetőjogi kockázat: A törvény büntetőjogi tényállásokat fűz olyan tevékenységekhez, amelyeket az uniós jog nem kriminalizál, és amelyek pontos tartalma itthon sincs tisztázva. A jogkövető állampolgárok nem tudják, hogyan kerülhetik el a jogsértést.
+
+Kérem, hogy mint országgyűlési képviselő, nyújtson be írásbeli kérdést Nagy Márton nemzetgazdasági miniszter úrhoz az alábbi kérdésekkel:
+1. Tervezi-e a Kormány ideiglenes végrehajtási moratórium elrendelését a kriptoeszközök validálására vonatkozó szabályok tekintetében, amíg a "validáló szolgáltató" fogalma és működése egyértelműen tisztázásra nem kerül, és amíg több szolgáltató nem áll rendelkezésre a piacon?
+2. Mikor várható az SZTFH-tól vagy a minisztériumtól nyilvános, gyakorlati útmutató közzététele arról, hogy a validálás pontosan mit jelent, és a jogkövető állampolgárok hogyan tudnak megfelelni a követelményeknek?
+
+Kérem, hogy 30 napon belül tájékoztasson arról, hogy a kérdés benyújtásra került-e.
+
+Köszönöm figyelmét és segítségét.
 
 Tisztelettel,
-[Név]`;
+[Név]
+[Település, választókerület megjelölése]`;
 
 // Default to include national and minority lists
 const DEFAULT_INCLUDE_LISTS = true;
