@@ -45,7 +45,7 @@ export function MobileNav({ lang, currentPath }: MobileNavProps): JSX.Element {
 		isOpen.value = false;
 	}
 
-	// Handle escape key and body scroll lock
+	// Handle escape key
 	useEffect(() => {
 		function handleKeyDown(e: KeyboardEvent): void {
 			if (e.key === "Escape" && isOpen.value) {
@@ -54,14 +54,10 @@ export function MobileNav({ lang, currentPath }: MobileNavProps): JSX.Element {
 		}
 
 		if (isOpen.value) {
-			globalThis.document.body.style.overflow = "hidden";
 			globalThis.document.addEventListener("keydown", handleKeyDown);
-		} else {
-			globalThis.document.body.style.overflow = "";
 		}
 
 		return () => {
-			globalThis.document.body.style.overflow = "";
 			globalThis.document.removeEventListener("keydown", handleKeyDown);
 		};
 	}, [isOpen.value]);
@@ -101,9 +97,9 @@ export function MobileNav({ lang, currentPath }: MobileNavProps): JSX.Element {
 						aria-hidden="true"
 					/>
 
-					{/* Menu panel - slides down from top */}
+					{/* Menu panel - full screen */}
 					<nav
-						class="absolute top-0 left-0 right-0 bg-white shadow-xl"
+						class="absolute inset-0 bg-white flex flex-col"
 						aria-label={t("nav.menu", lang)}
 					>
 						{/* Header with close button */}
