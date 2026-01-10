@@ -38,7 +38,8 @@
 		"cta_learn_more": "Learn More",
 		"overview": {
 			"title": "What's Happening?",
-			"law_summary": "As of July 2025, Hungary has unique crypto validation requirements in effect. The regulation creates uncertainty: neither individuals nor businesses can follow the rules, while violations may result in criminal liability.",
+			"law_summary": "As of July 2025, Hungary has unique crypto validation requirements in effect, impacting approximately 500,000 Hungarian crypto owners.",
+			"uncertainty": "The regulation creates uncertainty: neither individuals nor businesses can follow the rules, while violations may result in criminal liability.",
 			"compliant_explanation": "On this website, only service providers that have publicly announced compliance, or have been confirmed compliant by SZTFH or Caduceus, are marked as \"Compliant.\""
 		}
 	},

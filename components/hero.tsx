@@ -71,6 +71,7 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 					</h2>
 					<div class="space-y-4 text-white/90">
 						<p>{t("hero.overview.law_summary", lang)}</p>
+						<p>{t("hero.overview.uncertainty", lang)}</p>
 						<p>{t("hero.overview.compliant_explanation", lang)}</p>
 					</div>
 				</div>
