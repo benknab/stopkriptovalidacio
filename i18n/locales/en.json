@@ -5,16 +5,16 @@
 	},
 	"seo": {
 		"home": {
-			"title": "Stop Crypto Validation - Timeline of Hungarian Crypto Laws",
-			"description": "Detailed documentation of changes and consequences of Hungary's cryptocurrency \"validation\" law."
+			"title": "Stop Crypto Validation Hungary | Kriptovalidáció Law Timeline",
+			"description": "Documentation of Hungary's crypto validation law (kriptovalidáció). Track cryptocurrency regulation changes, exchange departures, and impacts on Hungarian crypto owners."
 		},
 		"about": {
-			"title": "About - Stop Crypto Validation",
-			"description": "Learn about changes in Hungarian cryptocurrency regulation and their consequences."
+			"title": "About | Stop Crypto Validation Hungary - Kriptovalidáció",
+			"description": "Learn about Hungary's unique crypto validation requirements. Citizen-led initiative documenting the kriptovalidáció law and its consequences for cryptocurrency users."
 		},
 		"mp_detail": {
-			"title": "{{name}} - MP",
-			"description": "{{name}} MP details and vote on the T/11922 bill."
+			"title": "{{name}} - MP | Crypto Validation Vote Hungary",
+			"description": "{{name}} MP details and vote on Hungary's crypto validation bill (T/11922). Hungarian cryptocurrency regulation voting records."
 		}
 	},
 	"nav": {

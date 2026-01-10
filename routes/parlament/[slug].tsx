@@ -113,6 +113,7 @@ export default define.page(function MpDetailPage(ctx): JSX.Element {
 					path={`/parlament/${slug}`}
 					titleParams={{ name: mp.name }}
 					descriptionParams={{ name: mp.name }}
+					personData={{ name: mp.name, party: mp.party, slug }}
 				/>
 			</Head>
 			{/* Back link */}

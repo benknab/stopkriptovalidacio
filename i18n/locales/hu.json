@@ -5,16 +5,16 @@
 	},
 	"seo": {
 		"home": {
-			"title": "Stop Kriptovalidáció - A magyar kriptotörvények idővonala",
-			"description": "A magyar kriptovaluta \"validációs\" törvény változásainak és következményeinek részletes dokumentációja."
+			"title": "Stop Kriptovalidáció | Magyar Kriptovaluta Validáció Törvény Idővonal",
+			"description": "A magyar kriptovalidáció törvény változásainak dokumentációja. Kripto validáció követelmények, tőzsdék távozása, és a kriptovaluta szabályozás következményei."
 		},
 		"about": {
-			"title": "Rólunk - Stop Kriptovalidáció",
-			"description": "Tájékozódjon a magyar kriptovaluta szabályozás változásairól és azok következményeiről."
+			"title": "Rólunk | Stop Kriptovalidáció - Magyar Kripto Szabályozás",
+			"description": "Tájékozódjon a magyar kriptovaluta validáció szabályozásról. Polgári kezdeményezés a kripto validáció törvény következményeinek dokumentálására."
 		},
 		"mp_detail": {
-			"title": "{{name}} - Képviselő",
-			"description": "{{name}} képviselő adatai és szavazata a T/11922 törvényjavaslatról."
+			"title": "{{name}} - Képviselő | Kripto Validáció Szavazás",
+			"description": "{{name}} képviselő adatai és szavazata a kriptovalidáció törvényjavaslatról (T/11922). Magyar kriptovaluta szabályozás képviselői szavazatok."
 		}
 	},
 	"nav": {

@@ -4,7 +4,7 @@ import { PAGE_SEO_CONFIG, type PageId } from "../../constants/seo.ts";
 import { MetaTags } from "./meta-tags.tsx";
 import { OpenGraph } from "./open-graph.tsx";
 import { Hreflang } from "./hreflang.tsx";
-import { JsonLd } from "./json-ld.tsx";
+import { JsonLd, type PersonData } from "./json-ld.tsx";
 
 interface SeoHeadProps {
 	lang: SupportedLanguage;
@@ -12,9 +12,10 @@ interface SeoHeadProps {
 	path: string;
 	titleParams?: Record<string, string>;
 	descriptionParams?: Record<string, string>;
+	personData?: PersonData;
 }
 
-export function SeoHead({ lang, pageId, path, titleParams, descriptionParams }: SeoHeadProps): JSX.Element {
+export function SeoHead({ lang, pageId, path, titleParams, descriptionParams, personData }: SeoHeadProps): JSX.Element {
 	const config = PAGE_SEO_CONFIG[pageId];
 
 	return (
@@ -40,7 +41,7 @@ export function SeoHead({ lang, pageId, path, titleParams, descriptionParams }: 
 
 			<Hreflang path={path} />
 
-			<JsonLd lang={lang} pageId={pageId} />
+			<JsonLd lang={lang} pageId={pageId} path={path} personData={personData} />
 		</>
 	);
 }

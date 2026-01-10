@@ -1,6 +1,6 @@
 export const SITE_URL = "https://stopkriptovalidacio.hu";
 export const SITE_NAME = "Stop Kripto Validacio";
-export const DEFAULT_OG_IMAGE = "/public/og-image.png";
+export const DEFAULT_OG_IMAGE = "/og-image.png";
 
 export const OG_LOCALES = {
 	hu: "hu_HU",

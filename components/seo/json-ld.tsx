@@ -5,9 +5,17 @@ import { t } from "../../i18n/index.ts";
 import { type PageId, SITE_NAME, SITE_URL } from "../../constants/seo.ts";
 import { getPrimaryEvents } from "../../utils/seo.ts";
 
+export interface PersonData {
+	name: string;
+	party: string;
+	slug: string;
+}
+
 interface JsonLdProps {
 	lang: SupportedLanguage;
 	pageId: PageId;
+	path?: string;
+	personData?: PersonData;
 }
 
 function buildWebSiteSchema(siteName: string): object {
@@ -81,10 +89,46 @@ function buildItemListSchema(items: object[]): object {
 	};
 }
 
-export function JsonLd({ lang, pageId }: JsonLdProps): JSX.Element {
-	const graph: object[] = [];
+function buildPersonSchema(personData: PersonData, lang: SupportedLanguage): object {
+	return {
+		"@type": "Person",
+		"@id": `${SITE_URL}/parlament/${personData.slug}#person`,
+		name: personData.name,
+		jobTitle: lang === "hu" ? "Országgyűlési képviselő" : "Member of Parliament",
+		affiliation: {
+			"@type": "Organization",
+			name: personData.party,
+		},
+		url: `${SITE_URL}/parlament/${personData.slug}`,
+		image: `/images/mps/${personData.slug}.jpg`,
+	};
+}
 
-	graph.push(buildWebSiteSchema(t("site.title", lang)));
+function buildBreadcrumbSchema(
+	items: Array<{ name: string; url: string }>,
+): object {
+	return {
+		"@type": "BreadcrumbList",
+		"@id": `${SITE_URL}/#breadcrumb`,
+		itemListElement: items.map((item, index) => ({
+			"@type": "ListItem",
+			position: index + 1,
+			name: item.name,
+			item: item.url,
+		})),
+	};
+}
+
+export function JsonLd({ lang, pageId, path, personData }: JsonLdProps): JSX.Element {
+	const graph: object[] = [];
+	const siteTitle = t("site.title", lang);
+
+	graph.push(buildWebSiteSchema(siteTitle));
+
+	// Add breadcrumb schema for all pages
+	const breadcrumbItems: Array<{ name: string; url: string }> = [
+		{ name: siteTitle, url: SITE_URL },
+	];
 
 	if (pageId === "home") {
 		const primaryEvents = getPrimaryEvents();
@@ -114,6 +158,30 @@ export function JsonLd({ lang, pageId }: JsonLdProps): JSX.Element {
 		);
 
 		graph.push(buildItemListSchema(newsArticles));
+	}
+
+	if (pageId === "about") {
+		breadcrumbItems.push({
+			name: t("nav.about", lang),
+			url: `${SITE_URL}/rolunk`,
+		});
+	}
+
+	if (pageId === "mp-detail" && personData) {
+		graph.push(buildPersonSchema(personData, lang));
+		breadcrumbItems.push({
+			name: t("nav.mps", lang),
+			url: `${SITE_URL}/#kepviselok`,
+		});
+		breadcrumbItems.push({
+			name: personData.name,
+			url: `${SITE_URL}${path || `/parlament/${personData.slug}`}`,
+		});
+	}
+
+	// Add breadcrumb if we have more than just the home item
+	if (breadcrumbItems.length > 1) {
+		graph.push(buildBreadcrumbSchema(breadcrumbItems));
 	}
 
 	const jsonLd = {
