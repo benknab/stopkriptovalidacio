@@ -103,7 +103,6 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 	const copyFeedback = useSignal<"emails" | "message" | "subject" | null>(null);
 
 	const emailLists = getEmailLists(selectedRep, includeNationalList, includeMinorityList);
-	const emailCount = emailLists.all.length;
 	const hasSelection = selectedRep !== null;
 
 	const mailtoUrl = hasSelection ? generateMailtoUrl(emailLists.to, emailLists.cc, subject, message) : undefined;
@@ -134,13 +133,6 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 
 	return (
 		<div class="mt-8 space-y-4">
-			{/* Email count */}
-			<p class="text-slate-600 text-center">
-				{hasSelection
-					? t("action.email_count", lang, { count: emailCount.toString() })
-					: t("action.no_selection", lang)}
-			</p>
-
 			{/* Main button */}
 			<div class="flex justify-center">
 				{hasSelection
