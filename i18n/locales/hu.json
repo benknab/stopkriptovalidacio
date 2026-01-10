@@ -34,8 +34,8 @@
 		"compliant": "Megfelel",
 		"restricted": "Korlátozott",
 		"uncertain": "Bizonytalan",
-		"cta_contact": "Írd meg a képviselődnek",
-		"cta_learn_more": "Tudj meg többet",
+		"cta_contact": "Írjon a képviselőjének",
+		"cta_learn_more": "Tudjon meg többet",
 		"overview": {
 			"title": "Mi történik?",
 			"law_summary": "2025 júliusától Magyarországon egyedülálló kriptovalidációs követelmények léptek életbe, amelyek mintegy 500 ezer magyar kriptotulajdonost érintenek.",
@@ -67,8 +67,8 @@
 		},
 		"contributions": {
 			"title": "Közreműködés",
-			"description": "Ez a projekt nyílt forráskódú és örömmel fogadjuk a közreműködéseket. Ha hibajavítást, új funkciót vagy tartalmi frissítést szeretnél javasolni, látogass el a <githubLink>GitHub tárhelyünkre</githubLink>.",
-			"howto": "Nyiss egy issue-t a javaslatoddal, vagy küldj pull requestet a módosításokkal."
+			"description": "Ez a projekt nyílt forráskódú és örömmel fogadjuk a közreműködéseket. Ha hibajavítást, új funkciót vagy tartalmi frissítést szeretne javasolni, látogasson el a <githubLink>GitHub tárhelyünkre</githubLink>.",
+			"howto": "Nyisson egy issue-t a javaslatával, vagy küldjön pull requestet a módosításokkal."
 		}
 	},
 	"timeline": {
@@ -82,7 +82,7 @@
 		"coming_soon": "Hamarosan..."
 	},
 	"impact": {
-		"title": "Érintve vagy",
+		"title": "Ön is érintett",
 		"description": "A szabályozás nem csak a szolgáltatókat, hanem minden magyar kriptotulajdonost közvetlenül érint.",
 		"cards": {
 			"zero_compliant": {
@@ -189,9 +189,9 @@
 		"contact": "Kapcsolat"
 	},
 	"action": {
-		"title": "Cselekedj!",
-		"nav_title": "Cselekedj",
-		"intro": "A kriptovaluta validációs törvény veszélybe sodorja a magyar felhasználók hozzáférését a kriptovaluta szolgáltatásokhoz. A tőzsdék sorra vonulnak ki Magyarországról. Válaszd ki a választókerületed képviselőjét, és küldj neki levelet.",
+		"title": "Cselekedjen!",
+		"nav_title": "Cselekedjen",
+		"intro": "A kriptovaluta validációs törvény veszélybe sodorja a magyar felhasználók hozzáférését a kriptovaluta szolgáltatásokhoz. A tőzsdék sorra vonulnak ki Magyarországról. Válassza ki a választókerülete képviselőjét, és küldjön neki levelet.",
 		"subject_label": "Tárgy",
 		"message_label": "Üzenet",
 		"back": "Vissza",
@@ -201,11 +201,11 @@
 		"copy_message": "Üzenet másolása",
 		"copy_subject": "Tárgy másolása",
 		"copied": "Másolva!",
-		"email_warning": "Sok címzettet választottál ({{count}} e-mail). Egyes levelezőprogramok nem biztos, hogy kezelik ennyi címzettet. Használd a másolás gombokat, ha szükséges.",
-		"no_selection": "Válaszd ki a választókerületed képviselőjét",
-		"copy_manual_hint": "Manuálisan is elküldheted az üzenetet a címek és szöveg másolásával.",
+		"email_warning": "Sok címzettet választott ({{count}} e-mail). Egyes levelezőprogramok nem biztos, hogy kezelik ennyi címzettet. Használja a másolás gombokat, ha szükséges.",
+		"no_selection": "Válassza ki a választókerülete képviselőjét",
+		"copy_manual_hint": "Manuálisan is elküldheti az üzenetet a címek és szöveg másolásával.",
 		"search_placeholder": "Képviselő keresése...",
-		"select_prompt": "Válaszd ki a választókerületed képviselőjét",
+		"select_prompt": "Válassza ki a választókerülete képviselőjét",
 		"selected_recipients": "Kiválasztott címzettek",
 		"national_list_title": "Országos lista",
 		"national_list_subtitle": "Listás képviselők",
