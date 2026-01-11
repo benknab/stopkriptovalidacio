@@ -6,7 +6,7 @@ const voteGroups: Record<VoteType, Set<string>> = {
 	no: new Set(),
 	abstain: new Set(),
 	absent: new Set(),
-	not_voted: new Set(),
+	"not_voted": new Set(),
 	banned: new Set(),
 };
 
