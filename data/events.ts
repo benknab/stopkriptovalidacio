@@ -23,8 +23,8 @@ export const events: TimelineEvents = {
 			en: "T/11922/13 unified proposal submitted",
 		},
 		summary: {
-			hu: "A Törvényalkotási Bizottság benyújtotta a túlterjeszkedő módosító javaslatot tartalmazó egységes javaslatot. <b>A dokumentum első alkalommal tartalmazza a kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket.</b>",
-			en: "The Legislation Committee submitted the unified proposal containing overreaching amendments. <b>The document contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse for the first time.</b>",
+			hu: "A Törvényalkotási Bizottság benyújtotta a túlterjeszkedő módosító javaslatot tartalmazó egységes javaslatot. <b>A dokumentum első alkalommal tartalmazza a kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket. A törvény nem definiálja a validálás fogalmát.</b>",
+			en: "The Legislation Committee submitted the unified proposal containing overreaching amendments. <b>The document contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse for the first time. The law does not define what validation means.</b>",
 		},
 		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-13"]),
 		exchangeSlugs: new Set(),
@@ -65,8 +65,8 @@ export const events: TimelineEvents = {
 			en: "T/11922 bill adopted",
 		},
 		summary: {
-			hu: "<b>Az Országgyűlés rendkívüli ülésén elfogadta a törvényjavaslatot.</b> Minősített többséget igénylő rész: 162 igen, 94 nem (14:39:54). Egyszerű többséget igénylő rész: 162 igen, 94 nem (14:40:29).",
-			en: "<b>The National Assembly adopted the bill at an extraordinary session.</b> Qualified majority part: 162 yes, 94 no (14:39:54). Simple majority part: 162 yes, 94 no (14:40:29).",
+			hu: "<b>Az Országgyűlés rendkívüli ülésén elfogadta a törvényjavaslatot anélkül, hogy bármely módosító javaslat definiálta volna a validálás fogalmát.</b> Minősített többséget igénylő rész: 162 igen, 94 nem (14:39:54). Egyszerű többséget igénylő rész: 162 igen, 94 nem (14:40:29).",
+			en: "<b>The National Assembly adopted the bill at an extraordinary session without any amendment defining what validation means.</b> Qualified majority part: 162 yes, 94 no (14:39:54). Simple majority part: 162 yes, 94 no (14:40:29).",
 		},
 		sourceSlugs: new Set(["parlament-11922-oldal", "parlament-11922-ind05"]),
 		exchangeSlugs: new Set(),
@@ -167,8 +167,8 @@ export const events: TimelineEvents = {
 			en: "SZTFH Regulation 10/2025 (X. 27.) published",
 		},
 		summary: {
-			hu: "Megjelent a kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól szóló rendelet. A rendelet a kihirdetést követő 3. napon lép hatályba, alkalmazni a 60. naptól kell. <b>A rendelet a validátor engedélyezési feltételeit határozza meg, de hogy pontosan mit is csinál egy validátor, az továbbra sincs definiálva.</b>",
-			en: "The regulation on detailed rules for licensing and registration of crypto-asset exchange validation service providers was published. The regulation enters into force on the 3rd day after publication, applicable from the 60th day. <b>The regulation defines licensing requirements for validators, but what exactly a validator does remains undefined.</b>",
+			hu: "Megjelent a kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól szóló rendelet. A rendelet a kihirdetést követő 3. napon lép hatályba, alkalmazni a 60. naptól kell. <b>A validálás és validátor fogalma továbbra sincs definiálva.</b>",
+			en: "The regulation on detailed rules for licensing and registration of crypto-asset exchange validation service providers was published. The regulation enters into force on the 3rd day after publication, applicable from the 60th day. <b>The terms validation and validator remain undefined.</b>",
 		},
 		sourceSlugs: new Set(["sztfh-rendelet-10-2025", "sztfh-kozlemeny-2025-10-27"]),
 		exchangeSlugs: new Set(),
