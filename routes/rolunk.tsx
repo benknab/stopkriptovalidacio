@@ -68,18 +68,25 @@ export default define.page(function About(ctx): JSX.Element {
 			<Head>
 				<SeoHead lang={lang} pageId="about" path="/rolunk" />
 			</Head>
-			<h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-8">{t("about.title", lang)}</h1>
+			<h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-8">
+				{t("about.title", lang)}
+			</h1>
 
 			{/* Mission Section */}
 			<section class="mb-12">
-				<H2 class="mb-4 text-left text-2xl sm:text-2xl">{t("about.mission.title", lang)}</H2>
+				<H2 class="mb-4 text-left text-2xl sm:text-2xl">
+					{t("about.mission.title", lang)}
+				</H2>
 				<div class="space-y-4 text-slate-600 leading-relaxed">
 					<p>{t("about.mission.description", lang)}</p>
 					<p>{t("about.mission.privacy", lang)}</p>
 					<p>{t("about.mission.platform", lang)}</p>
 					<p>
 						{parseTextWithLinks(t("about.mission.inspiration", lang), lang, {
-							fightChatPolicyLink: { href: "https://fightchatcontrol.eu", external: true },
+							fightChatPolicyLink: {
+								href: "https://fightchatcontrol.eu",
+								external: true,
+							},
 						})}
 					</p>
 					<p class="font-medium">{t("about.mission.disclaimer", lang)}</p>
@@ -88,7 +95,9 @@ export default define.page(function About(ctx): JSX.Element {
 
 			{/* Privacy Policy Section */}
 			<section id="adatvedelem" class="mb-12">
-				<H2 class="mb-4 text-left text-2xl sm:text-2xl">{t("about.privacy.title", lang)}</H2>
+				<H2 class="mb-4 text-left text-2xl sm:text-2xl">
+					{t("about.privacy.title", lang)}
+				</H2>
 				<div class="space-y-4 text-slate-600 leading-relaxed">
 					<p>{t("about.privacy.email", lang)}</p>
 					<p>
@@ -98,7 +107,10 @@ export default define.page(function About(ctx): JSX.Element {
 					</p>
 					<p>
 						{parseTextWithLinks(t("about.privacy.cloudflare", lang), lang, {
-							cloudflareLink: { href: "https://www.cloudflare.com/privacypolicy/", external: true },
+							cloudflareLink: {
+								href: "https://www.cloudflare.com/privacypolicy/",
+								external: true,
+							},
 						})}
 					</p>
 					<p>{t("about.privacy.changes", lang)}</p>
@@ -108,7 +120,9 @@ export default define.page(function About(ctx): JSX.Element {
 
 			{/* Contact Section */}
 			<section id="kontakt" class="mb-12">
-				<H2 class="mb-4 text-left text-2xl sm:text-2xl">{t("about.contact.title", lang)}</H2>
+				<H2 class="mb-4 text-left text-2xl sm:text-2xl">
+					{t("about.contact.title", lang)}
+				</H2>
 				<p class="text-slate-600 leading-relaxed">
 					{parseTextWithLinks(t("about.contact.description", lang), lang, {
 						emailLink: { href: "mailto:info@stopkriptovalidacio.hu" },
@@ -118,11 +132,16 @@ export default define.page(function About(ctx): JSX.Element {
 
 			{/* Contributions Section */}
 			<section id="kozremukodes">
-				<H2 class="mb-4 text-left text-2xl sm:text-2xl">{t("about.contributions.title", lang)}</H2>
+				<H2 class="mb-4 text-left text-2xl sm:text-2xl">
+					{t("about.contributions.title", lang)}
+				</H2>
 				<div class="space-y-4 text-slate-600 leading-relaxed">
 					<p>
 						{parseTextWithLinks(t("about.contributions.description", lang), lang, {
-							githubLink: { href: "https://github.com/bkiac/kriptovalidacio", external: true },
+							githubLink: {
+								href: "https://github.com/benknab/stopkriptovalidacio",
+								external: true,
+							},
 						})}
 					</p>
 					<p>{t("about.contributions.howto", lang)}</p>
