@@ -213,6 +213,6 @@
 		"minority_list_subtitle": "Minority list representatives",
 		"contacts_count": "{{count}} representatives",
 		"list_selection_hint": "After selecting your representative, you can also add national and minority lists to the recipients.",
-		"list_warning": "This list increases the number of recipients. If there are too many, you may need to split them manually."
+		"list_warning": "Your email client may not handle this many ({{count}}) recipients. You may need to manually divide them into batches if you want to send them all."
 	}
 }

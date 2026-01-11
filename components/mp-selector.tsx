@@ -308,7 +308,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 				return emails.size > 30
 					? (
 						<p class="mt-4 text-sm text-amber-600 font-medium">
-							⚠️ {t("action.list_warning", lang)}
+							⚠️ {t("action.list_warning", lang, { count: emails.size })}
 						</p>
 					)
 					: null;
