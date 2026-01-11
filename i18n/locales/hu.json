@@ -5,16 +5,20 @@
 	},
 	"seo": {
 		"home": {
-			"title": "Stop Kriptovalidáció | Magyar Kriptovaluta Validáció Törvény Idővonal",
-			"description": "A magyar kriptovalidáció törvény változásainak dokumentációja. Kripto validáció követelmények, tőzsdék távozása, és a kriptovaluta szabályozás következményei."
+			"title": "Kripto Validálás: Követelje a Változást | Stop Kriptovalidáció",
+			"description": "A kripto validálás törvény miatt a szolgáltatók kivonulnak Magyarországról. A kripto validátor követelmények nincsenek definiálva. Írjon a képviselőjének."
 		},
 		"about": {
-			"title": "Rólunk | Stop Kriptovalidáció - Magyar Kripto Szabályozás",
-			"description": "Tájékozódjon a magyar kriptovaluta validáció szabályozásról. Polgári kezdeményezés a kripto validáció törvény következményeinek dokumentálására."
+			"title": "Rólunk | Stop Kriptovalidáció - Kripto Validálás Magyarország",
+			"description": "Polgári kezdeményezés a magyar kripto validálás törvény dokumentálására. Tájékozódjon és írjon a képviselőjének."
 		},
 		"mp_detail": {
-			"title": "{{name}} - Képviselő | Kripto Validáció Szavazás",
-			"description": "{{name}} képviselő adatai és szavazata a kriptovalidáció törvényjavaslatról (T/11922). Magyar kriptovaluta szabályozás képviselői szavazatok."
+			"title": "{{name}} - Képviselő | Kripto Validálás Szavazás",
+			"description": "{{name}} képviselő adatai és szavazata a kripto validálás törvényjavaslatról (T/11922). Magyar kripto validátor szabályozás képviselői szavazatok."
+		},
+		"crypto_validation": {
+			"title": "Mi az a Kripto Validálás? | Kripto Validátor Magyarország",
+			"description": "A kripto validálás fogalmát a törvény nem definiálja. Tájékozódjon a kripto validátor követelményekről és a szabályozás következményeiről."
 		}
 	},
 	"nav": {
@@ -38,10 +42,34 @@
 		"cta_learn_more": "Tudjon meg többet",
 		"overview": {
 			"title": "Mi történik?",
-			"law_summary": "2025 júliusától Magyarországon egyedülálló kriptovalidációs követelmények léptek életbe, amelyek mintegy 500 ezer magyar kriptotulajdonost érintenek.",
+			"law_summary": "2025 júliusától Magyarországon egyedülálló <kriptovalidalasLink>kriptovalidálási</kriptovalidalasLink> követelmények léptek életbe, amelyek mintegy 500 ezer magyar kriptotulajdonost érintenek.",
 			"uncertainty": "A törvény nem definiálja a validálás fogalmát. Ennek következtében jogbizonytalanság áll fenn: sem a magánszemélyek, sem a vállalkozások nem tudják követni a szabályokat, a szolgáltatók elhagyják az országot, miközben a megsértés büntetőjogi következményekkel járhat.",
 			"compliant_explanation": "Ezen az oldalon a \"Megfelel\" kategóriába csak azok a szolgáltatók kerülnek, akik nyilvánosan bejelentették, vagy az SZTFH vagy a validáló szolgáltatók megerősítették megfelelőségüket."
 		}
+	},
+	"crypto_validation": {
+		"title": "Mi az a kriptovalidálás?",
+		"intro": "A 2025. évi LXVII. törvény bevezette a \"kriptoeszköz-átváltást validáló szolgáltatás\" fogalmát. A törvény előírja a validálási kötelezettséget, de nem definiálja, hogy mit jelent pontosan a validálás.",
+		"unique_title": "Világszinten egyedülálló",
+		"unique_text": "A kriptovalidálás fogalma kizárólag Magyarországon létezik. Egyetlen más ország sem vezetett be hasonló követelményt. Az Európai Unió MiCA rendelete sem tartalmaz ilyen típusú validációs kötelezettséget.",
+		"criminal_title": "Büntetőjogi következmények",
+		"criminal_text": "A validálás nélküli kriptoeszköz-átváltás Magyarországon bűncselekménynek minősül. A szabályozás nem közigazgatási szankciót, hanem büntetőjogi felelősséget ír elő – ez nemzetközi összehasonlításban példa nélküli.",
+		"what_we_know": "Amit a törvény előír",
+		"what_we_know_text": "A kriptoeszköz-szolgáltatók csak akkor végezhetnek kriptoeszköz-átváltást, ha azt validáló szolgáltató validálja.",
+		"what_we_dont_know": "Ami nincs definiálva",
+		"what_we_dont_know_text": "A törvény nem határozza meg, hogy pontosan mit jelent a validálás, milyen folyamatokat foglal magában, és milyen kritériumok alapján minősül egy tranzakció validáltnak.",
+		"validator_title": "Mi az a kripto validátor?",
+		"validator_intro": "A kripto validátor (hivatalosan \"kriptoeszköz-átváltást validáló szolgáltató\") egy SZTFH engedéllyel rendelkező vállalkozás, amely a törvény szerint validálja a kriptoeszköz-átváltási tranzakciókat.",
+		"validator_requirements": "Validátor engedélyezés",
+		"validator_requirements_text": "A validátor szolgáltatóknak SZTFH engedéllyel kell rendelkezniük. Jelenleg egyetlen engedélyezett validátor működik Magyarországon: a Caduceus Zrt.",
+		"validator_problem": "A helyzet",
+		"validator_problem_text": "A validálás pontos tartalma nincs jogszabályban definiálva. A szolgáltatók egy része inkább kivonul Magyarországról, mint hogy a tisztázatlan követelményeknek próbáljon megfelelni.",
+		"sources_title": "Források",
+		"sources_text": "Az alábbi forrásokban olvashat többet a szabályozásról:",
+		"timeline_link": "Idővonal megtekintése",
+		"cta_title": "Írjon a képviselőjének",
+		"cta_text": "Ha szeretné jelezni véleményét a törvényről, írjon a választókerülete képviselőjének.",
+		"cta_button": "Írjon most"
 	},
 	"about": {
 		"title": "Rólunk",

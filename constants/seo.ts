@@ -26,6 +26,12 @@ export const PAGE_SEO_CONFIG = {
 		descriptionKey: "seo.mp_detail.description",
 		type: "profile",
 	},
+	"crypto-validation": {
+		path: "/kriptovalidalas",
+		titleKey: "seo.crypto_validation.title",
+		descriptionKey: "seo.crypto_validation.description",
+		type: "article",
+	},
 } as const;
 
 export type PageId = keyof typeof PAGE_SEO_CONFIG;

@@ -163,12 +163,12 @@ export const events: TimelineEvents = {
 		date: new Date("2025-10-27"),
 		type: "primary",
 		title: {
-			hu: "10/2025. (X. 27.) SZTFH rendelet kihirdetése",
-			en: "SZTFH Regulation 10/2025 (X. 27.) published",
+			hu: "Kripto validátor rendelet kihirdetése",
+			en: "Crypto validator regulation published",
 		},
 		summary: {
-			hu: "Megjelent a kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól szóló rendelet. A rendelet a kihirdetést követő 3. napon lép hatályba, alkalmazni a 60. naptól kell. <b>A validálás és validátor fogalma továbbra sincs definiálva.</b>",
-			en: "The regulation on detailed rules for licensing and registration of crypto-asset exchange validation service providers was published. The regulation enters into force on the 3rd day after publication, applicable from the 60th day. <b>The terms validation and validator remain undefined.</b>",
+			hu: "Megjelent a kripto validátor szolgáltatók engedélyezésének és nyilvántartásának részletes szabályairól szóló 10/2025. (X. 27.) SZTFH rendelet. A rendelet a kihirdetést követő 3. napon lép hatályba, alkalmazni a 60. naptól kell. <b>A kripto validálás és validátor fogalma továbbra sincs definiálva.</b>",
+			en: "SZTFH Regulation 10/2025 (X. 27.) on detailed rules for licensing and registration of crypto validator service providers was published. The regulation enters into force on the 3rd day after publication, applicable from the 60th day. <b>The terms crypto validation and validator remain undefined.</b>",
 		},
 		sourceSlugs: new Set(["sztfh-rendelet-10-2025", "sztfh-kozlemeny-2025-10-27"]),
 		exchangeSlugs: new Set(),
@@ -229,12 +229,12 @@ export const events: TimelineEvents = {
 		date: new Date("2025-12-19"),
 		type: "primary",
 		title: {
-			hu: "Első kriptoeszköz-átváltást validáló szolgáltató engedélyezése",
-			en: "First crypto-asset exchange validation service provider licensed",
+			hu: "Első kripto validátor engedélyezése",
+			en: "First crypto validator licensed",
 		},
 		summary: {
-			hu: "Az SZTFH engedélyezte és nyilvántartásba vette az első validáló szolgáltatót. <b>Egyetlen magáncég, a Caduceus lett felelős az összes magyarországi kriptoeszköz-átváltás validálásáért.</b> Az SZTFH iránymutatást is közzétett a rendelet alkalmazásáról. <b>A validálás pontos tartalma továbbra sincs definiálva.</b>",
-			en: "SZTFH licensed and registered the first validation service provider. <b>A single private company, Caduceus, became responsible for validating all crypto-asset exchange services in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of validation remains undefined.</b>",
+			hu: "Az SZTFH engedélyezte és nyilvántartásba vette az első kripto validátort. <b>Egyetlen magáncég, a Caduceus lett felelős az összes magyarországi kriptoeszköz-átváltás validálásáért.</b> Az SZTFH iránymutatást is közzétett a rendelet alkalmazásáról. <b>A kripto validálás pontos tartalma továbbra sincs definiálva.</b>",
+			en: "SZTFH licensed and registered the first crypto validator. <b>A single private company, Caduceus, became responsible for validating all crypto-asset exchanges in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of crypto validation remains undefined.</b>",
 		},
 		sourceSlugs: new Set([
 			"sztfh-kozlemeny-2025-12-19",
@@ -249,12 +249,12 @@ export const events: TimelineEvents = {
 		date: new Date("2025-12-27"),
 		type: "primary",
 		title: {
-			hu: "SZTFH rendelet alkalmazásának kezdete",
-			en: "SZTFH regulation application begins",
+			hu: "Kripto validálás kötelezővé válik",
+			en: "Crypto validation becomes mandatory",
 		},
 		summary: {
-			hu: "A 10/2025. (X. 27.) SZTFH rendelet alkalmazása megkezdődik – 60 nappal a kihirdetés után. <b>Ettől a naptól minden kriptoeszköz-átváltási szolgáltatónak SZTFH által nyilvántartott validátort kell igénybe vennie.</b> A validátor nélküli szolgáltatás nyújtása bűncselekménynek minősül. A gyakorlatban ez a szabályozatlan kriptokereskedelem végét jelenti Magyarországon.",
-			en: "Application of SZTFH Regulation 10/2025 (X. 27.) begins – 60 days after publication. <b>From this date, all crypto-asset exchange service providers must use an SZTFH-registered validator.</b> Providing services without a validator constitutes a criminal offense. In practice, this marks the end of unregulated crypto trading in Hungary.",
+			hu: "A 10/2025. (X. 27.) SZTFH rendelet alkalmazása megkezdődik – 60 nappal a kihirdetés után. <b>Ettől a naptól minden kriptoeszköz-átváltási szolgáltatónak SZTFH által nyilvántartott kripto validátort kell igénybe vennie.</b> A kripto validálás nélküli szolgáltatás nyújtása bűncselekménynek minősül. A gyakorlatban ez a szabályozatlan kriptokereskedelem végét jelenti Magyarországon.",
+			en: "Application of SZTFH Regulation 10/2025 (X. 27.) begins – 60 days after publication. <b>From this date, all crypto-asset exchange service providers must use an SZTFH-registered crypto validator.</b> Providing services without crypto validation constitutes a criminal offense. In practice, this marks the end of unregulated crypto trading in Hungary.",
 		},
 		sourceSlugs: new Set([
 			"sztfh-rendelet-10-2025",

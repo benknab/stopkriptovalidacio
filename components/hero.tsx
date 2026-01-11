@@ -3,6 +3,32 @@ import { exchanges, type ExchangeStatus } from "../data/exchanges.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { ButtonLink } from "./button-link.tsx";
 
+function parseTextWithLink(text: string, linkHref: string): JSX.Element {
+	const tagRegex = /<kriptovalidalasLink>(.*?)<\/kriptovalidalasLink>/;
+	const match = tagRegex.exec(text);
+
+	if (!match) {
+		return <>{text}</>;
+	}
+
+	const before = text.slice(0, match.index);
+	const linkText = match[1];
+	const after = text.slice(match.index + match[0].length);
+
+	return (
+		<>
+			{before}
+			<a
+				href={linkHref}
+				class="underline underline-offset-4 hover:text-white transition-colors"
+			>
+				{linkText}
+			</a>
+			{after}
+		</>
+	);
+}
+
 function countByStatus(status: ExchangeStatus): number {
 	return Object.values(exchanges).filter((e) => e.status === status).length;
 }
@@ -70,7 +96,7 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 						{t("hero.overview.title", lang)}
 					</h2>
 					<div class="space-y-4 text-white/90">
-						<p>{t("hero.overview.law_summary", lang)}</p>
+						<p>{parseTextWithLink(t("hero.overview.law_summary", lang), "/kriptovalidalas")}</p>
 						<p>{t("hero.overview.uncertainty", lang)}</p>
 						<p>{t("hero.overview.compliant_explanation", lang)}</p>
 					</div>

@@ -5,16 +5,20 @@
 	},
 	"seo": {
 		"home": {
-			"title": "Stop Crypto Validation Hungary | Kriptovalidáció Law Timeline",
-			"description": "Documentation of Hungary's crypto validation law (kriptovalidáció). Track cryptocurrency regulation changes, exchange departures, and impacts on Hungarian crypto owners."
+			"title": "Crypto Validation: Demand Change | Stop Kriptovalidáció Hungary",
+			"description": "Hungary's crypto validation law is forcing service providers out. Crypto validator requirements remain undefined. Learn the facts and contact your representative."
 		},
 		"about": {
-			"title": "About | Stop Crypto Validation Hungary - Kriptovalidáció",
-			"description": "Learn about Hungary's unique crypto validation requirements. Citizen-led initiative documenting the kriptovalidáció law and its consequences for cryptocurrency users."
+			"title": "About | Stop Kriptovalidáció - Crypto Validation Hungary",
+			"description": "Citizen-led initiative documenting Hungary's crypto validation law. Learn about crypto validator regulations and contact your representative."
 		},
 		"mp_detail": {
 			"title": "{{name}} - MP | Crypto Validation Vote Hungary",
-			"description": "{{name}} MP details and vote on Hungary's crypto validation bill (T/11922). Hungarian cryptocurrency regulation voting records."
+			"description": "{{name}} MP details and vote on Hungary's crypto validation bill (T/11922). Hungarian crypto validator regulation voting records."
+		},
+		"crypto_validation": {
+			"title": "What is Crypto Validation? | Crypto Validator Hungary",
+			"description": "The law does not define what crypto validation means. Learn about crypto validator requirements and regulatory consequences."
 		}
 	},
 	"nav": {
@@ -38,10 +42,34 @@
 		"cta_learn_more": "Learn More",
 		"overview": {
 			"title": "What's Happening?",
-			"law_summary": "As of July 2025, Hungary has unique crypto validation requirements in effect, impacting approximately 500,000 Hungarian crypto owners.",
+			"law_summary": "As of July 2025, Hungary has unique <kriptovalidalasLink>crypto validation</kriptovalidalasLink> requirements in effect, impacting approximately 500,000 Hungarian crypto owners.",
 			"uncertainty": "The law does not define what validation means. This creates legal uncertainty: neither individuals nor businesses can follow the rules, service providers are leaving the country, and violations may result in criminal liability.",
 			"compliant_explanation": "On this website, only service providers that have publicly announced compliance, or have been confirmed compliant by SZTFH or Caduceus, are marked as \"Compliant.\""
 		}
+	},
+	"crypto_validation": {
+		"title": "What is crypto validation?",
+		"intro": "Act LXVII of 2025 introduced the concept of \"crypto-asset exchange validation service.\" The law mandates validation requirements but does not define what validation actually means.",
+		"unique_title": "Globally unique",
+		"unique_text": "The concept of crypto validation exists only in Hungary. No other country has introduced similar requirements. The European Union's MiCA regulation does not include this type of validation obligation.",
+		"criminal_title": "Criminal liability",
+		"criminal_text": "Crypto-asset exchange without validation constitutes a criminal offense in Hungary. The regulation prescribes criminal liability rather than administrative sanctions – this is unprecedented in international comparison.",
+		"what_we_know": "What the law requires",
+		"what_we_know_text": "Crypto-asset service providers can only perform crypto-asset exchanges if validated by a validation service provider.",
+		"what_we_dont_know": "What is not defined",
+		"what_we_dont_know_text": "The law does not specify what validation means exactly, what processes it involves, or what criteria make a transaction considered validated.",
+		"validator_title": "What is a crypto validator?",
+		"validator_intro": "A crypto validator (officially \"crypto-asset exchange validation service provider\") is an SZTFH-licensed company that validates crypto-asset exchange transactions according to the law.",
+		"validator_requirements": "Validator licensing",
+		"validator_requirements_text": "Validator service providers must have an SZTFH license. Currently, only one licensed validator operates in Hungary: Caduceus Zrt.",
+		"validator_problem": "The situation",
+		"validator_problem_text": "The exact content of validation is not defined in the legislation. Some service providers choose to leave Hungary rather than attempt to comply with unclear requirements.",
+		"sources_title": "Sources",
+		"sources_text": "Read more about the regulation in these sources:",
+		"timeline_link": "View timeline",
+		"cta_title": "Contact your representative",
+		"cta_text": "If you would like to express your opinion about this law, write to your district representative.",
+		"cta_button": "Write now"
 	},
 	"about": {
 		"title": "About",

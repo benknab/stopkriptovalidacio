@@ -28,6 +28,23 @@ function buildWebSiteSchema(siteName: string): object {
 	};
 }
 
+const KEYWORDS = {
+	hu: [
+		"kripto validálás",
+		"kripto validátor",
+		"kripto validáció",
+		"kripto szabályozás",
+		"kripto törvény",
+	],
+	en: [
+		"crypto validation",
+		"crypto validator",
+		"crypto validation",
+		"crypto regulation",
+		"crypto law",
+	],
+} as const;
+
 function buildArticleSchema(
 	lang: SupportedLanguage,
 	title: string,
@@ -43,6 +60,7 @@ function buildArticleSchema(
 		inLanguage: lang,
 		datePublished: datePublished,
 		dateModified: dateModified,
+		keywords: KEYWORDS[lang],
 		publisher: {
 			"@type": "Organization",
 			name: SITE_NAME,
@@ -104,9 +122,7 @@ function buildPersonSchema(personData: PersonData, lang: SupportedLanguage): obj
 	};
 }
 
-function buildBreadcrumbSchema(
-	items: Array<{ name: string; url: string }>,
-): object {
+function buildBreadcrumbSchema(items: Array<{ name: string; url: string }>): object {
 	return {
 		"@type": "BreadcrumbList",
 		"@id": `${SITE_URL}/#breadcrumb`,
@@ -126,9 +142,7 @@ export function JsonLd({ lang, pageId, path, personData }: JsonLdProps): JSX.Ele
 	graph.push(buildWebSiteSchema(siteTitle));
 
 	// Add breadcrumb schema for all pages
-	const breadcrumbItems: Array<{ name: string; url: string }> = [
-		{ name: siteTitle, url: SITE_URL },
-	];
+	const breadcrumbItems: Array<{ name: string; url: string }> = [{ name: siteTitle, url: SITE_URL }];
 
 	if (pageId === "home") {
 		const primaryEvents = getPrimaryEvents();
@@ -164,6 +178,22 @@ export function JsonLd({ lang, pageId, path, personData }: JsonLdProps): JSX.Ele
 		breadcrumbItems.push({
 			name: t("nav.about", lang),
 			url: `${SITE_URL}/rolunk`,
+		});
+	}
+
+	if (pageId === "crypto-validation") {
+		graph.push(
+			buildArticleSchema(
+				lang,
+				t("seo.crypto_validation.title", lang),
+				t("seo.crypto_validation.description", lang),
+				"2025-07-01",
+				new Date().toISOString().split("T")[0],
+			),
+		);
+		breadcrumbItems.push({
+			name: t("crypto_validation.title", lang),
+			url: `${SITE_URL}/kriptovalidalas`,
 		});
 	}
 
