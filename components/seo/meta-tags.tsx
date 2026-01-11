@@ -33,6 +33,9 @@ export function MetaTags({
 			<meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
 			<link rel="canonical" href={canonicalUrl} />
 			<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+			<link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png" />
+			<link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png" />
+			<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 		</>
 	);
 }
