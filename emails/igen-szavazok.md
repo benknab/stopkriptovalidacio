@@ -20,17 +20,15 @@ hatálybalépése óta számos váratlan következmény jelentkezett:
 - A "validálás" pontos tartalma továbbra is tisztázatlan az érintett állampolgárok és szolgáltatók számára
 - A törvénynek való megfelelés gyakorlatilag lehetetlen, miközben büntetőjogi következményekkel fenyeget
 
-Tisztelettel kérdezzük:
+Tekintettel a szabályozás következményeire, tisztelettel kérdezzük: hajlandóak lennének-e nyilvános állásfoglalást tenni
+a https://stopkriptovalidacio.hu oldalon, amelyben kifejtik:
 
-Tekintettel a szabályozás következményeire, hajlandó lenne-e nyilvános állásfoglalást tenni a
-https://stopkriptovalidacio.hu oldalon :
+- pontosan mit értenek a "validálás" fogalma alatt;
+- miért volt szükség erre a kizárólag magyar sajátosságra az EU-s MiCA-rendelet mellett;
+- támogatják-e a törvény módosítását, vagy fenntartják annak jelenlegi formáját.
 
-- Pontosan mit értenek a "validálás" fogalma alatt,
-- miért volt szükség erre a kizárólag magyar sajátosságra az EU-s MiCA-rendelet mellett?
-- támogatja-e a törvény módosítását, vagy fenntartja annak jelenlegi formáját?
-
-Szívesen közölnénk álláspontját, és egy ilyen nyilatkozat segítene megérteni az állampolgároknak a törvény támogatásának
-indokait vagy azzal kapcsolatos aggályait.
+Szívesen közölnénk álláspontjukat. Egy ilyen nyilatkozat segítene az állampolgároknak megérteni a törvénnyel kapcsolatos
+jelenlegi álláspontjukat.
 
 Várjuk megtisztelő válaszukat.
 
