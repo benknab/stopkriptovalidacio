@@ -31,7 +31,7 @@ interface HeaderProps {
 
 export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 	return (
-		<header class="sticky top-0 z-50 bg-white border-b border-slate-200">
+		<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
 			<div class="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex items-center justify-between">
 				<a href="/" class="text-xl font-bold text-slate-900 hover:text-brand transition-colors">
 					Stop Kriptovalidáció

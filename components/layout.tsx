@@ -15,7 +15,7 @@ export function Layout({ children, lang, currentPath, hero, afterContent }: Layo
 	return (
 		<div class="min-h-screen flex flex-col bg-white text-slate-900">
 			<Header lang={lang} currentPath={currentPath} />
-			<main class="flex-1">
+			<main class="flex-1 pt-16">
 				{hero}
 				<div class="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-12">
 					{children}
