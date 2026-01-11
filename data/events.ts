@@ -133,7 +133,7 @@ export const events: TimelineEvents = {
 	},
 	"revolut-korlatozas-kezdete": {
 		date: new Date("2025-07-04"),
-		type: "tertiary",
+		type: "secondary",
 		title: {
 			hu: "Revolut kriptovaluta-korlátozások kezdete",
 			en: "Revolut cryptocurrency restrictions begin",
