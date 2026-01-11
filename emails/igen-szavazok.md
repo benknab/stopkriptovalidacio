@@ -22,14 +22,20 @@ hatálybalépése óta számos váratlan következmény jelentkezett:
 
 Tisztelettel kérdezzük:
 
-1. Pontosan mit jelent a "validálás" fogalma a gyakorlatban, és miért volt szükség erre a kizárólag magyar sajátosságra
-   az EU-s MiCA-rendelet mellett?
-2. Tekintettel a szabályozás következményeire, hajlandó lenne-e nyilvános állásfoglalást tenni a
-   https://stopkriptovalidacio.hu oldalon? Szívesen közölnénk álláspontját - akár a törvény módosítása mellett érvel,
-   akár annak fenntartása mellett.
+Tekintettel a szabályozás következményeire, hajlandó lenne-e nyilvános állásfoglalást tenni a
+https://stopkriptovalidacio.hu oldalon :
 
-Egy ilyen nyilatkozat segítene megnyugtatni az érintett állampolgárokat, és tisztázná a képviselők szándékait.
+- Pontosan mit értenek a "validálás" fogalma alatt,
+- miért volt szükség erre a kizárólag magyar sajátosságra az EU-s MiCA-rendelet mellett?
+- támogatja-e a törvény módosítását, vagy fenntartja annak jelenlegi formáját?
+
+Szívesen közölnénk álláspontját, és egy ilyen nyilatkozat segítene megérteni az állampolgároknak a törvény támogatásának
+indokait vagy azzal kapcsolatos aggályait.
 
 Várjuk megtisztelő válaszukat.
 
-Tisztelettel, Stop Kriptovalidáció https://stopkriptovalidacio.hu
+Tisztelettel,
+
+Stop Kriptovalidáció
+
+https://stopkriptovalidacio.hu
