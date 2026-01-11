@@ -211,6 +211,8 @@
 		"national_list_subtitle": "List representatives",
 		"minority_list_title": "Minority representatives",
 		"minority_list_subtitle": "Minority list representatives",
-		"contacts_count": "{{count}} representatives"
+		"contacts_count": "{{count}} representatives",
+		"list_selection_hint": "After selecting your representative, you can also add national and minority lists to the recipients.",
+		"list_warning": "This list increases the number of recipients. If there are too many, you may need to split them manually."
 	}
 }

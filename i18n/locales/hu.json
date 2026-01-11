@@ -211,6 +211,8 @@
 		"national_list_subtitle": "Listás képviselők",
 		"minority_list_title": "Nemzetiségi képviselők",
 		"minority_list_subtitle": "Nemzetiségi lista képviselői",
-		"contacts_count": "{{count}} képviselő"
+		"contacts_count": "{{count}} képviselő",
+		"list_selection_hint": "A képviselő kiválasztása után az országos és nemzetiségi listákat is hozzáadhatja a címzettekhez.",
+		"list_warning": "A lista megnöveli a címzettek számát. Ha túl sok címzett van, manuálisan kell felosztania őket."
 	}
 }

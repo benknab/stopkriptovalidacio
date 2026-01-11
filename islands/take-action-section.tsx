@@ -36,8 +36,8 @@ Tisztelettel,
 [Név]
 [Település]`;
 
-// Default to include national and minority lists
-const DEFAULT_INCLUDE_LISTS = true;
+// Default to NOT include national and minority lists (user must opt-in)
+const DEFAULT_INCLUDE_LISTS = false;
 
 interface TakeActionSectionProps {
 	lang: SupportedLanguage;

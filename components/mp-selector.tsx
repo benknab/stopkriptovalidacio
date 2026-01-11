@@ -16,8 +16,8 @@ import { VoteBadge } from "./vote-badge.tsx";
 import { Label, SearchInput, Select, SelectWrapper } from "./form.tsx";
 import { ExternalLink } from "./external-link.tsx";
 
-// Default value for including lists
-const DEFAULT_INCLUDE = true;
+// Default value for including lists (user must opt-in)
+const DEFAULT_INCLUDE = false;
 
 function CheckIcon(): JSX.Element {
 	return (
@@ -256,7 +256,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			</div>
 
 			{/* District lookup hint */}
-			<p class="text-sm text-slate-500 mb-6">
+			<p class="text-sm text-slate-500 mb-4">
 				{t("mps.district_lookup_hint", lang)}{" "}
 				<ExternalLink
 					href="https://vtr.valasztas.hu/ogy2022/egyeni-valasztokeruletek"
@@ -264,6 +264,11 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 				>
 					valasztas.hu
 				</ExternalLink>
+			</p>
+
+			{/* List selection hint - always visible */}
+			<p class="text-sm text-slate-500 mb-6">
+				{t("action.list_selection_hint", lang)}
 			</p>
 
 			{/* Selected MP + Group cards (when MP is selected) */}
@@ -292,6 +297,22 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 					/>
 				</div>
 			)}
+
+			{/* Warning when email list is too long */}
+			{selectedRep.value && (() => {
+				const emails = new Set([
+					...(selectedMp?.emails ?? []),
+					...(includeNationalList.value ? nationalListMps.flatMap(({ mp }) => mp.emails) : []),
+					...(includeMinorityList.value ? minorityListMps.flatMap(({ mp }) => mp.emails) : []),
+				]);
+				return emails.size > 30
+					? (
+						<p class="mt-4 text-sm text-amber-600 font-medium">
+							⚠️ {t("action.list_warning", lang)}
+						</p>
+					)
+					: null;
+			})()}
 
 			{/* No filter selected message (only when no rep selected) */}
 			{!selectedRep.value && !selectedCounty.value && !searchQuery.value && (
