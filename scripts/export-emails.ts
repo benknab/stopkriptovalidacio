@@ -10,13 +10,15 @@ const voteGroups: Record<VoteType, Set<string>> = {
 	banned: new Set(),
 };
 
-// Collect all emails
-const allEmails = new Set<string>();
+// Collect emails from MPs on the national list (Országos lista)
+const nationalListEmails = new Set<string>();
 
 for (const mp of Object.values(mps)) {
 	for (const email of mp.emails) {
 		voteGroups[mp.vote].add(email);
-		allEmails.add(email);
+		if (mp.district === "Országos lista") {
+			nationalListEmails.add(email);
+		}
 	}
 }
 
@@ -29,7 +31,7 @@ for (const [vote, emails] of Object.entries(voteGroups)) {
 	console.log();
 }
 
-// Print full national list
-console.log("=== FULL NATIONAL LIST ===");
-console.log(`(${allEmails.size} total emails)\n`);
-console.log([...allEmails].join(", "));
+// Print national list (Országos lista MPs only)
+console.log("=== ORSZÁGOS LISTA (National List) ===");
+console.log(`(${nationalListEmails.size} emails)\n`);
+console.log([...nationalListEmails].join(", "));
