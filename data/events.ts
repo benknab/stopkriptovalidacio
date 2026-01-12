@@ -504,4 +504,18 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["moonpay-unsupported-countries"]),
 		exchangeSlugs: new Set(["moonpay"]),
 	},
+	"vsbz-indulas": {
+		date: new Date("2026-01-08"),
+		type: "secondary",
+		title: {
+			hu: "Valid Since Block Zero (VSBZ) weboldal elindítása",
+			en: "Valid Since Block Zero (VSBZ) website launch",
+		},
+		summary: {
+			hu: "Elindult a VSBZ (vsbz.wikilegia.org), egy közösségi tudásbázis a kriptoeszköz-validálási kötelezettségről. A weboldal kérdéseket, e-mail sablonokat, anonimizált hatósági levelezéseket és piaci elemzéseket tartalmaz.",
+			en: "VSBZ (vsbz.wikilegia.org) launched as a community knowledge base about crypto-asset validation requirements. The website contains questions, email templates, anonymized regulatory correspondence, and market analyses.",
+		},
+		sourceSlugs: new Set(["vsbz-wikilegia"]),
+		exchangeSlugs: new Set(),
+	},
 };

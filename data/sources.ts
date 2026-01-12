@@ -584,6 +584,14 @@ Auditor: CORRECT Financial and Accounting Expert Ltd.`,
 			en: "HVG report on more cryptocurrency services shutting down in Hungary due to the regulatory environment.",
 		},
 	},
+	"vsbz-wikilegia": {
+		title: { hu: "Valid Since Block Zero (VSBZ)", en: "Valid Since Block Zero (VSBZ)" },
+		originalUrl: "https://vsbz.wikilegia.org/",
+		summary: {
+			hu: "Közösségi tudásbázis a 2025. évi LXVII. törvény szerinti kriptoeszköz-validálási kötelezettségről. A weboldal kérdéseket, e-mail sablonokat, anonimizált eseteket és piaci elemzéseket tartalmaz. Közreműködés GitHub pull requesteken keresztül lehetséges. A tartalom nem minősül jogi tanácsadásnak.",
+			en: "Community knowledge base about crypto-asset validation requirements under Act LXVII of 2025. The website contains questions, email templates, anonymized cases, and market analyses. Contributions are possible via GitHub pull requests. The content does not constitute legal advice.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
