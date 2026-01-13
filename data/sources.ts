@@ -12,7 +12,6 @@ export const sources = {
 	"parlament-11922": {
 		title: { hu: "T/11922 Törvényjavaslat (PDF)", en: "T/11922 Bill (PDF)" },
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922.pdf",
-		archivedUrl: "/archivum/11922.pdf",
 		summary: {
 			hu: "Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényjavaslat. Benyújtó: Dr. Semjén Zsolt, miniszterelnök-helyettes. Előadó: Tuzson Bence, igazságügyi miniszter.",
 			en: "Bill on the amendment of certain laws to improve Hungary's competitiveness. Submitted by: Dr. Zsolt Semjén, Deputy Prime Minister. Presenter: Bence Tuzson, Minister of Justice.",
@@ -51,7 +50,6 @@ The amendment to Act VII of 2024 on the Market in Crypto-assets is justified by 
 	"parlament-11922-13": {
 		title: { hu: "T/11922/13 Egységes javaslat (PDF)", en: "T/11922/13 Unified Proposal (PDF)" },
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922-0013.pdf",
-		archivedUrl: "/archivum/11922-0013.pdf",
 		summary: {
 			hu: "Túlterjeszkedő módosító javaslatot tartalmazó egységes javaslat. Benyújtó: Törvényalkotási Bizottság. A kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket tartalmazza.",
 			en: "Unified proposal containing overreaching amendments. Submitted by: Legislation Committee. Contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse.",
@@ -63,7 +61,6 @@ The amendment to Act VII of 2024 on the Market in Crypto-assets is justified by 
 			en: "T/11922 Unified Proposal Explanatory Memorandum (PDF)",
 		},
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922ind03.pdf",
-		archivedUrl: "/archivum/11922ind03.pdf",
 		summary: {
 			hu: "Az egységes javaslattervezethez készített előterjesztői indokolás (2025.06.10.). Részletes indokolás a kriptoeszközzel visszaélés bűncselekményi tényállásáról és a validálási kötelezettségről.",
 			en: "Explanatory memorandum for the unified proposal (2025.06.10.). Detailed reasoning on the criminal offense of crypto-asset abuse and validation requirements.",
@@ -155,7 +152,6 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 			en: "T/11922 Adopted Law Explanatory Memorandum (PDF)",
 		},
 		originalUrl: "https://www.parlament.hu/irom42/11922/11922ind05.pdf",
-		archivedUrl: "/archivum/11922ind05.pdf",
 		summary: {
 			hu: "Az elfogadott törvényhez készített előterjesztői indokolás. Közzététel: Indokolások Tára, 2025. évi 56. szám. A kriptoeszközökre vonatkozó rendelkezések változatlanok maradtak az egységes javaslathoz képest.",
 			en: "Explanatory memorandum for the adopted law. Published in: Indokolások Tára, 2025 issue 56. Provisions on crypto-assets remained unchanged compared to the unified proposal.",
@@ -210,7 +206,6 @@ Transitional provision: crypto service providers conducting crypto-asset exchang
 	"sztfh-iranymutatas-2025-12-19": {
 		title: { hu: "SZTFH iránymutatás (PDF)", en: "SZTFH Guidance (PDF)" },
 		originalUrl: "https://sztfh.hu/downloads/kiberbiztonsag/kripto/sztfh_rendelet_hatalya_hun.pdf",
-		archivedUrl: "/archivum/sztfh_rendelet_hatalya_hun.pdf",
 		summary: {
 			hu: "Iránymutatás a 10/2025. (X. 27.) SZTFH rendelet alkalmazására vonatkozóan. A rendelet hatályának értelmezése.",
 			en: "Guidance on the application of SZTFH Regulation 10/2025 (X. 27.). Interpretation of the scope of the regulation.",
