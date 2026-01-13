@@ -1,9 +1,11 @@
 import type { JSX } from "preact";
+import { useSignal } from "@preact/signals";
 import { type Mp, mps, type MpSlug, type VoteType } from "../data/mps.ts";
 import { sources } from "../data/sources.ts";
 import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { ExternalLink } from "../components/external-link.tsx";
+import { SearchInput } from "../components/form.tsx";
 import { H2 } from "../components/h2.tsx";
 import { MpImage } from "../components/mp-image.tsx";
 import { voteColors } from "../components/vote-badge.tsx";
@@ -282,6 +284,7 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 		defaultValue: "",
 		initialValue: props.selectedDistrict,
 	});
+	const searchQuery = useSignal("");
 	const voteSource = sources["parlament-szavazas-11922"];
 
 	const isAllSelected = selectedCounty.value === ALL_OPTION;
@@ -289,6 +292,19 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 	const isNationalList = currentCountyData?.isNationalList ?? false;
 
 	const filteredMps = sortedMps.filter(({ mp }) => {
+		// Name search filter (always applied if set)
+		if (searchQuery.value) {
+			const query = searchQuery.value.toLowerCase();
+			if (!mp.name.toLowerCase().includes(query)) {
+				return false;
+			}
+		}
+
+		// If only search query is set (no county), show matching results
+		if (!selectedCounty.value && searchQuery.value) {
+			return true;
+		}
+
 		if (isAllSelected) return true;
 		if (!selectedCounty.value) return false;
 
@@ -312,6 +328,10 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 
 	function handleDistrictChange(e: Event): void {
 		selectedDistrict.value = (e.target as HTMLSelectElement).value;
+	}
+
+	function handleSearchInput(e: Event): void {
+		searchQuery.value = (e.target as HTMLInputElement).value;
 	}
 
 	return (
@@ -432,7 +452,16 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 					</div>
 				</div>
 
-				{selectedCounty.value && (
+				<div class="mt-3">
+					<SearchInput
+						id="mp-search"
+						value={searchQuery.value}
+						onInput={handleSearchInput}
+						placeholder={t("mps.search_placeholder", lang)}
+					/>
+				</div>
+
+				{(selectedCounty.value || searchQuery.value) && (
 					<p class="mt-4 text-sm text-slate-600 text-center">
 						{t("mps.showing", lang, {
 							shown: filteredMps.length.toString(),
@@ -441,13 +470,13 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 					</p>
 				)}
 
-				{!selectedCounty.value && (
+				{!selectedCounty.value && !searchQuery.value && (
 					<p class="mt-8 text-slate-500 text-center">
 						{t("mps.filter.select_to_show", lang)}
 					</p>
 				)}
 
-				{selectedCounty.value && filteredMps.length > 0 && (
+				{(selectedCounty.value || searchQuery.value) && filteredMps.length > 0 && (
 					<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 						{filteredMps.map(({ slug, mp }) => (
 							<MpCard
@@ -462,7 +491,7 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 					</div>
 				)}
 
-				{selectedCounty.value && filteredMps.length === 0 && (
+				{(selectedCounty.value || searchQuery.value) && filteredMps.length === 0 && (
 					<p class="mt-8 text-slate-500 text-center">
 						{t("mps.no_results", lang)}
 					</p>
