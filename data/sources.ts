@@ -598,6 +598,43 @@ Auditor: CORRECT Financial and Accounting Expert Ltd.`,
 			en: "Civil petition to the Parliament requesting a review of cryptocurrency regulation.",
 		},
 	},
+	"parlament-k-13436": {
+		title: {
+			hu: "K/13436 Írásbeli kérdés (PDF)",
+			en: "K/13436 Written Question (PDF)",
+		},
+		originalUrl: "https://www.parlament.hu/irom42/13436/13436.pdf",
+		summary: {
+			hu: "Szabadi István (Mi Hazánk) írásbeli kérdése Orbán Viktor miniszterelnökhöz a kriptoeszköz-szabályozásról. A kérdés arra keresi a választ, miért kriminalizáltak mintegy 500 000 magyar állampolgárt az új szabályozással.",
+			en: "Written question from István Szabadi (Our Homeland Movement) to Prime Minister Viktor Orbán about crypto-asset regulation. The question asks why approximately 500,000 Hungarian citizens were criminalized by the new regulation.",
+		},
+		text: {
+			hu: `Írásbeli választ igénylő kérdés címe: "A kriptoeszközökre vonatkozó új szabályozással miért kriminalizálnak mintegy 500.000 magyar állampolgárt?"
+
+A Pártunkhoz érkezett bejelentések alapján az új szabályozás sürgős rendezést kíván, tekintettel arra, hogy a becslések szerint 500.000 magyar állampolgárt érint, akiknek jelenleg nincs lehetőségük a törvénynek való megfelelésre.
+
+Kifogás merült fel azzal kapcsolatban, hogy a "validáló szolgáltató" fogalma kizárólag magyar sajátosság, sem az uniós MiCA-rendelet, sem a nemzetközi kriptoszektor nem ismeri. Jelenleg egyetlen validáló szolgáltató szerepel az SZTFH nyilvántartásában, egy újonnan alapított, a szakmában ismeretlen, minimális kapacitású cég.
+
+Kérdések:
+1. Tervezi-e a kormány végrehajtási moratórium bevezetését?
+2. Jogszerűen átválthat-e magánszemély kriptoeszközt, ha nincs elérhető validátor?
+3. Készült-e hatásvizsgálat a jogbizonytalanságról?
+4. Mi indokolja, hogy MiCA-engedélyes szolgáltató nem nyújthat szolgáltatást hazai validáció nélkül?
+5. Vizsgálta-e a kormány az árfolyam- vagy kényszerértékesítés okozta veszteségeket?`,
+			en: `Title of written question: "Why does the new crypto-asset regulation criminalize approximately 500,000 Hungarian citizens?"
+
+Based on reports received by our party, the new regulation requires urgent resolution, as it affects an estimated 500,000 Hungarian citizens who currently have no means of complying with the law.
+
+Objections have been raised that the concept of "validation service provider" is uniquely Hungarian - neither the EU MiCA regulation nor the international crypto sector recognizes it. Currently only one validation service provider is registered with SZTFH, a newly founded company unknown in the industry with minimal capacity.
+
+Questions:
+1. Does the government plan to introduce an implementation moratorium?
+2. Can a private individual legally convert crypto-assets if no validator is available?
+3. Was an impact assessment conducted regarding legal uncertainty?
+4. Why can't a MiCA-licensed provider offer services without domestic validation?
+5. Has the government examined losses caused by exchange rate changes or forced sales?`,
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;

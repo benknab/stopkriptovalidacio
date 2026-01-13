@@ -532,4 +532,18 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["vsbz-wikilegia"]),
 		exchangeSlugs: new Set(),
 	},
+	"k-13436-benyujtva": {
+		date: new Date("2026-01-13"),
+		type: "secondary",
+		title: {
+			hu: "Írásbeli kérdés a miniszterelnökhöz a kriptoeszköz-szabályozásról",
+			en: "Written question to the Prime Minister about crypto-asset regulation",
+		},
+		summary: {
+			hu: "Szabadi István (Mi Hazánk) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés 5 pontban firtatja a kriptoeszköz-szabályozás következményeit, beleértve a végrehajtási moratórium lehetőségét, a validátor hiányából eredő jogbizonytalanságot, és a MiCA-engedéllyel rendelkező szolgáltatók kizárását.",
+			en: "István Szabadi (Our Homeland Movement) submitted a written question to Prime Minister Viktor Orbán. The question addresses 5 points about the consequences of crypto-asset regulation, including the possibility of an implementation moratorium, legal uncertainty from validator shortage, and exclusion of MiCA-licensed providers.",
+		},
+		sourceSlugs: new Set(["parlament-k-13436"]),
+		exchangeSlugs: new Set(),
+	},
 };
