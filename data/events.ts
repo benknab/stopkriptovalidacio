@@ -370,6 +370,20 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["etoro-portfolio-2025-12-19"]),
 		exchangeSlugs: new Set(["etoro"]),
 	},
+	"ahang-peticio": {
+		date: new Date("2025-07-08"),
+		type: "secondary",
+		title: {
+			hu: '"A Kriptovaluta nem bűntény!" petíció indítása',
+			en: '"Cryptocurrency is Not a Crime!" petition launched',
+		},
+		summary: {
+			hu: "Civil petíció indult az Országgyűléshez a kriptovaluta-szabályozás felülvizsgálatáért. A petíció szerint a törvény sérti a jogbiztonság és arányosság elvét, ellehetetleníti a magyar kriptoszektort, és az EU-s szabályozásnál szigorúbb, aránytalan szankciókat vezet be.",
+			en: "A civil petition was launched to the Parliament requesting a review of cryptocurrency regulation. The petition argues the law violates principles of legal certainty and proportionality, makes the Hungarian crypto sector impossible, and introduces disproportionately strict sanctions exceeding EU standards.",
+		},
+		sourceSlugs: new Set(["ahang-peticio-2025-07-08"]),
+		exchangeSlugs: new Set(),
+	},
 	"coincash-regisztracio-szunetel": {
 		date: new Date("2025-07-08"),
 		type: "tertiary",

@@ -592,6 +592,17 @@ Auditor: CORRECT Financial and Accounting Expert Ltd.`,
 			en: "Community knowledge base about crypto-asset validation requirements under Act LXVII of 2025. The website contains questions, email templates, anonymized cases, and market analyses. Contributions are possible via GitHub pull requests. The content does not constitute legal advice.",
 		},
 	},
+	"ahang-peticio-2025-07-08": {
+		title: {
+			hu: '"A Kriptovaluta nem bűntény!" petíció',
+			en: '"Cryptocurrency is Not a Crime!" petition',
+		},
+		originalUrl: "https://szabad.ahang.hu/petitions/a-kriptovaluta-nem-bunteny",
+		summary: {
+			hu: "Civil petíció az Országgyűléshez, amely a kriptovaluta-szabályozás felülvizsgálatát kéri.",
+			en: "Civil petition to the Parliament requesting a review of cryptocurrency regulation.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
