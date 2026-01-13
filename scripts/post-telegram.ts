@@ -18,12 +18,30 @@ function formatDate(date: Date): string {
 	});
 }
 
+function buildEventUrl(slug: string): string {
+	const event = events[slug];
+	const url = new URL(SITE_URL);
+
+	url.searchParams.set("utm_source", "telegram");
+	url.searchParams.set("utm_medium", "social");
+	url.searchParams.set("utm_campaign", "timeline_update");
+
+	if (event.type === "secondary") {
+		url.searchParams.set("masodlagos", "true");
+	} else if (event.type === "tertiary") {
+		url.searchParams.set("harmadlagos", "true");
+	}
+
+	url.hash = slug;
+	return url.toString();
+}
+
 function formatMessage(slug: string): string {
 	const event = events[slug];
 	const title = event.title.hu;
 	const date = formatDate(event.date);
 	const summary = event.summary ? stripHtml(event.summary.hu) : "";
-	const url = `${SITE_URL}/?utm_source=telegram&utm_medium=social&utm_campaign=timeline_update#${slug}`;
+	const url = buildEventUrl(slug);
 
 	return `📅 ${date}
 📌 ${title}
@@ -137,7 +155,7 @@ async function postAllUnsentEvents(): Promise<void> {
 			console.log("✓ Posted successfully\n");
 
 			if (i < unsentEvents.length - 1) {
-				await sleep(1500);
+				await sleep(3000);
 			}
 		} else {
 			console.error("✗ Failed to post, stopping\n");

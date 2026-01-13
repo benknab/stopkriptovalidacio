@@ -12,8 +12,6 @@
 		"lint": "deno lint",
 		"download-images": "deno run -A scripts/download-mp-images.ts",
 		"generate-og-image": "deno run -A scripts/generate-og-image.ts",
-		"notify": "deno run --allow-read scripts/format-telegram.ts",
-		"notify-all": "deno run --allow-read scripts/format-telegram-all.ts",
 		"post-telegram": "deno run --allow-read --allow-write --allow-net --allow-env scripts/post-telegram.ts"
 	},
 	"imports": {
