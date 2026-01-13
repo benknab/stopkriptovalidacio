@@ -40,6 +40,7 @@
 		"uncertain": "Uncertain",
 		"cta_contact": "Contact Your MP",
 		"cta_learn_more": "Learn More",
+		"cta_telegram": "Join on Telegram",
 		"overview": {
 			"title": "What's Happening?",
 			"law_summary": "As of July 2025, Hungary has unique <kriptovalidalasLink>crypto validation</kriptovalidalasLink> requirements in effect, impacting approximately 500,000 Hungarian crypto owners.",
@@ -100,6 +101,7 @@
 		}
 	},
 	"timeline": {
+		"telegram_cta": "Join our Telegram channel for updates:",
 		"filter": {
 			"primary": "Primary events",
 			"related": "Related events",

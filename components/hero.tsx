@@ -1,4 +1,5 @@
 import type { JSX } from "preact";
+import { TELEGRAM_CHANNEL_URL } from "../constants/seo.ts";
 import { exchanges, type ExchangeStatus } from "../data/exchanges.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { ButtonLink } from "./button-link.tsx";
@@ -106,8 +107,11 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 					<ButtonLink href="#cselekedj">
 						{t("hero.cta_contact", lang)}
 					</ButtonLink>
-					<ButtonLink href="#idovonal">
+					<ButtonLink href="#idovonal" variant="secondary">
 						{t("hero.cta_learn_more", lang)}
+					</ButtonLink>
+					<ButtonLink href={TELEGRAM_CHANNEL_URL} variant="secondary" external>
+						{t("hero.cta_telegram", lang)}
 					</ButtonLink>
 				</div>
 			</div>

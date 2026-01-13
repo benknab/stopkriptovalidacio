@@ -7,6 +7,7 @@ interface ButtonLinkProps {
 	variant?: ButtonVariant;
 	children: ComponentChildren;
 	class?: string;
+	external?: boolean;
 }
 
 const variantClasses: Record<ButtonVariant, string> = {
@@ -19,6 +20,7 @@ export function ButtonLink({
 	variant = "primary",
 	children,
 	class: className,
+	external = false,
 }: ButtonLinkProps): JSX.Element {
 	const baseClasses = "inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-colors";
 
@@ -26,6 +28,7 @@ export function ButtonLink({
 		<a
 			href={href}
 			class={`${baseClasses} ${variantClasses[variant]}${className ? ` ${className}` : ""}`}
+			{...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
 		>
 			{children}
 		</a>

@@ -1,10 +1,12 @@
 import type { JSX } from "preact";
+import { ExternalLink } from "../components/external-link.tsx";
+import { TelegramIcon } from "../components/telegram-icon.tsx";
+import { TELEGRAM_CHANNEL_URL } from "../constants/seo.ts";
 import { events } from "../data/events.ts";
 import { type Source, sources } from "../data/sources.ts";
 import type { EventType, TimelineEvent } from "../data/types.ts";
 import { useBooleanQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
-import { ExternalLink } from "../components/external-link.tsx";
 
 function formatDate(date: Date, lang: SupportedLanguage): string {
 	return date.toLocaleDateString(lang === "hu" ? "hu-HU" : "en-US", {
@@ -68,14 +70,16 @@ function getTitleClassName(type: TimelineEvent["type"]): string {
 }
 
 function TimelineItem({
+	slug,
 	event,
 	lang,
 }: {
+	slug: string;
 	event: TimelineEvent;
 	lang: SupportedLanguage;
 }): JSX.Element {
 	return (
-		<div class="relative pl-8 pb-8 last:pb-0">
+		<div id={slug} class="relative pl-8 pb-8 last:pb-0 scroll-mt-24">
 			{/* Vertical line */}
 			<div class="absolute left-[11px] top-3 bottom-0 w-px bg-slate-200" />
 
@@ -89,7 +93,9 @@ function TimelineItem({
 				<time class="text-sm text-slate-500">{formatDate(event.date, lang)}</time>
 
 				<h3 class={`text-lg font-medium ${getTitleClassName(event.type)}`}>
-					{event.title[lang]}
+					<a href={`#${slug}`} class="hover:underline underline-offset-2">
+						{event.title[lang]}
+					</a>
 				</h3>
 
 				{event.summary && (
@@ -150,6 +156,20 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 
 	return (
 		<div>
+			{/* Telegram CTA */}
+			<div class="mb-6 p-4 bg-sky-50 border border-sky-200 rounded-lg flex items-center gap-3">
+				<TelegramIcon class="w-6 h-6 text-sky-500 shrink-0" />
+				<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+					<span class="text-slate-700 font-medium">{t("timeline.telegram_cta", lang)}</span>
+					<ExternalLink
+						href={TELEGRAM_CHANNEL_URL}
+						class="text-sky-600 hover:text-sky-700 hover:underline font-semibold"
+					>
+						@stopkriptovalidacio
+					</ExternalLink>
+				</div>
+			</div>
+
 			{/* Filter checkboxes */}
 			<div class="flex flex-wrap gap-4 mb-6">
 				<label class="inline-flex items-center gap-2 select-none cursor-default">
@@ -186,7 +206,14 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 
 			{/* Timeline events */}
 			<div class="space-y-0">
-				{filteredEvents.map(([slug, event]) => <TimelineItem key={slug} event={event} lang={lang} />)}
+				{filteredEvents.map(([slug, event]) => (
+					<TimelineItem
+						key={slug}
+						slug={slug}
+						event={event}
+						lang={lang}
+					/>
+				))}
 			</div>
 		</div>
 	);
