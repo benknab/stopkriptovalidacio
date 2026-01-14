@@ -564,6 +564,22 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["vsbz-wikilegia"]),
 		exchangeSlugs: new Set(),
 	},
+	// Date based on page "Updated" timestamp: 07 Jan 2026
+	// No Wayback Machine snapshots available with content to verify exact date
+	"nebeus-magyarorszag-korlatozva": {
+		date: new Date("2026-01-07"),
+		type: "secondary",
+		title: {
+			hu: "Nebeus korlátozza Magyarországot",
+			en: "Nebeus restricts Hungary",
+		},
+		summary: {
+			hu: "A Nebeus felvette Magyarországot a korlátozott országok listájára. Magyar felhasználók nem hozhatnak létre új fiókot a platformon.",
+			en: "Nebeus added Hungary to its list of restricted countries. Hungarian users cannot create new accounts on the platform.",
+		},
+		sourceSlugs: new Set(["nebeus-restricted-countries"]),
+		exchangeSlugs: new Set(["nebeus"]),
+	},
 	"k-13436-benyujtva": {
 		date: new Date("2026-01-13"),
 		type: "secondary",

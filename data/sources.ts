@@ -660,6 +660,17 @@ Questions:
 			en: "SwissBorg's official list of supported countries. Hungary was removed from the list in summer 2025.",
 		},
 	},
+	"nebeus-restricted-countries": {
+		title: {
+			hu: "Nebeus korlátozott országok",
+			en: "Nebeus Restricted Countries",
+		},
+		originalUrl: "https://support.nebeus.com/portal/en/kb/articles/countries-eligible-for-nebeus-account-creation",
+		summary: {
+			hu: "A Nebeus hivatalos listája a korlátozott országokról. Magyarország szerepel a listán, ahol nem hozható létre Nebeus fiók.",
+			en: "Nebeus's official list of restricted countries. Hungary is on the list where Nebeus account creation is not allowed.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
