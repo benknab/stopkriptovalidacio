@@ -1,3 +1,17 @@
+/**
+ * Telegram Bot for posting timeline events
+ *
+ * Usage:
+ *   deno task post-telegram                    # Post all unsent events
+ *   deno task post-telegram <slug>             # Post specific event
+ *   deno task post-telegram --dry-run          # Preview without posting
+ *   deno task post-telegram <slug> --dry-run   # Preview specific event
+ *
+ * Telegram-only events:
+ *   Events with type="telegram" are posted to Telegram but link to the
+ *   main page instead of a specific timeline entry (no #hash).
+ */
+
 import "@std/dotenv/load";
 import { SITE_URL, TELEGRAM_CHANNEL_URL } from "../constants/seo.ts";
 import { events } from "../data/events.ts";
@@ -26,6 +40,11 @@ function buildEventUrl(slug: string): string {
 	url.searchParams.set("utm_medium", "social");
 	url.searchParams.set("utm_campaign", "timeline_update");
 
+	// Hidden events link to main page without hash
+	if (event.type === "telegram") {
+		return url.toString();
+	}
+
 	if (event.type === "secondary") {
 		url.searchParams.set("masodlagos", "true");
 	} else if (event.type === "tertiary") {
@@ -42,11 +61,12 @@ function formatMessage(slug: string): string {
 	const date = formatDate(event.date);
 	const summary = event.summary ? stripHtml(event.summary.hu) : "";
 	const url = buildEventUrl(slug);
+	const linkText = event.type === "telegram" ? "Tovább az oldalra" : "Részletek az idővonalon";
 
 	return `📅 ${date}
 📌 ${title}
 ${summary ? `\n${summary}\n` : ""}
-🔗 <a href="${url}">Részletek az idővonalon</a>`;
+🔗 <a href="${url}">${linkText}</a>`;
 }
 
 function loadSentEvents(): Set<string> {
@@ -105,7 +125,7 @@ function printAvailableSlugs(): void {
 	}
 }
 
-async function postSingleEvent(slug: string): Promise<void> {
+async function postSingleEvent(slug: string, dryRun: boolean): Promise<void> {
 	if (!events[slug]) {
 		console.error(`Event not found: ${slug}`);
 		printAvailableSlugs();
@@ -113,9 +133,17 @@ async function postSingleEvent(slug: string): Promise<void> {
 	}
 
 	const sentEvents = loadSentEvents();
+	const prefix = dryRun ? "[DRY-RUN] " : "";
 
-	console.log(`Posting event: ${slug}`);
+	console.log(`${prefix}Posting event: ${slug}`);
 	const message = formatMessage(slug);
+
+	if (dryRun) {
+		console.log(`\n${message}\n`);
+		console.log("✓ Dry-run complete (nothing sent)");
+		return;
+	}
+
 	const success = await postToTelegram(message);
 
 	if (success) {
@@ -128,25 +156,32 @@ async function postSingleEvent(slug: string): Promise<void> {
 	}
 }
 
-async function postAllUnsentEvents(): Promise<void> {
+async function postAllUnsentEvents(dryRun: boolean): Promise<void> {
 	const sentEvents = loadSentEvents();
+	const prefix = dryRun ? "[DRY-RUN] " : "";
 
 	const unsentEvents = Object.entries(events)
 		.filter(([slug]) => !sentEvents.has(slug))
 		.sort(([, a], [, b]) => a.date.getTime() - b.date.getTime());
 
 	if (unsentEvents.length === 0) {
-		console.log("No new events to post");
+		console.log(`${prefix}No new events to post`);
 		return;
 	}
 
-	console.log(`Posting ${unsentEvents.length} unsent event(s)...\n`);
+	console.log(`${prefix}Posting ${unsentEvents.length} unsent event(s)...\n`);
 
 	for (let i = 0; i < unsentEvents.length; i++) {
 		const [slug] = unsentEvents[i];
-		console.log(`[${i + 1}/${unsentEvents.length}] Posting: ${slug}`);
+		console.log(`${prefix}[${i + 1}/${unsentEvents.length}] Posting: ${slug}`);
 
 		const message = formatMessage(slug);
+
+		if (dryRun) {
+			console.log(`\n${message}\n`);
+			continue;
+		}
+
 		const success = await postToTelegram(message);
 
 		if (success) {
@@ -163,16 +198,18 @@ async function postAllUnsentEvents(): Promise<void> {
 		}
 	}
 
-	console.log("Done!");
+	console.log(`${prefix}Done!`);
 }
 
 async function main(): Promise<void> {
-	const slug = Deno.args[0];
+	const args = Deno.args.filter((arg) => !arg.startsWith("--"));
+	const dryRun = Deno.args.includes("--dry-run");
+	const slug = args[0];
 
 	if (slug) {
-		await postSingleEvent(slug);
+		await postSingleEvent(slug, dryRun);
 	} else {
-		await postAllUnsentEvents();
+		await postAllUnsentEvents(dryRun);
 	}
 }
 

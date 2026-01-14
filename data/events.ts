@@ -1,5 +1,14 @@
 import type { TimelineEvents } from "./types.ts";
 
+/**
+ * Timeline Events
+ *
+ * Event types:
+ * - "primary": Major milestones (always displayed)
+ * - "secondary": Exchange actions (togglable via UI)
+ * - "tertiary": Supporting documentation (togglable via UI)
+ * - "telegram": Telegram-only events (not shown on timeline, links to main page)
+ */
 export const events: TimelineEvents = {
 	"t-11922-benyujtva": {
 		date: new Date("2025-05-13"),
@@ -593,5 +602,19 @@ export const events: TimelineEvents = {
 		},
 		sourceSlugs: new Set(["parlament-k-13436"]),
 		exchangeSlugs: new Set(),
+	},
+	"frissites-2026-01-14": {
+		date: new Date("2026-01-14"),
+		type: "telegram",
+		title: {
+			hu: "Frissítés: Újabb tőzsdék korlátozásai",
+			en: "Update: More exchange restrictions",
+		},
+		summary: {
+			hu: "Frissítettük az oldalt az Uphold, SwissBorg és Nebeus magyarországi korlátozásaival.",
+			en: "We updated the site with Uphold, SwissBorg and Nebeus restrictions in Hungary.",
+		},
+		sourceSlugs: new Set(),
+		exchangeSlugs: new Set(["uphold", "swissborg", "nebeus"]),
 	},
 };

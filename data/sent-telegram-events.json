@@ -15,12 +15,14 @@
 	"kriptomat-bejelentes",
 	"kriptomat-felfuggesztes",
 	"moonpay-nem-tamogatott",
+	"nebeus-magyarorszag-korlatozva",
 	"revolut-befagyasztas",
 	"revolut-bejelentes",
 	"revolut-kivonulas",
 	"revolut-korlatozas-kezdete",
 	"strike-bejelentes",
 	"strike-kivonulas",
+	"swissborg-magyarorszag-eltavolitva",
 	"sztfh-elso-validator",
 	"sztfh-rendelet-12-2025-kihirdetes",
 	"sztfh-rendelet-alkalmazas-kezdete",
@@ -34,5 +36,6 @@
 	"t-11922-kihirdetes",
 	"t-11922-koztarsasagi-elnok-alairas",
 	"t-11922-szavazas",
+	"uphold-uj-fiokok-korlatozva",
 	"vsbz-indulas"
 ]

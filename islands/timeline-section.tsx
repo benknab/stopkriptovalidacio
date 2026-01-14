@@ -34,7 +34,7 @@ function TimelineSource({ source, lang }: { source: Source; lang: SupportedLangu
 
 type DotSize = "sm" | "md";
 
-const dotColorClasses: Record<EventType, string> = {
+const dotColorClasses: Partial<Record<EventType, string>> = {
 	primary: "bg-primary border-primary",
 	secondary: "bg-primary-light border-primary",
 	tertiary: "bg-slate-100 border-slate-400",
@@ -53,7 +53,7 @@ interface TimelineDotProps {
 function TimelineDot({ type, size = "md" }: TimelineDotProps): JSX.Element {
 	return (
 		<div
-			class={`rounded-full border-2 shrink-0 ${dotSizeClasses[size]} ${dotColorClasses[type]}`}
+			class={`rounded-full border-2 shrink-0 ${dotSizeClasses[size]} ${dotColorClasses[type] ?? ""}`}
 		/>
 	);
 }
@@ -65,6 +65,8 @@ function getTitleClassName(type: TimelineEvent["type"]): string {
 		case "secondary":
 			return "text-slate-800";
 		case "tertiary":
+			return "text-slate-700";
+		default:
 			return "text-slate-700";
 	}
 }
@@ -139,6 +141,7 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 
 	const filteredEvents = Object.entries(events)
 		.filter(([, event]) => {
+			if (event.type === "telegram") return false;
 			if (event.type === "primary") return true;
 			if (event.type === "secondary") return showSecondary.value;
 			if (event.type === "tertiary") return showTertiary.value;
