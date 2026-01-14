@@ -91,6 +91,11 @@ export const exchanges = {
 		status: "restricted",
 		leaveDate: new Date("2026-01-02"),
 	},
+	uphold: {
+		name: "Uphold",
+		status: "restricted",
+		leaveDate: new Date("2025-08-13"),
+	},
 	gemini: {
 		name: "Gemini",
 		status: "uncertain",

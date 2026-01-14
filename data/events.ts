@@ -448,6 +448,22 @@ export const events: TimelineEvents = {
 		]),
 		exchangeSlugs: new Set(["bitstamp"]),
 	},
+	// Date found via Wayback Machine: Hungary not on list on 2025-07-20, on list on 2025-08-26
+	// with "Last updated 13 days ago" → ~2025-08-13
+	"uphold-uj-fiokok-korlatozva": {
+		date: new Date("2025-08-13"),
+		type: "secondary",
+		title: {
+			hu: "Uphold nem fogad új magyar ügyfeleket",
+			en: "Uphold stops accepting new Hungarian customers",
+		},
+		summary: {
+			hu: "Az Uphold felvette Magyarországot azon országok listájára, ahol nem nyithatók új fiókok. A meglévő ügyfelek korlátozott hozzáféréssel továbbra is használhatják a szolgáltatást.",
+			en: "Uphold added Hungary to its list of countries where new accounts cannot be opened. Existing customers may continue using the service with limited access.",
+		},
+		sourceSlugs: new Set(["uphold-non-supported-jurisdictions"]),
+		exchangeSlugs: new Set(["uphold"]),
+	},
 	"kriptomat-bejelentes": {
 		date: new Date("2025-12-22"),
 		type: "tertiary",

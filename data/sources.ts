@@ -635,6 +635,19 @@ Questions:
 5. Has the government examined losses caused by exchange rate changes or forced sales?`,
 		},
 	},
+	"uphold-non-supported-jurisdictions": {
+		title: {
+			hu: "Uphold nem támogatott országok",
+			en: "Uphold Non-Supported Jurisdictions",
+		},
+		originalUrl: "https://support.uphold.com/hc/en-us/articles/360026786712-Non-Supported-Jurisdictions",
+		archivedUrl:
+			"https://web.archive.org/web/20250826112328/https://support.uphold.com/hc/en-us/articles/360026786712-Non-Supported-Jurisdictions",
+		summary: {
+			hu: 'Az Uphold hivatalos listája a nem támogatott és korlátozott országokról. Magyarország a "nem tudunk új fiókokat nyitni" kategóriában szerepel.',
+			en: 'Uphold\'s official list of non-supported and restricted jurisdictions. Hungary is listed in the "unable to offer new accounts" category.',
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
