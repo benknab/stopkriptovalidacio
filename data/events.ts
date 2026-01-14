@@ -464,6 +464,22 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["uphold-non-supported-jurisdictions"]),
 		exchangeSlugs: new Set(["uphold"]),
 	},
+	// Date found via Wayback Machine: Hungary on list on 2025-06-18, not on list on 2025-09-10
+	// No intermediate snapshots available. Using 2025-09-10 as the earliest confirmed date.
+	"swissborg-magyarorszag-eltavolitva": {
+		date: new Date("2025-09-10"),
+		type: "secondary",
+		title: {
+			hu: "SwissBorg már nem támogatja Magyarországot",
+			en: "SwissBorg no longer supports Hungary",
+		},
+		summary: {
+			hu: "A SwissBorg eltávolította Magyarországot a támogatott országok listájáról. A szolgáltatás új és meglévő magyar ügyfelek számára egyaránt megszűnt.",
+			en: "SwissBorg removed Hungary from its list of supported countries. The service is no longer available for new or existing Hungarian customers.",
+		},
+		sourceSlugs: new Set(["swissborg-supported-countries"]),
+		exchangeSlugs: new Set(["swissborg"]),
+	},
 	"kriptomat-bejelentes": {
 		date: new Date("2025-12-22"),
 		type: "tertiary",

@@ -96,6 +96,11 @@ export const exchanges = {
 		status: "restricted",
 		leaveDate: new Date("2025-08-13"),
 	},
+	swissborg: {
+		name: "SwissBorg",
+		status: "restricted",
+		leaveDate: new Date("2025-09-10"),
+	},
 	gemini: {
 		name: "Gemini",
 		status: "uncertain",

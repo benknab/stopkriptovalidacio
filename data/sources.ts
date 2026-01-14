@@ -648,6 +648,18 @@ Questions:
 			en: 'Uphold\'s official list of non-supported and restricted jurisdictions. Hungary is listed in the "unable to offer new accounts" category.',
 		},
 	},
+	"swissborg-supported-countries": {
+		title: {
+			hu: "SwissBorg támogatott országok",
+			en: "SwissBorg Supported Countries",
+		},
+		originalUrl: "https://swissborg.com/supported-countries",
+		archivedUrl: "https://web.archive.org/web/20250618122859/https://swissborg.com/supported-countries",
+		summary: {
+			hu: "A SwissBorg hivatalos listája a támogatott országokról. Magyarország 2025 nyarán került le a listáról.",
+			en: "SwissBorg's official list of supported countries. Hungary was removed from the list in summer 2025.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
