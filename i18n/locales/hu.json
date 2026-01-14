@@ -170,6 +170,9 @@
 		"mrcoin": { "summary": "Státusz bizonytalan." },
 		"nexo": { "summary": "Státusz bizonytalan." },
 		"moonpay": { "summary": "Magyarország a nem támogatott országok listáján." },
+		"uphold": { "summary": "Új fiók létrehozása nem lehetséges." },
+		"swissborg": { "summary": "Szolgáltatás megszűnt." },
+		"nebeus": { "summary": "Új regisztráció nem engedélyezett." },
 		"gemini": { "summary": "Státusz bizonytalan." },
 		"kucoin": { "summary": "Státusz bizonytalan." }
 	},

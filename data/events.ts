@@ -570,11 +570,11 @@ export const events: TimelineEvents = {
 		date: new Date("2026-01-07"),
 		type: "secondary",
 		title: {
-			hu: "Nebeus korlátozza Magyarországot",
-			en: "Nebeus restricts Hungary",
+			hu: "Nebeus nem fogad új magyar ügyfeleket",
+			en: "Nebeus stops accepting new Hungarian customers",
 		},
 		summary: {
-			hu: "A Nebeus felvette Magyarországot a korlátozott országok listájára. Magyar felhasználók nem hozhatnak létre új fiókot a platformon.",
+			hu: "Magyarország felkerült a Nebeus korlátozott országainak listájára. Új fiók létrehozása nem engedélyezett magyar felhasználók számára.",
 			en: "Nebeus added Hungary to its list of restricted countries. Hungarian users cannot create new accounts on the platform.",
 		},
 		sourceSlugs: new Set(["nebeus-restricted-countries"]),

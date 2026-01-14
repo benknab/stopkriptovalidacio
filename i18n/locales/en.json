@@ -170,6 +170,9 @@
 		"mrcoin": { "summary": "Status uncertain." },
 		"nexo": { "summary": "Status uncertain." },
 		"moonpay": { "summary": "Hungary is listed as an unsupported country." },
+		"uphold": { "summary": "New account creation not available." },
+		"swissborg": { "summary": "Service discontinued." },
+		"nebeus": { "summary": "New registration not allowed." },
 		"gemini": { "summary": "Status uncertain." },
 		"kucoin": { "summary": "Status uncertain." }
 	},

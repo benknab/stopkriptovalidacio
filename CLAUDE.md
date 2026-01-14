@@ -116,3 +116,5 @@ When writing summaries, event descriptions, or any user-facing content:
 - Never run `deno task dev` unprompted - let the developer verify manually
 - Only run `deno task dev` if the developer explicitly asks
 - Never offer to commit changes unless explicitly asked - let the developer decide when to commit
+- When adding new content that requires i18n (exchanges, events, etc.), verify corresponding entries exist in both
+  `i18n/locales/hu.json` and `i18n/locales/en.json`
