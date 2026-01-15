@@ -605,7 +605,7 @@ export const events: TimelineEvents = {
 	},
 	"k-13436-benyujtva": {
 		date: new Date("2026-01-13"),
-		type: "secondary",
+		type: "tertiary",
 		title: {
 			hu: "Írásbeli kérdés a miniszterelnökhöz a kriptoeszköz-szabályozásról (Mi Hazánk)",
 			en: "Written question to the Prime Minister about crypto-asset regulation (Mi Hazánk)",
