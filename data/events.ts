@@ -589,18 +589,46 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["nebeus-restricted-countries"]),
 		exchangeSlugs: new Set(["nebeus"]),
 	},
+	"k-13426-benyujtva": {
+		date: new Date("2026-01-12T13:43:00"),
+		type: "tertiary",
+		title: {
+			hu: "Írásbeli kérdés a miniszterelnökhöz a kriptoeszköz-szabályozásról (DK)",
+			en: "Written question to the Prime Minister about crypto-asset regulation (DK)",
+		},
+		summary: {
+			hu: "Varju László (DK) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés 8 pontban vizsgálja a validáló szolgáltatói rendszer problémáit, beleértve a végrehajtási moratórium lehetőségét, a versenyjogi aggályokat, és a nemzetbiztonsági kockázatokat.",
+			en: "László Varju (DK) submitted a written question to Prime Minister Viktor Orbán. The question examines in 8 points the problems of the validation service provider system, including the possibility of an implementation moratorium, competition law concerns, and national security risks.",
+		},
+		sourceSlugs: new Set(["parlament-k-13426", "parlament-k-13426-oldal"]),
+		exchangeSlugs: new Set(),
+	},
 	"k-13436-benyujtva": {
 		date: new Date("2026-01-13"),
 		type: "secondary",
 		title: {
-			hu: "Írásbeli kérdés a miniszterelnökhöz a kriptoeszköz-szabályozásról",
-			en: "Written question to the Prime Minister about crypto-asset regulation",
+			hu: "Írásbeli kérdés a miniszterelnökhöz a kriptoeszköz-szabályozásról (Mi Hazánk)",
+			en: "Written question to the Prime Minister about crypto-asset regulation (Mi Hazánk)",
 		},
 		summary: {
 			hu: "Szabadi István (Mi Hazánk) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés 5 pontban firtatja a kriptoeszköz-szabályozás következményeit, beleértve a végrehajtási moratórium lehetőségét, a validátor hiányából eredő jogbizonytalanságot, és a MiCA-engedéllyel rendelkező szolgáltatók kizárását.",
 			en: "István Szabadi (Our Homeland Movement) submitted a written question to Prime Minister Viktor Orbán. The question addresses 5 points about the consequences of crypto-asset regulation, including the possibility of an implementation moratorium, legal uncertainty from validator shortage, and exclusion of MiCA-licensed providers.",
 		},
-		sourceSlugs: new Set(["parlament-k-13436"]),
+		sourceSlugs: new Set(["parlament-k-13436", "parlament-k-13436-oldal"]),
+		exchangeSlugs: new Set(),
+	},
+	"k-13444-benyujtva": {
+		date: new Date("2026-01-15T14:58:00"),
+		type: "tertiary",
+		title: {
+			hu: "Írásbeli kérdés a miniszterelnökhöz a kriptoeszköz-szabályozásról (Momentum)",
+			en: "Written question to the Prime Minister about crypto-asset regulation (Momentum)",
+		},
+		summary: {
+			hu: "Gelencsér Ferenc (Momentum) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés a végrehajtási moratórium bevezetésének lehetőségét firtatja, amíg több validáló szolgáltató nem áll rendelkezésre és az SZTFH nem tesz közzé gyakorlati útmutatót.",
+			en: "Ferenc Gelencsér (Momentum) submitted a written question to Prime Minister Viktor Orbán. The question asks about introducing an implementation moratorium until more validation service providers become available and SZTFH publishes practical guidance.",
+		},
+		sourceSlugs: new Set(["parlament-k-13444", "parlament-k-13444-oldal"]),
 		exchangeSlugs: new Set(),
 	},
 	"frissites-2026-01-14": {

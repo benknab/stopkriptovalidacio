@@ -635,6 +635,108 @@ Questions:
 5. Has the government examined losses caused by exchange rate changes or forced sales?`,
 		},
 	},
+	"parlament-k-13436-oldal": {
+		title: {
+			hu: "K/13436 Iromány adatai (Parlament.hu)",
+			en: "K/13436 Document Details (Parlament.hu)",
+		},
+		originalUrl:
+			"https://www.parlament.hu/web/guest/iromanyok-lekerdezese?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=b4UOp1AR&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D42%26p_izon%3D13436",
+		summary: {
+			hu: "Szabadi István (Mi Hazánk) K/13436 számú írásbeli kérdésének iromány adatai a Parlament.hu oldalon. A kérdés állapotának és válaszának nyomon követésére szolgáló oldal.",
+			en: "Document details for István Szabadi's (Our Homeland Movement) written question K/13436 on Parlament.hu. Page for tracking the status and response to the question.",
+		},
+	},
+	"parlament-k-13444": {
+		title: {
+			hu: "K/13444 Írásbeli kérdés (PDF)",
+			en: "K/13444 Written Question (PDF)",
+		},
+		originalUrl: "https://www.parlament.hu/irom42/13444/13444.pdf",
+		summary: {
+			hu: "Gelencsér Ferenc (Momentum) írásbeli kérdése Orbán Viktor miniszterelnökhöz a kriptoeszköz-szabályozásról. A kérdés a végrehajtási moratórium bevezetésének lehetőségét firtatja.",
+			en: "Written question from Ferenc Gelencsér (Momentum) to Prime Minister Viktor Orbán about crypto-asset regulation. The question asks about the possibility of introducing an implementation moratorium.",
+		},
+		text: {
+			hu: `Írásbeli választ igénylő kérdés címe: "Mi a valóság a kriptovaluták ügyében?"
+
+A kriptoeszközökre vonatkozó új szabályozás, melyet a 2025. évi LXVII. törvény vezetett be, és 2025 júliusában lépett hatályba, a becslések szerint 500 000 magyar állampolgárt érint, és jelenleg az állampolgároknak nincs lehetőségük a törvénynek való megfelelésre. A Szabályozott Tevékenységek Felügyeleti Hatóságának (SZTFH) vonatkozó rendelete 2025. december 29-től alkalmazandó.
+
+A jogszabályok által rögzített „validáló szolgáltató" fogalma kizárólag magyar sajátosság - sem az uniós MiCA-rendelet, sem a nemzetközi kriptoszektor nem ismeri. Jelenleg egyetlen validáló szolgáltató szerepel az SZTFH nyilvántartásában - egy újonnan alapított, a szakmában ismeretlen, minimális kapacitású cég. A szabályozás hatálybalépése óta több jelentős, uniós engedéllyel rendelkező szolgáltató hagyta el a magyar piacot. A törvény büntetőjogi következményeket fűz olyan tevékenységekhez, amelyek pontos tartalma nincs tisztázva.
+
+Kérdés: Tervezi-e a Kormány kormányrendelet kiadását a 2025. évi LXVII. törvény kriptoeszközökre vonatkozó rendelkezéseinek végrehajtási moratóriumáról, amíg legalább több validáló szolgáltató nem áll rendelkezésre a piacon, és amíg az SZTFH nyilvános, gyakorlati útmutatót nem tesz közzé a validálás pontos eljárásáról?`,
+			en: `Title of written question: "What is the reality regarding cryptocurrencies?"
+
+The new regulation on crypto-assets, introduced by Act LXVII of 2025 and effective from July 2025, affects an estimated 500,000 Hungarian citizens who currently have no means of complying with the law. The relevant regulation of the Regulated Activities Supervisory Authority (SZTFH) is applicable from December 29, 2025.
+
+The concept of "validation service provider" established by law is uniquely Hungarian - neither the EU MiCA regulation nor the international crypto sector recognizes it. Currently only one validation service provider is registered with SZTFH - a newly founded company unknown in the industry with minimal capacity. Since the regulation came into effect, several major EU-licensed providers have left the Hungarian market. The law attaches criminal consequences to activities whose exact content has not been clarified.
+
+Question: Does the Government plan to issue a government decree on an implementation moratorium for the crypto-asset provisions of Act LXVII of 2025, until at least more validation service providers become available on the market, and until SZTFH publishes public, practical guidance on the exact validation procedure?`,
+		},
+	},
+	"parlament-k-13444-oldal": {
+		title: {
+			hu: "K/13444 Iromány adatai (Parlament.hu)",
+			en: "K/13444 Document Details (Parlament.hu)",
+		},
+		originalUrl:
+			"https://www.parlament.hu/web/guest/iromanyok-lekerdezese?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=b4UOp1AR&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D42%26p_izon%3D13444",
+		summary: {
+			hu: "Gelencsér Ferenc (Momentum) K/13444 számú írásbeli kérdésének iromány adatai a Parlament.hu oldalon. A kérdés állapotának és válaszának nyomon követésére szolgáló oldal.",
+			en: "Document details for Ferenc Gelencsér's (Momentum) written question K/13444 on Parlament.hu. Page for tracking the status and response to the question.",
+		},
+	},
+	"parlament-k-13426": {
+		title: {
+			hu: "K/13426 Írásbeli kérdés (PDF)",
+			en: "K/13426 Written Question (PDF)",
+		},
+		originalUrl: "https://www.parlament.hu/irom42/13426/13426.pdf",
+		summary: {
+			hu: "Varju László (DK) írásbeli kérdése Orbán Viktor miniszterelnökhöz a kriptoeszköz-szabályozásról. A kérdés 8 pontban vizsgálja a validáló szolgáltatói rendszer problémáit, beleértve a versenyjogi és nemzetbiztonsági aggályokat.",
+			en: "Written question from László Varju (DK) to Prime Minister Viktor Orbán about crypto-asset regulation. The question examines in 8 points the problems of the validation service provider system, including competition law and national security concerns.",
+		},
+		text: {
+			hu: `Írásbeli választ igénylő kérdés címe: "Biztosított-e a kriptoeszközök átváltásának jogszerű és folyamatos végrehajtása, valamint a tisztességes verseny a 2025. évi LXVII. törvény alkalmazásában, különös tekintettel a validáló szolgáltatókra vonatkozó problémák tükrében?"
+
+A szabályozás becslések szerint mintegy 500 000 magyar állampolgárt érint, ugyanakkor a jogkövető magatartás gyakorlati feltételei jelenleg nem biztosítottak. Az SZTFH nyilvántartása szerint jelenleg mindössze egyetlen, rövid ideje alapított, korlátozott kapacitású szolgáltató rendelkezik engedéllyel, miközben több, uniós engedéllyel működő jelentős piaci szereplő elhagyta a magyar piacot.
+
+Kérdések:
+1. Tervezi-e a Kormány végrehajtási moratórium bevezetését?
+2. Mikor tesz közzé az SZTFH részletes, gyakorlati útmutatót?
+3. Tervez-e az SZTFH átmeneti iránymutatást kiadni?
+4. Milyen intézkedéseket tervez a Kormány a validáló szolgáltatók körének bővítésére?
+5. Hogyan biztosítja a Kormány, hogy ne alakuljon ki kvázi-monopólium?
+6. Vizsgálta-e a Gazdasági Versenyhivatal a rendszert?
+7. Milyen kapacitásvizsgálatot végzett az SZTFH?
+8. Vizsgálták-e a nemzetbiztonsági kockázatokat?`,
+			en: `Title of written question: "Is the lawful and continuous execution of crypto-asset exchange and fair competition ensured in the application of Act LXVII of 2025, particularly in light of the problems regarding validation service providers?"
+
+The regulation affects an estimated 500,000 Hungarian citizens, while the practical conditions for lawful conduct are currently not ensured. According to SZTFH's registry, currently only one recently founded provider with limited capacity holds a license, while several major EU-licensed market players have left the Hungarian market.
+
+Questions:
+1. Does the Government plan to introduce an implementation moratorium?
+2. When will SZTFH publish detailed, practical guidance?
+3. Does SZTFH plan to issue transitional guidance?
+4. What measures does the Government plan to expand the pool of validation service providers?
+5. How will the Government ensure no quasi-monopoly develops?
+6. Has the Hungarian Competition Authority examined the system?
+7. What capacity assessment did SZTFH conduct?
+8. Were national security risks examined?`,
+		},
+	},
+	"parlament-k-13426-oldal": {
+		title: {
+			hu: "K/13426 Iromány adatai (Parlament.hu)",
+			en: "K/13426 Document Details (Parlament.hu)",
+		},
+		originalUrl:
+			"https://www.parlament.hu/web/guest/iromanyok-lekerdezese?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=b4UOp1AR&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D42%26p_izon%3D13426",
+		summary: {
+			hu: "Varju László (DK) K/13426 számú írásbeli kérdésének iromány adatai a Parlament.hu oldalon. A kérdés állapotának és válaszának nyomon követésére szolgáló oldal.",
+			en: "Document details for László Varju's (DK) written question K/13426 on Parlament.hu. Page for tracking the status and response to the question.",
+		},
+	},
 	"uphold-non-supported-jurisdictions": {
 		title: {
 			hu: "Uphold nem támogatott országok",
