@@ -645,4 +645,18 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(),
 		exchangeSlugs: new Set(["uphold", "swissborg", "nebeus"]),
 	},
+	"k-13448-benyujtva": {
+		date: new Date("2026-01-16T12:53:00"),
+		type: "tertiary",
+		title: {
+			hu: "Írásbeli kérdés a nemzetgazdasági miniszterhez a kriptoeszköz-validálásról (Párbeszéd)",
+			en: "Written question to the Minister of National Economy about crypto-asset validation (Dialogue)",
+		},
+		summary: {
+			hu: "Tordai Bence (Párbeszéd) írásbeli kérdést nyújtott be Nagy Márton István nemzetgazdasági miniszterhez. A kérdés a végrehajtási moratórium bevezetésének lehetőségét firtatja, valamint rákérdez, miért szükséges a magyar validátor, ha a MiCA-reguláció már kötelezi a centralizált tőzsdéket hasonló ellenőrzésekre.",
+			en: "Bence Tordai (Dialogue) submitted a written question to Minister of National Economy Márton István Nagy. The question asks about introducing an implementation moratorium, and questions why Hungarian validators are necessary when MiCA regulation already requires centralized exchanges to perform similar checks.",
+		},
+		sourceSlugs: new Set(["parlament-k-13448", "parlament-k-13448-oldal"]),
+		exchangeSlugs: new Set(),
+	},
 };

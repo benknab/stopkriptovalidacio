@@ -773,6 +773,45 @@ Questions:
 			en: "Nebeus's official list of restricted countries. Hungary is on the list where Nebeus account creation is not allowed.",
 		},
 	},
+	"parlament-k-13448": {
+		title: {
+			hu: "K/13448 Írásbeli kérdés (PDF)",
+			en: "K/13448 Written Question (PDF)",
+		},
+		originalUrl: "https://www.parlament.hu/irom42/13448/13448.pdf",
+		summary: {
+			hu: "Tordai Bence (Párbeszéd) írásbeli kérdése Nagy Márton István nemzetgazdasági miniszterhez a kriptoeszköz-validálásról. A kérdés a végrehajtási moratórium bevezetésének lehetőségét és a magyar validátor szükségességét firtatja a MiCA-szabályozás tükrében.",
+			en: "Written question from Bence Tordai (Dialogue) to Minister of National Economy Márton István Nagy about crypto-asset validation. The question asks about introducing an implementation moratorium and the necessity of Hungarian validators in light of MiCA regulation.",
+		},
+		text: {
+			hu: `Írásbeli választ igénylő kérdés címe: "Terveznek moratóriumot elrendelni a kriptoeszközök validálására vonatkozóan, tekintettel a gyakorlati tapasztalatokra?"
+
+A 2025. évi LXVII. törvény a kriptoeszközök szabályozásáról 2025 júliusában lépett hatályba, azonban az SZTFH-rendeletet 2025. októberében adták ki. Tekintettel arra, hogy a „validáló szolgáltató" fogalma kizárólag magyar sajátosság, és jelenleg csak egy, a szakmában ismeretlen, minimális kapacitású cég szerepel a nyilvántartásban, a törvénynek való megfelelés jelenleg gyakorlatilag lehetetlen.
+
+Kérdések:
+1. Tervezik kormányrendelet kiadását a végrehajtási moratóriumról, amíg több validáló szolgáltató nem áll rendelkezésre a piacon, és amíg az SZTFH nem tesz közzé gyakorlati útmutatót a validáló szolgáltatás pontos menetéről?
+2. Miért van szükség a magyar validáló szolgáltatóra, miközben a MiCA-reguláció a centralizált tőzsdéket is kötelezi a validáló által végzett ellenőrzés elvégzésére?`,
+			en: `Title of written question: "Are you planning to order a moratorium on crypto-asset validation, given the practical experiences?"
+
+Act LXVII of 2025 on crypto-asset regulation came into effect in July 2025, but the SZTFH regulation was issued in October 2025. Given that the concept of "validation service provider" is uniquely Hungarian, and currently only one company unknown in the industry with minimal capacity is registered, compliance with the law is practically impossible.
+
+Questions:
+1. Is the government planning to issue a government decree on an implementation moratorium until more validation service providers become available on the market, and until SZTFH publishes practical guidance on the exact validation procedure?
+2. Why is a Hungarian validation service provider necessary when MiCA regulation also requires centralized exchanges to perform the same checks that validators would perform?`,
+		},
+	},
+	"parlament-k-13448-oldal": {
+		title: {
+			hu: "K/13448 Iromány adatai (Parlament.hu)",
+			en: "K/13448 Document Details (Parlament.hu)",
+		},
+		originalUrl:
+			"https://www.parlament.hu/web/guest/iromanyok-lekerdezese?p_p_id=hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8&p_p_lifecycle=1&p_p_state=normal&p_p_mode=view&p_auth=IHukihld&_hu_parlament_cms_pair_portlet_PairProxy_INSTANCE_9xd2Wc9jP4z8_pairAction=%2Finternet%2Fcplsql%2Fogy_irom.irom_adat%3Fp_ckl%3D42%26p_izon%3D13448",
+		summary: {
+			hu: "Tordai Bence (Párbeszéd) K/13448 számú írásbeli kérdésének iromány adatai a Parlament.hu oldalon. A kérdés állapotának és válaszának nyomon követésére szolgáló oldal.",
+			en: "Document details for Bence Tordai's (Dialogue) written question K/13448 on Parlament.hu. Page for tracking the status and response to the question.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
