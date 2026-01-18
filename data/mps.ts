@@ -1388,7 +1388,7 @@ export const mps = {
 		name: "Dr. Oláh Lajos",
 		party: "DK",
 		vote: "no",
-		emails: new Set(["olahlajos@olahlajos.hu", "lajos.olah@parlament.hu"]),
+		emails: new Set(["lajos.olah@parlament.hu"]),
 		phones: new Set(["36307091102"]),
 		imageUrl: "https://www.parlament.hu/kepv/kepek/o007.jpg",
 		district: "Budapest 5. OEVK",
