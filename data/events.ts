@@ -661,7 +661,7 @@ export const events: TimelineEvents = {
 	},
 	"eu-kotelezettszeges-eljaras": {
 		date: new Date("2026-01-30"),
-		type: "primary",
+		type: "secondary",
 		title: {
 			hu: "Európai Bizottság kötelezettségszegési eljárást indít Magyarország ellen",
 			en: "European Commission opens infringement procedure against Hungary",
