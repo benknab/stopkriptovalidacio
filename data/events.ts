@@ -659,4 +659,18 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["parlament-k-13448", "parlament-k-13448-oldal"]),
 		exchangeSlugs: new Set(),
 	},
+	"eu-kotelezettszeges-eljaras": {
+		date: new Date("2026-01-30"),
+		type: "primary",
+		title: {
+			hu: "Európai Bizottság kötelezettségszegési eljárást indít Magyarország ellen",
+			en: "European Commission opens infringement procedure against Hungary",
+		},
+		summary: {
+			hu: 'Az Európai Bizottság kötelezettségszegési eljárást indított Magyarország ellen (INFR(2025)2174), mert a 2025. évi LXVII. törvény nem teljesíti maradéktalanul a MiCA-rendeletet. <b>A Bizottság szerint az új „kriptoeszköz-átváltást validáló szolgáltatásokra" vonatkozó engedélyezési rendszer büntetőjogi felelősséggel nem összeegyeztethető a MiCA-val.</b> A Bizottság megjegyezte, hogy a szabályozás miatt kriptoeszköz-szolgáltatók felfüggesztették szolgáltatásaikat, ami károsította az ügyfeleket és jogbizonytalanságot teremtett. Magyarországnak két hónapja van válaszolni.',
+			en: "The European Commission has opened an infringement procedure against Hungary (INFR(2025)2174), as Act LXVII of 2025 fails to fully comply with MiCA regulation. <b>According to the Commission, the new authorisation regime for 'exchange validation services' with criminal liability is incompatible with MiCA.</b> The Commission noted that the regulation has led crypto-asset service providers to suspend services, prejudicing clients and creating legal uncertainty. Hungary has two months to respond.",
+		},
+		sourceSlugs: new Set(["ec-inf-26-115", "telex-eu-kotelezettszeges-eljaras-2026-01-30"]),
+		exchangeSlugs: new Set(),
+	},
 };

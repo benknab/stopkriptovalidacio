@@ -812,6 +812,46 @@ Questions:
 			en: "Document details for Bence Tordai's (Dialogue) written question K/13448 on Parlament.hu. Page for tracking the status and response to the question.",
 		},
 	},
+	"ec-inf-26-115": {
+		title: {
+			hu: "Európai Bizottság - Kötelezettségszegési eljárások (2026. január)",
+			en: "European Commission - Infringement Decisions (January 2026)",
+		},
+		originalUrl: "https://ec.europa.eu/commission/presscorner/detail/en/inf_26_115",
+		summary: {
+			hu: "Az Európai Bizottság döntése kötelezettségszegési eljárás megindításáról Magyarország ellen (INFR(2025)2174). Magyarország nem teljesíti maradéktalanul a kriptoeszközök piacairól szóló (EU) 2023/1114 rendeletet (MiCA) a 2025. évi LXVII. törvénnyel módosított 2024. évi VII. törvény elfogadását követően.",
+			en: "European Commission decision to open infringement procedure against Hungary (INFR(2025)2174). Hungary fails to fully comply with Regulation (EU) 2023/1114 on markets in crypto-assets (MiCA) following the adoption of Act LXVII of 2025 amending the Hungarian Crypto Act (Act VII of 2024).",
+		},
+		text: {
+			hu: `A Bizottság felszólítja Magyarországot a kriptoeszközök piacairól szóló rendelet (MiCA) betartására
+
+Az Európai Bizottság kötelezettségszegési eljárás megindításáról döntött, felszólító levelet küldve Magyarországnak (INFR(2025)2174), mivel az ország nem teljesíti maradéktalanul a kriptoeszközök piacairól szóló (EU) 2023/1114 rendeletet (MiCA) a 2025. évi LXVII. törvény elfogadását követően, amely módosította a magyar kriptotörvényt (2024. évi VII. törvény).
+
+A MiCA az EU digitális pénzügyi stratégiájának kulcsfontosságú eleme, amely egységes és közvetlenül alkalmazandó keretrendszert hoz létre a jogbiztonság, a fogyasztó- és befektetővédelem, a pénzügyi stabilitás és a kriptoeszközök egységes piacának zavartalan működése érdekében.
+
+A 2025-ös magyar törvénymódosítás új engedélyezési rendszert vezet be az „átváltást validáló szolgáltatásokra" büntetőjogi felelősséggel, amit a MiCA nem ír elő. Ez a jelentések szerint arra késztette egyes kriptoeszköz-szolgáltatókat, hogy felfüggesszék vagy megszüntessék bizonyos szolgáltatásaikat, ami károsította az ügyfeleket és jogbizonytalanságot teremtett.
+
+Bár Magyarország célja a pénzmosás elleni (AML/CFT) biztosítékok erősítése, az ilyen intézkedéseknek összhangban kell maradniuk a MiCA-val. A Bizottság ezért felszólító levelet küld Magyarországnak, amelynek most két hónapja van válaszolni és kezelni a Bizottság aggályait. Kielégítő válasz hiányában a Bizottság dönthet indokolással ellátott vélemény kibocsátásáról.`,
+			en: `Commission calls on Hungary to comply with the Markets in Crypto-assets Regulation (MiCA)
+
+The European Commission has decided to open an infringement procedure by sending a letter of formal notice to Hungary (INFR(2025)2174) for failing to fully comply with Regulation (EU) 2023/1114 on markets in crypto-assets (MiCA) following the adoption of Act LXVII of 2025, amending the Hungarian Crypto Act (Act VII of 2024).
+
+MiCA is a key element of the EU's Digital Finance strategy, establishing a uniform and directly applicable framework to ensure legal certainty, consumer and investor protection, financial stability, and the smooth functioning of the single market for crypto-assets.
+
+The 2025 amendment of Hungarian law introduces a new authorisation regime for 'exchange validation services' with criminal liability, which is not provided under MiCA. This has reportedly led some crypto-asset service providers to suspend or discontinue certain services, prejudicing clients and creating legal uncertainty.
+
+While Hungary aims to strengthen anti money laundering (AML/CFT) safeguards, such measures must remain compatible with MiCA. The Commission is therefore sending a letter of formal notice to Hungary, which now has two months to respond and address the Commission's concerns. In the absence of a satisfactory response, the Commission may decide to issue a reasoned opinion.`,
+		},
+	},
+	"telex-eu-kotelezettszeges-eljaras-2026-01-30": {
+		title: { hu: "Telex", en: "Telex" },
+		originalUrl:
+			"https://telex.hu/gazdasag/2026/01/30/eu-europai-bizottsag-kotelezettsegszegesi-eljarasok-januar-kripto-energia-charta",
+		summary: {
+			hu: 'Az Európai Bizottság kötelezettségszegési eljárást indított a magyar kormányzat ellen, mert a hazai kriptotörvény tavalyi módosítása gyanú szerint uniós rendeletet sért. A 2025-ös módosítás „kriptoeszköz-átváltást validáló szolgáltatásokra" vezet be új engedélyezési rendszert büntetőjogi felelősséggel.',
+			en: "The European Commission has opened an infringement procedure against the Hungarian government, as the 2025 amendment to the domestic crypto law allegedly violates EU regulation. The 2025 amendment introduces a new authorisation regime for 'exchange validation services' with criminal liability.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
