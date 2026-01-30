@@ -659,9 +659,30 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["parlament-k-13448", "parlament-k-13448-oldal"]),
 		exchangeSlugs: new Set(),
 	},
+	"kormany-valaszok-irasbeli-kerdesekre": {
+		date: new Date("2026-01-30"),
+		type: "primary",
+		title: {
+			hu: 'Kormány válaszai az írásbeli kérdésekre: a validálás részletei „üzleti titok"',
+			en: "Government responses to written questions: validation details are 'business secrets'",
+		},
+		summary: {
+			hu: 'A Nemzetgazdasági Minisztérium államtitkára azonos szövegű választ adott három ellenzéki párt (DK, Mi Hazánk, Momentum) írásbeli kérdéseire. <b>A válasz szerint a validálás részletei „üzleti titok" részét képezik, a „speciális jelleg" miatt nem merül fel erőfölénnyel való visszaélés, és a büntetőjogi rendelkezések csak a szándékos visszaéléseket célozzák.</b> A moratóriumra, kapacitáshiányra, versenyjogi és nemzetbiztonsági kérdésekre nem érkezett érdemi válasz.',
+			en: 'The State Secretary of the Ministry of National Economy gave identical responses to written questions from three opposition parties (DK, Our Homeland, Momentum). <b>The response states that validation details constitute "business secrets", the "special nature" means no abuse of dominant position, and criminal provisions only target intentional abuses.</b> No substantive answer was given regarding moratorium, capacity shortage, competition law, or national security concerns.',
+		},
+		sourceSlugs: new Set([
+			"parlament-k-13426-1",
+			"parlament-k-13436-1",
+			"parlament-k-13444-1",
+			"parlament-k-13426",
+			"parlament-k-13436",
+			"parlament-k-13444",
+		]),
+		exchangeSlugs: new Set(),
+	},
 	"eu-kotelezettszeges-eljaras": {
 		date: new Date("2026-01-30"),
-		type: "secondary",
+		type: "primary",
 		title: {
 			hu: "Európai Bizottság kötelezettségszegési eljárást indít Magyarország ellen",
 			en: "European Commission opens infringement procedure against Hungary",

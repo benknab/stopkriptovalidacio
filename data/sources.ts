@@ -852,6 +852,67 @@ While Hungary aims to strengthen anti money laundering (AML/CFT) safeguards, suc
 			en: "The European Commission has opened an infringement procedure against the Hungarian government, as the 2025 amendment to the domestic crypto law allegedly violates EU regulation. The 2025 amendment introduces a new authorisation regime for 'exchange validation services' with criminal liability.",
 		},
 	},
+	"parlament-k-13444-1": {
+		title: {
+			hu: "K/13444/1 Írásbeli válasz (PDF)",
+			en: "K/13444/1 Written Response (PDF)",
+		},
+		originalUrl: "https://www.parlament.hu/irom42/13444/13444-0001.pdf",
+		summary: {
+			hu: "Dr. Fónagy János nemzetgazdasági államtitkár válasza Gelencsér Ferenc (Momentum) K/13444 számú írásbeli kérdésére. A válasz tartalmilag megegyezik a K/13426/1 válasszal: a validálás speciális jellege miatt nem merül fel erőfölénnyel való visszaélés, a büntetőjogi rendelkezések a szándékos visszaéléseket célozzák.",
+			en: "Response from Dr. János Fónagy, State Secretary of the Ministry of National Economy, to Ferenc Gelencsér's (Momentum) written question K/13444. The response is substantively identical to K/13426/1: due to the special nature of validation, there is no issue of abuse of dominant position, and criminal provisions target intentional abuses.",
+		},
+	},
+	"parlament-k-13436-1": {
+		title: {
+			hu: "K/13436/1 Írásbeli válasz (PDF)",
+			en: "K/13436/1 Written Response (PDF)",
+		},
+		originalUrl: "https://www.parlament.hu/irom42/13436/13436-0001.pdf",
+		summary: {
+			hu: "Dr. Fónagy János nemzetgazdasági államtitkár válasza Szabadi István (Mi Hazánk) K/13436 számú írásbeli kérdésére. A válasz tartalmilag megegyezik a K/13426/1 válasszal: a validálás speciális jellege miatt nem merül fel erőfölénnyel való visszaélés, a büntetőjogi rendelkezések a szándékos visszaéléseket célozzák.",
+			en: "Response from Dr. János Fónagy, State Secretary of the Ministry of National Economy, to István Szabadi's (Our Homeland Movement) written question K/13436. The response is substantively identical to K/13426/1: due to the special nature of validation, there is no issue of abuse of dominant position, and criminal provisions target intentional abuses.",
+		},
+	},
+	"parlament-k-13426-1": {
+		title: {
+			hu: "K/13426/1 Írásbeli válasz (PDF)",
+			en: "K/13426/1 Written Response (PDF)",
+		},
+		originalUrl: "https://www.parlament.hu/irom42/13426/13426-0001.pdf",
+		summary: {
+			hu: "Dr. Fónagy János nemzetgazdasági államtitkár válasza Varju László (DK) K/13426 számú írásbeli kérdésére. A válasz szerint a validálás speciális jellegéből fakadóan nem merül fel erőfölénnyel való visszaélés, és a büntetőjogi rendelkezések célja a szabályokat szándékosan megkerülő visszaélések szankcionálása.",
+			en: "Response from Dr. János Fónagy, State Secretary of the Ministry of National Economy, to László Varju's (DK) written question K/13426. The response states that due to the special nature of validation, there is no issue of abuse of dominant position, and criminal provisions aim to sanction deliberate circumvention of rules.",
+		},
+		text: {
+			hu: `Válasz a K/13426 számú írásbeli kérdésre
+Benyújtás dátuma: 2026-01-27
+Benyújtó: Dr. Fónagy János, Nemzetgazdasági Minisztérium államtitkára
+
+A Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló 2025. évi LXVII. törvény módosította a kriptoeszközök piacáról szóló 2024. évi VII. törvényt és kapcsolódó szabályokat alkotott. A Szabályozott Tevékenységek Felügyeleti Hatósága a kriptoeszköz-átváltást validáló szolgáltató engedélyezésének és nyilvántartásának részletes szabályairól pedig 2025. október 27-én adta ki a 10/2025. (X. 27.) számú rendeletét, amelyhez a részletes iránymutatás az SZTFH honlapjáról elérhető.
+
+A kriptoeszköz-átváltást validáló szolgáltatás részletes szabályai, az általános szerződési feltételek, a szolgáltató honlapjáról érhető el: https://assets.caduceus.hu/aszf.pdf
+
+A törvény által beiktatott szabályozás egy speciális tevékenységre, a validálásra terjed ki. A validálási feladat részletes leírása két okból sem tehető meg. Egyrészt többféle technológiai modell lehetséges, valamint ezek eljárási modelljei üzleti titok részét képezik. A jogszabály a tevékenység speciális jellegéből fakadóan a validáló szolgáltató tekintetében nem ír elő többszereplős modellt, mint kötelezettséget. A speciális jelleg okán nem merül fel az erőfölénnyel való visszaélés kérdése sem. A kriptotranzakciók tekintetében nem beszélhetünk adatok koncentrálódásáról, mivel nem minden tranzakció jelenik meg a vizsgálandók között, csak a pénzre (számla vagy készpénz) és a más kriptoeszközre váltás. Ennek mentén a kapacitáskorlát említése is nehezen értelmezhető.
+
+A büntetőjogi rendelkezések jogalkotói célja nem az, hogy a MiCA rendelet szerinti jogszerű szolgáltatásnyújtást kriminalizálják, hanem az, hogy a szabályokat tudatosan megkerülő, szándékos visszaéléseket szankcionálják, különösen azokban a helyzetekben, ahol a pénzmosás vagy terrorizmusfinanszírozás kockázata ténylegesen fennáll.
+
+A bűncselekmény kizárólag szándékosan követhető el, azaz az elkövetési magatartás kizárólag az ágazati szabályok szándékos kijátszásával végrehajtott, nem validált kriptoeszköz-váltás lehet. Tehát nem a jogszerű magatartást folytató, befektetési döntéseket hozó személyek az érintettek.`,
+			en: `Response to written question K/13426
+Submission date: 2026-01-27
+Submitted by: Dr. János Fónagy, State Secretary of the Ministry of National Economy
+
+Act LXVII of 2025 on the amendment of certain laws to improve Hungary's competitiveness amended Act VII of 2024 on the Market in Crypto-assets and established related rules. The Regulated Activities Supervisory Authority issued Regulation 10/2025 (X. 27.) on the detailed rules for licensing and registration of crypto-asset exchange validation service providers on October 27, 2025, with detailed guidance available on the SZTFH website.
+
+The detailed rules and general terms and conditions of the crypto-asset exchange validation service are available on the service provider's website: https://assets.caduceus.hu/aszf.pdf
+
+The regulation introduced by the law covers a special activity: validation. A detailed description of the validation task cannot be provided for two reasons. First, multiple technological models are possible, and their procedural models constitute business secrets. Due to the special nature of the activity, the law does not prescribe a multi-provider model as a requirement for validation service providers. Due to its special nature, there is no question of abuse of dominant position. Regarding crypto transactions, we cannot speak of data concentration, as not all transactions are subject to examination, only exchanges to money (bank account or cash) and other crypto-assets. Following this, the mention of capacity constraints is also difficult to interpret.
+
+The legislative purpose of criminal provisions is not to criminalize lawful service provision under the MiCA regulation, but to sanction deliberate abuses that consciously circumvent the rules, particularly in situations where money laundering or terrorism financing risks actually exist.
+
+The crime can only be committed intentionally, meaning the criminal conduct can only be non-validated crypto-asset exchange executed through deliberate circumvention of sectoral rules. Therefore, those affected are not persons conducting lawful behavior and making investment decisions.`,
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
