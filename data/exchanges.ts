@@ -60,7 +60,7 @@ export const exchanges = {
 	},
 	bitpanda: {
 		name: "Bitpanda",
-		status: "uncertain",
+		status: "operating",
 	},
 	bybit: {
 		name: "Bybit",

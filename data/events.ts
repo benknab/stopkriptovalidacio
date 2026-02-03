@@ -694,4 +694,18 @@ export const events: TimelineEvents = {
 		sourceSlugs: new Set(["ec-inf-26-115", "telex-eu-kotelezettszeges-eljaras-2026-01-30"]),
 		exchangeSlugs: new Set(),
 	},
+	"bitpanda-megfelel": {
+		date: new Date("2026-02-03"),
+		type: "secondary",
+		title: {
+			hu: "Bitpanda az első szabályszerűen működő kriptoeszköz-szolgáltató Magyarországon",
+			en: "Bitpanda becomes first compliant crypto-asset service provider in Hungary",
+		},
+		summary: {
+			hu: "A Bitpanda az első kriptoeszköz-kereskedő, amely a Caduceus Zrt. validátorral kötött szerződéssel teljesíti a hazai előírásokat.",
+			en: "Bitpanda is the first crypto-asset exchange to become officially compliant in Hungary, having signed a contract with the Caduceus Zrt. validator.",
+		},
+		sourceSlugs: new Set(["telex-kripto-validacio-2026-02-03", "caduceus-partners"]),
+		exchangeSlugs: new Set(["bitpanda"]),
+	},
 };

@@ -913,6 +913,26 @@ The legislative purpose of criminal provisions is not to criminalize lawful serv
 The crime can only be committed intentionally, meaning the criminal conduct can only be non-validated crypto-asset exchange executed through deliberate circumvention of sectoral rules. Therefore, those affected are not persons conducting lawful behavior and making investment decisions.`,
 		},
 	},
+	"telex-kripto-validacio-2026-02-03": {
+		title: { hu: "Telex", en: "Telex" },
+		originalUrl:
+			"https://telex.hu/gazdasag/2026/02/03/kripto-bitcoin-revolut-kotelezettsegszeges-unio-szabalyozas-sztfh",
+		summary: {
+			hu: "Átfogó elemzés a magyar kriptoszabályozási válságról. Az Európai Bizottság január 30-án kötelezettségszegési eljárást indított Magyarország ellen. A Caduceus Zrt., az egyetlen engedélyezett validátor, bejelentette első szerződését a Bitpandával. A piaci szereplők az uniós eljárás miatt a szabályozás közeli változására számítanak.",
+			en: "Comprehensive analysis of the Hungarian crypto regulation crisis. The European Commission launched infringement proceedings against Hungary on January 30. Caduceus Zrt., the only licensed validator, announced its first contract with Bitpanda. Market participants expect regulatory changes due to the EU proceedings.",
+		},
+	},
+	"caduceus-partners": {
+		title: {
+			hu: "Caduceus Zrt. partnerek",
+			en: "Caduceus Zrt. Partners",
+		},
+		originalUrl: "https://caduceus.hu/site/partners",
+		summary: {
+			hu: "A Caduceus Zrt. partnerei oldal. A Bitpanda az első kriptoeszköz-kereskedő, amellyel a validátor szerződést kötött.",
+			en: "Caduceus Zrt. partners page. Bitpanda is the first crypto-asset exchange to sign a contract with the validator.",
+		},
+	},
 } as const;
 
 export type SourceSlug = keyof typeof sources;
