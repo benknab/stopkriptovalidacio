@@ -251,5 +251,16 @@
 		"contacts_count": "{{count}} képviselő",
 		"list_selection_hint": "A képviselő kiválasztása után az országos és nemzetiségi listákat is hozzáadhatja a címzettekhez.",
 		"list_warning": "Előfordulhat, hogy a levelezőprogramja nem tud kezelni ennyi ({{count}}) címzettet. Ilyen esetben több részletben küldje el az üzeneteket."
+	},
+	"candidates": {
+		"stance": {
+			"unknown": "Ismeretlen"
+		},
+		"search_placeholder": "Keresés név vagy párt alapján...",
+		"showing": "{{shown}}/{{total}} jelölt",
+		"no_results": "Nincs találat a keresési feltételeknek megfelelően.",
+		"filter": {
+			"select_to_show": "Válasszon megyét a jelöltek megjelenítéséhez."
+		}
 	}
 }

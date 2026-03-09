@@ -1,13 +1,127 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
-import type { MpSlug } from "../data/mps.ts";
+import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
+import type { Candidate } from "../data/candidates-schema.ts";
+import { candidates } from "../data/candidates.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
-import { MpSelector } from "../components/mp-selector.tsx";
 import { ActionButtons } from "../components/action-buttons.tsx";
-import { Input, Label, Textarea } from "../components/form.tsx";
+import { Input, Label, SearchInput, Select, SelectWrapper, Textarea } from "../components/form.tsx";
+import { CandidateImage } from "../components/candidate-image.tsx";
+import { ExternalLink } from "../components/external-link.tsx";
 
-// Hungarian-only email content (recipients are Hungarian MPs)
+// --- Module-level data processing ---
+
+type CandidateEntry = { slug: string; candidate: Candidate };
+
+const DUMMY_EMAIL = "jelolt@example.com";
+
+type ParsedCandidateDistrict = {
+	county: string;
+	districtLabel: string;
+};
+
+function parseCandidateDistrict(district: string): ParsedCandidateDistrict | null {
+	const commaIndex = district.indexOf(",");
+	if (commaIndex === -1) return null;
+
+	return {
+		county: district.substring(0, commaIndex),
+		districtLabel: district.substring(commaIndex + 2),
+	};
+}
+
+type CandidateCountyData = {
+	name: string;
+	districts: string[];
+};
+
+function buildCandidateCountyData(): CandidateCountyData[] {
+	const countyMap = new Map<string, Set<string>>();
+
+	for (const candidate of Object.values(candidates)) {
+		const parsed = parseCandidateDistrict(candidate.district);
+		if (!parsed) continue;
+
+		if (!countyMap.has(parsed.county)) {
+			countyMap.set(parsed.county, new Set());
+		}
+		const districts = countyMap.get(parsed.county);
+		if (districts) {
+			districts.add(parsed.districtLabel);
+		}
+	}
+
+	return Array.from(countyMap.entries())
+		.sort((a, b) => a[0].localeCompare(b[0], "hu"))
+		.map(([name, districts]) => ({
+			name,
+			districts: Array.from(districts).sort((a, b) => {
+				const numA = parseInt(a);
+				const numB = parseInt(b);
+				return numA - numB;
+			}),
+		}));
+}
+
+const candidateCountyData = buildCandidateCountyData();
+
+function getSortedCandidates(): CandidateEntry[] {
+	return (Object.entries(candidates) as Array<[string, Candidate]>)
+		.map(([slug, candidate]) => ({ slug, candidate }))
+		.sort((a, b) => {
+			const drawA = a.candidate.drawNumber ?? Infinity;
+			const drawB = b.candidate.drawNumber ?? Infinity;
+			if (drawA !== drawB) return drawA - drawB;
+			return a.candidate.name.localeCompare(b.candidate.name, "hu");
+		});
+}
+
+const sortedCandidates = getSortedCandidates();
+
+// --- Stance badge ---
+
+const stanceColors = {
+	unknown: {
+		badge: "bg-slate-100 text-slate-600",
+		border: "border-slate-200",
+	},
+};
+
+// --- CandidateCard ---
+
+interface CandidateCardProps {
+	slug: string;
+	candidate: Candidate;
+	lang: SupportedLanguage;
+}
+
+function CandidateCard({ slug, candidate, lang }: CandidateCardProps): JSX.Element {
+	const colors = stanceColors.unknown;
+
+	return (
+		<div class={`relative bg-slate-50 rounded-xl p-4 border-2 ${colors.border}`}>
+			<div class="flex items-center gap-3">
+				<CandidateImage slug={slug} name={candidate.displayName} size="sm" class="shrink-0" />
+				<div class="min-w-0 flex-1">
+					<h4 class="font-medium text-slate-900 truncate">{candidate.displayName}</h4>
+					<p class="text-sm text-slate-500 truncate">{candidate.coalition}</p>
+					<p class="text-sm text-slate-400 truncate">{candidate.district}</p>
+				</div>
+			</div>
+
+			<div class="mt-3">
+				<span class={`text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}>
+					{t("candidates.stance.unknown", lang)}
+				</span>
+			</div>
+		</div>
+	);
+}
+
+// --- Main section ---
+
+// Hungarian-only email content (recipients are Hungarian candidates)
 const DEFAULT_SUBJECT = "Sürgős: 2025. évi LXVII. törvény - kriptoeszköz-szabályozás";
 const DEFAULT_MESSAGE = `Tisztelt Képviselő Úr/Asszony!
 
@@ -36,29 +150,84 @@ Tisztelettel,
 [Név]
 [Település]`;
 
-// Default to NOT include national and minority lists (user must opt-in)
-const DEFAULT_INCLUDE_LISTS = false;
-
 interface TakeActionSectionProps {
 	lang: SupportedLanguage;
+	selectedCounty: string;
+	selectedDistrict: string;
 }
 
-export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX.Element {
+export default function TakeActionSection(props: TakeActionSectionProps): JSX.Element {
+	const { lang } = props;
+
 	// Message state (Hungarian only)
 	const subject = useSignal(DEFAULT_SUBJECT);
 	const message = useSignal(DEFAULT_MESSAGE);
 
-	// Selection state - single representative
-	const selectedRep = useSignal<MpSlug | null>(null);
-
-	// Group selection state (default: include both lists)
-	const includeNationalList = useSignal(DEFAULT_INCLUDE_LISTS);
-	const includeMinorityList = useSignal(DEFAULT_INCLUDE_LISTS);
-
-	// Filter state
-	const selectedCounty = useSignal("");
-	const selectedDistrict = useSignal("");
+	// Filter state (synced to URL query params)
+	const selectedCounty = useStringQueryParam({
+		key: "megye",
+		defaultValue: "",
+		initialValue: props.selectedCounty,
+	});
+	const selectedDistrict = useStringQueryParam({
+		key: "kerulet",
+		defaultValue: "",
+		initialValue: props.selectedDistrict,
+	});
 	const searchQuery = useSignal("");
+
+	// Derived
+	const currentCountyData = candidateCountyData.find((c) => c.name === selectedCounty.value);
+	const districtDisabled = !selectedCounty.value;
+
+	const filteredCandidates = sortedCandidates.filter(({ candidate }) => {
+		const parsed = parseCandidateDistrict(candidate.district);
+		if (!parsed) return false;
+
+		// Name/coalition search filter
+		if (searchQuery.value) {
+			const query = searchQuery.value.toLowerCase();
+			if (
+				!candidate.name.toLowerCase().includes(query) &&
+				!candidate.displayName.toLowerCase().includes(query) &&
+				!candidate.coalition.toLowerCase().includes(query)
+			) {
+				return false;
+			}
+		}
+
+		// County filter
+		if (selectedCounty.value) {
+			if (parsed.county !== selectedCounty.value) return false;
+
+			// District filter
+			if (selectedDistrict.value && parsed.districtLabel !== selectedDistrict.value) {
+				return false;
+			}
+		}
+
+		// Require at least one filter
+		if (!selectedCounty.value && !searchQuery.value) {
+			return false;
+		}
+
+		return true;
+	});
+
+	const emails = [DUMMY_EMAIL];
+
+	function handleCountyChange(e: Event): void {
+		selectedCounty.value = (e.target as HTMLSelectElement).value;
+		selectedDistrict.value = "";
+	}
+
+	function handleDistrictChange(e: Event): void {
+		selectedDistrict.value = (e.target as HTMLSelectElement).value;
+	}
+
+	function handleSearchInput(e: Event): void {
+		searchQuery.value = (e.target as HTMLInputElement).value;
+	}
 
 	function handleSubjectInput(e: Event): void {
 		subject.value = (e.target as HTMLInputElement).value;
@@ -78,16 +247,110 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 
 				{/* White content container */}
 				<div class="mt-10 bg-white rounded-2xl p-6 sm:p-8 text-slate-900">
-					{/* Search/Filter Section with integrated selection display */}
-					<MpSelector
-						selectedRep={selectedRep}
-						selectedCounty={selectedCounty}
-						selectedDistrict={selectedDistrict}
-						searchQuery={searchQuery}
-						includeNationalList={includeNationalList}
-						includeMinorityList={includeMinorityList}
-						lang={lang}
-					/>
+					{/* Filters - Row 1: County + District */}
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+						<div>
+							<Label for="candidate-county-select" uppercase>
+								{t("mps.filter.county", lang)}
+							</Label>
+							<SelectWrapper>
+								<Select
+									id="candidate-county-select"
+									value={selectedCounty.value}
+									onChange={handleCountyChange}
+								>
+									<option value="">{t("mps.filter.select_county", lang)}</option>
+									{candidateCountyData.map((county) => (
+										<option key={county.name} value={county.name}>
+											{county.name}
+										</option>
+									))}
+								</Select>
+							</SelectWrapper>
+						</div>
+
+						<div>
+							<Label for="candidate-district-select" uppercase disabled={districtDisabled}>
+								{t("mps.filter.district", lang)}
+							</Label>
+							<SelectWrapper disabled={districtDisabled}>
+								<Select
+									id="candidate-district-select"
+									value={selectedDistrict.value}
+									disabled={districtDisabled}
+									onChange={handleDistrictChange}
+								>
+									<option value="">{t("mps.filter.select_district", lang)}</option>
+									{currentCountyData?.districts.map((district) => (
+										<option key={district} value={district}>
+											{district}
+										</option>
+									))}
+								</Select>
+							</SelectWrapper>
+						</div>
+					</div>
+
+					{/* Filters - Row 2: Name search */}
+					<div class="mb-4">
+						<SearchInput
+							id="candidate-search"
+							value={searchQuery.value}
+							onInput={handleSearchInput}
+							placeholder={t("candidates.search_placeholder", lang)}
+						/>
+					</div>
+
+					{/* District lookup hint */}
+					<p class="text-sm text-slate-500 mb-6">
+						{t("mps.district_lookup_hint", lang)}{" "}
+						<ExternalLink
+							href="https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek"
+							class="underline"
+						>
+							valasztas.hu
+						</ExternalLink>
+					</p>
+
+					{/* Showing count */}
+					{(selectedCounty.value || searchQuery.value) && (
+						<p class="mb-4 text-sm text-slate-600 text-center">
+							{t("candidates.showing", lang, {
+								shown: filteredCandidates.length.toString(),
+								total: sortedCandidates.length.toString(),
+							})}
+						</p>
+					)}
+
+					{/* No filter selected message */}
+					{!selectedCounty.value && !searchQuery.value && (
+						<p class="text-slate-400 text-center py-8">
+							{t("candidates.filter.select_to_show", lang)}
+						</p>
+					)}
+
+					{/* Candidate grid */}
+					{(selectedCounty.value || searchQuery.value) &&
+						filteredCandidates.length > 0 && (
+						<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+							{filteredCandidates.map(({ slug, candidate }) => (
+								<CandidateCard
+									key={slug}
+									slug={slug}
+									candidate={candidate}
+									lang={lang}
+								/>
+							))}
+						</div>
+					)}
+
+					{/* No results */}
+					{(selectedCounty.value || searchQuery.value) &&
+						filteredCandidates.length === 0 && (
+						<p class="text-slate-400 text-center py-8">
+							{t("candidates.no_results", lang)}
+						</p>
+					)}
 
 					{/* Email Form */}
 					<div class="mt-8 border-t border-slate-200 pt-8 space-y-6">
@@ -113,9 +376,7 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 
 					{/* Action Buttons */}
 					<ActionButtons
-						selectedRep={selectedRep.value}
-						includeNationalList={includeNationalList.value}
-						includeMinorityList={includeMinorityList.value}
+						emails={emails}
 						subject={subject.value}
 						message={message.value}
 						lang={lang}
