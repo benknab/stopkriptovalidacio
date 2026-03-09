@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { Candidate } from "../data/candidates-schema.ts";
+import { type Candidate, coalitionSchema } from "../data/candidates-schema.ts";
 
 const vtrConfigSchema = z.object({
 	ver: z.string().min(1),
@@ -30,7 +30,7 @@ const rawVtrCandidateSchema = z.object({
 	evk: z.string(),
 	neve: z.string(),
 	"dr_jelzo": z.string().optional(),
-	"jlcs_nev": z.string(),
+	"jlcs_nev": coalitionSchema,
 	"jlcs_kod": z.coerce.number().int(),
 	"jelolo_szervezetek": z.array(z.coerce.number().int()),
 	allapot: z.string(),
@@ -47,7 +47,7 @@ const vtrCandidateSchema = rawVtrCandidateSchema.transform((row) => ({
 	evk: row.evk,
 	name: row.neve,
 	title: row["dr_jelzo"],
-	party: row["jlcs_nev"],
+	coalition: row["jlcs_nev"],
 	organizationIds: row["jelolo_szervezetek"],
 	statusCode: row.allapot,
 	statusChangedAt: row["allapot_valt"],
@@ -202,7 +202,7 @@ function toCandidate(
 		ejId: row.ejId,
 		name,
 		displayName,
-		party: row.party,
+		coalition: row.coalition,
 		maz: row.maz,
 		evk: row.evk,
 		district: constituency.evkName,

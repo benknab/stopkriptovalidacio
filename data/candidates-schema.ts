@@ -1,5 +1,29 @@
 import { z } from "zod";
 
+export const coalitionSchema = z.enum([
+	"A Magyar Vállalkozók és",
+	"A SZOLIDARITÁS PÁRTJA-Munkáspárt",
+	"DK",
+	"EgyE",
+	"FIDESZ-KDNP",
+	"Független jelölt",
+	"HHSZ",
+	"IRÁNY Párt",
+	"Jobbik",
+	"Körkeresztesek Pártja",
+	"Középpárt",
+	"LMP – Zöldek",
+	"MHVP",
+	"MKKP",
+	"Magyar Igazság és Élet Pártja",
+	"Mi Hazánk",
+	"NEEM",
+	"NÉP",
+	"OVIP",
+	"SZOM",
+	"TISZA",
+]);
+
 export const candidateStatusSchema = z.object({
 	code: z.string().min(1),
 	label: z.string().min(1),
@@ -12,7 +36,7 @@ export const candidateSchema = z.object({
 	ejId: z.number().int().positive(),
 	name: z.string().min(1),
 	displayName: z.string().min(1),
-	party: z.string().min(1),
+	coalition: coalitionSchema,
 	maz: z.string().regex(/^\d{2}$/),
 	evk: z.string().regex(/^\d{2}$/),
 	district: z.string().min(1),
@@ -25,5 +49,6 @@ export const candidateSchema = z.object({
 
 export const candidatesSchema = z.record(z.string(), candidateSchema);
 
+export type Coalition = z.infer<typeof coalitionSchema>;
 export type CandidateStatus = z.infer<typeof candidateStatusSchema>;
 export type Candidate = z.infer<typeof candidateSchema>;
