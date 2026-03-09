@@ -100,6 +100,35 @@ function slugifyName(value: string): string {
 		.replace(/-{2,}/g, "-");
 }
 
+function isInitial(word: string): boolean {
+	return word.length <= 3 && word.endsWith(".");
+}
+
+function capitalizeWord(word: string): string {
+	if (word === "DR.") {
+		return "Dr.";
+	}
+
+	if (isInitial(word)) {
+		return word;
+	}
+
+	const parts = word.split("-");
+	if (parts.length > 1) {
+		return parts.map(capitalizeWord).join("-");
+	}
+
+	return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+}
+
+function capitalizeName(uppercaseName: string): string {
+	return uppercaseName.split(" ").map(capitalizeWord).join(" ");
+}
+
+function capitalizeTitle(uppercaseTitle: string): string {
+	return capitalizeWord(uppercaseTitle);
+}
+
 function buildCandidateSlug(name: string, maz: string, evk: string, kpnId: number): string {
 	const baseName = slugifyName(name);
 	return `${baseName}-${maz}-${evk}-${kpnId}`;
@@ -161,9 +190,9 @@ function toCandidate(
 		throw new Error(`Missing constituency for ${districtKey}`);
 	}
 
-	const name = row.name.trim();
+	const name = capitalizeName(row.name.trim());
 	const title = row.title?.trim();
-	const displayName = title ? `${title} ${name}` : name;
+	const displayName = title ? `${capitalizeTitle(title)} ${name}` : name;
 	const slug = buildCandidateSlug(displayName, row.maz, row.evk, row.kpnId);
 	const organizationIds = [...new Set(row.organizationIds)].sort((a, b) => a - b);
 
