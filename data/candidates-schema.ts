@@ -1,5 +1,11 @@
 import { z } from "zod";
 
+export const candidateStatusSchema = z.object({
+	code: z.string().min(1),
+	label: z.string().min(1),
+	changedAt: z.coerce.date(),
+});
+
 export const candidateSchema = z.object({
 	slug: z.string().min(1),
 	kpnId: z.number().int().positive(),
@@ -10,9 +16,7 @@ export const candidateSchema = z.object({
 	maz: z.string().regex(/^\d{2}$/),
 	evk: z.string().regex(/^\d{2}$/),
 	district: z.string().min(1),
-	statusCode: z.string().min(1),
-	status: z.string().min(1),
-	statusChangedAt: z.coerce.date(),
+	status: candidateStatusSchema,
 	organizationIds: z.array(z.number().int().nonnegative()),
 	drawNumber: z.number().int().positive().optional(),
 	imageUrl: z.string().url().optional(),
@@ -21,4 +25,5 @@ export const candidateSchema = z.object({
 
 export const candidatesSchema = z.record(z.string(), candidateSchema);
 
+export type CandidateStatus = z.infer<typeof candidateStatusSchema>;
 export type Candidate = z.infer<typeof candidateSchema>;

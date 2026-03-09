@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { Candidate } from "../data/candidates-schema.ts";
 
 const vtrConfigSchema = z.object({
 	ver: z.string().min(1),
@@ -69,24 +70,7 @@ const vtrCodeTableListResponseSchema = createListResponseSchema(vtrCodeTableSche
 
 type VtrConstituency = z.infer<typeof vtrConstituencySchema>;
 type VtrCandidate = z.infer<typeof vtrCandidateSchema>;
-type CandidateRecord = {
-	slug: string;
-	kpnId: number;
-	ejId: number;
-	name: string;
-	displayName: string;
-	party: string;
-	maz: string;
-	evk: string;
-	district: string;
-	statusCode: string;
-	status: string;
-	statusChangedAt: string;
-	organizationIds: number[];
-	drawNumber?: number;
-	imageUrl?: string;
-	sourceUrl: string;
-};
+const REGISTERED_STATUS_CODES = new Set(["1", "5"]);
 
 const VTR_BASE_URL = "https://vtr.valasztas.hu/ogy2026";
 const VTR_DATA_BASE_URL = `${VTR_BASE_URL}/data`;
@@ -166,11 +150,11 @@ function dedupeCandidates(rows: VtrCandidate[]): VtrCandidate[] {
 	return [...byPersonAndDistrict.values()];
 }
 
-function toCandidateRecord(
+function toCandidate(
 	row: VtrCandidate,
 	statusByCode: Map<string, string>,
 	constituencyByKey: Map<string, VtrConstituency>,
-): CandidateRecord {
+): Candidate {
 	const districtKey = buildDistrictKey(row.maz, row.evk);
 	const constituency = constituencyByKey.get(districtKey);
 	if (!constituency) {
@@ -193,9 +177,11 @@ function toCandidateRecord(
 		maz: row.maz,
 		evk: row.evk,
 		district: constituency.evkName,
-		statusCode: row.statusCode,
-		status: statusByCode.get(row.statusCode) ?? row.statusCode,
-		statusChangedAt: row.statusChangedAt.toISOString(),
+		status: {
+			code: row.statusCode,
+			label: statusByCode.get(row.statusCode) ?? row.statusCode,
+			changedAt: row.statusChangedAt,
+		},
 		organizationIds,
 		drawNumber: row.drawNumber,
 		imageUrl: buildImageUrl(row.photoId, row.imageType),
@@ -203,7 +189,7 @@ function toCandidateRecord(
 	};
 }
 
-function compareCandidateRecords(a: CandidateRecord, b: CandidateRecord): number {
+function compareCandidates(a: Candidate, b: Candidate): number {
 	if (a.maz !== b.maz) {
 		return a.maz.localeCompare(b.maz, "hu");
 	}
@@ -247,17 +233,18 @@ async function main(): Promise<void> {
 		constituencies.map((constituency) => [buildDistrictKey(constituency.maz, constituency.evk), constituency]),
 	);
 
-	const dedupedCandidates = dedupeCandidates(candidates)
-		.map((row) => toCandidateRecord(row, statusByCode, constituencyByKey))
-		.sort(compareCandidateRecords);
+	const registeredCandidates = dedupeCandidates(candidates)
+		.filter((row) => REGISTERED_STATUS_CODES.has(row.statusCode))
+		.map((row) => toCandidate(row, statusByCode, constituencyByKey))
+		.sort(compareCandidates);
 
-	const candidatesBySlug = Object.fromEntries(dedupedCandidates.map((candidate) => [candidate.slug, candidate]));
+	const candidatesBySlug = Object.fromEntries(registeredCandidates.map((candidate) => [candidate.slug, candidate]));
 	const output = `${JSON.stringify(candidatesBySlug, null, "\t")}\n`;
 
 	await Deno.writeTextFile(OUTPUT_PATH, output);
 
-	console.log(`Saved ${dedupedCandidates.length} candidates to ${OUTPUT_PATH.pathname}`);
-	console.log(`Raw records: ${candidateResponse.list.length}, deduped: ${dedupedCandidates.length}`);
+	console.log(`Saved ${registeredCandidates.length} candidates to ${OUTPUT_PATH.pathname}`);
+	console.log(`Raw records: ${candidateResponse.list.length}, registered: ${registeredCandidates.length}`);
 }
 
 main();
