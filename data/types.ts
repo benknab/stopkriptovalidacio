@@ -1,21 +1,30 @@
-import type { ExchangeSlug } from "./exchanges.ts";
-import type { SourceSlug } from "./sources.ts";
+import { z } from "zod";
 
-export type TextI18n = {
-	hu: string;
-	en: string;
-};
+export const textI18nSchema = z.object({
+	hu: z.string(),
+	en: z.string(),
+});
 
-export type EventType = "primary" | "secondary" | "tertiary" | "telegram";
+export type TextI18n = z.infer<typeof textI18nSchema>;
 
-export type TimelineEvent = {
-	date: Date;
-	type: EventType;
-	title: TextI18n;
-	summary?: TextI18n;
-	text?: TextI18n;
-	sourceSlugs: Set<SourceSlug>;
-	exchangeSlugs: Set<ExchangeSlug>;
-};
+export const eventTypeSchema = z.enum(["primary", "secondary", "tertiary", "telegram"]);
 
-export type TimelineEvents = Record<string, TimelineEvent>;
+export type EventType = z.infer<typeof eventTypeSchema>;
+
+const stringSetSchema = z.array(z.string()).transform((values) => new Set(values));
+
+export const timelineEventSchema = z.object({
+	date: z.coerce.date(),
+	type: eventTypeSchema,
+	title: textI18nSchema,
+	summary: textI18nSchema.optional(),
+	text: textI18nSchema.optional(),
+	sourceSlugs: stringSetSchema,
+	exchangeSlugs: stringSetSchema,
+});
+
+export type TimelineEvent = z.infer<typeof timelineEventSchema>;
+
+export const timelineEventsSchema = z.record(z.string(), timelineEventSchema);
+
+export type TimelineEvents = z.infer<typeof timelineEventsSchema>;
