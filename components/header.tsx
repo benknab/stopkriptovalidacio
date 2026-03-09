@@ -9,15 +9,27 @@ interface NavLinkProps {
 	children: ComponentChildren;
 }
 
-function NavLink({ anchor, currentPath, children }: NavLinkProps): JSX.Element {
-	// Use same-page anchor if on home, otherwise full path
+function getAnchorHref(anchor: string, currentPath: string): string {
 	const isHomePage = currentPath === "/" || currentPath.startsWith("/?");
-	const href = isHomePage ? `#${anchor}` : `/#${anchor}`;
+	return isHomePage ? `#${anchor}` : `/#${anchor}`;
+}
 
+function NavLink({ anchor, currentPath, children }: NavLinkProps): JSX.Element {
 	return (
 		<a
-			href={href}
+			href={getAnchorHref(anchor, currentPath)}
 			class="text-sm font-medium text-slate-600 hover:text-brand transition-colors"
+		>
+			{children}
+		</a>
+	);
+}
+
+function NavCta({ anchor, currentPath, children }: NavLinkProps): JSX.Element {
+	return (
+		<a
+			href={getAnchorHref(anchor, currentPath)}
+			class="text-sm font-semibold text-white bg-brand px-4 py-2 rounded-lg hover:bg-brand-hover transition-colors"
 		>
 			{children}
 		</a>
@@ -47,7 +59,7 @@ export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 						>
 							{t("nav.mps", lang)}
 						</a>
-						<NavLink anchor="cselekedj" currentPath={currentPath}>{t("action.nav_title", lang)}</NavLink>
+						<NavCta anchor="cselekedj" currentPath={currentPath}>{t("action.nav_title", lang)}</NavCta>
 					</nav>
 					<div class="hidden sm:block">
 						<LanguageSwitch currentLang={lang} currentPath={currentPath} />
