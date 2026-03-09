@@ -205,7 +205,7 @@ function MpCard({ slug, mp, lang, selectedCounty, selectedDistrict }: MpCardProp
 
 			{/* Photo */}
 			<div class="flex justify-center mb-4">
-				<MpImage slug={slug} name={mp.name} size="sm" />
+				<MpImage slug={slug} name={mp.name} hasImage={!!mp.imageUrl} size="sm" />
 			</div>
 
 			{/* Content */}

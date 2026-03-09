@@ -102,7 +102,13 @@ function CandidateCard({ slug, candidate, lang }: CandidateCardProps): JSX.Eleme
 	return (
 		<div class={`relative bg-slate-50 rounded-xl p-4 border-2 ${colors.border}`}>
 			<div class="flex items-center gap-3">
-				<CandidateImage slug={slug} name={candidate.displayName} size="sm" class="shrink-0" />
+				<CandidateImage
+					slug={slug}
+					name={candidate.displayName}
+					hasImage={!!candidate.imageUrl}
+					size="sm"
+					class="shrink-0"
+				/>
 				<div class="min-w-0 flex-1">
 					<h4 class="font-medium text-slate-900 truncate">{candidate.displayName}</h4>
 					<p class="text-sm text-slate-500 truncate">{candidate.coalition}</p>

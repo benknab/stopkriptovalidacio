@@ -7,6 +7,7 @@ type MpImageSize = "sm" | "md" | "lg";
 interface MpImageProps {
 	slug: MpSlug;
 	name: string;
+	hasImage?: boolean;
 	size?: MpImageSize;
 	class?: string;
 }
@@ -23,7 +24,38 @@ const sizeDimensions: Record<MpImageSize, number> = {
 	lg: 128,
 };
 
-export function MpImage({ slug, name, size = "md", class: className }: MpImageProps): JSX.Element {
+function PersonPlaceholder(
+	{ size, name, className }: { size: MpImageSize; name: string; className?: string },
+): JSX.Element {
+	const dimension = sizeDimensions[size];
+
+	return (
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			width={dimension}
+			height={dimension}
+			viewBox="0 0 96 96"
+			role="img"
+			aria-label={name}
+			class={twMerge(
+				sizeClasses[size],
+				"rounded-full border-2 border-slate-200 bg-slate-100",
+				className,
+			)}
+		>
+			<circle cx="48" cy="36" r="16" fill="#94a3b8" />
+			<ellipse cx="48" cy="82" rx="28" ry="22" fill="#94a3b8" />
+		</svg>
+	);
+}
+
+export function MpImage(
+	{ slug, name, hasImage = true, size = "md", class: className }: MpImageProps,
+): JSX.Element {
+	if (!hasImage) {
+		return <PersonPlaceholder size={size} name={name} className={className} />;
+	}
+
 	const src = `/kepek/${slug}.jpg`;
 	const dimension = sizeDimensions[size];
 

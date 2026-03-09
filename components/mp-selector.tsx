@@ -46,7 +46,7 @@ function SelectedMpCard({ slug, mp, lang }: SelectedMpCardProps): JSX.Element {
 			</div>
 
 			<div class="flex items-center gap-3">
-				<MpImage slug={slug} name={mp.name} size="sm" class="shrink-0" />
+				<MpImage slug={slug} name={mp.name} hasImage={!!mp.imageUrl} size="sm" class="shrink-0" />
 				<div class="min-w-0 flex-1">
 					<h4 class="font-medium text-slate-900 truncate">{mp.name}</h4>
 					<p class="text-sm text-slate-500 truncate">

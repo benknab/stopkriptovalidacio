@@ -129,7 +129,7 @@ export default define.page(function MpDetailPage(ctx): JSX.Element {
 			<div class={`bg-white rounded-xl border-2 ${colors.border} p-6 sm:p-8`}>
 				{/* Header: Photo + Basic Info */}
 				<div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-8">
-					<MpImage slug={slug} name={mp.name} size="lg" />
+					<MpImage slug={slug} name={mp.name} hasImage={!!mp.imageUrl} size="lg" />
 
 					<div class="text-center sm:text-left flex-1">
 						<h1 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">{mp.name}</h1>
