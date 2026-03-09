@@ -129,9 +129,9 @@ function capitalizeTitle(uppercaseTitle: string): string {
 	return capitalizeWord(uppercaseTitle);
 }
 
-function buildCandidateSlug(name: string, maz: string, evk: string, kpnId: number): string {
+function buildCandidateSlug(name: string, ejId: number): string {
 	const baseName = slugifyName(name);
-	return `${baseName}-${maz}-${evk}-${kpnId}`;
+	return `${baseName}-${ejId}`;
 }
 
 function buildImageUrl(photoId?: number, imageType?: string): string | undefined {
@@ -193,7 +193,7 @@ function toCandidate(
 	const name = capitalizeName(row.name.trim());
 	const title = row.title?.trim();
 	const displayName = title ? `${capitalizeTitle(title)} ${name}` : name;
-	const slug = buildCandidateSlug(displayName, row.maz, row.evk, row.kpnId);
+	const slug = buildCandidateSlug(displayName, row.ejId);
 	const organizationIds = [...new Set(row.organizationIds)].sort((a, b) => a - b);
 
 	return {
