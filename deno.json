@@ -13,6 +13,7 @@
 		"extract-data-json": "deno run --allow-read --allow-write scripts/extract-data-json.ts",
 		"verify-data-json": "deno run --allow-read scripts/verify-data-json.ts",
 		"download-images": "deno run -A scripts/download-mp-images.ts",
+		"download-candidate-images": "deno run -A scripts/download-candidate-images.ts",
 		"scrape-candidates": "deno run --allow-net --allow-write scripts/scrape-candidates.ts",
 		"generate-og-image": "deno run -A scripts/generate-og-image.ts",
 		"post-telegram": "deno run --allow-read --allow-write --allow-net --allow-env scripts/post-telegram.ts"
