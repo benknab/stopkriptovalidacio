@@ -10,6 +10,8 @@
 		"start": "deno serve -A _fresh/server.js",
 		"fmt": "deno fmt",
 		"lint": "deno lint",
+		"extract-data-json": "deno run --allow-read --allow-write scripts/extract-data-json.ts",
+		"verify-data-json": "deno run --allow-read scripts/verify-data-json.ts",
 		"download-images": "deno run -A scripts/download-mp-images.ts",
 		"scrape-candidates": "deno run --allow-net --allow-write scripts/scrape-candidates.ts",
 		"generate-og-image": "deno run -A scripts/generate-og-image.ts",
@@ -27,10 +29,15 @@
 		"tailwind-merge": "npm:tailwind-merge@^2",
 		"vite": "npm:vite@^7.1.3",
 		"sharp": "npm:sharp@^0.33.5",
-		"zod": "npm:zod@^4.1.11"
+		"zod": "npm:zod@4.3.6"
 	},
 	"compilerOptions": {
-		"lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
+		"lib": [
+			"dom",
+			"dom.asynciterable",
+			"dom.iterable",
+			"deno.ns"
+		],
 		"jsx": "precompile",
 		"jsxImportSource": "preact",
 		"jsxPrecompileSkipElements": [
@@ -49,11 +56,16 @@
 			"noscript",
 			"template"
 		],
-		"types": ["vite/client"]
+		"types": [
+			"vite/client"
+		]
 	},
 	"lint": {
 		"rules": {
-			"tags": ["fresh", "recommended"],
+			"tags": [
+				"fresh",
+				"recommended"
+			],
 			"include": [
 				"ban-untagged-todo",
 				"camelcase",
@@ -86,5 +98,8 @@
 		"lineWidth": 120,
 		"indentWidth": 4
 	},
-	"exclude": ["**/_fresh/*", "node_modules/**"]
+	"exclude": [
+		"**/_fresh/*",
+		"node_modules/**"
+	]
 }
