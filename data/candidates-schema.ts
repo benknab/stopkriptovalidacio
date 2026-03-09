@@ -19,8 +19,8 @@ export const candidateSchema = z.object({
 	status: candidateStatusSchema,
 	organizationIds: z.array(z.number().int().nonnegative()),
 	drawNumber: z.number().int().positive().optional(),
-	imageUrl: z.string().url().optional(),
-	sourceUrl: z.string().url(),
+	imageUrl: z.url().optional(),
+	sourceUrl: z.url(),
 });
 
 export const candidatesSchema = z.record(z.string(), candidateSchema);
