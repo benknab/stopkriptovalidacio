@@ -183,7 +183,7 @@ function buildMoreUrl(slug: MpSlug, county: string, district: string): string {
 	if (county) params.set("megye", county);
 	if (district) params.set("kerulet", district);
 	const query = params.toString();
-	return `/parlament/${slug}${query ? `?${query}` : ""}`;
+	return `/ogy2022/${slug}${query ? `?${query}` : ""}`;
 }
 
 function MpCard({ slug, mp, lang, selectedCounty, selectedDistrict }: MpCardProps): JSX.Element {

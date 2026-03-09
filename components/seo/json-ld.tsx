@@ -110,14 +110,14 @@ function buildItemListSchema(items: object[]): object {
 function buildPersonSchema(personData: PersonData, lang: SupportedLanguage): object {
 	return {
 		"@type": "Person",
-		"@id": `${SITE_URL}/parlament/${personData.slug}#person`,
+		"@id": `${SITE_URL}/ogy2022/${personData.slug}#person`,
 		name: personData.name,
 		jobTitle: lang === "hu" ? "Országgyűlési képviselő" : "Member of Parliament",
 		affiliation: {
 			"@type": "Organization",
 			name: personData.party,
 		},
-		url: `${SITE_URL}/parlament/${personData.slug}`,
+		url: `${SITE_URL}/ogy2022/${personData.slug}`,
 		image: `/images/mps/${personData.slug}.jpg`,
 	};
 }
@@ -201,11 +201,11 @@ export function JsonLd({ lang, pageId, path, personData }: JsonLdProps): JSX.Ele
 		graph.push(buildPersonSchema(personData, lang));
 		breadcrumbItems.push({
 			name: t("nav.mps", lang),
-			url: `${SITE_URL}/#kepviselok`,
+			url: `${SITE_URL}/ogy2022`,
 		});
 		breadcrumbItems.push({
 			name: personData.name,
-			url: `${SITE_URL}${path || `/parlament/${personData.slug}`}`,
+			url: `${SITE_URL}${path || `/ogy2022/${personData.slug}`}`,
 		});
 	}
 

@@ -9,7 +9,6 @@ import { Layout } from "../components/layout.tsx";
 import { SeoHead } from "../components/seo/seo-head.tsx";
 import { detectLanguage, t } from "../i18n/index.ts";
 import TimelineSection from "../islands/timeline-section.tsx";
-import MpsSection from "../islands/mps-section.tsx";
 import TakeActionSection from "../islands/take-action-section.tsx";
 
 export default define.page(function Home(ctx): JSX.Element {
@@ -17,8 +16,6 @@ export default define.page(function Home(ctx): JSX.Element {
 	const lang = detectLanguage(ctx.req);
 	const showSecondary = url.searchParams.get("masodlagos") !== "false";
 	const showTertiary = url.searchParams.get("harmadlagos") === "true";
-	const mpCounty = url.searchParams.get("megye") || "";
-	const mpDistrict = url.searchParams.get("kerulet") || "";
 	const currentPath = url.pathname + url.search;
 
 	return (
@@ -32,16 +29,7 @@ export default define.page(function Home(ctx): JSX.Element {
 					<ExchangesSection lang={lang} />
 				</>
 			}
-			afterContent={
-				<>
-					<MpsSection
-						lang={lang}
-						selectedCounty={mpCounty}
-						selectedDistrict={mpDistrict}
-					/>
-					<TakeActionSection lang={lang} />
-				</>
-			}
+			afterContent={<TakeActionSection lang={lang} />}
 		>
 			<Head>
 				<SeoHead lang={lang} pageId="home" path="/" />

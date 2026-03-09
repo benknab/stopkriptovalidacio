@@ -140,9 +140,13 @@ export function MobileNav({ lang, currentPath }: MobileNavProps): JSX.Element {
 							<NavLink anchor="idovonal" currentPath={currentPath} onClick={close}>
 								{t("nav.timeline", lang)}
 							</NavLink>
-							<NavLink anchor="kepviselok" currentPath={currentPath} onClick={close}>
+							<a
+								href="/ogy2022"
+								onClick={close}
+								class="block py-3 px-4 text-lg font-medium text-slate-700 hover:text-slate-900 hover:bg-slate-50 transition-colors"
+							>
 								{t("nav.mps", lang)}
-							</NavLink>
+							</a>
 							<NavLink anchor="cselekedj" currentPath={currentPath} onClick={close}>
 								{t("action.nav_title", lang)}
 							</NavLink>

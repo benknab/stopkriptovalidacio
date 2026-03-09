@@ -24,8 +24,9 @@ export const handler = define.handlers({
 		const urls = [
 			buildUrlEntry("/", "1.0", "weekly"),
 			buildUrlEntry("/kriptovalidalas", "0.9", "weekly"),
+			buildUrlEntry("/ogy2022", "0.8", "weekly"),
 			buildUrlEntry("/rolunk", "0.8", "monthly"),
-			...mpSlugs.map((slug) => buildUrlEntry(`/parlament/${slug}`, "0.6", "monthly")),
+			...mpSlugs.map((slug) => buildUrlEntry(`/ogy2022/${slug}`, "0.6", "monthly")),
 		];
 
 		const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

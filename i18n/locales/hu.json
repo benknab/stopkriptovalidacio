@@ -12,6 +12,10 @@
 			"title": "Rólunk | Stop Kriptovalidáció - Kripto Validálás Magyarország",
 			"description": "Polgári kezdeményezés a magyar kripto validálás törvény dokumentálására. Tájékozódjon és írjon a képviselőjének."
 		},
+		"ogy2022": {
+			"title": "2022-es Országgyűlési Képviselők | Stop Kriptovalidáció",
+			"description": "Keresse meg, hogyan szavazott az Ön képviselője a kriptovalidálás törvényjavaslatról (T/11922)."
+		},
 		"mp_detail": {
 			"title": "{{name}} - Képviselő | Kripto Validálás Szavazás",
 			"description": "{{name}} képviselő adatai és szavazata a kripto validálás törvényjavaslatról (T/11922). Magyar kripto validátor szabályozás képviselői szavazatok."

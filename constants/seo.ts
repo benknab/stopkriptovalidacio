@@ -21,8 +21,14 @@ export const PAGE_SEO_CONFIG = {
 		descriptionKey: "seo.about.description",
 		type: "website",
 	},
+	"ogy2022": {
+		path: "/ogy2022",
+		titleKey: "seo.ogy2022.title",
+		descriptionKey: "seo.ogy2022.description",
+		type: "website",
+	},
 	"mp-detail": {
-		path: "/parlament/:slug",
+		path: "/ogy2022/:slug",
 		titleKey: "seo.mp_detail.title",
 		descriptionKey: "seo.mp_detail.description",
 		type: "profile",
