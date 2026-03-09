@@ -1,0 +1,16 @@
+# Stop Kriptovalidáció
+
+> Hungarian documentation site tracking the timeline of cryptocurrency "validation" law changes, exchange impacts, and affected Members of Parliament. Available in Hungarian and English.
+
+The site documents how Hungary's crypto validation law affected cryptocurrency exchanges operating in Hungary and tracks the positions of Members of Parliament who voted on the legislation.
+
+## Main Pages
+
+- [Főoldal / Home](https://stopkriptovalidacio.hu/): Timeline of regulatory events, exchange status tracker, and MP directory
+- [Kriptovalidálás](https://stopkriptovalidacio.hu/kriptovalidalas): Detailed explanation of the crypto validation law and its implications
+- [Rólunk / About](https://stopkriptovalidacio.hu/rolunk): About the project, privacy policy, and contact information
+
+## Data
+
+- [Sitemap](https://stopkriptovalidacio.hu/sitemap.xml): Full sitemap including all 198 MP detail pages
+- [Parliament MP Pages](https://stopkriptovalidacio.hu/parlament/[slug]): Individual pages for each of the 198 Members of Parliament showing their party, county/district, voting record, and contact information
