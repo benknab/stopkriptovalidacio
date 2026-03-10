@@ -16,21 +16,6 @@ type CandidateEntry = { slug: string; candidate: Candidate };
 
 const DUMMY_EMAIL = "jelolt@example.com";
 
-type ParsedCandidateDistrict = {
-	county: string;
-	districtLabel: string;
-};
-
-function parseCandidateDistrict(district: string): ParsedCandidateDistrict | null {
-	const commaIndex = district.indexOf(",");
-	if (commaIndex === -1) return null;
-
-	return {
-		county: district.substring(0, commaIndex),
-		districtLabel: district.substring(commaIndex + 2),
-	};
-}
-
 type CandidateCountyData = {
 	name: string;
 	districts: string[];
@@ -40,15 +25,12 @@ function buildCandidateCountyData(): CandidateCountyData[] {
 	const countyMap = new Map<string, Set<string>>();
 
 	for (const candidate of Object.values(candidates)) {
-		const parsed = parseCandidateDistrict(candidate.district);
-		if (!parsed) continue;
-
-		if (!countyMap.has(parsed.county)) {
-			countyMap.set(parsed.county, new Set());
+		if (!countyMap.has(candidate.county)) {
+			countyMap.set(candidate.county, new Set());
 		}
-		const districts = countyMap.get(parsed.county);
+		const districts = countyMap.get(candidate.county);
 		if (districts) {
-			districts.add(parsed.districtLabel);
+			districts.add(candidate.district);
 		}
 	}
 
@@ -112,11 +94,7 @@ function CandidateCard({ slug, candidate, lang }: CandidateCardProps): JSX.Eleme
 				<div class="min-w-0 flex-1">
 					<h4 class="font-medium text-slate-900 truncate">{candidate.displayName}</h4>
 					<p class="text-sm text-slate-500 truncate">{candidate.coalition}</p>
-					<p class="text-sm text-slate-400">
-						{candidate.district.split(", ").map((part, i) => (
-							<span key={i} class="block truncate">{part}</span>
-						))}
-					</p>
+					<p class="text-sm text-slate-400 truncate">{candidate.county}, {candidate.district}</p>
 				</div>
 			</div>
 
@@ -191,9 +169,6 @@ export default function TakeActionSection(props: TakeActionSectionProps): JSX.El
 	const districtDisabled = !selectedCounty.value;
 
 	const filteredCandidates = sortedCandidates.filter(({ candidate }) => {
-		const parsed = parseCandidateDistrict(candidate.district);
-		if (!parsed) return false;
-
 		// Name/coalition search filter
 		if (searchQuery.value) {
 			const query = searchQuery.value.toLowerCase();
@@ -208,10 +183,10 @@ export default function TakeActionSection(props: TakeActionSectionProps): JSX.El
 
 		// County filter
 		if (selectedCounty.value) {
-			if (parsed.county !== selectedCounty.value) return false;
+			if (candidate.county !== selectedCounty.value) return false;
 
 			// District filter
-			if (selectedDistrict.value && parsed.districtLabel !== selectedDistrict.value) {
+			if (selectedDistrict.value && candidate.district !== selectedDistrict.value) {
 				return false;
 			}
 		}

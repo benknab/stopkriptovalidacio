@@ -39,6 +39,7 @@ export const candidateSchema = z.object({
 	coalition: coalitionSchema,
 	maz: z.string().regex(/^\d{2}$/),
 	evk: z.string().regex(/^\d{2}$/),
+	county: z.string().min(1),
 	district: z.string().min(1),
 	status: candidateStatusSchema,
 	organizationIds: z.array(z.number().int().nonnegative()),

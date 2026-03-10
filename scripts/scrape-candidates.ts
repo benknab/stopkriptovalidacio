@@ -147,6 +147,23 @@ function buildImageUrl(photoId?: number, imageType?: string): string | undefined
 	return `${VTR_BASE_URL}/kepek/${secondLastDigit}/${lastDigit}/Kep-${photoId}.${extension}`;
 }
 
+function formatEvkName(evkName: string): { county: string; district: string } {
+	const commaIndex = evkName.indexOf(",");
+	if (commaIndex === -1) {
+		return { county: evkName, district: "" };
+	}
+
+	const rawCounty = evkName.substring(0, commaIndex)
+		.replace(/ vármegye$/, "")
+		.replace(/ főváros$/, "");
+
+	const rawDistrict = evkName.substring(commaIndex + 2);
+	const numMatch = rawDistrict.match(/^(\d+\.)/);
+	const district = numMatch ? `${numMatch[1]} OEVK` : rawDistrict;
+
+	return { county: rawCounty, district };
+}
+
 function pickPreferredRecord(current: VtrCandidate, next: VtrCandidate): VtrCandidate {
 	const currentDate = current.statusChangedAt.getTime();
 	const nextDate = next.statusChangedAt.getTime();
@@ -196,6 +213,8 @@ function toCandidate(
 	const slug = buildCandidateSlug(displayName, row.ejId);
 	const organizationIds = [...new Set(row.organizationIds)].sort((a, b) => a - b);
 
+	const { county, district } = formatEvkName(constituency.evkName);
+
 	return {
 		slug,
 		kpnId: row.kpnId,
@@ -205,7 +224,8 @@ function toCandidate(
 		coalition: row.coalition,
 		maz: row.maz,
 		evk: row.evk,
-		district: constituency.evkName,
+		county,
+		district,
 		status: {
 			code: row.statusCode,
 			label: statusByCode.get(row.statusCode) ?? row.statusCode,
