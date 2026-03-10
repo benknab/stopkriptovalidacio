@@ -323,16 +323,26 @@ export default function TakeActionSection(props: TakeActionSectionProps): JSX.El
 						/>
 					</div>
 
-					{/* District lookup hint */}
-					<p class="text-sm text-slate-500 mb-6">
-						{t("mps.district_lookup_hint", lang)}{" "}
-						<ExternalLink
-							href="https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek"
-							class="underline"
-						>
-							valasztas.hu
-						</ExternalLink>
-					</p>
+					{/* District lookup hint + showing count */}
+					<div class="flex items-baseline justify-between mb-6">
+						<p class="text-sm text-slate-500">
+							{t("mps.district_lookup_hint", lang)}{" "}
+							<ExternalLink
+								href="https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek"
+								class="underline"
+							>
+								valasztas.hu
+							</ExternalLink>
+						</p>
+						{(selectedCounty.value || searchQuery.value) && (
+							<p class="text-sm text-slate-600 shrink-0 ml-4">
+								{t("candidates.showing", lang, {
+									shown: filteredCandidates.length.toString(),
+									total: sortedCandidates.length.toString(),
+								})}
+							</p>
+						)}
+					</div>
 
 					{/* Stance explainer */}
 					<p class="text-xs text-slate-500 mb-6 text-center">
@@ -340,16 +350,6 @@ export default function TakeActionSection(props: TakeActionSectionProps): JSX.El
 						<br />
 						{t("candidates.stance.explainer_2", lang)}
 					</p>
-
-					{/* Showing count */}
-					{(selectedCounty.value || searchQuery.value) && (
-						<p class="mb-4 text-sm text-slate-600 text-center">
-							{t("candidates.showing", lang, {
-								shown: filteredCandidates.length.toString(),
-								total: sortedCandidates.length.toString(),
-							})}
-						</p>
-					)}
 
 					{/* No filter selected message */}
 					{!selectedCounty.value && !searchQuery.value && (
