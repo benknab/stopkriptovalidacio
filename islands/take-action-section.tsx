@@ -3,6 +3,9 @@ import { useSignal } from "@preact/signals";
 import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
 import type { Candidate } from "../data/candidates-schema.ts";
 import { candidates } from "../data/candidates.ts";
+import { candidateStances } from "../data/candidate-stances.ts";
+import { coalitionStances } from "../data/coalition-stances.ts";
+import type { RepealSupport } from "../data/stances-schema.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
 import { ActionButtons } from "../components/action-buttons.tsx";
@@ -63,12 +66,21 @@ const sortedCandidates = getSortedCandidates();
 
 // --- Stance badge ---
 
-const stanceColors = {
-	unknown: {
-		badge: "bg-slate-100 text-slate-600",
-		border: "border-slate-200",
-	},
+const stanceColors: Record<RepealSupport, { badge: string }> = {
+	for: { badge: "bg-emerald-100 text-emerald-700" },
+	against: { badge: "bg-red-100 text-red-700" },
+	unknown: { badge: "bg-slate-100 text-slate-600" },
 };
+
+function getCandidateRepealSupport(slug: string): RepealSupport {
+	return candidateStances[slug]?.repealSupport ?? "unknown";
+}
+
+function getCoalitionRepealSupport(coalition: Candidate["coalition"]): RepealSupport {
+	return coalitionStances[coalition]?.repealSupport ?? "unknown";
+}
+
+const INDEPENDENT_COALITION = "Független jelölt";
 
 // --- CandidateCard ---
 
@@ -79,10 +91,12 @@ interface CandidateCardProps {
 }
 
 function CandidateCard({ slug, candidate, lang }: CandidateCardProps): JSX.Element {
-	const colors = stanceColors.unknown;
+	const candidateRepealSupport = getCandidateRepealSupport(slug);
+	const coalitionRepealSupport = getCoalitionRepealSupport(candidate.coalition);
+	const isIndependent = candidate.coalition === INDEPENDENT_COALITION;
 
 	return (
-		<div class={`relative bg-slate-50 rounded-xl p-4 border-2 ${colors.border}`}>
+		<div class="relative bg-slate-50 rounded-xl p-4 border border-slate-200">
 			<div class="flex items-center gap-3">
 				<CandidateImage
 					slug={slug}
@@ -98,10 +112,33 @@ function CandidateCard({ slug, candidate, lang }: CandidateCardProps): JSX.Eleme
 				</div>
 			</div>
 
-			<div class="mt-3">
-				<span class={`text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}>
-					{t("candidates.stance.unknown", lang)}
-				</span>
+			<div class="mt-3 flex flex-col gap-1.5">
+				<div class="flex items-center gap-2">
+					<span class="text-xs text-slate-500 w-16 shrink-0">
+						{t("candidates.stance.candidate_label", lang)}:
+					</span>
+					<span
+						class={`text-xs font-medium py-0.5 rounded-full min-w-24 text-center ${
+							stanceColors[candidateRepealSupport].badge
+						}`}
+					>
+						{t(`candidates.stance.${candidateRepealSupport}`, lang)}
+					</span>
+				</div>
+				{!isIndependent && (
+					<div class="flex items-center gap-2">
+						<span class="text-xs text-slate-500 w-16 shrink-0">
+							{t("candidates.stance.coalition_label", lang)}:
+						</span>
+						<span
+							class={`text-xs font-medium py-0.5 rounded-full min-w-24 text-center ${
+								stanceColors[coalitionRepealSupport].badge
+							}`}
+						>
+							{t(`candidates.stance.${coalitionRepealSupport}`, lang)}
+						</span>
+					</div>
+				)}
 			</div>
 		</div>
 	);
@@ -295,6 +332,13 @@ export default function TakeActionSection(props: TakeActionSectionProps): JSX.El
 						>
 							valasztas.hu
 						</ExternalLink>
+					</p>
+
+					{/* Stance explainer */}
+					<p class="text-xs text-slate-500 mb-6 text-center">
+						{t("candidates.stance.explainer_1", lang)}
+						<br />
+						{t("candidates.stance.explainer_2", lang)}
 					</p>
 
 					{/* Showing count */}

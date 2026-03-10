@@ -1,0 +1,92 @@
+{
+	"A Magyar Vállalkozók és": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"A SZOLIDARITÁS PÁRTJA-Munkáspárt": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"DK": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"EgyE": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"FIDESZ-KDNP": {
+		"repealSupport": "against",
+		"summary": {
+			"hu": "A kormánypárt szavazta meg a törvényt, és nem jelezte a módosítás szándékát.",
+			"en": "The governing party voted for the law and has not indicated intent to amend it."
+		}
+	},
+	"Független jelölt": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"HHSZ": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"IRÁNY Párt": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"Jobbik": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"Körkeresztesek Pártja": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"Középpárt": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"LMP – Zöldek": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"MHVP": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"MKKP": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"Magyar Igazság és Élet Pártja": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"Mi Hazánk": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"NEEM": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"NÉP": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"OVIP": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"SZOM": {
+		"repealSupport": "unknown",
+		"summary": { "hu": "", "en": "" }
+	},
+	"TISZA": {
+		"repealSupport": "for",
+		"summary": {
+			"hu": "A TISZA Párt programjában szerepel a kriptovaluta-validációs törvény felülvizsgálata.",
+			"en": "The TISZA Party's program includes a review of the cryptocurrency validation law."
+		}
+	}
+}

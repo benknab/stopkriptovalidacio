@@ -257,7 +257,13 @@
 	},
 	"candidates": {
 		"stance": {
-			"unknown": "Unknown"
+			"for": "Would repeal",
+			"against": "Would keep",
+			"unknown": "Unknown",
+			"candidate_label": "Candidate",
+			"coalition_label": "Coalition",
+			"explainer_1": "The badges show promises made by candidates and their parties regarding repealing or modifying the cryptocurrency validation law (Act LXVII of 2025).",
+			"explainer_2": "Green indicates a promise to change, red indicates intent to keep."
 		},
 		"search_placeholder": "Search by name or party...",
 		"showing": "Showing: {{shown}}/{{total}} candidates",
