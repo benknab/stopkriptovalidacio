@@ -1,92 +1,155 @@
 {
 	"A Magyar Vállalkozók és": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"A SZOLIDARITÁS PÁRTJA-Munkáspárt": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"DK": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"EgyE": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"FIDESZ-KDNP": {
 		"repealSupport": "against",
 		"summary": {
 			"hu": "A kormánypárt szavazta meg a törvényt, és nem jelezte a módosítás szándékát.",
 			"en": "The governing party voted for the law and has not indicated intent to amend it."
-		}
+		},
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"Független jelölt": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"HHSZ": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"IRÁNY Párt": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"Jobbik": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"Körkeresztesek Pártja": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"Középpárt": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"LMP – Zöldek": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"MHVP": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"MKKP": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"Magyar Igazság és Élet Pártja": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"Mi Hazánk": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"NEEM": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"NÉP": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"OVIP": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"SZOM": {
 		"repealSupport": "unknown",
-		"summary": { "hu": "", "en": "" }
+		"summary": { "hu": "", "en": "" },
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	},
 	"TISZA": {
 		"repealSupport": "for",
 		"summary": {
 			"hu": "A TISZA Párt programjában szerepel a kriptovaluta-validációs törvény felülvizsgálata.",
 			"en": "The TISZA Party's program includes a review of the cryptocurrency validation law."
-		}
+		},
+		"email": "",
+		"phone": "",
+		"facebook": ""
 	}
 }

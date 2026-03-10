@@ -6,6 +6,7 @@ import { H2 } from "../components/h2.tsx";
 import { Hero } from "../components/hero.tsx";
 import { ImpactSection } from "../components/impact-section.tsx";
 import { Layout } from "../components/layout.tsx";
+import { PartiesSection } from "../components/parties-section.tsx";
 import { SeoHead } from "../components/seo/seo-head.tsx";
 import { detectLanguage, t } from "../i18n/index.ts";
 import TimelineSection from "../islands/timeline-section.tsx";
@@ -32,11 +33,14 @@ export default define.page(function Home(ctx): JSX.Element {
 				</>
 			}
 			afterContent={
-				<TakeActionSection
-					lang={lang}
-					selectedCounty={candidateCounty}
-					selectedDistrict={candidateDistrict}
-				/>
+				<>
+					<PartiesSection lang={lang} />
+					<TakeActionSection
+						lang={lang}
+						selectedCounty={candidateCounty}
+						selectedDistrict={candidateDistrict}
+					/>
+				</>
 			}
 		>
 			<Head>

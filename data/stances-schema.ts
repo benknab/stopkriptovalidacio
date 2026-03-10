@@ -12,6 +12,9 @@ const i18nStringSchema = z.object({
 export const stanceSchema = z.object({
 	repealSupport: repealSupportSchema,
 	summary: i18nStringSchema,
+	email: z.string(),
+	phone: z.string(),
+	facebook: z.string(),
 });
 
 export type Stance = z.infer<typeof stanceSchema>;

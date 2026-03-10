@@ -31,6 +31,7 @@
 		"exchanges": "Szolgáltatók",
 		"mps": "Képviselők",
 		"mp_search": "Képviselő keresés",
+		"parties": "Pártok",
 		"about": "Rólunk",
 		"contact": "Kapcsolat",
 		"menu": "Menü",
@@ -254,6 +255,14 @@
 		"contacts_count": "{{count}} képviselő",
 		"list_selection_hint": "A képviselő kiválasztása után az országos és nemzetiségi listákat is hozzáadhatja a címzettekhez.",
 		"list_warning": "Előfordulhat, hogy a levelezőprogramja nem tud kezelni ennyi ({{count}}) címzettet. Ilyen esetben több részletben küldje el az üzeneteket."
+	},
+	"parties": {
+		"title": "Pártok",
+		"description": "Az álláspontok a pártok nyilvános nyilatkozatain, programjain és parlamenti szavazási magatartásukon alapulnak.",
+		"candidates_count": "{{count}} jelölt",
+		"email": "Email",
+		"phone": "Telefon",
+		"facebook": "Facebook"
 	},
 	"candidates": {
 		"stance": {
