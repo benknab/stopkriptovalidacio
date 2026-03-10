@@ -112,7 +112,11 @@ function CandidateCard({ slug, candidate, lang }: CandidateCardProps): JSX.Eleme
 				<div class="min-w-0 flex-1">
 					<h4 class="font-medium text-slate-900 truncate">{candidate.displayName}</h4>
 					<p class="text-sm text-slate-500 truncate">{candidate.coalition}</p>
-					<p class="text-sm text-slate-400 truncate">{candidate.district}</p>
+					<p class="text-sm text-slate-400">
+						{candidate.district.split(", ").map((part, i) => (
+							<span key={i} class="block truncate">{part}</span>
+						))}
+					</p>
 				</div>
 			</div>
 

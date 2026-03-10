@@ -52,7 +52,13 @@ function SelectedMpCard({ slug, mp, lang }: SelectedMpCardProps): JSX.Element {
 					<p class="text-sm text-slate-500 truncate">
 						{t(`mps.party.${mp.party}`, lang, { defaultValue: mp.party })}
 					</p>
-					{mp.district && <p class="text-sm text-slate-400 truncate">{mp.district}</p>}
+					{mp.district && (
+						<p class="text-sm text-slate-400">
+							{mp.district.split(", ").map((part, i) => (
+								<span key={i} class="block truncate">{part}</span>
+							))}
+						</p>
+					)}
 				</div>
 			</div>
 
