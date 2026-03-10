@@ -166,10 +166,9 @@
 		"kraken": { "summary": "Status uncertain." },
 		"binance": { "summary": "Status uncertain." },
 		"crypto-com": { "summary": "Status uncertain." },
-		"bitpanda": { "summary": "Status uncertain." },
+		"bitpanda": { "summary": "Operating as a Caduceus partner." },
 		"bybit": { "summary": "Status uncertain." },
 		"bitgo": { "summary": "Status uncertain." },
-		"okcoin": { "summary": "Status uncertain." },
 		"okx": { "summary": "Status uncertain." },
 		"mrcoin": { "summary": "Status uncertain." },
 		"nexo": { "summary": "Status uncertain." },
@@ -178,7 +177,11 @@
 		"swissborg": { "summary": "Service discontinued." },
 		"nebeus": { "summary": "New registration not allowed." },
 		"gemini": { "summary": "Status uncertain." },
-		"kucoin": { "summary": "Status uncertain." }
+		"kucoin": { "summary": "Status uncertain." },
+		"gate-io": { "summary": "Status uncertain." },
+		"htx": { "summary": "Status uncertain." },
+		"mexc": { "summary": "Status uncertain." },
+		"bitfinex": { "summary": "Status uncertain." }
 	},
 	"footer": {
 		"aboutSite": "About This Site",

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://stopkriptovalidacio.hu/sitemap.xml
+Llms-txt: https://stopkriptovalidacio.hu/llms.txt

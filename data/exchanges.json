@@ -62,10 +62,6 @@
 		"name": "BitGo",
 		"status": "uncertain"
 	},
-	"okcoin": {
-		"name": "OKCoin",
-		"status": "uncertain"
-	},
 	"okx": {
 		"name": "OKX",
 		"status": "uncertain"
@@ -104,6 +100,22 @@
 	},
 	"kucoin": {
 		"name": "KuCoin",
+		"status": "uncertain"
+	},
+	"gate-io": {
+		"name": "Gate.io",
+		"status": "uncertain"
+	},
+	"htx": {
+		"name": "HTX",
+		"status": "uncertain"
+	},
+	"mexc": {
+		"name": "MEXC",
+		"status": "uncertain"
+	},
+	"bitfinex": {
+		"name": "Bitfinex",
 		"status": "uncertain"
 	}
 }
