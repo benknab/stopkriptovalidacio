@@ -165,7 +165,6 @@
 		"bitpanda": { "summary": "A Caduceus partnereként működik." },
 		"bybit": { "summary": "Státusz bizonytalan." },
 		"bitgo": { "summary": "Státusz bizonytalan." },
-		"okcoin": { "summary": "Státusz bizonytalan." },
 		"okx": { "summary": "Státusz bizonytalan." },
 		"mrcoin": { "summary": "Státusz bizonytalan." },
 		"nexo": { "summary": "Státusz bizonytalan." },
@@ -174,7 +173,11 @@
 		"swissborg": { "summary": "Szolgáltatás megszűnt." },
 		"nebeus": { "summary": "Új regisztráció nem engedélyezett." },
 		"gemini": { "summary": "Státusz bizonytalan." },
-		"kucoin": { "summary": "Státusz bizonytalan." }
+		"kucoin": { "summary": "Státusz bizonytalan." },
+		"gate-io": { "summary": "Státusz bizonytalan." },
+		"htx": { "summary": "Státusz bizonytalan." },
+		"mexc": { "summary": "Státusz bizonytalan." },
+		"bitfinex": { "summary": "Státusz bizonytalan." }
 	},
 	"footer": {
 		"aboutSite": "Az oldalról",
