@@ -118,7 +118,7 @@ function buildPersonSchema(personData: PersonData, lang: SupportedLanguage): obj
 			name: personData.party,
 		},
 		url: `${SITE_URL}/parlament/${personData.slug}`,
-		image: `/images/mps/${personData.slug}.jpg`,
+		image: `${SITE_URL}/kepek/${personData.slug}.jpg`,
 	};
 }
 
