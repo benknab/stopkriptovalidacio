@@ -736,5 +736,42 @@
 			"hu": "A Caduceus Zrt. partnerei oldal. A Bitpanda az első kriptoeszköz-kereskedő, amellyel a validátor szerződést kötött.",
 			"en": "Caduceus Zrt. partners page. Bitpanda is the first crypto-asset exchange to sign a contract with the validator."
 		}
+	},
+	"tisza-program-2026": {
+		"title": {
+			"hu": "TISZA választási program (PDF)",
+			"en": "TISZA Election Program (PDF)"
+		},
+		"originalUrl": "https://magyartisza.hu/program",
+		"summary": {
+			"hu": "A TISZA Párt 2026. február 7-én közzétett választási programja (\"A működő és emberséges Magyarország alapjai\") önálló fejezetben foglalkozik a kriptoeszközök és a blokklánc-technológia szabályozásával. A program bírálja a jelenlegi validátorrendszert és MiCA-konform szabályozási környezetet ígér.",
+			"en": "The TISZA Party's election program published on February 7, 2026 ('The Foundations of a Functioning and Humane Hungary') addresses crypto-asset and blockchain regulation in a dedicated section. The program criticizes the current validator system and promises a MiCA-compliant regulatory environment."
+		},
+		"text": {
+			"hu": "[45. oldal]\n\nA kriptovaluták és a blokklánc-technológiák hazai piaca bizonytalanná vált a jelenlegi kormány szabályozási döntései miatt.\n\n» A kriptoeszközök szabályozása több százezer magyar állampolgárt érint, mégsem előzte meg a teljes átalakítást érdemi társadalmi egyeztetés vagy hatásvizsgálat.\n» A 2025-ben bevezetett magyar előírások az uniós MiCA-rendeleten túlmutatnak, és több nemzetközi szolgáltató kivonulását eredményezték a lakossági piacról.\n» A kötelező \"kapuőr\" rendszer mesterséges belépési korlátot teremt, szűkíti a versenyt, és drágább, lassabb szolgáltatásokhoz vezet.\n» A szabályozás büntetőjogi fenyegetést is tartalmaz, akár magánszemélyekkel szemben, aránytalan jogbizonytalanságot okozva.\n» A megkettőzött felügyeleti rendszer és a túlzott központosítás növeli a kockázatát annak, hogy a felhasználók ellenőrizetlen, szürke csatornák felé forduljanak.\n\n[53. oldal]\n\nKiszámítható, európai normákhoz igazodó és biztonságos kripto- és blokkláncpiacot teremtünk Magyarországon.\n\n» A szabályozást összhangba hozzuk az Európai Unió kriptoeszközök piacáról szóló rendeletével (MiCA – Markets in Crypto-Assets Regulation), amely közvetlenül alkalmazandó uniós jog, és nem ír elő külön kapuőr vagy validáló szolgáltatót. Megszüntetjük az indokolatlan, uniós kötelezettségen túli, versenykorlátozó nemzeti megoldásokat.\n» Világos és közérthető szabályokat alkotunk: egyértelműen rögzítjük, mi legális, mi engedélyköteles, és milyen feltételekkel lehet kriptós szolgáltatást nyújtani vagy igénybe venni, hogy a felhasználók és a vállalkozások jogbiztonságban működhessenek.\n» Megakadályozzuk a piaci koncentrációt és a kivonulást: olyan környezetet teremtünk, amelyben a legális, szabályosan működő nemzetközi és hazai szolgáltatók számára is érdemes Magyarországon jelen lenni, a felhasználók pedig nem kényszerülnek ellenőrizetlen, szürke csatornákra.\n» A blokklánc-technológiát józanul és célzottan kezeljük: nem ösztönözzük a felelőtlen spekulációt, viszont támogatjuk azokat az alkalmazásokat, amelyeknek mérhető gazdasági haszna van (például pénzügyi elszámolások gyorsítása, digitális nyilvántartások, átláthatóbb adminisztráció).",
+			"en": "[Page 45]\n\nThe domestic market for cryptocurrencies and blockchain technologies has become uncertain due to the current government's regulatory decisions.\n\n» Crypto-asset regulation affects hundreds of thousands of Hungarian citizens, yet no meaningful public consultation or impact assessment preceded the complete overhaul.\n» Hungarian regulations introduced in 2025 go beyond the EU's MiCA regulation, resulting in the withdrawal of several international service providers from the retail market.\n» The mandatory 'gatekeeper' system creates artificial barriers to entry, narrows competition, and leads to more expensive, slower services.\n» The regulation also includes criminal threats, even against private individuals, causing disproportionate legal uncertainty.\n» The duplicated supervisory system and excessive centralization increase the risk of users turning to uncontrolled, grey channels.\n\n[Page 53]\n\nWe will create a predictable, European standards-aligned, and secure crypto and blockchain market in Hungary.\n\n» We will align regulation with the European Union's Markets in Crypto-Assets Regulation (MiCA), which is directly applicable EU law and does not prescribe separate gatekeeper or validation service providers. We will eliminate unjustified, competition-restricting national measures that go beyond EU obligations.\n» We will create clear and comprehensible rules: we will clearly establish what is legal, what requires a license, and under what conditions crypto services can be provided or used, so that users and businesses can operate with legal certainty.\n» We will prevent market concentration and withdrawal: we will create an environment where legally operating international and domestic service providers find it worthwhile to be present in Hungary, and users are not forced into uncontrolled, grey channels.\n» We will handle blockchain technology pragmatically and purposefully: we will not encourage irresponsible speculation, but will support applications with measurable economic benefits (such as accelerating financial settlements, digital registries, and more transparent administration)."
+		}
+	},
+	"tisza-program-bitcoinbazis-2026-02-07": {
+		"title": {
+			"hu": "BitcoinBázis",
+			"en": "BitcoinBázis"
+		},
+		"originalUrl": "https://www.bitcoinbazis.hu/a-tisza-part-programjaban-szo-esik-a-kriptovalutakrol-is/",
+		"summary": {
+			"hu": "A BitcoinBázis elemzése a TISZA Párt választási programjának kriptovalutákra vonatkozó fejezetéről. A cikk kiemeli, hogy a program a MiCA-rendelettel összhangban lévő szabályozást és a kapuőr rendszer megszüntetését ígéri.",
+			"en": "BitcoinBázis analysis of the TISZA Party's election program chapter on cryptocurrencies. The article highlights the program's promise of MiCA-aligned regulation and the elimination of the gatekeeper system."
+		}
+	},
+	"tisza-program-kriptoakademia-2026-02-07": {
+		"title": {
+			"hu": "KriptoAkadémia",
+			"en": "KriptoAkadémia"
+		},
+		"originalUrl": "https://kriptoakademia.com/2026/02/07/a-kriptovalutak-is-bekerultek-a-tisza-part-valasztasi-programjaba",
+		"summary": {
+			"hu": "A KriptoAkadémia beszámolója a TISZA Párt választási programjáról, amely önálló fejezetben foglalkozik a kriptoeszközök szabályozásával. A cikk megjegyzi, hogy ez az első alkalom, hogy egy magyarországi választáson induló párt hivatalos programjában önállóan foglalkozik a kriptoszabályozással.",
+			"en": "KriptoAkadémia report on the TISZA Party's election program, which addresses crypto-asset regulation in a dedicated section. The article notes this is the first time a party running in Hungarian elections has independently addressed crypto regulation in its official program."
+		}
 	}
 }
