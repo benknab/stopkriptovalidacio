@@ -261,7 +261,7 @@
 			"against": "Would keep",
 			"unknown": "Unknown",
 			"candidate_label": "Candidate",
-			"coalition_label": "Coalition",
+			"coalition_label": "Party",
 			"explainer_1": "The badges show promises made by candidates and their parties regarding repealing or modifying the cryptocurrency validation law (Act LXVII of 2025).",
 			"explainer_2": "Green indicates a promise to change, red indicates intent to keep."
 		},
