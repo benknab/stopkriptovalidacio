@@ -70,7 +70,7 @@ const vtrCodeTableListResponseSchema = createListResponseSchema(vtrCodeTableSche
 
 type VtrConstituency = z.infer<typeof vtrConstituencySchema>;
 type VtrCandidate = z.infer<typeof vtrCandidateSchema>;
-const REGISTERED_STATUS_CODES = new Set(["1", "5"]);
+const JOGEROS_STATUS_CODES = new Set(["1"]);
 
 const VTR_BASE_URL = "https://vtr.valasztas.hu/ogy2026";
 const VTR_DATA_BASE_URL = `${VTR_BASE_URL}/data`;
@@ -283,7 +283,7 @@ async function main(): Promise<void> {
 	);
 
 	const registeredCandidates = dedupeCandidates(candidates)
-		.filter((row) => REGISTERED_STATUS_CODES.has(row.statusCode))
+		.filter((row) => JOGEROS_STATUS_CODES.has(row.statusCode))
 		.map((row) => toCandidate(row, statusByCode, constituencyByKey))
 		.sort(compareCandidates);
 
