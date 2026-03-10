@@ -10,6 +10,7 @@ const i18nStringSchema = z.object({
 });
 
 export const stanceSchema = z.object({
+	slug: z.string().min(1),
 	repealSupport: repealSupportSchema,
 	summary: i18nStringSchema,
 	email: z.string(),

@@ -101,6 +101,7 @@ interface PartyCardProps {
 
 function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Element {
 	const stance = coalitionStances[coalition];
+	const slug = stance?.slug ?? "";
 	const repealSupport = stance?.repealSupport ?? "unknown";
 	const colors = stanceColors[repealSupport];
 	const summary = stance?.summary[lang] ?? "";
@@ -121,6 +122,18 @@ function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Ele
 					{t(`candidates.stance.${repealSupport}`, lang)}
 				</span>
 			</div>
+
+			{/* Logo */}
+			{slug && (
+				<div class="flex justify-center mb-3">
+					<img
+						src={`/parties/${slug}.png`}
+						alt={coalition}
+						class="h-12 w-auto object-contain"
+						loading="lazy"
+					/>
+				</div>
+			)}
 
 			{/* Content */}
 			<div class="flex-1 space-y-1 text-center">
