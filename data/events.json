@@ -840,5 +840,23 @@
 			"tisza-program-kriptoakademia-2026-02-07"
 		],
 		"exchangeSlugs": []
+	},
+	"coinbase-szovivoi-nyilatkozat": {
+		"date": "2026-03-10",
+		"type": "secondary",
+		"title": {
+			"hu": "Coinbase: határokon átnyúló szolgáltatásaik nem esnek a magyar törvény hatálya alá",
+			"en": "Coinbase: cross-border services do not fall within Hungarian law's remit"
+		},
+		"summary": {
+			"hu": "A Coinbase szóvivője megkeresésünkre közölte, hogy a vállalat belső vizsgálatot és helyi magyar jogi tanácsadóval egyeztetést követően megállapította, hogy jelenlegi határokon átnyúló szolgáltatásai Magyarországon nem esnek az új törvény hatálya alá. A Coinbase továbbra is figyelemmel kíséri a szabályozási helyzetet.",
+			"en": "A Coinbase spokesperson stated in response to our inquiry that, following a thorough internal review and consultation with specialist local Hungarian counsel, the company has determined that its current cross-border services in Hungary do not fall within the new law's remit. Coinbase is continuing to closely monitor the regulatory situation."
+		},
+		"sourceSlugs": [
+			"coinbase-szovivo-nyilatkozat-2026-03-10"
+		],
+		"exchangeSlugs": [
+			"coinbase"
+		]
 	}
 }

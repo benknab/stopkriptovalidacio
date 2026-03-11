@@ -158,7 +158,9 @@
 		"bitstamp": { "summary": "Kereskedés felfüggesztve." },
 		"kriptomat": { "summary": "Kereskedés ideiglenesen szünetel." },
 		"bitvavo": { "summary": "Kereskedés és befizetés felfüggesztve." },
-		"coinbase": { "summary": "Státusz bizonytalan." },
+		"coinbase": {
+			"summary": "A Coinbase szóvivője szerint jelenlegi határokon átnyúló szolgáltatásaik nem esnek a magyar törvény hatálya alá. A vállalat figyelemmel kíséri a szabályozási helyzetet."
+		},
 		"kraken": { "summary": "Státusz bizonytalan." },
 		"binance": { "summary": "Státusz bizonytalan." },
 		"crypto-com": { "summary": "Státusz bizonytalan." },

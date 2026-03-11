@@ -344,10 +344,13 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 
 				<div class="mt-8 p-4 bg-white rounded-lg border border-slate-200">
 					<p class="text-sm text-slate-600">
-						<strong>{t("mps.source", lang)}:</strong>{" "}
-						<ExternalLink href={voteSource.originalUrl} class="underline">
-							{voteSource.title[lang]}
-						</ExternalLink>
+						<strong>{t("mps.source", lang)}:</strong> {voteSource.originalUrl
+							? (
+								<ExternalLink href={voteSource.originalUrl} class="underline">
+									{voteSource.title[lang]}
+								</ExternalLink>
+							)
+							: <span>{voteSource.title[lang]}</span>}
 						{" | "}
 						<ExternalLink href={mpListSource.url} class="underline">
 							{t("mps.mp_list_source", lang)}

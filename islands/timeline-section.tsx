@@ -16,7 +16,10 @@ function formatDate(date: Date, lang: SupportedLanguage): string {
 	});
 }
 
-function TimelineSource({ source, lang }: { source: Source; lang: SupportedLanguage }): JSX.Element {
+function TimelineSource({ source, lang }: { source: Source; lang: SupportedLanguage }): JSX.Element | null {
+	if (!source.originalUrl) {
+		return null;
+	}
 	return (
 		<ExternalLink href={source.originalUrl} class="inline-flex items-center gap-1 text-sm hover:underline">
 			<span>{source.title[lang]}</span>
