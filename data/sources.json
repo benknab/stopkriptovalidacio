@@ -773,5 +773,19 @@
 			"hu": "A KriptoAkadémia beszámolója a TISZA Párt választási programjáról, amely önálló fejezetben foglalkozik a kriptoeszközök szabályozásával. A cikk megjegyzi, hogy ez az első alkalom, hogy egy magyarországi választáson induló párt hivatalos programjában önállóan foglalkozik a kriptoszabályozással.",
 			"en": "KriptoAkadémia report on the TISZA Party's election program, which addresses crypto-asset regulation in a dedicated section. The article notes this is the first time a party running in Hungarian elections has independently addressed crypto regulation in its official program."
 		}
+	},
+	"coinbase-szovivo-nyilatkozat-2026-03-10": {
+		"title": {
+			"hu": "Coinbase szóvivői nyilatkozat",
+			"en": "Coinbase Spokesperson Statement"
+		},
+		"summary": {
+			"hu": "A Coinbase szóvivőjének nyilatkozata megkeresésünkre a magyar kriptoszabályozásról. A Coinbase tudomásul vette az új magyar törvényt, és belső vizsgálat, valamint helyi magyar jogi tanácsadóval folytatott egyeztetés alapján úgy ítélte meg, hogy jelenlegi határokon átnyúló szolgáltatásai nem esnek a törvény hatálya alá. A vállalat továbbra is figyelemmel kíséri a magyarországi szabályozási helyzetet.",
+			"en": "Statement from a Coinbase spokesperson in response to our inquiry about Hungarian crypto regulation. Coinbase is aware of the new Hungarian law and, following a thorough internal review and consultation with specialist local Hungarian counsel, has determined that its current cross-border services in Hungary do not fall within the law's remit. The company is continuing to closely monitor the regulatory situation in Hungary."
+		},
+		"text": {
+			"hu": "A Coinbase szóvivőjének tulajdonítható nyilatkozat:\n\n\"Tudomásul vettük az új magyar törvényt. Alapos belső vizsgálatot és szakértő helyi magyar jogi tanácsadóval folytatott egyeztetést követően megállapítottuk, hogy a Coinbase jelenlegi határokon átnyúló szolgáltatásai Magyarországon nem esnek a törvény hatálya alá. Továbbra is szorosan figyelemmel kísérjük a magyarországi szabályozási helyzetet.\"",
+			"en": "Statement attributable to a Coinbase spokesperson:\n\n\"We are aware of the new law in Hungary. Following a thorough internal review and consultation with specialist local Hungarian counsel, we have determined that Coinbase's current cross-border services in Hungary do not fall within its remit. We are continuing to closely monitor the regulatory situation in Hungary.\""
+		}
 	}
 }

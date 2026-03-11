@@ -823,22 +823,22 @@
 			"bitpanda"
 		]
 	},
-	"tisza-program-kriptoszabalyozas": {
-		"date": "2026-02-07",
+	"coinbase-szovivoi-nyilatkozat": {
+		"date": "2026-03-10",
 		"type": "secondary",
 		"title": {
-			"hu": "TISZA Párt választási programja kitér a kriptoeszköz-szabályozásra",
-			"en": "TISZA Party election program addresses crypto-asset regulation"
+			"hu": "Coinbase: határokon átnyúló szolgáltatásaik nem esnek a magyar törvény hatálya alá",
+			"en": "Coinbase: cross-border services do not fall within Hungarian law's remit"
 		},
 		"summary": {
-			"hu": "A TISZA Párt közzétette választási programját, amely önálló fejezetben bírálja a jelenlegi kriptoeszköz-szabályozást és a validátorrendszert. A program a szabályozás MiCA-rendelettel való összehangolását, a kapuőr rendszer megszüntetését és kiszámítható jogi környezet megteremtését ígéri.",
-			"en": "The TISZA Party published its election program, which criticizes the current crypto-asset regulation and validator system in a dedicated section. The program promises alignment with the MiCA regulation, elimination of the gatekeeper system, and the creation of a predictable legal environment."
+			"hu": "A Coinbase szóvivője megkeresésünkre közölte, hogy a vállalat belső vizsgálatot és helyi magyar jogi tanácsadóval egyeztetést követően megállapította, hogy jelenlegi határokon átnyúló szolgáltatásai Magyarországon nem esnek az új törvény hatálya alá. A Coinbase továbbra is figyelemmel kíséri a szabályozási helyzetet.",
+			"en": "A Coinbase spokesperson stated in response to our inquiry that, following a thorough internal review and consultation with specialist local Hungarian counsel, the company has determined that its current cross-border services in Hungary do not fall within the new law's remit. Coinbase is continuing to closely monitor the regulatory situation."
 		},
 		"sourceSlugs": [
-			"tisza-program-2026",
-			"tisza-program-bitcoinbazis-2026-02-07",
-			"tisza-program-kriptoakademia-2026-02-07"
+			"coinbase-szovivo-nyilatkozat-2026-03-10"
 		],
-		"exchangeSlugs": []
+		"exchangeSlugs": [
+			"coinbase"
+		]
 	}
 }

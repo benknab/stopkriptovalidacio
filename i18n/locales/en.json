@@ -163,7 +163,9 @@
 		"bitstamp": { "summary": "Trading suspended." },
 		"kriptomat": { "summary": "Trading temporarily paused." },
 		"bitvavo": { "summary": "Trading and deposits suspended." },
-		"coinbase": { "summary": "Status uncertain." },
+		"coinbase": {
+			"summary": "A Coinbase spokesperson stated that their current cross-border services do not fall within the Hungarian law's remit. The company is monitoring the regulatory situation."
+		},
 		"kraken": { "summary": "Status uncertain." },
 		"binance": { "summary": "Status uncertain." },
 		"crypto-com": { "summary": "Status uncertain." },
