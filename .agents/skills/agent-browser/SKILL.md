@@ -89,8 +89,12 @@ agent-browser wait --download ./output.zip     # Wait for any download to comple
 agent-browser --download-path ./downloads open <url>  # Set default download directory
 
 # Capture
-agent-browser screenshot              # Screenshot to temp dir
-agent-browser screenshot --full       # Full page screenshot
+# IMPORTANT: Claude's API rejects images with any dimension > 8000px.
+# NEVER use --full on long pages. Instead, scroll to the section of interest
+# and take a viewport-only screenshot (no --full flag).
+# Use --viewport "1280x800" to control dimensions if needed.
+agent-browser screenshot              # Screenshot to temp dir (viewport only - PREFERRED)
+agent-browser screenshot --full       # Full page screenshot (AVOID on long pages - may exceed 8000px)
 agent-browser screenshot --annotate   # Annotated screenshot with numbered element labels
 agent-browser pdf output.pdf          # Save as PDF
 

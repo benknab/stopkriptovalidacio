@@ -53,7 +53,7 @@ export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 						<NavLink anchor="attekintes" currentPath={currentPath}>{t("nav.overview", lang)}</NavLink>
 						<NavLink anchor="tozsdek" currentPath={currentPath}>{t("nav.exchanges", lang)}</NavLink>
 						<NavLink anchor="idovonal" currentPath={currentPath}>{t("nav.timeline", lang)}</NavLink>
-						<NavLink anchor="partok" currentPath={currentPath}>{t("nav.parties", lang)}</NavLink>
+						<NavLink anchor="valasztas-2026" currentPath={currentPath}>{t("nav.parties", lang)}</NavLink>
 						<NavCta anchor="cselekedj" currentPath={currentPath}>{t("action.nav_title", lang)}</NavCta>
 					</nav>
 					<div class="hidden sm:block">

@@ -31,7 +31,7 @@
 		"exchanges": "Service Providers",
 		"mps": "MPs",
 		"mp_search": "MP Search",
-		"parties": "Parties",
+		"parties": "Election 2026",
 		"about": "About",
 		"contact": "Contact",
 		"menu": "Menu",
@@ -259,11 +259,16 @@
 		"list_warning": "Your email client may not handle this many ({{count}}) recipients. You may need to manually divide them into batches if you want to send them all."
 	},
 	"parties": {
-		"title": "Parties",
-		"description": "Positions are based on parties' public statements, programs, and their voting record in parliament.",
+		"title": "Election 2026",
+		"description": "Positions of parties running in the 2026 parliamentary election on the crypto validation law.",
+		"methodology": "Stances are based on parties' public statements, programs, and their voting record in parliament. Where a party has not taken a position, their stance is listed as unknown.",
+		"outreach": "We have reached out to all parties asking them to publicly state their position on the crypto validation law. We hope they will publish their promises and intentions on this website.",
 		"candidates_count": "{{count}} candidates",
 		"email": "Email",
-		"facebook": "Facebook"
+		"facebook": "Facebook",
+		"threshold_note": "Only parties with at least 40 candidates are shown.",
+		"show_all": "Show all parties",
+		"show_fewer": "Show fewer"
 	},
 	"candidates": {
 		"stance": {

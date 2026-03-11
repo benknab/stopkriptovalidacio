@@ -31,7 +31,7 @@
 		"exchanges": "Szolgáltatók",
 		"mps": "Képviselők",
 		"mp_search": "Képviselő keresés",
-		"parties": "Pártok",
+		"parties": "Választás 2026",
 		"about": "Rólunk",
 		"contact": "Kapcsolat",
 		"menu": "Menü",
@@ -259,11 +259,16 @@
 		"list_warning": "Előfordulhat, hogy a levelezőprogramja nem tud kezelni ennyi ({{count}}) címzettet. Ilyen esetben több részletben küldje el az üzeneteket."
 	},
 	"parties": {
-		"title": "Pártok",
-		"description": "Az álláspontok a pártok nyilvános nyilatkozatain, programjain és parlamenti szavazási magatartásukon alapulnak.",
+		"title": "Választás 2026",
+		"description": "A 2026-os országgyűlési választáson induló pártok álláspontjai a kriptovalidációs törvénnyel kapcsolatban.",
+		"methodology": "Az álláspontok a pártok nyilvános nyilatkozatain, programjain és parlamenti szavazási magatartásukon alapulnak. Ahol a párt nem foglalt állást, ott az álláspont ismeretlenként szerepel.",
+		"outreach": "Megkerestük az összes pártot, hogy nyilvánosan fejtsék ki álláspontjukat a kriptovalidációs törvénnyel kapcsolatban. Reméljük, hogy ígéreteiket és szándékaikat ezen az oldalon is közzéteszik.",
 		"candidates_count": "{{count}} jelölt",
 		"email": "Email",
-		"facebook": "Facebook"
+		"facebook": "Facebook",
+		"threshold_note": "Csak a legalább 40 jelöltet állító pártokat mutatjuk.",
+		"show_all": "Összes párt mutatása",
+		"show_fewer": "Kevesebb mutatása"
 	},
 	"candidates": {
 		"stance": {

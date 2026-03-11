@@ -1,10 +1,11 @@
+import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
 import { type Coalition, coalitionSchema } from "../data/candidates-schema.ts";
 import { candidates } from "../data/candidates.ts";
 import { coalitionStances } from "../data/coalition-stances.ts";
 import type { RepealSupport } from "../data/stances-schema.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
-import { H2 } from "./h2.tsx";
+import { H2 } from "../components/h2.tsx";
 
 // --- Stance colors (border + badge) ---
 
@@ -32,6 +33,7 @@ const stancePriority: Record<RepealSupport, number> = {
 // --- Compute which coalitions have candidates ---
 
 const INDEPENDENT_COALITION: Coalition = "Független jelölt";
+const MAIN_THRESHOLD = 40;
 
 function getPartiesWithCandidates(): Array<{ coalition: Coalition; candidateCount: number }> {
 	const coalitionSet = new Set(coalitionSchema.options);
@@ -44,7 +46,7 @@ function getPartiesWithCandidates(): Array<{ coalition: Coalition; candidateCoun
 	}
 
 	return Array.from(counts.entries())
-		.filter(([_, count]) => count >= 10)
+		.filter(([_, count]) => count >= 1)
 		.map(([coalition, candidateCount]) => ({ coalition, candidateCount }))
 		.sort((a, b) => {
 			const stanceA = coalitionStances[a.coalition]?.repealSupport ?? "unknown";
@@ -55,7 +57,9 @@ function getPartiesWithCandidates(): Array<{ coalition: Coalition; candidateCoun
 		});
 }
 
-const partiesWithCandidates = getPartiesWithCandidates();
+const allParties = getPartiesWithCandidates();
+const mainParties = allParties.filter((p) => p.candidateCount >= MAIN_THRESHOLD);
+const extraParties = allParties.filter((p) => p.candidateCount < MAIN_THRESHOLD);
 
 // --- Icons ---
 
@@ -184,17 +188,32 @@ interface PartiesSectionProps {
 	lang: SupportedLanguage;
 }
 
-export function PartiesSection({ lang }: PartiesSectionProps): JSX.Element {
+const INITIAL_COLLAPSED = false;
+
+export default function PartiesSection({ lang }: PartiesSectionProps): JSX.Element {
+	const showAll = useSignal(INITIAL_COLLAPSED);
+
+	const visibleParties = showAll.value ? allParties : mainParties;
+	const hasExtra = extraParties.length > 0;
+
 	return (
-		<section id="partok" class="bg-slate-50 py-16 sm:py-20">
+		<section id="valasztas-2026" class="bg-slate-50 py-10 sm:py-12">
 			<div class="mx-auto max-w-6xl px-4 sm:px-6">
 				<H2>{t("parties.title", lang)}</H2>
-				<p class="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
-					{t("parties.description", lang)}
-				</p>
+				<div class="mt-2 text-center space-y-2">
+					<p class="text-slate-600 text-balance">
+						{t("parties.description", lang)}
+					</p>
+					<p class="text-sm text-slate-500 text-balance">
+						{t("parties.methodology", lang)}
+					</p>
+					<p class="text-sm text-slate-500 italic text-balance">
+						{t("parties.outreach", lang)}
+					</p>
+				</div>
 
-				<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-					{partiesWithCandidates.map(({ coalition, candidateCount }) => (
+				<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+					{visibleParties.map(({ coalition, candidateCount }) => (
 						<PartyCard
 							key={coalition}
 							coalition={coalition}
@@ -203,6 +222,33 @@ export function PartiesSection({ lang }: PartiesSectionProps): JSX.Element {
 						/>
 					))}
 				</div>
+
+				{/* Threshold note + show all button */}
+				{hasExtra && (
+					<div class="mt-8 text-center">
+						<p class="text-sm text-slate-500">
+							{t("parties.threshold_note", lang)}
+						</p>
+						<button
+							type="button"
+							onClick={() => {
+								showAll.value = !showAll.value;
+							}}
+							class="mt-3 inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+						>
+							{showAll.value ? t("parties.show_fewer", lang) : t("parties.show_all", lang)}
+							<svg
+								class={`w-4 h-4 transition-transform duration-200 ${showAll.value ? "rotate-180" : ""}`}
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								stroke-width="2"
+							>
+								<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+							</svg>
+						</button>
+					</div>
+				)}
 			</div>
 		</section>
 	);
