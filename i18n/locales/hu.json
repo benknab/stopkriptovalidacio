@@ -263,7 +263,6 @@
 		"description": "Az álláspontok a pártok nyilvános nyilatkozatain, programjain és parlamenti szavazási magatartásukon alapulnak.",
 		"candidates_count": "{{count}} jelölt",
 		"email": "Email",
-		"phone": "Telefon",
 		"facebook": "Facebook"
 	},
 	"candidates": {

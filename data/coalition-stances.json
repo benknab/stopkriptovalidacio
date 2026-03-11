@@ -4,31 +4,27 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"A SZOLIDARITÁS PÁRTJA-Munkáspárt": {
 		"slug": "szolidaritas",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
-		"email": "",
-		"phone": "",
-		"facebook": ""
+		"email": "kapcsolat@szolidaritasmozgalom.hu",
+		"facebook": "https://www.facebook.com/SZOLIDARITASmozgalom"
 	},
 	"DK": {
 		"slug": "dk",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
-		"email": "",
-		"phone": "",
-		"facebook": ""
+		"email": "info@dkp.hu",
+		"facebook": "https://www.facebook.com/dk365"
 	},
 	"EgyE": {
 		"slug": "egye",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"FIDESZ-KDNP": {
@@ -38,16 +34,14 @@
 			"hu": "A kormánypárt nyújtotta be a törvénymódosítást, és nem jelezte a visszavonás szándékát.",
 			"en": "The governing party submitted the legislative amendment and has not indicated intent to repeal it."
 		},
-		"email": "",
-		"phone": "",
-		"facebook": ""
+		"email": "kapcsolat@fidesz.hu",
+		"facebook": "https://www.facebook.com/FideszHU"
 	},
 	"Független jelölt": {
 		"slug": "fuggetlen",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"HHSZ": {
@@ -55,7 +49,6 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"IRÁNY Párt": {
@@ -63,23 +56,20 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"Jobbik": {
 		"slug": "jobbik",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
-		"email": "",
-		"phone": "",
-		"facebook": ""
+		"email": "jobbik@jobbik.hu",
+		"facebook": "https://www.facebook.com/JobbikMoM"
 	},
 	"Körkeresztesek Pártja": {
 		"slug": "korkeresztesek",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"Középpárt": {
@@ -87,7 +77,6 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"LMP – Zöldek": {
@@ -95,7 +84,6 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"MHVP": {
@@ -103,39 +91,34 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"MKKP": {
 		"slug": "mkkp",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
-		"email": "",
-		"phone": "",
-		"facebook": ""
+		"email": "ketfarkukutya@gmail.com",
+		"facebook": "https://www.facebook.com/justanotherwordpresspage"
 	},
 	"Magyar Igazság és Élet Pártja": {
 		"slug": "miep",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"Mi Hazánk": {
 		"slug": "mi-hazank",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
-		"email": "",
-		"phone": "",
-		"facebook": ""
+		"email": "info@mihazank.hu",
+		"facebook": "https://www.facebook.com/mihazankmozgalom2026"
 	},
 	"NEEM": {
 		"slug": "neem",
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"NÉP": {
@@ -143,7 +126,6 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"OVIP": {
@@ -151,7 +133,6 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"SZOM": {
@@ -159,7 +140,6 @@
 		"repealSupport": "unknown",
 		"summary": { "hu": "", "en": "" },
 		"email": "",
-		"phone": "",
 		"facebook": ""
 	},
 	"TISZA": {
@@ -169,8 +149,7 @@
 			"hu": "A TISZA Párt programjában szerepel a kriptovaluta-validációs törvény felülvizsgálata.",
 			"en": "The TISZA Party's program includes a review of the cryptocurrency validation law."
 		},
-		"email": "",
-		"phone": "",
-		"facebook": ""
+		"email": "info@magyartisza.hu",
+		"facebook": "https://www.facebook.com/magyartisza"
 	}
 }

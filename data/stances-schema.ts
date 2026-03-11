@@ -14,7 +14,6 @@ export const stanceSchema = z.object({
 	repealSupport: repealSupportSchema,
 	summary: i18nStringSchema,
 	email: z.string(),
-	phone: z.string(),
 	facebook: z.string(),
 });
 

@@ -263,7 +263,6 @@
 		"description": "Positions are based on parties' public statements, programs, and their voting record in parliament.",
 		"candidates_count": "{{count}} candidates",
 		"email": "Email",
-		"phone": "Phone",
 		"facebook": "Facebook"
 	},
 	"candidates": {
