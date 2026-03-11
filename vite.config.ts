@@ -2,13 +2,13 @@ import { defineConfig, type Plugin } from "vite";
 import { fresh } from "@fresh/plugin-vite";
 import tailwindcss from "@tailwindcss/vite";
 
-function reloadOnI18nChange(): Plugin {
+function reloadOnDataChange(): Plugin {
 	return {
-		name: "reload-on-i18n-change",
+		name: "reload-on-data-change",
 		configureServer(server): void {
 			server.watcher.on("change", (file) => {
-				if (file.includes("/i18n/locales/")) {
-					// Restart the server to reload SSR modules with new translations
+				if (file.includes("/i18n/locales/") || file.includes("/data/")) {
+					// Restart the server to reload SSR modules with new data
 					server.restart();
 				}
 			});
@@ -29,5 +29,5 @@ export default defineConfig({
 			},
 		},
 	},
-	plugins: [fresh({ serverEntry: "main.tsx" }), tailwindcss(), reloadOnI18nChange()],
+	plugins: [fresh({ serverEntry: "main.tsx" }), tailwindcss(), reloadOnDataChange()],
 });
