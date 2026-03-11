@@ -823,24 +823,6 @@
 			"bitpanda"
 		]
 	},
-	"tisza-program-kriptoszabalyozas": {
-		"date": "2026-02-07",
-		"type": "secondary",
-		"title": {
-			"hu": "TISZA Párt választási programja kitér a kriptoeszköz-szabályozásra",
-			"en": "TISZA Party election program addresses crypto-asset regulation"
-		},
-		"summary": {
-			"hu": "A TISZA Párt közzétette választási programját, amely önálló fejezetben bírálja a jelenlegi kriptoeszköz-szabályozást és a validátorrendszert. A program a szabályozás MiCA-rendelettel való összehangolását, a kapuőr rendszer megszüntetését és kiszámítható jogi környezet megteremtését ígéri.",
-			"en": "The TISZA Party published its election program, which criticizes the current crypto-asset regulation and validator system in a dedicated section. The program promises alignment with the MiCA regulation, elimination of the gatekeeper system, and the creation of a predictable legal environment."
-		},
-		"sourceSlugs": [
-			"tisza-program-2026",
-			"tisza-program-bitcoinbazis-2026-02-07",
-			"tisza-program-kriptoakademia-2026-02-07"
-		],
-		"exchangeSlugs": []
-	},
 	"coinbase-szovivoi-nyilatkozat": {
 		"date": "2026-03-10",
 		"type": "secondary",
