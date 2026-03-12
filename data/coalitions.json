@@ -1,0 +1,190 @@
+[
+	{
+		"slug": "magyar-vallalkozok",
+		"name": "A Magyar Vállalkozók és",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "szolidaritas",
+		"name": "A SZOLIDARITÁS PÁRTJA-Munkáspárt",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [
+			"kapcsolat@szolidaritasmozgalom.hu"
+		],
+		"facebook": "https://www.facebook.com/SZOLIDARITASmozgalom"
+	},
+	{
+		"slug": "dk",
+		"name": "DK",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [
+			"info@dkp.hu"
+		],
+		"facebook": "https://www.facebook.com/dk365"
+	},
+	{
+		"slug": "egye",
+		"name": "EgyE",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "fidesz-kdnp",
+		"name": "FIDESZ-KDNP",
+		"repealSupport": "against",
+		"summary": {
+			"hu": "A kormánypárt nyújtotta be a törvénymódosítást, és nem jelezte a visszavonás szándékát.",
+			"en": "The governing party submitted the legislative amendment and has not indicated intent to repeal it."
+		},
+		"emails": [
+			"kapcsolat@fidesz.hu"
+		],
+		"facebook": "https://www.facebook.com/FideszHU"
+	},
+	{
+		"slug": "fuggetlen",
+		"name": "Független jelölt",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "hhsz",
+		"name": "HHSZ",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "irany",
+		"name": "IRÁNY Párt",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "jobbik",
+		"name": "Jobbik",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [
+			"jobbik@jobbik.hu"
+		],
+		"facebook": "https://www.facebook.com/JobbikMoM"
+	},
+	{
+		"slug": "korkeresztesek",
+		"name": "Körkeresztesek Pártja",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "kozeppart",
+		"name": "Középpárt",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "lmp",
+		"name": "LMP – Zöldek",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "mhvp",
+		"name": "MHVP",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "mkkp",
+		"name": "MKKP",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [
+			"ketfarkukutya@gmail.com"
+		],
+		"facebook": "https://www.facebook.com/justanotherwordpresspage"
+	},
+	{
+		"slug": "miep",
+		"name": "Magyar Igazság és Élet Pártja",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "mi-hazank",
+		"name": "Mi Hazánk",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [
+			"info@mihazank.hu"
+		],
+		"facebook": "https://www.facebook.com/mihazankmozgalom2026"
+	},
+	{
+		"slug": "neem",
+		"name": "NEEM",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "nep",
+		"name": "NÉP",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "ovip",
+		"name": "OVIP",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "szom",
+		"name": "SZOM",
+		"repealSupport": "unknown",
+		"summary": null,
+		"emails": [],
+		"facebook": null
+	},
+	{
+		"slug": "tisza",
+		"name": "TISZA",
+		"repealSupport": "for",
+		"summary": {
+			"hu": "A TISZA Párt programjában szerepel a kriptovaluta-validációs törvény felülvizsgálata.",
+			"en": "The TISZA Party's program includes a review of the cryptocurrency validation law."
+		},
+		"emails": [
+			"info@magyartisza.hu"
+		],
+		"facebook": "https://www.facebook.com/magyartisza"
+	}
+]

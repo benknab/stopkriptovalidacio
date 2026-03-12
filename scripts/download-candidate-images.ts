@@ -58,8 +58,7 @@ async function main(): Promise<void> {
 
 	await ensureDir(OUTPUT_DIR);
 
-	const entries = Object.entries(candidates);
-	const withImages = entries.filter(([_, candidate]) => candidate.imageUrl);
+	const withImages = candidates.filter((c) => c.imageUrl);
 
 	console.log(`Found ${withImages.length} candidates with images`);
 	if (force) {
@@ -70,8 +69,8 @@ async function main(): Promise<void> {
 	let skipped = 0;
 	let failed = 0;
 
-	for (const [slug, candidate] of withImages) {
-		const outputPath = `${OUTPUT_DIR}/${slug}.jpg`;
+	for (const candidate of withImages) {
+		const outputPath = `${OUTPUT_DIR}/${candidate.slug}.jpg`;
 
 		if (!force && await fileExists(outputPath)) {
 			skipped++;
@@ -79,12 +78,12 @@ async function main(): Promise<void> {
 		}
 
 		try {
-			console.log(`Downloading: ${slug}`);
+			console.log(`Downloading: ${candidate.slug}`);
 			await downloadAndCompressImage(candidate.imageUrl as string, outputPath);
 			downloaded++;
 			await sleep(DELAY_MS);
 		} catch (error) {
-			console.error(`Failed: ${slug} - ${error instanceof Error ? error.message : error}`);
+			console.error(`Failed: ${candidate.slug} - ${error instanceof Error ? error.message : error}`);
 			failed++;
 		}
 	}

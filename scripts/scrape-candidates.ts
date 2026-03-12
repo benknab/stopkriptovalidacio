@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { type Candidate, coalitionSchema } from "../data/candidates-schema.ts";
+import { type Candidate, coalitionSchema } from "../data/candidates.ts";
 
 const vtrConfigSchema = z.object({
 	ver: z.string().min(1),
@@ -200,6 +200,7 @@ function toCandidate(
 	row: VtrCandidate,
 	statusByCode: Map<string, string>,
 	constituencyByKey: Map<string, VtrConstituency>,
+	existingBySlug: Map<string, Candidate>,
 ): Candidate {
 	const districtKey = buildDistrictKey(row.maz, row.evk);
 	const constituency = constituencyByKey.get(districtKey);
@@ -214,6 +215,9 @@ function toCandidate(
 	const organizationIds = [...new Set(row.organizationIds)].sort((a, b) => a - b);
 
 	const { county, district } = formatEvkName(constituency.evkName);
+
+	// Preserve manually curated fields from existing data
+	const existing = existingBySlug.get(slug);
 
 	return {
 		slug,
@@ -232,9 +236,14 @@ function toCandidate(
 			changedAt: row.statusChangedAt,
 		},
 		organizationIds,
-		drawNumber: row.drawNumber,
-		imageUrl: buildImageUrl(row.photoId, row.imageType),
+		drawNumber: row.drawNumber ?? null,
+		imageUrl: buildImageUrl(row.photoId, row.imageType) ?? null,
 		sourceUrl: `${VTR_BASE_URL}/egyeni-valasztokeruletek/${row.maz}/${row.evk}?tab=jeloltek`,
+		// Preserved fields (use existing if available, otherwise defaults)
+		emails: existing?.emails ?? [],
+		facebook: existing?.facebook ?? null,
+		repealSupport: existing?.repealSupport ?? "unknown",
+		summary: existing?.summary ?? null,
 	};
 }
 
@@ -258,7 +267,20 @@ function compareCandidates(a: Candidate, b: Candidate): number {
 	return a.kpnId - b.kpnId;
 }
 
+async function loadExistingCandidates(): Promise<Map<string, Candidate>> {
+	try {
+		const raw = JSON.parse(await Deno.readTextFile(OUTPUT_PATH));
+		const arr = raw as Array<Record<string, unknown>>;
+		return new Map(arr.map((c) => [c.slug as string, c as unknown as Candidate]));
+	} catch {
+		return new Map();
+	}
+}
+
 async function main(): Promise<void> {
+	const existingBySlug = await loadExistingCandidates();
+	console.log(`Loaded ${existingBySlug.size} existing candidates`);
+
 	const config = await fetchJson(`${VTR_DATA_BASE_URL}/config.json`, vtrConfigSchema);
 	const versionDataUrl = `${VTR_DATA_BASE_URL}/${config.ver}/ver`;
 
@@ -284,12 +306,27 @@ async function main(): Promise<void> {
 
 	const registeredCandidates = dedupeCandidates(candidates)
 		.filter((row) => JOGEROS_STATUS_CODES.has(row.statusCode))
-		.map((row) => toCandidate(row, statusByCode, constituencyByKey))
+		.map((row) => toCandidate(row, statusByCode, constituencyByKey, existingBySlug))
 		.sort(compareCandidates);
 
-	const candidatesBySlug = Object.fromEntries(registeredCandidates.map((candidate) => [candidate.slug, candidate]));
-	const output = `${JSON.stringify(candidatesBySlug, null, "\t")}\n`;
+	const newSlugs = new Set(registeredCandidates.map((c) => c.slug));
+	const removed = [...existingBySlug.keys()].filter((slug) => !newSlugs.has(slug));
+	if (removed.length > 0) {
+		console.log(`Removed ${removed.length} candidates no longer in NVI data:`);
+		for (const slug of removed) {
+			console.log(`  - ${slug}`);
+		}
+	}
 
+	const added = registeredCandidates.filter((c) => !existingBySlug.has(c.slug));
+	if (added.length > 0) {
+		console.log(`Added ${added.length} new candidates:`);
+		for (const c of added) {
+			console.log(`  + ${c.slug}`);
+		}
+	}
+
+	const output = `${JSON.stringify(registeredCandidates, null, "\t")}\n`;
 	await Deno.writeTextFile(OUTPUT_PATH, output);
 
 	console.log(`Saved ${registeredCandidates.length} candidates to ${OUTPUT_PATH.pathname}`);

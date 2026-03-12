@@ -1,11 +1,8 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
 import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
-import type { Candidate } from "../data/candidates-schema.ts";
-import { candidates } from "../data/candidates.ts";
-import { candidateStances } from "../data/candidate-stances.ts";
-import { coalitionStances } from "../data/coalition-stances.ts";
-import type { RepealSupport } from "../data/stances-schema.ts";
+import { type Candidate, candidates, type RepealSupport } from "../data/candidates.ts";
+import { coalitionsByName } from "../data/coalitions.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
 import { ActionButtons } from "../components/action-buttons.tsx";
@@ -15,7 +12,7 @@ import { ExternalLink } from "../components/external-link.tsx";
 
 // --- Module-level data processing ---
 
-type CandidateEntry = { slug: string; candidate: Candidate };
+type CandidateEntry = Candidate;
 
 const DUMMY_EMAIL = "jelolt@example.com";
 
@@ -27,7 +24,7 @@ type CandidateCountyData = {
 function buildCandidateCountyData(): CandidateCountyData[] {
 	const countyMap = new Map<string, Set<string>>();
 
-	for (const candidate of Object.values(candidates)) {
+	for (const candidate of candidates) {
 		if (!countyMap.has(candidate.county)) {
 			countyMap.set(candidate.county, new Set());
 		}
@@ -52,14 +49,12 @@ function buildCandidateCountyData(): CandidateCountyData[] {
 const candidateCountyData = buildCandidateCountyData();
 
 function getSortedCandidates(): CandidateEntry[] {
-	return (Object.entries(candidates) as Array<[string, Candidate]>)
-		.map(([slug, candidate]) => ({ slug, candidate }))
-		.sort((a, b) => {
-			const drawA = a.candidate.drawNumber ?? Infinity;
-			const drawB = b.candidate.drawNumber ?? Infinity;
-			if (drawA !== drawB) return drawA - drawB;
-			return a.candidate.name.localeCompare(b.candidate.name, "hu");
-		});
+	return [...candidates].sort((a, b) => {
+		const drawA = a.drawNumber ?? Infinity;
+		const drawB = b.drawNumber ?? Infinity;
+		if (drawA !== drawB) return drawA - drawB;
+		return a.name.localeCompare(b.name, "hu");
+	});
 }
 
 const sortedCandidates = getSortedCandidates();
@@ -72,12 +67,8 @@ const stanceColors: Record<RepealSupport, { badge: string }> = {
 	unknown: { badge: "bg-slate-100 text-slate-600" },
 };
 
-function getCandidateRepealSupport(slug: string): RepealSupport {
-	return candidateStances[slug]?.repealSupport ?? "unknown";
-}
-
 function getCoalitionRepealSupport(coalition: Candidate["coalition"]): RepealSupport {
-	return coalitionStances[coalition]?.repealSupport ?? "unknown";
+	return coalitionsByName.get(coalition)?.repealSupport ?? "unknown";
 }
 
 const INDEPENDENT_COALITION = "Független jelölt";
@@ -85,13 +76,12 @@ const INDEPENDENT_COALITION = "Független jelölt";
 // --- CandidateCard ---
 
 interface CandidateCardProps {
-	slug: string;
 	candidate: Candidate;
 	lang: SupportedLanguage;
 }
 
-function CandidateCard({ slug, candidate, lang }: CandidateCardProps): JSX.Element {
-	const candidateRepealSupport = getCandidateRepealSupport(slug);
+function CandidateCard({ candidate, lang }: CandidateCardProps): JSX.Element {
+	const candidateRepealSupport = candidate.repealSupport;
 	const coalitionRepealSupport = getCoalitionRepealSupport(candidate.coalition);
 	const isIndependent = candidate.coalition === INDEPENDENT_COALITION;
 
@@ -99,7 +89,7 @@ function CandidateCard({ slug, candidate, lang }: CandidateCardProps): JSX.Eleme
 		<div class="relative bg-slate-50 rounded-xl p-4 border border-slate-200">
 			<div class="flex items-center gap-3">
 				<CandidateImage
-					slug={slug}
+					slug={candidate.slug}
 					name={candidate.displayName}
 					hasImage={!!candidate.imageUrl}
 					size="sm"
@@ -205,7 +195,7 @@ export default function TakeActionSection(props: TakeActionSectionProps): JSX.El
 	const currentCountyData = candidateCountyData.find((c) => c.name === selectedCounty.value);
 	const districtDisabled = !selectedCounty.value;
 
-	const filteredCandidates = sortedCandidates.filter(({ candidate }) => {
+	const filteredCandidates = sortedCandidates.filter((candidate) => {
 		// Name/coalition search filter
 		if (searchQuery.value) {
 			const query = searchQuery.value.toLowerCase();
@@ -362,10 +352,9 @@ export default function TakeActionSection(props: TakeActionSectionProps): JSX.El
 					{(selectedCounty.value || searchQuery.value) &&
 						filteredCandidates.length > 0 && (
 						<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-							{filteredCandidates.map(({ slug, candidate }) => (
+							{filteredCandidates.map((candidate) => (
 								<CandidateCard
-									key={slug}
-									slug={slug}
+									key={candidate.slug}
 									candidate={candidate}
 									lang={lang}
 								/>

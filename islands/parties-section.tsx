@@ -1,9 +1,7 @@
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
-import { type Coalition, coalitionSchema } from "../data/candidates-schema.ts";
-import { candidates } from "../data/candidates.ts";
-import { coalitionStances } from "../data/coalition-stances.ts";
-import type { RepealSupport } from "../data/stances-schema.ts";
+import { candidates, type Coalition, coalitionSchema, type RepealSupport } from "../data/candidates.ts";
+import { coalitionsByName } from "../data/coalitions.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
 
@@ -39,7 +37,7 @@ function getPartiesWithCandidates(): Array<{ coalition: Coalition; candidateCoun
 	const coalitionSet = new Set(coalitionSchema.options);
 	const counts = new Map<Coalition, number>();
 
-	for (const candidate of Object.values(candidates)) {
+	for (const candidate of candidates) {
 		if (!coalitionSet.has(candidate.coalition)) continue;
 		if (candidate.coalition === INDEPENDENT_COALITION) continue;
 		counts.set(candidate.coalition, (counts.get(candidate.coalition) ?? 0) + 1);
@@ -49,8 +47,8 @@ function getPartiesWithCandidates(): Array<{ coalition: Coalition; candidateCoun
 		.filter(([_, count]) => count >= 1)
 		.map(([coalition, candidateCount]) => ({ coalition, candidateCount }))
 		.sort((a, b) => {
-			const stanceA = coalitionStances[a.coalition]?.repealSupport ?? "unknown";
-			const stanceB = coalitionStances[b.coalition]?.repealSupport ?? "unknown";
+			const stanceA = coalitionsByName.get(a.coalition)?.repealSupport ?? "unknown";
+			const stanceB = coalitionsByName.get(b.coalition)?.repealSupport ?? "unknown";
 			const priorityDiff = stancePriority[stanceA] - stancePriority[stanceB];
 			if (priorityDiff !== 0) return priorityDiff;
 			return b.candidateCount - a.candidateCount;
@@ -92,13 +90,13 @@ interface PartyCardProps {
 }
 
 function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Element {
-	const stance = coalitionStances[coalition];
+	const stance = coalitionsByName.get(coalition);
 	const slug = stance?.slug ?? "";
 	const repealSupport = stance?.repealSupport ?? "unknown";
 	const colors = stanceColors[repealSupport];
-	const summary = stance?.summary[lang] ?? "";
+	const summary = stance?.summary?.[lang] ?? "";
 
-	const email = stance?.email ?? "";
+	const emails = stance?.emails ?? [];
 	const facebook = stance?.facebook ?? "";
 
 	return (
@@ -143,10 +141,10 @@ function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Ele
 
 			{/* Button Row */}
 			<div class="flex gap-2 mt-4">
-				{email
+				{emails.length > 0
 					? (
 						<a
-							href={`mailto:${email}`}
+							href={`mailto:${emails.join(",")}`}
 							class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
 						>
 							<EmailIcon />
