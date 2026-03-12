@@ -1404,6 +1404,33 @@
 		"summary": null
 	},
 	{
+		"slug": "molnar-gyula-140280",
+		"kpnId": 6881910,
+		"ejId": 140280,
+		"name": "Molnár Gyula",
+		"displayName": "Molnár Gyula",
+		"coalition": "DK",
+		"maz": "01",
+		"evk": "10",
+		"county": "Budapest",
+		"district": "10. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-08T23:00:00.000Z"
+		},
+		"organizationIds": [
+			1001
+		],
+		"drawNumber": 5,
+		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/4/7/Kep-29747.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/01/10?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
 		"slug": "dr-staudt-mate-140246",
 		"kpnId": 3517359,
 		"ejId": 140246,
@@ -3675,6 +3702,59 @@
 		"summary": null
 	},
 	{
+		"slug": "dohi-kitti-erika-140310",
+		"kpnId": 8824265,
+		"ejId": 140310,
+		"name": "Dohi Kitti Erika",
+		"displayName": "Dohi Kitti Erika",
+		"coalition": "A SZOLIDARITÁS PÁRTJA-Munkáspárt",
+		"maz": "03",
+		"evk": "05",
+		"county": "Bács-Kiskun",
+		"district": "05. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [
+			1008,
+			1019
+		],
+		"drawNumber": 3,
+		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/8/9/Kep-29789.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/03/05?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
+		"slug": "nemeth-szilveszter-140832",
+		"kpnId": 1596322,
+		"ejId": 140832,
+		"name": "Németh Szilveszter",
+		"displayName": "Németh Szilveszter",
+		"coalition": "Független jelölt",
+		"maz": "03",
+		"evk": "05",
+		"county": "Bács-Kiskun",
+		"district": "05. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [],
+		"drawNumber": 5,
+		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/2/3/Kep-30523.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/03/05?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
 		"slug": "nagy-szabolcs-140571",
 		"kpnId": 8820687,
 		"ejId": 140571,
@@ -5274,6 +5354,61 @@
 		"summary": null
 	},
 	{
+		"slug": "ormos-tas-zsolt-140227",
+		"kpnId": 2054680,
+		"ejId": 140227,
+		"name": "Ormos Tas Zsolt",
+		"displayName": "Ormos Tas Zsolt",
+		"coalition": "Jobbik",
+		"maz": "05",
+		"evk": "05",
+		"county": "Borsod-Abaúj-Zemplén",
+		"district": "05. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [
+			1007
+		],
+		"drawNumber": 10,
+		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/7/3/Kep-29973.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/05/05?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
+		"slug": "magosi-robert-140385",
+		"kpnId": 812033,
+		"ejId": 140385,
+		"name": "Magosi Róbert",
+		"displayName": "Magosi Róbert",
+		"coalition": "A SZOLIDARITÁS PÁRTJA-Munkáspárt",
+		"maz": "05",
+		"evk": "05",
+		"county": "Borsod-Abaúj-Zemplén",
+		"district": "05. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [
+			1008,
+			1019
+		],
+		"drawNumber": 12,
+		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/8/7/Kep-29787.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/05/05?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
 		"slug": "pasztorniczky-istvan-140541",
 		"kpnId": 7518778,
 		"ejId": 140541,
@@ -5294,6 +5429,58 @@
 		],
 		"drawNumber": 13,
 		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/3/3/Kep-30133.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/05/05?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
+		"slug": "baloghne-rusznyak-sarolta-141007",
+		"kpnId": 3665192,
+		"ejId": 141007,
+		"name": "Baloghné Rusznyák Sarolta",
+		"displayName": "Baloghné Rusznyák Sarolta",
+		"coalition": "Független jelölt",
+		"maz": "05",
+		"evk": "05",
+		"county": "Borsod-Abaúj-Zemplén",
+		"district": "05. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [],
+		"drawNumber": 16,
+		"imageUrl": null,
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/05/05?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
+		"slug": "makula-gabriel-141014",
+		"kpnId": 8152368,
+		"ejId": 141014,
+		"name": "Makula Gábriel",
+		"displayName": "Makula Gábriel",
+		"coalition": "NÉP",
+		"maz": "05",
+		"evk": "05",
+		"county": "Borsod-Abaúj-Zemplén",
+		"district": "05. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [
+			1020
+		],
+		"drawNumber": 20,
+		"imageUrl": null,
 		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/05/05?tab=jeloltek",
 		"emails": [],
 		"facebook": null,
@@ -6952,33 +7139,6 @@
 		"drawNumber": 6,
 		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/5/1/Kep-29851.JPG",
 		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/07/05?tab=jeloltek",
-		"emails": [],
-		"facebook": null,
-		"repealSupport": null,
-		"summary": null
-	},
-	{
-		"slug": "gonda-eszter-140884",
-		"kpnId": 8016099,
-		"ejId": 140884,
-		"name": "Gonda Eszter",
-		"displayName": "Gonda Eszter",
-		"coalition": "MKKP",
-		"maz": "08",
-		"evk": "01",
-		"county": "Győr-Moson-Sopron",
-		"district": "01. OEVK",
-		"status": {
-			"code": "1",
-			"label": "Nyilvántartásba véve",
-			"changedAt": "2026-03-08T23:00:00.000Z"
-		},
-		"organizationIds": [
-			1025
-		],
-		"drawNumber": 2,
-		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/0/9/Kep-30309.JPG",
-		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/08/01?tab=jeloltek",
 		"emails": [],
 		"facebook": null,
 		"repealSupport": null,
@@ -9189,6 +9349,33 @@
 		"summary": null
 	},
 	{
+		"slug": "pardi-olah-roberta-140663",
+		"kpnId": 1195498,
+		"ejId": 140663,
+		"name": "Pardi-Oláh Roberta",
+		"displayName": "Pardi-Oláh Roberta",
+		"coalition": "DK",
+		"maz": "11",
+		"evk": "03",
+		"county": "Jász-Nagykun-Szolnok",
+		"district": "03. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [
+			1001
+		],
+		"drawNumber": 1,
+		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/7/5/Kep-29875.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/11/03?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
 		"slug": "feher-benjamin-141148",
 		"kpnId": 4992214,
 		"ejId": 141148,
@@ -11062,6 +11249,33 @@
 		"summary": null
 	},
 	{
+		"slug": "bolbas-ildiko-140939",
+		"kpnId": 2862509,
+		"ejId": 140939,
+		"name": "Bolbás Ildikó",
+		"displayName": "Bolbás Ildikó",
+		"coalition": "MKKP",
+		"maz": "14",
+		"evk": "06",
+		"county": "Pest",
+		"district": "06. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [
+			1025
+		],
+		"drawNumber": 1,
+		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/1/2/Kep-30312.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/14/06?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
 		"slug": "dr-hanko-balazs-140848",
 		"kpnId": 8046661,
 		"ejId": 140848,
@@ -11137,6 +11351,33 @@
 		],
 		"drawNumber": 5,
 		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/4/6/Kep-30346.JPG",
+		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/14/06?tab=jeloltek",
+		"emails": [],
+		"facebook": null,
+		"repealSupport": null,
+		"summary": null
+	},
+	{
+		"slug": "dr-karsai-zsuzsanna-140475",
+		"kpnId": 220890,
+		"ejId": 140475,
+		"name": "Karsai Zsuzsánna",
+		"displayName": "Dr. Karsai Zsuzsánna",
+		"coalition": "DK",
+		"maz": "14",
+		"evk": "06",
+		"county": "Pest",
+		"district": "06. OEVK",
+		"status": {
+			"code": "1",
+			"label": "Nyilvántartásba véve",
+			"changedAt": "2026-03-09T23:00:00.000Z"
+		},
+		"organizationIds": [
+			1001
+		],
+		"drawNumber": 6,
+		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/2/6/Kep-29826.JPG",
 		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/14/06?tab=jeloltek",
 		"emails": [],
 		"facebook": null,
@@ -12181,33 +12422,6 @@
 		"summary": null
 	},
 	{
-		"slug": "magdics-mate-140393",
-		"kpnId": 6408092,
-		"ejId": 140393,
-		"name": "Magdics Máté",
-		"displayName": "Magdics Máté",
-		"coalition": "DK",
-		"maz": "14",
-		"evk": "13",
-		"county": "Pest",
-		"district": "13. OEVK",
-		"status": {
-			"code": "1",
-			"label": "Nyilvántartásba véve",
-			"changedAt": "2026-03-08T23:00:00.000Z"
-		},
-		"organizationIds": [
-			1001
-		],
-		"drawNumber": 6,
-		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/4/5/Kep-29745.JPG",
-		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/14/13?tab=jeloltek",
-		"emails": [],
-		"facebook": null,
-		"repealSupport": null,
-		"summary": null
-	},
-	{
 		"slug": "muhari-gergely-140640",
 		"kpnId": 509077,
 		"ejId": 140640,
@@ -12508,33 +12722,6 @@
 		"summary": null
 	},
 	{
-		"slug": "meszaros-szabolcs-140905",
-		"kpnId": 737126,
-		"ejId": 140905,
-		"name": "Mészáros Szabolcs",
-		"displayName": "Mészáros Szabolcs",
-		"coalition": "MKKP",
-		"maz": "15",
-		"evk": "01",
-		"county": "Somogy",
-		"district": "01. OEVK",
-		"status": {
-			"code": "1",
-			"label": "Nyilvántartásba véve",
-			"changedAt": "2026-03-08T23:00:00.000Z"
-		},
-		"organizationIds": [
-			1025
-		],
-		"drawNumber": 8,
-		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/7/9/Kep-30279.JPG",
-		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/15/01?tab=jeloltek",
-		"emails": [],
-		"facebook": null,
-		"repealSupport": null,
-		"summary": null
-	},
-	{
 		"slug": "tisza-peter-140925",
 		"kpnId": 1480614,
 		"ejId": 140925,
@@ -12580,33 +12767,6 @@
 		],
 		"drawNumber": 1,
 		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/9/5/Kep-29995.JPG",
-		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/15/02?tab=jeloltek",
-		"emails": [],
-		"facebook": null,
-		"repealSupport": null,
-		"summary": null
-	},
-	{
-		"slug": "bihari-alexandra-141138",
-		"kpnId": 8835110,
-		"ejId": 141138,
-		"name": "Bihari Alexandra",
-		"displayName": "Bihari Alexandra",
-		"coalition": "NÉP",
-		"maz": "15",
-		"evk": "02",
-		"county": "Somogy",
-		"district": "02. OEVK",
-		"status": {
-			"code": "1",
-			"label": "Nyilvántartásba véve",
-			"changedAt": "2026-03-08T23:00:00.000Z"
-		},
-		"organizationIds": [
-			1020
-		],
-		"drawNumber": 2,
-		"imageUrl": null,
 		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/15/02?tab=jeloltek",
 		"emails": [],
 		"facebook": null,
@@ -13696,33 +13856,6 @@
 		],
 		"drawNumber": 6,
 		"imageUrl": "https://vtr.valasztas.hu/ogy2026/kepek/7/5/Kep-29975.JPG",
-		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/16/04?tab=jeloltek",
-		"emails": [],
-		"facebook": null,
-		"repealSupport": null,
-		"summary": null
-	},
-	{
-		"slug": "demeter-krisztian-141083",
-		"kpnId": 2753828,
-		"ejId": 141083,
-		"name": "Demeter Krisztián",
-		"displayName": "Demeter Krisztián",
-		"coalition": "Középpárt",
-		"maz": "16",
-		"evk": "04",
-		"county": "Szabolcs-Szatmár-Bereg",
-		"district": "04. OEVK",
-		"status": {
-			"code": "1",
-			"label": "Nyilvántartásba véve",
-			"changedAt": "2026-03-08T23:00:00.000Z"
-		},
-		"organizationIds": [
-			1042
-		],
-		"drawNumber": 7,
-		"imageUrl": null,
 		"sourceUrl": "https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek/16/04?tab=jeloltek",
 		"emails": [],
 		"facebook": null,
