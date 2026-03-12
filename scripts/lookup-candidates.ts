@@ -48,7 +48,6 @@ type CandidateStanceEntry = {
 	repealSupport: "for" | "against" | "unknown";
 	summary: { hu: string; en: string };
 	emails: string[];
-	phones: string[];
 	facebook: string;
 };
 
@@ -79,7 +78,6 @@ type LogEntry = {
 	searches: { query: string; resultCount: number }[];
 	found: {
 		emails: { value: string; source: string; confidence: string }[];
-		phones: { value: string; source: string; confidence: string }[];
 		facebook: { value: string; source: string; confidence: string }[];
 	};
 	timestamp: string;
@@ -124,8 +122,6 @@ function delay(ms: number): Promise<void> {
 // ─── Extraction helpers ──────────────────────────────────────────────────────
 
 const EMAIL_RE = /[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}/g;
-
-const PHONE_RE = /(?:\+36|0036|06)[\s\-./]?(?:1|20|30|31|50|70)[\s\-./]?\d{3}[\s\-./]?\d{3,4}/g;
 
 const FACEBOOK_RE = /https?:\/\/(?:www\.)?facebook\.com\/[a-zA-Z0-9._\-]+\/?/g;
 
@@ -221,15 +217,6 @@ function extractEmails(
 	];
 }
 
-function extractPhones(text: string): string[] {
-	const matches = text.match(PHONE_RE) ?? [];
-	return [
-		...new Set(
-			matches.map((p) => p.replace(/[\s\-./]/g, "")),
-		),
-	];
-}
-
 function extractFacebook(text: string, candidateName: string): string[] {
 	const matches = text.match(FACEBOOK_RE) ?? [];
 	// Filter out generic facebook.com links (homepage, login, etc.)
@@ -312,12 +299,11 @@ async function lookupCandidate(
 		name: candidate.name,
 		coalition: candidate.coalition,
 		searches: [],
-		found: { emails: [], phones: [], facebook: [] },
+		found: { emails: [], facebook: [] },
 		timestamp: new Date().toISOString(),
 	};
 
 	const allEmails = new Set<string>();
-	const allPhones = new Set<string>();
 	const allFacebook = new Set<string>();
 
 	// Build search queries
@@ -366,15 +352,6 @@ async function lookupCandidate(
 				});
 			}
 
-			for (const phone of extractPhones(combined)) {
-				allPhones.add(phone);
-				log.found.phones.push({
-					value: phone,
-					source: result.url,
-					confidence,
-				});
-			}
-
 			for (const fb of extractFacebook(combined, candidate.name)) {
 				allFacebook.add(fb);
 				log.found.facebook.push({
@@ -391,7 +368,6 @@ async function lookupCandidate(
 		repealSupport: "unknown",
 		summary: { hu: "", en: "" },
 		emails: [...allEmails],
-		phones: [...allPhones],
 		facebook: [...allFacebook][0] ?? "",
 	};
 
@@ -440,7 +416,6 @@ async function main(): Promise<void> {
 	const stances: Record<string, CandidateStanceEntry> = { ...existingStances };
 	let processed = 0;
 	let withEmail = 0;
-	let withPhone = 0;
 	let withFacebook = 0;
 
 	for (const candidate of toProcess) {
@@ -453,21 +428,16 @@ async function main(): Promise<void> {
 			logEntries.push(log);
 
 			if (stance.emails.length > 0) withEmail++;
-			if (stance.phones.length > 0) withPhone++;
 			if (stance.facebook) withFacebook++;
 
 			// Merge with existing (don't overwrite non-empty fields)
 			const existing = stances[candidate.slug];
 			if (existing) {
-				// Merge emails/phones (union)
+				// Merge emails (union)
 				const mergedEmails = [
 					...new Set([...existing.emails, ...stance.emails]),
 				];
-				const mergedPhones = [
-					...new Set([...existing.phones, ...stance.phones]),
-				];
 				existing.emails = mergedEmails;
-				existing.phones = mergedPhones;
 				if (!existing.facebook && stance.facebook) {
 					existing.facebook = stance.facebook;
 				}
@@ -476,10 +446,8 @@ async function main(): Promise<void> {
 			}
 
 			const emailStr = stance.emails.length > 0 ? stance.emails.join(", ") : "(none)";
-			const phoneStr = stance.phones.length > 0 ? stance.phones.join(", ") : "(none)";
 			const fbStr = stance.facebook || "(none)";
 			console.log(`  -> emails: ${emailStr}`);
-			console.log(`  -> phones: ${phoneStr}`);
 			console.log(`  -> facebook: ${fbStr}`);
 
 			// Write incrementally every 10 candidates
@@ -500,7 +468,6 @@ async function main(): Promise<void> {
 	console.log("\n=== Summary ===");
 	console.log(`Processed: ${processed}`);
 	console.log(`With email: ${withEmail} (${pct(withEmail, processed)})`);
-	console.log(`With phone: ${withPhone} (${pct(withPhone, processed)})`);
 	console.log(`With facebook: ${withFacebook} (${pct(withFacebook, processed)})`);
 	console.log(
 		`Total entries in candidate-stances.json: ${Object.keys(stances).length}`,

@@ -23,7 +23,6 @@ type CandidateStanceEntry = {
 	repealSupport: "for" | "against" | "unknown";
 	summary: { hu: string; en: string };
 	emails: string[];
-	phones: string[];
 	facebook: string;
 };
 
@@ -84,7 +83,6 @@ for (const [candSlug, candidate] of Object.entries(candidates)) {
 		repealSupport: "unknown",
 		summary: { hu: "", en: "" },
 		emails: mp.emails ?? [],
-		phones: mp.phones ?? [],
 		facebook: "",
 	};
 

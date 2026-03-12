@@ -24,7 +24,6 @@ export const candidateStanceSchema = z.object({
 	repealSupport: repealSupportSchema,
 	summary: i18nStringSchema,
 	emails: z.array(z.string()),
-	phones: z.array(z.string()),
 	facebook: z.string(),
 });
 
