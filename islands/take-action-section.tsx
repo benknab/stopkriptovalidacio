@@ -79,6 +79,37 @@ function getCoalitionRepealSupport(coalition: Candidate["coalition"]): RepealSup
 
 const INDEPENDENT_COALITION = "Független jelölt";
 
+// --- Icons ---
+
+function EmailIcon(): JSX.Element {
+	return (
+		<svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+			<path d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+			<path d="M19 8.839l-7.556 3.778a2.75 2.75 0 01-2.888 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+		</svg>
+	);
+}
+
+function FacebookIcon(): JSX.Element {
+	return (
+		<svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+			<path d="M20 10c0-5.523-4.477-10-10-10S0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.988C16.343 19.128 20 14.991 20 10z" />
+		</svg>
+	);
+}
+
+function CopyCheckIcon(): JSX.Element {
+	return (
+		<svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor">
+			<path
+				fill-rule="evenodd"
+				d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+				clip-rule="evenodd"
+			/>
+		</svg>
+	);
+}
+
 // --- CandidateCard ---
 
 interface CandidateCardProps {
@@ -90,6 +121,24 @@ function CandidateCard({ candidate, lang }: CandidateCardProps): JSX.Element {
 	const candidateStanceKey = getStanceKey(candidate.repealSupport);
 	const coalitionStanceKey = getStanceKey(getCoalitionRepealSupport(candidate.coalition));
 	const isIndependent = candidate.coalition === INDEPENDENT_COALITION;
+	const NOT_COPIED = false;
+	const emailCopied = useSignal(NOT_COPIED);
+
+	const hasEmails = candidate.emails.length > 0;
+	const hasFacebook = !!candidate.facebook;
+
+	async function handleCopyEmails(): Promise<void> {
+		await navigator.clipboard.writeText(candidate.emails.join(", "));
+		emailCopied.value = true;
+		setTimeout(() => {
+			emailCopied.value = NOT_COPIED;
+		}, 2000);
+	}
+
+	const enabledButtonClass =
+		"flex-1 inline-flex items-center justify-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-100 hover:border-slate-400 transition-colors";
+	const disabledButtonClass =
+		"flex-1 inline-flex items-center justify-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-lg border border-slate-200 text-slate-300 cursor-not-allowed";
 
 	return (
 		<div class="relative bg-slate-50 rounded-xl p-4 border border-slate-200">
@@ -135,6 +184,37 @@ function CandidateCard({ candidate, lang }: CandidateCardProps): JSX.Element {
 						</span>
 					</div>
 				)}
+			</div>
+
+			<div class="mt-3 pt-3 border-t border-slate-200 flex items-center gap-2">
+				<button
+					type="button"
+					onClick={handleCopyEmails}
+					disabled={!hasEmails}
+					class={hasEmails ? enabledButtonClass : disabledButtonClass}
+					title={hasEmails ? candidate.emails.join(", ") : undefined}
+				>
+					{emailCopied.value ? <CopyCheckIcon /> : <EmailIcon />}
+					{emailCopied.value ? t("candidates.copied", lang) : t("candidates.copy_email", lang)}
+				</button>
+				{hasFacebook && candidate.facebook
+					? (
+						<a
+							href={candidate.facebook}
+							target="_blank"
+							rel="noopener noreferrer"
+							class={enabledButtonClass}
+						>
+							<FacebookIcon />
+							Facebook
+						</a>
+					)
+					: (
+						<span class={disabledButtonClass}>
+							<FacebookIcon />
+							Facebook
+						</span>
+					)}
 			</div>
 		</div>
 	);

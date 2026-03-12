@@ -285,6 +285,8 @@
 		"no_results": "No results match your search criteria.",
 		"filter": {
 			"select_to_show": "Select a county to show candidates."
-		}
+		},
+		"copy_email": "Copy Email",
+		"copied": "Copied!"
 	}
 }

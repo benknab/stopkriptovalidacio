@@ -285,6 +285,8 @@
 		"no_results": "Nincs találat a keresési feltételeknek megfelelően.",
 		"filter": {
 			"select_to_show": "Válasszon megyét a jelöltek megjelenítéséhez."
-		}
+		},
+		"copy_email": "Email másolása",
+		"copied": "Másolva!"
 	}
 }
