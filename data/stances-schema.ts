@@ -18,3 +18,14 @@ export const stanceSchema = z.object({
 });
 
 export type Stance = z.infer<typeof stanceSchema>;
+
+export const candidateStanceSchema = z.object({
+	slug: z.string().min(1),
+	repealSupport: repealSupportSchema,
+	summary: i18nStringSchema,
+	emails: z.array(z.string()),
+	phones: z.array(z.string()),
+	facebook: z.string(),
+});
+
+export type CandidateStance = z.infer<typeof candidateStanceSchema>;
