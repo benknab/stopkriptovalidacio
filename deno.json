@@ -16,7 +16,8 @@
 		"download-candidate-images": "deno run -A scripts/download-candidate-images.ts",
 		"scrape-candidates": "deno run --allow-net --allow-write scripts/scrape-candidates.ts",
 		"generate-og-image": "deno run -A scripts/generate-og-image.ts",
-		"post-telegram": "deno run --allow-read --allow-write --allow-net --allow-env scripts/post-telegram.ts"
+		"post-telegram": "deno run --allow-read --allow-write --allow-net --allow-env scripts/post-telegram.ts",
+		"enrich-incumbent-candidates": "deno run --allow-read --allow-write scripts/enrich-incumbent-candidates.ts"
 	},
 	"imports": {
 		"@std/dotenv": "jsr:@std/dotenv@^0.225",
