@@ -23,9 +23,6 @@ Thumbs.db
 .env.local
 .env.*.local
 
-# Logs
-*.log*
-
 # Temporary files
 tmp/
 .playwright-mcp/
