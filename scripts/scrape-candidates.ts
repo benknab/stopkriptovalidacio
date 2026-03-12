@@ -242,7 +242,7 @@ function toCandidate(
 		// Preserved fields (use existing if available, otherwise defaults)
 		emails: existing?.emails ?? [],
 		facebook: existing?.facebook ?? null,
-		repealSupport: existing?.repealSupport ?? "unknown",
+		repealSupport: existing?.repealSupport ?? null,
 		summary: existing?.summary ?? null,
 	};
 }

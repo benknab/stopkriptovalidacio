@@ -2,7 +2,7 @@
 	{
 		"slug": "magyar-vallalkozok",
 		"name": "A Magyar Vállalkozók és",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -10,7 +10,7 @@
 	{
 		"slug": "szolidaritas",
 		"name": "A SZOLIDARITÁS PÁRTJA-Munkáspárt",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [
 			"kapcsolat@szolidaritasmozgalom.hu"
@@ -20,7 +20,7 @@
 	{
 		"slug": "dk",
 		"name": "DK",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [
 			"info@dkp.hu"
@@ -30,7 +30,7 @@
 	{
 		"slug": "egye",
 		"name": "EgyE",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -51,7 +51,7 @@
 	{
 		"slug": "fuggetlen",
 		"name": "Független jelölt",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -59,7 +59,7 @@
 	{
 		"slug": "hhsz",
 		"name": "HHSZ",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -67,7 +67,7 @@
 	{
 		"slug": "irany",
 		"name": "IRÁNY Párt",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -75,7 +75,7 @@
 	{
 		"slug": "jobbik",
 		"name": "Jobbik",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [
 			"jobbik@jobbik.hu"
@@ -85,7 +85,7 @@
 	{
 		"slug": "korkeresztesek",
 		"name": "Körkeresztesek Pártja",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -93,7 +93,7 @@
 	{
 		"slug": "kozeppart",
 		"name": "Középpárt",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -101,7 +101,7 @@
 	{
 		"slug": "lmp",
 		"name": "LMP – Zöldek",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -109,7 +109,7 @@
 	{
 		"slug": "mhvp",
 		"name": "MHVP",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -117,7 +117,7 @@
 	{
 		"slug": "mkkp",
 		"name": "MKKP",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [
 			"ketfarkukutya@gmail.com"
@@ -127,7 +127,7 @@
 	{
 		"slug": "miep",
 		"name": "Magyar Igazság és Élet Pártja",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -135,7 +135,7 @@
 	{
 		"slug": "mi-hazank",
 		"name": "Mi Hazánk",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [
 			"info@mihazank.hu"
@@ -145,7 +145,7 @@
 	{
 		"slug": "neem",
 		"name": "NEEM",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -153,7 +153,7 @@
 	{
 		"slug": "nep",
 		"name": "NÉP",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -161,7 +161,7 @@
 	{
 		"slug": "ovip",
 		"name": "OVIP",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null
@@ -169,7 +169,7 @@
 	{
 		"slug": "szom",
 		"name": "SZOM",
-		"repealSupport": "unknown",
+		"repealSupport": null,
 		"summary": null,
 		"emails": [],
 		"facebook": null

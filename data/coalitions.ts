@@ -10,7 +10,7 @@ const textI18nSchema = z.object({
 const coalitionDataSchema = z.object({
 	slug: z.string().min(1),
 	name: coalitionSchema,
-	repealSupport: repealSupportSchema,
+	repealSupport: repealSupportSchema.nullable(),
 	summary: textI18nSchema.nullable(),
 	emails: z.array(z.string().email()),
 	facebook: z.url().nullable(),

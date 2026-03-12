@@ -1,7 +1,7 @@
 import { z } from "zod";
 import candidatesJson from "./candidates.json" with { type: "json" };
 
-export const repealSupportSchema = z.enum(["for", "against", "unknown"]);
+export const repealSupportSchema = z.enum(["for", "against"]);
 
 export type RepealSupport = z.infer<typeof repealSupportSchema>;
 
@@ -61,7 +61,7 @@ export const candidateSchema = z.object({
 	emails: z.array(z.string().email()),
 	facebook: z.url().nullable(),
 	// Stance
-	repealSupport: repealSupportSchema,
+	repealSupport: repealSupportSchema.nullable(),
 	summary: textI18nSchema.nullable(),
 });
 

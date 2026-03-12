@@ -7,7 +7,7 @@ import { H2 } from "../components/h2.tsx";
 
 // --- Stance colors (border + badge) ---
 
-const stanceColors: Record<RepealSupport, { border: string; badge: string }> = {
+const stanceColors = {
 	for: {
 		border: "border-emerald-400",
 		badge: "bg-emerald-100 text-emerald-700",
@@ -22,7 +22,13 @@ const stanceColors: Record<RepealSupport, { border: string; badge: string }> = {
 	},
 };
 
-const stancePriority: Record<RepealSupport, number> = {
+type StanceKey = keyof typeof stanceColors;
+
+function getStanceKey(repealSupport: RepealSupport | null): StanceKey {
+	return repealSupport ?? "unknown";
+}
+
+const stancePriority: Record<StanceKey, number> = {
 	for: 0,
 	against: 1,
 	unknown: 2,
@@ -47,8 +53,8 @@ function getPartiesWithCandidates(): Array<{ coalition: Coalition; candidateCoun
 		.filter(([_, count]) => count >= 1)
 		.map(([coalition, candidateCount]) => ({ coalition, candidateCount }))
 		.sort((a, b) => {
-			const stanceA = coalitionsByName.get(a.coalition)?.repealSupport ?? "unknown";
-			const stanceB = coalitionsByName.get(b.coalition)?.repealSupport ?? "unknown";
+			const stanceA = getStanceKey(coalitionsByName.get(a.coalition)?.repealSupport ?? null);
+			const stanceB = getStanceKey(coalitionsByName.get(b.coalition)?.repealSupport ?? null);
 			const priorityDiff = stancePriority[stanceA] - stancePriority[stanceB];
 			if (priorityDiff !== 0) return priorityDiff;
 			return b.candidateCount - a.candidateCount;
@@ -92,8 +98,8 @@ interface PartyCardProps {
 function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Element {
 	const stance = coalitionsByName.get(coalition);
 	const slug = stance?.slug ?? "";
-	const repealSupport = stance?.repealSupport ?? "unknown";
-	const colors = stanceColors[repealSupport];
+	const stanceKey = getStanceKey(stance?.repealSupport ?? null);
+	const colors = stanceColors[stanceKey];
 	const summary = stance?.summary?.[lang] ?? "";
 
 	const emails = stance?.emails ?? [];
@@ -108,7 +114,7 @@ function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Ele
 				<span
 					class={`text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}
 				>
-					{t(`candidates.stance.${repealSupport}`, lang)}
+					{t(`candidates.stance.${stanceKey}`, lang)}
 				</span>
 			</div>
 

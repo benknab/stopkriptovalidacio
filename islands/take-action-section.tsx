@@ -61,14 +61,20 @@ const sortedCandidates = getSortedCandidates();
 
 // --- Stance badge ---
 
-const stanceColors: Record<RepealSupport, { badge: string }> = {
+const stanceColors = {
 	for: { badge: "bg-emerald-100 text-emerald-700" },
 	against: { badge: "bg-red-100 text-red-700" },
 	unknown: { badge: "bg-slate-100 text-slate-600" },
 };
 
-function getCoalitionRepealSupport(coalition: Candidate["coalition"]): RepealSupport {
-	return coalitionsByName.get(coalition)?.repealSupport ?? "unknown";
+type StanceKey = keyof typeof stanceColors;
+
+function getStanceKey(repealSupport: RepealSupport | null): StanceKey {
+	return repealSupport ?? "unknown";
+}
+
+function getCoalitionRepealSupport(coalition: Candidate["coalition"]): RepealSupport | null {
+	return coalitionsByName.get(coalition)?.repealSupport ?? null;
 }
 
 const INDEPENDENT_COALITION = "Független jelölt";
@@ -81,8 +87,8 @@ interface CandidateCardProps {
 }
 
 function CandidateCard({ candidate, lang }: CandidateCardProps): JSX.Element {
-	const candidateRepealSupport = candidate.repealSupport;
-	const coalitionRepealSupport = getCoalitionRepealSupport(candidate.coalition);
+	const candidateStanceKey = getStanceKey(candidate.repealSupport);
+	const coalitionStanceKey = getStanceKey(getCoalitionRepealSupport(candidate.coalition));
 	const isIndependent = candidate.coalition === INDEPENDENT_COALITION;
 
 	return (
@@ -109,10 +115,10 @@ function CandidateCard({ candidate, lang }: CandidateCardProps): JSX.Element {
 					</span>
 					<span
 						class={`text-xs font-medium py-0.5 rounded-full min-w-24 text-center ${
-							stanceColors[candidateRepealSupport].badge
+							stanceColors[candidateStanceKey].badge
 						}`}
 					>
-						{t(`candidates.stance.${candidateRepealSupport}`, lang)}
+						{t(`candidates.stance.${candidateStanceKey}`, lang)}
 					</span>
 				</div>
 				{!isIndependent && (
@@ -122,10 +128,10 @@ function CandidateCard({ candidate, lang }: CandidateCardProps): JSX.Element {
 						</span>
 						<span
 							class={`text-xs font-medium py-0.5 rounded-full min-w-24 text-center ${
-								stanceColors[coalitionRepealSupport].badge
+								stanceColors[coalitionStanceKey].badge
 							}`}
 						>
-							{t(`candidates.stance.${coalitionRepealSupport}`, lang)}
+							{t(`candidates.stance.${coalitionStanceKey}`, lang)}
 						</span>
 					</div>
 				)}
