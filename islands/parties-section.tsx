@@ -122,7 +122,7 @@ function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Ele
 			{slug && (
 				<div class="flex justify-center mb-3">
 					<img
-						src={`/parties/${slug}.png`}
+						src={`/kepek/${slug}.png`}
 						alt={coalition}
 						class="h-12 w-auto object-contain"
 						loading="lazy"
