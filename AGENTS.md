@@ -21,6 +21,10 @@ will include:
 - **Build**: Vite
 - **Internationalization**: Custom i18n with `t(key, lang)` function
 
+## Git
+
+- The main branch is `master` (not `main`)
+
 ## Development Commands
 
 ```bash

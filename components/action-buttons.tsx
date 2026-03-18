@@ -1,5 +1,7 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
+import { mps, type MpSlug } from "../data/mps.ts";
+import { minorityListMps, nationalListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { buildMailtoUrl } from "../utils/mailto.ts";
 
@@ -22,21 +24,84 @@ function CopyButton({ onClick, disabled, children }: CopyButtonProps): JSX.Eleme
 	);
 }
 
+interface EmailLists {
+	to: string[];
+	cc: string[];
+	all: string[];
+}
+
+function getEmailLists(
+	selectedRep: MpSlug | null,
+	includeNationalList: boolean,
+	includeMinorityList: boolean,
+): EmailLists {
+	const toEmails: Set<string> = new Set();
+	const ccEmails: Set<string> = new Set();
+
+	// Selected representative's emails go to "To:"
+	if (selectedRep) {
+		const mp = mps[selectedRep];
+		if (mp) {
+			for (const email of mp.emails) {
+				toEmails.add(email);
+			}
+		}
+	}
+
+	// National list MPs' emails go to "CC:"
+	if (includeNationalList) {
+		for (const { mp } of nationalListMps) {
+			for (const email of mp.emails) {
+				// Don't add to CC if already in To
+				if (!toEmails.has(email)) {
+					ccEmails.add(email);
+				}
+			}
+		}
+	}
+
+	// Minority list MPs' emails go to "CC:"
+	if (includeMinorityList) {
+		for (const { mp } of minorityListMps) {
+			for (const email of mp.emails) {
+				// Don't add to CC if already in To
+				if (!toEmails.has(email)) {
+					ccEmails.add(email);
+				}
+			}
+		}
+	}
+
+	const to = Array.from(toEmails);
+	const cc = Array.from(ccEmails);
+
+	return {
+		to,
+		cc,
+		all: [...to, ...cc],
+	};
+}
+
 interface ActionButtonsProps {
-	emails: string[];
+	selectedRep: MpSlug | null;
+	includeNationalList: boolean;
+	includeMinorityList: boolean;
 	subject: string;
 	message: string;
 	lang: SupportedLanguage;
 }
 
-export function ActionButtons({ emails, subject, message, lang }: ActionButtonsProps): JSX.Element {
+export function ActionButtons(props: ActionButtonsProps): JSX.Element {
+	const { selectedRep, includeNationalList, includeMinorityList, subject, message, lang } = props;
 	const copyFeedback = useSignal<"emails" | "message" | "subject" | null>(null);
 
-	const hasSelection = emails.length > 0;
-	const mailtoUrl = hasSelection ? buildMailtoUrl({ to: emails, subject, body: message }) : undefined;
+	const emailLists = getEmailLists(selectedRep, includeNationalList, includeMinorityList);
+	const hasSelection = selectedRep !== null;
+
+	const mailtoUrl = hasSelection ? buildMailtoUrl({ to: emailLists.all, subject, body: message }) : undefined;
 
 	async function copyEmails(): Promise<void> {
-		await navigator.clipboard.writeText(emails.join(","));
+		await navigator.clipboard.writeText(emailLists.all.join(","));
 		copyFeedback.value = "emails";
 		setTimeout(() => {
 			copyFeedback.value = null;
@@ -66,7 +131,7 @@ export function ActionButtons({ emails, subject, message, lang }: ActionButtonsP
 				{hasSelection
 					? (
 						<a
-							href={mailtoUrl}
+							href={mailtoUrl ?? ""}
 							class="px-6 py-3 bg-brand text-white font-semibold rounded-lg hover:bg-brand/90 transition-colors"
 						>
 							{t("action.send", lang)}

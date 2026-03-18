@@ -6,9 +6,10 @@ import { H2 } from "../components/h2.tsx";
 import { Hero } from "../components/hero.tsx";
 import { ImpactSection } from "../components/impact-section.tsx";
 import { Layout } from "../components/layout.tsx";
-import PartiesSection from "../islands/parties-section.tsx";
 import { SeoHead } from "../components/seo/seo-head.tsx";
 import { detectLanguage, t } from "../i18n/index.ts";
+import MpsSection from "../islands/mps-section.tsx";
+import PartiesSection from "../islands/parties-section.tsx";
 import TimelineSection from "../islands/timeline-section.tsx";
 import TakeActionSection from "../islands/take-action-section.tsx";
 
@@ -17,8 +18,8 @@ export default define.page(function Home(ctx): JSX.Element {
 	const lang = detectLanguage(ctx.req);
 	const showSecondary = url.searchParams.get("masodlagos") !== "false";
 	const showTertiary = url.searchParams.get("harmadlagos") === "true";
-	const candidateCounty = url.searchParams.get("megye") || "";
-	const candidateDistrict = url.searchParams.get("kerulet") || "";
+	const mpCounty = url.searchParams.get("megye") || "";
+	const mpDistrict = url.searchParams.get("kerulet") || "";
 	const currentPath = url.pathname + url.search;
 
 	return (
@@ -35,11 +36,12 @@ export default define.page(function Home(ctx): JSX.Element {
 			afterContent={
 				<>
 					<PartiesSection lang={lang} />
-					<TakeActionSection
+					<MpsSection
 						lang={lang}
-						selectedCounty={candidateCounty}
-						selectedDistrict={candidateDistrict}
+						selectedCounty={mpCounty}
+						selectedDistrict={mpDistrict}
 					/>
+					<TakeActionSection lang={lang} />
 				</>
 			}
 		>
