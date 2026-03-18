@@ -12,14 +12,6 @@
 			"title": "Rólunk | Stop Kriptovalidáció - Kripto Validálás Magyarország",
 			"description": "Polgári kezdeményezés a magyar kripto validálás törvény dokumentálására. Tájékozódjon és írjon a képviselőjének."
 		},
-		"ogy2022": {
-			"title": "2022-es Országgyűlési Képviselők | Stop Kriptovalidáció",
-			"description": "Keresse meg, hogyan szavazott az Ön képviselője a kriptovalidálás törvényjavaslatról (T/11922)."
-		},
-		"mp_detail": {
-			"title": "{{name}} - Képviselő | Kripto Validálás Szavazás",
-			"description": "{{name}} képviselő adatai és szavazata a kripto validálás törvényjavaslatról (T/11922). Magyar kripto validátor szabályozás képviselői szavazatok."
-		},
 		"crypto_validation": {
 			"title": "Mi az a Kripto Validálás? | Kripto Validátor Magyarország",
 			"description": "A kripto validálás fogalmát a törvény nem definiálja. Tájékozódjon a kripto validátor követelményekről és a szabályozás következményeiről."
@@ -225,11 +217,7 @@
 			"select_to_show": "Válasszon megyét vagy kattintson az \"Összes\" gombra a képviselők megjelenítéséhez."
 		},
 		"mp_list_source": "Képviselői névsor",
-		"district_lookup_hint": "Nem tudja melyik választókerületben lakik? Keresse ki itt:",
-		"more": "Több",
-		"back_to_list": "Vissza a listához",
-		"address": "Cím",
-		"contact": "Kapcsolat"
+		"district_lookup_hint": "Nem tudja melyik választókerületben lakik? Keresse ki itt:"
 	},
 	"action": {
 		"title": "Cselekedjen!",

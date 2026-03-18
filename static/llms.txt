@@ -12,5 +12,4 @@ The site documents how Hungary's crypto validation law affected cryptocurrency e
 
 ## Data
 
-- [Sitemap](https://stopkriptovalidacio.hu/sitemap.xml): Full sitemap including all 198 MP detail pages
-- [Parliament MP Pages](https://stopkriptovalidacio.hu/parlament/[slug]): Individual pages for each of the 198 Members of Parliament showing their party, county/district, voting record, and contact information
+- [Sitemap](https://stopkriptovalidacio.hu/sitemap.xml): Full sitemap

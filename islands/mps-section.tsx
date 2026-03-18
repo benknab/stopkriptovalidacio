@@ -160,37 +160,16 @@ function PhoneIcon(): JSX.Element {
 	);
 }
 
-function MoreIcon(): JSX.Element {
-	return (
-		<svg class="w-1 h-4" fill="currentColor" viewBox="0 0 4 16">
-			<circle cx="2" cy="2" r="2" />
-			<circle cx="2" cy="8" r="2" />
-			<circle cx="2" cy="14" r="2" />
-		</svg>
-	);
-}
-
 interface MpCardProps {
 	slug: MpSlug;
 	mp: Mp;
 	lang: SupportedLanguage;
-	selectedCounty: string;
-	selectedDistrict: string;
 }
 
-function buildMoreUrl(slug: MpSlug, county: string, district: string): string {
-	const params = new URLSearchParams();
-	if (county) params.set("megye", county);
-	if (district) params.set("kerulet", district);
-	const query = params.toString();
-	return `/parlament/${slug}${query ? `?${query}` : ""}`;
-}
-
-function MpCard({ slug, mp, lang, selectedCounty, selectedDistrict }: MpCardProps): JSX.Element {
+function MpCard({ slug, mp, lang }: MpCardProps): JSX.Element {
 	const colors = voteColors[mp.vote];
 	const mailtoUrl = mp.emails.size > 0 ? buildMailtoUrl({ to: Array.from(mp.emails) }) : null;
 	const firstPhone = mp.phones.size > 0 ? Array.from(mp.phones)[0] : null;
-	const moreUrl = buildMoreUrl(slug, selectedCounty, selectedDistrict);
 
 	return (
 		<div
@@ -249,13 +228,6 @@ function MpCard({ slug, mp, lang, selectedCounty, selectedDistrict }: MpCardProp
 							{t("mps.phone", lang)}
 						</span>
 					)}
-				<a
-					href={moreUrl}
-					class="inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
-				>
-					<MoreIcon />
-					{t("mps.more", lang)}
-				</a>
 			</div>
 		</div>
 	);
@@ -487,8 +459,6 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 								slug={slug}
 								mp={mp}
 								lang={lang}
-								selectedCounty={selectedCounty.value}
-								selectedDistrict={selectedDistrict.value}
 							/>
 						))}
 					</div>

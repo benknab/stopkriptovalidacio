@@ -1,6 +1,5 @@
 import { define } from "@/utils.ts";
 import { SITE_URL } from "../constants/seo.ts";
-import { mps } from "../data/mps.ts";
 
 function buildUrlEntry(
 	loc: string,
@@ -19,14 +18,10 @@ function buildUrlEntry(
 
 export const handler = define.handlers({
 	GET(): Response {
-		const mpSlugs = Object.keys(mps);
-
 		const urls = [
 			buildUrlEntry("/", "1.0", "weekly"),
 			buildUrlEntry("/kriptovalidalas", "0.9", "weekly"),
-			buildUrlEntry("/ogy2022", "0.8", "weekly"),
 			buildUrlEntry("/rolunk", "0.8", "monthly"),
-			...mpSlugs.map((slug) => buildUrlEntry(`/ogy2022/${slug}`, "0.6", "monthly")),
 		];
 
 		const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

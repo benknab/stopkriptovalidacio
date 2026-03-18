@@ -17,12 +17,6 @@ export function Footer({ lang }: FooterProps): JSX.Element {
 					</div>
 					<div class="flex flex-wrap items-center gap-6">
 						<a
-							href="/ogy2022"
-							class="text-slate-400 hover:text-white transition-colors text-sm"
-						>
-							{t("nav.mps", lang)}
-						</a>
-						<a
 							href="/rolunk"
 							class="text-slate-400 hover:text-white transition-colors text-sm"
 						>

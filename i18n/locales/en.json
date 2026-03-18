@@ -12,14 +12,6 @@
 			"title": "About | Stop Kriptovalidáció - Crypto Validation Hungary",
 			"description": "Citizen-led initiative documenting Hungary's crypto validation law. Learn about crypto validator regulations and contact your representative."
 		},
-		"ogy2022": {
-			"title": "2022 Members of Parliament | Stop Kriptovalidáció Hungary",
-			"description": "Find out how your representative voted on the crypto validation bill (T/11922)."
-		},
-		"mp_detail": {
-			"title": "{{name}} - MP | Crypto Validation Vote Hungary",
-			"description": "{{name}} MP details and vote on Hungary's crypto validation bill (T/11922). Hungarian crypto validator regulation voting records."
-		},
 		"crypto_validation": {
 			"title": "What is Crypto Validation? | Crypto Validator Hungary",
 			"description": "The law does not define what crypto validation means. Learn about crypto validator requirements and regulatory consequences."
@@ -225,11 +217,7 @@
 			"select_to_show": "Select a county or click \"All\" to show representatives."
 		},
 		"mp_list_source": "MP Directory",
-		"district_lookup_hint": "Don't know your voting district? Look it up here:",
-		"more": "More",
-		"back_to_list": "Back to list",
-		"address": "Address",
-		"contact": "Contact"
+		"district_lookup_hint": "Don't know your voting district? Look it up here:"
 	},
 	"action": {
 		"title": "Take Action!",

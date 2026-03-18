@@ -5,17 +5,9 @@ import { t } from "../../i18n/index.ts";
 import { type PageId, SITE_NAME, SITE_URL } from "../../constants/seo.ts";
 import { getPrimaryEvents } from "../../utils/seo.ts";
 
-export interface PersonData {
-	name: string;
-	party: string;
-	slug: string;
-}
-
 interface JsonLdProps {
 	lang: SupportedLanguage;
 	pageId: PageId;
-	path?: string;
-	personData?: PersonData;
 }
 
 function buildWebSiteSchema(siteName: string): object {
@@ -107,21 +99,6 @@ function buildItemListSchema(items: object[]): object {
 	};
 }
 
-function buildPersonSchema(personData: PersonData, lang: SupportedLanguage): object {
-	return {
-		"@type": "Person",
-		"@id": `${SITE_URL}/ogy2022/${personData.slug}#person`,
-		name: personData.name,
-		jobTitle: lang === "hu" ? "Országgyűlési képviselő" : "Member of Parliament",
-		affiliation: {
-			"@type": "Organization",
-			name: personData.party,
-		},
-		url: `${SITE_URL}/ogy2022/${personData.slug}`,
-		image: `${SITE_URL}/kepek/${personData.slug}.jpg`,
-	};
-}
-
 function buildBreadcrumbSchema(items: Array<{ name: string; url: string }>): object {
 	return {
 		"@type": "BreadcrumbList",
@@ -135,7 +112,7 @@ function buildBreadcrumbSchema(items: Array<{ name: string; url: string }>): obj
 	};
 }
 
-export function JsonLd({ lang, pageId, path, personData }: JsonLdProps): JSX.Element {
+export function JsonLd({ lang, pageId }: JsonLdProps): JSX.Element {
 	const graph: object[] = [];
 	const siteTitle = t("site.title", lang);
 
@@ -194,18 +171,6 @@ export function JsonLd({ lang, pageId, path, personData }: JsonLdProps): JSX.Ele
 		breadcrumbItems.push({
 			name: t("crypto_validation.title", lang),
 			url: `${SITE_URL}/kriptovalidalas`,
-		});
-	}
-
-	if (pageId === "mp-detail" && personData) {
-		graph.push(buildPersonSchema(personData, lang));
-		breadcrumbItems.push({
-			name: t("nav.mps", lang),
-			url: `${SITE_URL}/ogy2022`,
-		});
-		breadcrumbItems.push({
-			name: personData.name,
-			url: `${SITE_URL}${path || `/ogy2022/${personData.slug}`}`,
 		});
 	}
 
