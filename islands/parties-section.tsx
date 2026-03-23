@@ -1,7 +1,6 @@
 import { useSignal } from "@preact/signals";
 import type { JSX } from "preact";
-import { candidates, type Coalition, coalitionSchema, type RepealSupport } from "../data/candidates.ts";
-import { coalitionsByName } from "../data/coalitions.ts";
+import { type CoalitionData, coalitions, type RepealSupport } from "../data/coalitions.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
 
@@ -34,38 +33,24 @@ const stancePriority: Record<StanceKey, number> = {
 	unknown: 2,
 };
 
-// --- Compute which coalitions have candidates ---
+// --- Sort and split parties ---
 
-const INDEPENDENT_COALITION: Coalition = "Független jelölt";
-const MAIN_THRESHOLD = 40;
+const sortedParties = [...coalitions].sort((a, b) => {
+	const stanceA = getStanceKey(a.repealSupport);
+	const stanceB = getStanceKey(b.repealSupport);
+	const priorityDiff = stancePriority[stanceA] - stancePriority[stanceB];
+	if (priorityDiff !== 0) return priorityDiff;
 
-function getPartiesWithCandidates(): Array<{ coalition: Coalition; candidateCount: number }> {
-	const coalitionSet = new Set(coalitionSchema.options);
-	const counts = new Map<Coalition, number>();
+	// Within the same stance: parties with a national list first, sorted by listRank
+	if (a.listRank !== null && b.listRank !== null) return a.listRank - b.listRank;
+	if (a.listRank !== null) return -1;
+	if (b.listRank !== null) return 1;
 
-	for (const candidate of candidates) {
-		if (!coalitionSet.has(candidate.coalition)) continue;
-		if (candidate.coalition === INDEPENDENT_COALITION) continue;
-		counts.set(candidate.coalition, (counts.get(candidate.coalition) ?? 0) + 1);
-	}
+	return a.name.localeCompare(b.name, "hu");
+});
 
-	return Array.from(counts.entries())
-		.filter(([_, count]) => count >= 1)
-		.map(([coalition, candidateCount]) => ({ coalition, candidateCount }))
-		.sort((a, b) => {
-			const stanceA = getStanceKey(coalitionsByName.get(a.coalition)?.repealSupport ?? null);
-			const stanceB = getStanceKey(coalitionsByName.get(b.coalition)?.repealSupport ?? null);
-			const priorityDiff = stancePriority[stanceA] - stancePriority[stanceB];
-			if (priorityDiff !== 0) return priorityDiff;
-			const countDiff = b.candidateCount - a.candidateCount;
-			if (countDiff !== 0) return countDiff;
-			return a.coalition.localeCompare(b.coalition, "hu");
-		});
-}
-
-const allParties = getPartiesWithCandidates();
-const mainParties = allParties.filter((p) => p.candidateCount >= MAIN_THRESHOLD);
-const extraParties = allParties.filter((p) => p.candidateCount < MAIN_THRESHOLD);
+const mainParties = sortedParties.filter((p) => p.listRank !== null);
+const extraParties = sortedParties.filter((p) => p.listRank === null);
 
 // --- Icons ---
 
@@ -92,20 +77,14 @@ function FacebookIcon(): JSX.Element {
 // --- Party Card ---
 
 interface PartyCardProps {
-	coalition: Coalition;
-	candidateCount: number;
+	coalition: CoalitionData;
 	lang: SupportedLanguage;
 }
 
-function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Element {
-	const stance = coalitionsByName.get(coalition);
-	const slug = stance?.slug ?? "";
-	const stanceKey = getStanceKey(stance?.repealSupport ?? null);
+function PartyCard({ coalition, lang }: PartyCardProps): JSX.Element {
+	const stanceKey = getStanceKey(coalition.repealSupport);
 	const colors = stanceColors[stanceKey];
-	const summary = stance?.summary?.[lang] ?? "";
-
-	const emails = stance?.emails ?? [];
-	const facebook = stance?.facebook ?? "";
+	const summary = coalition.summary?.[lang] ?? "";
 
 	return (
 		<div
@@ -121,11 +100,11 @@ function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Ele
 			</div>
 
 			{/* Logo */}
-			{slug && (
+			{coalition.slug && (
 				<div class="flex justify-center mb-3">
 					<img
-						src={`/kepek/${slug}.png`}
-						alt={coalition}
+						src={`/kepek/${coalition.slug}.png`}
+						alt={coalition.name}
 						class="h-12 w-auto object-contain"
 						loading="lazy"
 					/>
@@ -134,10 +113,7 @@ function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Ele
 
 			{/* Content */}
 			<div class="flex-1 space-y-1 text-center">
-				<h3 class="font-bold text-slate-900 text-lg leading-tight">{coalition}</h3>
-				<p class="text-sm text-slate-500">
-					{t("parties.candidates_count", lang, { count: String(candidateCount) })}
-				</p>
+				<h3 class="font-bold text-slate-900 text-lg leading-tight">{coalition.name}</h3>
 			</div>
 
 			{/* Summary */}
@@ -149,10 +125,10 @@ function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Ele
 
 			{/* Button Row */}
 			<div class="flex gap-2 mt-4">
-				{emails.length > 0
+				{coalition.emails.length > 0
 					? (
 						<a
-							href={`mailto:${emails.join(",")}`}
+							href={`mailto:${coalition.emails.join(",")}`}
 							class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
 						>
 							<EmailIcon />
@@ -165,10 +141,10 @@ function PartyCard({ coalition, candidateCount, lang }: PartyCardProps): JSX.Ele
 							{t("parties.email", lang)}
 						</span>
 					)}
-				{facebook
+				{coalition.facebook
 					? (
 						<a
-							href={facebook}
+							href={coalition.facebook}
 							target="_blank"
 							rel="noopener noreferrer"
 							class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
@@ -199,7 +175,7 @@ const INITIAL_COLLAPSED = false;
 export default function PartiesSection({ lang }: PartiesSectionProps): JSX.Element {
 	const showAll = useSignal(INITIAL_COLLAPSED);
 
-	const visibleParties = showAll.value ? allParties : mainParties;
+	const visibleParties = showAll.value ? sortedParties : mainParties;
 	const hasExtra = extraParties.length > 0;
 
 	return (
@@ -219,11 +195,10 @@ export default function PartiesSection({ lang }: PartiesSectionProps): JSX.Eleme
 				</div>
 
 				<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-					{visibleParties.map(({ coalition, candidateCount }) => (
+					{visibleParties.map((coalition) => (
 						<PartyCard
-							key={coalition}
+							key={coalition.slug}
 							coalition={coalition}
-							candidateCount={candidateCount}
 							lang={lang}
 						/>
 					))}

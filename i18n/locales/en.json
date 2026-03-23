@@ -251,10 +251,9 @@
 		"description": "Positions of parties running in the 2026 parliamentary election on the crypto validation law.",
 		"methodology": "Stances are based on parties' public statements, programs, and their voting record in parliament. Where a party has not taken a position, their stance is listed as unknown.",
 		"outreach": "We have reached out to all parties asking them to publicly state their position on the crypto validation law. We hope they will publish their promises and intentions on this website.",
-		"candidates_count": "{{count}} candidates",
 		"email": "Email",
 		"facebook": "Facebook",
-		"threshold_note": "Only parties with at least 40 candidates are shown.",
+		"threshold_note": "Only parties with a national list are shown.",
 		"show_all": "Show all parties",
 		"show_fewer": "Show fewer"
 	},
@@ -262,20 +261,8 @@
 		"stance": {
 			"for": "Would repeal",
 			"against": "Would keep",
-			"unknown": "Unknown",
-			"candidate_label": "Candidate",
-			"coalition_label": "Party",
-			"explainer_1": "The badges show promises made by candidates and their parties regarding repealing or modifying the cryptocurrency validation law (Act LXVII of 2025).",
-			"explainer_2": "Green indicates a promise to change, red indicates intent to keep."
-		},
-		"search_placeholder": "Search by name or party...",
-		"showing": "Showing: {{shown}}/{{total}} candidates",
-		"no_results": "No results match your search criteria.",
-		"filter": {
-			"select_to_show": "Select a county to show candidates."
-		},
-		"copy_email": "Copy Email",
-		"copied": "Copied!"
+			"unknown": "Unknown"
+		}
 	},
 	"source": {
 		"page_title": "Source: {{title}}",

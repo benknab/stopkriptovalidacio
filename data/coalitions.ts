@@ -1,6 +1,28 @@
 import { z } from "zod";
 import coalitionsJson from "./coalitions.json" with { type: "json" };
-import { coalitionSchema, repealSupportSchema } from "./candidates.ts";
+
+export const repealSupportSchema = z.enum(["for", "against"]);
+
+export type RepealSupport = z.infer<typeof repealSupportSchema>;
+
+export const coalitionSchema = z.enum([
+	"A Magyar Vállalkozók és",
+	"A SZOLIDARITÁS PÁRTJA-Munkáspárt",
+	"DK",
+	"FIDESZ-KDNP",
+	"IRÁNY Párt",
+	"Jobbik",
+	"Középpárt",
+	"LMP – Zöldek",
+	"MKKP",
+	"Magyar Igazság és Élet Pártja",
+	"Mi Hazánk",
+	"NEEM",
+	"NÉP",
+	"TISZA",
+]);
+
+export type Coalition = z.infer<typeof coalitionSchema>;
 
 const textI18nSchema = z.object({
 	hu: z.string(),
@@ -10,6 +32,7 @@ const textI18nSchema = z.object({
 const coalitionDataSchema = z.object({
 	slug: z.string().min(1),
 	name: coalitionSchema,
+	listRank: z.number().int().positive().nullable(),
 	repealSupport: repealSupportSchema.nullable(),
 	summary: textI18nSchema.nullable(),
 	emails: z.array(z.string().email()),
