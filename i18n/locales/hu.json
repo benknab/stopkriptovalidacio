@@ -276,5 +276,12 @@
 		},
 		"copy_email": "Email másolása",
 		"copied": "Másolva!"
+	},
+	"source": {
+		"page_title": "Forrás: {{title}}",
+		"page_description": "Elsődleges forrás a kriptovalidáció idővonaláról.",
+		"back_to_timeline": "Vissza az idővonalhoz",
+		"full_text": "Teljes szöveg",
+		"first_party_label": "Saját forrás"
 	}
 }

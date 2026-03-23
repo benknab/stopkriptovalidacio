@@ -276,5 +276,12 @@
 		},
 		"copy_email": "Copy Email",
 		"copied": "Copied!"
+	},
+	"source": {
+		"page_title": "Source: {{title}}",
+		"page_description": "First-party source from the crypto validation timeline.",
+		"back_to_timeline": "Back to timeline",
+		"full_text": "Full text",
+		"first_party_label": "First-party source"
 	}
 }
