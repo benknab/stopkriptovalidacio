@@ -6,7 +6,6 @@ export const repealSupportSchema = z.enum(["for", "against"]);
 export type RepealSupport = z.infer<typeof repealSupportSchema>;
 
 export const coalitionSchema = z.enum([
-	"A Magyar Vállalkozók és",
 	"A SZOLIDARITÁS PÁRTJA-Munkáspárt",
 	"DK",
 	"FIDESZ-KDNP",
@@ -33,6 +32,7 @@ const coalitionDataSchema = z.object({
 	slug: z.string().min(1),
 	name: coalitionSchema,
 	listRank: z.number().int().positive().nullable(),
+	candidateCount: z.number().int().nonnegative(),
 	repealSupport: repealSupportSchema.nullable(),
 	summary: textI18nSchema.nullable(),
 	emails: z.array(z.string().email()),

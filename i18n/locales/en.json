@@ -251,6 +251,8 @@
 		"description": "Positions of parties running in the 2026 parliamentary election on the crypto validation law.",
 		"methodology": "Stances are based on parties' public statements, programs, and their voting record in parliament. Where a party has not taken a position, their stance is listed as unknown.",
 		"outreach": "We have reached out to all parties asking them to publicly state their position on the crypto validation law. We hope they will publish their promises and intentions on this website.",
+		"candidates_count": "{{count}} candidates",
+		"candidates_count_with_list": "{{count}} candidates (+ list)",
 		"email": "Email",
 		"facebook": "Facebook",
 		"threshold_note": "Only parties with a national list are shown.",

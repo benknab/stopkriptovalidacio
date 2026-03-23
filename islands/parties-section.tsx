@@ -41,12 +41,13 @@ const sortedParties = [...coalitions].sort((a, b) => {
 	const priorityDiff = stancePriority[stanceA] - stancePriority[stanceB];
 	if (priorityDiff !== 0) return priorityDiff;
 
-	// Within the same stance: parties with a national list first, sorted by listRank
+	// Within the same stance: parties with a national list first, sorted by listRank ascending
 	if (a.listRank !== null && b.listRank !== null) return a.listRank - b.listRank;
 	if (a.listRank !== null) return -1;
 	if (b.listRank !== null) return 1;
 
-	return a.name.localeCompare(b.name, "hu");
+	// No list rank: sort by candidate count descending
+	return b.candidateCount - a.candidateCount;
 });
 
 const mainParties = sortedParties.filter((p) => p.listRank !== null);
@@ -114,6 +115,11 @@ function PartyCard({ coalition, lang }: PartyCardProps): JSX.Element {
 			{/* Content */}
 			<div class="flex-1 space-y-1 text-center">
 				<h3 class="font-bold text-slate-900 text-lg leading-tight">{coalition.name}</h3>
+				<p class="text-sm text-slate-500">
+					{coalition.listRank !== null
+						? t("parties.candidates_count_with_list", lang, { count: String(coalition.candidateCount) })
+						: t("parties.candidates_count", lang, { count: String(coalition.candidateCount) })}
+				</p>
 			</div>
 
 			{/* Summary */}

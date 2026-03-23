@@ -1,17 +1,9 @@
 [
 	{
-		"slug": "magyar-vallalkozok",
-		"name": "A Magyar Vállalkozók és",
-		"listRank": null,
-		"repealSupport": null,
-		"summary": null,
-		"emails": [],
-		"facebook": null
-	},
-	{
 		"slug": "szolidaritas",
 		"name": "A SZOLIDARITÁS PÁRTJA-Munkáspárt",
 		"listRank": null,
+		"candidateCount": 59,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [
@@ -23,6 +15,7 @@
 		"slug": "dk",
 		"name": "DK",
 		"listRank": 4,
+		"candidateCount": 104,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [
@@ -34,6 +27,7 @@
 		"slug": "fidesz-kdnp",
 		"name": "FIDESZ-KDNP",
 		"listRank": 5,
+		"candidateCount": 106,
 		"repealSupport": "against",
 		"summary": {
 			"hu": "A kormánypárt nyújtotta be a törvénymódosítást, és nem jelezte a visszavonás szándékát.",
@@ -48,6 +42,7 @@
 		"slug": "irany",
 		"name": "IRÁNY Párt",
 		"listRank": null,
+		"candidateCount": 1,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [],
@@ -57,6 +52,7 @@
 		"slug": "jobbik",
 		"name": "Jobbik",
 		"listRank": null,
+		"candidateCount": 47,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [
@@ -68,6 +64,7 @@
 		"slug": "kozeppart",
 		"name": "Középpárt",
 		"listRank": null,
+		"candidateCount": 6,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [],
@@ -77,6 +74,7 @@
 		"slug": "lmp",
 		"name": "LMP – Zöldek",
 		"listRank": null,
+		"candidateCount": 1,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [],
@@ -86,6 +84,7 @@
 		"slug": "mkkp",
 		"name": "MKKP",
 		"listRank": 1,
+		"candidateCount": 78,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [
@@ -97,6 +96,7 @@
 		"slug": "miep",
 		"name": "Magyar Igazság és Élet Pártja",
 		"listRank": null,
+		"candidateCount": 1,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [],
@@ -106,6 +106,7 @@
 		"slug": "mi-hazank",
 		"name": "Mi Hazánk",
 		"listRank": 3,
+		"candidateCount": 106,
 		"repealSupport": "for",
 		"summary": {
 			"hu": "A Mi Hazánk nem támogatja a hatályos törvényt, és átlátható kriptoszabályozást követel.",
@@ -120,6 +121,7 @@
 		"slug": "neem",
 		"name": "NEEM",
 		"listRank": null,
+		"candidateCount": 2,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [],
@@ -129,6 +131,7 @@
 		"slug": "nep",
 		"name": "NÉP",
 		"listRank": null,
+		"candidateCount": 6,
 		"repealSupport": null,
 		"summary": null,
 		"emails": [],
@@ -138,6 +141,7 @@
 		"slug": "tisza",
 		"name": "TISZA",
 		"listRank": 2,
+		"candidateCount": 106,
 		"repealSupport": "for",
 		"summary": {
 			"hu": "A TISZA Párt programjában szerepel a kriptovaluta-validációs törvény felülvizsgálata.",

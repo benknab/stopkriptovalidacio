@@ -251,6 +251,8 @@
 		"description": "A 2026-os országgyűlési választáson induló pártok álláspontjai a kriptovalidációs törvénnyel kapcsolatban.",
 		"methodology": "Az álláspontok a pártok nyilvános nyilatkozatain, programjain és parlamenti szavazási magatartásukon alapulnak. Ahol a párt nem foglalt állást, ott az álláspont ismeretlenként szerepel.",
 		"outreach": "Megkerestük az összes pártot, hogy nyilvánosan fejtsék ki álláspontjukat a kriptovalidációs törvénnyel kapcsolatban. Reméljük, hogy ígéreteiket és szándékaikat ezen az oldalon is közzéteszik.",
+		"candidates_count": "{{count}} jelölt",
+		"candidates_count_with_list": "{{count}} jelölt (+ lista)",
 		"email": "Email",
 		"facebook": "Facebook",
 		"threshold_note": "Csak az országos listával rendelkező pártokat mutatjuk.",
