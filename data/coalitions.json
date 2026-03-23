@@ -135,8 +135,11 @@
 	{
 		"slug": "mi-hazank",
 		"name": "Mi Hazánk",
-		"repealSupport": null,
-		"summary": null,
+		"repealSupport": "for",
+		"summary": {
+			"hu": "A Mi Hazánk nem támogatja a hatályos törvényt, és átlátható kriptoszabályozást követel.",
+			"en": "Mi Hazánk does not support the current law and demands transparent crypto regulation."
+		},
 		"emails": [
 			"info@mihazank.hu"
 		],

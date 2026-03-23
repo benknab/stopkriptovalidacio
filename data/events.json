@@ -858,5 +858,21 @@
 		"exchangeSlugs": [
 			"coinbase"
 		]
+	},
+	"mi-hazank-valasz-kriptovalidacio": {
+		"date": "2026-03-23",
+		"type": "secondary",
+		"title": {
+			"hu": "Mi Hazánk: a kriptoeszközök a vagyoni szabadság instrumentumai",
+			"en": "Mi Hazánk: crypto assets are instruments of financial freedom"
+		},
+		"summary": {
+			"hu": "A Mi Hazánk pártigazgatója megkeresésünkre kifejtette, hogy a párt a készpénzt és a kriptoeszközöket egyaránt a vagyoni szabadság eszközének tekinti. A hatályos törvényt jelenlegi formájában nem támogatják, a magánszemélyeket érintő büntetőjogi szankciókat elfogadhatatlannak tartják, és átlátható szabályozást követelnek.",
+			"en": "Mi Hazánk's party director stated in response to our inquiry that the party considers both cash and crypto assets as instruments of financial freedom. They do not support the current law in its present form, consider the criminal sanctions affecting individuals unacceptable, and demand transparent regulation."
+		},
+		"sourceSlugs": [
+			"mi-hazank-valasz-2026-03-23"
+		],
+		"exchangeSlugs": []
 	}
 }

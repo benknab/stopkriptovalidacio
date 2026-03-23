@@ -57,7 +57,9 @@ function getPartiesWithCandidates(): Array<{ coalition: Coalition; candidateCoun
 			const stanceB = getStanceKey(coalitionsByName.get(b.coalition)?.repealSupport ?? null);
 			const priorityDiff = stancePriority[stanceA] - stancePriority[stanceB];
 			if (priorityDiff !== 0) return priorityDiff;
-			return b.candidateCount - a.candidateCount;
+			const countDiff = b.candidateCount - a.candidateCount;
+			if (countDiff !== 0) return countDiff;
+			return a.coalition.localeCompare(b.coalition, "hu");
 		});
 }
 
