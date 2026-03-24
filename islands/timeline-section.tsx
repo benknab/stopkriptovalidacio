@@ -38,7 +38,10 @@ function TimelineSource(
 	// First-party source: link to internal source detail page
 	if (source.summary || source.text) {
 		return (
-			<a href={`/forras/${slug}`} class="inline-flex items-center gap-1 text-sm hover:underline">
+			<a
+				href={`/forras/${slug}`}
+				class="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover transition-colors hover:underline"
+			>
 				<span>{source.title[lang]}</span>
 				<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path
