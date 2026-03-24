@@ -132,7 +132,7 @@ function PartyCard({ coalition, lang }: PartyCardProps): JSX.Element {
 
 			{/* Summary */}
 			<p
-				class={`mt-3 text-sm text-center leading-relaxed ${
+				class={`mt-3 text-sm text-center leading-relaxed line-clamp-3 h-[3lh] ${
 					summary ? "text-slate-600" : "text-slate-400 italic"
 				}`}
 			>
