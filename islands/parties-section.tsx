@@ -75,6 +75,14 @@ function FacebookIcon(): JSX.Element {
 	);
 }
 
+function ArrowDownIcon(): JSX.Element {
+	return (
+		<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+		</svg>
+	);
+}
+
 // --- Party Card ---
 
 interface PartyCardProps {
@@ -123,14 +131,34 @@ function PartyCard({ coalition, lang }: PartyCardProps): JSX.Element {
 			</div>
 
 			{/* Summary */}
-			{summary && (
-				<p class="mt-3 text-sm text-slate-600 text-center leading-relaxed">
-					{summary}
-				</p>
-			)}
+			<p
+				class={`mt-3 text-sm text-center leading-relaxed ${
+					summary ? "text-slate-600" : "text-slate-400 italic"
+				}`}
+			>
+				{summary || t("parties.stance_unknown", lang)}
+			</p>
+
+			{/* Event Details Link */}
+			{coalition.eventSlug
+				? (
+					<a
+						href={`#${coalition.eventSlug}`}
+						class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-colors"
+					>
+						<ArrowDownIcon />
+						{t("parties.event_details", lang)}
+					</a>
+				)
+				: (
+					<span class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+						<ArrowDownIcon />
+						{t("parties.event_details", lang)}
+					</span>
+				)}
 
 			{/* Button Row */}
-			<div class="flex gap-2 mt-4">
+			<div class="flex gap-2 mt-2">
 				{coalition.emails.length > 0
 					? (
 						<a

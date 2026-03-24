@@ -257,7 +257,9 @@
 		"facebook": "Facebook",
 		"threshold_note": "Csak az országos listával rendelkező pártokat mutatjuk.",
 		"show_all": "Összes párt mutatása",
-		"show_fewer": "Kevesebb mutatása"
+		"show_fewer": "Kevesebb mutatása",
+		"event_details": "Részletek",
+		"stance_unknown": "A párt egyelőre nem foglalt nyilvánosan állást a kriptovalidációs törvénnyel kapcsolatban."
 	},
 	"candidates": {
 		"stance": {

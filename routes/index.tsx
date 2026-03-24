@@ -31,11 +31,11 @@ export default define.page(function Home(ctx): JSX.Element {
 					<Hero lang={lang} />
 					<ImpactSection lang={lang} />
 					<ExchangesSection lang={lang} />
+					<PartiesSection lang={lang} />
 				</>
 			}
 			afterContent={
 				<>
-					<PartiesSection lang={lang} />
 					<MpsSection
 						lang={lang}
 						selectedCounty={mpCounty}

@@ -257,7 +257,9 @@
 		"facebook": "Facebook",
 		"threshold_note": "Only parties with a national list are shown.",
 		"show_all": "Show all parties",
-		"show_fewer": "Show fewer"
+		"show_fewer": "Show fewer",
+		"event_details": "Details",
+		"stance_unknown": "This party has not yet publicly stated its position on the crypto validation law."
 	},
 	"candidates": {
 		"stance": {

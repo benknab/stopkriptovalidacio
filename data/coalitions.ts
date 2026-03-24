@@ -35,6 +35,7 @@ const coalitionDataSchema = z.object({
 	candidateCount: z.number().int().nonnegative(),
 	repealSupport: repealSupportSchema.nullable(),
 	summary: textI18nSchema.nullable(),
+	eventSlug: z.string().nullable(),
 	emails: z.array(z.string().email()),
 	facebook: z.url().nullable(),
 });
