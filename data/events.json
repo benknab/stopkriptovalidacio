@@ -874,5 +874,19 @@
 			"mi-hazank-valasz-2026-03-23"
 		],
 		"exchangeSlugs": []
+	},
+	"frissites-2026-03-24": {
+		"date": "2026-03-24",
+		"type": "telegram",
+		"title": {
+			"hu": "Frissítés: Választás 2026 szekció",
+			"en": "Update: Election 2026 section"
+		},
+		"summary": {
+			"hu": "Új szekció az oldalon: a 2026-os választáson induló pártok álláspontjai a kriptovalidációs törvényről. A TISZA Párt programjában a szabályozás felülvizsgálatát ígéri, a Mi Hazánk pedig nem támogatja a hatályos törvényt. A többi párt álláspontja egyelőre ismeretlen — megkerestük őket.",
+			"en": "New section on the site: positions of parties running in the 2026 election on the crypto validation law. The TISZA Party promises a regulatory review in its program, while Mi Hazánk does not support the current law. The stance of other parties remains unknown — we have contacted them."
+		},
+		"sourceSlugs": [],
+		"exchangeSlugs": []
 	}
 }
