@@ -11,7 +11,7 @@ type CardKey =
 	| "individual_punishment";
 
 const cardIcons: Record<CardKey, string> = {
-	"zero_compliant": "0️⃣",
+	"zero_compliant": "🚫",
 	"stricter_than_mica": "🇪🇺",
 	"criminal": "⚖️",
 	"unique_validator": "🔍",
