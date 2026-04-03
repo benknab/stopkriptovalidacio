@@ -12,7 +12,7 @@ export function ExternalLink({ href, children, class: className }: ExternalLinkP
 		<a
 			href={href}
 			target="_blank"
-			rel="noopener noreferrer"
+			rel="noopener"
 			class={twMerge("text-brand hover:text-brand-hover transition-colors", className)}
 		>
 			{children}

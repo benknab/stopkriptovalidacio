@@ -180,7 +180,7 @@ function PartyCard({ coalition, lang }: PartyCardProps): JSX.Element {
 						<a
 							href={coalition.facebook}
 							target="_blank"
-							rel="noopener noreferrer"
+							rel="noopener"
 							class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
 						>
 							<FacebookIcon />

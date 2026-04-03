@@ -28,7 +28,7 @@ export function ButtonLink({
 		<a
 			href={href}
 			class={`${baseClasses} ${variantClasses[variant]}${className ? ` ${className}` : ""}`}
-			{...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+			{...(external ? { target: "_blank", rel: "noopener" } : {})}
 		>
 			{children}
 		</a>
