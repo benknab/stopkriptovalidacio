@@ -13,6 +13,7 @@ function formatDate(date: Date, lang: SupportedLanguage): string {
 		year: "numeric",
 		month: "long",
 		day: "numeric",
+		timeZone: "Europe/Budapest",
 	});
 }
 
