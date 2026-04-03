@@ -113,8 +113,8 @@
 		"description": "A szabályozás nem csak a szolgáltatókat, hanem minden magyar kriptotulajdonost közvetlenül érint.",
 		"cards": {
 			"zero_compliant": {
-				"title": "Nulla megfelelő",
-				"description": "Egyetlen tőzsde sem tudja teljesíteni a megfelelőséget, mert a követelmények tisztázatlanok. A kormány állításai ellenére a szolgáltatók folyamatosan távoznak."
+				"title": "Szinte elérhetetlen",
+				"description": "A megfelelőségi követelmények mesterségesen magas belépési korlátot állítanak, és alapjaiban írják át a tőzsdék üzleti modelljét. A szolgáltatók többsége számára nem maradt más választás, mint elhagyni a magyar piacot."
 			},
 			"stricter_than_mica": {
 				"title": "Szigorúbb mint a MiCA",

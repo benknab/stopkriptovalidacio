@@ -113,8 +113,8 @@
 		"description": "This regulation affects not just service providers, but every Hungarian crypto owner directly.",
 		"cards": {
 			"zero_compliant": {
-				"title": "Zero Compliant",
-				"description": "No exchange can achieve compliance because the requirements are unclear. Despite government claims, service providers continue to leave."
+				"title": "Nearly Unattainable",
+				"description": "The compliance requirements create an artificially high barrier to entry and fundamentally upend the business model of exchanges. For most providers, the only viable option has been to leave the Hungarian market."
 			},
 			"stricter_than_mica": {
 				"title": "Stricter Than MiCA",
