@@ -733,8 +733,8 @@
 		},
 		"originalUrl": "https://caduceus.hu/site/partners",
 		"summary": {
-			"hu": "A Caduceus Zrt. partnerei oldal. A Bitpanda az első kriptoeszköz-kereskedő, amellyel a validátor szerződést kötött.",
-			"en": "Caduceus Zrt. partners page. Bitpanda is the first crypto-asset exchange to sign a contract with the validator."
+			"hu": "A Caduceus Zrt. partnerei oldal. Két kriptoeszköz-szolgáltató szerepel a listán: a Bitpanda és a BlockBen.",
+			"en": "Caduceus Zrt. partners page. Two crypto-asset service providers are listed: Bitpanda and BlockBen."
 		}
 	},
 	"tisza-program-2026": {
@@ -786,6 +786,17 @@
 		"text": {
 			"hu": "A Coinbase szóvivőjének tulajdonítható nyilatkozat:\n\n\"Tudomásul vettük az új magyar törvényt. Alapos belső vizsgálatot és szakértő helyi magyar jogi tanácsadóval folytatott egyeztetést követően megállapítottuk, hogy a Coinbase jelenlegi határokon átnyúló szolgáltatásai Magyarországon nem esnek a törvény hatálya alá. Továbbra is szorosan figyelemmel kísérjük a magyarországi szabályozási helyzetet.\"",
 			"en": "Statement attributable to a Coinbase spokesperson:\n\n\"We are aware of the new law in Hungary. Following a thorough internal review and consultation with specialist local Hungarian counsel, we have determined that Coinbase's current cross-border services in Hungary do not fall within its remit. We are continuing to closely monitor the regulatory situation in Hungary.\""
+		}
+	},
+	"bitcoinbazis-blockben-caduceus-2026-04-01": {
+		"title": {
+			"hu": "BitcoinBázis",
+			"en": "BitcoinBázis"
+		},
+		"originalUrl": "https://www.bitcoinbazis.hu/caduceus-zrt-ket-kriptos-szolgaltato-van/",
+		"summary": {
+			"hu": "A BlockBen a második kriptoeszköz-szolgáltató, amely felkerült a Caduceus Zrt. partneri oldalára. A kötelező validálási rendszer bevezetése óta összesen két szolgáltató kötött szerződést az egyetlen engedélyezett validátorral.",
+			"en": "BlockBen became the second crypto-asset service provider listed on the Caduceus Zrt. partners page. Since the mandatory validation system was introduced, only two service providers have signed a contract with the sole licensed validator."
 		}
 	},
 	"mi-hazank-valasz-2026-03-23": {

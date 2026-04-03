@@ -54,6 +54,10 @@
 		"name": "Bitpanda",
 		"status": "operating"
 	},
+	"blockben": {
+		"name": "BlockBen",
+		"status": "operating"
+	},
 	"bybit": {
 		"name": "Bybit",
 		"status": "uncertain"

@@ -875,6 +875,25 @@
 		],
 		"exchangeSlugs": []
 	},
+	"blockben-caduceus-partner": {
+		"date": "2026-04-01",
+		"type": "secondary",
+		"title": {
+			"hu": "BlockBen felkerült a Caduceus Zrt. partneri oldalára",
+			"en": "BlockBen listed on Caduceus Zrt. partners page"
+		},
+		"summary": {
+			"hu": "A BlockBen a második kriptoeszköz-szolgáltató, amely megjelent a Caduceus Zrt. partneri oldalán. A kötelező validálási rendszer bevezetése óta összesen két szolgáltató kötött szerződést az egyetlen engedélyezett validátorral.",
+			"en": "BlockBen became the second crypto-asset service provider listed on the Caduceus Zrt. partners page. Since the mandatory validation system was introduced, only two service providers have signed a contract with the sole licensed validator."
+		},
+		"sourceSlugs": [
+			"bitcoinbazis-blockben-caduceus-2026-04-01",
+			"caduceus-partners"
+		],
+		"exchangeSlugs": [
+			"blockben"
+		]
+	},
 	"frissites-2026-03-24": {
 		"date": "2026-03-24",
 		"type": "telegram",
