@@ -12,6 +12,7 @@
 		"lint": "deno lint",
 		"extract-data-json": "deno run --allow-read --allow-write scripts/extract-data-json.ts",
 		"verify-data-json": "deno run --allow-read scripts/verify-data-json.ts",
+		"inspect-current-winners": "deno run --allow-net --allow-write scripts/inspect-current-winners.ts",
 		"download-images": "deno run -A scripts/download-mp-images.ts",
 		"generate-og-image": "deno run -A scripts/generate-og-image.ts",
 		"post-telegram": "deno run --allow-read --allow-write --allow-net --allow-env scripts/post-telegram.ts"
