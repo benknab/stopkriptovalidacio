@@ -3,6 +3,9 @@
 		"name": "Ágh Péter",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"agh.peter@fidesz.hu",
 			"peter.agh@parlament.hu"
@@ -16,6 +19,9 @@
 		"name": "Balla György",
 		"party": "Fidesz",
 		"vote": "not_voted",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gyorgy.balla@parlament.hu"
 		],
@@ -27,6 +33,9 @@
 		"name": "Balla Mihály",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"mihaly.balla@parlament.hu"
 		],
@@ -39,6 +48,9 @@
 		"name": "Bánki Erik",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"banki.erik@fidesz.hu",
 			"erik.banki@parlament.hu"
@@ -51,6 +63,9 @@
 		"name": "Bányai Gábor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"banyai@parlament.hu"
 		],
@@ -62,6 +77,9 @@
 		"name": "Barcza Attila",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"barcza.attila@parlament.hu"
 		],
@@ -73,6 +91,9 @@
 		"name": "Bartos Mónika",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"monika.bartos@parlament.hu"
 		],
@@ -84,6 +105,9 @@
 		"name": "Becsó Zsolt",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsolt.becso@parlament.hu"
 		],
@@ -95,6 +119,9 @@
 		"name": "Bencsik János",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"janos.bencsik@parlament.hu"
 		],
@@ -107,6 +134,9 @@
 		"name": "Bodó Sándor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"bodo.sandor@fidesz.hu",
 			"bodo.sandor@parlament.hu"
@@ -121,6 +151,9 @@
 		"name": "Bóna Zoltán",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"bona.zoltan@parlament.hu"
 		],
@@ -133,6 +166,9 @@
 		"name": "Dr. Budai Gyula",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gyula.budai@parlament.hu"
 		],
@@ -144,6 +180,9 @@
 		"name": "Cseresnyés Péter",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"peter.cseresnyes@parlament.hu"
 		],
@@ -155,6 +194,9 @@
 		"name": "Dr. Csibi Krisztina",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"csibi.krisztina@parlament.hu"
 		],
@@ -166,6 +208,9 @@
 		"name": "Csöbör Katalin",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"csobor.katalin@parlament.hu"
 		],
@@ -177,6 +222,9 @@
 		"name": "Dr. Csuzda Gábor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"csuzda.gabor@parlament.hu"
 		],
@@ -188,6 +236,9 @@
 		"name": "Czerván György",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gyorgy.czervan@parlament.hu"
 		],
@@ -199,6 +250,9 @@
 		"name": "Czunyiné Dr. Bertalan Judit",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"judit.bertalan@parlament.hu"
 		],
@@ -210,6 +264,9 @@
 		"name": "Dankó Béla",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"bela.danko@parlament.hu"
 		],
@@ -221,6 +278,9 @@
 		"name": "Dr. Demeter András",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"demeter.andras@parlament.hu"
 		],
@@ -232,6 +292,9 @@
 		"name": "Demeter Zoltán",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zoltan.demeter@parlament.hu"
 		],
@@ -243,6 +306,9 @@
 		"name": "Dunai Mónika",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"dunai.monika@parlament.hu"
 		],
@@ -254,6 +320,9 @@
 		"name": "Erdős Norbert",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"erdos.norbert@parlament.hu"
 		],
@@ -265,6 +334,9 @@
 		"name": "Erős Gábor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"eros.gabor@parlament.hu"
 		],
@@ -276,6 +348,9 @@
 		"name": "F. Kovács Sándor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"f.kovacs.sandor@parlament.hu"
 		],
@@ -287,6 +362,9 @@
 		"name": "Farkas Örs",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"farkas.ors@parlament.hu"
 		],
@@ -298,6 +376,9 @@
 		"name": "Farkas Sándor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"szentes@fidesz.hu",
 			"sandor.farkas@parlament.hu"
@@ -310,6 +391,9 @@
 		"name": "Dr. Fazekas Sándor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"sandor.fazekas@parlament.hu"
 		],
@@ -321,6 +405,9 @@
 		"name": "Dr. Ferencz Orsolya",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"ferencz.orsolya@parlament.hu"
 		],
@@ -332,6 +419,9 @@
 		"name": "Dr. Fónagy János",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"janos.fonagy@parlament.hu"
 		],
@@ -344,6 +434,9 @@
 		"name": "Font Sándor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"sandor.font@parlament.hu"
 		],
@@ -355,6 +448,9 @@
 		"name": "Földesi Gyula",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"foldesi.gyula@parlament.hu"
 		],
@@ -366,6 +462,9 @@
 		"name": "Fülöp Attila",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"fulop.attila@parlament.hu"
 		],
@@ -379,6 +478,9 @@
 		"name": "Gelencsér Attila",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"attila.gelencser@parlament.hu"
 		],
@@ -390,6 +492,9 @@
 		"name": "Gulyás Gergely",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gulyas.gergely@budavar.hu",
 			"gergely.gulyas@parlament.hu"
@@ -405,6 +510,9 @@
 		"name": "Gyopáros Alpár",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"alpar.gyoparos@parlament.hu"
 		],
@@ -416,6 +524,9 @@
 		"name": "Halász János",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"janos.halasz@parlament.hu"
 		],
@@ -428,6 +539,9 @@
 		"name": "Dr. Hegedűs Barbara",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hegedus.barbara@parlament.hu"
 		],
@@ -439,6 +553,9 @@
 		"name": "Héjj Dávid",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hejj.david@parlament.hu"
 		],
@@ -450,6 +567,9 @@
 		"name": "Herczeg Tamás",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"herczeg.tamas@parlament.hu"
 		],
@@ -461,6 +581,9 @@
 		"name": "Herczeg Zsolt",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"herczeg.zsolt@parlament.hu"
 		],
@@ -472,6 +595,9 @@
 		"name": "Hidvéghi Balázs",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hidveghi.balazs@parlament.hu"
 		],
@@ -483,6 +609,9 @@
 		"name": "Dr. Hoppál Péter",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"baranya02@fidesz.hu",
 			"peter.hoppal@parlament.hu"
@@ -497,6 +626,9 @@
 		"name": "Hornung Ágnes",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hornung.agnes@parlament.hu"
 		],
@@ -508,6 +640,9 @@
 		"name": "Horváth István",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"istvan.horvath@parlament.hu"
 		],
@@ -519,6 +654,9 @@
 		"name": "Horváth László",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"horvath.laszlo@fidesz.hu",
 			"laszlo.horvath@parlament.hu"
@@ -534,6 +672,9 @@
 		"name": "Dr. Hörcsik Richárd",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"richard.horcsik@parlament.hu"
 		],
@@ -545,6 +686,9 @@
 		"name": "Illés Boglárka",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"illes.boglarka@parlament.hu"
 		],
@@ -556,6 +700,9 @@
 		"name": "Jakab István",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"istvan.jakab@parlament.hu"
 		],
@@ -567,6 +714,9 @@
 		"name": "Dr. Kállai Mária",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kallai.maria@parlament.hu"
 		],
@@ -578,6 +728,9 @@
 		"name": "Kara Ákos",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"akos.kara@parlament.hu"
 		],
@@ -589,6 +742,9 @@
 		"name": "Király Nóra",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kiraly.nora@parlament.hu"
 		],
@@ -600,6 +756,9 @@
 		"name": "Dr. Kiss János",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kiss.janos@parlament.hu"
 		],
@@ -611,6 +770,9 @@
 		"name": "Kocsis Máté",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kocsis.mate@fidesz.hu",
 			"kocsis.mate@parlament.hu"
@@ -624,6 +786,9 @@
 		"name": "Dr. Koncz Zsófia",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"koncz.zsofia@parlament.hu"
 		],
@@ -635,6 +800,9 @@
 		"name": "Kontrát Károly",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"karoly.kontrat@parlament.hu"
 		],
@@ -648,6 +816,9 @@
 		"name": "Kósa Lajos",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"lajos.kosa@fidesz.hu",
 			"lajos.kosa@parlament.hu"
@@ -660,6 +831,9 @@
 		"name": "Dr. Kovács József",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"jozsef.kovacs@parlament.hu"
 		],
@@ -671,6 +845,9 @@
 		"name": "Kovács Sándor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kovacs.sandor@parlament.hu"
 		],
@@ -682,6 +859,9 @@
 		"name": "Kovács Zsolt",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kovacszsolt@parlament.hu"
 		],
@@ -693,6 +873,9 @@
 		"name": "Kövér László",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kover.laszlo@parlament.hu"
 		],
@@ -705,6 +888,9 @@
 		"name": "Kubatov Gábor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gabor.kubatov@parlament.hu"
 		],
@@ -717,6 +903,9 @@
 		"name": "Dr. Láng Zsolt",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"lang.zsolt@parlament.hu"
 		],
@@ -728,6 +917,9 @@
 		"name": "Lázár János",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"titkarsag@lazarjanos.hu",
 			"janos.lazar@ekm.gov.hu",
@@ -745,6 +937,9 @@
 		"name": "Lezsák Sándor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"sandor.lezsak@parlament.hu"
 		],
@@ -757,6 +952,9 @@
 		"name": "Mátrai Márta",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"marta.matrai@parlament.hu"
 		],
@@ -768,6 +966,9 @@
 		"name": "Menczer Tamás",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"menczer.tamas@parlament.hu"
 		],
@@ -780,6 +981,9 @@
 		"name": "Dr. Mészáros Lajos",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"meszaros.lajos@parlament.hu"
 		],
@@ -791,6 +995,9 @@
 		"name": "Dr. Molnár Ágnes",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"agnes.molnar@parlament.hu"
 		],
@@ -802,6 +1009,9 @@
 		"name": "Nagy Bálint",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"nagy.balint@parlament.hu"
 		],
@@ -813,6 +1023,9 @@
 		"name": "Nagy Csaba",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"nagy.csaba@parlament.hu"
 		],
@@ -824,6 +1037,9 @@
 		"name": "Dr. Nagy István",
 		"party": "Fidesz",
 		"vote": "not_voted",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"istvan.nagy@am.gov.hu",
 			"istvan.nagydr@parlament.hu"
@@ -840,6 +1056,9 @@
 		"name": "Németh Szilárd István",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"szilard.nemeth@parlament.hu"
 		],
@@ -851,6 +1070,9 @@
 		"name": "Németh Zsolt",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsolt.nemeth@parlament.hu"
 		],
@@ -862,6 +1084,9 @@
 		"name": "Nyitrai Zsolt",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsolt.nyitrai@parlament.hu"
 		],
@@ -873,6 +1098,9 @@
 		"name": "Dr. Orbán Balázs",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"orban.balazs@parlament.hu"
 		],
@@ -885,6 +1113,9 @@
 		"name": "Orbán Viktor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"orbanviktor@orbanviktor.hu",
 			"viktor.orban@parlament.hu"
@@ -900,6 +1131,9 @@
 		"name": "Ovádi Péter",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"ovadi.peter@fidesz.hu",
 			"ovadi.peter@parlament.hu"
@@ -914,6 +1148,9 @@
 		"name": "Dr. Pajtók Gábor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"pajtok.gabor@parlament.hu"
 		],
@@ -925,6 +1162,9 @@
 		"name": "Pánczél Károly",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"karoly.panczel@parlament.hu"
 		],
@@ -936,6 +1176,9 @@
 		"name": "Dr. Pesti Imre",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"imre.pesti@parlament.hu"
 		],
@@ -947,6 +1190,9 @@
 		"name": "Pócs János",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"janos.pocs@parlament.hu"
 		],
@@ -958,6 +1204,9 @@
 		"name": "Pogácsás Tibor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"tibor.pogacsas@parlament.hu"
 		],
@@ -969,6 +1218,9 @@
 		"name": "Dr. Pósán László",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"laszlo.posan@parlament.hu"
 		],
@@ -980,6 +1232,9 @@
 		"name": "Riz Gábor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"riz.gabor@parlament.hu"
 		],
@@ -991,6 +1246,9 @@
 		"name": "Rogán Antal",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"antal.rogan@mk.gov.hu",
 			"antal.rogan@parlament.hu"
@@ -1005,6 +1263,9 @@
 		"name": "Dr. Salacz László",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"salacz.laszlo@parlament.hu"
 		],
@@ -1016,6 +1277,9 @@
 		"name": "Dr. Selmeczi Gabriella",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gabriella.selmeczi@parlament.hu"
 		],
@@ -1027,6 +1291,9 @@
 		"name": "Dr. Simon Miklós",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"miklos.simon@parlament.hu"
 		],
@@ -1038,6 +1305,9 @@
 		"name": "Simon Róbert Balázs",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"simon.robert@parlament.hu"
 		],
@@ -1049,6 +1319,9 @@
 		"name": "Dr. Szabó Tünde",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"szabo.tunde@parlament.hu"
 		],
@@ -1060,6 +1333,9 @@
 		"name": "Szabó Zsolt",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsolt.szabo@parlament.hu"
 		],
@@ -1071,6 +1347,9 @@
 		"name": "Szatmáry Kristóf",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kristof.szatmary@parlament.hu"
 		],
@@ -1082,6 +1361,9 @@
 		"name": "Dr. Szeberényi Gyula Tamás",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"szeberenyi.gyula@parlament.hu"
 		],
@@ -1093,6 +1375,9 @@
 		"name": "Szijjártó Péter",
 		"party": "Fidesz",
 		"vote": "not_voted",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"peter.szijjarto@parlament.hu"
 		],
@@ -1106,6 +1391,9 @@
 		"name": "Sztojka Attila",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"sztojka.attila@parlament.hu"
 		],
@@ -1117,6 +1405,9 @@
 		"name": "Dr. Szűcs Lajos",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"lajos.szucs@fidesz.hu",
 			"lajos.szucs@parlament.hu"
@@ -1129,6 +1420,9 @@
 		"name": "Tállai András",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"andras.tallai@fidesz.hu",
 			"andras.tallai@parlament.hu"
@@ -1141,6 +1435,9 @@
 		"name": "Dr. Tapolczai Gergely",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gergely.tapolczai@parlament.hu"
 		],
@@ -1152,6 +1449,9 @@
 		"name": "Tasó László",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"tasolaszlo@parlament.hu"
 		],
@@ -1163,6 +1463,9 @@
 		"name": "Tessely Zoltán",
 		"party": "Fidesz",
 		"vote": "not_voted",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zoltan.tessely@parlament.hu"
 		],
@@ -1174,6 +1477,9 @@
 		"name": "Dr. Tiba István",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"istvan.tiba@parlament.hu"
 		],
@@ -1185,6 +1491,9 @@
 		"name": "Dr. Tilki Attila",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"attila.tilki@parlament.hu"
 		],
@@ -1196,6 +1505,9 @@
 		"name": "Törő Gábor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gabor.toro@parlament.hu"
 		],
@@ -1207,6 +1519,9 @@
 		"name": "Tuzson Bence",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"tuzson.bence@fidesz.hu",
 			"tuzson.bence@parlament.hu"
@@ -1222,6 +1537,9 @@
 		"name": "V. Németh Zsolt",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsolt.vnemeth@parlament.hu"
 		],
@@ -1233,6 +1551,9 @@
 		"name": "Varga Gábor",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gabor.varga@parlament.hu"
 		],
@@ -1244,6 +1565,9 @@
 		"name": "Vargha Tamás",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"tamas.vargha@parlament.hu"
 		],
@@ -1255,6 +1579,9 @@
 		"name": "Vécsey László",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"laszlo.vecsey@parlament.hu"
 		],
@@ -1266,6 +1593,9 @@
 		"name": "Vigh László",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"laszlo.vigh@parlament.hu"
 		],
@@ -1278,6 +1608,9 @@
 		"name": "Dr. Vinnai Győző",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gyozo.vinnai@parlament.hu"
 		],
@@ -1289,6 +1622,9 @@
 		"name": "Vitályos Eszter",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"vitalyos.eszter@fidesz.hu",
 			"vitalyos.eszter@parlament.hu"
@@ -1304,6 +1640,9 @@
 		"name": "Dr. Vitányi István",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"istvan.vitanyi@parlament.hu"
 		],
@@ -1315,6 +1654,9 @@
 		"name": "Witzmann Mihály",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"witzmannmihaly@fidesz.hu",
 			"witzmann.mihaly@parlament.hu"
@@ -1330,6 +1672,9 @@
 		"name": "Dr. Zsigmond Barna Pál",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsigmond.barna@parlament.hu"
 		],
@@ -1341,6 +1686,9 @@
 		"name": "Zsigó Róbert",
 		"party": "Fidesz",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsigorobert@zsigorobert.hu",
 			"robert.zsigo@parlament.hu"
@@ -1357,6 +1705,9 @@
 		"name": "Dr. Aradszki András",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"andras.aradszki@parlament.hu"
 		],
@@ -1368,6 +1719,9 @@
 		"name": "Földi László",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"laszlo.foldi@parlament.hu"
 		],
@@ -1379,6 +1733,9 @@
 		"name": "Dr. Hargitai János",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"janos.hargitai@parlament.hu"
 		],
@@ -1390,6 +1747,9 @@
 		"name": "Harrach Péter",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"peter.harrach@parlament.hu"
 		],
@@ -1402,6 +1762,9 @@
 		"name": "Hollik István",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hollik.istvan@parlament.hu"
 		],
@@ -1413,6 +1776,9 @@
 		"name": "Dr. Juhász Hajnalka",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"juhasz.hajnalka@parlament.hu"
 		],
@@ -1424,6 +1790,9 @@
 		"name": "Dr. Latorcai János",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"janos.latorcai@parlament.hu"
 		],
@@ -1435,6 +1804,9 @@
 		"name": "Mihálffy Béla",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"mihalffy.bela@parlament.hu"
 		],
@@ -1446,6 +1818,9 @@
 		"name": "Móring József Attila",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"jozsef.moring@parlament.hu"
 		],
@@ -1457,6 +1832,9 @@
 		"name": "Nacsa Lőrinc",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"lorinc.nacsa@me.gov.hu",
 			"nacsa.lorinc@parlament.hu"
@@ -1471,6 +1849,9 @@
 		"name": "Dr. Navracsics Tibor",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"navracsics@ajk.elte.hu",
 			"navracsics.tibor@uni-nke.hu",
@@ -1484,6 +1865,9 @@
 		"name": "Rétvári Bence",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"bence.retvari@parlament.hu"
 		],
@@ -1497,6 +1881,9 @@
 		"name": "Dr. Semjén Zsolt",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsolt.semjen@parlament.hu"
 		],
@@ -1511,6 +1898,9 @@
 		"name": "Dr. Seszták Miklós",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"miklos.sesztak@parlament.hu"
 		],
@@ -1522,6 +1912,9 @@
 		"name": "Dr. Simicskó István",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"istvan.simicsko@parlament.hu"
 		],
@@ -1533,6 +1926,9 @@
 		"name": "Soltész Miklós",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"soltesz.miklos@me.gov.hu",
 			"miklos.soltesz@parlament.hu"
@@ -1547,6 +1943,9 @@
 		"name": "Süli János",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"suli.janos@parlament.hu"
 		],
@@ -1558,6 +1957,9 @@
 		"name": "Szászfalvi László",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"laszlo.szaszfalvi@kim.gov.hu",
 			"laszlo.szaszfalvi@parlament.hu"
@@ -1570,6 +1972,9 @@
 		"name": "Dr. Vejkey Imre",
 		"party": "KDNP",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"imre.vejkey@parlament.hu"
 		],
@@ -1581,6 +1986,9 @@
 		"name": "Arató Gergely",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gergely.arato.kepviselo@gmail.com",
 			"arato.gergely@parlament.hu"
@@ -1595,6 +2003,9 @@
 		"name": "Barkóczi Balázs",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"barkoczi.balazs@dkp.hu",
 			"barkoczi.balazs@parlament.hu"
@@ -1609,6 +2020,9 @@
 		"name": "Dr. Dávid Ferenc",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"david.ferenc@parlament.hu"
 		],
@@ -1620,6 +2034,9 @@
 		"name": "Földi Judit",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"foldi.judit@parlament.hu"
 		],
@@ -1631,6 +2048,9 @@
 		"name": "Gréczy Zsolt",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"greczizsolt@parlament.hu"
 		],
@@ -1642,6 +2062,9 @@
 		"name": "Gy. Németh Erzsébet",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gy.nemeth.erzsebet@parlament.hu"
 		],
@@ -1653,6 +2076,9 @@
 		"name": "Hegedüs Andrea",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hegedus.andrea@parlament.hu"
 		],
@@ -1666,6 +2092,9 @@
 		"name": "Kálmán Olga",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kalmanolga@kalmanolga.hu",
 			"kalman.olga@parlament.hu"
@@ -1679,6 +2108,9 @@
 		"name": "Dr. Komáromi Zoltán",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"komaromi.zoltan@parlament.hu"
 		],
@@ -1690,6 +2122,9 @@
 		"name": "Dr. Oláh Lajos",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"lajos.olah@parlament.hu"
 		],
@@ -1704,6 +2139,9 @@
 		"name": "Rónai Sándor",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"ronai.sandor@parlament.hu"
 		],
@@ -1715,6 +2153,9 @@
 		"name": "Sebián-Petrovszki László",
 		"party": "DK",
 		"vote": "absent",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"sebian-petrovszki.laszlo@parlament.hu"
 		],
@@ -1726,6 +2167,9 @@
 		"name": "Dr. Vadai Ágnes",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"agnes.vadai@parlament.hu"
 		],
@@ -1737,6 +2181,9 @@
 		"name": "Varga Zoltán",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"varga.zoltan.imre@parlament.hu"
 		],
@@ -1748,6 +2195,9 @@
 		"name": "Varju László",
 		"party": "DK",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"laszlo.varju@parlament.hu"
 		],
@@ -1759,6 +2209,9 @@
 		"name": "Bedő Dávid",
 		"party": "Momentum",
 		"vote": "banned",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"bedo.david@momentum.hu",
 			"bedo.david@parlament.hu"
@@ -1771,6 +2224,9 @@
 		"name": "Dr. Cseh Katalin",
 		"party": "Momentum",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"drcsehkatalin@parlament.hu"
 		],
@@ -1782,6 +2238,9 @@
 		"name": "Gelencsér Ferenc",
 		"party": "Momentum",
 		"vote": "absent",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gelencser.ferenc@momentum.hu",
 			"gelencser.ferenc@parlament.hu"
@@ -1794,6 +2253,9 @@
 		"name": "Hajnal Miklós",
 		"party": "Momentum",
 		"vote": "absent",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hajnal.miklos@momentum.hu",
 			"hajnal.miklos@parlament.hu"
@@ -1808,6 +2270,9 @@
 		"name": "Lőcsei Lajos",
 		"party": "Momentum",
 		"vote": "banned",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"locsei.lajos@momentum.hu",
 			"locsei.lajos@parlament.hu"
@@ -1820,6 +2285,9 @@
 		"name": "Sebők Éva",
 		"party": "Momentum",
 		"vote": "banned",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"sebok.eva@momentum.hu",
 			"sebok.eva@parlament.hu"
@@ -1835,6 +2303,9 @@
 		"name": "Stummer János",
 		"party": "Momentum",
 		"vote": "not_voted",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"stummer.janos@momentum.hu",
 			"janos.stummer@parlament.hu"
@@ -1847,6 +2318,9 @@
 		"name": "Szabó Szabolcs",
 		"party": "Momentum",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"szabo.szabolcs@momentum.hu",
 			"szabo.szabolcs@parlament.hu"
@@ -1863,6 +2337,9 @@
 		"name": "Tompos Márton Kristóf",
 		"party": "Momentum",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"tompos.marton@momentum.hu",
 			"tompos.marton@parlament.hu"
@@ -1875,6 +2352,9 @@
 		"name": "Tóth Endre",
 		"party": "Momentum",
 		"vote": "absent",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"toth.endre@momentum.hu",
 			"toth.endre@parlament.hu"
@@ -1889,6 +2369,9 @@
 		"name": "Dr. Gurmai Zita",
 		"party": "MSZP",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"gurmai.zita@parlament.hu"
 		],
@@ -1900,6 +2383,9 @@
 		"name": "Dr. Harangozó Tamás",
 		"party": "MSZP",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"tamas.harangozo@parlament.hu"
 		],
@@ -1912,6 +2398,9 @@
 		"name": "Dr. Hiller István",
 		"party": "MSZP",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"istvan.hiller@parlament.hu"
 		],
@@ -1923,6 +2412,9 @@
 		"name": "Hiszékeny Dezső",
 		"party": "MSZP",
 		"vote": "absent",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hiszekeny.dezso@parlament.hu"
 		],
@@ -1934,6 +2426,9 @@
 		"name": "Komjáthi Imre",
 		"party": "MSZP",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"komjathi.imre@parlament.hu"
 		],
@@ -1945,6 +2440,9 @@
 		"name": "Kunhalmi Ágnes",
 		"party": "MSZP",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"agnes.kunhalmi@mszp.hu",
 			"kunhalmi.agnes@parlament.hu"
@@ -1960,6 +2458,9 @@
 		"name": "Dr. Molnár Zsolt",
 		"party": "MSZP",
 		"vote": "absent",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zsolt.molnar@parlament.hu"
 		],
@@ -1971,6 +2472,9 @@
 		"name": "Szabó Sándor",
 		"party": "MSZP",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"szabo.sandor@parlament.hu"
 		],
@@ -1983,6 +2487,9 @@
 		"name": "Dr. Tóth Bertalan",
 		"party": "MSZP",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"toth.bertalan@parlament.hu"
 		],
@@ -1994,6 +2501,9 @@
 		"name": "Vajda Zoltán",
 		"party": "MSZP",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"vajda.zoltan@parlament.hu"
 		],
@@ -2005,6 +2515,9 @@
 		"name": "Ander Balázs",
 		"party": "Jobbik",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"ander.balazs@parlament.hu"
 		],
@@ -2018,6 +2531,9 @@
 		"name": "Bencze János",
 		"party": "Jobbik",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"bencze.janos@parlament.hu"
 		],
@@ -2029,6 +2545,9 @@
 		"name": "Dr. Brenner Koloman",
 		"party": "Jobbik",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"brenner.koloman@parlament.hu"
 		],
@@ -2040,6 +2559,9 @@
 		"name": "Dudás Róbert",
 		"party": "Jobbik",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"dudas.robert@parlament.hu"
 		],
@@ -2051,6 +2573,9 @@
 		"name": "Dr. Lukács László György",
 		"party": "Jobbik",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"drlukacs@parlament.hu"
 		],
@@ -2062,6 +2587,9 @@
 		"name": "Sas Zoltán",
 		"party": "Jobbik",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"sas.zoltan@parlament.hu"
 		],
@@ -2073,6 +2601,9 @@
 		"name": "Z. Kárpát Dániel",
 		"party": "Jobbik",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"zkarpat.daniel@parlament.hu"
 		],
@@ -2085,6 +2616,9 @@
 		"name": "Dr. Apáti István",
 		"party": "Mi Hazánk",
 		"vote": "not_voted",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"apati.istvan@mihazank.hu",
 			"apati.istvan@parlament.hu"
@@ -2097,6 +2631,9 @@
 		"name": "Dócs Dávid",
 		"party": "Mi Hazánk",
 		"vote": "not_voted",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"docs.david@mihazank.hu",
 			"docs.david@parlament.hu"
@@ -2109,6 +2646,9 @@
 		"name": "Dúró Dóra",
 		"party": "Mi Hazánk",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"duro.dora@mihazank.hu",
 			"duro.dora@parlament.hu"
@@ -2121,6 +2661,9 @@
 		"name": "Novák Előd",
 		"party": "Mi Hazánk",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"novak.elod@mihazank.hu",
 			"novak.elod@parlament.hu"
@@ -2135,6 +2678,9 @@
 		"name": "Szabadi István",
 		"party": "Mi Hazánk",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"szabadi.istvan@mihazank.hu",
 			"szabadi.istvan@parlament.hu"
@@ -2150,6 +2696,9 @@
 		"name": "Toroczkai László",
 		"party": "Mi Hazánk",
 		"vote": "abstain",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"elnok@mihazank.hu",
 			"toroczkai.laszlo@parlament.hu"
@@ -2163,6 +2712,9 @@
 		"name": "Berki Sándor",
 		"party": "Párbeszéd",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"berki.sandor@parlament.hu"
 		],
@@ -2175,6 +2727,9 @@
 		"name": "Jámbor András Imre",
 		"party": "Párbeszéd",
 		"vote": "absent",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"jambor.andras@parlament.hu"
 		],
@@ -2187,6 +2742,9 @@
 		"name": "Dr. Mellár Tamás",
 		"party": "Párbeszéd",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"mellar.tamas@parlament.hu"
 		],
@@ -2199,6 +2757,9 @@
 		"name": "Szabó Rebeka",
 		"party": "Párbeszéd",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"szabo.rebeka@parlament.hu"
 		],
@@ -2210,6 +2771,9 @@
 		"name": "Szabó Timea",
 		"party": "Párbeszéd",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"timea.szabo@parlament.hu"
 		],
@@ -2223,6 +2787,9 @@
 		"name": "Tordai Bence",
 		"party": "Párbeszéd",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"tordai.bence@parlament.hu"
 		],
@@ -2237,6 +2804,9 @@
 		"name": "Bakos Bernadett",
 		"party": "független",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"bakos.bernadett@lehetmas.hu",
 			"bakos.bernadett@parlament.hu"
@@ -2251,6 +2821,9 @@
 		"name": "Balassa Péter",
 		"party": "független",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"balassa.peter@parlament.hu"
 		],
@@ -2262,6 +2835,9 @@
 		"name": "Csárdi Antal",
 		"party": "független",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"csardi.antal@parlament.hu"
 		],
@@ -2276,6 +2852,9 @@
 		"name": "Dr. Hadházy Ákos",
 		"party": "független",
 		"vote": "banned",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"hadhazyakos@gmail.com",
 			"hadhazy.akos@parlament.hu"
@@ -2291,6 +2870,9 @@
 		"name": "Jakab Péter",
 		"party": "független",
 		"vote": "not_voted",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"jakabpeterdenes@gmail.com",
 			"jakab.peter@parlament.hu"
@@ -2303,6 +2885,9 @@
 		"name": "Kanász-Nagy Máté",
 		"party": "független",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"kanasz-nagy.mate@parlament.hu"
 		],
@@ -2314,6 +2899,9 @@
 		"name": "Dr. Keresztes László Lóránt",
 		"party": "független",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"keresztes.laszlo@parlament.hu"
 		],
@@ -2325,6 +2913,9 @@
 		"name": "Ungár Péter",
 		"party": "független",
 		"vote": "absent",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"ungar.peter@parlament.hu"
 		],
@@ -2338,6 +2929,9 @@
 		"name": "Varga Ferenc",
 		"party": "független",
 		"vote": "no",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"vargaferenc@parlament.hu"
 		],
@@ -2348,6 +2942,9 @@
 		"name": "Ritter Imre",
 		"party": "nemzetiségi",
 		"vote": "yes",
+		"electedAt": [
+			2022
+		],
 		"emails": [
 			"ritter@t-online.hu",
 			"ritter.imre@parlament.hu"

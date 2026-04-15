@@ -1,7 +1,7 @@
 import { z } from "zod";
 import mpsJson from "./mps.json" with { type: "json" };
 
-const voteTypeSchema = z.enum(["yes", "no", "abstain", "absent", "not_voted", "banned"]);
+const voteTypeSchema = z.enum(["yes", "no", "abstain", "absent", "not_voted", "not_in_parliament", "banned"]);
 
 export type VoteType = z.infer<typeof voteTypeSchema>;
 
@@ -13,6 +13,7 @@ const partySchema = z.enum([
 	"MSZP",
 	"Jobbik",
 	"Mi Hazánk",
+	"TISZA",
 	"Párbeszéd",
 	"független",
 	"nemzetiségi",
@@ -48,11 +49,13 @@ export function formatPhoneForDisplay(phone: string): string {
 }
 
 const stringSetSchema = z.array(z.string()).transform((values) => new Set(values));
+const numberSetSchema = z.array(z.number()).transform((values) => new Set(values));
 
 export const mpSchema = z.object({
 	name: z.string(),
 	party: partySchema,
 	vote: voteTypeSchema,
+	electedAt: numberSetSchema,
 	emails: stringSetSchema,
 	phones: stringSetSchema,
 	imageUrl: z.string().optional(),

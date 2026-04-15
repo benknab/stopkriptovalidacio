@@ -15,9 +15,10 @@ const votePriority: Record<VoteType, number> = {
 	yes: 0,
 	abstain: 1,
 	"not_voted": 2,
-	absent: 3,
-	no: 4,
-	banned: 5,
+	"not_in_parliament": 3,
+	absent: 4,
+	no: 5,
+	banned: 6,
 };
 
 export const NATIONAL_LIST = "Országos lista";

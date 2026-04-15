@@ -201,6 +201,7 @@
 			"abstain": "Abstained",
 			"absent": "Absent",
 			"not_voted": "Did not vote",
+			"not_in_parliament": "Not in Parliament",
 			"banned": "Banned"
 		},
 		"party": {

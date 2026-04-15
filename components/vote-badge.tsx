@@ -23,6 +23,10 @@ export const voteColors: Record<VoteType, { badge: string; border: string }> = {
 		badge: "bg-slate-100 text-slate-600",
 		border: "border-red-400",
 	},
+	"not_in_parliament": {
+		badge: "bg-sky-100 text-sky-700",
+		border: "border-slate-200",
+	},
 	banned: {
 		badge: "bg-purple-100 text-purple-700",
 		border: "border-slate-200",

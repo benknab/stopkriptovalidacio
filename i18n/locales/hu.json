@@ -201,6 +201,7 @@
 			"abstain": "Tartózkodott",
 			"absent": "Hiányzott",
 			"not_voted": "Nem szavazott",
+			"not_in_parliament": "Nem volt országgyűlési képviselő",
 			"banned": "Kitiltott"
 		},
 		"party": {

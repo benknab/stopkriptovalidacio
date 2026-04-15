@@ -5,6 +5,7 @@
  *   deno task inspect-current-winners
  *   deno task inspect-current-winners --json
  *   deno task inspect-current-winners --output=data/nvi-current-winners-2026.json
+ *   deno task inspect-current-winners --merge-mps-output=data/mps-merged-2026-preview.json
  *   deno task inspect-current-winners --final-only
  *   deno task inspect-current-winners --include-spokespeople
  *   deno task inspect-current-winners --election=ogy2026
@@ -12,6 +13,10 @@
 
 const DEFAULT_ELECTION = "ogy2026";
 const BASE_URL = "https://vtr.valasztas.hu";
+const CURRENT_MPS_PATH = new URL("../data/mps.json", import.meta.url).pathname;
+const EXISTING_MPS_ELECTION_YEAR = 2022;
+const NATIONAL_LIST_LABEL = "Országos lista";
+const MINORITY_LIST_LABEL = "Országos nemzetiségi lista";
 
 type NviConfig = {
 	ver: string;
@@ -102,6 +107,7 @@ type WinnerRecord = {
 	name: string;
 	party: string;
 	mandateType: MandateType;
+	districtLabel: string;
 	finality: Finality;
 	countedPercent: number;
 	finalityCode: string;
@@ -149,6 +155,44 @@ type Options = {
 	finalOnly: boolean;
 	includeSpokespeople: boolean;
 	outputPath: string | null;
+	mergeMpsOutputPath: string | null;
+};
+
+type CurrentVoteType = "yes" | "no" | "abstain" | "absent" | "not_voted" | "not_in_parliament" | "banned";
+type CurrentParty =
+	| "Fidesz"
+	| "KDNP"
+	| "DK"
+	| "Momentum"
+	| "MSZP"
+	| "Jobbik"
+	| "Mi Hazánk"
+	| "TISZA"
+	| "Párbeszéd"
+	| "független"
+	| "nemzetiségi";
+
+type RawMpRecord = {
+	name: string;
+	party: CurrentParty;
+	vote: CurrentVoteType;
+	electedAt?: number[];
+	emails: string[];
+	phones: string[];
+	imageUrl?: string;
+	district?: string;
+	website?: string;
+	address?: string;
+};
+
+type RawMps = Record<string, RawMpRecord>;
+
+type MergeSummary = {
+	electionYear: number;
+	matchedExisting: number;
+	addedNew: number;
+	totalRecords: number;
+	outputPath: string;
 };
 
 type SourceUrls = {
@@ -199,6 +243,7 @@ Usage:
 Options:
 	--json                   Print full JSON output
 	--output=<path>          Write full JSON output to a file
+	--merge-mps-output=<path> Merge winners into an MP JSON file and write result
 	--final-only             Keep only fully final winners
 	--include-spokespeople   Include nationality spokesperson rows
 	--election=<slug>        Override election app slug (default: ${DEFAULT_ELECTION})
@@ -212,6 +257,7 @@ function parseOptions(args: string[]): Options {
 		finalOnly: false,
 		includeSpokespeople: false,
 		outputPath: null,
+		mergeMpsOutputPath: null,
 	};
 
 	for (const arg of args) {
@@ -231,6 +277,15 @@ function parseOptions(args: string[]): Options {
 				throw new Error("--output requires a non-empty value.");
 			}
 			options.outputPath = outputPath;
+			continue;
+		}
+
+		if (arg.startsWith("--merge-mps-output=")) {
+			const mergeMpsOutputPath = arg.slice("--merge-mps-output=".length);
+			if (!mergeMpsOutputPath) {
+				throw new Error("--merge-mps-output requires a non-empty value.");
+			}
+			options.mergeMpsOutputPath = mergeMpsOutputPath;
 			continue;
 		}
 
@@ -326,6 +381,270 @@ async function loadData(election: string): Promise<LoadedData> {
 
 function getConstituencyKey(maz: string, evk: string): string {
 	return `${maz}-${evk}`;
+}
+
+function getElectionYear(election: string): number {
+	const match = election.match(/(\d{4})$/);
+	if (!match) {
+		throw new Error(`Could not derive election year from ${election}.`);
+	}
+
+	return Number.parseInt(match[1], 10);
+}
+
+function formatDistrictLabel(constituency: Constituency): string {
+	const countyName = constituency.maz_nev
+		.replace(/ vármegye$/u, "")
+		.replace(/ megye$/u, "")
+		.replace(/ főváros$/u, "");
+	return `${countyName} ${Number.parseInt(constituency.evk, 10)}. OEVK`;
+}
+
+function normalizeNameForMatch(value: string): string {
+	const normalized = value.normalize("NFD")
+		.replace(/\p{Diacritic}/gu, "")
+		.toLowerCase()
+		.replace(/[^a-z0-9\s.-]/g, " ")
+		.replace(/[.]/g, " ")
+		.trim();
+	const tokens = normalized.split(/\s+/).filter(Boolean).filter((token) => {
+		return token !== "dr" && token !== "ifj" && token !== "id" && token !== "ozv";
+	});
+	return tokens.join(" ");
+}
+
+function slugify(value: string): string {
+	return normalizeNameForMatch(value).replace(/\s+/g, "-");
+}
+
+function formatWinnerName(value: string): string {
+	return value.toLowerCase().split(/([ -])/).map((part) => {
+		if (part === " " || part === "-") {
+			return part;
+		}
+
+		return part.length === 0 ? part : `${part[0].toUpperCase()}${part.slice(1)}`;
+	}).join("");
+}
+
+function buildNameMatchKeys(name: string): string[] {
+	const normalized = normalizeNameForMatch(name);
+	const tokens = normalized.split(" ").filter(Boolean);
+	const keys: string[] = [];
+	const slug = slugify(name);
+
+	if (slug) {
+		keys.push(`slug:${slug}`);
+	}
+
+	if (normalized) {
+		keys.push(`name:${normalized}`);
+	}
+
+	if (tokens.length >= 3) {
+		keys.push(`suffix3:${tokens.slice(-3).join(" ")}`);
+	}
+
+	if (tokens.length >= 2) {
+		keys.push(`suffix2:${tokens.slice(-2).join(" ")}`);
+	}
+
+	return keys;
+}
+
+function addUniqueMatchKey(index: Map<string, string | null>, key: string, slug: string): void {
+	const existing = index.get(key);
+	if (existing === undefined) {
+		index.set(key, slug);
+		return;
+	}
+
+	if (existing !== slug) {
+		index.set(key, null);
+	}
+}
+
+function buildExistingMpIndex(mps: RawMps): Map<string, string | null> {
+	const index = new Map<string, string | null>();
+
+	for (const [slug, mp] of Object.entries(mps)) {
+		addUniqueMatchKey(index, `slug:${slug}`, slug);
+		for (const key of buildNameMatchKeys(mp.name)) {
+			addUniqueMatchKey(index, key, slug);
+		}
+	}
+
+	return index;
+}
+
+function matchWinnerToExistingMp(winner: WinnerRecord, index: Map<string, string | null>): string | null {
+	for (const key of buildNameMatchKeys(winner.name)) {
+		const slug = index.get(key);
+		if (slug) {
+			return slug;
+		}
+	}
+
+	return null;
+}
+
+function mapWinnerParty(party: string): CurrentParty {
+	if (party === "FIDESZ-KDNP") {
+		return "Fidesz";
+	}
+
+	if (party === "TISZA" || party === "Mi Hazánk") {
+		return party;
+	}
+
+	throw new Error(`Unhandled winner party: ${party}`);
+}
+
+function normalizeElectionYears(electedAt: number[] | undefined): number[] {
+	const years = electedAt ?? [EXISTING_MPS_ELECTION_YEAR];
+	return Array.from(new Set(years)).sort((left, right) => left - right);
+}
+
+function withElectionYear(electedAt: number[] | undefined, year: number): number[] {
+	const years = normalizeElectionYears(electedAt);
+	if (!years.includes(year)) {
+		years.push(year);
+		years.sort((left, right) => left - right);
+	}
+	return years;
+}
+
+function normalizeExistingMp(mp: RawMpRecord): RawMpRecord {
+	return {
+		...mp,
+		electedAt: normalizeElectionYears(mp.electedAt),
+		emails: [...mp.emails],
+		phones: [...mp.phones],
+	};
+}
+
+function createNewMpFromWinner(winner: WinnerRecord, electionYear: number): RawMpRecord {
+	return {
+		name: formatWinnerName(winner.name),
+		party: mapWinnerParty(winner.party),
+		vote: "not_in_parliament",
+		electedAt: [electionYear],
+		emails: [],
+		phones: [],
+		district: winner.districtLabel,
+	};
+}
+
+function buildUniqueWinnerSlug(winner: WinnerRecord, mps: RawMps): string {
+	const baseSlug = slugify(winner.name);
+	const fallbackSuffix = winner.ejId ?? winner.tjId ?? winner.tlId ?? winner.jlcsKod;
+	let slug = baseSlug || `winner-${fallbackSuffix}`;
+
+	if (!mps[slug]) {
+		return slug;
+	}
+
+	slug = `${slug}-${fallbackSuffix}`;
+	if (!mps[slug]) {
+		return slug;
+	}
+
+	let counter = 2;
+	while (mps[`${slug}-${counter}`]) {
+		counter++;
+	}
+
+	return `${slug}-${counter}`;
+}
+
+function orderMpRecord(mp: RawMpRecord): Record<string, unknown> {
+	const ordered: Record<string, unknown> = {
+		name: mp.name,
+		party: mp.party,
+		vote: mp.vote,
+		electedAt: normalizeElectionYears(mp.electedAt),
+		emails: [...mp.emails],
+		phones: [...mp.phones],
+	};
+
+	if (mp.imageUrl !== undefined) {
+		ordered.imageUrl = mp.imageUrl;
+	}
+
+	if (mp.district !== undefined) {
+		ordered.district = mp.district;
+	}
+
+	if (mp.website !== undefined) {
+		ordered.website = mp.website;
+	}
+
+	if (mp.address !== undefined) {
+		ordered.address = mp.address;
+	}
+
+	return ordered;
+}
+
+async function readMps(filePath: string): Promise<RawMps> {
+	const content = await Deno.readTextFile(filePath);
+	return JSON.parse(content) as RawMps;
+}
+
+function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear: number, outputPath: string): {
+	mergedMps: Record<string, unknown>;
+	summary: MergeSummary;
+} {
+	const merged = Object.fromEntries(
+		Object.entries(mps).map(([slug, mp]) => [slug, normalizeExistingMp(mp)]),
+	) as RawMps;
+	const existingIndex = buildExistingMpIndex(merged);
+	const matchedSlugs = new Set<string>();
+	let matchedExisting = 0;
+	let addedNew = 0;
+
+	for (const winner of winners) {
+		const existingSlug = matchWinnerToExistingMp(winner, existingIndex);
+		if (existingSlug) {
+			if (matchedSlugs.has(existingSlug)) {
+				throw new Error(`Matched duplicate winner to ${existingSlug}.`);
+			}
+
+			matchedSlugs.add(existingSlug);
+			const existingMp = merged[existingSlug];
+			merged[existingSlug] = {
+				...existingMp,
+				party: mapWinnerParty(winner.party),
+				district: winner.districtLabel,
+				electedAt: withElectionYear(existingMp.electedAt, electionYear),
+			};
+			matchedExisting++;
+			continue;
+		}
+
+		const newSlug = buildUniqueWinnerSlug(winner, merged);
+		merged[newSlug] = createNewMpFromWinner(winner, electionYear);
+		for (const key of buildNameMatchKeys(merged[newSlug].name)) {
+			addUniqueMatchKey(existingIndex, key, newSlug);
+		}
+		addUniqueMatchKey(existingIndex, `slug:${newSlug}`, newSlug);
+		addedNew++;
+	}
+
+	const orderedEntries = Object.entries(merged)
+		.sort(([leftSlug], [rightSlug]) => leftSlug.localeCompare(rightSlug, "hu-HU"))
+		.map(([slug, mp]) => [slug, orderMpRecord(mp)]);
+
+	return {
+		mergedMps: Object.fromEntries(orderedEntries),
+		summary: {
+			electionYear,
+			matchedExisting,
+			addedNew,
+			totalRecords: orderedEntries.length,
+			outputPath,
+		},
+	};
 }
 
 function getFinality(jogeros: string): Finality {
@@ -443,6 +762,7 @@ function buildWinners(data: LoadedData, options: Options): WinnerRecord[] {
 				name: candidate.neve,
 				party: candidate.jlcs_nev,
 				mandateType: "district",
+				districtLabel: formatDistrictLabel(constituency),
 				finality: getFinality(districtResultRow.egyeni_jkv.jogeros),
 				countedPercent: districtResultRow.egyeni_jkv.feldar,
 				finalityCode: districtResultRow.egyeni_jkv.jogeros,
@@ -470,6 +790,7 @@ function buildWinners(data: LoadedData, options: Options): WinnerRecord[] {
 				name: listCandidate.candidate.neve,
 				party: listCandidate.list.jlcs_nev,
 				mandateType: mandate.mand_tip === "2" ? "list" : "spokesperson",
+				districtLabel: mandate.mand_tip === "2" ? NATIONAL_LIST_LABEL : MINORITY_LIST_LABEL,
 				finality: getFinality(nationalListResult.jogeros),
 				countedPercent: nationalListResult.feldar,
 				finalityCode: nationalListResult.jogeros,
@@ -584,13 +905,37 @@ function printHumanSummary(result: InspectResult): void {
 	console.log("Use --json to print the full joined winner rows.");
 }
 
+function printMergeSummary(summary: MergeSummary): void {
+	console.log("");
+	console.log("Merged MP data:");
+	console.log(`- Election year added: ${summary.electionYear}`);
+	console.log(`- Matched existing MPs: ${summary.matchedExisting}`);
+	console.log(`- Added new winners: ${summary.addedNew}`);
+	console.log(`- Total records written: ${summary.totalRecords}`);
+	console.log(`- Output: ${summary.outputPath}`);
+}
+
 async function main(): Promise<void> {
 	const options = parseOptions(Deno.args);
 	const data = await loadData(options.election);
 	const result = buildInspectResult(data, options);
+	let mergeSummary: MergeSummary | null = null;
 
 	if (options.outputPath) {
 		await writeOutput(options.outputPath, result);
+	}
+
+	if (options.mergeMpsOutputPath) {
+		const currentMps = await readMps(CURRENT_MPS_PATH);
+		const electionYear = getElectionYear(options.election);
+		const { mergedMps, summary } = mergeWinnersIntoMps(
+			result.winners,
+			currentMps,
+			electionYear,
+			options.mergeMpsOutputPath,
+		);
+		await writeOutput(options.mergeMpsOutputPath, mergedMps);
+		mergeSummary = summary;
 	}
 
 	if (options.json) {
@@ -602,6 +947,10 @@ async function main(): Promise<void> {
 
 	if (options.outputPath) {
 		console.log(`Wrote ${options.outputPath}`);
+	}
+
+	if (mergeSummary) {
+		printMergeSummary(mergeSummary);
 	}
 }
 
