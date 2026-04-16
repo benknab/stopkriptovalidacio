@@ -21,15 +21,15 @@ const OUTPUT_DIR = "./static/kepek";
 
 // Types
 interface ValasztasCandidate {
-	kpn_id: number;
+	"kpn_id": number;
 	neve: string;
 	fenykep?: number;
-	kep_tipus?: string;
+	"kep_tipus"?: string;
 }
 
 interface ValasztasList {
-	tl_id: number;
-	jlcs_nev: string;
+	"tl_id": number;
+	"jlcs_nev": string;
 	jeloltek: ValasztasCandidate[];
 }
 
@@ -159,7 +159,7 @@ async function ensureDir(dir: string): Promise<void> {
 }
 
 // Main function
-async function main() {
+async function main(): Promise<void> {
 	console.log("=== MP Image Download Script ===\n");
 
 	// Ensure output directory exists

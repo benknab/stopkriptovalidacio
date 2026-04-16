@@ -36,14 +36,19 @@ interface SelectedMpCardProps {
 	mpId: MpId;
 	mp: Mp;
 	lang: SupportedLanguage;
+	onDeselect: () => void;
 }
 
-function SelectedMpCard({ mpId: _, mp, lang }: SelectedMpCardProps): JSX.Element {
+function SelectedMpCard({ mpId: _, mp, lang, onDeselect }: SelectedMpCardProps): JSX.Element {
 	const currentParty = getLatestParty(mp);
 	const currentDistrictOrList = getLatestDistrictOrList(mp);
 
 	return (
-		<div class="relative bg-slate-50 rounded-xl p-4 border-2 border-brand ring-2 ring-brand/20">
+		<button
+			type="button"
+			onClick={onDeselect}
+			class="relative bg-slate-50 rounded-xl p-4 border-2 border-brand ring-2 ring-brand/20 w-full text-left hover:bg-slate-100 transition-colors cursor-pointer"
+		>
 			<div class="absolute top-2 right-2 w-6 h-6 bg-brand rounded-full flex items-center justify-center">
 				<CheckIcon />
 			</div>
@@ -64,7 +69,7 @@ function SelectedMpCard({ mpId: _, mp, lang }: SelectedMpCardProps): JSX.Element
 			<div class="mt-3">
 				<VoteBadge vote={mp.vote} lang={lang} />
 			</div>
-		</div>
+		</button>
 	);
 }
 
@@ -282,7 +287,17 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			{/* Selected MP + Group cards (when MP is selected) */}
 			{selectedRep.value && selectedMp && (
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-					<SelectedMpCard mpId={selectedRep.value} mp={selectedMp} lang={lang} />
+					<div>
+						<SelectedMpCard
+							mpId={selectedRep.value}
+							mp={selectedMp}
+							lang={lang}
+							onDeselect={() => resetSelection()}
+						/>
+						<p class="text-xs text-slate-400 mt-2 text-center">
+							{t("action.click_to_deselect", lang)}
+						</p>
+					</div>
 
 					<GroupSelectCard
 						title={t("action.national_list_title", lang)}
