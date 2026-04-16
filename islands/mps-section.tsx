@@ -1,6 +1,15 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
-import { type Mp, mps, type MpSlug, type VoteType } from "../data/mps.ts";
+import {
+	getLatestDistrictOrList,
+	getLatestParty,
+	MINORITY_LIST,
+	type Mp,
+	type MpId,
+	mps,
+	NATIONAL_LIST,
+	type VoteType,
+} from "../data/mps.ts";
 import { sources } from "../data/sources.ts";
 import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
@@ -21,8 +30,6 @@ const votePriority: Record<VoteType, number> = {
 	banned: 6,
 };
 
-export const NATIONAL_LIST = "Országos lista";
-export const MINORITY_LIST = "Országos nemzetiségi lista";
 export const ALL_OPTION = "__osszes__";
 
 export type ParsedDistrict = {
@@ -66,7 +73,7 @@ function buildCountyData(): CountyData[] {
 	const nationalLists: string[] = [];
 
 	for (const mp of Object.values(mps)) {
-		const parsed = parseDistrict(mp.district);
+		const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
 		if (!parsed) continue;
 
 		if (parsed.isNationalList) {
@@ -112,20 +119,20 @@ export const countyData = buildCountyData();
 export const districtCountyData = countyData.filter((c) => !c.isNationalList);
 
 // Get MPs from national lists for group selection cards
-function getMpsByList(listName: string): Array<{ slug: MpSlug; mp: Mp }> {
-	return (Object.entries(mps) as Array<[MpSlug, Mp]>)
-		.filter(([, mp]) => mp.district === listName)
-		.map(([slug, mp]) => ({ slug, mp }));
+function getMpsByList(listName: string): Array<{ mpId: MpId; mp: Mp }> {
+	return (Object.entries(mps) as Array<[MpId, Mp]>)
+		.filter(([, mp]) => getLatestDistrictOrList(mp) === listName)
+		.map(([mpId, mp]) => ({ mpId, mp }));
 }
 
 export const nationalListMps = getMpsByList(NATIONAL_LIST);
 export const minorityListMps = getMpsByList(MINORITY_LIST);
 
-function getSortedMps(): Array<{ slug: MpSlug; mp: Mp }> {
-	const entries = Object.entries(mps) as Array<[MpSlug, Mp]>;
+function getSortedMps(): Array<{ mpId: MpId; mp: Mp }> {
+	const entries = Object.entries(mps) as Array<[MpId, Mp]>;
 
 	return entries
-		.map(([slug, mp]) => ({ slug, mp }))
+		.map(([mpId, mp]) => ({ mpId, mp }))
 		.sort((a, b) => {
 			const priorityDiff = votePriority[a.mp.vote] - votePriority[b.mp.vote];
 			if (priorityDiff !== 0) return priorityDiff;
@@ -162,15 +169,17 @@ function PhoneIcon(): JSX.Element {
 }
 
 interface MpCardProps {
-	slug: MpSlug;
+	mpId: MpId;
 	mp: Mp;
 	lang: SupportedLanguage;
 }
 
-function MpCard({ slug, mp, lang }: MpCardProps): JSX.Element {
+function MpCard({ mpId: _, mp, lang }: MpCardProps): JSX.Element {
 	const colors = voteColors[mp.vote];
 	const mailtoUrl = mp.emails.size > 0 ? buildMailtoUrl({ to: Array.from(mp.emails) }) : null;
 	const firstPhone = mp.phones.size > 0 ? Array.from(mp.phones)[0] : null;
+	const currentParty = getLatestParty(mp);
+	const currentDistrictOrList = getLatestDistrictOrList(mp);
 
 	return (
 		<div
@@ -185,14 +194,18 @@ function MpCard({ slug, mp, lang }: MpCardProps): JSX.Element {
 
 			{/* Photo */}
 			<div class="flex justify-center mb-4">
-				<MpImage slug={slug} name={mp.name} hasImage={!!mp.imageUrl} size="sm" />
+				<MpImage slug={mp.slug} name={mp.name} hasImage={!!mp.imageUrl} size="sm" />
 			</div>
 
 			{/* Content */}
 			<div class="flex-1 space-y-1 text-center">
 				<h3 class="font-bold text-slate-900 text-lg leading-tight">{mp.name}</h3>
-				<p class="text-sm text-slate-500">{t(`mps.party.${mp.party}`, lang, { defaultValue: mp.party })}</p>
-				{mp.district && <p class="text-sm text-slate-600">{mp.district}</p>}
+				{currentParty && (
+					<p class="text-sm text-slate-500">
+						{t(`mps.party.${currentParty}`, lang, { defaultValue: currentParty })}
+					</p>
+				)}
+				{currentDistrictOrList && <p class="text-sm text-slate-600">{currentDistrictOrList}</p>}
 			</div>
 
 			{/* Button Row */}
@@ -281,7 +294,7 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 		if (isAllSelected) return true;
 		if (!selectedCounty.value) return false;
 
-		const parsed = parseDistrict(mp.district);
+		const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
 		if (!parsed) return false;
 
 		if (isNationalList) {
@@ -454,10 +467,10 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 
 				{(selectedCounty.value || searchQuery.value) && filteredMps.length > 0 && (
 					<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-						{filteredMps.map(({ slug, mp }) => (
+						{filteredMps.map(({ mpId, mp }) => (
 							<MpCard
-								key={slug}
-								slug={slug}
+								key={mpId}
+								mpId={mpId}
 								mp={mp}
 								lang={lang}
 							/>

@@ -1,5 +1,5 @@
 import type { JSX } from "preact";
-import type { Mp, MpSlug } from "../data/mps.ts";
+import { getLatestDistrictOrList, getLatestParty, type Mp, type MpSlug } from "../data/mps.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { MpImage } from "./mp-image.tsx";
 import { VoteBadge } from "./vote-badge.tsx";
@@ -26,6 +26,9 @@ interface MpSelectCardProps {
 }
 
 export function MpSelectCard({ slug, mp, selected, onToggle, lang }: MpSelectCardProps): JSX.Element {
+	const currentParty = getLatestParty(mp);
+	const currentDistrictOrList = getLatestDistrictOrList(mp);
+
 	return (
 		<button
 			type="button"
@@ -46,10 +49,12 @@ export function MpSelectCard({ slug, mp, selected, onToggle, lang }: MpSelectCar
 				<MpImage slug={slug} name={mp.name} hasImage={!!mp.imageUrl} size="sm" class="shrink-0" />
 				<div class="min-w-0 flex-1">
 					<h4 class="font-medium text-slate-900 truncate">{mp.name}</h4>
-					<p class="text-sm text-slate-500 truncate">
-						{t(`mps.party.${mp.party}`, lang, { defaultValue: mp.party })}
-					</p>
-					{mp.district && <p class="text-sm text-slate-400 truncate">{mp.district}</p>}
+					{currentParty && (
+						<p class="text-sm text-slate-500 truncate">
+							{t(`mps.party.${currentParty}`, lang, { defaultValue: currentParty })}
+						</p>
+					)}
+					{currentDistrictOrList && <p class="text-sm text-slate-400 truncate">{currentDistrictOrList}</p>}
 				</div>
 			</div>
 

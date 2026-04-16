@@ -1,4 +1,4 @@
-import { mps, type VoteType } from "../data/mps.ts";
+import { getLatestDistrictOrList, mps, NATIONAL_LIST, type VoteType } from "../data/mps.ts";
 
 // Group MPs by vote type
 const voteGroups: Record<VoteType, Set<string>> = {
@@ -17,7 +17,7 @@ const nationalListEmails = new Set<string>();
 for (const mp of Object.values(mps)) {
 	for (const email of mp.emails) {
 		voteGroups[mp.vote].add(email);
-		if (mp.district === "Országos lista") {
+		if (getLatestDistrictOrList(mp) === NATIONAL_LIST) {
 			nationalListEmails.add(email);
 		}
 	}

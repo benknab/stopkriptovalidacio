@@ -1,6 +1,6 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
-import { mps, type MpSlug } from "../data/mps.ts";
+import { type MpId, mps } from "../data/mps.ts";
 import { minorityListMps, nationalListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { buildMailtoUrl } from "../utils/mailto.ts";
@@ -31,7 +31,7 @@ interface EmailLists {
 }
 
 function getEmailLists(
-	selectedRep: MpSlug | null,
+	selectedRep: MpId | null,
 	includeNationalList: boolean,
 	includeMinorityList: boolean,
 ): EmailLists {
@@ -83,7 +83,7 @@ function getEmailLists(
 }
 
 interface ActionButtonsProps {
-	selectedRep: MpSlug | null;
+	selectedRep: MpId | null;
 	includeNationalList: boolean;
 	includeMinorityList: boolean;
 	subject: string;

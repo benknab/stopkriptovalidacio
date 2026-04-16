@@ -1,6 +1,6 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
-import type { MpSlug } from "../data/mps.ts";
+import type { MpId } from "../data/mps.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
 import { MpSelector } from "../components/mp-selector.tsx";
@@ -49,7 +49,7 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 	const message = useSignal(DEFAULT_MESSAGE);
 
 	// Selection state - single representative
-	const selectedRep = useSignal<MpSlug | null>(null);
+	const selectedRep = useSignal<MpId | null>(null);
 
 	// Group selection state (default: include both lists)
 	const includeNationalList = useSignal(DEFAULT_INCLUDE_LISTS);

@@ -14,7 +14,6 @@
 const DEFAULT_ELECTION = "ogy2026";
 const BASE_URL = "https://vtr.valasztas.hu";
 const CURRENT_MPS_PATH = new URL("../data/mps.json", import.meta.url).pathname;
-const EXISTING_MPS_ELECTION_YEAR = 2022;
 const NATIONAL_LIST_LABEL = "Országos lista";
 const MINORITY_LIST_LABEL = "Országos nemzetiségi lista";
 
@@ -33,13 +32,13 @@ type DataEnvelope<T> = {
 };
 
 type PatkoMandate = {
-	jlcs_kod: number;
-	mand_tip: string;
+	"jlcs_kod": number;
+	"mand_tip": string;
 	maz?: string;
 	evk?: string;
-	ej_id?: number;
-	tl_id?: number;
-	tj_id?: number;
+	"ej_id"?: number;
+	"tl_id"?: number;
+	"tj_id"?: number;
 };
 
 type PatkoData = {
@@ -47,14 +46,14 @@ type PatkoData = {
 };
 
 type DistrictResultItem = {
-	ej_id: number;
+	"ej_id": number;
 	mandatum?: number;
 };
 
 type DistrictResult = {
 	feldar: number;
 	jogeros: string;
-	ujraszam_erintett: string;
+	"ujraszam_erintett": string;
 	eredm: string;
 	tetelek: DistrictResultItem[];
 };
@@ -62,7 +61,7 @@ type DistrictResult = {
 type DistrictResultRow = {
 	maz: string;
 	evk: string;
-	egyeni_jkv: DistrictResult;
+	"egyeni_jkv": DistrictResult;
 };
 
 type NationalListResultRow = {
@@ -74,29 +73,31 @@ type NationalListResultRow = {
 
 type Constituency = {
 	maz: string;
-	maz_nev: string;
+	"maz_nev": string;
 	evk: string;
-	evk_nev: string;
+	"evk_nev": string;
 };
 
 type DistrictCandidate = {
-	ej_id: number;
+	"ej_id": number;
+	"kpn_id": number;
 	maz: string;
 	evk: string;
 	neve: string;
-	jlcs_nev: string;
+	"jlcs_nev": string;
 };
 
 type ListCandidate = {
-	tj_id: number;
+	"tj_id": number;
+	"kpn_id": number;
 	sorsz: number;
 	neve: string;
 };
 
 type CandidateList = {
-	tl_id: number;
-	jlcs_nev: string;
-	lista_tip: string;
+	"tl_id": number;
+	"jlcs_nev": string;
+	"lista_tip": string;
 	jeloltek?: ListCandidate[];
 };
 
@@ -104,6 +105,7 @@ type Finality = "final" | "preliminary";
 type MandateType = "district" | "list" | "spokesperson";
 
 type WinnerRecord = {
+	kpnId: string;
 	name: string;
 	party: string;
 	mandateType: MandateType;
@@ -172,15 +174,24 @@ type CurrentParty =
 	| "független"
 	| "nemzetiségi";
 
-type RawMpRecord = {
-	name: string;
+type CurrentMandate = {
+	type: "district";
 	party: CurrentParty;
+	district: string;
+} | {
+	type: "list";
+	party: CurrentParty;
+	list: string;
+};
+
+type RawMpRecord = {
+	slug: string;
+	name: string;
 	vote: CurrentVoteType;
-	electedAt?: number[];
+	elections: Record<string, CurrentMandate>;
 	emails: string[];
 	phones: string[];
 	imageUrl?: string;
-	district?: string;
 	website?: string;
 	address?: string;
 };
@@ -191,6 +202,7 @@ type MergeSummary = {
 	electionYear: number;
 	matchedExisting: number;
 	addedNew: number;
+	reviewCount: number;
 	totalRecords: number;
 	outputPath: string;
 };
@@ -393,7 +405,7 @@ function getElectionYear(election: string): number {
 }
 
 function formatDistrictLabel(constituency: Constituency): string {
-	const countyName = constituency.maz_nev
+	const countyName = constituency["maz_nev"]
 		.replace(/ vármegye$/u, "")
 		.replace(/ megye$/u, "")
 		.replace(/ főváros$/u, "");
@@ -427,67 +439,6 @@ function formatWinnerName(value: string): string {
 	}).join("");
 }
 
-function buildNameMatchKeys(name: string): string[] {
-	const normalized = normalizeNameForMatch(name);
-	const tokens = normalized.split(" ").filter(Boolean);
-	const keys: string[] = [];
-	const slug = slugify(name);
-
-	if (slug) {
-		keys.push(`slug:${slug}`);
-	}
-
-	if (normalized) {
-		keys.push(`name:${normalized}`);
-	}
-
-	if (tokens.length >= 3) {
-		keys.push(`suffix3:${tokens.slice(-3).join(" ")}`);
-	}
-
-	if (tokens.length >= 2) {
-		keys.push(`suffix2:${tokens.slice(-2).join(" ")}`);
-	}
-
-	return keys;
-}
-
-function addUniqueMatchKey(index: Map<string, string | null>, key: string, slug: string): void {
-	const existing = index.get(key);
-	if (existing === undefined) {
-		index.set(key, slug);
-		return;
-	}
-
-	if (existing !== slug) {
-		index.set(key, null);
-	}
-}
-
-function buildExistingMpIndex(mps: RawMps): Map<string, string | null> {
-	const index = new Map<string, string | null>();
-
-	for (const [slug, mp] of Object.entries(mps)) {
-		addUniqueMatchKey(index, `slug:${slug}`, slug);
-		for (const key of buildNameMatchKeys(mp.name)) {
-			addUniqueMatchKey(index, key, slug);
-		}
-	}
-
-	return index;
-}
-
-function matchWinnerToExistingMp(winner: WinnerRecord, index: Map<string, string | null>): string | null {
-	for (const key of buildNameMatchKeys(winner.name)) {
-		const slug = index.get(key);
-		if (slug) {
-			return slug;
-		}
-	}
-
-	return null;
-}
-
 function mapWinnerParty(party: string): CurrentParty {
 	if (party === "FIDESZ-KDNP") {
 		return "Fidesz";
@@ -500,57 +451,74 @@ function mapWinnerParty(party: string): CurrentParty {
 	throw new Error(`Unhandled winner party: ${party}`);
 }
 
-function normalizeElectionYears(electedAt: number[] | undefined): number[] {
-	const years = electedAt ?? [EXISTING_MPS_ELECTION_YEAR];
-	return Array.from(new Set(years)).sort((left, right) => left - right);
+function getMandateLabel(mandate: CurrentMandate): string {
+	return mandate.type === "district" ? mandate.district : mandate.list;
 }
 
-function withElectionYear(electedAt: number[] | undefined, year: number): number[] {
-	const years = normalizeElectionYears(electedAt);
-	if (!years.includes(year)) {
-		years.push(year);
-		years.sort((left, right) => left - right);
-	}
-	return years;
+function cloneMandate(mandate: CurrentMandate): CurrentMandate {
+	return mandate.type === "district" ? { ...mandate } : { ...mandate };
 }
 
 function normalizeExistingMp(mp: RawMpRecord): RawMpRecord {
+	const elections = Object.fromEntries(
+		Object.entries(mp.elections).map(([year, mandate]) => [year, cloneMandate(mandate)]),
+	) as Record<string, CurrentMandate>;
+
 	return {
 		...mp,
-		electedAt: normalizeElectionYears(mp.electedAt),
+		elections,
 		emails: [...mp.emails],
 		phones: [...mp.phones],
 	};
 }
 
-function createNewMpFromWinner(winner: WinnerRecord, electionYear: number): RawMpRecord {
+function createMandateFromWinner(winner: WinnerRecord): CurrentMandate {
+	const party = mapWinnerParty(winner.party);
+
+	if (winner.mandateType === "district") {
+		return {
+			type: "district",
+			party,
+			district: winner.districtLabel,
+		};
+	}
+
 	return {
-		name: formatWinnerName(winner.name),
-		party: mapWinnerParty(winner.party),
-		vote: "not_in_parliament",
-		electedAt: [electionYear],
-		emails: [],
-		phones: [],
-		district: winner.districtLabel,
+		type: "list",
+		party,
+		list: winner.districtLabel,
 	};
 }
 
-function buildUniqueWinnerSlug(winner: WinnerRecord, mps: RawMps): string {
+function createNewMpFromWinner(winner: WinnerRecord, electionYear: number, slug: string): RawMpRecord {
+	return {
+		slug,
+		name: formatWinnerName(winner.name),
+		vote: "not_in_parliament",
+		elections: {
+			[String(electionYear)]: createMandateFromWinner(winner),
+		},
+		emails: [],
+		phones: [],
+	};
+}
+
+function buildUniqueWinnerSlug(winner: WinnerRecord, existingSlugs: Set<string>): string {
 	const baseSlug = slugify(winner.name);
-	const fallbackSuffix = winner.ejId ?? winner.tjId ?? winner.tlId ?? winner.jlcsKod;
+	const fallbackSuffix = winner.kpnId || String(winner.ejId ?? winner.tjId ?? winner.tlId ?? winner.jlcsKod);
 	let slug = baseSlug || `winner-${fallbackSuffix}`;
 
-	if (!mps[slug]) {
+	if (!existingSlugs.has(slug)) {
 		return slug;
 	}
 
 	slug = `${slug}-${fallbackSuffix}`;
-	if (!mps[slug]) {
+	if (!existingSlugs.has(slug)) {
 		return slug;
 	}
 
 	let counter = 2;
-	while (mps[`${slug}-${counter}`]) {
+	while (existingSlugs.has(`${slug}-${counter}`)) {
 		counter++;
 	}
 
@@ -558,21 +526,23 @@ function buildUniqueWinnerSlug(winner: WinnerRecord, mps: RawMps): string {
 }
 
 function orderMpRecord(mp: RawMpRecord): Record<string, unknown> {
+	const orderedElections = Object.fromEntries(
+		Object.entries(mp.elections)
+			.sort(([left], [right]) => Number.parseInt(left, 10) - Number.parseInt(right, 10))
+			.map(([year, mandate]) => [year, cloneMandate(mandate)]),
+	);
+
 	const ordered: Record<string, unknown> = {
+		slug: mp.slug,
 		name: mp.name,
-		party: mp.party,
 		vote: mp.vote,
-		electedAt: normalizeElectionYears(mp.electedAt),
+		elections: orderedElections,
 		emails: [...mp.emails],
 		phones: [...mp.phones],
 	};
 
 	if (mp.imageUrl !== undefined) {
 		ordered.imageUrl = mp.imageUrl;
-	}
-
-	if (mp.district !== undefined) {
-		ordered.district = mp.district;
 	}
 
 	if (mp.website !== undefined) {
@@ -591,49 +561,62 @@ async function readMps(filePath: string): Promise<RawMps> {
 	return JSON.parse(content) as RawMps;
 }
 
+function getLatestMandate(mp: RawMpRecord): CurrentMandate | null {
+	const years = Object.keys(mp.elections)
+		.map((year) => Number.parseInt(year, 10))
+		.sort((left, right) => left - right);
+	if (years.length === 0) {
+		return null;
+	}
+
+	return mp.elections[String(years[years.length - 1])] ?? null;
+}
+
 function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear: number, outputPath: string): {
 	mergedMps: Record<string, unknown>;
 	summary: MergeSummary;
 } {
 	const merged = Object.fromEntries(
-		Object.entries(mps).map(([slug, mp]) => [slug, normalizeExistingMp(mp)]),
+		Object.entries(mps).map(([mpId, mp]) => [mpId, normalizeExistingMp(mp)]),
 	) as RawMps;
-	const existingIndex = buildExistingMpIndex(merged);
-	const matchedSlugs = new Set<string>();
+	const existingSlugs = new Set(Object.values(merged).map((mp) => mp.slug));
 	let matchedExisting = 0;
 	let addedNew = 0;
+	let reviewCount = 0;
 
 	for (const winner of winners) {
-		const existingSlug = matchWinnerToExistingMp(winner, existingIndex);
-		if (existingSlug) {
-			if (matchedSlugs.has(existingSlug)) {
-				throw new Error(`Matched duplicate winner to ${existingSlug}.`);
+		const nextMandate = createMandateFromWinner(winner);
+		const existingMp = merged[winner.kpnId];
+		if (existingMp) {
+			const latestMandate = getLatestMandate(existingMp);
+			if (
+				latestMandate &&
+				(latestMandate.party !== nextMandate.party ||
+					getMandateLabel(latestMandate) !== getMandateLabel(nextMandate))
+			) {
+				reviewCount++;
 			}
 
-			matchedSlugs.add(existingSlug);
-			const existingMp = merged[existingSlug];
-			merged[existingSlug] = {
+			merged[winner.kpnId] = {
 				...existingMp,
-				party: mapWinnerParty(winner.party),
-				district: winner.districtLabel,
-				electedAt: withElectionYear(existingMp.electedAt, electionYear),
+				elections: {
+					...existingMp.elections,
+					[String(electionYear)]: nextMandate,
+				},
 			};
 			matchedExisting++;
 			continue;
 		}
 
-		const newSlug = buildUniqueWinnerSlug(winner, merged);
-		merged[newSlug] = createNewMpFromWinner(winner, electionYear);
-		for (const key of buildNameMatchKeys(merged[newSlug].name)) {
-			addUniqueMatchKey(existingIndex, key, newSlug);
-		}
-		addUniqueMatchKey(existingIndex, `slug:${newSlug}`, newSlug);
+		const newSlug = buildUniqueWinnerSlug(winner, existingSlugs);
+		existingSlugs.add(newSlug);
+		merged[winner.kpnId] = createNewMpFromWinner(winner, electionYear, newSlug);
 		addedNew++;
 	}
 
 	const orderedEntries = Object.entries(merged)
-		.sort(([leftSlug], [rightSlug]) => leftSlug.localeCompare(rightSlug, "hu-HU"))
-		.map(([slug, mp]) => [slug, orderMpRecord(mp)]);
+		.sort(([leftId], [rightId]) => Number.parseInt(leftId, 10) - Number.parseInt(rightId, 10))
+		.map(([mpId, mp]) => [mpId, orderMpRecord(mp)]);
 
 	return {
 		mergedMps: Object.fromEntries(orderedEntries),
@@ -641,6 +624,7 @@ function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear:
 			electionYear,
 			matchedExisting,
 			addedNew,
+			reviewCount,
 			totalRecords: orderedEntries.length,
 			outputPath,
 		},
@@ -705,7 +689,7 @@ function buildSummary(winners: WinnerRecord[], totalLoaded: number): Summary {
 
 function buildWinners(data: LoadedData, options: Options): WinnerRecord[] {
 	const districtCandidatesById = new Map<number, DistrictCandidate>(
-		data.districtCandidates.list.map((candidate) => [candidate.ej_id, candidate]),
+		data.districtCandidates.list.map((candidate) => [candidate["ej_id"], candidate]),
 	);
 	const districtResultsByKey = new Map<string, DistrictResultRow>(
 		data.districtResults.list.map((row) => [getConstituencyKey(row.maz, row.evk), row]),
@@ -720,7 +704,7 @@ function buildWinners(data: LoadedData, options: Options): WinnerRecord[] {
 
 	for (const list of data.listCandidates.list) {
 		for (const candidate of list.jeloltek ?? []) {
-			listCandidatesById.set(candidate.tj_id, { candidate, list });
+			listCandidatesById.set(candidate["tj_id"], { candidate, list });
 		}
 	}
 
@@ -732,18 +716,18 @@ function buildWinners(data: LoadedData, options: Options): WinnerRecord[] {
 	const winners: WinnerRecord[] = [];
 
 	for (const mandate of data.patko.data.mandatumok) {
-		if (mandate.mand_tip === "4" && !options.includeSpokespeople) {
+		if (mandate["mand_tip"] === "4" && !options.includeSpokespeople) {
 			continue;
 		}
 
-		if (mandate.mand_tip === "1") {
-			if (mandate.ej_id === undefined || mandate.maz === undefined || mandate.evk === undefined) {
+		if (mandate["mand_tip"] === "1") {
+			if (mandate["ej_id"] === undefined || mandate.maz === undefined || mandate.evk === undefined) {
 				throw new Error("District mandate row is missing ej_id, maz, or evk.");
 			}
 
-			const candidate = districtCandidatesById.get(mandate.ej_id);
+			const candidate = districtCandidatesById.get(mandate["ej_id"]);
 			if (!candidate) {
-				throw new Error(`Missing district candidate for ej_id=${mandate.ej_id}.`);
+				throw new Error(`Missing district candidate for ej_id=${mandate["ej_id"]}.`);
 			}
 
 			const constituencyKey = getConstituencyKey(mandate.maz, mandate.evk);
@@ -759,52 +743,54 @@ function buildWinners(data: LoadedData, options: Options): WinnerRecord[] {
 			}
 
 			winners.push({
+				kpnId: String(candidate["kpn_id"]),
 				name: candidate.neve,
-				party: candidate.jlcs_nev,
+				party: candidate["jlcs_nev"],
 				mandateType: "district",
 				districtLabel: formatDistrictLabel(constituency),
-				finality: getFinality(districtResultRow.egyeni_jkv.jogeros),
-				countedPercent: districtResultRow.egyeni_jkv.feldar,
-				finalityCode: districtResultRow.egyeni_jkv.jogeros,
-				resultCode: districtResultRow.egyeni_jkv.eredm,
-				jlcsKod: mandate.jlcs_kod,
-				ejId: mandate.ej_id,
+				finality: getFinality(districtResultRow["egyeni_jkv"].jogeros),
+				countedPercent: districtResultRow["egyeni_jkv"].feldar,
+				finalityCode: districtResultRow["egyeni_jkv"].jogeros,
+				resultCode: districtResultRow["egyeni_jkv"].eredm,
+				jlcsKod: mandate["jlcs_kod"],
+				ejId: mandate["ej_id"],
 				constituencyCode: `${mandate.maz}-${mandate.evk}`,
-				constituencyName: constituency.evk_nev,
-				isAffectedByRecount: districtResultRow.egyeni_jkv.ujraszam_erintett === "I",
+				constituencyName: constituency["evk_nev"],
+				isAffectedByRecount: districtResultRow["egyeni_jkv"]["ujraszam_erintett"] === "I",
 			});
 			continue;
 		}
 
-		if (mandate.mand_tip === "2" || mandate.mand_tip === "4") {
-			if (mandate.tj_id === undefined || mandate.tl_id === undefined) {
+		if (mandate["mand_tip"] === "2" || mandate["mand_tip"] === "4") {
+			if (mandate["tj_id"] === undefined || mandate["tl_id"] === undefined) {
 				throw new Error("List mandate row is missing tj_id or tl_id.");
 			}
 
-			const listCandidate = listCandidatesById.get(mandate.tj_id);
+			const listCandidate = listCandidatesById.get(mandate["tj_id"]);
 			if (!listCandidate) {
-				throw new Error(`Missing list candidate for tj_id=${mandate.tj_id}.`);
+				throw new Error(`Missing list candidate for tj_id=${mandate["tj_id"]}.`);
 			}
 
 			winners.push({
+				kpnId: String(listCandidate.candidate["kpn_id"]),
 				name: listCandidate.candidate.neve,
-				party: listCandidate.list.jlcs_nev,
-				mandateType: mandate.mand_tip === "2" ? "list" : "spokesperson",
-				districtLabel: mandate.mand_tip === "2" ? NATIONAL_LIST_LABEL : MINORITY_LIST_LABEL,
+				party: listCandidate.list["jlcs_nev"],
+				mandateType: mandate["mand_tip"] === "2" ? "list" : "spokesperson",
+				districtLabel: mandate["mand_tip"] === "2" ? NATIONAL_LIST_LABEL : MINORITY_LIST_LABEL,
 				finality: getFinality(nationalListResult.jogeros),
 				countedPercent: nationalListResult.feldar,
 				finalityCode: nationalListResult.jogeros,
 				resultCode: nationalListResult.eredm,
-				jlcsKod: mandate.jlcs_kod,
-				tjId: mandate.tj_id,
-				tlId: mandate.tl_id,
-				listType: listCandidate.list.lista_tip,
+				jlcsKod: mandate["jlcs_kod"],
+				tjId: mandate["tj_id"],
+				tlId: mandate["tl_id"],
+				listType: listCandidate.list["lista_tip"],
 				listRank: listCandidate.candidate.sorsz,
 			});
 			continue;
 		}
 
-		throw new Error(`Unhandled mandate type: ${mandate.mand_tip}`);
+		throw new Error(`Unhandled mandate type: ${mandate["mand_tip"]}`);
 	}
 
 	return winners.sort((left, right) => {
@@ -911,6 +897,7 @@ function printMergeSummary(summary: MergeSummary): void {
 	console.log(`- Election year added: ${summary.electionYear}`);
 	console.log(`- Matched existing MPs: ${summary.matchedExisting}`);
 	console.log(`- Added new winners: ${summary.addedNew}`);
+	console.log(`- Review flags: ${summary.reviewCount}`);
 	console.log(`- Total records written: ${summary.totalRecords}`);
 	console.log(`- Output: ${summary.outputPath}`);
 }

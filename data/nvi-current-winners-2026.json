@@ -1,10 +1,10 @@
 {
 	"election": "ogy2026",
-	"fetchedAt": "2026-04-15T20:52:46.119Z",
+	"fetchedAt": "2026-04-16T07:25:09.523Z",
 	"dataVersions": {
 		"ver": "04112100",
 		"napkozi": "04121855",
-		"szavossz": "04152230"
+		"szavossz": "04160900"
 	},
 	"filters": {
 		"finalOnly": false,
@@ -12,9 +12,9 @@
 	},
 	"sourceUrls": {
 		"config": "https://vtr.valasztas.hu/ogy2026/data/config.json",
-		"patko": "https://vtr.valasztas.hu/ogy2026/data/04152230/szavossz/Patko.json",
-		"districtResults": "https://vtr.valasztas.hu/ogy2026/data/04152230/szavossz/OevkJkv.json",
-		"nationalListResults": "https://vtr.valasztas.hu/ogy2026/data/04152230/szavossz/ListasJkv.json",
+		"patko": "https://vtr.valasztas.hu/ogy2026/data/04160900/szavossz/Patko.json",
+		"districtResults": "https://vtr.valasztas.hu/ogy2026/data/04160900/szavossz/OevkJkv.json",
+		"nationalListResults": "https://vtr.valasztas.hu/ogy2026/data/04160900/szavossz/ListasJkv.json",
 		"constituencies": "https://vtr.valasztas.hu/ogy2026/data/04112100/ver/OevkAdatok.json",
 		"districtCandidates": "https://vtr.valasztas.hu/ogy2026/data/04112100/ver/EgyeniJeloltek.json",
 		"listCandidates": "https://vtr.valasztas.hu/ogy2026/data/04112100/ver/ListakEsJeloltek.json"
@@ -64,6 +64,7 @@
 	},
 	"winners": [
 		{
+			"kpnId": "2725386",
 			"name": "CSUZDA GÁBOR",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -79,6 +80,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7737759",
 			"name": "VARGA GÁBOR",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -94,6 +96,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6939384",
 			"name": "GYOPÁROS ALPÁR",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -109,6 +112,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "1277081",
 			"name": "VITÁNYI ISTVÁN",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -124,6 +128,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3736011",
 			"name": "F. KOVÁCS SÁNDOR",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -139,6 +144,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4020737",
 			"name": "BALLA MIHÁLY",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -154,6 +160,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3308539",
 			"name": "TILKI ATTILA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -169,6 +176,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3657506",
 			"name": "KOVÁCS SÁNDOR",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -184,6 +192,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2246791",
 			"name": "SIMON MIKLÓS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -199,6 +208,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2407326",
 			"name": "CSIBI KRISZTINA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -214,6 +224,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5011246",
 			"name": "SÜLI JÁNOS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -229,6 +240,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "1024122",
 			"name": "ÁGH PÉTER",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -244,6 +256,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3824189",
 			"name": "V.NÉMETH ZSOLT",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "district",
@@ -259,6 +272,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6560338",
 			"name": "TANÁCS ZOLTÁN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -274,6 +288,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4125776",
 			"name": "BÓDIS KRISZTA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -289,6 +304,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4257604",
 			"name": "MAGYAR PÉTER",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -304,6 +320,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4677523",
 			"name": "KONCZ ÁRON",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -319,6 +336,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8158757",
 			"name": "WEIGAND ISTVÁN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -334,6 +352,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3304799",
 			"name": "VELKEY GYÖRGY LÁSZLÓ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -349,6 +368,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6821083",
 			"name": "TRENTIN BALÁZS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -364,6 +384,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3232330",
 			"name": "VIRÁGH GABRIELLA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -379,6 +400,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5429124",
 			"name": "KÁTAI-NÉMETH VILMOS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -394,6 +416,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5743992",
 			"name": "KULCSÁR KRISZTIÁN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -409,6 +432,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5946019",
 			"name": "BODA NIKOLETTA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -424,6 +448,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6124857",
 			"name": "JAKAB ZSUZSANNA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -439,6 +464,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "658910",
 			"name": "MÜLLER ANNA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -454,6 +480,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5145194",
 			"name": "SZABÓ ALEXANDRA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -469,6 +496,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6799946",
 			"name": "PORCHER ÁRON",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -484,6 +512,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4899462",
 			"name": "TARR ZOLTÁN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -499,6 +528,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "1130744",
 			"name": "RUZSA DIÁNA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -514,6 +544,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7122733",
 			"name": "KOVÁCS ÁRON",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -529,6 +560,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7349772",
 			"name": "RÓZSAHEGYI ÁRON",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -544,6 +576,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4579003",
 			"name": "KAPRONCZAI BALÁZS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -559,6 +592,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3907957",
 			"name": "CSŐSZI ATTILA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -574,6 +608,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5654438",
 			"name": "MOLNÁR JÁNOS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -589,6 +624,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8257167",
 			"name": "JUDÁK ZSOLT",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -604,6 +640,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3619279",
 			"name": "KOVÁCS GYULA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -619,6 +656,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3284502",
 			"name": "KARSAI-JUHÁSZ KATALIN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -634,6 +672,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8880743",
 			"name": "CSONTOS BENCE",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -649,6 +688,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8152743",
 			"name": "BODÓCZI ISTVÁN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -664,6 +704,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8799479",
 			"name": "GOMBÁR DÁVID",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -679,6 +720,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "1207999",
 			"name": "RÁKI ZSOLT",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -694,6 +736,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "58793",
 			"name": "GURZÓ MÁRIA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -709,6 +752,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "1100056",
 			"name": "JUHÁSZ ROLAND",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -724,6 +768,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "9423022",
 			"name": "CZIPA ANDRÁS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -739,6 +784,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5282659",
 			"name": "HATALA-OROSZ CSABA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -754,6 +800,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7609812",
 			"name": "LONTAY LÁSZLÓ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -769,6 +816,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8117243",
 			"name": "BIHARI ZOLTÁN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -784,6 +832,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "715146",
 			"name": "CSÉZI ERZSÉBET",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -799,6 +848,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3413652",
 			"name": "STUMPF PÉTER",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -814,6 +864,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8612713",
 			"name": "GAJDA ATTILA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -829,6 +880,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6718066",
 			"name": "BÁRKÁNYI BENCE",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -844,6 +896,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "1715034",
 			"name": "FERENCZI GÁBOR",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -859,6 +912,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2168443",
 			"name": "CSISZÁR BÉLA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -874,6 +928,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "846088",
 			"name": "BORICS MIHÁLY",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -889,6 +944,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7588285",
 			"name": "BÖGI VIKTÓRIA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -904,6 +960,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6835627",
 			"name": "NAGY ERVIN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -919,6 +976,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5431022",
 			"name": "DIÓSZEGI JUDIT",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -934,6 +992,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2838852",
 			"name": "NÉHER ANDRÁS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -949,6 +1008,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4976487",
 			"name": "HALLERNÉ DR. NAGY ANIKÓ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -964,6 +1024,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3479002",
 			"name": "PORPÁCZY KRISZTINA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -979,6 +1040,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3619254",
 			"name": "TÁRKÁNYI ZSOLT",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -994,6 +1056,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4206793",
 			"name": "TOMPA ENIKŐ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1009,6 +1072,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4332001",
 			"name": "CSÁK LÁSZLÓ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1024,6 +1088,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5318256",
 			"name": "RUSZIN-SZENDI ROMULUSZ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1039,6 +1104,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "863072",
 			"name": "GÖRÖGHNÉ BOCSKAI ÉVA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1054,6 +1120,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6820725",
 			"name": "BÓDIS PÉTER",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1069,6 +1136,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "976054",
 			"name": "KISS JÁNOS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1084,6 +1152,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5070594",
 			"name": "JUHÁSZ ÁRON",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1099,6 +1168,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "324308",
 			"name": "ROST ANDREA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1114,6 +1184,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8071877",
 			"name": "HALMAI FERENC TIBOR",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1129,6 +1200,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4734555",
 			"name": "FARKAS CSONGOR",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1144,6 +1216,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7369248",
 			"name": "SOPOV ILDIKÓ ÉVA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1159,6 +1232,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2196330",
 			"name": "RADNAI MÁRK",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1174,6 +1248,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2294677",
 			"name": "ÁRVAY NIKOLETT",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1189,6 +1264,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5047005",
 			"name": "SZAFKÓ ZOLTÁN PÉTER",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1204,6 +1280,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3818373",
 			"name": "JELENCSIK JÓZSEF",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1219,6 +1296,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5877183",
 			"name": "PÓSFAI GÁBOR",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1234,6 +1312,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7558025",
 			"name": "BUJDOSÓ ANDREA ANNA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1249,6 +1328,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3054647",
 			"name": "TÓTHMAJOR BALÁZS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1264,6 +1344,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7981814",
 			"name": "MISKOLCZI ORSOLYA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1279,6 +1360,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4817921",
 			"name": "LÁSZLÓ ENDRE MÁRTON",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1294,6 +1376,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2567260",
 			"name": "TROMPLER ILDIKÓ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1309,6 +1392,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "8016632",
 			"name": "BALAJTI ISTVÁN",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1324,6 +1408,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "370205",
 			"name": "BILISICS ZITA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1339,6 +1424,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "814149",
 			"name": "PERTICSNÉ KÁCSOR ANDREA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1354,6 +1440,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2843909",
 			"name": "SZIMON RENÁTA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1369,6 +1456,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4386064",
 			"name": "POLGÁR GYÖRGY",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1384,6 +1472,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4395823",
 			"name": "HENDE MÁTÉ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1399,6 +1488,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "509077",
 			"name": "MUHARI GERGELY",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1414,6 +1504,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "886309",
 			"name": "LŐRINCZ VIKTÓRIA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1429,6 +1520,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4639155",
 			"name": "BENKE JÓZSEF",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1444,6 +1536,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3957200",
 			"name": "BAKOS CSABA ATTILA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1459,6 +1552,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4798863",
 			"name": "CSATÁRI ERNŐ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1474,6 +1568,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2547997",
 			"name": "GAJDOS LÁSZLÓ",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1489,6 +1584,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "6347418",
 			"name": "SZAKÁCS PÉTER LAJOS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1504,6 +1600,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4168621",
 			"name": "DICSŐ VIKTÓRIA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1519,6 +1616,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "7818324",
 			"name": "SÁROSI JÓZSEF",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1534,6 +1632,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2664055",
 			"name": "RÁPLI RÓBERT",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1549,6 +1648,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "98330",
 			"name": "GÁSPÁR LEVENTE",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1564,6 +1664,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "77873",
 			"name": "FORSTHOFFER ÁGNES",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1579,6 +1680,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "5084856",
 			"name": "BALATINCZ PÉTER",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1594,6 +1696,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "4871118",
 			"name": "UJVÁRI SZILVIA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1609,6 +1712,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "3013188",
 			"name": "NAGY MÁRTA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1624,6 +1728,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "871108",
 			"name": "VARGA BALÁZS",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1639,6 +1744,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "2673867",
 			"name": "LOVKÓ CSABA",
 			"party": "TISZA",
 			"mandateType": "district",
@@ -1654,6 +1760,7 @@
 			"isAffectedByRecount": false
 		},
 		{
+			"kpnId": "950324",
 			"name": "ORBÁN VIKTOR",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1669,6 +1776,7 @@
 			"listRank": 1
 		},
 		{
+			"kpnId": "2570400",
 			"name": "SEMJÉN ZSOLT",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1684,6 +1792,7 @@
 			"listRank": 2
 		},
 		{
+			"kpnId": "1161037",
 			"name": "KÖVÉR LÁSZLÓ",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1699,6 +1808,7 @@
 			"listRank": 3
 		},
 		{
+			"kpnId": "3897636",
 			"name": "GÁL KINGA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1714,6 +1824,7 @@
 			"listRank": 4
 		},
 		{
+			"kpnId": "3888849",
 			"name": "SZENTKIRÁLYI ALEXANDRA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1729,6 +1840,7 @@
 			"listRank": 5
 		},
 		{
+			"kpnId": "1675137",
 			"name": "KUBATOV GÁBOR",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1744,6 +1856,7 @@
 			"listRank": 6
 		},
 		{
+			"kpnId": "3783223",
 			"name": "KÓSA LAJOS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1759,6 +1872,7 @@
 			"listRank": 7
 		},
 		{
+			"kpnId": "1824194",
 			"name": "NÉMETH SZILÁRD",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1774,6 +1888,7 @@
 			"listRank": 8
 		},
 		{
+			"kpnId": "1810635",
 			"name": "KOCSIS MÁTÉ",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1789,6 +1904,7 @@
 			"listRank": 9
 		},
 		{
+			"kpnId": "6441209",
 			"name": "LATORCAI JÁNOS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1804,6 +1920,7 @@
 			"listRank": 10
 		},
 		{
+			"kpnId": "8296511",
 			"name": "LEZSÁK SÁNDOR",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1819,6 +1936,7 @@
 			"listRank": 11
 		},
 		{
+			"kpnId": "8057722",
 			"name": "JAKAB ISTVÁN",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1834,6 +1952,7 @@
 			"listRank": 12
 		},
 		{
+			"kpnId": "1831140",
 			"name": "PAPP ZSOLT",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1849,6 +1968,7 @@
 			"listRank": 13
 		},
 		{
+			"kpnId": "4360192",
 			"name": "MOHÁCSY ISTVÁN",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1864,6 +1984,7 @@
 			"listRank": 14
 		},
 		{
+			"kpnId": "803202",
 			"name": "SZTOJKA ATTILA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1879,6 +2000,7 @@
 			"listRank": 15
 		},
 		{
+			"kpnId": "6023229",
 			"name": "TAPOLCZAI GERGELY",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1894,6 +2016,7 @@
 			"listRank": 16
 		},
 		{
+			"kpnId": "4945322",
 			"name": "NÉMETH ZSOLT",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1909,6 +2032,7 @@
 			"listRank": 17
 		},
 		{
+			"kpnId": "2688931",
 			"name": "SELMECZI GABRIELLA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1924,6 +2048,7 @@
 			"listRank": 18
 		},
 		{
+			"kpnId": "7784581",
 			"name": "SZIJJÁRTÓ PÉTER",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1939,6 +2064,7 @@
 			"listRank": 19
 		},
 		{
+			"kpnId": "7320825",
 			"name": "LÁZÁR JÁNOS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1954,6 +2080,7 @@
 			"listRank": 20
 		},
 		{
+			"kpnId": "3040821",
 			"name": "ORBÁN BALÁZS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1969,6 +2096,7 @@
 			"listRank": 21
 		},
 		{
+			"kpnId": "2243180",
 			"name": "SIMICSKÓ ISTVÁN",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1984,6 +2112,7 @@
 			"listRank": 22
 		},
 		{
+			"kpnId": "6178593",
 			"name": "ROGÁN ANTAL",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -1999,6 +2128,7 @@
 			"listRank": 23
 		},
 		{
+			"kpnId": "453759",
 			"name": "GULYÁS GERGELY",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2014,6 +2144,7 @@
 			"listRank": 24
 		},
 		{
+			"kpnId": "7949518",
 			"name": "BÓKA JÁNOS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2029,6 +2160,7 @@
 			"listRank": 25
 		},
 		{
+			"kpnId": "4924422",
 			"name": "HIDVÉGHI BALÁZS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2044,6 +2176,7 @@
 			"listRank": 26
 		},
 		{
+			"kpnId": "259733",
 			"name": "MOLNÁR ÁGNES",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2059,6 +2192,7 @@
 			"listRank": 27
 		},
 		{
+			"kpnId": "659318",
 			"name": "KÁRPÁTINÉ DR. JUHÁSZ HAJNALKA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2074,6 +2208,7 @@
 			"listRank": 28
 		},
 		{
+			"kpnId": "1140140",
 			"name": "RÉTVÁRI BENCE",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2089,6 +2224,7 @@
 			"listRank": 29
 		},
 		{
+			"kpnId": "6759125",
 			"name": "BÁNKI ERIK",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2104,6 +2240,7 @@
 			"listRank": 30
 		},
 		{
+			"kpnId": "126037",
 			"name": "DEMETER ANDRÁS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2119,6 +2256,7 @@
 			"listRank": 31
 		},
 		{
+			"kpnId": "6125704",
 			"name": "NACSA LŐRINC",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2134,6 +2272,7 @@
 			"listRank": 32
 		},
 		{
+			"kpnId": "2656124",
 			"name": "KOVÁCS ZSOLT",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2149,6 +2288,7 @@
 			"listRank": 33
 		},
 		{
+			"kpnId": "1476351",
 			"name": "FÖLDESI GYULA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2164,6 +2304,7 @@
 			"listRank": 34
 		},
 		{
+			"kpnId": "2611520",
 			"name": "BALLA GYÖRGY",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2179,6 +2320,7 @@
 			"listRank": 35
 		},
 		{
+			"kpnId": "2104047",
 			"name": "MENCZER TAMÁS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2194,6 +2336,7 @@
 			"listRank": 36
 		},
 		{
+			"kpnId": "657067",
 			"name": "HÉJJ DÁVID",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2209,6 +2352,7 @@
 			"listRank": 37
 		},
 		{
+			"kpnId": "6324774",
 			"name": "LATORCAI CSABA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2224,6 +2368,7 @@
 			"listRank": 38
 		},
 		{
+			"kpnId": "929347",
 			"name": "SOLTÉSZ MIKLÓS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2239,6 +2384,7 @@
 			"listRank": 39
 		},
 		{
+			"kpnId": "3899986",
 			"name": "BUDAI GYULA",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2254,6 +2400,7 @@
 			"listRank": 40
 		},
 		{
+			"kpnId": "2165268",
 			"name": "NYITRAI ZSOLT",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2269,6 +2416,7 @@
 			"listRank": 41
 		},
 		{
+			"kpnId": "99686",
 			"name": "ZSIGMOND BARNA PÁL",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2284,6 +2432,7 @@
 			"listRank": 42
 		},
 		{
+			"kpnId": "2730967",
 			"name": "FARKAS ÖRS",
 			"party": "FIDESZ-KDNP",
 			"mandateType": "list",
@@ -2299,6 +2448,7 @@
 			"listRank": 43
 		},
 		{
+			"kpnId": "7931647",
 			"name": "TOROCZKAI LÁSZLÓ",
 			"party": "Mi Hazánk",
 			"mandateType": "list",
@@ -2314,6 +2464,7 @@
 			"listRank": 1
 		},
 		{
+			"kpnId": "2621953",
 			"name": "DÚRÓ DÓRA",
 			"party": "Mi Hazánk",
 			"mandateType": "list",
@@ -2329,6 +2480,7 @@
 			"listRank": 2
 		},
 		{
+			"kpnId": "8050715",
 			"name": "APÁTI ISTVÁN",
 			"party": "Mi Hazánk",
 			"mandateType": "list",
@@ -2344,6 +2496,7 @@
 			"listRank": 3
 		},
 		{
+			"kpnId": "309206",
 			"name": "NOVÁK ELŐD",
 			"party": "Mi Hazánk",
 			"mandateType": "list",
@@ -2359,6 +2512,7 @@
 			"listRank": 4
 		},
 		{
+			"kpnId": "1182962",
 			"name": "BORVENDÉG ZSUZSANNA",
 			"party": "Mi Hazánk",
 			"mandateType": "list",
@@ -2374,6 +2528,7 @@
 			"listRank": 5
 		},
 		{
+			"kpnId": "2574385",
 			"name": "DÓCS DÁVID",
 			"party": "Mi Hazánk",
 			"mandateType": "list",
@@ -2389,6 +2544,7 @@
 			"listRank": 6
 		},
 		{
+			"kpnId": "1824170",
 			"name": "KAPITÁNY ISTVÁN",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2404,6 +2560,7 @@
 			"listRank": 5
 		},
 		{
+			"kpnId": "4162349",
 			"name": "ORBÁN ANITA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2419,6 +2576,7 @@
 			"listRank": 6
 		},
 		{
+			"kpnId": "3743974",
 			"name": "HEGEDŰS ZSOLT",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2434,6 +2592,7 @@
 			"listRank": 11
 		},
 		{
+			"kpnId": "5882891",
 			"name": "SZŰCS DÓRA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2449,6 +2608,7 @@
 			"listRank": 19
 		},
 		{
+			"kpnId": "4806047",
 			"name": "KÁRMÁN ANDRÁS",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2464,6 +2624,7 @@
 			"listRank": 21
 		},
 		{
+			"kpnId": "6942847",
 			"name": "MELLÉTHEI-BARNA MÁRTON",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2479,6 +2640,7 @@
 			"listRank": 23
 		},
 		{
+			"kpnId": "237505",
 			"name": "JÓJÁRT ERIKA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2494,6 +2656,7 @@
 			"listRank": 24
 		},
 		{
+			"kpnId": "6783788",
 			"name": "MOLNÁR ZOLTÁN",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2509,6 +2672,7 @@
 			"listRank": 26
 		},
 		{
+			"kpnId": "9178021",
 			"name": "KINCSE CSONGOR",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2524,6 +2688,7 @@
 			"listRank": 27
 		},
 		{
+			"kpnId": "7628771",
 			"name": "BORSÓS GABRIELLA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2539,6 +2704,7 @@
 			"listRank": 28
 		},
 		{
+			"kpnId": "1134852",
 			"name": "KALÁZDI-KEREKES KINGA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2554,6 +2720,7 @@
 			"listRank": 30
 		},
 		{
+			"kpnId": "3105871",
 			"name": "GYUK ZSOLT",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2569,6 +2736,7 @@
 			"listRank": 31
 		},
 		{
+			"kpnId": "761285",
 			"name": "SCHUMMER ORSOLYA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2584,6 +2752,7 @@
 			"listRank": 32
 		},
 		{
+			"kpnId": "9278095",
 			"name": "VARGA LŐRINC MIHÁLY",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2599,6 +2768,7 @@
 			"listRank": 33
 		},
 		{
+			"kpnId": "6520887",
 			"name": "SÓTI ANIKÓ ZSUZSANNA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2614,6 +2784,7 @@
 			"listRank": 34
 		},
 		{
+			"kpnId": "4519332",
 			"name": "RÁK RICHÁRD",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2629,6 +2800,7 @@
 			"listRank": 35
 		},
 		{
+			"kpnId": "7152556",
 			"name": "HAJDU MÁRTON ÁDÁM",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2644,6 +2816,7 @@
 			"listRank": 36
 		},
 		{
+			"kpnId": "1202379",
 			"name": "PÁSZTOR ANETT",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2659,6 +2832,7 @@
 			"listRank": 37
 		},
 		{
+			"kpnId": "1515547",
 			"name": "HANTOSI ISTVÁN",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2674,6 +2848,7 @@
 			"listRank": 38
 		},
 		{
+			"kpnId": "8963686",
 			"name": "GYÖNGYÖSI ISTVÁN",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2689,6 +2864,7 @@
 			"listRank": 39
 		},
 		{
+			"kpnId": "5604332",
 			"name": "SASI-NAGY EDIT",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2704,6 +2880,7 @@
 			"listRank": 40
 		},
 		{
+			"kpnId": "9588276",
 			"name": "BALOGH MIHÁLY",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2719,6 +2896,7 @@
 			"listRank": 41
 		},
 		{
+			"kpnId": "8640853",
 			"name": "CSÁSZÁR MARTIN",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2734,6 +2912,7 @@
 			"listRank": 42
 		},
 		{
+			"kpnId": "9747890",
 			"name": "BERKI ÁKOS",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2749,6 +2928,7 @@
 			"listRank": 43
 		},
 		{
+			"kpnId": "5713832",
 			"name": "SIMON KRISZTIÁN MÁRK",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2764,6 +2944,7 @@
 			"listRank": 44
 		},
 		{
+			"kpnId": "4427256",
 			"name": "TÓTH TAMÁS",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2779,6 +2960,7 @@
 			"listRank": 45
 		},
 		{
+			"kpnId": "6009433",
 			"name": "KŐSZEGI KRISZTIÁN",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2794,6 +2976,7 @@
 			"listRank": 46
 		},
 		{
+			"kpnId": "6341075",
 			"name": "KISS MÁTÉ",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2809,6 +2992,7 @@
 			"listRank": 47
 		},
 		{
+			"kpnId": "4953863",
 			"name": "LUKÁCS GÁBOR",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2824,6 +3008,7 @@
 			"listRank": 48
 		},
 		{
+			"kpnId": "4302819",
 			"name": "KAPRINYÁK TIBOR",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2839,6 +3024,7 @@
 			"listRank": 49
 		},
 		{
+			"kpnId": "2354628",
 			"name": "BARNA-SZABÓ TÍMEA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2854,6 +3040,7 @@
 			"listRank": 71
 		},
 		{
+			"kpnId": "7264539",
 			"name": "STROMPOVÁ VIKTÓRIA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2869,6 +3056,7 @@
 			"listRank": 75
 		},
 		{
+			"kpnId": "2364584",
 			"name": "VERES ÁDÁM LÁSZLÓ",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2884,6 +3072,7 @@
 			"listRank": 78
 		},
 		{
+			"kpnId": "833644",
 			"name": "SZABÓ TIBOR",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2899,6 +3088,7 @@
 			"listRank": 79
 		},
 		{
+			"kpnId": "353844",
 			"name": "BICSKEI LÁSZLÓ",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2914,6 +3104,7 @@
 			"listRank": 89
 		},
 		{
+			"kpnId": "4370444",
 			"name": "SIMON ZSUZSÁNNA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2929,6 +3120,7 @@
 			"listRank": 93
 		},
 		{
+			"kpnId": "7067153",
 			"name": "BÓKA ZSOLT",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2944,6 +3136,7 @@
 			"listRank": 95
 		},
 		{
+			"kpnId": "1050681",
 			"name": "KOVÁCS PETRA JUDIT",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2959,6 +3152,7 @@
 			"listRank": 96
 		},
 		{
+			"kpnId": "4016642",
 			"name": "BUGYA LÁSZLÓ",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2974,6 +3168,7 @@
 			"listRank": 97
 		},
 		{
+			"kpnId": "8610354",
 			"name": "TÓTH NORBERT",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -2989,6 +3184,7 @@
 			"listRank": 99
 		},
 		{
+			"kpnId": "7565480",
 			"name": "JÁROSI PÉTER",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -3004,6 +3200,7 @@
 			"listRank": 101
 		},
 		{
+			"kpnId": "6688214",
 			"name": "CZAKÓ-CZIRBUS PÁL",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -3019,6 +3216,7 @@
 			"listRank": 105
 		},
 		{
+			"kpnId": "286984",
 			"name": "NÉMETH CSILLA",
 			"party": "TISZA",
 			"mandateType": "list",
@@ -3034,6 +3232,7 @@
 			"listRank": 106
 		},
 		{
+			"kpnId": "9128344",
 			"name": "HORVÁTH NÁNDOR ZSOLT",
 			"party": "TISZA",
 			"mandateType": "list",

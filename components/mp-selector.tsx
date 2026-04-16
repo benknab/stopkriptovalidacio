@@ -1,6 +1,6 @@
 import type { JSX } from "preact";
 import { type Signal, useComputed } from "@preact/signals";
-import { type Mp, mps, type MpSlug } from "../data/mps.ts";
+import { getLatestDistrictOrList, getLatestParty, type Mp, type MpId, mps } from "../data/mps.ts";
 import {
 	districtCountyData,
 	minorityListMps,
@@ -33,12 +33,15 @@ function CheckIcon(): JSX.Element {
 }
 
 interface SelectedMpCardProps {
-	slug: MpSlug;
+	mpId: MpId;
 	mp: Mp;
 	lang: SupportedLanguage;
 }
 
-function SelectedMpCard({ slug, mp, lang }: SelectedMpCardProps): JSX.Element {
+function SelectedMpCard({ mpId: _, mp, lang }: SelectedMpCardProps): JSX.Element {
+	const currentParty = getLatestParty(mp);
+	const currentDistrictOrList = getLatestDistrictOrList(mp);
+
 	return (
 		<div class="relative bg-slate-50 rounded-xl p-4 border-2 border-brand ring-2 ring-brand/20">
 			<div class="absolute top-2 right-2 w-6 h-6 bg-brand rounded-full flex items-center justify-center">
@@ -46,13 +49,15 @@ function SelectedMpCard({ slug, mp, lang }: SelectedMpCardProps): JSX.Element {
 			</div>
 
 			<div class="flex items-center gap-3">
-				<MpImage slug={slug} name={mp.name} hasImage={!!mp.imageUrl} size="sm" class="shrink-0" />
+				<MpImage slug={mp.slug} name={mp.name} hasImage={!!mp.imageUrl} size="sm" class="shrink-0" />
 				<div class="min-w-0 flex-1">
 					<h4 class="font-medium text-slate-900 truncate">{mp.name}</h4>
-					<p class="text-sm text-slate-500 truncate">
-						{t(`mps.party.${mp.party}`, lang, { defaultValue: mp.party })}
-					</p>
-					{mp.district && <p class="text-sm text-slate-400 truncate">{mp.district}</p>}
+					{currentParty && (
+						<p class="text-sm text-slate-500 truncate">
+							{t(`mps.party.${currentParty}`, lang, { defaultValue: currentParty })}
+						</p>
+					)}
+					{currentDistrictOrList && <p class="text-sm text-slate-400 truncate">{currentDistrictOrList}</p>}
 				</div>
 			</div>
 
@@ -64,7 +69,7 @@ function SelectedMpCard({ slug, mp, lang }: SelectedMpCardProps): JSX.Element {
 }
 
 interface MpSelectorProps {
-	selectedRep: Signal<MpSlug | null>;
+	selectedRep: Signal<MpId | null>;
 	selectedCounty: Signal<string>;
 	selectedDistrict: Signal<string>;
 	searchQuery: Signal<string>;
@@ -89,7 +94,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 	// Filter MPs based on county, district, and search query (AND logic)
 	const filteredMps = useComputed(() => {
 		return sortedMps.filter(({ mp }) => {
-			const parsed = parseDistrict(mp.district);
+			const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
 			if (!parsed) return false;
 
 			// Exclude national list MPs from the selection grid
@@ -142,7 +147,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		// Auto-select the MP for this district
 		if (district && selectedCounty.value) {
 			const mpEntry = sortedMps.find(({ mp }) => {
-				const parsed = parseDistrict(mp.district);
+				const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
 				return (
 					parsed &&
 					!parsed.isNationalList &&
@@ -151,7 +156,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 				);
 			});
 			if (mpEntry) {
-				selectedRep.value = mpEntry.slug;
+				selectedRep.value = mpEntry.mpId;
 			}
 		}
 	}
@@ -160,22 +165,23 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		searchQuery.value = (e.target as HTMLInputElement).value;
 	}
 
-	function selectMp(slug: MpSlug): void {
+	function selectMp(mpId: MpId): void {
 		// If already selected, deselect
-		if (selectedRep.value === slug) {
+		if (selectedRep.value === mpId) {
 			resetSelection();
 			return;
 		}
 
 		// Select the new representative
-		selectedRep.value = slug;
+		selectedRep.value = mpId;
 		includeNationalList.value = DEFAULT_INCLUDE;
 		includeMinorityList.value = DEFAULT_INCLUDE;
 
 		// Auto-fill county and district from the selected MP
-		const mp = mps[slug];
-		if (mp?.district) {
-			const parsed = parseDistrict(mp.district);
+		const mp = mps[mpId];
+		const currentDistrictOrList = mp ? getLatestDistrictOrList(mp) : null;
+		if (currentDistrictOrList) {
+			const parsed = parseDistrict(currentDistrictOrList);
 			if (parsed && !parsed.isNationalList) {
 				selectedCounty.value = parsed.county;
 				selectedDistrict.value = parsed.districtNum ?? "";
@@ -274,7 +280,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			{/* Selected MP + Group cards (when MP is selected) */}
 			{selectedRep.value && selectedMp && (
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-					<SelectedMpCard slug={selectedRep.value} mp={selectedMp} lang={lang} />
+					<SelectedMpCard mpId={selectedRep.value} mp={selectedMp} lang={lang} />
 
 					<GroupSelectCard
 						title={t("action.national_list_title", lang)}
@@ -326,13 +332,13 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 				(selectedCounty.value || searchQuery.value) &&
 				filteredMps.value.length > 0 && (
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-					{filteredMps.value.map(({ slug, mp }) => (
+					{filteredMps.value.map(({ mpId, mp }) => (
 						<MpSelectCard
-							key={slug}
-							slug={slug}
+							key={mpId}
+							slug={mp.slug}
 							mp={mp}
-							selected={selectedRep.value === slug}
-							onToggle={() => selectMp(slug)}
+							selected={selectedRep.value === mpId}
+							onToggle={() => selectMp(mpId)}
 							lang={lang}
 						/>
 					))}

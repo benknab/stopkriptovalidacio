@@ -4,6 +4,11 @@ import mpsJson from "./mps.json" with { type: "json" };
 const voteTypeSchema = z.enum(["yes", "no", "abstain", "absent", "not_voted", "not_in_parliament", "banned"]);
 
 export type VoteType = z.infer<typeof voteTypeSchema>;
+export type MpId = string;
+export type MpSlug = string;
+
+export const NATIONAL_LIST = "Országos lista";
+export const MINORITY_LIST = "Országos nemzetiségi lista";
 
 const partySchema = z.enum([
 	"Fidesz",
@@ -49,25 +54,74 @@ export function formatPhoneForDisplay(phone: string): string {
 }
 
 const stringSetSchema = z.array(z.string()).transform((values) => new Set(values));
-const numberSetSchema = z.array(z.number()).transform((values) => new Set(values));
+
+const mpDistrictMandateSchema = z.object({
+	type: z.literal("district"),
+	party: partySchema,
+	district: z.string(),
+});
+
+const listLabelSchema = z.union([z.literal(NATIONAL_LIST), z.literal(MINORITY_LIST)]);
+
+const mpListMandateSchema = z.object({
+	type: z.literal("list"),
+	party: partySchema,
+	list: listLabelSchema,
+});
+
+export const mpMandateSchema = z.discriminatedUnion("type", [mpDistrictMandateSchema, mpListMandateSchema]);
+
+export type MpMandate = z.infer<typeof mpMandateSchema>;
+
+const electionsSchema = z.record(z.string().regex(/^\d{4}$/), mpMandateSchema);
 
 export const mpSchema = z.object({
+	slug: z.string(),
 	name: z.string(),
-	party: partySchema,
 	vote: voteTypeSchema,
-	electedAt: numberSetSchema,
+	elections: electionsSchema,
 	emails: stringSetSchema,
 	phones: stringSetSchema,
 	imageUrl: z.string().optional(),
-	district: z.string().optional(),
 	website: z.string().optional(),
 	address: z.string().optional(),
 });
 
 export type Mp = z.infer<typeof mpSchema>;
 
-const mpsSchema = z.record(z.string(), mpSchema);
+const mpsSchema = z.record(z.string().regex(/^\d+$/), mpSchema);
 
 export const mps = mpsSchema.parse(mpsJson);
 
-export type MpSlug = string;
+export function getMandateLabel(mandate: MpMandate): string {
+	return mandate.type === "district" ? mandate.district : mandate.list;
+}
+
+export function getElectionYears(mp: Mp): number[] {
+	return Object.keys(mp.elections)
+		.map((year) => Number.parseInt(year, 10))
+		.sort((left, right) => left - right);
+}
+
+export function getLatestElectionYear(mp: Mp): number | null {
+	const years = getElectionYears(mp);
+	return years.length > 0 ? years[years.length - 1] : null;
+}
+
+export function getMandateForYear(mp: Mp, year: number): MpMandate | null {
+	return mp.elections[String(year)] ?? null;
+}
+
+export function getLatestMandate(mp: Mp): MpMandate | null {
+	const latestYear = getLatestElectionYear(mp);
+	return latestYear !== null ? getMandateForYear(mp, latestYear) : null;
+}
+
+export function getLatestParty(mp: Mp): Party | null {
+	return getLatestMandate(mp)?.party ?? null;
+}
+
+export function getLatestDistrictOrList(mp: Mp): string | null {
+	const mandate = getLatestMandate(mp);
+	return mandate ? getMandateLabel(mandate) : null;
+}
