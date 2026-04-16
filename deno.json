@@ -10,12 +10,8 @@
 		"start": "deno serve -A _fresh/server.js",
 		"fmt": "deno fmt",
 		"lint": "deno lint",
-		"extract-data-json": "deno run --allow-read --allow-write scripts/extract-data-json.ts",
-		"verify-data-json": "deno run --allow-read scripts/verify-data-json.ts",
 		"inspect-current-winners": "deno run --allow-net --allow-read --allow-write scripts/inspect-current-winners.ts",
 		"backfill-mps-kpn-ids": "deno run --allow-read --allow-write --allow-net scripts/backfill-mps-kpn-ids.ts",
-		"download-images": "deno run -A scripts/download-mp-images.ts",
-		"generate-og-image": "deno run -A scripts/generate-og-image.ts",
 		"post-telegram": "deno run --allow-read --allow-write --allow-net --allow-env scripts/post-telegram.ts"
 	},
 	"imports": {
@@ -29,7 +25,6 @@
 		"@tailwindcss/vite": "npm:@tailwindcss/vite@^4",
 		"tailwind-merge": "npm:tailwind-merge@^2",
 		"vite": "npm:vite@^7.1.3",
-		"sharp": "npm:sharp@^0.33.5",
 		"zod": "npm:zod@4.3.6"
 	},
 	"compilerOptions": {
