@@ -12,7 +12,8 @@
 		"lint": "deno lint",
 		"inspect-current-winners": "deno run --allow-net --allow-read --allow-write scripts/inspect-current-winners.ts",
 		"backfill-mps-kpn-ids": "deno run --allow-read --allow-write --allow-net scripts/backfill-mps-kpn-ids.ts",
-		"post-telegram": "deno run --allow-read --allow-write --allow-net --allow-env scripts/post-telegram.ts"
+		"post-telegram": "deno run --allow-read --allow-write --allow-net --allow-env scripts/post-telegram.ts",
+		"download-mp-images": "deno run --allow-net --allow-read --allow-write --allow-run scripts/download-mp-images.ts"
 	},
 	"imports": {
 		"@std/dotenv": "jsr:@std/dotenv@^0.225",
