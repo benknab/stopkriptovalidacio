@@ -21,6 +21,7 @@ export const handler = define.handlers({
 		const urls = [
 			buildUrlEntry("/", "1.0", "weekly"),
 			buildUrlEntry("/kriptovalidalas", "0.9", "weekly"),
+			buildUrlEntry("/szavazas", "0.8", "weekly"),
 			buildUrlEntry("/rolunk", "0.8", "monthly"),
 		];
 

@@ -27,6 +27,12 @@ export const PAGE_SEO_CONFIG = {
 		descriptionKey: "seo.crypto_validation.description",
 		type: "article",
 	},
+	"vote-history": {
+		path: "/szavazas",
+		titleKey: "seo.vote_history.title",
+		descriptionKey: "seo.vote_history.description",
+		type: "article",
+	},
 } as const;
 
 export type PageId = keyof typeof PAGE_SEO_CONFIG;

@@ -15,6 +15,10 @@
 		"crypto_validation": {
 			"title": "What is Crypto Validation? | Crypto Validator Hungary",
 			"description": "The law does not define what crypto validation means. Learn about crypto validator requirements and regulatory consequences."
+		},
+		"vote_history": {
+			"title": "T/11922 Vote | Stop Crypto Validation",
+			"description": "Browse how MPs elected in 2022 voted on the T/11922 bill."
 		}
 	},
 	"nav": {
@@ -218,8 +222,19 @@
 			"select_district": "Select voting district...",
 			"select_to_show": "Select a county or click \"All\" to show representatives."
 		},
+		"election_source_2022": "2022 parliamentary election data (NVI)",
 		"mp_list_source": "MP Directory",
 		"district_lookup_hint": "Don't know your voting district? Look it up here:"
+	},
+	"vote_history": {
+		"title": "T/11922 vote",
+		"description": "Browse the recorded votes on the T/11922 bill by MP.",
+		"current_reps_intro": "Looking for your current representative to contact?",
+		"current_reps_link": "Go to take action",
+		"home_title": "Earlier parliamentary vote",
+		"home_description": "The historical T/11922 vote explorer is now available on a separate page.",
+		"home_link": "View the T/11922 vote",
+		"law_link": "Browse the T/11922 vote"
 	},
 	"action": {
 		"title": "Take Action!",

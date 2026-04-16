@@ -6,9 +6,9 @@ import { H2 } from "../components/h2.tsx";
 import { Hero } from "../components/hero.tsx";
 import { ImpactSection } from "../components/impact-section.tsx";
 import { Layout } from "../components/layout.tsx";
+import { Link } from "../components/link.tsx";
 import { SeoHead } from "../components/seo/seo-head.tsx";
 import { detectLanguage, t } from "../i18n/index.ts";
-import MpsSection from "../islands/mps-section.tsx";
 import PartiesSection from "../islands/parties-section.tsx";
 import TimelineSection from "../islands/timeline-section.tsx";
 import TakeActionSection from "../islands/take-action-section.tsx";
@@ -18,8 +18,6 @@ export default define.page(function Home(ctx): JSX.Element {
 	const lang = detectLanguage(ctx.req);
 	const showSecondary = url.searchParams.get("masodlagos") !== "false";
 	const showTertiary = url.searchParams.get("harmadlagos") === "true";
-	const mpCounty = url.searchParams.get("megye") || "";
-	const mpDistrict = url.searchParams.get("kerulet") || "";
 	const currentPath = url.pathname + url.search;
 
 	return (
@@ -36,11 +34,6 @@ export default define.page(function Home(ctx): JSX.Element {
 			}
 			afterContent={
 				<>
-					<MpsSection
-						lang={lang}
-						selectedCounty={mpCounty}
-						selectedDistrict={mpDistrict}
-					/>
 					<TakeActionSection lang={lang} />
 				</>
 			}
@@ -55,6 +48,19 @@ export default define.page(function Home(ctx): JSX.Element {
 					showSecondary={showSecondary}
 					showTertiary={showTertiary}
 				/>
+			</section>
+			<section class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+				<h3 class="text-xl font-bold text-slate-900 text-balance">
+					{t("vote_history.home_title", lang)}
+				</h3>
+				<p class="mt-3 text-slate-600 max-w-3xl text-balance">
+					{t("vote_history.home_description", lang)}
+				</p>
+				<div class="mt-4">
+					<Link href="/szavazas" class="font-medium">
+						{t("vote_history.home_link", lang)} →
+					</Link>
+				</div>
 			</section>
 		</Layout>
 	);

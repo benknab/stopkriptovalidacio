@@ -1,10 +1,10 @@
 ## TODO
 
 - [ ] Remove the current party/coalition section from the home page, along with its dedicated home-page nav link.
-- [ ] Keep `/kriptovalidalas` as the law explainer page.
-- [ ] Add a new historical vote page at `/szavazas`.
-- [ ] Make `/szavazas` reference-only: reuse the old T/11922 vote explorer/search UI there, without the contact form.
-- [ ] Link to `/szavazas` contextually from the current representatives intro on the home page and from
+- [x] Keep `/kriptovalidalas` as the law explainer page.
+- [x] Add a new historical vote page at `/szavazas`.
+- [x] Make `/szavazas` reference-only: reuse the old T/11922 vote explorer/search UI there, without the contact form.
+- [x] Link to `/szavazas` contextually from the current representatives intro on the home page and from
       `/kriptovalidalas`, but do not add a top-level nav item.
 - [ ] Replace the old home-page historical MPs section with a current representatives section that reuses the existing
       browse/filter/card pattern.
@@ -21,3 +21,4 @@
 - [x] Finalize winner extraction separately: prefer an official machine-readable winner source if we can identify one,
       otherwise fall back to scraping the official NVI site.
 - [x] Remove old scripts, no need to add helper/one time scripts to deno.json
+- [ ] Reevaluate /szavazas URL

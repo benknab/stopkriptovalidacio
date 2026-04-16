@@ -174,6 +174,23 @@ export function JsonLd({ lang, pageId }: JsonLdProps): JSX.Element {
 		});
 	}
 
+	if (pageId === "vote-history") {
+		const today = new Date().toISOString().split("T")[0];
+		graph.push(
+			buildArticleSchema(
+				lang,
+				t("seo.vote_history.title", lang),
+				t("seo.vote_history.description", lang),
+				today,
+				today,
+			),
+		);
+		breadcrumbItems.push({
+			name: t("vote_history.title", lang),
+			url: `${SITE_URL}/szavazas`,
+		});
+	}
+
 	// Add breadcrumb if we have more than just the home item
 	if (breadcrumbItems.length > 1) {
 		graph.push(buildBreadcrumbSchema(breadcrumbItems));

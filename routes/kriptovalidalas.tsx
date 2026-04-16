@@ -107,6 +107,11 @@ export default define.page(function CryptoValidation(ctx): JSX.Element {
 				<Link href="/#idovonal" class="text-brand hover:underline font-medium">
 					{t("crypto_validation.timeline_link", lang)} →
 				</Link>
+				<div class="mt-3">
+					<Link href="/szavazas" class="font-medium">
+						{t("vote_history.law_link", lang)} →
+					</Link>
+				</div>
 			</section>
 
 			{/* CTA */}

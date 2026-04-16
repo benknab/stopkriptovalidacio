@@ -15,6 +15,10 @@
 		"crypto_validation": {
 			"title": "Mi az a Kripto Validálás? | Kripto Validátor Magyarország",
 			"description": "A kripto validálás fogalmát a törvény nem definiálja. Tájékozódjon a kripto validátor követelményekről és a szabályozás következményeiről."
+		},
+		"vote_history": {
+			"title": "T/11922 Szavazás | Stop Kriptovalidáció",
+			"description": "Böngéssze a T/11922 törvényjavaslat 2022-ben mandátumot szerzett képviselőinek szavazatait."
 		}
 	},
 	"nav": {
@@ -218,8 +222,19 @@
 			"select_district": "Válasszon választókerületet...",
 			"select_to_show": "Válasszon megyét vagy kattintson az \"Összes\" gombra a képviselők megjelenítéséhez."
 		},
+		"election_source_2022": "2022-es országgyűlési választási adatok (NVI)",
 		"mp_list_source": "Képviselői névsor",
 		"district_lookup_hint": "Nem tudja melyik választókerületben lakik? Keresse ki itt:"
+	},
+	"vote_history": {
+		"title": "T/11922 szavazás",
+		"description": "Böngéssze a T/11922 törvényjavaslat képviselőnkénti szavazatait.",
+		"current_reps_intro": "Jelenlegi képviselőjét keresi a kapcsolatfelvételhez?",
+		"current_reps_link": "Ugrás a cselekvés részhez",
+		"home_title": "Korábbi parlamenti szavazás",
+		"home_description": "A T/11922 törvényjavaslat történeti szavazási listája külön oldalon érhető el.",
+		"home_link": "T/11922 szavazás megtekintése",
+		"law_link": "A T/11922 szavazás böngészése"
 	},
 	"action": {
 		"title": "Cselekedjen!",

@@ -1,11 +1,13 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
 import {
-	getLatestDistrictOrList,
-	getLatestParty,
+	getLatestMandate,
+	getMandateForYear,
+	getMandateLabel,
 	MINORITY_LIST,
 	type Mp,
 	type MpId,
+	type MpMandate,
 	mps,
 	NATIONAL_LIST,
 	type VoteType,
@@ -68,12 +70,22 @@ export type CountyData = {
 	isNationalList: boolean;
 };
 
-function buildCountyData(): CountyData[] {
+type MpsSectionEntry = {
+	mpId: MpId;
+	mp: Mp;
+	mandate: MpMandate;
+};
+
+function getSectionMandate(mp: Mp, electionYear?: number): MpMandate | null {
+	return electionYear !== undefined ? getMandateForYear(mp, electionYear) : getLatestMandate(mp);
+}
+
+function buildCountyData(entries: MpsSectionEntry[]): CountyData[] {
 	const countyMap = new Map<string, Set<string>>();
 	const nationalLists: string[] = [];
 
-	for (const mp of Object.values(mps)) {
-		const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
+	for (const { mandate } of entries) {
+		const parsed = parseDistrict(getMandateLabel(mandate));
 		if (!parsed) continue;
 
 		if (parsed.isNationalList) {
@@ -113,26 +125,19 @@ function buildCountyData(): CountyData[] {
 	return result;
 }
 
-export const countyData = buildCountyData();
-
-// County data filtered to only include districts (no national lists)
-export const districtCountyData = countyData.filter((c) => !c.isNationalList);
-
-// Get MPs from national lists for group selection cards
-function getMpsByList(listName: string): Array<{ mpId: MpId; mp: Mp }> {
-	return (Object.entries(mps) as Array<[MpId, Mp]>)
-		.filter(([, mp]) => getLatestDistrictOrList(mp) === listName)
-		.map(([mpId, mp]) => ({ mpId, mp }));
+function getMpsByList(listName: string, entries: MpsSectionEntry[]): MpsSectionEntry[] {
+	return entries.filter(({ mandate }) => getMandateLabel(mandate) === listName);
 }
 
-export const nationalListMps = getMpsByList(NATIONAL_LIST);
-export const minorityListMps = getMpsByList(MINORITY_LIST);
-
-function getSortedMps(): Array<{ mpId: MpId; mp: Mp }> {
+function getSortedMps(electionYear?: number): MpsSectionEntry[] {
 	const entries = Object.entries(mps) as Array<[MpId, Mp]>;
 
 	return entries
-		.map(([mpId, mp]) => ({ mpId, mp }))
+		.map(([mpId, mp]) => {
+			const mandate = getSectionMandate(mp, electionYear);
+			return mandate ? { mpId, mp, mandate } : null;
+		})
+		.filter((entry): entry is MpsSectionEntry => entry !== null)
 		.sort((a, b) => {
 			const priorityDiff = votePriority[a.mp.vote] - votePriority[b.mp.vote];
 			if (priorityDiff !== 0) return priorityDiff;
@@ -141,6 +146,14 @@ function getSortedMps(): Array<{ mpId: MpId; mp: Mp }> {
 }
 
 export const sortedMps = getSortedMps();
+export const countyData = buildCountyData(sortedMps);
+
+// County data filtered to only include districts (no national lists)
+export const districtCountyData = countyData.filter((c) => !c.isNationalList);
+
+// Get MPs from national lists for group selection cards
+export const nationalListMps = getMpsByList(NATIONAL_LIST, sortedMps);
+export const minorityListMps = getMpsByList(MINORITY_LIST, sortedMps);
 
 function EmailIcon(): JSX.Element {
 	return (
@@ -171,15 +184,16 @@ function PhoneIcon(): JSX.Element {
 interface MpCardProps {
 	mpId: MpId;
 	mp: Mp;
+	mandate: MpMandate;
 	lang: SupportedLanguage;
 }
 
-function MpCard({ mpId: _, mp, lang }: MpCardProps): JSX.Element {
+function MpCard({ mpId: _, mp, mandate, lang }: MpCardProps): JSX.Element {
 	const colors = voteColors[mp.vote];
 	const mailtoUrl = mp.emails.size > 0 ? buildMailtoUrl({ to: Array.from(mp.emails) }) : null;
 	const firstPhone = mp.phones.size > 0 ? Array.from(mp.phones)[0] : null;
-	const currentParty = getLatestParty(mp);
-	const currentDistrictOrList = getLatestDistrictOrList(mp);
+	const currentParty = mandate.party;
+	const currentDistrictOrList = getMandateLabel(mandate);
 
 	return (
 		<div
@@ -248,18 +262,24 @@ function MpCard({ mpId: _, mp, lang }: MpCardProps): JSX.Element {
 }
 
 const mpListSource = {
-	label: "Aktív képviselői névsor",
 	url: "https://www.parlament.hu/web/guest/aktiv-kepviseloi-nevsor",
+};
+
+const historicalMpListSource = {
+	url: "https://vtr.valasztas.hu/ogy2022",
 };
 
 export interface MpsSectionProps {
 	lang: SupportedLanguage;
 	selectedCounty: string;
 	selectedDistrict: string;
+	electionYear?: number;
+	sectionId?: string;
+	showHeading?: boolean;
 }
 
 export default function MpsSection(props: MpsSectionProps): JSX.Element {
-	const { lang } = props;
+	const { lang, electionYear, sectionId = "kepviselok", showHeading = true } = props;
 	const selectedCounty = useStringQueryParam({
 		key: "megye",
 		defaultValue: "",
@@ -272,12 +292,15 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 	});
 	const searchQuery = useSignal("");
 	const voteSource = sources["parlament-szavazas-11922"];
+	const sectionMps = electionYear !== undefined ? getSortedMps(electionYear) : sortedMps;
+	const sectionCountyData = electionYear !== undefined ? buildCountyData(sectionMps) : countyData;
+	const mpDirectorySource = electionYear === 2022 ? historicalMpListSource : mpListSource;
 
 	const isAllSelected = selectedCounty.value === ALL_OPTION;
-	const currentCountyData = countyData.find((c) => c.name === selectedCounty.value);
+	const currentCountyData = sectionCountyData.find((c) => c.name === selectedCounty.value);
 	const isNationalList = currentCountyData?.isNationalList ?? false;
 
-	const filteredMps = sortedMps.filter(({ mp }) => {
+	const filteredMps = sectionMps.filter(({ mp, mandate }) => {
 		// Name search filter (always applied if set)
 		if (searchQuery.value) {
 			const query = searchQuery.value.toLowerCase();
@@ -294,7 +317,7 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 		if (isAllSelected) return true;
 		if (!selectedCounty.value) return false;
 
-		const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
+		const parsed = parseDistrict(getMandateLabel(mandate));
 		if (!parsed) return false;
 
 		if (isNationalList) {
@@ -321,14 +344,18 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 	}
 
 	return (
-		<section id="kepviselok" class="bg-slate-50 py-16 sm:py-20">
+		<section id={sectionId} class="bg-slate-50 py-16 sm:py-20">
 			<div class="mx-auto max-w-6xl px-4 sm:px-6">
-				<H2>{t("mps.title", lang)}</H2>
-				<p class="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
-					{t("mps.description", lang)}
-				</p>
+				{showHeading && (
+					<>
+						<H2>{t("mps.title", lang)}</H2>
+						<p class="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
+							{t("mps.description", lang)}
+						</p>
+					</>
+				)}
 
-				<div class="mt-8 p-4 bg-white rounded-lg border border-slate-200">
+				<div class={`${showHeading ? "mt-8 " : ""}p-4 bg-white rounded-lg border border-slate-200`}>
 					<p class="text-sm text-slate-600">
 						<strong>{t("mps.source", lang)}:</strong> {voteSource.originalUrl
 							? (
@@ -338,8 +365,10 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 							)
 							: <span>{voteSource.title[lang]}</span>}
 						{" | "}
-						<ExternalLink href={mpListSource.url} class="underline">
-							{t("mps.mp_list_source", lang)}
+						<ExternalLink href={mpDirectorySource.url} class="underline">
+							{electionYear === 2022
+								? t("mps.election_source_2022", lang)
+								: t("mps.mp_list_source", lang)}
 						</ExternalLink>
 					</p>
 				</div>
@@ -360,7 +389,7 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 						>
 							<option value="">{t("mps.filter.select_county", lang)}</option>
 							<option value={ALL_OPTION}>{t("mps.filter.all", lang)}</option>
-							{countyData.map((county) => (
+							{sectionCountyData.map((county) => (
 								<option key={county.name} value={county.name}>
 									{county.isNationalList
 										? t(
@@ -454,7 +483,7 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 					<p class="mt-4 text-sm text-slate-600 text-center">
 						{t("mps.showing", lang, {
 							shown: filteredMps.length.toString(),
-							total: sortedMps.length.toString(),
+							total: sectionMps.length.toString(),
 						})}
 					</p>
 				)}
@@ -467,11 +496,12 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 
 				{(selectedCounty.value || searchQuery.value) && filteredMps.length > 0 && (
 					<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-						{filteredMps.map(({ mpId, mp }) => (
+						{filteredMps.map(({ mpId, mp, mandate }) => (
 							<MpCard
 								key={mpId}
 								mpId={mpId}
 								mp={mp}
+								mandate={mandate}
 								lang={lang}
 							/>
 						))}
