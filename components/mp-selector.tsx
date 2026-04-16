@@ -287,17 +287,12 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			{/* Selected MP + Group cards (when MP is selected) */}
 			{selectedRep.value && selectedMp && (
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-					<div>
-						<SelectedMpCard
-							mpId={selectedRep.value}
-							mp={selectedMp}
-							lang={lang}
-							onDeselect={() => resetSelection()}
-						/>
-						<p class="text-xs text-slate-400 mt-2 text-center">
-							{t("action.click_to_deselect", lang)}
-						</p>
-					</div>
+					<SelectedMpCard
+						mpId={selectedRep.value}
+						mp={selectedMp}
+						lang={lang}
+						onDeselect={() => resetSelection()}
+					/>
 
 					<GroupSelectCard
 						title={t("action.national_list_title", lang)}
