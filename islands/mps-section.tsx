@@ -4,6 +4,7 @@ import {
 	getLatestMandate,
 	getMandateForYear,
 	getMandateLabel,
+	isCurrentMp,
 	MINORITY_LIST,
 	type Mp,
 	type MpId,
@@ -154,6 +155,13 @@ export const districtCountyData = countyData.filter((c) => !c.isNationalList);
 // Get MPs from national lists for group selection cards
 export const nationalListMps = getMpsByList(NATIONAL_LIST, sortedMps);
 export const minorityListMps = getMpsByList(MINORITY_LIST, sortedMps);
+
+// Current (2026) MP exports - filtered to only include MPs elected in 2026
+export const currentMps = sortedMps.filter(({ mp }) => isCurrentMp(mp));
+export const currentCountyData = buildCountyData(currentMps);
+export const currentDistrictCountyData = currentCountyData.filter((c) => !c.isNationalList);
+export const currentNationalListMps = getMpsByList(NATIONAL_LIST, currentMps);
+export const currentMinorityListMps = getMpsByList(MINORITY_LIST, currentMps);
 
 function EmailIcon(): JSX.Element {
 	return (

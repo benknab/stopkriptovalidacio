@@ -2,11 +2,11 @@ import type { JSX } from "preact";
 import { type Signal, useComputed } from "@preact/signals";
 import { getLatestDistrictOrList, getLatestParty, type Mp, type MpId, mps } from "../data/mps.ts";
 import {
-	districtCountyData,
-	minorityListMps,
-	nationalListMps,
+	currentDistrictCountyData,
+	currentMinorityListMps,
+	currentMps,
+	currentNationalListMps,
 	parseDistrict,
-	sortedMps,
 } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { MpSelectCard } from "./mp-select-card.tsx";
@@ -89,11 +89,13 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		lang,
 	} = props;
 
-	const currentCountyData = useComputed(() => districtCountyData.find((c) => c.name === selectedCounty.value));
+	const currentCountyData = useComputed(() =>
+		currentDistrictCountyData.find((c: { name: string }) => c.name === selectedCounty.value)
+	);
 
 	// Filter MPs based on county, district, and search query (AND logic)
 	const filteredMps = useComputed(() => {
-		return sortedMps.filter(({ mp }) => {
+		return currentMps.filter(({ mp }: { mp: Mp }) => {
 			const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
 			if (!parsed) return false;
 
@@ -146,7 +148,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 
 		// Auto-select the MP for this district
 		if (district && selectedCounty.value) {
-			const mpEntry = sortedMps.find(({ mp }) => {
+			const mpEntry = currentMps.find(({ mp }: { mp: Mp }) => {
 				const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
 				return (
 					parsed &&
@@ -216,7 +218,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 							onChange={handleCountyChange}
 						>
 							<option value="">{t("mps.filter.select_county", lang)}</option>
-							{districtCountyData.map((county) => (
+							{currentDistrictCountyData.map((county: { name: string }) => (
 								<option key={county.name} value={county.name}>
 									{county.name}
 								</option>
@@ -285,7 +287,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 					<GroupSelectCard
 						title={t("action.national_list_title", lang)}
 						subtitle={t("action.national_list_subtitle", lang)}
-						contactCount={nationalListMps.length}
+						contactCount={currentNationalListMps.length}
 						selected={includeNationalList.value}
 						onToggle={handleToggleNational}
 						colorVariant="gold"
@@ -295,7 +297,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 					<GroupSelectCard
 						title={t("action.minority_list_title", lang)}
 						subtitle={t("action.minority_list_subtitle", lang)}
-						contactCount={minorityListMps.length}
+						contactCount={currentMinorityListMps.length}
 						selected={includeMinorityList.value}
 						onToggle={handleToggleMinority}
 						colorVariant="silver"
@@ -308,8 +310,12 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			{selectedRep.value && (() => {
 				const emails = new Set([
 					...(selectedMp?.emails ?? []),
-					...(includeNationalList.value ? nationalListMps.flatMap(({ mp }) => mp.emails) : []),
-					...(includeMinorityList.value ? minorityListMps.flatMap(({ mp }) => mp.emails) : []),
+					...(includeNationalList.value
+						? currentNationalListMps.flatMap(({ mp }: { mp: Mp }) => Array.from(mp.emails))
+						: []),
+					...(includeMinorityList.value
+						? currentMinorityListMps.flatMap(({ mp }: { mp: Mp }) => Array.from(mp.emails))
+						: []),
 				]);
 				return emails.size > 30
 					? (

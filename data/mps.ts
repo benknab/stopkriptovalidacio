@@ -125,3 +125,7 @@ export function getLatestDistrictOrList(mp: Mp): string | null {
 	const mandate = getLatestMandate(mp);
 	return mandate ? getMandateLabel(mandate) : null;
 }
+
+export function isCurrentMp(mp: Mp): boolean {
+	return "2026" in mp.elections;
+}

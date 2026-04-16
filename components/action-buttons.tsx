@@ -1,7 +1,7 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
 import { type MpId, mps } from "../data/mps.ts";
-import { minorityListMps, nationalListMps } from "../islands/mps-section.tsx";
+import { currentMinorityListMps, currentNationalListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { buildMailtoUrl } from "../utils/mailto.ts";
 
@@ -50,7 +50,7 @@ function getEmailLists(
 
 	// National list MPs' emails go to "CC:"
 	if (includeNationalList) {
-		for (const { mp } of nationalListMps) {
+		for (const { mp } of currentNationalListMps) {
 			for (const email of mp.emails) {
 				// Don't add to CC if already in To
 				if (!toEmails.has(email)) {
@@ -62,7 +62,7 @@ function getEmailLists(
 
 	// Minority list MPs' emails go to "CC:"
 	if (includeMinorityList) {
-		for (const { mp } of minorityListMps) {
+		for (const { mp } of currentMinorityListMps) {
 			for (const email of mp.emails) {
 				// Don't add to CC if already in To
 				if (!toEmails.has(email)) {

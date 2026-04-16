@@ -14,7 +14,8 @@
   direct individual evidence.
 - [ ] Show each current representative's historical T/11922 vote status on the card at all times; add a new
       `not_in_parliament` enum value for people who were not MPs at the time.
-- [ ] Add a `wonElectionYears` set to current person records, e.g. `[2022, 2026]`, `[2022]`, or `[2026]`.
+- [ ] Add a `wonElectionYears` set to current person records, e.g. `[2022, 2026]`, `[2022]`, or `[2026]`. -- handled
+      with elections object now
 - [ ] Repurpose the existing `Cselekedjen` flow to the current data while keeping the behavior the same as now,
       including optional list add-ons.
 - [x] Use official NVI data as the primary source (`EgyeniJeloltek.json`, `ListakEsJeloltek.json`, `OevkAdatok.json`).
