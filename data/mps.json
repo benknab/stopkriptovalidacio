@@ -16,6 +16,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k153.jpg"
 	},
+	"58793": {
+		"slug": "gurzo-maria",
+		"name": "Gurzó Mária",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Békés 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"71317": {
 		"slug": "hiller-istvan",
 		"name": "Dr. Hiller István",
@@ -33,12 +47,45 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h026.jpg"
 	},
+	"77873": {
+		"slug": "forsthoffer-agnes",
+		"name": "Forsthoffer Ágnes",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Veszprém 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"98330": {
+		"slug": "gaspar-levente",
+		"name": "Gáspár Levente",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Veszprém 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"99686": {
 		"slug": "zsigmond-barna-pal",
 		"name": "Dr. Zsigmond Barna Pál",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -56,6 +103,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -88,12 +140,31 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k762.jpg",
 		"website": "https://kunhalmiagnes.hu"
 	},
+	"237505": {
+		"slug": "jojart-erika",
+		"name": "Jójárt Erika",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"259733": {
 		"slug": "molnar-agnes",
 		"name": "Dr. Molnár Ágnes",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -105,12 +176,31 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m039.jpg"
 	},
+	"286984": {
+		"slug": "nemeth-csilla",
+		"name": "Németh Csilla",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"309206": {
 		"slug": "novak-elod",
 		"name": "Novák Előd",
 		"vote": "abstain",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Mi Hazánk",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Mi Hazánk",
 				"list": "Országos lista"
@@ -124,6 +214,48 @@
 			"36303582723"
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n036.jpg"
+	},
+	"324308": {
+		"slug": "rost-andrea",
+		"name": "Rost Andrea",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Jász-Nagykun-Szolnok 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"353844": {
+		"slug": "bicskei-laszlo",
+		"name": "Bicskei László",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"370205": {
+		"slug": "bilisics-zita",
+		"name": "Bilisics Zita",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 9. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"440612": {
 		"slug": "czervan-gyorgy",
@@ -151,6 +283,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -162,6 +299,20 @@
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g053.jpg",
 		"website": "https://gulyasgergely.hu"
+	},
+	"509077": {
+		"slug": "muhari-gergely",
+		"name": "Muhari Gergely",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 14. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"516989": {
 		"slug": "taso-laszlo",
@@ -244,6 +395,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -251,6 +407,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h083.jpg"
+	},
+	"658910": {
+		"slug": "muller-anna",
+		"name": "Müller Anna",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 13. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"659318": {
 		"slug": "juhasz-hajnalka",
@@ -260,6 +430,11 @@
 			"2022": {
 				"type": "list",
 				"party": "KDNP",
+				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
 				"list": "Országos lista"
 			}
 		},
@@ -286,6 +461,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s772.jpg"
 	},
+	"715146": {
+		"slug": "csezi-erzsebet",
+		"name": "Csézi Erzsébet",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Borsod-Abaúj-Zemplén 7. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"745536": {
 		"slug": "nagy-csaba",
 		"name": "Nagy Csaba",
@@ -302,6 +491,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n032.jpg"
+	},
+	"761285": {
+		"slug": "schummer-orsolya",
+		"name": "Schummer Orsolya",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"768235": {
 		"slug": "meszaros-lajos",
@@ -329,6 +532,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -336,6 +544,48 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s183.jpg"
+	},
+	"814149": {
+		"slug": "perticsne-kacsor-andrea",
+		"name": "Perticsné Kácsor Andrea",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 10. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"833644": {
+		"slug": "szabo-tibor",
+		"name": "Szabó Tibor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"846088": {
+		"slug": "borics-mihaly",
+		"name": "Borics Mihály",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Fejér 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"854618": {
 		"slug": "dudas-robert",
@@ -354,6 +604,48 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d039.jpg"
 	},
+	"863072": {
+		"slug": "goroghne-bocskai-eva",
+		"name": "Göröghné Bocskai Éva",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Hajdú-Bihar 6. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"871108": {
+		"slug": "varga-balazs",
+		"name": "Varga Balázs",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Zala 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"886309": {
+		"slug": "lorincz-viktoria",
+		"name": "Lőrincz Viktória",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Somogy 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"929347": {
 		"slug": "soltesz-miklos",
 		"name": "Soltész Miklós",
@@ -362,6 +654,11 @@
 			"2022": {
 				"type": "list",
 				"party": "KDNP",
+				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
 				"list": "Országos lista"
 			}
 		},
@@ -383,6 +680,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -394,6 +696,20 @@
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/o320.jpg",
 		"website": "http://www.orbanviktor.hu"
+	},
+	"976054": {
+		"slug": "kiss-janos-976054",
+		"name": "Kiss János",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Heves 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"987566": {
 		"slug": "foldi-laszlo",
@@ -438,6 +754,11 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Vas 2. OEVK"
+			},
+			"2026": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Vas 2. OEVK"
 			}
 		},
 		"emails": [
@@ -447,6 +768,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a011.jpg",
 		"website": "http://www.aghpeter.hu"
+	},
+	"1050681": {
+		"slug": "kovacs-petra-judit",
+		"name": "Kovács Petra Judit",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"1064835": {
 		"slug": "pesti-imre",
@@ -464,6 +799,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p032.jpg"
+	},
+	"1100056": {
+		"slug": "juhasz-roland",
+		"name": "Juhász Roland",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Borsod-Abaúj-Zemplén 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"1127666": {
 		"slug": "ritter-imre",
@@ -483,6 +832,34 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/r036.jpg"
 	},
+	"1130744": {
+		"slug": "ruzsa-diana",
+		"name": "Ruzsa Diána",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Baranya 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"1134852": {
+		"slug": "kalazdi-kerekes-kinga",
+		"name": "Kalázdi-Kerekes Kinga",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"1140140": {
 		"slug": "retvari-bence",
 		"name": "Rétvári Bence",
@@ -492,6 +869,11 @@
 				"type": "district",
 				"party": "KDNP",
 				"district": "Pest 4. OEVK"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -511,6 +893,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -520,12 +907,59 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k308.jpg",
 		"website": "http://www.koverlaszlo.hu"
 	},
+	"1182962": {
+		"slug": "borvendeg-zsuzsanna",
+		"name": "Borvendég Zsuzsanna",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "Mi Hazánk",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"1202379": {
+		"slug": "pasztor-anett",
+		"name": "Pásztor Anett",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"1207999": {
+		"slug": "raki-zsolt",
+		"name": "Ráki Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Békés 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"1277081": {
 		"slug": "vitanyi-istvan",
 		"name": "Dr. Vitányi István",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Hajdú-Bihar 4. OEVK"
+			},
+			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Hajdú-Bihar 4. OEVK"
@@ -617,6 +1051,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -642,6 +1081,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h079.jpg"
 	},
+	"1515547": {
+		"slug": "hantosi-istvan",
+		"name": "Hantosi István",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"1517369": {
 		"slug": "tiba-istvan",
 		"name": "Dr. Tiba István",
@@ -665,6 +1118,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -729,6 +1187,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s013.jpg"
+	},
+	"1715034": {
+		"slug": "ferenczi-gabor",
+		"name": "Ferenczi Gábor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Csongrád-Csanád 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"1741758": {
 		"slug": "molnar-zsolt",
@@ -807,6 +1279,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -837,12 +1314,31 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/c044.jpg",
 		"website": "https://csardiantal.hu"
 	},
+	"1824170": {
+		"slug": "kapitany-istvan",
+		"name": "Kapitány István",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"1824194": {
 		"slug": "nemeth-szilard-istvan",
 		"name": "Németh Szilárd István",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -871,6 +1367,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b764.jpg",
 		"website": "http://www.bonazoltan.hu"
+	},
+	"1831140": {
+		"slug": "papp-zsolt",
+		"name": "Papp Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"1843428": {
 		"slug": "toro-gabor",
@@ -915,6 +1425,11 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Pest 2. OEVK"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -954,6 +1469,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -961,6 +1481,34 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n018.jpg"
+	},
+	"2168443": {
+		"slug": "csiszar-bela",
+		"name": "Csiszár Béla",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Fejér 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"2196330": {
+		"slug": "radnai-mark",
+		"name": "Radnai Márk",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Komárom-Esztergom 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"2222545": {
 		"slug": "vigh-laszlo",
@@ -1006,6 +1554,11 @@
 				"type": "list",
 				"party": "KDNP",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -1020,6 +1573,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Szabolcs-Szatmár-Bereg 6. OEVK"
+			},
+			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Szabolcs-Szatmár-Bereg 6. OEVK"
@@ -1048,6 +1606,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g024.jpg"
 	},
+	"2294677": {
+		"slug": "arvay-nikolett",
+		"name": "Árvay Nikolett",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Komárom-Esztergom 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"2295214": {
 		"slug": "kiss-janos",
 		"name": "Dr. Kiss János",
@@ -1065,6 +1637,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k166.jpg"
 	},
+	"2354628": {
+		"slug": "barna-szabo-timea",
+		"name": "Barna-Szabó Tímea",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"2354967": {
 		"slug": "dunai-monika",
 		"name": "Dunai Mónika",
@@ -1081,6 +1667,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d751.jpg"
+	},
+	"2364584": {
+		"slug": "veres-adam-laszlo",
+		"name": "Veres Ádám László",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"2371658": {
 		"slug": "komjathi-imre",
@@ -1105,6 +1705,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Tolna 2. OEVK"
+			},
+			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Tolna 2. OEVK"
@@ -1137,6 +1742,34 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t687.jpg",
 		"website": "https://tuzsonbence.hu"
 	},
+	"2547997": {
+		"slug": "gajdos-laszlo",
+		"name": "Gajdos László",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Szabolcs-Szatmár-Bereg 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"2567260": {
+		"slug": "trompler-ildiko",
+		"name": "Trompler Ildikó",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 7. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"2570400": {
 		"slug": "semjen-zsolt",
 		"name": "Dr. Semjén Zsolt",
@@ -1145,6 +1778,11 @@
 			"2022": {
 				"type": "list",
 				"party": "KDNP",
+				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
 				"list": "Országos lista"
 			}
 		},
@@ -1163,6 +1801,11 @@
 		"vote": "not_voted",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Mi Hazánk",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Mi Hazánk",
 				"list": "Országos lista"
@@ -1221,6 +1864,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -1235,6 +1883,11 @@
 		"vote": "abstain",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Mi Hazánk",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Mi Hazánk",
 				"list": "Országos lista"
@@ -1274,6 +1927,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -1282,12 +1940,45 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k167.jpg"
 	},
+	"2664055": {
+		"slug": "rapli-robert",
+		"name": "Rápli Róbert",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Vas 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"2673867": {
+		"slug": "lovko-csaba",
+		"name": "Lovkó Csaba",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Zala 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"2688931": {
 		"slug": "selmeczi-gabriella",
 		"name": "Dr. Selmeczi Gabriella",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -1308,6 +1999,11 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Vas 1. OEVK"
+			},
+			"2026": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Borsod-Abaúj-Zemplén 3. OEVK"
 			}
 		},
 		"emails": [
@@ -1322,6 +2018,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -1375,6 +2076,34 @@
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a008.jpg"
 	},
+	"2838852": {
+		"slug": "neher-andras",
+		"name": "Néher András",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Győr-Moson-Sopron 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"2843909": {
+		"slug": "szimon-renata",
+		"name": "Szimon Renáta",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 11. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"2907354": {
 		"slug": "locsei-lajos",
 		"name": "Lőcsei Lajos",
@@ -1427,6 +2156,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s186.jpg"
 	},
+	"3013188": {
+		"slug": "nagy-marta",
+		"name": "Nagy Márta",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Zala 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"3019334": {
 		"slug": "zsigo-robert",
 		"name": "Zsigó Róbert",
@@ -1458,6 +2201,11 @@
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -1466,6 +2214,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/o015.jpg",
 		"website": "http://www.orbanbalazsandras.hu"
+	},
+	"3054647": {
+		"slug": "tothmajor-balazs",
+		"name": "Tóthmajor Balázs",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"3070600": {
 		"slug": "stummer-janos",
@@ -1485,12 +2247,73 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s156.jpg"
 	},
+	"3105871": {
+		"slug": "gyuk-zsolt",
+		"name": "Gyuk Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"3232330": {
+		"slug": "viragh-gabriella",
+		"name": "Virágh Gabriella",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 8. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"3284502": {
+		"slug": "karsai-juhasz-katalin",
+		"name": "Karsai-Juhász Katalin",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Bács-Kiskun 5. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"3304799": {
+		"slug": "velkey-gyorgy-laszlo",
+		"name": "Velkey György László",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 6. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"3308539": {
 		"slug": "tilki-attila",
 		"name": "Dr. Tilki Attila",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Szabolcs-Szatmár-Bereg 4. OEVK"
+			},
+			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Szabolcs-Szatmár-Bereg 4. OEVK"
@@ -1606,6 +2429,34 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h004.jpg",
 		"website": "https://halaszjanos.hu"
 	},
+	"3413652": {
+		"slug": "stumpf-peter",
+		"name": "Stumpf Péter",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Csongrád-Csanád 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"3479002": {
+		"slug": "porpaczy-krisztina",
+		"name": "Porpáczy Krisztina",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Győr-Moson-Sopron 5. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"3515612": {
 		"slug": "pajtok-gabor",
 		"name": "Dr. Pajtók Gábor",
@@ -1674,6 +2525,34 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b121.jpg"
 	},
+	"3619254": {
+		"slug": "tarkanyi-zsolt",
+		"name": "Tárkányi Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Hajdú-Bihar 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"3619279": {
+		"slug": "kovacs-gyula",
+		"name": "Kovács Gyula",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Bács-Kiskun 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"3629112": {
 		"slug": "fazekas-sandor",
 		"name": "Dr. Fazekas Sándor",
@@ -1697,6 +2576,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Szabolcs-Szatmár-Bereg 5. OEVK"
+			},
+			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Szabolcs-Szatmár-Bereg 5. OEVK"
@@ -1734,6 +2618,11 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Jász-Nagykun-Szolnok 3. OEVK"
+			},
+			"2026": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Jász-Nagykun-Szolnok 3. OEVK"
 			}
 		},
 		"emails": [
@@ -1758,6 +2647,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v070.jpg"
+	},
+	"3743974": {
+		"slug": "hegedus-zsolt",
+		"name": "Hegedűs Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"3777565": {
 		"slug": "posan-laszlo",
@@ -1785,6 +2688,11 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Hajdú-Bihar 1. OEVK"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -1814,12 +2722,31 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/o007.jpg",
 		"website": "https://olahlajos.hu"
 	},
+	"3818373": {
+		"slug": "jelencsik-jozsef",
+		"name": "Jelencsik József",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"3824189": {
 		"slug": "v-nemeth-zsolt",
 		"name": "V. Németh Zsolt",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Vas 3. OEVK"
+			},
+			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Vas 3. OEVK"
@@ -1865,12 +2792,45 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m028.jpg"
 	},
+	"3888849": {
+		"slug": "szentkiralyi-alexandra",
+		"name": "Szentkirályi Alexandra",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"3897636": {
+		"slug": "gal-kinga",
+		"name": "Gál Kinga",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"3899986": {
 		"slug": "budai-gyula",
 		"name": "Dr. Budai Gyula",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -1881,6 +2841,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b076.jpg"
+	},
+	"3907957": {
+		"slug": "csoszi-attila",
+		"name": "Csőszi Attila",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Bács-Kiskun 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"3912899": {
 		"slug": "toth-bertalan",
@@ -1917,6 +2891,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k170.jpg",
 		"website": "https://kalmanolga.hu"
+	},
+	"3957200": {
+		"slug": "bakos-csaba-attila",
+		"name": "Bakos Csaba Attila",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Somogy 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"3962686": {
 		"slug": "szatmary-kristof",
@@ -1974,12 +2962,31 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s184.jpg",
 		"website": "https://szabadiistvan.hu"
 	},
+	"4016642": {
+		"slug": "bugya-laszlo",
+		"name": "Bugya László",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4020737": {
 		"slug": "balla-mihaly",
 		"name": "Balla Mihály",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Nógrád 2. OEVK"
+			},
+			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Nógrád 2. OEVK"
@@ -2043,6 +3050,48 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h081.jpg"
 	},
+	"4125776": {
+		"slug": "bodis-kriszta",
+		"name": "Bódis Kriszta",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4162349": {
+		"slug": "orban-anita",
+		"name": "Orbán Anita",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4168621": {
+		"slug": "dicso-viktoria",
+		"name": "Dicső Viktória",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Szabolcs-Szatmár-Bereg 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4198655": {
 		"slug": "jakab-peter",
 		"name": "Jakab Péter",
@@ -2060,6 +3109,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/j020.jpg"
+	},
+	"4206793": {
+		"slug": "tompa-eniko",
+		"name": "Tompa Enikő",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Hajdú-Bihar 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"4246933": {
 		"slug": "hajnal-miklos",
@@ -2081,6 +3144,20 @@
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h090.jpg"
 	},
+	"4257604": {
+		"slug": "magyar-peter",
+		"name": "Magyar Péter",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4268740": {
 		"slug": "kanasz-nagy-mate",
 		"name": "Kanász-Nagy Máté",
@@ -2097,6 +3174,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k168.jpg"
+	},
+	"4302819": {
+		"slug": "kaprinyak-tibor",
+		"name": "Kaprinyák Tibor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"4310512": {
 		"slug": "illes-boglarka",
@@ -2131,6 +3222,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s124.jpg"
+	},
+	"4332001": {
+		"slug": "csak-laszlo",
+		"name": "Csák László",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Hajdú-Bihar 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"4338457": {
 		"slug": "brenner-koloman",
@@ -2190,6 +3295,20 @@
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h050.jpg"
 	},
+	"4360192": {
+		"slug": "mohacsy-istvan",
+		"name": "Mohácsy István",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4368272": {
 		"slug": "danko-bela",
 		"name": "Dankó Béla",
@@ -2206,6 +3325,48 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d030.jpg"
+	},
+	"4370444": {
+		"slug": "simon-zsuzsanna",
+		"name": "Simon Zsuzsánna",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4386064": {
+		"slug": "polgar-gyorgy",
+		"name": "Polgár György",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 12. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4395823": {
+		"slug": "hende-mate",
+		"name": "Hende Máté",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 13. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"4402590": {
 		"slug": "pogacsas-tibor",
@@ -2224,6 +3385,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p006.jpg"
 	},
+	"4427256": {
+		"slug": "toth-tamas",
+		"name": "Tóth Tamás",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4489749": {
 		"slug": "tessely-zoltan",
 		"name": "Tessely Zoltán",
@@ -2241,6 +3416,34 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t038.jpg"
 	},
+	"4519332": {
+		"slug": "rak-richard",
+		"name": "Rák Richárd",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4579003": {
+		"slug": "kapronczai-balazs",
+		"name": "Kapronczai Balázs",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Baranya 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4617973": {
 		"slug": "hegedus-barbara",
 		"name": "Dr. Hegedűs Barbara",
@@ -2257,6 +3460,48 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/0002.jpg"
+	},
+	"4639155": {
+		"slug": "benke-jozsef",
+		"name": "Benke József",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Somogy 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4677523": {
+		"slug": "koncz-aron",
+		"name": "Koncz Áron",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4734555": {
+		"slug": "farkas-csongor",
+		"name": "Farkas Csongor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Jász-Nagykun-Szolnok 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"4752198": {
 		"slug": "barkoczi-balazs",
@@ -2277,6 +3522,48 @@
 			"36308992663"
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b170.jpg"
+	},
+	"4798863": {
+		"slug": "csatari-erno",
+		"name": "Csatári Ernő",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Somogy 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4806047": {
+		"slug": "karman-andras",
+		"name": "Kármán András",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4817921": {
+		"slug": "laszlo-endre-marton",
+		"name": "László Endre Márton",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 6. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"4830994": {
 		"slug": "banyai-gabor",
@@ -2311,6 +3598,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/l034.jpg"
+	},
+	"4871118": {
+		"slug": "ujvari-szilvia",
+		"name": "Ujvári Szilvia",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Veszprém 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"4873260": {
 		"slug": "harrach-peter",
@@ -2347,12 +3648,31 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/e006.jpg"
 	},
+	"4899462": {
+		"slug": "tarr-zoltan",
+		"name": "Tarr Zoltán",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 16. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4924422": {
 		"slug": "hidveghi-balazs",
 		"name": "Hidvéghi Balázs",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -2363,6 +3683,34 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h074.jpg"
+	},
+	"4945322": {
+		"slug": "nemeth-zsolt-4945322",
+		"name": "Németh Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"4953863": {
+		"slug": "lukacs-gabor",
+		"name": "Lukács Gábor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"4955608": {
 		"slug": "ferencz-orsolya",
@@ -2381,6 +3729,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f049.jpg"
 	},
+	"4976487": {
+		"slug": "hallerne-nagy-aniko",
+		"name": "Hallerné Dr. Nagy Anikó",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Győr-Moson-Sopron 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"5011246": {
 		"slug": "suli-janos",
 		"name": "Süli János",
@@ -2390,6 +3752,11 @@
 				"type": "district",
 				"party": "KDNP",
 				"district": "Tolna 3. OEVK"
+			},
+			"2026": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Tolna 3. OEVK"
 			}
 		},
 		"emails": [
@@ -2397,6 +3764,34 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s154.jpg"
+	},
+	"5047005": {
+		"slug": "szafko-zoltan-peter",
+		"name": "Szafkó Zoltán Péter",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Nógrád 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"5070594": {
+		"slug": "juhasz-aron",
+		"name": "Juhász Áron",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Heves 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"5076906": {
 		"slug": "ander-balazs",
@@ -2417,6 +3812,20 @@
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a716.jpg"
 	},
+	"5084856": {
+		"slug": "balatincz-peter",
+		"name": "Balatincz Péter",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Veszprém 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"5131660": {
 		"slug": "matrai-marta",
 		"name": "Mátrai Márta",
@@ -2434,6 +3843,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m006.jpg"
 	},
+	"5145194": {
+		"slug": "szabo-alexandra",
+		"name": "Szabó Alexandra",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 14. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"5231720": {
 		"slug": "varga-ferenc",
 		"name": "Varga Ferenc",
@@ -2448,6 +3871,34 @@
 		"emails": [
 			"vargaferenc@parlament.hu"
 		],
+		"phones": []
+	},
+	"5282659": {
+		"slug": "hatala-orosz-csaba",
+		"name": "Hatala-Orosz Csaba",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Borsod-Abaúj-Zemplén 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"5318256": {
+		"slug": "ruszin-szendi-romulusz",
+		"name": "Ruszin-Szendi Romulusz",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Hajdú-Bihar 5. OEVK"
+			}
+		},
+		"emails": [],
 		"phones": []
 	},
 	"5388981": {
@@ -2483,6 +3934,34 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v013.jpg"
+	},
+	"5429124": {
+		"slug": "katai-nemeth-vilmos",
+		"name": "Kátai-Németh Vilmos",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 9. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"5431022": {
+		"slug": "dioszegi-judit",
+		"name": "Diószegi Judit",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Győr-Moson-Sopron 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"5432240": {
 		"slug": "hadhazy-akos",
@@ -2559,6 +4038,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/r027.jpg"
 	},
+	"5604332": {
+		"slug": "sasi-nagy-edit",
+		"name": "Sasi-Nagy Edit",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"5651415": {
 		"slug": "czunyine-bertalan-judit",
 		"name": "Czunyiné Dr. Bertalan Judit",
@@ -2575,6 +4068,34 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/c029.jpg"
+	},
+	"5654438": {
+		"slug": "molnar-janos",
+		"name": "Molnár János",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Bács-Kiskun 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"5713832": {
+		"slug": "simon-krisztian-mark",
+		"name": "Simon Krisztián Márk",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"5723094": {
 		"slug": "farkas-sandor",
@@ -2593,6 +4114,76 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f001.jpg"
+	},
+	"5743992": {
+		"slug": "kulcsar-krisztian",
+		"name": "Kulcsár Krisztián",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 10. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"5877183": {
+		"slug": "posfai-gabor",
+		"name": "Pósfai Gábor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"5882891": {
+		"slug": "szucs-dora",
+		"name": "Szűcs Dóra",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"5946019": {
+		"slug": "boda-nikoletta",
+		"name": "Boda Nikoletta",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 11. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6009433": {
+		"slug": "koszegi-krisztian",
+		"name": "Kőszegi Krisztián",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"6018210": {
 		"slug": "hegedus-andrea",
@@ -2619,6 +4210,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -2683,6 +4279,20 @@
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/u006.jpg"
 	},
+	"6124857": {
+		"slug": "jakab-zsuzsanna",
+		"name": "Jakab Zsuzsanna",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 12. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"6125704": {
 		"slug": "nacsa-lorinc",
 		"name": "Nacsa Lőrinc",
@@ -2691,6 +4301,11 @@
 			"2022": {
 				"type": "list",
 				"party": "KDNP",
+				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
 				"list": "Országos lista"
 			}
 		},
@@ -2729,6 +4344,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -2796,6 +4416,48 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b034.jpg",
 		"website": "https://bencsikjanos.hu"
 	},
+	"6324774": {
+		"slug": "latorcai-csaba",
+		"name": "Latorcai Csaba",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6341075": {
+		"slug": "kiss-mate",
+		"name": "Kiss Máté",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6347418": {
+		"slug": "szakacs-peter-lajos",
+		"name": "Szakács Péter Lajos",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Szabolcs-Szatmár-Bereg 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"6381654": {
 		"slug": "keresztes-laszlo-lorant",
 		"name": "Dr. Keresztes László Lóránt",
@@ -2839,6 +4501,11 @@
 				"type": "list",
 				"party": "KDNP",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -2865,6 +4532,34 @@
 			"3614415175"
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s113.jpg"
+	},
+	"6520887": {
+		"slug": "soti-aniko-zsuzsanna",
+		"name": "Sóti Anikó Zsuzsanna",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6560338": {
+		"slug": "tanacs-zoltan",
+		"name": "Tanács Zoltán",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"6573038": {
 		"slug": "balassa-peter",
@@ -2900,6 +4595,34 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s093.jpg"
 	},
+	"6688214": {
+		"slug": "czako-czirbus-pal",
+		"name": "Czakó-Czirbus Pál",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6718066": {
+		"slug": "barkanyi-bence",
+		"name": "Bárkányi Bence",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Csongrád-Csanád 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"6727205": {
 		"slug": "gelencser-ferenc",
 		"name": "Gelencsér Ferenc",
@@ -2924,6 +4647,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -2953,12 +4681,87 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k163.jpg"
 	},
+	"6783788": {
+		"slug": "molnar-zoltan",
+		"name": "Molnár Zoltán",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6799946": {
+		"slug": "porcher-aron",
+		"name": "Porcher Áron",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 15. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6820725": {
+		"slug": "bodis-peter",
+		"name": "Bódis Péter",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Heves 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6821083": {
+		"slug": "trentin-balazs",
+		"name": "Trentin Balázs",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 7. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"6835627": {
+		"slug": "nagy-ervin",
+		"name": "Nagy Ervin",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Fejér 4. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"6939384": {
 		"slug": "gyoparos-alpar",
 		"name": "Gyopáros Alpár",
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Győr-Moson-Sopron 3. OEVK"
+			},
+			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Győr-Moson-Sopron 3. OEVK"
@@ -2969,6 +4772,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g048.jpg"
+	},
+	"6942847": {
+		"slug": "mellethei-barna-marton",
+		"name": "Melléthei-Barna Márton",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"6960396": {
 		"slug": "bedo-david",
@@ -3041,6 +4858,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a016.jpg"
 	},
+	"7067153": {
+		"slug": "boka-zsolt",
+		"name": "Bóka Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"7087627": {
 		"slug": "harangozo-tamas",
 		"name": "Dr. Harangozó Tamás",
@@ -3058,6 +4889,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h056.jpg",
 		"website": "https://harangozotamas.hu"
+	},
+	"7122733": {
+		"slug": "kovacs-aron",
+		"name": "Kovács Áron",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Baranya 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"7145408": {
 		"slug": "horvath-laszlo",
@@ -3079,6 +4924,20 @@
 		],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h366.jpg",
 		"website": "https://horvathlaszlo.hu"
+	},
+	"7152556": {
+		"slug": "hajdu-marton-adam",
+		"name": "Hajdu Márton Ádám",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"7175767": {
 		"slug": "kontrat-karoly",
@@ -3133,6 +4992,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p003.jpg"
 	},
+	"7264539": {
+		"slug": "strompova-viktoria",
+		"name": "Strompová Viktória",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"7320825": {
 		"slug": "lazar-janos",
 		"name": "Lázár János",
@@ -3142,6 +5015,11 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Csongrád 4. OEVK"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -3173,6 +5051,104 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t002.jpg"
+	},
+	"7349772": {
+		"slug": "rozsahegyi-aron",
+		"name": "Rózsahegyi Áron",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Baranya 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"7369248": {
+		"slug": "sopov-ildiko-eva",
+		"name": "Sopov Ildikó Éva",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Komárom-Esztergom 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"7558025": {
+		"slug": "bujdoso-andrea-anna",
+		"name": "Bujdosó Andrea Anna",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"7565480": {
+		"slug": "jarosi-peter",
+		"name": "Járosi Péter",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"7588285": {
+		"slug": "bogi-viktoria",
+		"name": "Bögi Viktória",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Fejér 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"7609812": {
+		"slug": "lontay-laszlo",
+		"name": "Lontay László",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Borsod-Abaúj-Zemplén 5. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"7628771": {
+		"slug": "borsos-gabriella",
+		"name": "Borsós Gabriella",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"7656828": {
 		"slug": "kiraly-nora",
@@ -3217,6 +5193,11 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Fejér 5. OEVK"
+			},
+			"2026": {
+				"type": "district",
+				"party": "Fidesz",
+				"district": "Fejér 5. OEVK"
 			}
 		},
 		"emails": [
@@ -3231,6 +5212,11 @@
 		"vote": "not_voted",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -3262,12 +5248,31 @@
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b163.jpg",
 		"website": "https://berkisandor.hu"
 	},
+	"7818324": {
+		"slug": "sarosi-jozsef",
+		"name": "Sárosi József",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Tolna 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"7931647": {
 		"slug": "toroczkai-laszlo",
 		"name": "Toroczkai László",
 		"vote": "abstain",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Mi Hazánk",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Mi Hazánk",
 				"list": "Országos lista"
@@ -3298,6 +5303,48 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s111.jpg"
 	},
+	"7949518": {
+		"slug": "boka-janos",
+		"name": "Bóka János",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"7981814": {
+		"slug": "miskolczi-orsolya",
+		"name": "Miskolczi Orsolya",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 5. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"8016632": {
+		"slug": "balajti-istvan",
+		"name": "Balajti István",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Pest 8. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"8037350": {
 		"slug": "vecsey-laszlo",
 		"name": "Vécsey László",
@@ -3324,6 +5371,11 @@
 				"type": "list",
 				"party": "Mi Hazánk",
 				"list": "Országos lista"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Mi Hazánk",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -3339,6 +5391,11 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
+			},
+			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -3366,6 +5423,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h006.jpg"
+	},
+	"8071877": {
+		"slug": "halmai-ferenc-tibor",
+		"name": "Halmai Ferenc Tibor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Jász-Nagykun-Szolnok 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"8079839": {
 		"slug": "pocs-janos",
@@ -3401,6 +5472,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b013.jpg"
 	},
+	"8117243": {
+		"slug": "bihari-zoltan",
+		"name": "Bihari Zoltán",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Borsod-Abaúj-Zemplén 6. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"8147527": {
 		"slug": "sebian-petrovszki-laszlo",
 		"name": "Sebián-Petrovszki László",
@@ -3417,6 +5502,34 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s175.jpg"
+	},
+	"8152743": {
+		"slug": "bodoczi-istvan",
+		"name": "Bodóczi István",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Békés 1. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"8158757": {
+		"slug": "weigand-istvan",
+		"name": "Weigand István",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Budapest 5. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"8165481": {
 		"slug": "fulop-attila",
@@ -3514,6 +5627,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d041.jpg"
 	},
+	"8257167": {
+		"slug": "judak-zsolt",
+		"name": "Judák Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Bács-Kiskun 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"8296511": {
 		"slug": "lezsak-sandor",
 		"name": "Lezsák Sándor",
@@ -3523,6 +5650,11 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Bács-Kiskun 4. OEVK"
+			},
+			"2026": {
+				"type": "list",
+				"party": "Fidesz",
+				"list": "Országos lista"
 			}
 		},
 		"emails": [
@@ -3549,5 +5681,173 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/z012.jpg",
 		"website": "https://zkarpatdaniel.hu"
+	},
+	"8610354": {
+		"slug": "toth-norbert",
+		"name": "Tóth Norbert",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"8612713": {
+		"slug": "gajda-attila",
+		"name": "Gajda Attila",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Csongrád-Csanád 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"8640853": {
+		"slug": "csaszar-martin",
+		"name": "Császár Martin",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"8799479": {
+		"slug": "gombar-david",
+		"name": "Gombár Dávid",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Békés 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"8880743": {
+		"slug": "csontos-bence",
+		"name": "Csontos Bence",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Bács-Kiskun 6. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"8963686": {
+		"slug": "gyongyosi-istvan",
+		"name": "Gyöngyösi István",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"9128344": {
+		"slug": "horvath-nandor-zsolt",
+		"name": "Horváth Nándor Zsolt",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"9178021": {
+		"slug": "kincse-csongor",
+		"name": "Kincse Csongor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"9278095": {
+		"slug": "varga-lorinc-mihaly",
+		"name": "Varga Lőrinc Mihály",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"9423022": {
+		"slug": "czipa-andras",
+		"name": "Czipa András",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Borsod-Abaúj-Zemplén 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"9588276": {
+		"slug": "balogh-mihaly",
+		"name": "Balogh Mihály",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
+	"9747890": {
+		"slug": "berki-akos",
+		"name": "Berki Ákos",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
 	}
 }

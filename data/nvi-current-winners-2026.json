@@ -1,10 +1,10 @@
 {
 	"election": "ogy2026",
-	"fetchedAt": "2026-04-16T07:25:09.523Z",
+	"fetchedAt": "2026-04-16T08:04:45.596Z",
 	"dataVersions": {
 		"ver": "04112100",
 		"napkozi": "04121855",
-		"szavossz": "04160900"
+		"szavossz": "04161000"
 	},
 	"filters": {
 		"finalOnly": false,
@@ -12,9 +12,9 @@
 	},
 	"sourceUrls": {
 		"config": "https://vtr.valasztas.hu/ogy2026/data/config.json",
-		"patko": "https://vtr.valasztas.hu/ogy2026/data/04160900/szavossz/Patko.json",
-		"districtResults": "https://vtr.valasztas.hu/ogy2026/data/04160900/szavossz/OevkJkv.json",
-		"nationalListResults": "https://vtr.valasztas.hu/ogy2026/data/04160900/szavossz/ListasJkv.json",
+		"patko": "https://vtr.valasztas.hu/ogy2026/data/04161000/szavossz/Patko.json",
+		"districtResults": "https://vtr.valasztas.hu/ogy2026/data/04161000/szavossz/OevkJkv.json",
+		"nationalListResults": "https://vtr.valasztas.hu/ogy2026/data/04161000/szavossz/ListasJkv.json",
 		"constituencies": "https://vtr.valasztas.hu/ogy2026/data/04112100/ver/OevkAdatok.json",
 		"districtCandidates": "https://vtr.valasztas.hu/ogy2026/data/04112100/ver/EgyeniJeloltek.json",
 		"listCandidates": "https://vtr.valasztas.hu/ogy2026/data/04112100/ver/ListakEsJeloltek.json"

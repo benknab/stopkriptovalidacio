@@ -5,7 +5,7 @@
  *   deno task inspect-current-winners
  *   deno task inspect-current-winners --json
  *   deno task inspect-current-winners --output=data/nvi-current-winners-2026.json
- *   deno task inspect-current-winners --merge-mps-output=data/mps-merged-2026-preview.json
+ *   deno task inspect-current-winners --merge-mps-output=data/mps.json
  *   deno task inspect-current-winners --final-only
  *   deno task inspect-current-winners --include-spokespeople
  *   deno task inspect-current-winners --election=ogy2026
