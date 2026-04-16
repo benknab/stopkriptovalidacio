@@ -8,15 +8,15 @@
       `/kriptovalidalas`, but do not add a top-level nav item.
 - [ ] Replace the old home-page historical MPs section with a current representatives section that reuses the existing
       browse/filter/card pattern.
-- [ ] Use a unified people model with curated canonical person IDs.
-- [ ] Store winners only in the new current dataset.
+- [x] Use a unified people model with curated canonical person IDs.
+- [x] Store winners only in the new current dataset.
 - Show each current representative's `stance` on the law as a per-person field; start with `unknown` unless we have
   direct individual evidence.
 - [ ] Show each current representative's historical T/11922 vote status on the card at all times; add a new
       `not_in_parliament` enum value for people who were not MPs at the time.
 - [ ] Add a `wonElectionYears` set to current person records, e.g. `[2022, 2026]`, `[2022]`, or `[2026]`.
-- Repurpose the existing `Cselekedjen` flow to the current data while keeping the behavior the same as now, including
-  optional list add-ons.
+- [ ] Repurpose the existing `Cselekedjen` flow to the current data while keeping the behavior the same as now,
+      including optional list add-ons.
 - [x] Use official NVI data as the primary source (`EgyeniJeloltek.json`, `ListakEsJeloltek.json`, `OevkAdatok.json`).
 - [x] Finalize winner extraction separately: prefer an official machine-readable winner source if we can identify one,
       otherwise fall back to scraping the official NVI site.
