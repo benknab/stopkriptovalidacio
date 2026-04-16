@@ -1,6 +1,6 @@
 ## TODO
 
-- [ ] Remove the current party/coalition section from the home page, along with its dedicated home-page nav link.
+- [x] Remove the current party/coalition section from the home page, along with its dedicated home-page nav link.
 - [x] Keep `/kriptovalidalas` as the law explainer page.
 - [x] Add a new historical vote page at `/szavazas`.
 - [x] Make `/szavazas` reference-only: reuse the old T/11922 vote explorer/search UI there, without the contact form.

@@ -137,9 +137,6 @@ export function MobileNav({ lang, currentPath }: MobileNavProps): JSX.Element {
 							<NavLink anchor="tozsdek" currentPath={currentPath} onClick={close}>
 								{t("nav.exchanges", lang)}
 							</NavLink>
-							<NavLink anchor="valasztas-2026" currentPath={currentPath} onClick={close}>
-								{t("nav.parties", lang)}
-							</NavLink>
 							<NavLink anchor="idovonal" currentPath={currentPath} onClick={close}>
 								{t("nav.timeline", lang)}
 							</NavLink>

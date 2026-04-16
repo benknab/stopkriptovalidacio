@@ -9,7 +9,6 @@ import { Layout } from "../components/layout.tsx";
 import { Link } from "../components/link.tsx";
 import { SeoHead } from "../components/seo/seo-head.tsx";
 import { detectLanguage, t } from "../i18n/index.ts";
-import PartiesSection from "../islands/parties-section.tsx";
 import TimelineSection from "../islands/timeline-section.tsx";
 import TakeActionSection from "../islands/take-action-section.tsx";
 
@@ -29,7 +28,6 @@ export default define.page(function Home(ctx): JSX.Element {
 					<Hero lang={lang} />
 					<ImpactSection lang={lang} />
 					<ExchangesSection lang={lang} />
-					<PartiesSection lang={lang} />
 				</>
 			}
 			afterContent={
