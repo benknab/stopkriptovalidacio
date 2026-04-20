@@ -340,6 +340,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t021.jpg"
 	},
+	"523856": {
+		"slug": "havasi-balazs-mark",
+		"name": "Havasi Balázs Márk",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"609437": {
 		"slug": "ovadi-peter",
 		"name": "Ovádi Péter",
@@ -1607,11 +1621,6 @@
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Szabolcs-Szatmár-Bereg 6. OEVK"
-			},
-			"2026": {
-				"type": "district",
-				"party": "Fidesz",
-				"district": "Szabolcs-Szatmár-Bereg 6. OEVK"
 			}
 		},
 		"emails": [
@@ -1675,9 +1684,9 @@
 		"vote": "not_in_parliament",
 		"elections": {
 			"2026": {
-				"type": "list",
+				"type": "district",
 				"party": "TISZA",
-				"list": "Országos lista"
+				"district": "Szabolcs-Szatmár-Bereg 6. OEVK"
 			}
 		},
 		"emails": [],
@@ -1739,11 +1748,6 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
-				"type": "district",
-				"party": "Fidesz",
-				"district": "Tolna 2. OEVK"
-			},
-			"2026": {
 				"type": "district",
 				"party": "Fidesz",
 				"district": "Tolna 2. OEVK"
@@ -2056,11 +2060,6 @@
 		"vote": "yes",
 		"elections": {
 			"2022": {
-				"type": "list",
-				"party": "Fidesz",
-				"list": "Országos lista"
-			},
-			"2026": {
 				"type": "list",
 				"party": "Fidesz",
 				"list": "Országos lista"
@@ -2538,6 +2537,20 @@
 		],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n053.jpg"
+	},
+	"3562265": {
+		"slug": "szijjarto-gabor",
+		"name": "Szijjártó Gábor",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Tolna 2. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
 	},
 	"3602558": {
 		"slug": "vejkey-imre",
@@ -3105,6 +3118,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h081.jpg"
 	},
+	"4121217": {
+		"slug": "gyomber-david",
+		"name": "Gyömbér Dávid",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "list",
+				"party": "TISZA",
+				"list": "Országos lista"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4125776": {
 		"slug": "bodis-kriszta",
 		"name": "Bódis Kriszta",
@@ -3530,6 +3557,20 @@
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/0002.jpg"
 	},
+	"4637384": {
+		"slug": "cseh-tamas",
+		"name": "Cseh Tamás",
+		"vote": "not_in_parliament",
+		"elections": {
+			"2026": {
+				"type": "district",
+				"party": "TISZA",
+				"district": "Tolna 3. OEVK"
+			}
+		},
+		"emails": [],
+		"phones": []
+	},
 	"4639155": {
 		"slug": "benke-jozsef",
 		"name": "Benke József",
@@ -3830,11 +3871,6 @@
 			"2022": {
 				"type": "district",
 				"party": "KDNP",
-				"district": "Tolna 3. OEVK"
-			},
-			"2026": {
-				"type": "district",
-				"party": "Fidesz",
 				"district": "Tolna 3. OEVK"
 			}
 		},

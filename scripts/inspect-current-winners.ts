@@ -202,6 +202,7 @@ type MergeSummary = {
 	electionYear: number;
 	matchedExisting: number;
 	addedNew: number;
+	removedStale: number;
 	reviewCount: number;
 	totalRecords: number;
 	outputPath: string;
@@ -576,12 +577,15 @@ function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear:
 	mergedMps: Record<string, unknown>;
 	summary: MergeSummary;
 } {
+	const electionYearKey = String(electionYear);
 	const merged = Object.fromEntries(
 		Object.entries(mps).map(([mpId, mp]) => [mpId, normalizeExistingMp(mp)]),
 	) as RawMps;
 	const existingSlugs = new Set(Object.values(merged).map((mp) => mp.slug));
+	const winnerIds = new Set(winners.map((winner) => winner.kpnId));
 	let matchedExisting = 0;
 	let addedNew = 0;
+	let removedStale = 0;
 	let reviewCount = 0;
 
 	for (const winner of winners) {
@@ -601,7 +605,7 @@ function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear:
 				...existingMp,
 				elections: {
 					...existingMp.elections,
-					[String(electionYear)]: nextMandate,
+					[electionYearKey]: nextMandate,
 				},
 			};
 			matchedExisting++;
@@ -614,6 +618,24 @@ function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear:
 		addedNew++;
 	}
 
+	for (const [mpId, mp] of Object.entries(merged)) {
+		if (!winnerIds.has(mpId) && mp.elections[electionYearKey]) {
+			const nextElections = { ...mp.elections };
+			delete nextElections[electionYearKey];
+
+			if (Object.keys(nextElections).length === 0) {
+				delete merged[mpId];
+			} else {
+				merged[mpId] = {
+					...mp,
+					elections: nextElections,
+				};
+			}
+
+			removedStale++;
+		}
+	}
+
 	const orderedEntries = Object.entries(merged)
 		.sort(([leftId], [rightId]) => Number.parseInt(leftId, 10) - Number.parseInt(rightId, 10))
 		.map(([mpId, mp]) => [mpId, orderMpRecord(mp)]);
@@ -624,6 +646,7 @@ function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear:
 			electionYear,
 			matchedExisting,
 			addedNew,
+			removedStale,
 			reviewCount,
 			totalRecords: orderedEntries.length,
 			outputPath,
@@ -897,6 +920,7 @@ function printMergeSummary(summary: MergeSummary): void {
 	console.log(`- Election year added: ${summary.electionYear}`);
 	console.log(`- Matched existing MPs: ${summary.matchedExisting}`);
 	console.log(`- Added new winners: ${summary.addedNew}`);
+	console.log(`- Removed stale ${summary.electionYear} entries: ${summary.removedStale}`);
 	console.log(`- Review flags: ${summary.reviewCount}`);
 	console.log(`- Total records written: ${summary.totalRecords}`);
 	console.log(`- Output: ${summary.outputPath}`);
