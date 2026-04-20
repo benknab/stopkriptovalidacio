@@ -239,7 +239,7 @@
 	"action": {
 		"title": "Cselekedjen!",
 		"nav_title": "Cselekedjen",
-		"intro": "A kriptovaluta validációs törvény veszélybe sodorja a magyar felhasználók hozzáférését a kriptovaluta szolgáltatásokhoz. A tőzsdék sorra vonulnak ki Magyarországról. Válassza ki a választókerülete képviselőjét, és küldjön neki levelet.",
+		"intro": "A kriptovaluta validációs törvény veszélybe sodorja a magyar felhasználók hozzáférését a kriptovaluta szolgáltatásokhoz.\nA tőzsdék sorra vonulnak ki Magyarországról.\nVálassza ki a választókerülete képviselőjét, és küldjön neki levelet.",
 		"subject_label": "Tárgy",
 		"message_label": "Üzenet",
 		"back": "Vissza",

@@ -72,7 +72,7 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 		<section id="cselekedj" class="bg-brand text-white py-16 sm:py-24">
 			<div class="mx-auto max-w-6xl px-4 sm:px-6">
 				<H2 class="text-white">{t("action.title", lang)}</H2>
-				<p class="mt-4 text-white/90 text-center max-w-2xl mx-auto font-semibold text-lg">
+				<p class="mt-4 text-white/90 text-center max-w-2xl mx-auto font-semibold text-lg whitespace-pre-line">
 					{t("action.intro", lang)}
 				</p>
 
