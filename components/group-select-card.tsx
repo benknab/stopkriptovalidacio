@@ -32,7 +32,7 @@ const variantStyles: Record<ColorVariant, { card: string; border: string; checkb
 interface GroupSelectCardProps {
 	title: string;
 	subtitle: string;
-	contactCount: number;
+	contactCount: string;
 	selected: boolean;
 	onToggle: () => void;
 	colorVariant: ColorVariant;
@@ -64,7 +64,7 @@ export function GroupSelectCard(props: GroupSelectCardProps): JSX.Element {
 				<h4 class="font-semibold text-slate-900 text-lg">{title}</h4>
 				<p class="text-sm text-slate-600 mt-1">{subtitle}</p>
 				<p class="text-sm font-medium text-slate-700 mt-2">
-					{t("action.contacts_count", lang, { count: contactCount.toString() })}
+					{t("action.contacts_count", lang, { count: contactCount })}
 				</p>
 			</div>
 		</button>

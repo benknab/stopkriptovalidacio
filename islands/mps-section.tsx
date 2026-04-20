@@ -25,8 +25,8 @@ import { buildMailtoUrl } from "../utils/mailto.ts";
 
 const votePriority: Record<VoteType, number> = {
 	yes: 0,
-	abstain: 1,
-	"not_voted": 2,
+	"not_voted": 1,
+	abstain: 2,
 	"not_in_parliament": 3,
 	absent: 4,
 	no: 5,

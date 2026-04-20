@@ -21,12 +21,7 @@ import { ExternalLink } from "./external-link.tsx";
 const DEFAULT_INCLUDE = false;
 const HAS_CURRENT_NATIONAL_LIST = currentNationalListMps.length > 0;
 const HAS_CURRENT_MINORITY_LIST = currentMinorityListMps.length > 0;
-
-const SELECTED_CARDS_GRID_CLASS = HAS_CURRENT_NATIONAL_LIST && HAS_CURRENT_MINORITY_LIST
-	? "grid grid-cols-1 md:grid-cols-3 gap-4"
-	: HAS_CURRENT_NATIONAL_LIST || HAS_CURRENT_MINORITY_LIST
-	? "grid grid-cols-1 md:grid-cols-2 gap-4"
-	: "grid grid-cols-1 gap-4";
+const SELECTED_CARDS_GRID_CLASS = "grid grid-cols-1 md:grid-cols-3 gap-4";
 
 function CheckIcon(): JSX.Element {
 	return (
@@ -144,22 +139,27 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		});
 	});
 
-	function resetSelection(): void {
+	function clearSelectedRep(): void {
 		selectedRep.value = null;
 		includeNationalList.value = DEFAULT_INCLUDE;
 		includeMinorityList.value = DEFAULT_INCLUDE;
 	}
 
+	function deselectMp(): void {
+		clearSelectedRep();
+		selectedDistrict.value = "";
+	}
+
 	function handleCountyChange(e: Event): void {
 		selectedCounty.value = (e.target as HTMLSelectElement).value;
 		selectedDistrict.value = "";
-		resetSelection();
+		clearSelectedRep();
 	}
 
 	function handleDistrictChange(e: Event): void {
 		const district = (e.target as HTMLSelectElement).value;
 		selectedDistrict.value = district;
-		resetSelection();
+		clearSelectedRep();
 
 		// Auto-select the MP for this district
 		if (district && selectedCounty.value) {
@@ -185,7 +185,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 	function selectMp(mpId: MpId): void {
 		// If already selected, deselect
 		if (selectedRep.value === mpId) {
-			resetSelection();
+			deselectMp();
 			return;
 		}
 
@@ -215,10 +215,13 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 	}
 
 	const districtDisabled = !selectedCounty.value || isNationalListSelected.value || isAllSelected.value;
-	const selectedMp = selectedRep.value ? mps[selectedRep.value] : null;
+	const selectedRepId = selectedRep.value;
+	const selectedMp = selectedRepId ? mps[selectedRepId] : null;
 	const listSelectionHint = HAS_CURRENT_MINORITY_LIST
 		? t("action.list_selection_hint", lang)
 		: t("action.list_selection_hint_national_only", lang);
+	const nationalListAdditionalCount = currentNationalListMps.filter(({ mpId }) => mpId !== selectedRepId).length;
+	const minorityListAdditionalCount = currentMinorityListMps.filter(({ mpId }) => mpId !== selectedRepId).length;
 
 	return (
 		<div>
@@ -306,20 +309,20 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			</p>
 
 			{/* Selected MP + Group cards (when MP is selected) */}
-			{selectedRep.value && selectedMp && (
+			{selectedRepId && selectedMp && (
 				<div class={SELECTED_CARDS_GRID_CLASS}>
 					<SelectedMpCard
-						mpId={selectedRep.value}
+						mpId={selectedRepId}
 						mp={selectedMp}
 						lang={lang}
-						onDeselect={() => resetSelection()}
+						onDeselect={() => deselectMp()}
 					/>
 
 					{HAS_CURRENT_NATIONAL_LIST && (
 						<GroupSelectCard
 							title={t("action.national_list_title", lang)}
 							subtitle={t("action.national_list_subtitle", lang)}
-							contactCount={currentNationalListMps.length}
+							contactCount={`+${nationalListAdditionalCount}`}
 							selected={includeNationalList.value}
 							onToggle={handleToggleNational}
 							colorVariant="gold"
@@ -331,7 +334,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 						<GroupSelectCard
 							title={t("action.minority_list_title", lang)}
 							subtitle={t("action.minority_list_subtitle", lang)}
-							contactCount={currentMinorityListMps.length}
+							contactCount={`+${minorityListAdditionalCount}`}
 							selected={includeMinorityList.value}
 							onToggle={handleToggleMinority}
 							colorVariant="silver"
@@ -342,7 +345,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			)}
 
 			{/* Warning when email list is too long */}
-			{selectedRep.value && (() => {
+			{selectedRepId && (() => {
 				const emails = new Set([
 					...(selectedMp?.emails ?? []),
 					...(includeNationalList.value
@@ -362,14 +365,14 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			})()}
 
 			{/* No filter selected message (only when no rep selected) */}
-			{!selectedRep.value && !selectedCounty.value && !searchQuery.value && (
+			{!selectedRepId && !selectedCounty.value && !searchQuery.value && (
 				<p class="text-slate-400 text-center py-8">
 					{t("action.select_prompt", lang)}
 				</p>
 			)}
 
 			{/* MP grid (only when no rep selected and filters active) */}
-			{!selectedRep.value &&
+			{!selectedRepId &&
 				(selectedCounty.value || searchQuery.value) &&
 				filteredMps.value.length > 0 && (
 				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -378,7 +381,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 							key={mpId}
 							slug={mp.slug}
 							mp={mp}
-							selected={selectedRep.value === mpId}
+							selected={selectedRepId === mpId}
 							onToggle={() => selectMp(mpId)}
 							lang={lang}
 						/>
@@ -387,7 +390,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			)}
 
 			{/* No results message (only when no rep selected) */}
-			{!selectedRep.value &&
+			{!selectedRepId &&
 				(selectedCounty.value || searchQuery.value) &&
 				filteredMps.value.length === 0 && (
 				<p class="text-slate-400 text-center py-8">
