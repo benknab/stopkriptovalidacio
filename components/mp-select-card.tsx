@@ -33,7 +33,7 @@ export function MpSelectCard({ slug, mp, selected, onToggle, lang }: MpSelectCar
 		<button
 			type="button"
 			onClick={onToggle}
-			class={`relative bg-slate-50 rounded-xl p-4 transition-all duration-200 text-left w-full ${
+			class={`relative bg-slate-50 rounded-xl p-4 transition-all duration-200 text-left w-full cursor-pointer ${
 				selected
 					? "border-2 border-brand ring-2 ring-brand/20"
 					: "border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-100"

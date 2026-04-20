@@ -47,7 +47,7 @@ export function GroupSelectCard(props: GroupSelectCardProps): JSX.Element {
 		<button
 			type="button"
 			onClick={onToggle}
-			class={`relative rounded-xl p-4 transition-all duration-200 text-left w-full border-2 ${styles.card} ${
+			class={`relative rounded-xl p-4 transition-all duration-200 text-left w-full border-2 cursor-pointer ${styles.card} ${
 				selected ? `${styles.border} ring-2 ring-current/20` : "border-transparent hover:border-slate-300"
 			}`}
 		>

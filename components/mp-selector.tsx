@@ -1,8 +1,9 @@
 import type { JSX } from "preact";
 import { type Signal, useComputed } from "@preact/signals";
-import { getLatestDistrictOrList, getLatestParty, type Mp, type MpId, mps } from "../data/mps.ts";
+import { getLatestDistrictOrList, getLatestParty, type Mp, type MpId, mps, NATIONAL_LIST } from "../data/mps.ts";
 import {
-	currentDistrictCountyData,
+	ALL_OPTION,
+	currentCountyData as currentCountyOptions,
 	currentMinorityListMps,
 	currentMps,
 	currentNationalListMps,
@@ -18,6 +19,14 @@ import { ExternalLink } from "./external-link.tsx";
 
 // Default value for including lists (user must opt-in)
 const DEFAULT_INCLUDE = false;
+const HAS_CURRENT_NATIONAL_LIST = currentNationalListMps.length > 0;
+const HAS_CURRENT_MINORITY_LIST = currentMinorityListMps.length > 0;
+
+const SELECTED_CARDS_GRID_CLASS = HAS_CURRENT_NATIONAL_LIST && HAS_CURRENT_MINORITY_LIST
+	? "grid grid-cols-1 md:grid-cols-3 gap-4"
+	: HAS_CURRENT_NATIONAL_LIST || HAS_CURRENT_MINORITY_LIST
+	? "grid grid-cols-1 md:grid-cols-2 gap-4"
+	: "grid grid-cols-1 gap-4";
 
 function CheckIcon(): JSX.Element {
 	return (
@@ -94,18 +103,17 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		lang,
 	} = props;
 
-	const currentCountyData = useComputed(() =>
-		currentDistrictCountyData.find((c: { name: string }) => c.name === selectedCounty.value)
+	const selectedCountyData = useComputed(() =>
+		currentCountyOptions.find((county: { name: string }) => county.name === selectedCounty.value)
 	);
+	const isAllSelected = useComputed(() => selectedCounty.value === ALL_OPTION);
+	const isNationalListSelected = useComputed(() => selectedCountyData.value?.isNationalList ?? false);
 
-	// Filter MPs based on county, district, and search query (AND logic)
+	// Filter MPs based on county/list, district, and search query (AND logic).
 	const filteredMps = useComputed(() => {
 		return currentMps.filter(({ mp }: { mp: Mp }) => {
 			const parsed = parseDistrict(getLatestDistrictOrList(mp) ?? undefined);
 			if (!parsed) return false;
-
-			// Exclude national list MPs from the selection grid
-			if (parsed.isNationalList) return false;
 
 			// Name search filter (always AND with county if both are set)
 			if (searchQuery.value) {
@@ -115,20 +123,22 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 				}
 			}
 
-			// County filter
-			if (selectedCounty.value) {
-				if (parsed.county !== selectedCounty.value) return false;
+			if (!selectedCounty.value && searchQuery.value) return true;
+			if (isAllSelected.value) return true;
+			if (!selectedCounty.value) return false;
 
-				// District filter (only if county is selected)
-				if (selectedDistrict.value && parsed.districtNum !== selectedDistrict.value) {
-					return false;
-				}
+			if (isNationalListSelected.value) {
+				return parsed.county === selectedCounty.value;
+			}
+
+			if (parsed.county !== selectedCounty.value) return false;
+
+			if (selectedDistrict.value && parsed.districtNum !== selectedDistrict.value) {
+				return false;
 			}
 
 			// If no filters are set, show nothing (require at least a search or county)
-			if (!selectedCounty.value && !searchQuery.value) {
-				return false;
-			}
+			if (!selectedCounty.value && !searchQuery.value) return false;
 
 			return true;
 		});
@@ -189,7 +199,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		const currentDistrictOrList = mp ? getLatestDistrictOrList(mp) : null;
 		if (currentDistrictOrList) {
 			const parsed = parseDistrict(currentDistrictOrList);
-			if (parsed && !parsed.isNationalList) {
+			if (parsed) {
 				selectedCounty.value = parsed.county;
 				selectedDistrict.value = parsed.districtNum ?? "";
 			}
@@ -204,8 +214,11 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		includeMinorityList.value = !includeMinorityList.value;
 	}
 
-	const districtDisabled = !selectedCounty.value;
+	const districtDisabled = !selectedCounty.value || isNationalListSelected.value || isAllSelected.value;
 	const selectedMp = selectedRep.value ? mps[selectedRep.value] : null;
+	const listSelectionHint = HAS_CURRENT_MINORITY_LIST
+		? t("action.list_selection_hint", lang)
+		: t("action.list_selection_hint_national_only", lang);
 
 	return (
 		<div>
@@ -223,9 +236,17 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 							onChange={handleCountyChange}
 						>
 							<option value="">{t("mps.filter.select_county", lang)}</option>
-							{currentDistrictCountyData.map((county: { name: string }) => (
+							<option value={ALL_OPTION}>{t("mps.filter.all", lang)}</option>
+							{currentCountyOptions.map((county) => (
 								<option key={county.name} value={county.name}>
-									{county.name}
+									{county.isNationalList
+										? t(
+											`mps.filter.${
+												county.name === NATIONAL_LIST ? "national_list" : "minority_list"
+											}`,
+											lang,
+										)
+										: county.name}
 								</option>
 							))}
 						</Select>
@@ -245,7 +266,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 							onChange={handleDistrictChange}
 						>
 							<option value="">{t("mps.filter.select_district", lang)}</option>
-							{currentCountyData.value?.districts.map((district) => (
+							{selectedCountyData.value?.districts.map((district) => (
 								<option key={district} value={district}>
 									{district}
 								</option>
@@ -281,12 +302,12 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 
 			{/* List selection hint - always visible */}
 			<p class="text-sm text-slate-500 mb-6">
-				{t("action.list_selection_hint", lang)}
+				{listSelectionHint}
 			</p>
 
 			{/* Selected MP + Group cards (when MP is selected) */}
 			{selectedRep.value && selectedMp && (
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+				<div class={SELECTED_CARDS_GRID_CLASS}>
 					<SelectedMpCard
 						mpId={selectedRep.value}
 						mp={selectedMp}
@@ -294,25 +315,29 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 						onDeselect={() => resetSelection()}
 					/>
 
-					<GroupSelectCard
-						title={t("action.national_list_title", lang)}
-						subtitle={t("action.national_list_subtitle", lang)}
-						contactCount={currentNationalListMps.length}
-						selected={includeNationalList.value}
-						onToggle={handleToggleNational}
-						colorVariant="gold"
-						lang={lang}
-					/>
+					{HAS_CURRENT_NATIONAL_LIST && (
+						<GroupSelectCard
+							title={t("action.national_list_title", lang)}
+							subtitle={t("action.national_list_subtitle", lang)}
+							contactCount={currentNationalListMps.length}
+							selected={includeNationalList.value}
+							onToggle={handleToggleNational}
+							colorVariant="gold"
+							lang={lang}
+						/>
+					)}
 
-					<GroupSelectCard
-						title={t("action.minority_list_title", lang)}
-						subtitle={t("action.minority_list_subtitle", lang)}
-						contactCount={currentMinorityListMps.length}
-						selected={includeMinorityList.value}
-						onToggle={handleToggleMinority}
-						colorVariant="silver"
-						lang={lang}
-					/>
+					{HAS_CURRENT_MINORITY_LIST && (
+						<GroupSelectCard
+							title={t("action.minority_list_title", lang)}
+							subtitle={t("action.minority_list_subtitle", lang)}
+							contactCount={currentMinorityListMps.length}
+							selected={includeMinorityList.value}
+							onToggle={handleToggleMinority}
+							colorVariant="silver"
+							lang={lang}
+						/>
+					)}
 				</div>
 			)}
 
