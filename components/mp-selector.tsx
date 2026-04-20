@@ -296,7 +296,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			<p class="text-sm text-slate-500 mb-4">
 				{t("mps.district_lookup_hint", lang)}{" "}
 				<ExternalLink
-					href="https://vtr.valasztas.hu/ogy2022/egyeni-valasztokeruletek"
+					href="https://vtr.valasztas.hu/ogy2026/egyeni-valasztokeruletek"
 					class="underline"
 				>
 					valasztas.hu
