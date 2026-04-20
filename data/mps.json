@@ -352,7 +352,8 @@
 			}
 		},
 		"emails": [],
-		"phones": []
+		"phones": [],
+		"imageUrl": "/kepek/havasi-balazs-mark.jpg"
 	},
 	"609437": {
 		"slug": "ovadi-peter",
@@ -2550,7 +2551,8 @@
 			}
 		},
 		"emails": [],
-		"phones": []
+		"phones": [],
+		"imageUrl": "/kepek/szijjarto-gabor.jpg"
 	},
 	"3602558": {
 		"slug": "vejkey-imre",
@@ -3130,7 +3132,8 @@
 			}
 		},
 		"emails": [],
-		"phones": []
+		"phones": [],
+		"imageUrl": "/kepek/gyomber-david.jpg"
 	},
 	"4125776": {
 		"slug": "bodis-kriszta",
@@ -3569,7 +3572,8 @@
 			}
 		},
 		"emails": [],
-		"phones": []
+		"phones": [],
+		"imageUrl": "/kepek/cseh-tamas.jpg"
 	},
 	"4639155": {
 		"slug": "benke-jozsef",
