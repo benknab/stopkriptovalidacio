@@ -6,17 +6,17 @@
 - [x] Make `/szavazas` reference-only: reuse the old T/11922 vote explorer/search UI there, without the contact form.
 - [x] Link to `/szavazas` contextually from the current representatives intro on the home page and from
       `/kriptovalidalas`, but do not add a top-level nav item.
-- [ ] Replace the old home-page historical MPs section with a current representatives section that reuses the existing
+- [x] Replace the old home-page historical MPs section with a current representatives section that reuses the existing
       browse/filter/card pattern.
 - [x] Use a unified people model with curated canonical person IDs.
 - [x] Store winners only in the new current dataset.
 - Show each current representative's `stance` on the law as a per-person field; start with `unknown` unless we have
   direct individual evidence.
-- [ ] Show each current representative's historical T/11922 vote status on the card at all times; add a new
+- [x] Show each current representative's historical T/11922 vote status on the card at all times; add a new
       `not_in_parliament` enum value for people who were not MPs at the time.
-- [ ] Add a `wonElectionYears` set to current person records, e.g. `[2022, 2026]`, `[2022]`, or `[2026]`. -- handled
+- [x] Add a `wonElectionYears` set to current person records, e.g. `[2022, 2026]`, `[2022]`, or `[2026]`. -- handled
       with elections object now
-- [ ] Repurpose the existing `Cselekedjen` flow to the current data while keeping the behavior the same as now,
+- [x] Repurpose the existing `Cselekedjen` flow to the current data while keeping the behavior the same as now,
       including optional list add-ons.
 - [x] Use official NVI data as the primary source (`EgyeniJeloltek.json`, `ListakEsJeloltek.json`, `OevkAdatok.json`).
 - [x] Finalize winner extraction separately: prefer an official machine-readable winner source if we can identify one,
