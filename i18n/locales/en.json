@@ -227,14 +227,14 @@
 		"district_lookup_hint": "Don't know your voting district? Look it up here:"
 	},
 	"vote_history": {
-		"title": "T/11922 vote",
-		"description": "Browse the recorded votes on the T/11922 bill by MP.",
-		"current_reps_intro": "Looking for your current representative to contact?",
-		"current_reps_link": "Go to take action",
-		"home_title": "Earlier parliamentary vote",
-		"home_description": "The historical T/11922 vote explorer is now available on a separate page.",
-		"home_link": "View the T/11922 vote",
-		"law_link": "Browse the T/11922 vote"
+		"title": "Voting data",
+		"description": "See how MPs voted on bill T/11922.",
+		"current_reps_intro": "Looking for your current representative instead?",
+		"current_reps_link": "Go to contact section",
+		"home_title": "Voting data",
+		"home_description": "If you are interested in the 2022 parliamentary vote data, you can find it here.",
+		"home_link": "Go to voting data",
+		"law_link": "Voting data"
 	},
 	"action": {
 		"title": "Take Action!",

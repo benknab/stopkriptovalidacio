@@ -227,14 +227,14 @@
 		"district_lookup_hint": "Nem tudja melyik választókerületben lakik? Keresse ki itt:"
 	},
 	"vote_history": {
-		"title": "T/11922 szavazás",
-		"description": "Böngéssze a T/11922 törvényjavaslat képviselőnkénti szavazatait.",
-		"current_reps_intro": "Jelenlegi képviselőjét keresi a kapcsolatfelvételhez?",
-		"current_reps_link": "Ugrás a cselekvés részhez",
-		"home_title": "Korábbi parlamenti szavazás",
-		"home_description": "A T/11922 törvényjavaslat történeti szavazási listája külön oldalon érhető el.",
-		"home_link": "T/11922 szavazás megtekintése",
-		"law_link": "A T/11922 szavazás böngészése"
+		"title": "Szavazási adatok",
+		"description": "Itt nézheti meg, hogyan szavaztak a képviselők a T/11922 törvényjavaslatról.",
+		"current_reps_intro": "Ha inkább a jelenlegi képviselőjét keresné:",
+		"current_reps_link": "Ugrás a kapcsolatfelvételhez",
+		"home_title": "Szavazási adatok",
+		"home_description": "Ha a 2022-es országgyűlési szavazás adatai érdeklik, itt találja őket.",
+		"home_link": "Tovább a szavazási adatokhoz",
+		"law_link": "Szavazási adatok"
 	},
 	"action": {
 		"title": "Cselekedjen!",

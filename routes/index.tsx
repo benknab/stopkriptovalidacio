@@ -32,6 +32,21 @@ export default define.page(function Home(ctx): JSX.Element {
 			}
 			afterContent={
 				<>
+					<section class="bg-slate-100 py-12 sm:py-16">
+						<div class="mx-auto max-w-6xl px-4 sm:px-6">
+							<h2 class="text-2xl font-bold text-slate-900 sm:text-3xl">
+								{t("vote_history.home_title", lang)}
+							</h2>
+							<p class="mt-3 max-w-3xl text-base leading-relaxed text-slate-700">
+								{t("vote_history.home_description", lang)}
+							</p>
+							<p class="mt-4">
+								<Link href="/szavazas" class="font-medium text-slate-900 hover:text-slate-700">
+									{t("vote_history.home_link", lang)} →
+								</Link>
+							</p>
+						</div>
+					</section>
 					<TakeActionSection lang={lang} />
 				</>
 			}
@@ -46,19 +61,6 @@ export default define.page(function Home(ctx): JSX.Element {
 					showSecondary={showSecondary}
 					showTertiary={showTertiary}
 				/>
-			</section>
-			<section class="mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
-				<h3 class="text-xl font-bold text-slate-900 text-balance">
-					{t("vote_history.home_title", lang)}
-				</h3>
-				<p class="mt-3 text-slate-600 max-w-3xl text-balance">
-					{t("vote_history.home_description", lang)}
-				</p>
-				<div class="mt-4">
-					<Link href="/szavazas" class="font-medium">
-						{t("vote_history.home_link", lang)} →
-					</Link>
-				</div>
 			</section>
 		</Layout>
 	);
