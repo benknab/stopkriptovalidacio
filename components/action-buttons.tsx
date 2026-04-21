@@ -1,6 +1,6 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
-import { type MpId, mps } from "../data/mps.ts";
+import { getLatestParty, type MpId, mps } from "../data/mps.ts";
 import { currentMinorityListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { buildMailtoUrl } from "../utils/mailto.ts";
@@ -91,9 +91,9 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 
 	const emailLists = getEmailLists(selectedRep, includeMinorityList);
 	const selectedMp = selectedRep ? mps[selectedRep] : null;
-	const selectedRepHasDirectEmail = (selectedMp?.emails.size ?? 0) > 0;
+	const isSelectedRepTisza = selectedMp ? getLatestParty(selectedMp) === "TISZA" : false;
 	const selectedRepFacebookUrl = selectedMp?.facebookUrl ?? null;
-	const shouldShowFacebookAction = !selectedRepHasDirectEmail && !!selectedRepFacebookUrl;
+	const shouldShowFacebookAction = !!selectedRepFacebookUrl;
 	const hasEmails = emailLists.all.length > 0;
 
 	const mailtoUrl = hasEmails ? buildMailtoUrl({ to: emailLists.all, subject, body: message }) : undefined;
@@ -124,6 +124,11 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 
 	return (
 		<div class="mt-8 space-y-4">
+			{isSelectedRepTisza && shouldShowFacebookAction && (
+				<p class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+					{t("action.tisza_contact_note", lang)}
+				</p>
+			)}
 			{/* Main button */}
 			<div class="flex flex-wrap justify-center gap-3">
 				{hasEmails
@@ -155,7 +160,7 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 
 			{/* Copy section */}
 			<p class="text-slate-500 text-sm text-center mt-6">
-				{shouldShowFacebookAction ? t("action.facebook_manual_hint", lang) : t("action.copy_manual_hint", lang)}
+				{hasEmails ? t("action.copy_manual_hint", lang) : t("action.facebook_manual_hint", lang)}
 			</p>
 			<div class="flex flex-wrap justify-center gap-3 mt-3">
 				<CopyButton onClick={copyEmails} disabled={!hasEmails}>

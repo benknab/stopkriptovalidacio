@@ -251,6 +251,7 @@
 		"open_facebook": "Open Facebook",
 		"copied": "Copied!",
 		"email_warning": "You selected many recipients ({{count}} emails). Some email clients may not handle this many recipients. Use the copy buttons as a workaround if needed.",
+		"tisza_contact_note": "Most TISZA candidates do not have verifiable public email access. We recommend trying Facebook outreach as well.",
 		"no_selection": "Select your district representative",
 		"copy_manual_hint": "You can also copy the message and email addresses to send manually.",
 		"facebook_manual_hint": "This representative has no public email. Open Facebook and send the copied message there.",
