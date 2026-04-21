@@ -17,7 +17,7 @@ function CopyButton({ onClick, disabled, children }: CopyButtonProps): JSX.Eleme
 			type="button"
 			onClick={onClick}
 			disabled={disabled}
-			class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg hover:bg-brand/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400"
+			class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg cursor-pointer hover:bg-brand/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400"
 		>
 			{children}
 		</button>
@@ -175,7 +175,7 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 				<CopyButton onClick={copyEmails} disabled={!hasEmails}>
 					{copyFeedback.value === "emails" ? t("action.copied", lang) : t("action.copy_emails", lang)}
 				</CopyButton>
-				<CopyButton onClick={copySubject} disabled={!hasEmails}>
+				<CopyButton onClick={copySubject}>
 					{copyFeedback.value === "subject" ? t("action.copied", lang) : t("action.copy_subject", lang)}
 				</CopyButton>
 				<CopyButton onClick={copyMessage}>
