@@ -17,7 +17,7 @@ A hatályba lépés óta 11 uniós engedéllyel rendelkező szolgáltató távoz
 
 Két kérdésre kérem válaszát:
 
-1. Támogatja-e a törvény kriptoeszközökre vonatkozó rendelkezéseinek hatályon kívül helyezését, és ha igen, milyen időkeretben?
+1. Támogatja-e a törvény kriptoeszközökre vonatkozó rendelkezéseinek hatályon kívül helyezését? Ha igen, ezt milyen időkeretben tartja megvalósíthatónak?
 
 2. Támogatja-e a magánszemélyeket fenyegető büntetőjogi szankciók azonnali visszavonását a szabályozás rendezéséig?
 
