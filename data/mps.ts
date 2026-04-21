@@ -84,6 +84,7 @@ export const mpSchema = z.object({
 	phones: stringSetSchema,
 	imageUrl: z.string().optional(),
 	website: z.string().optional(),
+	facebookUrl: z.string().optional(),
 	address: z.string().optional(),
 });
 

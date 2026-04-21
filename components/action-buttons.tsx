@@ -24,6 +24,14 @@ function CopyButton({ onClick, disabled, children }: CopyButtonProps): JSX.Eleme
 	);
 }
 
+function FacebookIcon(): JSX.Element {
+	return (
+		<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+			<path d="M13.5 21v-7h2.3l.4-3h-2.7V9.1c0-.9.3-1.6 1.7-1.6H16V4.8c-.3 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V11H9v3h2.3v7h2.2Z" />
+		</svg>
+	);
+}
+
 interface EmailLists {
 	to: string[];
 	cc: string[];
@@ -96,9 +104,13 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 	const copyFeedback = useSignal<"emails" | "message" | "subject" | null>(null);
 
 	const emailLists = getEmailLists(selectedRep, includeNationalList, includeMinorityList);
-	const hasSelection = selectedRep !== null;
+	const selectedMp = selectedRep ? mps[selectedRep] : null;
+	const selectedRepHasDirectEmail = (selectedMp?.emails.size ?? 0) > 0;
+	const selectedRepFacebookUrl = selectedMp?.facebookUrl ?? null;
+	const shouldShowFacebookAction = !selectedRepHasDirectEmail && !!selectedRepFacebookUrl;
+	const hasEmails = emailLists.all.length > 0;
 
-	const mailtoUrl = hasSelection ? buildMailtoUrl({ to: emailLists.all, subject, body: message }) : undefined;
+	const mailtoUrl = hasEmails ? buildMailtoUrl({ to: emailLists.all, subject, body: message }) : undefined;
 
 	async function copyEmails(): Promise<void> {
 		await navigator.clipboard.writeText(emailLists.all.join(","));
@@ -127,8 +139,8 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 	return (
 		<div class="mt-8 space-y-4">
 			{/* Main button */}
-			<div class="flex justify-center">
-				{hasSelection
+			<div class="flex flex-wrap justify-center gap-3">
+				{hasEmails
 					? (
 						<a
 							href={mailtoUrl ?? ""}
@@ -137,22 +149,33 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 							{t("action.send", lang)}
 						</a>
 					)
-					: (
+					: !shouldShowFacebookAction && (
 						<span class="px-6 py-3 bg-slate-200 text-slate-400 font-semibold rounded-lg cursor-not-allowed">
 							{t("action.send", lang)}
 						</span>
 					)}
+				{shouldShowFacebookAction && selectedRepFacebookUrl && (
+					<a
+						href={selectedRepFacebookUrl}
+						target="_blank"
+						rel="noopener"
+						class="inline-flex items-center gap-2 px-6 py-3 bg-[#1877F2] text-white font-semibold rounded-lg hover:bg-[#1669d5] transition-colors"
+					>
+						<FacebookIcon />
+						{t("action.open_facebook", lang)}
+					</a>
+				)}
 			</div>
 
 			{/* Copy section */}
 			<p class="text-slate-500 text-sm text-center mt-6">
-				{t("action.copy_manual_hint", lang)}
+				{shouldShowFacebookAction ? t("action.facebook_manual_hint", lang) : t("action.copy_manual_hint", lang)}
 			</p>
 			<div class="flex flex-wrap justify-center gap-3 mt-3">
-				<CopyButton onClick={copyEmails} disabled={!hasSelection}>
+				<CopyButton onClick={copyEmails} disabled={!hasEmails}>
 					{copyFeedback.value === "emails" ? t("action.copied", lang) : t("action.copy_emails", lang)}
 				</CopyButton>
-				<CopyButton onClick={copySubject}>
+				<CopyButton onClick={copySubject} disabled={!hasEmails}>
 					{copyFeedback.value === "subject" ? t("action.copied", lang) : t("action.copy_subject", lang)}
 				</CopyButton>
 				<CopyButton onClick={copyMessage}>
