@@ -51,8 +51,7 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 	// Selection state - single representative
 	const selectedRep = useSignal<MpId | null>(null);
 
-	// Group selection state (default: include both lists)
-	const includeNationalList = useSignal(DEFAULT_INCLUDE_LISTS);
+	// Group selection state (default: include minority list)
 	const includeMinorityList = useSignal(DEFAULT_INCLUDE_LISTS);
 
 	// Filter state
@@ -84,7 +83,6 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 						selectedCounty={selectedCounty}
 						selectedDistrict={selectedDistrict}
 						searchQuery={searchQuery}
-						includeNationalList={includeNationalList}
 						includeMinorityList={includeMinorityList}
 						lang={lang}
 					/>
@@ -114,7 +112,6 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 					{/* Action Buttons */}
 					<ActionButtons
 						selectedRep={selectedRep.value}
-						includeNationalList={includeNationalList.value}
 						includeMinorityList={includeMinorityList.value}
 						subject={subject.value}
 						message={message.value}

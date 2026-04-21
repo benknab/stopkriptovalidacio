@@ -6,7 +6,6 @@ import {
 	currentCountyData as currentCountyOptions,
 	currentMinorityListMps,
 	currentMps,
-	currentNationalListMps,
 	parseDistrict,
 } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
@@ -19,7 +18,6 @@ import { ExternalLink } from "./external-link.tsx";
 
 // Default value for including lists (user must opt-in)
 const DEFAULT_INCLUDE = false;
-const HAS_CURRENT_NATIONAL_LIST = currentNationalListMps.length > 0;
 const HAS_CURRENT_MINORITY_LIST = currentMinorityListMps.length > 0;
 const SELECTED_CARDS_GRID_CLASS = "grid grid-cols-1 md:grid-cols-3 gap-4";
 
@@ -82,7 +80,6 @@ interface MpSelectorProps {
 	selectedCounty: Signal<string>;
 	selectedDistrict: Signal<string>;
 	searchQuery: Signal<string>;
-	includeNationalList: Signal<boolean>;
 	includeMinorityList: Signal<boolean>;
 	lang: SupportedLanguage;
 }
@@ -93,7 +90,6 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		selectedCounty,
 		selectedDistrict,
 		searchQuery,
-		includeNationalList,
 		includeMinorityList,
 		lang,
 	} = props;
@@ -141,7 +137,6 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 
 	function clearSelectedRep(): void {
 		selectedRep.value = null;
-		includeNationalList.value = DEFAULT_INCLUDE;
 		includeMinorityList.value = DEFAULT_INCLUDE;
 	}
 
@@ -191,7 +186,6 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 
 		// Select the new representative
 		selectedRep.value = mpId;
-		includeNationalList.value = DEFAULT_INCLUDE;
 		includeMinorityList.value = DEFAULT_INCLUDE;
 
 		// Auto-fill county and district from the selected MP
@@ -206,10 +200,6 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 		}
 	}
 
-	function handleToggleNational(): void {
-		includeNationalList.value = !includeNationalList.value;
-	}
-
 	function handleToggleMinority(): void {
 		includeMinorityList.value = !includeMinorityList.value;
 	}
@@ -217,10 +207,6 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 	const districtDisabled = !selectedCounty.value || isNationalListSelected.value || isAllSelected.value;
 	const selectedRepId = selectedRep.value;
 	const selectedMp = selectedRepId ? mps[selectedRepId] : null;
-	const listSelectionHint = HAS_CURRENT_MINORITY_LIST
-		? t("action.list_selection_hint", lang)
-		: t("action.list_selection_hint_national_only", lang);
-	const nationalListAdditionalCount = currentNationalListMps.filter(({ mpId }) => mpId !== selectedRepId).length;
 	const minorityListAdditionalCount = currentMinorityListMps.filter(({ mpId }) => mpId !== selectedRepId).length;
 
 	return (
@@ -303,11 +289,6 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 				</ExternalLink>
 			</p>
 
-			{/* List selection hint - always visible */}
-			<p class="text-sm text-slate-500 mb-6">
-				{listSelectionHint}
-			</p>
-
 			{/* Selected MP + Group cards (when MP is selected) */}
 			{selectedRepId && selectedMp && (
 				<div class={SELECTED_CARDS_GRID_CLASS}>
@@ -317,18 +298,6 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 						lang={lang}
 						onDeselect={() => deselectMp()}
 					/>
-
-					{HAS_CURRENT_NATIONAL_LIST && (
-						<GroupSelectCard
-							title={t("action.national_list_title", lang)}
-							subtitle={t("action.national_list_subtitle", lang)}
-							contactCount={`+${nationalListAdditionalCount}`}
-							selected={includeNationalList.value}
-							onToggle={handleToggleNational}
-							colorVariant="gold"
-							lang={lang}
-						/>
-					)}
 
 					{HAS_CURRENT_MINORITY_LIST && (
 						<GroupSelectCard
@@ -348,9 +317,6 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 			{selectedRepId && (() => {
 				const emails = new Set([
 					...(selectedMp?.emails ?? []),
-					...(includeNationalList.value
-						? currentNationalListMps.flatMap(({ mp }: { mp: Mp }) => Array.from(mp.emails))
-						: []),
 					...(includeMinorityList.value
 						? currentMinorityListMps.flatMap(({ mp }: { mp: Mp }) => Array.from(mp.emails))
 						: []),

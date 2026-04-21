@@ -1,7 +1,7 @@
 import type { JSX } from "preact";
 import { useSignal } from "@preact/signals";
 import { type MpId, mps } from "../data/mps.ts";
-import { currentMinorityListMps, currentNationalListMps } from "../islands/mps-section.tsx";
+import { currentMinorityListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { buildMailtoUrl } from "../utils/mailto.ts";
 
@@ -40,7 +40,6 @@ interface EmailLists {
 
 function getEmailLists(
 	selectedRep: MpId | null,
-	includeNationalList: boolean,
 	includeMinorityList: boolean,
 ): EmailLists {
 	const toEmails: Set<string> = new Set();
@@ -52,18 +51,6 @@ function getEmailLists(
 		if (mp) {
 			for (const email of mp.emails) {
 				toEmails.add(email);
-			}
-		}
-	}
-
-	// National list MPs' emails go to "CC:"
-	if (includeNationalList) {
-		for (const { mp } of currentNationalListMps) {
-			for (const email of mp.emails) {
-				// Don't add to CC if already in To
-				if (!toEmails.has(email)) {
-					ccEmails.add(email);
-				}
 			}
 		}
 	}
@@ -92,7 +79,6 @@ function getEmailLists(
 
 interface ActionButtonsProps {
 	selectedRep: MpId | null;
-	includeNationalList: boolean;
 	includeMinorityList: boolean;
 	subject: string;
 	message: string;
@@ -100,10 +86,10 @@ interface ActionButtonsProps {
 }
 
 export function ActionButtons(props: ActionButtonsProps): JSX.Element {
-	const { selectedRep, includeNationalList, includeMinorityList, subject, message, lang } = props;
+	const { selectedRep, includeMinorityList, subject, message, lang } = props;
 	const copyFeedback = useSignal<"emails" | "message" | "subject" | null>(null);
 
-	const emailLists = getEmailLists(selectedRep, includeNationalList, includeMinorityList);
+	const emailLists = getEmailLists(selectedRep, includeMinorityList);
 	const selectedMp = selectedRep ? mps[selectedRep] : null;
 	const selectedRepHasDirectEmail = (selectedMp?.emails.size ?? 0) > 0;
 	const selectedRepFacebookUrl = selectedMp?.facebookUrl ?? null;
