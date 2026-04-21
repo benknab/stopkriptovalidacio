@@ -907,5 +907,19 @@
 		},
 		"sourceSlugs": [],
 		"exchangeSlugs": []
+	},
+	"frissites-2026-04-21": {
+		"date": "2026-04-21",
+		"type": "telegram",
+		"title": {
+			"hu": "Frissítés: Elérhetők az új országgyűlési képviselői kontaktok",
+			"en": "Update: New MP contacts are live"
+		},
+		"summary": {
+			"hu": "A 2026-os képviselői adatokat frissítettük a hivatalos NVI-eredmények alapján. A Cselekedjen oldalon már az aktuális országgyűlési képviselők között lehet keresni és kapcsolatot felvenni.",
+			"en": "We updated the 2026 MP data based on the official NVI results. The Take Action page now lets users find and contact the current Members of Parliament."
+		},
+		"sourceSlugs": [],
+		"exchangeSlugs": []
 	}
 }
