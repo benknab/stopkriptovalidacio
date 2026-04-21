@@ -8,29 +8,22 @@ import { ActionButtons } from "../components/action-buttons.tsx";
 import { Input, Label, Textarea } from "../components/form.tsx";
 
 // Hungarian-only email content (recipients are Hungarian MPs)
-const DEFAULT_SUBJECT = "Sürgős: 2025. évi LXVII. törvény - kriptoeszköz-szabályozás";
-const DEFAULT_MESSAGE = `Tisztelt Képviselő Úr/Asszony!
+const DEFAULT_SUBJECT = "Állásfoglalás kérése - 2025. évi LXVII. törvény";
+const DEFAULT_MESSAGE = `Tisztelt Országgyűlési Képviselő!
 
-Az Ön választókerületének lakosaként fordulok Önhöz a kriptoeszközökre vonatkozó új szabályozás (2025. évi LXVII. törvény) sürgős rendezése érdekében. A szabályozás becslések szerint 500 000 magyar állampolgárt érint, és jelenleg az állampolgároknak nincs lehetőségük a törvénynek való megfelelésre.
+Az Ön választókerületének lakosaként fordulok Önhöz a 2025. évi LXVII. törvény ügyében, amely mintegy 500 000 magyar állampolgárt érint.
 
-A helyzet:
-- A törvény 2025 júliusában lépett hatályba, az SZTFH rendelet 2025. december 27-től alkalmazandó.
-- A "validáló szolgáltató" fogalma kizárólag magyar sajátosság - sem az uniós MiCA-rendelet, sem a nemzetközi kriptoszektor nem ismeri.
-- Jelenleg egyetlen validáló szolgáltató szerepel az SZTFH nyilvántartásában - egy újonnan alapított, a szakmában ismeretlen, minimális kapacitású cég.
-- A szabályozás hatálybalépése óta több jelentős, uniós engedéllyel rendelkező szolgáltató hagyta el a magyar piacot.
-- A törvény büntetőjogi következményeket fűz olyan tevékenységekhez, amelyek pontos tartalma nincs tisztázva.
+A hatályba lépés óta 11 uniós engedéllyel rendelkező szolgáltató távozott a magyar piacról, az Európai Bizottság kötelezettségszegési eljárást indított Magyarország ellen (INFR(2025)2174), a "validálás" fogalma pedig jogszabályi szinten továbbra sincs definiálva - így a magánszemélyek büntetőjogi felelősség terhe mellett sem tudnak megfelelni a törvénynek.
 
-Kérem, hogy mint országgyűlési képviselő, nyújtson be írásbeli kérdéseket az alábbiak szerint:
+Két kérdésre kérem válaszát:
 
-1. Írásbeli kérdés a Miniszterelnök felé:
-Tervezi-e a Kormány kormányrendelet kiadását a 2025. évi LXVII. törvény kriptoeszközökre vonatkozó rendelkezéseinek végrehajtási moratóriumáról, amíg legalább több validáló szolgáltató nem áll rendelkezésre a piacon, és amíg az SZTFH nyilvános, gyakorlati útmutatót nem tesz közzé a validálás pontos eljárásáról?
+1. Támogatja-e a törvény kriptoeszközökre vonatkozó rendelkezéseinek hatályon kívül helyezését vagy MiCA-konform átalakítását, és ha igen, milyen időkeretben?
 
-2. Írásbeli kérdés az SZTFH elnöke felé:
-Mikor tervezi az SZTFH közzétenni a részletes útmutatót a "validáló szolgáltató" tevékenységének pontos tartalmáról, valamint az időközi iránymutatást arról, hogy az állampolgárok hogyan kerülhetik el a Btk. szerinti felelősséget addig, amíg több szolgáltató nem áll rendelkezésre?
+2. Támogatja-e a magánszemélyeket fenyegető büntetőjogi szankciók azonnali visszavonását a szabályozás rendezéséig?
 
-Kérem, hogy 30 napon belül tájékoztasson arról, hogy a kérdések benyújtásra kerültek-e.
+Kérem, 30 napon belül tájékoztasson álláspontjáról.
 
-Köszönöm figyelmét és segítségét.
+Köszönöm figyelmét.
 
 Tisztelettel,
 [Név]
@@ -46,14 +39,12 @@ interface TakeActionSectionProps {
 	selectedRep: string;
 }
 
-export default function TakeActionSection(
-	{
-		lang,
-		selectedCounty: initialCounty,
-		selectedDistrict: initialDistrict,
-		selectedRep: initialRep,
-	}: TakeActionSectionProps,
-): JSX.Element {
+export default function TakeActionSection({
+	lang,
+	selectedCounty: initialCounty,
+	selectedDistrict: initialDistrict,
+	selectedRep: initialRep,
+}: TakeActionSectionProps): JSX.Element {
 	// Message state (Hungarian only)
 	const subject = useSignal(DEFAULT_SUBJECT);
 	const message = useSignal(DEFAULT_MESSAGE);
