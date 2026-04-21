@@ -1,6 +1,6 @@
 import type { JSX } from "preact";
-import { useSignal } from "@preact/signals";
-import type { MpId } from "../data/mps.ts";
+import { useSignal, useSignalEffect } from "@preact/signals";
+import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
 import { MpSelector } from "../components/mp-selector.tsx";
@@ -41,23 +41,57 @@ const DEFAULT_INCLUDE_LISTS = false;
 
 interface TakeActionSectionProps {
 	lang: SupportedLanguage;
+	selectedCounty: string;
+	selectedDistrict: string;
+	selectedRep: string;
 }
 
-export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX.Element {
+export default function TakeActionSection(
+	{
+		lang,
+		selectedCounty: initialCounty,
+		selectedDistrict: initialDistrict,
+		selectedRep: initialRep,
+	}: TakeActionSectionProps,
+): JSX.Element {
 	// Message state (Hungarian only)
 	const subject = useSignal(DEFAULT_SUBJECT);
 	const message = useSignal(DEFAULT_MESSAGE);
 
-	// Selection state - single representative
-	const selectedRep = useSignal<MpId | null>(null);
+	// Selection state - single representative synced to query params
+	const selectedRep = useStringQueryParam({
+		key: "kepviselo",
+		defaultValue: "",
+		initialValue: initialRep,
+	});
 
 	// Group selection state (default: include minority list)
 	const includeMinorityList = useSignal(DEFAULT_INCLUDE_LISTS);
 
-	// Filter state
-	const selectedCounty = useSignal("");
-	const selectedDistrict = useSignal("");
+	// Filter state synced to query params
+	const selectedCounty = useStringQueryParam({
+		key: "megye",
+		defaultValue: "",
+		initialValue: initialCounty,
+	});
+	const selectedDistrict = useStringQueryParam({
+		key: "kerulet",
+		defaultValue: "",
+		initialValue: initialDistrict,
+	});
+
+	// Search is local-only, not synced to URL
 	const searchQuery = useSignal("");
+
+	// Scroll to filters so the selected card is visible below them
+	useSignalEffect(() => {
+		if (selectedRep.value && typeof globalThis.document !== "undefined") {
+			const element = globalThis.document.getElementById("action-filters");
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth", block: "start" });
+			}
+		}
+	});
 
 	function handleSubjectInput(e: Event): void {
 		subject.value = (e.target as HTMLInputElement).value;
@@ -111,7 +145,7 @@ export default function TakeActionSection({ lang }: TakeActionSectionProps): JSX
 
 					{/* Action Buttons */}
 					<ActionButtons
-						selectedRep={selectedRep.value}
+						selectedRep={selectedRep.value || null}
 						includeMinorityList={includeMinorityList.value}
 						subject={subject.value}
 						message={message.value}

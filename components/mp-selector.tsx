@@ -76,7 +76,7 @@ function SelectedMpCard({ mpId: _, mp, lang, onDeselect }: SelectedMpCardProps):
 }
 
 interface MpSelectorProps {
-	selectedRep: Signal<MpId | null>;
+	selectedRep: Signal<string>;
 	selectedCounty: Signal<string>;
 	selectedDistrict: Signal<string>;
 	searchQuery: Signal<string>;
@@ -136,7 +136,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 	});
 
 	function clearSelectedRep(): void {
-		selectedRep.value = null;
+		selectedRep.value = "";
 		includeMinorityList.value = DEFAULT_INCLUDE;
 	}
 
@@ -212,7 +212,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 	return (
 		<div>
 			{/* Filters - Row 1: County + District */}
-			<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+			<div id="action-filters" class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 scroll-mt-24">
 				{/* County dropdown */}
 				<div>
 					<Label for="action-county-select" uppercase>
@@ -291,7 +291,7 @@ export function MpSelector(props: MpSelectorProps): JSX.Element {
 
 			{/* Selected MP + Group cards (when MP is selected) */}
 			{selectedRepId && selectedMp && (
-				<div class={SELECTED_CARDS_GRID_CLASS}>
+				<div id="action-selected-cards" class={SELECTED_CARDS_GRID_CLASS}>
 					<SelectedMpCard
 						mpId={selectedRepId}
 						mp={selectedMp}

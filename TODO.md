@@ -22,4 +22,7 @@
 - [x] Finalize winner extraction separately: prefer an official machine-readable winner source if we can identify one,
       otherwise fall back to scraping the official NVI site.
 - [x] Remove old scripts, no need to add helper/one time scripts to deno.json
-- [ ] Reevaluate /szavazas URL
+- [x] Reevaluate /szavazas URL
+- [ ] Update copy
+- [ ] Contacts
+- [ ] Update email content

@@ -17,6 +17,9 @@ export default define.page(function Home(ctx): JSX.Element {
 	const lang = detectLanguage(ctx.req);
 	const showSecondary = url.searchParams.get("masodlagos") !== "false";
 	const showTertiary = url.searchParams.get("harmadlagos") === "true";
+	const selectedCounty = url.searchParams.get("megye") ?? "";
+	const selectedDistrict = url.searchParams.get("kerulet") ?? "";
+	const selectedRep = url.searchParams.get("kepviselo") ?? "";
 	const currentPath = url.pathname + url.search;
 
 	return (
@@ -47,7 +50,12 @@ export default define.page(function Home(ctx): JSX.Element {
 							</p>
 						</div>
 					</section>
-					<TakeActionSection lang={lang} />
+					<TakeActionSection
+						lang={lang}
+						selectedCounty={selectedCounty}
+						selectedDistrict={selectedDistrict}
+						selectedRep={selectedRep}
+					/>
 				</>
 			}
 		>
