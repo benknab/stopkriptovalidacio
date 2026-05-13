@@ -91,8 +91,8 @@
 		},
 		"originalUrl": "https://sztfh.hu/megtortent-az-elso-kriptoeszkoz-atvaltast-validalo-szolgaltato-engedelyezese/",
 		"summary": {
-			"hu": "Az SZTFH közleménye az első kriptoeszköz-átváltást validáló szolgáltató engedélyezéséről. Caduceus lett az első és egyetlen engedélyezett validátor.",
-			"en": "SZTFH announcement on the licensing of the first crypto-asset exchange validation service provider. Caduceus became the first and only licensed validator."
+			"hu": "Az SZTFH közleménye az első kriptoeszköz-átváltást validáló szolgáltató engedélyezéséről. Caduceus lett az első és ekkor az egyetlen engedélyezett validátor.",
+			"en": "SZTFH announcement on the licensing of the first crypto-asset exchange validation service provider. Caduceus became the first and, at the time, only licensed validator."
 		}
 	},
 	"sztfh-validator-nyilvantartas": {
@@ -388,8 +388,8 @@
 		},
 		"originalUrl": "https://www.bitcoinbazis.hu/kriptovaluta-validacio-magyarorszag-velemenyek/",
 		"summary": {
-			"hu": "Részletes elemzés a Caduceus-ről, Magyarország egyetlen kriptovaluta validátoráról. A cég háttere, vezetősége, a Vesszős család kapcsolatai és a közösségi reakciók.",
-			"en": "Detailed analysis of Caduceus, Hungary's only cryptocurrency validator. Company background, leadership, Vesszős family connections, and community reactions."
+			"hu": "Részletes elemzés a Caduceus-ről, Magyarország akkor egyetlen kriptovaluta validátoráról. A cég háttere, vezetősége, a Vesszős család kapcsolatai és a közösségi reakciók.",
+			"en": "Detailed analysis of Caduceus, Hungary's then-only cryptocurrency validator. Company background, leadership, Vesszős family connections, and community reactions."
 		}
 	},
 	"caduceus-cegbetekintes": {
@@ -726,8 +726,8 @@
 		},
 		"originalUrl": "https://telex.hu/gazdasag/2026/02/03/kripto-bitcoin-revolut-kotelezettsegszeges-unio-szabalyozas-sztfh",
 		"summary": {
-			"hu": "Átfogó elemzés a magyar kriptoszabályozási válságról. Az Európai Bizottság január 30-án kötelezettségszegési eljárást indított Magyarország ellen. A Caduceus Zrt., az egyetlen engedélyezett validátor, bejelentette első szerződését a Bitpandával. A piaci szereplők az uniós eljárás miatt a szabályozás közeli változására számítanak.",
-			"en": "Comprehensive analysis of the Hungarian crypto regulation crisis. The European Commission launched infringement proceedings against Hungary on January 30. Caduceus Zrt., the only licensed validator, announced its first contract with Bitpanda. Market participants expect regulatory changes due to the EU proceedings."
+			"hu": "Átfogó elemzés a magyar kriptoszabályozási válságról. Az Európai Bizottság január 30-án kötelezettségszegési eljárást indított Magyarország ellen. A Caduceus Zrt., az akkor egyetlen engedélyezett validátor, bejelentette első szerződését a Bitpandával. A piaci szereplők az uniós eljárás miatt a szabályozás közeli változására számítanak.",
+			"en": "Comprehensive analysis of the Hungarian crypto regulation crisis. The European Commission launched infringement proceedings against Hungary on January 30. Caduceus Zrt., the then-only licensed validator, announced its first contract with Bitpanda. Market participants expect regulatory changes due to the EU proceedings."
 		}
 	},
 	"caduceus-partners": {
@@ -799,8 +799,8 @@
 		},
 		"originalUrl": "https://www.bitcoinbazis.hu/caduceus-zrt-ket-kriptos-szolgaltato-van/",
 		"summary": {
-			"hu": "A BlockBen a második kriptoeszköz-szolgáltató, amely felkerült a Caduceus Zrt. partneri oldalára. A kötelező validálási rendszer bevezetése óta összesen két szolgáltató kötött szerződést az egyetlen engedélyezett validátorral.",
-			"en": "BlockBen became the second crypto-asset service provider listed on the Caduceus Zrt. partners page. Since the mandatory validation system was introduced, only two service providers have signed a contract with the sole licensed validator."
+			"hu": "A BlockBen a második kriptoeszköz-szolgáltató, amely felkerült a Caduceus Zrt. partneri oldalára. A kötelező validálási rendszer bevezetése óta ekkor összesen két szolgáltató kötött szerződést az akkor egyetlen engedélyezett validátorral.",
+			"en": "BlockBen became the second crypto-asset service provider listed on the Caduceus Zrt. partners page. At that point, since the mandatory validation system was introduced, only two service providers had signed a contract with the then-sole licensed validator."
 		}
 	},
 	"bitcoinbazis-mikrohalo-validator-2026-05-12": {

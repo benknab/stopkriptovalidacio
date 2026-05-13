@@ -268,8 +268,8 @@
 			"en": "First crypto validator licensed"
 		},
 		"summary": {
-			"hu": "Az SZTFH engedélyezte és nyilvántartásba vette az első kripto validátort. <b>Egyetlen magáncég, a Caduceus lett felelős az összes magyarországi kriptoeszköz-átváltás validálásáért.</b> Az SZTFH iránymutatást is közzétett a rendelet alkalmazásáról. <b>A kripto validálás pontos tartalma továbbra sincs definiálva.</b>",
-			"en": "SZTFH licensed and registered the first crypto validator. <b>A single private company, Caduceus, became responsible for validating all crypto-asset exchanges in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of crypto validation remains undefined.</b>"
+			"hu": "Az SZTFH engedélyezte és nyilvántartásba vette az első kripto validátort. <b>Ekkor egyetlen magáncég, a Caduceus lett felelős az összes magyarországi kriptoeszköz-átváltás validálásáért.</b> Az SZTFH iránymutatást is közzétett a rendelet alkalmazásáról. <b>A kripto validálás pontos tartalma továbbra sincs definiálva.</b>",
+			"en": "SZTFH licensed and registered the first crypto validator. <b>At that time, a single private company, Caduceus, became responsible for validating all crypto-asset exchanges in Hungary.</b> SZTFH also published guidance on the application of the regulation. <b>The exact content of crypto validation remains undefined.</b>"
 		},
 		"sourceSlugs": [
 			"sztfh-kozlemeny-2025-12-19",
@@ -705,8 +705,8 @@
 			"en": "Written question to the Prime Minister about crypto-asset regulation (Mi Hazánk)"
 		},
 		"summary": {
-			"hu": "Szabadi István (Mi Hazánk) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés 5 pontban firtatja a kriptoeszköz-szabályozás következményeit, beleértve a végrehajtási moratórium lehetőségét, a validátor hiányából eredő jogbizonytalanságot, és a MiCA-engedéllyel rendelkező szolgáltatók kizárását.",
-			"en": "István Szabadi (Our Homeland Movement) submitted a written question to Prime Minister Viktor Orbán. The question addresses 5 points about the consequences of crypto-asset regulation, including the possibility of an implementation moratorium, legal uncertainty from validator shortage, and exclusion of MiCA-licensed providers."
+			"hu": "Szabadi István (Mi Hazánk) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés 5 pontban firtatja a kriptoeszköz-szabályozás következményeit, beleértve a végrehajtási moratórium lehetőségét, az akkori validátorhiányból eredő jogbizonytalanságot, és a MiCA-engedéllyel rendelkező szolgáltatók kizárását.",
+			"en": "István Szabadi (Our Homeland Movement) submitted a written question to Prime Minister Viktor Orbán. The question addresses 5 points about the consequences of crypto-asset regulation, including the possibility of an implementation moratorium, legal uncertainty from the then-existing validator shortage, and exclusion of MiCA-licensed providers."
 		},
 		"sourceSlugs": [
 			"parlament-k-13436",
@@ -883,8 +883,8 @@
 			"en": "BlockBen listed on Caduceus Zrt. partners page"
 		},
 		"summary": {
-			"hu": "A BlockBen a második kriptoeszköz-szolgáltató, amely megjelent a Caduceus Zrt. partneri oldalán. A kötelező validálási rendszer bevezetése óta összesen két szolgáltató kötött szerződést az egyetlen engedélyezett validátorral.",
-			"en": "BlockBen became the second crypto-asset service provider listed on the Caduceus Zrt. partners page. Since the mandatory validation system was introduced, only two service providers have signed a contract with the sole licensed validator."
+			"hu": "A BlockBen a második kriptoeszköz-szolgáltató, amely megjelent a Caduceus Zrt. partneri oldalán. A kötelező validálási rendszer bevezetése óta ekkor összesen két szolgáltató kötött szerződést az akkor egyetlen engedélyezett validátorral.",
+			"en": "BlockBen became the second crypto-asset service provider listed on the Caduceus Zrt. partners page. At that point, since the mandatory validation system was introduced, only two service providers had signed a contract with the then-sole licensed validator."
 		},
 		"sourceSlugs": [
 			"bitcoinbazis-blockben-caduceus-2026-04-01",

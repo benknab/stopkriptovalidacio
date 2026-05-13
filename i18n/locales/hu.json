@@ -46,7 +46,7 @@
 			"title": "Mi történik?",
 			"law_summary": "2025 júliusától Magyarországon egyedülálló <kriptovalidalasLink>kriptovalidálási</kriptovalidalasLink> követelmények léptek életbe, amelyek mintegy 500 ezer magyar kriptotulajdonost érintenek.",
 			"uncertainty": "A törvény nem definiálja a validálás fogalmát. Ennek következtében jogbizonytalanság áll fenn: sem a magánszemélyek, sem a vállalkozások nem tudják követni a szabályokat, a szolgáltatók elhagyják az országot, miközben a megsértés büntetőjogi következményekkel járhat.",
-			"compliant_explanation": "Ezen az oldalon a \"Megfelel\" kategóriába csak azok a szolgáltatók kerülnek, akik nyilvánosan bejelentették, vagy az SZTFH vagy a validáló szolgáltatók megerősítették megfelelőségüket."
+			"compliant_explanation": "Ezen az oldalon a \"Megfelel\" kategóriába csak azok a szolgáltatók kerülnek, akik nyilvánosan bejelentették, vagy az SZTFH vagy nyilvántartott validáló szolgáltató megerősítette megfelelőségüket."
 		}
 	},
 	"crypto_validation": {
@@ -63,9 +63,9 @@
 		"validator_title": "Mi az a kripto validátor?",
 		"validator_intro": "A kripto validátor (hivatalosan \"kriptoeszköz-átváltást validáló szolgáltató\") egy SZTFH engedéllyel rendelkező vállalkozás, amely a törvény szerint validálja a kriptoeszköz-átváltási tranzakciókat.",
 		"validator_requirements": "Validátor engedélyezés",
-		"validator_requirements_text": "A validátor szolgáltatóknak SZTFH engedéllyel kell rendelkezniük. Jelenleg egyetlen engedélyezett validátor működik Magyarországon: a Caduceus Zrt.",
+		"validator_requirements_text": "A validátor szolgáltatóknak SZTFH engedéllyel kell rendelkezniük. Az SZTFH nyilvántartása szerint 2026. május 10. óta két aktív validátor szerepel: a Caduceus Zrt. és a Mikroháló Kft.",
 		"validator_problem": "A helyzet",
-		"validator_problem_text": "A validálás pontos tartalma nincs jogszabályban definiálva. A szolgáltatók egy része inkább kivonul Magyarországról, mint hogy a tisztázatlan követelményeknek próbáljon megfelelni.",
+		"validator_problem_text": "A validátorok számának bővülése ellenére a validálás pontos tartalma továbbra sincs jogszabályban definiálva. A szolgáltatók egy része inkább kivonul Magyarországról, mint hogy a tisztázatlan követelményeknek próbáljon megfelelni.",
 		"sources_title": "Források",
 		"sources_text": "Az alábbi forrásokban olvashat többet a szabályozásról:",
 		"timeline_link": "Idővonal megtekintése",
@@ -133,8 +133,8 @@
 				"description": "A \"validátor\" fogalma sehol máshol nem létezik a világon. Magyarország egyedül vezette be ezt a terhet."
 			},
 			"private_monopoly": {
-				"title": "Magánmonopólium",
-				"description": "A validálást egyetlen magántulajdonú cég, a Caduceus végzi. Egy \"fontos\" közérdekű feladat magánmonopóliumba került."
+				"title": "Privát kapuőrök",
+				"description": "A validálási kötelezettség teljesítése továbbra is néhány magáncég közreműködésétől függ. Az állam által előírt ellenőrzési feladat így egy szűk szolgáltatói kör kezében van."
 			},
 			"individual_punishment": {
 				"title": "Egyének büntetése",
