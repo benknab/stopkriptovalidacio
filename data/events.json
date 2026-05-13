@@ -921,5 +921,23 @@
 		},
 		"sourceSlugs": [],
 		"exchangeSlugs": []
+	},
+	"sztfh-masodik-validator": {
+		"date": "2026-05-10",
+		"type": "primary",
+		"title": {
+			"hu": "Második kripto validátor nyilvántartásba vétele",
+			"en": "Second crypto validator registered"
+		},
+		"summary": {
+			"hu": "Az SZTFH nyilvántartása 2026. május 10-i módosítással aktív kriptoeszköz-átváltást validáló szolgáltatóként tüntette fel a Mikroháló Kft.-t. A Caduceus Zrt. mellett ezzel két vállalat rendelkezik aktív validátori státusszal Magyarországon.",
+			"en": "The SZTFH registry, modified on May 10, 2026, listed Mikroháló Kft. as an active crypto-asset exchange validation service provider. Alongside Caduceus Zrt., this means two companies hold active validator status in Hungary."
+		},
+		"sourceSlugs": [
+			"sztfh-validator-nyilvantartas",
+			"bitcoinbazis-mikrohalo-validator-2026-05-12",
+			"mikrohalo-weboldal"
+		],
+		"exchangeSlugs": []
 	}
 }

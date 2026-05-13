@@ -102,8 +102,12 @@
 		},
 		"originalUrl": "https://sztfh.hu/nyilvantartasok/kriptoeszkoz-atvaltast-validalo-szolgaltatok/",
 		"summary": {
-			"hu": "Az SZTFH által vezetett kriptoeszköz-átváltást validáló szolgáltatók nyilvántartása.",
-			"en": "Registry of crypto-asset exchange validation service providers maintained by SZTFH."
+			"hu": "Az SZTFH által vezetett kriptoeszköz-átváltást validáló szolgáltatók nyilvántartása. A 2026. május 10-i módosítás szerint a Caduceus Zrt. és a Mikroháló Kft. aktív státuszú szolgáltatóként szerepel benne.",
+			"en": "Registry of crypto-asset exchange validation service providers maintained by SZTFH. According to the May 10, 2026 update, Caduceus Zrt. and Mikroháló Kft. are listed as active providers."
+		},
+		"text": {
+			"hu": "Utolsó módosítás: 2026.05.10. 18:42\n\nAktív validátorok:\n- Caduceus Zrt.; adószám: 32858187-2-41; székhely: 1039 Budapest, Zöld utca 2.\n- Mikroháló Korlátolt Felelősségű Társaság; adószám: 13240323-2-42; székhely: 1105 Budapest, Martinovics tér 4. 01.",
+			"en": "Last modified: 2026.05.10. 18:42\n\nActive validators:\n- Caduceus Zrt.; tax number: 32858187-2-41; registered office: 1039 Budapest, Zöld utca 2.\n- Mikroháló Korlátolt Felelősségű Társaság; tax number: 13240323-2-42; registered office: 1105 Budapest, Martinovics tér 4. 01."
 		}
 	},
 	"sztfh-rendelet-12-2025": {
@@ -797,6 +801,28 @@
 		"summary": {
 			"hu": "A BlockBen a második kriptoeszköz-szolgáltató, amely felkerült a Caduceus Zrt. partneri oldalára. A kötelező validálási rendszer bevezetése óta összesen két szolgáltató kötött szerződést az egyetlen engedélyezett validátorral.",
 			"en": "BlockBen became the second crypto-asset service provider listed on the Caduceus Zrt. partners page. Since the mandatory validation system was introduced, only two service providers have signed a contract with the sole licensed validator."
+		}
+	},
+	"bitcoinbazis-mikrohalo-validator-2026-05-12": {
+		"title": {
+			"hu": "BitcoinBázis",
+			"en": "BitcoinBázis"
+		},
+		"originalUrl": "https://www.bitcoinbazis.hu/sztfh-szerint-masodik-magyar-kriptovalidator/",
+		"summary": {
+			"hu": "A BitcoinBázis beszámolója szerint az SZTFH 2026. május 10-én módosított nyilvántartásában a Mikroháló Kft. már aktív kriptoeszköz-átváltást validáló szolgáltatóként szerepel. A Caduceus Zrt. mellett ezzel két aktív validátor található a nyilvántartásban.",
+			"en": "According to BitcoinBázis, SZTFH's registry updated on May 10, 2026, lists Mikroháló Kft. as an active crypto-asset exchange validation service provider. Alongside Caduceus Zrt., the registry therefore contains two active validators."
+		}
+	},
+	"mikrohalo-weboldal": {
+		"title": {
+			"hu": "Mikroháló Kft. weboldal",
+			"en": "Mikroháló Kft. Website"
+		},
+		"originalUrl": "https://mikrohalo.hu/",
+		"summary": {
+			"hu": "A Mikroháló Kft. hivatalos weboldala szerint a társaság 2025. december 31-ével befejezte távközlési szolgáltatói tevékenységeit. A weboldal a NIS2 és kiberbiztonsági szolgáltatásokat jelöli meg továbbra is aktív területként, és feltünteti az SZTFH auditori engedélyt.",
+			"en": "According to Mikroháló Kft.'s official website, the company ended its telecommunications service activities on December 31, 2025. The website identifies NIS2 and cybersecurity services as continuing active areas and states that the company holds an SZTFH auditor license."
 		}
 	},
 	"mi-hazank-valasz-2026-03-23": {
