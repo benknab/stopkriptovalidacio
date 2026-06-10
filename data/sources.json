@@ -825,6 +825,32 @@
 			"en": "According to Mikroháló Kft.'s official website, the company ended its telecommunications service activities on December 31, 2025. The website identifies NIS2 and cybersecurity services as continuing active areas and states that the company holds an SZTFH auditor license."
 		}
 	},
+	"magyar-peter-facebook-2026-06-10": {
+		"title": {
+			"hu": "Magyar Péter Facebook-poszt (2026.06.10.)",
+			"en": "Péter Magyar Facebook post (2026.06.10.)"
+		},
+		"originalUrl": "https://www.facebook.com/peter.magyar.102/posts/27784277007846717?ref=embed_post",
+		"summary": {
+			"hu": "Magyar Péter 2026. június 10-én közzétette a kormányülés döntéseinek listáját. A felsorolás egyik pontja a kriptovaluták kriminalizálásának megszüntetését tartalmazza.",
+			"en": "On June 10, 2026, Péter Magyar published the list of decisions from the government meeting. One item in the list states the ending of the criminalization of cryptocurrencies."
+		},
+		"text": {
+			"hu": "A nemrég véget ért kormányülésen fontos döntéseket hoztunk:\n* Megszüntetjük a kriptovaluták kriminalizását.",
+			"en": "We have made important decisions at the government meeting that ended recently:\n* We will end the criminalization of cryptocurrencies."
+		}
+	},
+	"vg-magyar-peter-kormany-dontesek-2026-06-10": {
+		"title": {
+			"hu": "Világgazdaság",
+			"en": "Világgazdaság"
+		},
+		"originalUrl": "https://www.vg.hu/vilaggazdasag-magyar-gazdasag/2026/06/magyar-peter-bejelentette-a-kormany-friss-donteseit",
+		"summary": {
+			"hu": "A Világgazdaság 2026. június 10-i beszámolója ismertette Magyar Péter kormányülés utáni bejelentését. A cikk felsorolja a kilenc közölt döntést, köztük a kriptovaluták kriminalizálásának megszüntetését.",
+			"en": "Világgazdaság's June 10, 2026 report covered Péter Magyar's announcement after the government meeting. The article lists the nine stated decisions, including ending the criminalization of cryptocurrencies."
+		}
+	},
 	"mi-hazank-valasz-2026-03-23": {
 		"title": {
 			"hu": "A Mi Hazánk Mozgalom válasza a kriptovalidációról",

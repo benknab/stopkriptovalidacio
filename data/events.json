@@ -939,5 +939,22 @@
 			"mikrohalo-weboldal"
 		],
 		"exchangeSlugs": []
+	},
+	"kriptovalutak-kriminalizalasanak-megszuntetese-bejelentes": {
+		"date": "2026-06-10",
+		"type": "primary",
+		"title": {
+			"hu": "Bejelentés a kriptovaluták kriminalizálásának megszüntetéséről",
+			"en": "Announcement on ending the criminalization of cryptocurrencies"
+		},
+		"summary": {
+			"hu": "Magyar Péter 2026. június 10-én közösségi oldalán közzétette a kormányülés után elfogadott döntések listáját. A közölt döntések között szerepelt a kriptovaluták kriminalizálásának megszüntetése.",
+			"en": "On June 10, 2026, Péter Magyar published a list of decisions adopted after the government meeting on his social media page. Ending the criminalization of cryptocurrencies was included among the stated decisions."
+		},
+		"sourceSlugs": [
+			"magyar-peter-facebook-2026-06-10",
+			"vg-magyar-peter-kormany-dontesek-2026-06-10"
+		],
+		"exchangeSlugs": []
 	}
 }
