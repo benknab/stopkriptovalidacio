@@ -957,5 +957,21 @@
 			"vg-magyar-peter-kormany-dontesek-2026-06-10"
 		],
 		"exchangeSlugs": []
+	},
+	"frissites-2026-06-10-tanacs-zoltan-poszt": {
+		"date": "2026-06-10",
+		"type": "telegram",
+		"title": {
+			"hu": "Frissítés: Tanács Zoltán részletezte a kormány döntését",
+			"en": "Update: Zoltán Tanács detailed the government decision"
+		},
+		"summary": {
+			"hu": "Tanács Zoltán tudományos és technológiai miniszter külön posztban részletezte, mit jelent a kriptovaluták kriminalizálásának megszüntetése. A poszt a validátori kapuőrrendszert aránytalan, piacszűkítő szabályozásként írta le, és arányosabb, kiszámíthatóbb szabályozást ígért a pénzmosás elleni és fogyasztóvédelmi szempontok fenntartása mellett.",
+			"en": "Zoltán Tanács, Minister of Science and Technology, detailed in a separate post what ending the criminalization of cryptocurrencies means. The post described the validator gatekeeper system as disproportionate, market-restricting regulation and promised more proportionate, predictable regulation while maintaining anti-money-laundering and consumer-protection safeguards."
+		},
+		"sourceSlugs": [
+			"tanacs-zoltan-facebook-kriptovalutak-kriminalizalasa-2026-06-10"
+		],
+		"exchangeSlugs": []
 	}
 }
