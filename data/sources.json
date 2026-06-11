@@ -862,6 +862,28 @@
 			"en": "Világgazdaság's report covered Prime Minister Péter Magyar's announcement after the government meeting. The article lists the nine stated decisions, including ending the criminalization of cryptocurrencies."
 		}
 	},
+	"portfolio-tisza-kormany-kriptoszabalyozas-2026-06-11": {
+		"title": {
+			"hu": "Portfolio.hu",
+			"en": "Portfolio.hu"
+		},
+		"originalUrl": "https://www.portfolio.hu/uzlet/20260611/a-tisza-kormany-nagy-bejelentest-tett-ujraeleszthetik-a-magyar-kriptopiacot-visszater-a-revolut-is-842626#",
+		"summary": {
+			"hu": "A Portfolio beszámolója a Tisza-kormány kriptoszabályozási bejelentéséről. A cikk szerint a kormány a korábbi, uniós joggal ellentétesnek tartott és büntetőjogi szankciókat is tartalmazó szabályozás hatályon kívül helyezését bocsátja társadalmi egyeztetésre, ami lehetőséget teremthet a kivonult szolgáltatók visszatérésére.",
+			"en": "Portfolio's report on the TISZA government's crypto regulation announcement. According to the article, the government is putting out for public consultation the repeal of earlier rules it considers contrary to EU law and containing criminal-law sanctions, which may create an opportunity for withdrawn service providers to return."
+		}
+	},
+	"kormany-youtube-sajtotajekoztato-2026-06-11": {
+		"title": {
+			"hu": "Kormányzati sajtótájékoztató (YouTube, 2026.06.11.)",
+			"en": "Government press briefing (YouTube, 2026.06.11.)"
+		},
+		"originalUrl": "https://www.youtube.com/watch?v=HSQno30EHAw",
+		"summary": {
+			"hu": "Hivatalos kormányzati sajtótájékoztató a kormány előző napi döntéseiről. Köböl Anita kormányszóvivő itt jelentette be, hogy társadalmi egyeztetésre bocsátják a kriptoeszközök kereskedelmére vonatkozó korábbi szabályozás hatályon kívül helyezését.",
+			"en": "Official government press briefing on the government's decisions from the previous day. Government spokesperson Anita Köböl announced there that the repeal of the earlier rules on crypto-asset trading would be put out for public consultation."
+		}
+	},
 	"mi-hazank-valasz-2026-03-23": {
 		"title": {
 			"hu": "A Mi Hazánk Mozgalom válasza a kriptovalidációról",

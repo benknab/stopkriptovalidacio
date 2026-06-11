@@ -958,6 +958,23 @@
 		],
 		"exchangeSlugs": []
 	},
+	"kriptoszabalyozas-hatalyon-kivul-helyezese-tarsadalmi-egyeztetes": {
+		"date": "2026-06-11",
+		"type": "primary",
+		"title": {
+			"hu": "Társadalmi egyeztetés a kriptoszabályozás hatályon kívül helyezéséről",
+			"en": "Public consultation on repealing crypto regulation"
+		},
+		"summary": {
+			"hu": "Köböl Anita kormányszóvivő bejelentette, hogy a kormány társadalmi egyeztetésre bocsátja a korábbi, MiCA-val ellentétesnek tartott és büntetőjogi szankciókat is tartalmazó kriptoeszköz-kereskedelmi szabályozás hatályon kívül helyezését. A javaslat a kormany.hu-n jelenik meg, 13 napos véleményezési határidővel. A bejelentés szerint az új szabályozási környezet arányos, európai normákhoz igazodó kereteket céloz.",
+			"en": "Government spokesperson Anita Köböl announced that the government is putting out for public consultation the repeal of the earlier crypto-asset trading rules, which it considers contrary to MiCA and which included criminal-law sanctions. The proposal will be published on kormany.hu with a 13-day consultation period. The announcement stated that the new regulatory environment aims for proportionate rules aligned with European standards."
+		},
+		"sourceSlugs": [
+			"portfolio-tisza-kormany-kriptoszabalyozas-2026-06-11",
+			"kormany-youtube-sajtotajekoztato-2026-06-11"
+		],
+		"exchangeSlugs": []
+	},
 	"frissites-2026-06-10-tanacs-zoltan-poszt": {
 		"date": "2026-06-10",
 		"type": "telegram",
