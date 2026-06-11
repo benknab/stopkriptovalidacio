@@ -960,7 +960,7 @@
 	},
 	"kriptoszabalyozas-hatalyon-kivul-helyezese-tarsadalmi-egyeztetes": {
 		"date": "2026-06-11",
-		"type": "primary",
+		"type": "secondary",
 		"title": {
 			"hu": "Társadalmi egyeztetés a kriptoszabályozás hatályon kívül helyezéséről",
 			"en": "Public consultation on repealing crypto regulation"
