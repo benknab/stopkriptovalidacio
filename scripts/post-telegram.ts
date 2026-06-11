@@ -9,7 +9,7 @@
  *
  * Telegram-only events:
  *   Events with type="telegram" are posted to Telegram but link to the
- *   main page instead of a specific timeline entry (no #hash).
+ *   timeline section instead of a specific timeline entry.
  */
 
 import "@std/dotenv/load";
@@ -41,8 +41,9 @@ function buildEventUrl(slug: string): string {
 	url.searchParams.set("utm_medium", "social");
 	url.searchParams.set("utm_campaign", "timeline_update");
 
-	// Hidden events link to main page without hash
+	// Hidden events are not rendered, so link to the timeline section.
 	if (event.type === "telegram") {
+		url.hash = "idovonal";
 		return url.toString();
 	}
 
@@ -62,7 +63,7 @@ function formatMessage(slug: string): string {
 	const date = formatDate(event.date);
 	const summary = event.summary ? stripHtml(event.summary.hu) : "";
 	const url = buildEventUrl(slug);
-	const linkText = event.type === "telegram" ? "Tovább az oldalra" : "Részletek az idővonalon";
+	const linkText = "Részletek az idővonalon";
 
 	return `📅 ${date}
 📌 ${title}
