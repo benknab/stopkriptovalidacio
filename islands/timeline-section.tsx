@@ -179,7 +179,12 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 			if (event.type === "tertiary") return showTertiary.value;
 			return false;
 		})
-		.sort(([, a], [, b]) => b.date.getTime() - a.date.getTime());
+		.sort(([, a], [, b]) => {
+			const dateDiff = b.date.getTime() - a.date.getTime();
+			if (dateDiff !== 0) return dateDiff;
+
+			return (b.sortOrder ?? 0) - (a.sortOrder ?? 0);
+		});
 
 	function handleSecondaryChange(e: Event): void {
 		showSecondary.value = (e.target as HTMLInputElement).checked;

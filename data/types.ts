@@ -15,6 +15,7 @@ const stringSetSchema = z.array(z.string()).transform((values) => new Set(values
 
 export const timelineEventSchema = z.object({
 	date: z.coerce.date(),
+	sortOrder: z.number().optional(),
 	type: eventTypeSchema,
 	title: textI18nSchema,
 	summary: textI18nSchema.optional(),

@@ -960,6 +960,7 @@
 	},
 	"kriptoszabalyozas-hatalyon-kivul-helyezese-tarsadalmi-egyeztetes": {
 		"date": "2026-06-11",
+		"sortOrder": 1,
 		"type": "secondary",
 		"title": {
 			"hu": "Társadalmi egyeztetés a kriptoszabályozás hatályon kívül helyezéséről",
@@ -977,14 +978,15 @@
 	},
 	"kormanyhu-kriptoeszkoz-atvaltas-tarsadalmi-egyeztetes": {
 		"date": "2026-06-11",
+		"sortOrder": 2,
 		"type": "primary",
 		"title": {
-			"hu": "Kormány.hu-n megjelent a kriptovalidáció hatályon kívül helyezésének tervezete",
-			"en": "Draft repeal of crypto validation published on kormany.hu"
+			"hu": "Megjelent a kriptovalidáció hatályon kívül helyezésének tervezete",
+			"en": "Draft repeal of crypto validation published"
 		},
 		"summary": {
-			"hu": "A kormány.hu dokumentumtárában megjelent a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló törvény tervezete; a véleményezési határidő 2026. június 19. A javaslat szerint a validálási kötelezettség nincs összhangban a MiCA-rendelettel, ezért hatályon kívül helyezné a kapcsolódó Btk.-tényállásokat, kivezetné a validátori rendszert és az SZTFH kapcsolódó hatásköreit. Az átmeneti szabályok megszüntetnék a folyamatban lévő validátori eljárásokat, és 3 munkanapos határidővel előírnák a validátoroknál és az SZTFH-nál lévő kapcsolódó adatok vissza nem állítható törlését.",
-			"en": "A draft bill repealing certain statutory provisions concerning crypto-asset exchange services appeared in the kormany.hu document repository; comments are due by June 19, 2026. The proposal states that the validation obligation is not aligned with MiCA, and would therefore repeal the related Criminal Code offenses, remove the validator system, and eliminate related SZTFH powers. Transitional rules would terminate ongoing validator proceedings and require related data held by validators and SZTFH to be irreversibly deleted within 3 working days."
+			"hu": "Megjelent a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló törvény tervezete; a véleményezési határidő 2026. június 19. A javaslat szerint a validálási kötelezettség nincs összhangban a MiCA-rendelettel, ezért <b>hatályon kívül helyezné a kapcsolódó Btk.-tényállásokat, kivezetné a validátori rendszert és az SZTFH kapcsolódó hatásköreit</b>. Az átmeneti szabályok megszüntetnék a folyamatban lévő validátori eljárásokat, és 3 munkanapos határidővel előírnák a validátoroknál és az SZTFH-nál lévő kapcsolódó adatok vissza nem állítható törlését.",
+			"en": "The draft bill repealing certain statutory provisions concerning crypto-asset exchange services was published; comments are due by June 19, 2026. The proposal states that the validation obligation is not aligned with MiCA, and would therefore <b>repeal the related Criminal Code offenses, remove the validator system, and eliminate related SZTFH powers</b>. Transitional rules would terminate ongoing validator proceedings and require related data held by validators and SZTFH to be irreversibly deleted within 3 working days."
 		},
 		"sourceSlugs": [
 			"kormany-tarsadalmi-egyeztetes-kriptoeszkoz-atvaltas-2026-06-11"
