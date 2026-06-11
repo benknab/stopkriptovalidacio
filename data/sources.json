@@ -862,6 +862,21 @@
 			"en": "Világgazdaság's report covered Prime Minister Péter Magyar's announcement after the government meeting. The article lists the nine stated decisions, including ending the criminalization of cryptocurrencies."
 		}
 	},
+	"kormany-tarsadalmi-egyeztetes-kriptoeszkoz-atvaltas-2026-06-11": {
+		"title": {
+			"hu": "Kormány.hu társadalmi egyeztetés (2026.06.11.)",
+			"en": "Kormány.hu public consultation (2026.06.11.)"
+		},
+		"originalUrl": "https://kormany.hu/dokumentumtar/tarsadalmi-egyeztetes-a-kriptoeszkoz-atvaltas-szabalyairol",
+		"summary": {
+			"hu": "A kormány.hu dokumentumtárában 2026. június 11-én megjelent a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló törvény tervezetének társadalmi egyeztetési oldala. A tervezet kivezetné a validálási kötelezettséget, hatályon kívül helyezné a kapcsolódó büntetőjogi tényállásokat, és átmeneti adat- és eljáráslezárási szabályokat tartalmaz. A véleményezési határidő 2026. június 19.",
+			"en": "On June 11, 2026, a public consultation page for the draft bill repealing certain statutory provisions concerning crypto-asset exchange services appeared in the kormany.hu document repository. The draft would remove the validation obligation, repeal the related criminal-law offenses, and introduce transitional rules for closing proceedings and deleting data. Comments are due by June 19, 2026."
+		},
+		"text": {
+			"hu": "Társadalmi egyeztetés a kriptoeszköz-átváltás szabályairól\nDátum: 2026.06.11.\nTárgy: Társadalmi egyeztetés a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló törvényhez.\nTársadalmi egyeztetés határideje: 2026.06.19.\n\nA tervezet szerint a kriptoeszköz-átváltást validáló szolgáltatás előírása nincs összhangban az uniós kriptoeszköz-piaci szabályozással, különösen a közvetlenül alkalmazandó (EU) 2023/1114 rendelettel (MiCA). A javaslat hatályon kívül helyezné a Btk. „Kriptoeszközzel visszaélés” és „Jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása” alcímeit, valamint törölné az SZTFH-ról szóló törvény és a kriptoeszközök piacáról szóló törvény validáláshoz kapcsolódó rendelkezéseit. A folyamatban lévő validátori engedélyezési és felügyeleti eljárásokat meg kellene szüntetni, a validátoroknál és az SZTFH-nál lévő kapcsolódó adatokat pedig 3 munkanapon belül vissza nem állítható módon törölni kellene. A törvény a kihirdetését követő 8. napon lépne hatályba. A hatásvizsgálat szerint az intézkedés jogharmonizációs kötelezettséget teljesít, a költségvetési hatása nulla, és nem jelöl meg jelentős társadalmi, egészségügyi, környezeti, digitalizációs vagy biztonsági hatást.",
+			"en": "Public consultation on the rules for crypto-asset exchange\nDate: 2026.06.11.\nSubject: Public consultation on the bill repealing certain statutory provisions concerning crypto-asset exchange services.\nConsultation deadline: 2026.06.19.\n\nAccording to the draft, requiring a crypto-asset exchange validation service is not aligned with EU regulation on markets in crypto-assets, particularly directly applicable Regulation (EU) 2023/1114 (MiCA). The proposal would repeal the Criminal Code headings on “Crypto-asset abuse” and “Providing unauthorized crypto-asset exchange services”, and remove validation-related provisions from the SZTFH Act and the Hungarian Crypto Act. Ongoing validator licensing and supervisory proceedings would have to be terminated, and related data held by validators and SZTFH would have to be irreversibly deleted within 3 working days. The act would enter into force on the 8th day after promulgation. According to the impact assessment, the measure fulfils a legal harmonisation obligation, has zero budgetary impact, and identifies no significant social, health, environmental, digitalisation, or security impact."
+		}
+	},
 	"portfolio-tisza-kormany-kriptoszabalyozas-2026-06-11": {
 		"title": {
 			"hu": "Portfolio.hu",
