@@ -948,11 +948,12 @@
 			"en": "Announcement on ending the criminalization of cryptocurrencies"
 		},
 		"summary": {
-			"hu": "Magyar Péter miniszterelnök közösségi oldalán közzétette a kormányülés után elfogadott döntések listáját. A közölt döntések között szerepelt a kriptovaluták kriminalizálásának megszüntetése.",
-			"en": "Prime Minister Péter Magyar published a list of decisions adopted after the government meeting on his social media page. Ending the criminalization of cryptocurrencies was included among the stated decisions."
+			"hu": "Magyar Péter miniszterelnök közösségi oldalán közzétette a kormányülés után elfogadott döntések listáját. A közölt döntések között szerepelt a kriptovaluták kriminalizálásának megszüntetése. Tanács Zoltán tudományos és technológiai miniszter külön posztban részletezte a döntést. A bejelentés a validátori kapuőrrendszert aránytalan, piacszűkítő szabályozásként írta le. A kormány arányosabb, kiszámíthatóbb szabályozást ígért a pénzmosás elleni és fogyasztóvédelmi szempontok fenntartása mellett.",
+			"en": "Prime Minister Péter Magyar published a list of decisions adopted after the government meeting on his social media page. The stated decisions included ending the criminalization of cryptocurrencies. Zoltán Tanács, Minister of Science and Technology, detailed the decision in a separate post. The announcement described the validator gatekeeper system as disproportionate, market-restricting regulation. The government promised more proportionate and predictable regulation while maintaining anti-money-laundering and consumer-protection safeguards."
 		},
 		"sourceSlugs": [
 			"magyar-peter-facebook-2026-06-10",
+			"tanacs-zoltan-facebook-kriptovalutak-kriminalizalasa-2026-06-10",
 			"vg-magyar-peter-kormany-dontesek-2026-06-10"
 		],
 		"exchangeSlugs": []
