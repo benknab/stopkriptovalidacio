@@ -58,6 +58,11 @@
 		"name": "BlockBen",
 		"status": "operating"
 	},
+	"bull-bitcoin": {
+		"name": "Bull Bitcoin",
+		"status": "restricted",
+		"leaveDate": "2025-12-26"
+	},
 	"bybit": {
 		"name": "Bybit",
 		"status": "uncertain"

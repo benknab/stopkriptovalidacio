@@ -299,6 +299,22 @@
 		],
 		"exchangeSlugs": []
 	},
+	"bull-bitcoin-magyarorszag-korlatozva": {
+		"date": "2025-12-26",
+		"type": "secondary",
+		"title": {
+			"hu": "Bull Bitcoin korlátozza a magyarországi hozzáférést",
+			"en": "Bull Bitcoin restricts access in Hungary"
+		},
+		"summary": {
+			"hu": "A Bull Bitcoin Magyarországon jelenleg nem elérhető.",
+			"en": "Bull Bitcoin is currently unavailable in Hungary."
+		},
+		"sourceSlugs": [],
+		"exchangeSlugs": [
+			"bull-bitcoin"
+		]
+	},
 	"caduceus-weboldal": {
 		"date": "2025-12-19",
 		"type": "tertiary",
