@@ -1017,7 +1017,7 @@
 			"en": "T/305 bill submitted"
 		},
 		"summary": {
-			"hu": "A Kormány T/305 számon benyújtotta a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló törvényjavaslatot. <b>A javaslat hatályon kívül helyezné a kriptoeszközzel visszaélés és a jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása Btk.-alcímeket, valamint megszüntetné a validátori rendszert.</b> A folyamatban lévő validátori eljárások megszűnnének, az engedélyek hatályukat vesztenék, és a kapcsolódó adatokat 3 munkanapon belül törölni kellene.",
+			"hu": "A Kormány T/305 számon benyújtotta a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló törvényjavaslatot. <b>A javaslat szerint hatályát veszti a kriptoeszközzel visszaélés és a jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása Btk.-alcíme, valamint megszűnik a validátori rendszer.</b> A folyamatban lévő validátori eljárásokat az SZTFH megszünteti, az engedélyek hatályukat vesztik, és a kapcsolódó adatokat 3 munkanapon belül törölni kell.",
 			"en": "The Government submitted bill T/305 on repealing certain statutory provisions concerning crypto-asset exchange services. <b>The proposal would repeal the Criminal Code headings on crypto-asset abuse and providing unauthorized crypto-asset exchange services, and would terminate the validator system.</b> Ongoing validator proceedings would be closed, licenses would expire, and related data would have to be deleted within 3 working days."
 		},
 		"sourceSlugs": [
