@@ -4,7 +4,7 @@ import type { JSX } from "preact";
 import { Layout } from "../components/layout.tsx";
 import { SeoHead } from "../components/seo/seo-head.tsx";
 import { detectLanguage, t } from "../i18n/index.ts";
-import MpsSection from "../islands/mps-section.tsx";
+import MpsSection, { ALL_OPTION } from "../islands/mps-section.tsx";
 
 const HISTORICAL_VOTE_YEAR = 2022;
 
@@ -12,7 +12,7 @@ export default define.page(function VoteHistory(ctx): JSX.Element {
 	const url = new URL(ctx.req.url);
 	const lang = detectLanguage(ctx.req);
 	const currentPath = url.pathname + url.search;
-	const mpCounty = url.searchParams.get("megye") || "";
+	const mpCounty = url.searchParams.get("megye") || ALL_OPTION;
 	const mpDistrict = url.searchParams.get("kerulet") || "";
 
 	return (
