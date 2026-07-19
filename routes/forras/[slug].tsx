@@ -11,8 +11,8 @@ export default define.page(function SourceDetail(ctx): JSX.Element | Response {
 	const slug = ctx.params.slug;
 	const source = sources[slug];
 
-	// Only serve pages for first-party sources (no originalUrl)
-	if (!source || source.originalUrl) {
+	// Only serve sources whose first-party content lives on this route.
+	if (!source || source.originalUrl || source.internalUrl) {
 		return new Response(null, { status: 404 });
 	}
 

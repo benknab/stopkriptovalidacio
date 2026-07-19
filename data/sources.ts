@@ -4,6 +4,7 @@ import { textI18nSchema } from "./types.ts";
 
 export const sourceSchema = z.object({
 	title: textI18nSchema,
+	internalUrl: z.string().optional(),
 	originalUrl: z.string().optional(),
 	archivedUrl: z.string().optional(),
 	summary: textI18nSchema.optional(),
