@@ -25,17 +25,6 @@ function NavLink({ anchor, currentPath, children }: NavLinkProps): JSX.Element {
 	);
 }
 
-function NavCta({ anchor, currentPath, children }: NavLinkProps): JSX.Element {
-	return (
-		<a
-			href={getAnchorHref(anchor, currentPath)}
-			class="text-sm font-semibold text-white bg-brand px-4 py-2 rounded-lg hover:bg-brand-hover transition-colors"
-		>
-			{children}
-		</a>
-	);
-}
-
 interface HeaderProps {
 	lang: SupportedLanguage;
 	currentPath: string;
@@ -53,7 +42,6 @@ export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 						<NavLink anchor="attekintes" currentPath={currentPath}>{t("nav.overview", lang)}</NavLink>
 						<NavLink anchor="tozsdek" currentPath={currentPath}>{t("nav.exchanges", lang)}</NavLink>
 						<NavLink anchor="idovonal" currentPath={currentPath}>{t("nav.timeline", lang)}</NavLink>
-						<NavCta anchor="cselekedj" currentPath={currentPath}>{t("action.nav_title", lang)}</NavCta>
 					</nav>
 					<div class="hidden sm:block">
 						<LanguageSwitch currentLang={lang} currentPath={currentPath} />
