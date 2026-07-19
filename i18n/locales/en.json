@@ -5,8 +5,8 @@
 	},
 	"seo": {
 		"home": {
-			"title": "Crypto Validation: Demand Change | Stop Kriptovalidáció Hungary",
-			"description": "Hungary's crypto validation law is forcing service providers out. Crypto validator requirements remain undefined. Learn the facts and contact your representative."
+			"title": "Crypto validation has ended | Stop Kriptovalidáció",
+			"description": "Hungary's harmful crypto validation regime has ended. Follow the return of providers that announced restrictions and review the regulation's history."
 		},
 		"about": {
 			"title": "About | Stop Kriptovalidáció - Crypto Validation Hungary",
@@ -34,19 +34,16 @@
 		"close": "Close"
 	},
 	"hero": {
-		"title": "Hungarian crypto owners are at risk",
-		"description": "Users are losing access to crypto services because the crypto validation law is forcing service providers out of Hungary.",
-		"compliant": "Compliant",
+		"title": "Crypto validation has ended",
+		"description": "Introduced in 2025, crypto validation made crypto-asset exchanges subject to an undefined validation step and created criminal-law risks for Hungarian crypto users. The regime caused legal uncertainty and drove providers to restrict their Hungarian operations. It was finally abolished in summer 2026.",
 		"restricted": "Restricted",
-		"uncertain": "Uncertain",
-		"cta_contact": "Contact Your MP",
-		"cta_learn_more": "Learn More",
+		"returned_or_returning": "Returning",
+		"cta_exchanges": "Provider statuses",
+		"cta_timeline": "Full timeline",
 		"cta_telegram": "Join on Telegram",
-		"overview": {
-			"title": "What's Happening?",
-			"law_summary": "As of July 2025, Hungary has unique <kriptovalidalasLink>crypto validation</kriptovalidalasLink> requirements in effect, impacting approximately 500,000 Hungarian crypto owners.",
-			"uncertainty": "The law does not define what validation means. This creates legal uncertainty: neither individuals nor businesses can follow the rules, service providers are leaving the country, and violations may result in criminal liability.",
-			"compliant_explanation": "On this website, only service providers that have publicly announced compliance, or have been confirmed compliant by SZTFH or a registered validation service provider, are marked as \"Compliant.\""
+		"tracking": {
+			"title": "Why will this site remain online?",
+			"description": "Ending the regime is an important victory, but it did not immediately undo the damage: several providers have yet to restore their Hungarian operations. This site will remain online to track which providers return and which keep their restrictions in place."
 		}
 	},
 	"crypto_validation": {
@@ -143,12 +140,16 @@
 		}
 	},
 	"exchanges": {
-		"title": "Service Providers",
-		"description": "Status of crypto service providers in Hungary.",
+		"title": "Affected service providers",
+		"description": "Current status of crypto service providers that verifiably restricted their Hungarian operations.",
 		"status": {
-			"operating": "Compliant",
+			"operating": "Operating",
 			"restricted": "Restricted",
 			"uncertain": "Uncertain"
+		},
+		"return_status": {
+			"announced": "Return announced",
+			"returned": "Returned"
 		},
 		"left_on": "Left:",
 		"leaving_on": "Leaving:",

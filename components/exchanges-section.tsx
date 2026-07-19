@@ -28,6 +28,7 @@ function getSortedExchanges(): Array<{ slug: ExchangeSlug; exchange: Exchange }>
 	const entries = Object.entries(exchanges) as Array<[ExchangeSlug, Exchange]>;
 
 	return entries
+		.filter(([, exchange]) => exchange.status === "restricted" || exchange.returnStatus !== undefined)
 		.map(([slug, exchange]) => ({ slug, exchange }))
 		.sort((a, b) => {
 			const priorityDiff = statusPriority[a.exchange.status] - statusPriority[b.exchange.status];
@@ -62,11 +63,18 @@ function ExchangeCard({ slug, exchange, lang }: ExchangeCardProps): JSX.Element 
 		>
 			<div class="flex justify-between items-start gap-3 mb-2">
 				<h3 class="font-semibold text-slate-900">{exchange.name}</h3>
-				<span
-					class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}
-				>
-					{t(`exchanges.status.${exchange.status}`, lang)}
-				</span>
+				<div class="flex flex-wrap justify-end gap-1.5">
+					<span
+						class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}
+					>
+						{t(`exchanges.status.${exchange.status}`, lang)}
+					</span>
+					{exchange.returnStatus && (
+						<span class="text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap bg-emerald-100 text-emerald-700">
+							{t(`exchanges.return_status.${exchange.returnStatus}`, lang)}
+						</span>
+					)}
+				</div>
 			</div>
 			<p class="text-sm text-slate-600 leading-relaxed mb-4">
 				{t(`exchanges.${slug}.summary`, lang)}

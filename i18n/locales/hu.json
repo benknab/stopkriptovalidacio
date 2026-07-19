@@ -5,8 +5,8 @@
 	},
 	"seo": {
 		"home": {
-			"title": "Kripto Validálás: Követelje a Változást | Stop Kriptovalidáció",
-			"description": "A kripto validálás törvény miatt a szolgáltatók kivonulnak Magyarországról. A kripto validátor követelmények nincsenek definiálva. Írjon a képviselőjének."
+			"title": "Véget ért a kriptovalidáció | Stop Kriptovalidáció",
+			"description": "A káros magyar kriptovalidációs rendszer megszűnt. Kövesse a korlátozást bejelentő kriptoszolgáltatók visszatérését és a szabályozás történetét."
 		},
 		"about": {
 			"title": "Rólunk | Stop Kriptovalidáció - Kripto Validálás Magyarország",
@@ -34,19 +34,16 @@
 		"close": "Bezárás"
 	},
 	"hero": {
-		"title": "A magyar kriptotulajdonosok veszélyben vannak",
-		"description": "A felhasználók elveszítik a hozzáférést a kriptoszolgáltatásokhoz, mert a kriptovalidáció törvény miatt a szolgáltatók kivonulnak Magyarországról.",
-		"compliant": "Megfelel",
+		"title": "Véget ért a kriptovalidáció",
+		"description": "A 2025-ben bevezetett kriptovalidáció egy pontosan nem definiált ellenőrzéshez kötötte a kriptoeszközök átváltását, és büntetőjogi kockázatot teremtett a magyar kriptofelhasználók számára. A rendszer jogbizonytalanságot okozott, és szolgáltatókat késztetett magyarországi működésük korlátozására. 2026 nyarán végre megszüntették.",
 		"restricted": "Korlátozott",
-		"uncertain": "Bizonytalan",
-		"cta_contact": "Írjon a képviselőjének",
-		"cta_learn_more": "Tudjon meg többet",
+		"returned_or_returning": "Visszatérők",
+		"cta_exchanges": "Szolgáltatói státuszok",
+		"cta_timeline": "Teljes idővonal",
 		"cta_telegram": "Csatlakozzon Telegramon",
-		"overview": {
-			"title": "Mi történik?",
-			"law_summary": "2025 júliusától Magyarországon egyedülálló <kriptovalidalasLink>kriptovalidálási</kriptovalidalasLink> követelmények léptek életbe, amelyek mintegy 500 ezer magyar kriptotulajdonost érintenek.",
-			"uncertainty": "A törvény nem definiálja a validálás fogalmát. Ennek következtében jogbizonytalanság áll fenn: sem a magánszemélyek, sem a vállalkozások nem tudják követni a szabályokat, a szolgáltatók elhagyják az országot, miközben a megsértés büntetőjogi következményekkel járhat.",
-			"compliant_explanation": "Ezen az oldalon a \"Megfelel\" kategóriába csak azok a szolgáltatók kerülnek, akik nyilvánosan bejelentették, vagy az SZTFH vagy nyilvántartott validáló szolgáltató megerősítette megfelelőségüket."
+		"tracking": {
+			"title": "Miért marad meg az oldal?",
+			"description": "A rendszer megszüntetése fontos győzelem, de az okozott kár nem rendeződött azonnal: több szolgáltató még nem állította helyre magyarországi működését. Az oldal azért marad meg, hogy nyomon kövesse, mely szolgáltatók térnek vissza, és melyek tartják fenn korlátozásaikat."
 		}
 	},
 	"crypto_validation": {
@@ -143,12 +140,16 @@
 		}
 	},
 	"exchanges": {
-		"title": "Szolgáltatók",
-		"description": "A kriptoszolgáltatók helyzete Magyarországon.",
+		"title": "Érintett szolgáltatók",
+		"description": "Azon kriptoszolgáltatók aktuális helyzete, amelyek igazoltan korlátozták magyarországi működésüket.",
 		"status": {
-			"operating": "Megfelel",
+			"operating": "Működik",
 			"restricted": "Korlátozott",
 			"uncertain": "Bizonytalan"
+		},
+		"return_status": {
+			"announced": "Visszatérést jelzett",
+			"returned": "Visszatért"
 		},
 		"left_on": "Távozott:",
 		"leaving_on": "Távozik:",
