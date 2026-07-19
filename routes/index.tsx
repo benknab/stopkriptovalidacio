@@ -4,7 +4,6 @@ import type { JSX } from "preact";
 import { ExchangesSection } from "../components/exchanges-section.tsx";
 import { H2 } from "../components/h2.tsx";
 import { Hero } from "../components/hero.tsx";
-import { ImpactSection } from "../components/impact-section.tsx";
 import { Layout } from "../components/layout.tsx";
 import { SeoHead } from "../components/seo/seo-head.tsx";
 import { detectLanguage, t } from "../i18n/index.ts";
@@ -24,7 +23,6 @@ export default define.page(function Home(ctx): JSX.Element {
 			hero={
 				<>
 					<Hero lang={lang} />
-					<ImpactSection lang={lang} />
 					<ExchangesSection lang={lang} />
 				</>
 			}
