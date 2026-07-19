@@ -451,6 +451,13 @@
 			"en": "Vote query results for the T/11922 bill on Parlament.hu."
 		}
 	},
+	"stopkriptovalidacio-szavazasi-adatok": {
+		"title": {
+			"hu": "T/11922 szavazási adatok",
+			"en": "T/11922 voting data"
+		},
+		"internalUrl": "/szavazas"
+	},
 	"moonpay-unsupported-countries": {
 		"title": {
 			"hu": "MoonPay nem támogatott országok",
