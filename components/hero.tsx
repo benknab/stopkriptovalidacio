@@ -104,9 +104,6 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 				</div>
 
 				<div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
-					<ButtonLink href="#cselekedj">
-						{t("hero.cta_contact", lang)}
-					</ButtonLink>
 					<ButtonLink href="#idovonal" variant="secondary">
 						{t("hero.cta_learn_more", lang)}
 					</ButtonLink>

@@ -1,7 +1,6 @@
 import { Head } from "fresh/runtime";
 import { define } from "@/utils.ts";
 import type { JSX } from "preact";
-import { ButtonLink } from "../components/button-link.tsx";
 import { H2 } from "../components/h2.tsx";
 import { Layout } from "../components/layout.tsx";
 import { Link } from "../components/link.tsx";
@@ -112,19 +111,6 @@ export default define.page(function CryptoValidation(ctx): JSX.Element {
 						{t("vote_history.law_link", lang)} →
 					</Link>
 				</div>
-			</section>
-
-			{/* CTA */}
-			<section class="bg-brand rounded-xl p-8 text-center text-white">
-				<h2 class="text-2xl font-bold mb-4">
-					{t("crypto_validation.cta_title", lang)}
-				</h2>
-				<p class="text-white/90 mb-6">
-					{t("crypto_validation.cta_text", lang)}
-				</p>
-				<ButtonLink href="/#cselekedj">
-					{t("crypto_validation.cta_button", lang)}
-				</ButtonLink>
 			</section>
 		</Layout>
 	);
