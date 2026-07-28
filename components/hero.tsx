@@ -41,25 +41,27 @@ interface HeroProps {
 
 export function Hero({ lang }: HeroProps): JSX.Element {
 	return (
-		<section id="attekintes" class="bg-brand text-white py-16 sm:py-24">
+		<section id="attekintes" class="bg-brand text-white pt-12 pb-16 sm:pt-16 sm:pb-24">
 			<div class="mx-auto max-w-6xl px-4 sm:px-6 text-center">
 				<h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight max-w-4xl mx-auto">
 					{t("hero.title", lang)}
 				</h1>
-				<p class="mt-6 text-lg sm:text-xl text-white/80 max-w-3xl mx-auto">
-					{t("hero.description", lang)}
+				<p class="mt-6 text-lg sm:text-xl text-white/80 max-w-4xl mx-auto flex flex-col gap-3">
+					<span>
+						{t("hero.description_line_1_before", lang)}
+						<a
+							href="/kriptovalidalas"
+							class="underline decoration-white/40 underline-offset-2 transition-colors hover:text-white hover:decoration-white"
+						>
+							{t("hero.description_link", lang)}
+						</a>
+						{t("hero.description_line_1_after", lang)}
+					</span>
+					<span>{t("hero.description_line_2", lang)}</span>
+					<strong class="text-white">{t("hero.description_line_3", lang)}</strong>
 				</p>
 
-				<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
-					<StatBox count={exchangeCounts.restricted} label={t("hero.restricted", lang)} color="red" />
-					<StatBox
-						count={exchangeCounts.returnedOrReturning}
-						label={t("hero.returned_or_returning", lang)}
-						color="green"
-					/>
-				</div>
-
-				<div class="mt-12 bg-white/5 backdrop-blur rounded-xl border border-white/10 p-6 sm:p-8 text-left max-w-3xl mx-auto">
+				<div class="mt-8 bg-white/5 backdrop-blur rounded-xl border border-white/10 p-6 sm:p-8 text-left max-w-3xl mx-auto">
 					<h2 class="text-xl sm:text-2xl font-bold mb-4 text-center">
 						{t("hero.tracking.title", lang)}
 					</h2>
@@ -68,7 +70,16 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 					</p>
 				</div>
 
-				<div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+				<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
+					<StatBox count={exchangeCounts.restricted} label={t("hero.restricted", lang)} color="red" />
+					<StatBox
+						count={exchangeCounts.returnedOrReturning}
+						label={t("hero.returned_or_returning", lang)}
+						color="green"
+					/>
+				</div>
+
+				<div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
 					<ButtonLink href="#tozsdek">
 						{t("hero.cta_exchanges", lang)}
 					</ButtonLink>

@@ -35,15 +35,19 @@
 	},
 	"hero": {
 		"title": "Crypto validation has ended",
-		"description": "Introduced in 2025, crypto validation made crypto-asset exchanges subject to an undefined validation step and created criminal-law risks for Hungarian crypto users. The regime caused legal uncertainty and drove providers to restrict their Hungarian operations. It was finally abolished in summer 2026.",
+		"description_line_1_before": "Introduced in 2025, ",
+		"description_link": "crypto validation",
+		"description_line_1_after": " made crypto-asset exchanges subject to an undefined validation process and created criminal-law risks for Hungarian crypto users.",
+		"description_line_2": "The regime caused legal uncertainty and drove providers to restrict their Hungarian operations.",
+		"description_line_3": "It was abolished in summer 2026.",
 		"restricted": "Restricted",
 		"returned_or_returning": "Returning",
 		"cta_exchanges": "Provider statuses",
 		"cta_timeline": "Full timeline",
 		"cta_telegram": "Join on Telegram",
 		"tracking": {
-			"title": "Why will this site remain online?",
-			"description": "Ending the regime is an important victory, but it did not immediately undo the damage: several providers have yet to restore their Hungarian operations. This site will remain online to track which providers return and which keep their restrictions in place."
+			"title": "This site will remain online",
+			"description": "Ending the regime is an important victory, but it did not immediately undo the damage: several providers have yet to restore their Hungarian operations. This site will continue to track which providers return and which keep their restrictions in place, while preserving a historical record of regulatory changes on the timeline."
 		}
 	},
 	"crypto_validation": {
