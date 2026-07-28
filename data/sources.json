@@ -899,6 +899,28 @@
 			"en": "Document number: T/305\nSubmission date: 2026-06-30 19:32\nSubmitted by: Dr. Bálint György Ruff, Deputy Prime Minister\nPresenter: András Kármán, Minister of Finance\nTitle of bill: On repealing certain statutory provisions concerning crypto-asset exchange services\n\n[1] In the field of crypto services, validation as a competition-restricting requirement is not sustainable with regard to implementing the internal market.\n[2] Uniform regulation and compliance with it serve customers' ability to use safe, transparent, and traceable services, for which the removal of the validation obligation is necessary.\n\nSection 1\nThe headings “Crypto-asset abuse” following Section 394 of Act C of 2012 on the Criminal Code, and “Providing unauthorized crypto-asset exchange services” following Section 408, shall be repealed.\n\nSection 4\nUpon entry into force, the Regulated Activities Supervisory Authority shall terminate licensing and supervisory proceedings in progress in connection with validation of crypto-asset exchange services. Licenses for crypto-asset exchange validation service activities shall cease to have effect on the day this Act enters into force. Data held by the validation service provider or SZTFH concerning crypto-asset exchange and unauthorized crypto transactions shall be irreversibly deleted within 3 working days after entry into force.\n\nSection 6\nThis Act shall enter into force on the 8th day after its promulgation.\n\nGeneral reasoning\nThe requirement for crypto-asset exchange validation services is not aligned with EU regulation on markets in crypto-assets, so alignment is necessary, particularly with regard to directly applicable Regulation (EU) 2023/1114 of the European Parliament and of the Council."
 		}
 	},
+	"parlament-t-305-minositett-tobbsegu-szavazas": {
+		"title": {
+			"hu": "Országgyűlés - T/305 minősített többségű szavazás",
+			"en": "National Assembly - T/305 qualified-majority vote"
+		},
+		"originalUrl": "https://www.parlament.hu/szavazasok#page=cv1gzb-H4sIAAAAAAAAA4WN0QrCMBAE_-WePWxMQmj_ZmOuWipeaIPUlvy7VvHZp1kYltko4yLU0bzigRWzjrJknYqOx--QxD_HSCg3ZN4_fzQd6PpME8qgd-o20iwfDukdg7VtQO_ZtI2wk2A5emf47Br4iHgyPlCt9QVI9GtcngAAAA",
+		"summary": {
+			"hu": "A T/305. számú törvényjavaslat minősített többséget igénylő részét az Országgyűlés 2026. július 28-án 143 igen, 46 nem szavazattal és 1 tartózkodás mellett elfogadta.",
+			"en": "On July 28, 2026, the National Assembly adopted the qualified-majority part of bill T/305 with 143 votes in favor, 46 against, and 1 abstention."
+		}
+	},
+	"parlament-t-305-egyszeru-tobbsegu-szavazas": {
+		"title": {
+			"hu": "Országgyűlés - T/305 egyszerű többségű szavazás",
+			"en": "National Assembly - T/305 simple-majority vote"
+		},
+		"originalUrl": "https://www.parlament.hu/szavazasok#page=cv1gzb-H4sIAAAAAAAAA4WNwQrCQAxE_yVnQykVd-3fzJLElopZ2kW0Zf_dqnj2NG94DLNRxkWpp2XFHSsWn_SRfS4-NV9Q4Z9jCMoVmd-bP5oONDxlRhn9Rv1GnvWTo-xn6QQLKXRswZSP5zZxbDXsFV0ETEwi1VpfOnXaA54AAAA",
+		"summary": {
+			"hu": "A T/305. számú törvényjavaslat egyszerű többséget igénylő részét az Országgyűlés 2026. július 28-án 143 igen, 46 nem szavazattal és 1 tartózkodás mellett elfogadta.",
+			"en": "On July 28, 2026, the National Assembly adopted the simple-majority part of bill T/305 with 143 votes in favor, 46 against, and 1 abstention."
+		}
+	},
 	"portfolio-tisza-kormany-kriptoszabalyozas-2026-06-11": {
 		"title": {
 			"hu": "Portfolio.hu",

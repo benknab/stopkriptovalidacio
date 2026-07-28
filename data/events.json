@@ -1026,6 +1026,23 @@
 		],
 		"exchangeSlugs": []
 	},
+	"t-305-szavazas": {
+		"date": "2026-07-28",
+		"type": "primary",
+		"title": {
+			"hu": "T/305 törvényjavaslat elfogadása",
+			"en": "T/305 bill adopted"
+		},
+		"summary": {
+			"hu": "<b>Az Országgyűlés elfogadta a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló T/305. számú törvényjavaslatot.</b> Minősített többséget igénylő rész: 143 igen, 46 nem, 1 tartózkodás (10:38:09). Egyszerű többséget igénylő rész: 143 igen, 46 nem, 1 tartózkodás (10:38:43).",
+			"en": "<b>The National Assembly adopted bill T/305 on repealing certain statutory provisions concerning crypto-asset exchange services.</b> Qualified-majority part: 143 yes, 46 no, 1 abstention (10:38:09). Simple-majority part: 143 yes, 46 no, 1 abstention (10:38:43)."
+		},
+		"sourceSlugs": [
+			"parlament-t-305-minositett-tobbsegu-szavazas",
+			"parlament-t-305-egyszeru-tobbsegu-szavazas"
+		],
+		"exchangeSlugs": []
+	},
 	"frissites-2026-06-10-tanacs-zoltan-poszt": {
 		"date": "2026-06-10",
 		"type": "telegram",
