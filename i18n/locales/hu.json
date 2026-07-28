@@ -37,17 +37,17 @@
 		"title": "Véget ért a kriptovalidáció",
 		"description_line_1_before": "A 2025-ben bevezetett ",
 		"description_link": "kriptovalidáció",
-		"description_line_1_after": " egy pontosan nem definiált ellenőrzési folyamathoz kötötte a kriptoeszközök átváltását, és büntetőjogi kockázatot teremtett a magyar felhasználók számára.",
-		"description_line_2": "A rendszer jogbizonytalanságot okozott, és szolgáltatókat kényszerített magyarországi működésük korlátozására.",
-		"description_line_3": "2026 nyarán megszüntették.",
+		"description_line_1_after": " ellenőrzéshez kötötte a kriptoeszközök átváltását, a validáció elmulasztása pedig büntetőeljárással és akár szabadságvesztéssel is fenyegette a magyar felhasználókat.",
+		"description_line_2": "A bizonytalan szabályok miatt több szolgáltató korlátozta vagy leállította a szolgáltatásait Magyarországon.",
+		"description_line_3": "A rendszert 2026 nyarán megszüntették.",
 		"restricted": "Korlátozott",
 		"returned_or_returning": "Visszatért",
 		"cta_exchanges": "Szolgáltatói státuszok",
 		"cta_timeline": "Teljes idővonal",
 		"cta_telegram": "Csatlakozzon Telegramon",
 		"tracking": {
-			"title": "Az oldal továbbra is elérhető",
-			"description": "A rendszer megszüntetése fontos győzelem, de az okozott kár nem rendeződött azonnal: több szolgáltató még nem állította helyre magyarországi működését. Az oldal továbbra is nyomon követi, mely szolgáltatók térnek vissza, és melyek tartják fenn korlátozásaikat, az idővonalon pedig megőrzi a szabályozási változások történeti dokumentációját."
+			"title": "Az oldal továbbra is elérhető marad",
+			"description": "A validációs rendszer megszűnt, de még nem minden szolgáltató tért vissza Magyarországra. Az oldalon továbbra is követjük, kik térnek vissza, és kiknél maradnak a korlátozások. Az idővonalon azt is megőrizzük, hogyan változtak a szabályok."
 		}
 	},
 	"crypto_validation": {
