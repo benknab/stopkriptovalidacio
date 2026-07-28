@@ -17,6 +17,8 @@
 	"coincash": {
 		"name": "CoinCash",
 		"status": "restricted",
+		"returnStatus": "announced",
+		"returnAnnouncementDate": "2026-07-23",
 		"leaveDate": "2025-12-18"
 	},
 	"bitstamp": {

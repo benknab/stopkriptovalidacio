@@ -10,6 +10,7 @@ export const exchangeSchema = z.object({
 	name: z.string(),
 	status: exchangeStatusSchema,
 	returnStatus: exchangeReturnStatusSchema.optional(),
+	returnAnnouncementDate: z.coerce.date().optional(),
 	leaveDate: z.coerce.date().optional(),
 });
 

@@ -1,15 +1,14 @@
 import type { JSX } from "preact";
 import { TELEGRAM_CHANNEL_URL } from "../constants/seo.ts";
-import { exchanges, type ExchangeStatus } from "../data/exchanges.ts";
+import { exchanges } from "../data/exchanges.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { ButtonLink } from "./button-link.tsx";
 
-function countByStatus(status: ExchangeStatus): number {
-	return Object.values(exchanges).filter((e) => e.status === status).length;
-}
-
 const exchangeCounts = {
-	restricted: countByStatus("restricted"),
+	restricted:
+		Object.values(exchanges).filter((exchange) =>
+			exchange.status === "restricted" && exchange.returnStatus === undefined
+		).length,
 	returnedOrReturning: Object.values(exchanges).filter((exchange) => exchange.returnStatus !== undefined).length,
 } as const;
 

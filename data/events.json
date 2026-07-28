@@ -1026,6 +1026,25 @@
 		],
 		"exchangeSlugs": []
 	},
+	"coincash-visszateres-bejelentese": {
+		"date": "2026-07-23",
+		"type": "secondary",
+		"title": {
+			"hu": "A CoinCash újraindítja szolgáltatásait",
+			"en": "CoinCash begins restoring its services"
+		},
+		"summary": {
+			"hu": "Miután megkapta az MNB MiCA-engedélyét, a CoinCash megkezdte szolgáltatásainak fokozatos újraindítását. A pontos menetrendről közvetlenül értesítik a meglévő ügyfeleket.",
+			"en": "After receiving its MiCA licence from the National Bank of Hungary, CoinCash began restoring its services gradually. Existing customers will be informed directly about the detailed schedule."
+		},
+		"sourceSlugs": [
+			"coincash-portfolio-2026-07-23",
+			"coincash-galantai-linkedin-2026-07-24"
+		],
+		"exchangeSlugs": [
+			"coincash"
+		]
+	},
 	"t-305-szavazas": {
 		"date": "2026-07-28",
 		"type": "primary",

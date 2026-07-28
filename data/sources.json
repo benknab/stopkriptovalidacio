@@ -293,6 +293,28 @@
 			"en": "HVG summary on the suspension of CoinCash services."
 		}
 	},
+	"coincash-portfolio-2026-07-23": {
+		"title": {
+			"hu": "Portfolio.hu",
+			"en": "Portfolio.hu"
+		},
+		"originalUrl": "https://www.portfolio.hu/befektetes/20260723/fordulat-a-hazai-kriptopiacon-megszerezte-a-szukseges-engedelyt-maris-ujraindulhat-a-piacvezeto-szolgaltato-851622",
+		"summary": {
+			"hu": "A Portfolio beszámolója szerint a CoinCash megkapta az MNB MiCA szerinti kriptoeszköz-szolgáltatói engedélyét, megkezdte működésének újraindítását, szolgáltatásai pedig fokozatosan válnak ismét elérhetővé.",
+			"en": "Portfolio reported that CoinCash received its MiCA crypto-asset service provider licence from the National Bank of Hungary, began restarting its operations, and will make its services available again gradually."
+		}
+	},
+	"coincash-galantai-linkedin-2026-07-24": {
+		"title": {
+			"hu": "Galántai Gábor LinkedIn-bejegyzése (2026.07.24.)",
+			"en": "Gábor Galántai LinkedIn post (2026-07-24)"
+		},
+		"originalUrl": "https://www.linkedin.com/posts/gaborgalantai_hungary-crypto-regulation-enters-new-phase-activity-7486433811140894720-4H2j",
+		"summary": {
+			"hu": "A CoinCash társalapítója és ügyvezetője bejelentette a vállalat MiCA-engedélyének megszerzését, és közölte, hogy szolgáltatásaikat a következő hetekben fokozatosan indítják újra.",
+			"en": "CoinCash's co-founder and CEO announced that the company had received its MiCA licence and said its services would be brought back gradually over the following weeks."
+		}
+	},
 	"bitstamp-kriptoakademia-2025-07-09": {
 		"title": {
 			"hu": "KriptoAkadémia",

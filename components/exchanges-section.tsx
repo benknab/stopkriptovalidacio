@@ -24,6 +24,11 @@ const statusColors: Record<ExchangeStatus, { border: string; badge: string }> = 
 	},
 };
 
+const returnColors = {
+	border: "border-t-emerald-500",
+	badge: "bg-emerald-100 text-emerald-700",
+} as const;
+
 function getSortedExchanges(): Array<{ slug: ExchangeSlug; exchange: Exchange }> {
 	const entries = Object.entries(exchanges) as Array<[ExchangeSlug, Exchange]>;
 
@@ -31,6 +36,10 @@ function getSortedExchanges(): Array<{ slug: ExchangeSlug; exchange: Exchange }>
 		.filter(([, exchange]) => exchange.status === "restricted" || exchange.returnStatus !== undefined)
 		.map(([slug, exchange]) => ({ slug, exchange }))
 		.sort((a, b) => {
+			const returnDiff = Number(a.exchange.returnStatus === undefined) -
+				Number(b.exchange.returnStatus === undefined);
+			if (returnDiff !== 0) return returnDiff;
+
 			const priorityDiff = statusPriority[a.exchange.status] - statusPriority[b.exchange.status];
 			if (priorityDiff !== 0) return priorityDiff;
 			return a.exchange.name.localeCompare(b.exchange.name);
@@ -55,7 +64,7 @@ function formatDate(date: Date, lang: SupportedLanguage): string {
 }
 
 function ExchangeCard({ slug, exchange, lang }: ExchangeCardProps): JSX.Element {
-	const colors = statusColors[exchange.status];
+	const colors = exchange.returnStatus ? returnColors : statusColors[exchange.status];
 
 	return (
 		<div
@@ -64,25 +73,40 @@ function ExchangeCard({ slug, exchange, lang }: ExchangeCardProps): JSX.Element 
 			<div class="flex justify-between items-start gap-3 mb-2">
 				<h3 class="font-semibold text-slate-900">{exchange.name}</h3>
 				<div class="flex flex-wrap justify-end gap-1.5">
-					<span
-						class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}
-					>
-						{t(`exchanges.status.${exchange.status}`, lang)}
-					</span>
-					{exchange.returnStatus && (
-						<span class="text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap bg-emerald-100 text-emerald-700">
-							{t(`exchanges.return_status.${exchange.returnStatus}`, lang)}
-						</span>
-					)}
+					{exchange.returnStatus
+						? (
+							<span
+								class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}
+							>
+								{t(`exchanges.return_status.${exchange.returnStatus}`, lang)}
+							</span>
+						)
+						: (
+							<span
+								class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}
+							>
+								{t(`exchanges.status.${exchange.status}`, lang)}
+							</span>
+						)}
 				</div>
 			</div>
 			<p class="text-sm text-slate-600 leading-relaxed mb-4">
 				{t(`exchanges.${slug}.summary`, lang)}
 			</p>
-			{exchange.leaveDate && (
-				<p class="mt-auto text-xs text-slate-500 font-medium">
-					{formatDate(exchange.leaveDate, lang)}
-				</p>
+			{(exchange.leaveDate || exchange.returnAnnouncementDate) && (
+				<div class="mt-auto space-y-1 text-xs font-medium">
+					{exchange.leaveDate && (
+						<p class="text-slate-500">
+							{t("exchanges.left_on", lang)} {formatDate(exchange.leaveDate, lang)}
+						</p>
+					)}
+					{exchange.returnAnnouncementDate && (
+						<p class="text-emerald-700">
+							{t("exchanges.return_announced_on", lang)}{" "}
+							{formatDate(exchange.returnAnnouncementDate, lang)}
+						</p>
+					)}
+				</div>
 			)}
 		</div>
 	);
