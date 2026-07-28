@@ -1043,6 +1043,20 @@
 		],
 		"exchangeSlugs": []
 	},
+	"frissites-2026-07-28-megujul-az-oldal": {
+		"date": "2026-07-28",
+		"type": "telegram",
+		"title": {
+			"hu": "Frissítés: Megújul az oldal",
+			"en": "Update: The site is being renewed"
+		},
+		"summary": {
+			"hu": "A validációs rendszer megszűnésével az oldal is megújul. A képviselők megkeresésére ösztönző tartalmak helyett ezentúl a szabályozási és szolgáltatói változásokat dokumentáljuk. Emellett felvesszük a kapcsolatot a Magyarországon korlátozásokat bevezető szolgáltatókkal, és arra kérjük őket, hogy állítsák helyre magyarországi szolgáltatásaikat.",
+			"en": "With the validation regime ended, the site is also being renewed. Instead of encouraging users to contact MPs, it will now document regulatory and provider changes. We will also contact providers that introduced restrictions in Hungary and ask them to restore their services for Hungarian users."
+		},
+		"sourceSlugs": [],
+		"exchangeSlugs": []
+	},
 	"frissites-2026-06-10-tanacs-zoltan-poszt": {
 		"date": "2026-06-10",
 		"type": "telegram",
