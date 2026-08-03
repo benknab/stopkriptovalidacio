@@ -149,6 +149,7 @@
 		"status": {
 			"operating": "Operating",
 			"restricted": "Restricted",
+			"closed": "Operations ceased",
 			"uncertain": "Uncertain"
 		},
 		"return_status": {
@@ -163,7 +164,7 @@
 		"etoro": { "summary": "Only crypto CFDs available." },
 		"coincash": { "summary": "Began gradually restoring its services after receiving its MiCA licence." },
 		"bitstamp": { "summary": "Trading suspended." },
-		"kriptomat": { "summary": "Trading temporarily paused." },
+		"kriptomat": { "summary": "Ceased operations by June 30, 2026; unavailable in Hungary." },
 		"bitvavo": { "summary": "Trading and deposits suspended." },
 		"coinbase": {
 			"summary": "A Coinbase spokesperson stated that their current cross-border services do not fall within the Hungarian law's remit. The company is monitoring the regulatory situation."

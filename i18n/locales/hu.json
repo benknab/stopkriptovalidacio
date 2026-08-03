@@ -149,6 +149,7 @@
 		"status": {
 			"operating": "Működik",
 			"restricted": "Korlátozott",
+			"closed": "Működése megszűnt",
 			"uncertain": "Bizonytalan"
 		},
 		"return_status": {
@@ -163,7 +164,7 @@
 		"etoro": { "summary": "Csak kripto CFD-k maradtak elérhetők." },
 		"coincash": { "summary": "MiCA-engedély birtokában megkezdte szolgáltatásainak fokozatos újraindítását." },
 		"bitstamp": { "summary": "Kereskedés felfüggesztve." },
-		"kriptomat": { "summary": "Kereskedés ideiglenesen szünetel." },
+		"kriptomat": { "summary": "Működését 2026. június 30-ig megszüntette; Magyarországon nem elérhető." },
 		"bitvavo": { "summary": "Kereskedés és befizetés felfüggesztve." },
 		"coinbase": {
 			"summary": "A Coinbase szóvivője szerint jelenlegi határokon átnyúló szolgáltatásaik nem esnek a magyar törvény hatálya alá. A vállalat figyelemmel kíséri a szabályozási helyzetet."

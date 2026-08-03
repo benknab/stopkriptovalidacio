@@ -6,7 +6,8 @@ import { H2 } from "./h2.tsx";
 const statusPriority: Record<ExchangeStatus, number> = {
 	operating: 0,
 	restricted: 1,
-	uncertain: 2,
+	closed: 2,
+	uncertain: 3,
 };
 
 const statusColors: Record<ExchangeStatus, { border: string; badge: string }> = {
@@ -17,6 +18,10 @@ const statusColors: Record<ExchangeStatus, { border: string; badge: string }> = 
 	restricted: {
 		border: "border-t-red-500",
 		badge: "bg-red-100 text-red-700",
+	},
+	closed: {
+		border: "border-t-slate-600",
+		badge: "bg-slate-200 text-slate-700",
 	},
 	uncertain: {
 		border: "border-t-amber-500",
@@ -33,7 +38,9 @@ function getSortedExchanges(): Array<{ slug: ExchangeSlug; exchange: Exchange }>
 	const entries = Object.entries(exchanges) as Array<[ExchangeSlug, Exchange]>;
 
 	return entries
-		.filter(([, exchange]) => exchange.status === "restricted" || exchange.returnStatus !== undefined)
+		.filter(([, exchange]) =>
+			exchange.status === "restricted" || exchange.status === "closed" || exchange.returnStatus !== undefined
+		)
 		.map(([slug, exchange]) => ({ slug, exchange }))
 		.sort((a, b) => {
 			const returnDiff = Number(a.exchange.returnStatus === undefined) -

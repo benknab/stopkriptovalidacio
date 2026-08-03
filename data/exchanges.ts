@@ -1,7 +1,7 @@
 import { z } from "zod";
 import exchangesJson from "./exchanges.json" with { type: "json" };
 
-const exchangeStatusSchema = z.enum(["operating", "restricted", "uncertain"]);
+const exchangeStatusSchema = z.enum(["operating", "restricted", "closed", "uncertain"]);
 const exchangeReturnStatusSchema = z.enum(["announced", "returned"]);
 
 export type ExchangeStatus = z.infer<typeof exchangeStatusSchema>;

@@ -1091,5 +1091,23 @@
 			"tanacs-zoltan-facebook-kriptovalutak-kriminalizalasa-2026-06-10"
 		],
 		"exchangeSlugs": []
+	},
+	"kriptomat-nem-ter-vissza-magyarorszagra": {
+		"date": "2026-05-19",
+		"type": "secondary",
+		"title": {
+			"hu": "A Kriptomat bejelenti működésének leállítását",
+			"en": "Kriptomat announces wind-down of its operations"
+		},
+		"summary": {
+			"hu": "A Kriptomat bejelentette, hogy 2026. június 30-ig megszünteti kriptoeszköz-szolgáltatásait. A vállalat a MiCA-engedélyezési kérelme visszavonásával, az eljárás elhúzódásával és követelményeinek bizonytalanságával indokolta a döntést.",
+			"en": "Kriptomat announced that it would cease its crypto-asset services by June 30, 2026. The company cited the withdrawal of its MiCA authorization application, the extended process, and unclear requirements as reasons for the decision."
+		},
+		"sourceSlugs": [
+			"kriptomat-wind-down-2026-05-19"
+		],
+		"exchangeSlugs": [
+			"kriptomat"
+		]
 	}
 }

@@ -392,6 +392,17 @@
 			"en": "Privátbankár report on Kriptomat's suspension of Hungarian services from December 26 at 23:00 CET."
 		}
 	},
+	"kriptomat-wind-down-2026-05-19": {
+		"title": {
+			"hu": "Kriptomat",
+			"en": "Kriptomat"
+		},
+		"originalUrl": "https://kriptomat.io/kriptomat-to-wind-down-operations-by-30-june-2026-and-what-comes-next-for-our-customers/",
+		"summary": {
+			"hu": "A Kriptomat 2026. május 19-én bejelentette, hogy 2026. június 30-ig megszünteti kriptoeszköz-szolgáltatásait. A vállalat a MiCA-engedélyezési kérelme visszavonásával, az eljárás elhúzódásával és követelményeinek bizonytalanságával indokolta a döntést.",
+			"en": "On May 19, 2026, Kriptomat announced that it would cease its crypto-asset services by June 30, 2026. The company cited the withdrawal of its MiCA authorization application, the extended process, and unclear requirements as reasons for the decision."
+		}
+	},
 	"bitvavo-support-2025-12": {
 		"title": {
 			"hu": "Bitvavo Súgó",
