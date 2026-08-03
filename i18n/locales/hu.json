@@ -41,6 +41,7 @@
 		"description_line_2": "A bizonytalan szabályok miatt több szolgáltató korlátozta vagy leállította a szolgáltatásait Magyarországon.",
 		"description_line_3": "A rendszert 2026 nyarán megszüntették.",
 		"restricted": "Korlátozott",
+		"closed": "Megszűnt",
 		"returned_or_returning": "Visszatért",
 		"cta_exchanges": "Szolgáltatói státuszok",
 		"cta_timeline": "Teljes idővonal",
@@ -149,7 +150,7 @@
 		"status": {
 			"operating": "Működik",
 			"restricted": "Korlátozott",
-			"closed": "Működése megszűnt",
+			"closed": "Megszűnt",
 			"uncertain": "Bizonytalan"
 		},
 		"return_status": {

@@ -41,6 +41,7 @@
 		"description_line_2": "Because the rules were unclear, several providers limited or stopped their services in Hungary.",
 		"description_line_3": "The system ended in summer 2026.",
 		"restricted": "Restricted",
+		"closed": "Closed",
 		"returned_or_returning": "Returning",
 		"cta_exchanges": "Provider statuses",
 		"cta_timeline": "Full timeline",
@@ -149,7 +150,7 @@
 		"status": {
 			"operating": "Operating",
 			"restricted": "Restricted",
-			"closed": "Operations ceased",
+			"closed": "Closed",
 			"uncertain": "Uncertain"
 		},
 		"return_status": {

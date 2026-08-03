@@ -9,12 +9,14 @@ const exchangeCounts = {
 		Object.values(exchanges).filter((exchange) =>
 			exchange.status === "restricted" && exchange.returnStatus === undefined
 		).length,
+	closed: Object.values(exchanges).filter((exchange) => exchange.status === "closed").length,
 	returnedOrReturning: Object.values(exchanges).filter((exchange) => exchange.returnStatus !== undefined).length,
 } as const;
 
 const colorClasses = {
 	green: "text-emerald-400",
 	red: "text-red-400",
+	slate: "text-slate-300",
 } as const;
 
 interface StatBoxProps {
@@ -69,8 +71,9 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 					</p>
 				</div>
 
-				<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-3xl mx-auto">
+				<div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto">
 					<StatBox count={exchangeCounts.restricted} label={t("hero.restricted", lang)} color="red" />
+					<StatBox count={exchangeCounts.closed} label={t("hero.closed", lang)} color="slate" />
 					<StatBox
 						count={exchangeCounts.returnedOrReturning}
 						label={t("hero.returned_or_returning", lang)}
