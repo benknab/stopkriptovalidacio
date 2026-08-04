@@ -17,6 +17,11 @@ function formatDate(date: Date, lang: SupportedLanguage): string {
 	});
 }
 
+function getTodayInBudapest(): Date {
+	const today = new Date();
+	return new Date(today.toLocaleDateString("en-CA", { timeZone: "Europe/Budapest" }));
+}
+
 function TimelineSource(
 	{ slug, source, lang }: { slug: string; source: Source; lang: SupportedLanguage },
 ): JSX.Element | null {
@@ -179,6 +184,7 @@ interface TimelineSectionProps {
 
 export default function TimelineSection(props: TimelineSectionProps): JSX.Element {
 	const { lang } = props;
+	const today = getTodayInBudapest();
 	const showSecondary = useBooleanQueryParam({
 		key: "masodlagos",
 		defaultValue: true,
@@ -192,6 +198,7 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 
 	const filteredEvents = Object.entries(events)
 		.filter(([, event]) => {
+			if (event.date > today) return false;
 			if (event.type === "telegram") return false;
 			if (event.type === "primary") return true;
 			if (event.type === "secondary") return showSecondary.value;

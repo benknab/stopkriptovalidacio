@@ -75,6 +75,15 @@ function loadSentEvents(): Set<string> {
 	return new Set(sentEventsJson);
 }
 
+function isDue(event: (typeof events)[string]): boolean {
+	const today = new Date();
+	const todayInBudapest = new Date(
+		today.toLocaleDateString("en-CA", { timeZone: "Europe/Budapest" }),
+	);
+
+	return event.date <= todayInBudapest;
+}
+
 async function saveSentEvents(sentEvents: Set<string>): Promise<void> {
 	const slugs = [...sentEvents].sort();
 	await Deno.writeTextFile(SENT_EVENTS_PATH, JSON.stringify(slugs, null, "\t") + "\n");
@@ -163,7 +172,7 @@ async function postAllUnsentEvents(dryRun: boolean): Promise<void> {
 	const prefix = dryRun ? "[DRY-RUN] " : "";
 
 	const unsentEvents = Object.entries(events)
-		.filter(([slug]) => !sentEvents.has(slug))
+		.filter(([slug, event]) => !sentEvents.has(slug) && isDue(event))
 		.sort(([, a], [, b]) => a.date.getTime() - b.date.getTime());
 
 	if (unsentEvents.length === 0) {
