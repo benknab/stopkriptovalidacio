@@ -1062,6 +1062,36 @@
 		],
 		"exchangeSlugs": []
 	},
+	"2026-evi-xxxviii-torveny-kihirdetese": {
+		"date": "2026-07-30",
+		"type": "primary",
+		"title": {
+			"hu": "A 2026. évi XXXVIII. törvény kihirdetése",
+			"en": "Act XXXVIII of 2026 promulgated"
+		},
+		"summary": {
+			"hu": "A Magyar Közlönyben megjelent a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló 2026. évi XXXVIII. törvény. <b>A törvény hatályon kívül helyezi a kriptoeszközzel visszaélés és a jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása Btk.-alcímeit, valamint megszünteti a validátori rendszer jogszabályi alapját.</b> A törvény 2026. augusztus 7-én lép hatályba; ekkor a validátori engedélyek hatályukat vesztik, a folyamatban lévő eljárásokat pedig az SZTFH megszünteti.",
+			"en": "Act XXXVIII of 2026 on repealing certain statutory provisions concerning crypto-asset exchange services was published in the Hungarian Gazette. <b>The Act repeals the Criminal Code headings on crypto-asset abuse and providing unauthorized crypto-asset exchange services, and removes the statutory basis for the validator system.</b> It enters into force on August 7, 2026; validator licences will then cease to have effect and SZTFH will terminate pending proceedings."
+		},
+		"sourceSlugs": [
+			"magyar-kozlony-2026-102"
+		],
+		"exchangeSlugs": []
+	},
+	"2026-evi-xxxviii-torveny-hatalybalepese": {
+		"date": "2026-08-07",
+		"type": "primary",
+		"title": {
+			"hu": "Hatályba lépett a kriptovalidációt megszüntető törvény",
+			"en": "Act ending crypto validation enters into force"
+		},
+		"summary": {
+			"hu": "Ma hatályba lépett a 2026. évi XXXVIII. törvény. A törvény hatályon kívül helyezte a kriptoeszközzel visszaélés és a jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása Btk.-alcímeit, megszüntette a validátori rendszer jogszabályi alapját, és a validátori engedélyek hatályukat vesztették.",
+			"en": "Act XXXVIII of 2026 entered into force today. It repealed the Criminal Code headings on crypto-asset abuse and providing unauthorized crypto-asset exchange services, removed the statutory basis for the validator system, and caused validator licences to cease to have effect."
+		},
+		"sourceSlugs": [],
+		"exchangeSlugs": []
+	},
 	"frissites-2026-07-28-megujul-az-oldal": {
 		"date": "2026-07-28",
 		"type": "telegram",

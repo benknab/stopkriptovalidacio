@@ -954,6 +954,21 @@
 			"en": "On July 28, 2026, the National Assembly adopted the simple-majority part of bill T/305 with 143 votes in favor, 46 against, and 1 abstention."
 		}
 	},
+	"magyar-kozlony-2026-102": {
+		"title": {
+			"hu": "Magyar Közlöny 2026. évi 102. szám",
+			"en": "Hungarian Gazette, issue 102 of 2026"
+		},
+		"originalUrl": "https://magyarkozlony.hu/dokumentumok/0d5f80ec06f807d7a5f83a87bb3d91ef5f39534f/megtekintes",
+		"summary": {
+			"hu": "A 2026. július 30-án megjelent Magyar Közlöny kihirdette a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló 2026. évi XXXVIII. törvényt. A törvény 2026. augusztus 7-én lép hatályba.",
+			"en": "The Hungarian Gazette published on July 30, 2026 promulgated Act XXXVIII of 2026 on repealing certain statutory provisions concerning crypto-asset exchange services. The Act enters into force on August 7, 2026."
+		},
+		"text": {
+			"hu": "2026. évi XXXVIII. törvény\nA kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről\n\n1. § Hatályát veszti a Büntető Törvénykönyvről szóló 2012. évi C. törvény 394. §-át követő „Kriptoeszközzel visszaélés” alcíme, valamint 408. §-át követő „Jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása” alcíme.\n\n4. § A folyamatban lévő validátori engedélyezési és felügyeleti eljárásokat az SZTFH megszünteti. A kriptoeszköz-átváltást validáló szolgáltatási tevékenységre vonatkozó engedélyek a törvény hatálybalépésének napján hatályukat vesztik.\n\n6. § Ez a törvény a kihirdetését követő 8. napon lép hatályba.",
+			"en": "Act XXXVIII of 2026\nOn repealing certain statutory provisions concerning crypto-asset exchange services\n\nSection 1. The headings “Crypto-asset abuse” following Section 394 of Act C of 2012 on the Criminal Code, and “Providing unauthorized crypto-asset exchange services” following Section 408, are repealed.\n\nSection 4. SZTFH shall terminate pending validator licensing and supervisory proceedings. Licences for crypto-asset exchange validation service activities shall cease to have effect on the day this Act enters into force.\n\nSection 6. This Act enters into force on the 8th day following its promulgation."
+		}
+	},
 	"portfolio-tisza-kormany-kriptoszabalyozas-2026-06-11": {
 		"title": {
 			"hu": "Portfolio.hu",
