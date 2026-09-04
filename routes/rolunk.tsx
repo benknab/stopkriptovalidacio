@@ -102,7 +102,7 @@ export default define.page(function About(ctx): JSX.Element {
 					<p>{t("about.privacy.email", lang)}</p>
 					<p>
 						{parseTextWithLinks(t("about.privacy.analytics", lang), lang, {
-							plausibleLink: { href: "https://plausible.io/privacy", external: true },
+							umamiLink: { href: "https://umami.is/privacy", external: true },
 						})}
 					</p>
 					<p>

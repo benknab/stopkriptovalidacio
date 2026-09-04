@@ -92,10 +92,10 @@
 		"privacy": {
 			"title": "Adatvédelem",
 			"email": "A képviselőknek küldött emailek feldolgozása teljes egészében a böngészőben történik. Az üzenetek tartalmát nem tároljuk és nem továbbítjuk.",
-			"analytics": "Adatvédelmi célú analitikához a Plausible szolgáltatását használjuk, amely nem használ sütiket és nem gyűjt személyes adatokat. További információ: <plausibleLink>Plausible adatvédelmi irányelvek</plausibleLink>.",
+			"analytics": "Adatvédelmi célú analitikához az Umami szolgáltatását használjuk, amely nem használ sütiket és nem gyűjt személyes adatokat. További információ: <umamiLink>Umami adatvédelmi irányelvek</umamiLink>.",
 			"cloudflare": "A weboldal teljesítményének javításához a Cloudflare gyorsítótárazó szolgáltatását használjuk. A Cloudflare ideiglenesen feldolgozhat IP-címeket és alapvető kérési információkat, de ezeket az adatokat mi nem használjuk elemzési célokra. További információ: <cloudflareLink>Cloudflare adatvédelmi irányelvek</cloudflareLink>.",
 			"changes": "Az adatvédelmi irányelvek változása esetén frissítjük ezt az oldalt.",
-			"updated": "Utolsó frissítés: 2025. január 9."
+			"updated": "Utolsó frissítés: 2026. szeptember 4."
 		},
 		"contributions": {
 			"title": "Közreműködés",
