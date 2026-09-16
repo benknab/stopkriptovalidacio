@@ -1,4 +1,22 @@
 {
+	"bull-bitcoin-magyarorszagi-elerhetoseg-megerositese": {
+		"date": "2026-09-16",
+		"type": "secondary",
+		"title": {
+			"hu": "Bull Bitcoin megerősíti a magyarországi elérhetőséget",
+			"en": "Bull Bitcoin confirms availability in Hungary"
+		},
+		"summary": {
+			"hu": "A Bull Bitcoin a Stop Kriptovalidáció megkeresésére e-mailben megerősítette, hogy szolgáltatásai jelenleg elérhetők a magyarországi lakosok számára, eurós befizetési lehetőséggel.",
+			"en": "In an email response to Stop Kriptovalidáció, Bull Bitcoin confirmed that its services are currently available to residents of Hungary, with EUR funding options."
+		},
+		"sourceSlugs": [
+			"bull-bitcoin-email-elerhetoseg"
+		],
+		"exchangeSlugs": [
+			"bull-bitcoin"
+		]
+	},
 	"t-11922-benyujtva": {
 		"date": "2025-05-13",
 		"type": "primary",

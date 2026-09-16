@@ -1,4 +1,18 @@
 {
+	"bull-bitcoin-email-elerhetoseg": {
+		"title": {
+			"hu": "Bull Bitcoin ügyfélszolgálat – e-mailes megerősítés",
+			"en": "Bull Bitcoin support – email confirmation"
+		},
+		"summary": {
+			"hu": "Elsődleges forrás: a Bull Bitcoin ügyfélszolgálatának e-mailes válasza a Stop Kriptovalidáció megkeresésére. A szolgáltató megerősítette a magyarországi elérhetőséget, és hozzájárult a tájékoztatás közzétételéhez.",
+			"en": "Primary source: Bull Bitcoin support's email response to Stop Kriptovalidáció. The provider confirmed availability in Hungary and granted permission to publish the information."
+		},
+		"text": {
+			"hu": "Eredeti angol e-mail:\n\nHi Ben,\nWe can confirm that Bull Bitcoin services are currently available to residents of Hungary. Our normal services are available with EUR funding rails. Yes, you may indicate this on your site.\nThanks Ben!\nTake care.",
+			"en": "Hi Ben,\nWe can confirm that Bull Bitcoin services are currently available to residents of Hungary. Our normal services are available with EUR funding rails. Yes, you may indicate this on your site.\nThanks Ben!\nTake care."
+		}
+	},
 	"parlament-11922": {
 		"title": {
 			"hu": "T/11922 Törvényjavaslat (PDF)",

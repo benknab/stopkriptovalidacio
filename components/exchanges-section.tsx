@@ -100,7 +100,7 @@ function ExchangeCard({ slug, exchange, lang }: ExchangeCardProps): JSX.Element 
 			<p class="text-sm text-slate-600 leading-relaxed mb-4">
 				{t(`exchanges.${slug}.summary`, lang)}
 			</p>
-			{(exchange.leaveDate || exchange.returnAnnouncementDate) && (
+			{(exchange.leaveDate || exchange.returnAnnouncementDate || exchange.returnConfirmationDate) && (
 				<div class="mt-auto space-y-1 text-xs font-medium">
 					{exchange.leaveDate && (
 						<p class="text-slate-500">
@@ -111,6 +111,12 @@ function ExchangeCard({ slug, exchange, lang }: ExchangeCardProps): JSX.Element 
 						<p class="text-emerald-700">
 							{t("exchanges.return_announced_on", lang)}{" "}
 							{formatDate(exchange.returnAnnouncementDate, lang)}
+						</p>
+					)}
+					{exchange.returnConfirmationDate && (
+						<p class="text-emerald-700">
+							{t("exchanges.return_confirmed_on", lang)}{" "}
+							{formatDate(exchange.returnConfirmationDate, lang)}
 						</p>
 					)}
 				</div>

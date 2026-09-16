@@ -62,7 +62,9 @@
 	},
 	"bull-bitcoin": {
 		"name": "Bull Bitcoin",
-		"status": "restricted",
+		"status": "operating",
+		"returnStatus": "returned",
+		"returnConfirmationDate": "2026-09-16",
 		"leaveDate": "2025-12-26"
 	},
 	"bybit": {
