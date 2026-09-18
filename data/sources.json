@@ -1,4 +1,18 @@
 {
+	"etoro-email-visszateres": {
+		"title": {
+			"hu": "eToro – e-mailes megerősítés a kriptoszolgáltatások újraindításáról",
+			"en": "eToro – email confirmation of restored crypto services"
+		},
+		"summary": {
+			"hu": "Elsődleges forrás: az eToro e-mailes válasza a Stop Kriptovalidáció megkeresésére. A szolgáltató megerősítette, hogy szeptember 7-től újra elérhetők kriptoszolgáltatásai Magyarországon, és hozzájárult a tájékoztatás közzétételéhez.",
+			"en": "Primary source: eToro's email response to Stop Kriptovalidáció. The provider confirmed that crypto services in Hungary were restored as of September 7 and granted permission to publish the information."
+		},
+		"text": {
+			"hu": "Eredeti angol e-mail:\n\nHi Ben,\nAs of 7 September, etoro has re-enabled crypto services for users in Hungary. This includes opening and closing positions on underlying cryptoassets, access to the crypto staking programme, and access to the etoro Crypto Wallet. You may publish this on your website.\n\nKind regards,\nNat",
+			"en": "Hi Ben,\nAs of 7 September, etoro has re-enabled crypto services for users in Hungary. This includes opening and closing positions on underlying cryptoassets, access to the crypto staking programme, and access to the etoro Crypto Wallet. You may publish this on your website.\n\nKind regards,\nNat"
+		}
+	},
 	"bull-bitcoin-email-elerhetoseg": {
 		"title": {
 			"hu": "Bull Bitcoin ügyfélszolgálat – e-mailes megerősítés",

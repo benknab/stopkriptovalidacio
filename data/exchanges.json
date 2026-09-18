@@ -11,7 +11,9 @@
 	},
 	"etoro": {
 		"name": "eToro",
-		"status": "restricted",
+		"status": "operating",
+		"returnStatus": "returned",
+		"returnDate": "2026-09-07",
 		"leaveDate": "2025-12-26"
 	},
 	"coincash": {

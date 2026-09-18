@@ -1,4 +1,22 @@
 {
+	"etoro-kriptoszolgaltatasok-ujrainditasa": {
+		"date": "2026-09-07",
+		"type": "secondary",
+		"title": {
+			"hu": "Az eToro újraindítja kriptoszolgáltatásait Magyarországon",
+			"en": "eToro restores crypto services in Hungary"
+		},
+		"summary": {
+			"hu": "Az eToro a Stop Kriptovalidáció megkeresésére e-mailben megerősítette, hogy szeptember 7-től ismét elérhetők kriptoszolgáltatásai a magyarországi felhasználók számára. Ez magában foglalja a tényleges kriptoeszközökre vonatkozó pozíciók nyitását és zárását, a kripto-staking programot és az eToro Crypto Wallet használatát.",
+			"en": "In an email response to Stop Kriptovalidáció, eToro confirmed that it restored crypto services for users in Hungary on September 7. This includes opening and closing positions on underlying cryptoassets, access to the crypto staking programme, and access to the eToro Crypto Wallet."
+		},
+		"sourceSlugs": [
+			"etoro-email-visszateres"
+		],
+		"exchangeSlugs": [
+			"etoro"
+		]
+	},
 	"bull-bitcoin-magyarorszagi-elerhetoseg-megerositese": {
 		"date": "2026-09-16",
 		"type": "secondary",
