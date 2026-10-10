@@ -114,8 +114,20 @@ test("all source routes enforce first-party visibility and missing routes return
 		const response = await fetch(`${server.baseUrl}/forras/${slug}`);
 		expect(response.status, slug).toBe(source.originalUrl || source.internalUrl ? 404 : 200);
 	}
-	for (const path of ["/nincs-ilyen-oldal", "/forras/nincs-ilyen-forras"]) {
-		expect((await fetch(`${server.baseUrl}${path}`)).status).toBe(404);
+	for (const lang of ["hu", "en"] as const) {
+		for (const path of ["/nincs-ilyen-oldal", "/forras/nincs-ilyen-forras"]) {
+			const response = await fetch(`${server.baseUrl}${localizePath(path, lang)}`);
+			expect(response.status).toBe(404);
+			const $ = load(await response.text());
+			expect($("main h1").text()).toBe("404");
+			expect($("title").text()).toBe("404 | Stop Kriptovalidáció");
+			expect($("meta[name=robots]").attr("content")).toBe("noindex, nofollow");
+			expect($("link[rel=stylesheet]")).toHaveLength(1);
+			expect($("script[src], script[type=module], script[data-tsr-stream-part], link[rel=modulepreload]")).toHaveLength(
+				0,
+			);
+			expect($("script")).toHaveLength(1);
+		}
 	}
 }, 20000);
 

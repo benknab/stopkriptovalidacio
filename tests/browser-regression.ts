@@ -71,6 +71,36 @@ async function checkTimelineDeepLink(): Promise<void> {
 	await checkErrors();
 }
 
+async function checkMissingPages(): Promise<void> {
+	for (const path of ["/nincs-ilyen-oldal", "/forras/nincs-ilyen-forras"]) {
+		await open(path);
+		await check(
+			`document.documentElement.lang === ${JSON.stringify(activeLanguage)} && document.querySelector('main h1').textContent === '404'`,
+			`${path}: the static 404 lost its language or content`,
+		);
+		await check(
+			"document.title === '404 | Stop Kriptovalidáció' && document.querySelector('meta[name=robots]').content === 'noindex, nofollow'",
+			`${path}: the static 404 lost its metadata`,
+		);
+		await check(
+			`document.querySelector('main a').getAttribute('href') === ${JSON.stringify(localizePath("/", activeLanguage))}`,
+			`${path}: the static 404 links home in the wrong language`,
+		);
+		await check(
+			"!document.querySelector('script[src], script[type=module], script[data-tsr-stream-part], link[rel=modulepreload]')",
+			`${path}: the static 404 still loads the app hydration runtime`,
+		);
+		await checkErrors();
+	}
+	await browser("click", "main a");
+	await browser("wait", "--fn", "!!document.getElementById('idovonal')");
+	await check(
+		`document.documentElement.lang === ${JSON.stringify(activeLanguage)}`,
+		"Returning home from a missing page lost the language",
+	);
+	await checkErrors();
+}
+
 async function checkErrors(): Promise<void> {
 	const errors = (await browser("errors")).errors;
 	assert.deepEqual(errors, [], "The production browser reported runtime errors");
@@ -118,6 +148,7 @@ try {
 			);
 			await checkErrors();
 		}
+		await checkMissingPages();
 
 		await open("/?masodlagos=false");
 		await browser("wait", "--fn", "!document.querySelector('#idovonal label:nth-child(2) input').checked");

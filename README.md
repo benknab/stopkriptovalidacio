@@ -84,6 +84,9 @@ and `/set-lang` are no longer used. Canonical URLs, hreflang alternates and the 
 The default page content is present in the exported HTML without JavaScript. Query filters apply immediately after
 hydration and continue to support reloads and browser history. Content changes require a rebuild/redeployment.
 
+The global 404 fallback keeps its prerendered HTML and stylesheet but does not load the app hydration runtime.
+A small inline script selects its document language and home link from the requested URL, without a backend.
+
 ### Maintenance scripts
 
 All maintenance scripts run directly with Node's native TypeScript support:

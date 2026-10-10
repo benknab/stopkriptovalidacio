@@ -1,7 +1,9 @@
-import { copyFile, readdir, readFile, rm, writeFile } from "node:fs/promises";
+import { readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { load } from "cheerio";
 import { STATIC_PAGE_PATHS } from "../utils/static-pages.ts";
 import { buildSitemap } from "../utils/sitemap.ts";
+import { localizePath } from "../utils/localized-path.ts";
 
 const OUTPUT_DIRECTORY = "dist/client";
 
@@ -12,7 +14,17 @@ for (const path of STATIC_PAGE_PATHS) {
 	if (html.includes("/_serverFn/")) throw new Error(`Static page still depends on server functions: ${path}`);
 }
 
-await copyFile(join(OUTPUT_DIRECTORY, "404/index.html"), join(OUTPUT_DIRECTORY, "404.html"));
+// Pages serves this document at arbitrary missing URLs. It cannot hydrate a
+// router payload prerendered for /404, so retain the HTML/CSS but not the app runtime.
+const notFound = load(await readFile(join(OUTPUT_DIRECTORY, "404/index.html"), "utf8"));
+notFound("script, link[rel=modulepreload], link[rel=preload][as=script]").remove();
+notFound("body").append(`<script>
+document.documentElement.lang = /^\\/en(?:\\/|$)/.test(window.location.pathname) ? "en" : "hu";
+document.querySelector("main a").setAttribute("href", document.documentElement.lang === "en"
+  ? ${JSON.stringify(localizePath("/", "en"))} : ${JSON.stringify(localizePath("/", "hu"))});
+</script>`);
+await writeFile(join(OUTPUT_DIRECTORY, "404.html"), notFound.html());
+await writeFile(join(OUTPUT_DIRECTORY, "404/index.html"), notFound.html());
 
 await writeFile(join(OUTPUT_DIRECTORY, "sitemap.xml"), buildSitemap());
 
