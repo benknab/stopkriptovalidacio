@@ -1,6 +1,6 @@
 import type { ReactNode, JSX } from "react";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
-import { MobileNav } from "../islands/mobile-nav.tsx";
+import { MobileNav } from "./mobile-nav.tsx";
 import { LanguageSwitch } from "./language-switch.tsx";
 import { getHomeAnchor, localizePath } from "../utils/localized-path.ts";
 

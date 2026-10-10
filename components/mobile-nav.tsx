@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { JSX } from "react";
 import { useEffect } from "react";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
-import { LanguageSwitch } from "../components/language-switch.tsx";
+import { LanguageSwitch } from "./language-switch.tsx";
 import { getHomeAnchor } from "../utils/localized-path.ts";
 
 const INITIAL_CLOSED = false;

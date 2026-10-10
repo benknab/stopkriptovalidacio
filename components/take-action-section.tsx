@@ -3,10 +3,10 @@ import type { JSX } from "react";
 import { useState, useEffect } from "react";
 import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
-import { H2 } from "../components/h2.tsx";
-import { MpSelector } from "../components/mp-selector.tsx";
-import { ActionButtons } from "../components/action-buttons.tsx";
-import { Input, Label, Textarea } from "../components/form.tsx";
+import { H2 } from "./h2.tsx";
+import { MpSelector } from "./mp-selector.tsx";
+import { ActionButtons } from "./action-buttons.tsx";
+import { Input, Label, Textarea } from "./form.tsx";
 
 // Hungarian-only email content (recipients are Hungarian MPs)
 const DEFAULT_SUBJECT = "Állásfoglalás kérése - 2025. évi LXVII. törvény";

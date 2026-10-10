@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { JSX } from "react";
 import { type CoalitionData, coalitions, type RepealSupport } from "../data/coalitions.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
-import { H2 } from "../components/h2.tsx";
+import { H2 } from "./h2.tsx";
 
 // --- Stance colors (border + badge) ---
 

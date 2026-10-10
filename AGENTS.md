@@ -66,8 +66,7 @@ pnpm test:browser              # Production browser tests (agent-browser)
 - `wrangler.jsonc` - Static Cloudflare Pages deployment configuration
 - `scripts/finalize-static.ts` - Static sitemap/404 generation and export validation
 - `route-tree.gen.ts` - Generated route tree (tracked for type checking on clean checkouts; do not edit manually)
-- `islands/` - Interactive React components (historical directory name; no islands runtime)
-- `components/` - Shared React components
+- `components/` - Shared and interactive React components, including page sections and navigation
 - `utils/localized-path.ts` - URL-based language detection and localized page links
 - `hooks/use-page-path.ts` - Hydration-safe page/query path for static HTML
 - `utils/page-head.ts` - Route metadata, canonical/hreflang links and structured data

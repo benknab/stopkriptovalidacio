@@ -17,11 +17,11 @@ import {
 import { sources } from "../data/sources.ts";
 import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
-import { ExternalLink } from "../components/external-link.tsx";
-import { SearchInput } from "../components/form.tsx";
-import { H2 } from "../components/h2.tsx";
-import { MpImage } from "../components/mp-image.tsx";
-import { voteColors } from "../components/vote-badge.tsx";
+import { ExternalLink } from "./external-link.tsx";
+import { SearchInput } from "./form.tsx";
+import { H2 } from "./h2.tsx";
+import { MpImage } from "./mp-image.tsx";
+import { voteColors } from "./vote-badge.tsx";
 import { buildMailtoUrl } from "../utils/mailto.ts";
 
 const votePriority: Record<VoteType, number> = {

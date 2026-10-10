@@ -7,7 +7,7 @@ import {
 	currentMinorityListMps,
 	currentMps,
 	parseDistrict,
-} from "../islands/mps-section.tsx";
+} from "./mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { MpSelectCard } from "./mp-select-card.tsx";
 import { GroupSelectCard } from "./group-select-card.tsx";

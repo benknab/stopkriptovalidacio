@@ -9,11 +9,11 @@ import {
 } from "@tanstack/react-router";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, expect, test, vi } from "vite-plus/test";
-import TimelineSection from "../islands/timeline-section.tsx";
-import MpsSection, { ALL_OPTION, currentMps, parseDistrict } from "../islands/mps-section.tsx";
-import TakeActionSection from "../islands/take-action-section.tsx";
-import PartiesSection from "../islands/parties-section.tsx";
-import { MobileNav } from "../islands/mobile-nav.tsx";
+import TimelineSection from "../components/timeline-section.tsx";
+import MpsSection, { ALL_OPTION, currentMps, parseDistrict } from "../components/mps-section.tsx";
+import TakeActionSection from "../components/take-action-section.tsx";
+import PartiesSection from "../components/parties-section.tsx";
+import { MobileNav } from "../components/mobile-nav.tsx";
 import { getLatestDistrictOrList } from "../data/mps.ts";
 import { t } from "../i18n/index.ts";
 import { parseSearch, stringifySearch } from "../utils/search.ts";

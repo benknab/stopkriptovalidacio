@@ -4,7 +4,7 @@ import type { JSX } from "react";
 import { Layout } from "../../components/layout.tsx";
 import { getPageHead } from "../../utils/page-head.ts";
 import { t } from "../../i18n/index.ts";
-import MpsSection, { ALL_OPTION } from "../../islands/mps-section.tsx";
+import MpsSection, { ALL_OPTION } from "../../components/mps-section.tsx";
 
 const HISTORICAL_VOTE_YEAR = 2022;
 

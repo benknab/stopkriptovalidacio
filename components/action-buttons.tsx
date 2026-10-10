@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import { useState } from "react";
 import { getLatestParty, type MpId, mps } from "../data/mps.ts";
-import { currentMinorityListMps } from "../islands/mps-section.tsx";
+import { currentMinorityListMps } from "./mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { buildMailtoUrl } from "../utils/mailto.ts";
 
