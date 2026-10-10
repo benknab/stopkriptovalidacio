@@ -1,20 +1,21 @@
-import { createFileRoute, useLocation } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { usePagePath } from "../../hooks/use-page-path.ts";
 import type { JSX } from "react";
-import { Layout } from "../components/layout.tsx";
-import { getPageHead } from "../utils/page-head.ts";
-import { t } from "../i18n/index.ts";
-import MpsSection, { ALL_OPTION } from "../islands/mps-section.tsx";
+import { Layout } from "../../components/layout.tsx";
+import { getPageHead } from "../../utils/page-head.ts";
+import { t } from "../../i18n/index.ts";
+import MpsSection, { ALL_OPTION } from "../../islands/mps-section.tsx";
 
 const HISTORICAL_VOTE_YEAR = 2022;
 
-export const Route = createFileRoute("/szavazas")({
+export const Route = createFileRoute("/{-$lang}/szavazas")({
 	head: ({ matches }) => getPageHead(matches[0].context.lang, "vote-history", "/szavazas"),
 	component: VoteHistory,
 });
 
 function VoteHistory(): JSX.Element {
 	const { lang } = Route.useRouteContext();
-	const currentPath = useLocation({ select: (location) => location.pathname + location.searchStr });
+	const currentPath = usePagePath();
 	const url = new URL(currentPath, "http://localhost");
 	const mpCounty = url.searchParams.get("megye") ?? ALL_OPTION;
 	const mpDistrict = url.searchParams.get("kerulet") || "";

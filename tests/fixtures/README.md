@@ -5,5 +5,10 @@ migration, in Hungarian and English. It covers main content, links, image paths/
 Framework-specific transport, resource preloads, attribute ordering, whitespace and the old image cache-busting query
 parameter are excluded by `pageFingerprint`.
 
+The static Pages migration deliberately changes language-specific URLs and adds language alternates to first-party
+source pages. The fingerprint normalizes `/en` page links/canonicals back to their original paths and excludes the added
+source alternates; separate assertions verify the actual new metadata. Default pages are compared as exported HTML;
+query-filtered pages are compared in the browser after hydration.
+
 The fixture is a regression baseline, not a snapshot generated from the new application. Update it only after reviewing
 intentional content or design changes. Both versions must be compared with the same normalization rules.

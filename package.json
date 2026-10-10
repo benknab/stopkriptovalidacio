@@ -4,12 +4,14 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vp dev",
-		"build": "vp build",
-		"start": "node .output/server/index.mjs",
+		"build": "vp build && node scripts/finalize-static.ts",
+		"start": "pnpm preview",
+		"preview": "wrangler pages dev dist/client",
+		"deploy": "pnpm build && wrangler pages deploy dist/client",
 		"check": "vp check && tsc --noEmit",
 		"fmt": "vp fmt",
 		"lint": "vp lint",
-		"test": "vp build && vp test run",
+		"test": "pnpm build && vp test run",
 		"test:browser": "node tests/browser-regression.ts",
 		"setup": "node scripts/setup-hooks.ts",
 		"inspect-current-winners": "node scripts/inspect-current-winners.ts",
@@ -26,6 +28,7 @@
 		"zod": "^4.3.6"
 	},
 	"devDependencies": {
+		"@cloudflare/vite-plugin": "1.63.1",
 		"@tailwindcss/vite": "4.2.1",
 		"@testing-library/react": "^16.3.3",
 		"@types/node": "^24",
@@ -34,12 +37,12 @@
 		"@vitejs/plugin-react": "6.1.2",
 		"cheerio": "1.2.0",
 		"jsdom": "^30.1.2",
-		"nitro": "3.0.260903-beta",
 		"sharp": "0.35.5",
 		"tailwindcss": "4.2.1",
 		"typescript": "7.0.2",
 		"vite": "npm:@voidzero-dev/vite-plus-core@1.1.0",
-		"vite-plus": "1.1.0"
+		"vite-plus": "1.1.0",
+		"wrangler": "4.149.0"
 	},
 	"engines": {
 		"node": ">=24.21.0 <25"

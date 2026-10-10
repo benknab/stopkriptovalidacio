@@ -5,12 +5,17 @@ import { resolve } from "node:path";
 import { promisify } from "node:util";
 import { t } from "../i18n/index.ts";
 import { startProductionServer } from "./production-server.ts";
+import { localizePath } from "../utils/localized-path.ts";
+import { pageFingerprint } from "./page-fingerprint.ts";
+import { createHash } from "node:crypto";
+import baseline from "./fixtures/migration-baseline.json" with { type: "json" };
 
 const executeFile = promisify(execFile);
 const SESSION = `crypto-regression-${process.pid}`;
 const ARTIFACT_DIRECTORY = resolve("tmp/browser-regression");
 const server = await startProductionServer();
 let checks = 0;
+let activeLanguage: "hu" | "en" = "hu";
 
 async function browser(...args: string[]) {
 	const { stdout } = await executeFile("agent-browser", ["--session", SESSION, "--json", ...args], {
@@ -32,8 +37,21 @@ async function check(condition: string, message: string): Promise<void> {
 }
 
 async function open(path: string): Promise<void> {
-	await browser("open", `${server.baseUrl}${path}`);
+	await browser("open", `${server.baseUrl}${localizePath(path, activeLanguage)}`);
 	await browser("wait", "--load", "networkidle");
+}
+
+async function checkBaseline(name: string): Promise<void> {
+	const html = await evaluate<string>("document.documentElement.outerHTML");
+	const fingerprint = createHash("sha256")
+		.update(JSON.stringify(pageFingerprint(html)))
+		.digest("hex");
+	assert.equal(
+		fingerprint,
+		baseline[`${name}-${activeLanguage}` as keyof typeof baseline],
+		`${name} (${activeLanguage}) changed from the original content/design baseline`,
+	);
+	checks++;
 }
 
 async function checkErrors(): Promise<void> {
@@ -46,6 +64,10 @@ async function checkErrors(): Promise<void> {
 		"The browser reported console/hydration errors",
 	);
 	checks++;
+	await check(
+		"!performance.getEntriesByType('resource').some(entry => entry.name.includes('/_serverFn/'))",
+		"Static navigation attempted to call a backend server function",
+	);
 }
 
 try {
@@ -56,13 +78,15 @@ try {
 	await browser("set", "viewport", "1280", "577");
 
 	for (const lang of ["hu", "en"] as const) {
-		await open(`/set-lang?lang=${lang}&redirect=/`);
+		activeLanguage = lang;
+		await open("/");
 		await check(
 			`document.documentElement.lang === ${JSON.stringify(lang)}`,
-			"Language cookie did not reach the document",
+			"The static URL rendered the wrong document language",
 		);
 		await check("document.querySelectorAll('head title').length === 1", "Duplicate page title");
 		await browser("screenshot", resolve(ARTIFACT_DIRECTORY, `home-${lang}-desktop.png`));
+		await checkBaseline("home");
 
 		for (const path of ["/", "/rolunk", "/kriptovalidalas", "/forras/etoro-email-visszateres", "/szavazas"]) {
 			await open(path);
@@ -77,6 +101,16 @@ try {
 			);
 			await checkErrors();
 		}
+
+		await open("/?masodlagos=false");
+		await browser("wait", "--fn", "!document.querySelector('#idovonal label:nth-child(2) input').checked");
+		await checkBaseline("primary");
+		await open("/?harmadlagos=true");
+		await browser("wait", "--fn", "document.querySelector('#idovonal label:nth-child(3) input').checked");
+		await checkBaseline("all");
+		await open("/szavazas?megye=Budapest&kerulet=01");
+		await browser("wait", "--fn", "document.querySelectorAll('#szavazas img').length === 0");
+		await checkBaseline("county");
 
 		await open("/?utm_source=regression#idovonal");
 		const originalCount = await evaluate<number>("document.querySelectorAll('#idovonal h3').length");
@@ -100,9 +134,27 @@ try {
 		);
 		await open("/rolunk");
 		await browser("back");
-		await browser("wait", "--fn", "location.pathname === '/' && !!document.querySelector('#idovonal')");
+		await browser(
+			"wait",
+			"--fn",
+			`location.pathname.replace(/\\/$/, '') === ${JSON.stringify(localizePath("/", lang).replace(/\/$/, ""))} && !!document.querySelector('#idovonal')`,
+		);
 		await check("new URL(location.href).searchParams.get('harmadlagos') === 'true'", "Back navigation lost filters");
 		await checkErrors();
+
+		// Language switching is an ordinary static link, with query and fragment retained.
+		await open("/szavazas?megye=Budapest&kerulet=1.+OEVK#szavazas");
+		const otherLanguage = lang === "hu" ? "en" : "hu";
+		await browser("find", "role", "link", "click", "--name", otherLanguage === "en" ? "English" : "Magyar");
+		await browser("wait", "--fn", `document.documentElement.lang === ${JSON.stringify(otherLanguage)}`);
+		await check(
+			"new URL(location.href).searchParams.get('kerulet') === '1. OEVK' && location.hash === '#szavazas'",
+			"Language switching lost filters or fragment",
+		);
+		await check(
+			"document.querySelectorAll('#szavazas img').length === 1",
+			"Language switching lost the selected constituency",
+		);
 
 		await open("/szavazas?utm_source=regression#szavazas");
 		await check(

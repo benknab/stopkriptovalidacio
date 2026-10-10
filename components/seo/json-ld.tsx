@@ -3,6 +3,8 @@ import type { SupportedLanguage } from "../../i18n/index.ts";
 import { t } from "../../i18n/index.ts";
 import { type PageId, SITE_NAME, SITE_URL } from "../../constants/seo.ts";
 import { getPrimaryEvents } from "../../utils/seo.ts";
+import { localizePath } from "../../utils/localized-path.ts";
+import { BUILD_DATE } from "../../constants/build.ts";
 
 interface JsonLdProps {
 	lang: SupportedLanguage;
@@ -33,7 +35,7 @@ function buildArticleSchema(
 ): object {
 	return {
 		"@type": "Article",
-		"@id": `${SITE_URL}/#article`,
+		"@id": `${SITE_URL}${localizePath("/", lang)}#article`,
 		headline: title,
 		description: description,
 		inLanguage: lang,
@@ -47,7 +49,7 @@ function buildArticleSchema(
 		},
 		mainEntityOfPage: {
 			"@type": "WebPage",
-			"@id": SITE_URL,
+			"@id": `${SITE_URL}${localizePath("/", lang)}`,
 		},
 	};
 }
@@ -61,7 +63,7 @@ function buildNewsArticleSchema(
 ): object {
 	return {
 		"@type": "NewsArticle",
-		"@id": `${SITE_URL}/#event-${slug}`,
+		"@id": `${SITE_URL}${localizePath("/", lang)}#event-${slug}`,
 		headline: title,
 		description: summary,
 		datePublished: datePublished,
@@ -106,7 +108,9 @@ export function buildJsonLd({ lang, pageId }: JsonLdProps) {
 	graph.push(buildWebSiteSchema(siteTitle));
 
 	// Add breadcrumb schema for all pages
-	const breadcrumbItems: Array<{ name: string; url: string }> = [{ name: siteTitle, url: SITE_URL }];
+	const breadcrumbItems: Array<{ name: string; url: string }> = [
+		{ name: siteTitle, url: `${SITE_URL}${localizePath("/", lang)}` },
+	];
 
 	if (pageId === "home") {
 		const primaryEvents = getPrimaryEvents();
@@ -135,7 +139,7 @@ export function buildJsonLd({ lang, pageId }: JsonLdProps) {
 	if (pageId === "about") {
 		breadcrumbItems.push({
 			name: t("nav.about", lang),
-			url: `${SITE_URL}/rolunk`,
+			url: `${SITE_URL}${localizePath("/rolunk", lang)}`,
 		});
 	}
 
@@ -146,17 +150,17 @@ export function buildJsonLd({ lang, pageId }: JsonLdProps) {
 				t("seo.crypto_validation.title", lang),
 				t("seo.crypto_validation.description", lang),
 				"2025-07-01",
-				new Date().toISOString().split("T")[0],
+				BUILD_DATE.toISOString().split("T")[0],
 			),
 		);
 		breadcrumbItems.push({
 			name: t("crypto_validation.title", lang),
-			url: `${SITE_URL}/kriptovalidalas`,
+			url: `${SITE_URL}${localizePath("/kriptovalidalas", lang)}`,
 		});
 	}
 
 	if (pageId === "vote-history") {
-		const today = new Date().toISOString().split("T")[0];
+		const today = BUILD_DATE.toISOString().split("T")[0];
 		graph.push(
 			buildArticleSchema(
 				lang,
@@ -168,7 +172,7 @@ export function buildJsonLd({ lang, pageId }: JsonLdProps) {
 		);
 		breadcrumbItems.push({
 			name: t("vote_history.title", lang),
-			url: `${SITE_URL}/szavazas`,
+			url: `${SITE_URL}${localizePath("/szavazas", lang)}`,
 		});
 	}
 

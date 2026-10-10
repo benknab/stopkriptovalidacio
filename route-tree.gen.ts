@@ -9,180 +9,192 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as KriptovalidalasRouteImport } from './routes/kriptovalidalas'
-import { Route as RolunkRouteImport } from './routes/rolunk'
-import { Route as SetLangRouteImport } from './routes/set-lang'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
-import { Route as SzavazasRouteImport } from './routes/szavazas'
-import { Route as ForrasSlugRouteImport } from './routes/forras/$slug'
+import { Route as R404RouteImport } from './routes/404'
+import { Route as Char123LangChar125RouteImport } from './routes/{-$lang}'
+import { Route as Char123LangChar125IndexRouteImport } from './routes/{-$lang}/index'
+import { Route as Char123LangChar125KriptovalidalasRouteImport } from './routes/{-$lang}/kriptovalidalas'
+import { Route as Char123LangChar125RolunkRouteImport } from './routes/{-$lang}/rolunk'
+import { Route as Char123LangChar125SzavazasRouteImport } from './routes/{-$lang}/szavazas'
+import { Route as Char123LangChar125ForrasSlugRouteImport } from './routes/{-$lang}/forras/$slug'
 
-const IndexRoute = IndexRouteImport.update({
+const R404Route = R404RouteImport.update({
+  id: '/404',
+  path: '/404',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Char123LangChar125Route = Char123LangChar125RouteImport.update({
+  id: '/{-$lang}',
+  path: '/{-$lang}',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Char123LangChar125IndexRoute = Char123LangChar125IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => Char123LangChar125Route,
 } as any)
-const KriptovalidalasRoute = KriptovalidalasRouteImport.update({
-  id: '/kriptovalidalas',
-  path: '/kriptovalidalas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const RolunkRoute = RolunkRouteImport.update({
-  id: '/rolunk',
-  path: '/rolunk',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SetLangRoute = SetLangRouteImport.update({
-  id: '/set-lang',
-  path: '/set-lang',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SzavazasRoute = SzavazasRouteImport.update({
-  id: '/szavazas',
-  path: '/szavazas',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ForrasSlugRoute = ForrasSlugRouteImport.update({
-  id: '/forras/$slug',
-  path: '/forras/$slug',
-  getParentRoute: () => rootRouteImport,
-} as any)
+const Char123LangChar125KriptovalidalasRoute =
+  Char123LangChar125KriptovalidalasRouteImport.update({
+    id: '/kriptovalidalas',
+    path: '/kriptovalidalas',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125RolunkRoute =
+  Char123LangChar125RolunkRouteImport.update({
+    id: '/rolunk',
+    path: '/rolunk',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125SzavazasRoute =
+  Char123LangChar125SzavazasRouteImport.update({
+    id: '/szavazas',
+    path: '/szavazas',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
+const Char123LangChar125ForrasSlugRoute =
+  Char123LangChar125ForrasSlugRouteImport.update({
+    id: '/forras/$slug',
+    path: '/forras/$slug',
+    getParentRoute: () => Char123LangChar125Route,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/kriptovalidalas': typeof KriptovalidalasRoute
-  '/rolunk': typeof RolunkRoute
-  '/set-lang': typeof SetLangRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/szavazas': typeof SzavazasRoute
-  '/forras/$slug': typeof ForrasSlugRoute
+  '/404': typeof R404Route
+  '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/{-$lang}/kriptovalidalas': typeof Char123LangChar125KriptovalidalasRoute
+  '/{-$lang}/rolunk': typeof Char123LangChar125RolunkRoute
+  '/{-$lang}/szavazas': typeof Char123LangChar125SzavazasRoute
+  '/{-$lang}/': typeof Char123LangChar125IndexRoute
+  '/{-$lang}/forras/$slug': typeof Char123LangChar125ForrasSlugRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/kriptovalidalas': typeof KriptovalidalasRoute
-  '/rolunk': typeof RolunkRoute
-  '/set-lang': typeof SetLangRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/szavazas': typeof SzavazasRoute
-  '/forras/$slug': typeof ForrasSlugRoute
+  '/404': typeof R404Route
+  '/{-$lang}/kriptovalidalas': typeof Char123LangChar125KriptovalidalasRoute
+  '/{-$lang}/rolunk': typeof Char123LangChar125RolunkRoute
+  '/{-$lang}/szavazas': typeof Char123LangChar125SzavazasRoute
+  '/{-$lang}': typeof Char123LangChar125IndexRoute
+  '/{-$lang}/forras/$slug': typeof Char123LangChar125ForrasSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/kriptovalidalas': typeof KriptovalidalasRoute
-  '/rolunk': typeof RolunkRoute
-  '/set-lang': typeof SetLangRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/szavazas': typeof SzavazasRoute
-  '/forras/$slug': typeof ForrasSlugRoute
+  '/404': typeof R404Route
+  '/{-$lang}': typeof Char123LangChar125RouteWithChildren
+  '/{-$lang}/kriptovalidalas': typeof Char123LangChar125KriptovalidalasRoute
+  '/{-$lang}/rolunk': typeof Char123LangChar125RolunkRoute
+  '/{-$lang}/szavazas': typeof Char123LangChar125SzavazasRoute
+  '/{-$lang}/': typeof Char123LangChar125IndexRoute
+  '/{-$lang}/forras/$slug': typeof Char123LangChar125ForrasSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/kriptovalidalas'
-    | '/rolunk'
-    | '/set-lang'
-    | '/sitemap.xml'
-    | '/szavazas'
-    | '/forras/$slug'
+    | '/404'
+    | '/{-$lang}'
+    | '/{-$lang}/kriptovalidalas'
+    | '/{-$lang}/rolunk'
+    | '/{-$lang}/szavazas'
+    | '/{-$lang}/'
+    | '/{-$lang}/forras/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
-    | '/'
-    | '/kriptovalidalas'
-    | '/rolunk'
-    | '/set-lang'
-    | '/sitemap.xml'
-    | '/szavazas'
-    | '/forras/$slug'
+    | '/404'
+    | '/{-$lang}/kriptovalidalas'
+    | '/{-$lang}/rolunk'
+    | '/{-$lang}/szavazas'
+    | '/{-$lang}'
+    | '/{-$lang}/forras/$slug'
   id:
     | '__root__'
-    | '/'
-    | '/kriptovalidalas'
-    | '/rolunk'
-    | '/set-lang'
-    | '/sitemap.xml'
-    | '/szavazas'
-    | '/forras/$slug'
+    | '/404'
+    | '/{-$lang}'
+    | '/{-$lang}/kriptovalidalas'
+    | '/{-$lang}/rolunk'
+    | '/{-$lang}/szavazas'
+    | '/{-$lang}/'
+    | '/{-$lang}/forras/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  KriptovalidalasRoute: typeof KriptovalidalasRoute
-  RolunkRoute: typeof RolunkRoute
-  SetLangRoute: typeof SetLangRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
-  SzavazasRoute: typeof SzavazasRoute
-  ForrasSlugRoute: typeof ForrasSlugRoute
+  R404Route: typeof R404Route
+  Char123LangChar125Route: typeof Char123LangChar125RouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
+    '/404': {
+      id: '/404'
+      path: '/404'
+      fullPath: '/404'
+      preLoaderRoute: typeof R404RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/{-$lang}': {
+      id: '/{-$lang}'
+      path: '/{-$lang}'
+      fullPath: '/{-$lang}'
+      preLoaderRoute: typeof Char123LangChar125RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/{-$lang}/': {
+      id: '/{-$lang}/'
       path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      fullPath: '/{-$lang}/'
+      preLoaderRoute: typeof Char123LangChar125IndexRouteImport
+      parentRoute: typeof Char123LangChar125Route
     }
-    '/kriptovalidalas': {
-      id: '/kriptovalidalas'
+    '/{-$lang}/kriptovalidalas': {
+      id: '/{-$lang}/kriptovalidalas'
       path: '/kriptovalidalas'
-      fullPath: '/kriptovalidalas'
-      preLoaderRoute: typeof KriptovalidalasRouteImport
-      parentRoute: typeof rootRouteImport
+      fullPath: '/{-$lang}/kriptovalidalas'
+      preLoaderRoute: typeof Char123LangChar125KriptovalidalasRouteImport
+      parentRoute: typeof Char123LangChar125Route
     }
-    '/rolunk': {
-      id: '/rolunk'
+    '/{-$lang}/rolunk': {
+      id: '/{-$lang}/rolunk'
       path: '/rolunk'
-      fullPath: '/rolunk'
-      preLoaderRoute: typeof RolunkRouteImport
-      parentRoute: typeof rootRouteImport
+      fullPath: '/{-$lang}/rolunk'
+      preLoaderRoute: typeof Char123LangChar125RolunkRouteImport
+      parentRoute: typeof Char123LangChar125Route
     }
-    '/set-lang': {
-      id: '/set-lang'
-      path: '/set-lang'
-      fullPath: '/set-lang'
-      preLoaderRoute: typeof SetLangRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/szavazas': {
-      id: '/szavazas'
+    '/{-$lang}/szavazas': {
+      id: '/{-$lang}/szavazas'
       path: '/szavazas'
-      fullPath: '/szavazas'
-      preLoaderRoute: typeof SzavazasRouteImport
-      parentRoute: typeof rootRouteImport
+      fullPath: '/{-$lang}/szavazas'
+      preLoaderRoute: typeof Char123LangChar125SzavazasRouteImport
+      parentRoute: typeof Char123LangChar125Route
     }
-    '/forras/$slug': {
-      id: '/forras/$slug'
+    '/{-$lang}/forras/$slug': {
+      id: '/{-$lang}/forras/$slug'
       path: '/forras/$slug'
-      fullPath: '/forras/$slug'
-      preLoaderRoute: typeof ForrasSlugRouteImport
-      parentRoute: typeof rootRouteImport
+      fullPath: '/{-$lang}/forras/$slug'
+      preLoaderRoute: typeof Char123LangChar125ForrasSlugRouteImport
+      parentRoute: typeof Char123LangChar125Route
     }
   }
 }
 
+interface Char123LangChar125RouteChildren {
+  Char123LangChar125KriptovalidalasRoute: typeof Char123LangChar125KriptovalidalasRoute
+  Char123LangChar125RolunkRoute: typeof Char123LangChar125RolunkRoute
+  Char123LangChar125SzavazasRoute: typeof Char123LangChar125SzavazasRoute
+  Char123LangChar125IndexRoute: typeof Char123LangChar125IndexRoute
+  Char123LangChar125ForrasSlugRoute: typeof Char123LangChar125ForrasSlugRoute
+}
+
+const Char123LangChar125RouteChildren: Char123LangChar125RouteChildren = {
+  Char123LangChar125KriptovalidalasRoute:
+    Char123LangChar125KriptovalidalasRoute,
+  Char123LangChar125RolunkRoute: Char123LangChar125RolunkRoute,
+  Char123LangChar125SzavazasRoute: Char123LangChar125SzavazasRoute,
+  Char123LangChar125IndexRoute: Char123LangChar125IndexRoute,
+  Char123LangChar125ForrasSlugRoute: Char123LangChar125ForrasSlugRoute,
+}
+
+const Char123LangChar125RouteWithChildren =
+  Char123LangChar125Route._addFileChildren(Char123LangChar125RouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  KriptovalidalasRoute: KriptovalidalasRoute,
-  RolunkRoute: RolunkRoute,
-  SetLangRoute: SetLangRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
-  SzavazasRoute: SzavazasRoute,
-  ForrasSlugRoute: ForrasSlugRoute,
+  R404Route: R404Route,
+  Char123LangChar125Route: Char123LangChar125RouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

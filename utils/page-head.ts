@@ -24,7 +24,7 @@ export function getPageHead(lang: SupportedLanguage, pageId: PageId, path: strin
 			{ property: "og:type", content: config.type },
 			{ property: "og:title", content: title },
 			{ property: "og:description", content: description },
-			{ property: "og:url", content: buildCanonicalUrl(path) },
+			{ property: "og:url", content: buildCanonicalUrl(path, lang) },
 			{ property: "og:image", content: image },
 			{ property: "og:locale", content: OG_LOCALES[lang] },
 			{ property: "og:locale:alternate", content: OG_LOCALES[lang === "hu" ? "en" : "hu"] },
@@ -35,7 +35,7 @@ export function getPageHead(lang: SupportedLanguage, pageId: PageId, path: strin
 			{ name: "twitter:image", content: image },
 		],
 		links: [
-			{ rel: "canonical", href: buildCanonicalUrl(path) },
+			{ rel: "canonical", href: buildCanonicalUrl(path, lang) },
 			...ICON_LINKS,
 			...buildHreflangUrls(path).map(({ lang, url }) => ({ rel: "alternate", hrefLang: lang, href: url })),
 		],
@@ -57,6 +57,10 @@ export function getSourceHead(lang: SupportedLanguage, slug: string) {
 			{ name: "description", content: t("source.page_description", lang) },
 			{ name: "robots", content: "noindex, nofollow" },
 		],
-		links: [{ rel: "canonical", href: buildCanonicalUrl(`/forras/${slug}`) }, ...ICON_LINKS],
+		links: [
+			{ rel: "canonical", href: buildCanonicalUrl(`/forras/${slug}`, lang) },
+			...ICON_LINKS,
+			...buildHreflangUrls(`/forras/${slug}`).map(({ lang, url }) => ({ rel: "alternate", hrefLang: lang, href: url })),
+		],
 	};
 }

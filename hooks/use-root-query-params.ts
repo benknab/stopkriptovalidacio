@@ -1,4 +1,4 @@
-import { useLocation, useNavigate, useRouter } from "@tanstack/react-router";
+import { useHydrated, useLocation, useNavigate, useRouter } from "@tanstack/react-router";
 
 type ParamConfig<T> = {
 	key: string;
@@ -54,17 +54,26 @@ function useQuerySetter<T extends string | boolean>(config: ParamConfig<T>): (va
 
 // Router-owned state stays in sync with hydration, reloads and back/forward navigation.
 export function useBooleanQueryParam(config: ParamConfig<boolean>): [boolean, (value: boolean) => void] {
+	const hydrated = useHydrated();
 	const searchStr = useLocation({ select: (location) => location.searchStr });
 	const setValue = useQuerySetter(config);
 	const rawValue = new URLSearchParams(searchStr).get(config.key);
-	const value =
-		rawValue === null ? config.initialValue : config.defaultValue ? rawValue !== "false" : rawValue === "true";
+	const value = !hydrated
+		? config.defaultValue
+		: rawValue === null
+			? config.initialValue
+			: config.defaultValue
+				? rawValue !== "false"
+				: rawValue === "true";
 	return [value, setValue];
 }
 
 export function useStringQueryParam(config: ParamConfig<string>): [string, (value: string) => void] {
+	const hydrated = useHydrated();
 	const searchStr = useLocation({ select: (location) => location.searchStr });
 	const setValue = useQuerySetter(config);
-	const value = new URLSearchParams(searchStr).get(config.key) ?? config.initialValue;
+	const value = hydrated
+		? (new URLSearchParams(searchStr).get(config.key) ?? config.initialValue)
+		: config.defaultValue;
 	return [value, setValue];
 }

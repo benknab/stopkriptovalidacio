@@ -1,5 +1,7 @@
 import type { SyntheticEvent } from "react";
 import type { JSX } from "react";
+import { useHydrated } from "@tanstack/react-router";
+import { BUILD_DATE } from "../constants/build.ts";
 import { ExternalLink } from "../components/external-link.tsx";
 import { TelegramIcon } from "../components/telegram-icon.tsx";
 import { TELEGRAM_CHANNEL_URL } from "../constants/seo.ts";
@@ -8,6 +10,7 @@ import { type Source, sources } from "../data/sources.ts";
 import type { EventType, TimelineEvent } from "../data/types.ts";
 import { useBooleanQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
+import { localizePath } from "../utils/localized-path.ts";
 
 function formatDate(date: Date, lang: SupportedLanguage): string {
 	return date.toLocaleDateString(lang === "hu" ? "hu-HU" : "en-US", {
@@ -18,9 +21,8 @@ function formatDate(date: Date, lang: SupportedLanguage): string {
 	});
 }
 
-function getTodayInBudapest(): Date {
-	const today = new Date();
-	return new Date(today.toLocaleDateString("en-CA", { timeZone: "Europe/Budapest" }));
+function getTodayInBudapest(date: Date): Date {
+	return new Date(date.toLocaleDateString("en-CA", { timeZone: "Europe/Budapest" }));
 }
 
 function TimelineSource({
@@ -35,7 +37,7 @@ function TimelineSource({
 	if (source.internalUrl) {
 		return (
 			<a
-				href={source.internalUrl}
+				href={localizePath(source.internalUrl, lang)}
 				className="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover transition-colors hover:underline"
 			>
 				<span>{source.title[lang]}</span>
@@ -71,7 +73,7 @@ function TimelineSource({
 	if (source.summary || source.text) {
 		return (
 			<a
-				href={`/forras/${slug}`}
+				href={localizePath(`/forras/${slug}`, lang)}
 				className="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover transition-colors hover:underline"
 			>
 				<span>{source.title[lang]}</span>
@@ -178,7 +180,8 @@ interface TimelineSectionProps {
 
 export default function TimelineSection(props: TimelineSectionProps): JSX.Element {
 	const { lang } = props;
-	const today = getTodayInBudapest();
+	const hydrated = useHydrated();
+	const today = getTodayInBudapest(hydrated ? new Date() : BUILD_DATE);
 	const [showSecondary, setShowSecondary] = useBooleanQueryParam({
 		key: "masodlagos",
 		defaultValue: true,

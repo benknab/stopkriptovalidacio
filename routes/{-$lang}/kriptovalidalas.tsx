@@ -1,19 +1,20 @@
-import { createFileRoute, useLocation } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { usePagePath } from "../../hooks/use-page-path.ts";
 import type { JSX } from "react";
-import { H2 } from "../components/h2.tsx";
-import { Layout } from "../components/layout.tsx";
-import { Link } from "../components/link.tsx";
-import { getPageHead } from "../utils/page-head.ts";
-import { t } from "../i18n/index.ts";
+import { H2 } from "../../components/h2.tsx";
+import { Layout } from "../../components/layout.tsx";
+import { Link } from "../../components/link.tsx";
+import { getPageHead } from "../../utils/page-head.ts";
+import { t } from "../../i18n/index.ts";
 
-export const Route = createFileRoute("/kriptovalidalas")({
+export const Route = createFileRoute("/{-$lang}/kriptovalidalas")({
 	head: ({ matches }) => getPageHead(matches[0].context.lang, "crypto-validation", "/kriptovalidalas"),
 	component: CryptoValidation,
 });
 
 function CryptoValidation(): JSX.Element {
 	const { lang } = Route.useRouteContext();
-	const currentPath = useLocation({ select: (location) => location.pathname + location.searchStr });
+	const currentPath = usePagePath();
 
 	return (
 		<Layout lang={lang} currentPath={currentPath}>
@@ -69,11 +70,11 @@ function CryptoValidation(): JSX.Element {
 			<section className="mb-12">
 				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("crypto_validation.sources_title", lang)}</H2>
 				<p className="text-slate-600 leading-relaxed mb-4">{t("crypto_validation.sources_text", lang)}</p>
-				<Link href="/#idovonal" className="text-brand hover:underline font-medium">
+				<Link href="/#idovonal" lang={lang} className="text-brand hover:underline font-medium">
 					{t("crypto_validation.timeline_link", lang)} →
 				</Link>
 				<div className="mt-3">
-					<Link href="/szavazas" className="font-medium">
+					<Link href="/szavazas" lang={lang} className="font-medium">
 						{t("vote_history.law_link", lang)} →
 					</Link>
 				</div>

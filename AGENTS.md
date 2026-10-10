@@ -14,8 +14,9 @@ will include:
 
 ## Tech Stack
 
-- **Runtime**: Node.js 24.21.0 LTS (native TypeScript for scripts)
-- **Framework**: TanStack Start with TanStack Router and Nitro's Node.js production server
+- **Tooling runtime**: Node.js 24.21.0 LTS (native TypeScript for scripts)
+- **Framework**: TanStack Start with TanStack Router, build-time prerendering and static Cloudflare Pages deployment
+- **Local application runtime**: Cloudflare workerd via `@cloudflare/vite-plugin`; no production backend
 - **UI**: React with native hooks; URL-backed filter state uses TanStack Router
 - **Styling**: Tailwind CSS v4
 - **Toolchain**: Vite+ (build, Vitest, Oxlint, Oxfmt)
@@ -30,9 +31,11 @@ will include:
 
 ```bash
 pnpm install --frozen-lockfile  # Install dependencies
-pnpm dev                       # Start dev server
-pnpm build                     # Build for production
-pnpm start                     # Start production Node.js server
+pnpm dev                       # Cloudflare-backed Vite dev server
+pnpm build                     # Prerender static Pages export in dist/client
+pnpm preview                   # Preview the static export with Wrangler Pages
+pnpm start                     # Alias for pnpm preview
+pnpm deploy                    # Build and deploy to Cloudflare Pages (only when explicitly authorized)
 pnpm check                     # Format, lint, and type check
 pnpm fmt                       # Format code
 pnpm lint                      # Lint code
@@ -56,13 +59,17 @@ pnpm test:browser              # Production browser tests (agent-browser)
 ## Architecture
 
 - `router.tsx` - TanStack Router factory and public query serialization
-- `routes/__root.tsx` - HTML document, request language context, metadata, hydration scripts
-- `vite.config.ts` - Vite+ configuration with Start, React, Tailwind and Nitro plugins
-- `routes/` - TanStack file routes and HTTP handlers
+- `routes/__root.tsx` - HTML document, URL-based language context, metadata, hydration scripts
+- `vite.config.ts` - Vite+ configuration with Start, Cloudflare, React and Tailwind plugins
+- `routes/{-$lang}/` - Shared TanStack page routes with an optional /en language prefix
+- `wrangler-dev.jsonc` - Cloudflare Vite development/build-time rendering configuration
+- `wrangler.jsonc` - Static Cloudflare Pages deployment configuration
+- `scripts/finalize-static.ts` - Static sitemap/404 generation and export validation
 - `route-tree.gen.ts` - Generated route tree (tracked for type checking on clean checkouts; do not edit manually)
 - `islands/` - Interactive React components (historical directory name; no islands runtime)
 - `components/` - Shared React components
-- `utils/language.ts` - Server function for request-specific language detection
+- `utils/localized-path.ts` - URL-based language detection and localized page links
+- `hooks/use-page-path.ts` - Hydration-safe page/query path for static HTML
 - `utils/page-head.ts` - Route metadata, canonical/hreflang links and structured data
 - `data/` - Data files (events, mps, exchanges, sources)
 - `i18n/` - Translation system with `t(key, lang)` function
@@ -76,7 +83,7 @@ Routes export `Route` with `createFileRoute()`; root context supplies the reques
 ```tsx
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/rolunk")({ component: PageName });
+export const Route = createFileRoute("/{-$lang}/rolunk")({ component: PageName });
 
 function PageName() {
 	const { lang } = Route.useRouteContext();
@@ -84,19 +91,16 @@ function PageName() {
 }
 ```
 
-HTTP handlers use the route's `server.handlers`:
-
-```tsx
-export const Route = createFileRoute("/set-lang")({
-	server: { handlers: { GET: ({ request }) => new Response(request.url) } },
-});
-```
+Production has no HTTP handlers/server functions. All public pages must be listed in `utils/static-pages.ts` for
+prerendering; dynamic source pages are derived from the data. Only `dist/client` is deployed to Pages.
 
 ## Internationalization
 
 - Languages: `"hu" | "en"` (strictly typed as `SupportedLanguage`)
-- Detection: Cookie (`lang`) first, then Accept-Language header
-- Switching: `/set-lang?lang=hu&redirect=/` sets cookie and redirects
+- Detection: URL prefix (`/en` means English; unprefixed URLs mean Hungarian)
+- Switching: Native links between localized paths, preserving queries and fragments; no server endpoint or cookie required
+- Localize page links with `localizePath()`, but keep assets and external URLs unchanged
+- Static HTML uses default filter values; URL-backed filters apply after hydration to avoid mismatches
 - Usage: `t("key.path", lang)` - pass language as second argument
 - Add new strings to both `i18n/locales/hu.json` and `en.json`
 

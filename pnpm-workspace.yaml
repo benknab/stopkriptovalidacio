@@ -3,10 +3,12 @@ packages:
 overrides:
   vite@*: npm:@voidzero-dev/vite-plus-core@1.1.0
   vitest@*: 5.0.3
-onlyBuiltDependencies:
-  - "@tailwindcss/oxide"
-  - sharp
 # Vite+ core implements Vite 8 but carries Vite+'s 1.1.0 package version.
 peerDependencyRules:
   allowedVersions:
     vite: "1.1.0"
+allowBuilds:
+  "@tailwindcss/oxide": true
+  esbuild: true
+  sharp: true
+  workerd: true

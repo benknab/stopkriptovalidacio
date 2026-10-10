@@ -4,6 +4,7 @@ import { buildMailtoUrl } from "../utils/mailto.ts";
 import { detectLanguage, t } from "../i18n/index.ts";
 import hu from "../i18n/locales/hu.json" with { type: "json" };
 import en from "../i18n/locales/en.json" with { type: "json" };
+import { getHomeAnchor, getPathLanguage, localizePath, stripLanguagePrefix } from "../utils/localized-path.ts";
 
 describe("public query format", () => {
 	test("preserves zero-padded districts, Unicode, booleans, empty filters and campaign parameters", () => {
@@ -19,6 +20,19 @@ describe("public query format", () => {
 		expect(stringifySearch(search)).not.toContain("%22");
 		expect(stringifySearch({ megye: undefined })).toBe("");
 	});
+});
+
+test("language URLs keep Hungarian paths, query parameters and anchors without double prefixes", () => {
+	expect(localizePath("/szavazas?kerulet=01#szavazas", "en")).toBe("/en/szavazas?kerulet=01#szavazas");
+	expect(localizePath("/en/szavazas?kerulet=01#szavazas", "hu")).toBe("/szavazas?kerulet=01#szavazas");
+	expect(localizePath("/en/rolunk", "en")).toBe("/en/rolunk");
+	expect(localizePath("https://example.com", "en")).toBe("https://example.com");
+	expect(localizePath("//example.com", "en")).toBe("//example.com");
+	expect(stripLanguagePrefix("/en?masodlagos=false")).toBe("/?masodlagos=false");
+	expect(getPathLanguage("/english")).toBe("hu");
+	expect(getPathLanguage("/en")).toBe("en");
+	expect(getHomeAnchor("idovonal", "/en/?utm_source=test")).toBe("#idovonal");
+	expect(getHomeAnchor("idovonal", "/en/rolunk")).toBe("/en/#idovonal");
 });
 
 test("both languages contain the same translation keys", () => {

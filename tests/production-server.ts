@@ -2,19 +2,33 @@ import { spawn } from "node:child_process";
 import { createServer } from "node:net";
 import { setTimeout } from "node:timers/promises";
 import { existsSync } from "node:fs";
+import { resolve } from "node:path";
 
 export async function startProductionServer() {
-	if (!existsSync(".output/server/index.mjs")) throw new Error("Run pnpm build before testing the production server.");
+	if (!existsSync("dist/client/index.html")) throw new Error("Run pnpm build before testing the static Pages export.");
 	const reservation = createServer();
 	await new Promise<void>((resolve) => reservation.listen(0, "127.0.0.1", resolve));
 	const address = reservation.address();
 	if (!address || typeof address === "string") throw new Error("Could not reserve a test port.");
 	const port = address.port;
 	await new Promise<void>((resolve, reject) => reservation.close((error) => (error ? reject(error) : resolve())));
-	const server = spawn(process.execPath, [".output/server/index.mjs"], {
-		env: { ...process.env, PORT: String(port), HOST: "127.0.0.1", NODE_ENV: "production" },
-		stdio: ["ignore", "pipe", "pipe"],
-	});
+	const server = spawn(
+		process.execPath,
+		[
+			resolve("node_modules/wrangler/bin/wrangler.js"),
+			"pages",
+			"dev",
+			"dist/client",
+			"--ip",
+			"127.0.0.1",
+			"--port",
+			String(port),
+		],
+		{
+			env: { ...process.env, WRANGLER_SEND_METRICS: "false", BROWSER: "none" },
+			stdio: ["ignore", "pipe", "pipe"],
+		},
+	);
 	let output = "";
 	server.stdout.on("data", (data: Buffer) => {
 		output += data.toString();
@@ -23,7 +37,7 @@ export async function startProductionServer() {
 		output += data.toString();
 	});
 	const baseUrl = `http://127.0.0.1:${port}`;
-	for (let attempt = 0; attempt < 100; attempt++) {
+	for (let attempt = 0; attempt < 400; attempt++) {
 		try {
 			const response = await fetch(`${baseUrl}/robots.txt`);
 			if (response.ok)

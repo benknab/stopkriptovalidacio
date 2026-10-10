@@ -8,23 +8,23 @@ import baseline from "./fixtures/migration-baseline.json" with { type: "json" };
 import { pageFingerprint } from "./page-fingerprint.ts";
 import { startProductionServer } from "./production-server.ts";
 import { sources } from "../data/sources.ts";
+import { localizePath } from "../utils/localized-path.ts";
+import { STATIC_PAGE_PATHS } from "../utils/static-pages.ts";
+import { SITE_URL } from "../constants/seo.ts";
 
 const executeFile = promisify(execFile);
 const PAGES = {
 	home: "/",
-	primary: "/?masodlagos=false",
-	all: "/?harmadlagos=true",
 	about: "/rolunk",
 	validation: "/kriptovalidalas",
 	votes: "/szavazas",
-	county: "/szavazas?megye=Budapest&kerulet=01",
 	source: "/forras/etoro-email-visszateres",
 };
 
 let server: Awaited<ReturnType<typeof startProductionServer>>;
 beforeAll(async () => {
 	server = await startProductionServer();
-}, 20000);
+}, 30000);
 afterAll(async () => {
 	await server?.stop();
 });
@@ -33,7 +33,7 @@ describe("production page parity", () => {
 	for (const [name, path] of Object.entries(PAGES)) {
 		for (const lang of ["hu", "en"] as const) {
 			test(`${name} (${lang}) matches the pre-migration production site`, async () => {
-				const response = await fetch(`${server.baseUrl}${path}`, { headers: { cookie: `lang=${lang}` } });
+				const response = await fetch(`${server.baseUrl}${localizePath(path, lang)}`);
 				expect(response.status).toBe(200);
 				const html = await response.text();
 				const fingerprint = createHash("sha256")
@@ -43,6 +43,9 @@ describe("production page parity", () => {
 				const $ = load(html);
 				expect($("html").attr("lang")).toBe(lang);
 				expect($("head title")).toHaveLength(1);
+				expect($("link[rel=canonical]").attr("href")).toBe(`${SITE_URL}${localizePath(path, lang)}`);
+				expect($("link[hreflang=en]").attr("href")).toBe(`${SITE_URL}${localizePath(path, "en")}`);
+				expect($("link[hreflang=hu]").attr("href")).toBe(`${SITE_URL}${path}`);
 				if (name !== "source") {
 					const jsonLd = JSON.parse($("head script[type='application/ld+json']").text());
 					expect(jsonLd["@context"]).toBe("https://schema.org");
@@ -53,45 +56,56 @@ describe("production page parity", () => {
 	}
 });
 
-test("request language is isolated between concurrent requests", async () => {
-	const languages = ["en", "hu", "en", "hu", "en", "hu"];
+test("language is isolated between concurrently requested static URLs", async () => {
+	const languages = ["en", "hu", "en", "hu", "en", "hu"] as const;
 	const responses = await Promise.all(
 		languages.map(async (lang) => {
-			const response = await fetch(server.baseUrl, { headers: { cookie: `lang=${lang}` } });
+			const response = await fetch(`${server.baseUrl}${localizePath("/", lang)}`);
 			return load(await response.text())("html").attr("lang");
 		}),
 	);
 	expect(responses).toEqual(languages);
 });
 
-test("cookie language overrides Accept-Language, with a Hungarian fallback", async () => {
-	for (const [headers, expected] of [
-		[{ "accept-language": "en-US" }, "en"],
-		[{ "accept-language": "de-DE" }, "hu"],
-		[{ cookie: "lang=hu", "accept-language": "en-US" }, "hu"],
-		[{ cookie: "lang=en", "accept-language": "hu-HU" }, "en"],
-		[{ cookie: "lang=invalid", "accept-language": "en-US" }, "en"],
-	] as const) {
-		const response = await fetch(server.baseUrl, { headers });
-		expect(load(await response.text())("html").attr("lang")).toBe(expected);
+test("static documents depend only on path, not cookies, headers or query filters", async () => {
+	for (const lang of ["hu", "en"] as const) {
+		const path = localizePath("/", lang);
+		const plain = await (await fetch(`${server.baseUrl}${path}`)).text();
+		const response = await fetch(`${server.baseUrl}${path}?masodlagos=false&harmadlagos=true`, {
+			headers: { cookie: `lang=${lang === "hu" ? "en" : "hu"}`, "accept-language": "en-US" },
+		});
+		expect(await response.text()).toBe(plain);
+		expect(response.headers.get("set-cookie")).toBeNull();
 	}
 });
 
-test("language switching preserves the local path, query, fragment and one-year cookie", async () => {
-	const path = "/szavazas?megye=Budapest&kerulet=01#szavazas";
-	const response = await fetch(`${server.baseUrl}/set-lang?lang=en&redirect=${encodeURIComponent(path)}`, {
-		redirect: "manual",
-	});
-	expect(response.status).toBe(302);
-	expect(response.headers.get("location")).toBe(path);
-	expect(response.headers.get("set-cookie")).toBe("lang=en; Path=/; Max-Age=31536000; SameSite=Lax");
-	const invalid = await fetch(`${server.baseUrl}/set-lang?lang=invalid`, { redirect: "manual" });
-	expect(invalid.headers.get("set-cookie")).toBeNull();
-	for (const target of ["https://example.com", "//example.com", "\\\\example.com", "http://["]) {
-		const external = await fetch(`${server.baseUrl}/set-lang?lang=hu&redirect=${encodeURIComponent(target)}`, {
-			redirect: "manual",
-		});
-		expect(external.headers.get("location")).toBe("/");
+test("every public page is real build-time HTML and needs no runtime server functions", async () => {
+	for (const path of STATIC_PAGE_PATHS) {
+		const html = await readFile(`dist/client${path === "/" ? "" : path.replace(/\/$/, "")}/index.html`, "utf8");
+		expect(load(html)("main h1").length).toBeGreaterThan(0);
+		expect(html).not.toContain("/_serverFn/");
+	}
+	const entries = await readdir("dist/client");
+	expect(entries).not.toContain("_worker.js");
+	expect(entries).not.toContain("functions");
+	expect(entries).toContain("404.html");
+});
+
+test("all internal navigation links target exported pages in the same language", async () => {
+	const exportedPaths = new Set(STATIC_PAGE_PATHS.map((path) => path.replace(/\/$/, "") || "/"));
+	for (const path of STATIC_PAGE_PATHS) {
+		const response = await fetch(`${server.baseUrl}${path}`);
+		const $ = load(await response.text());
+		const lang = $("html").attr("lang");
+		for (const element of $("a[href]").toArray()) {
+			const href = $(element).attr("href");
+			if (!href?.startsWith("/") || href.startsWith("//")) continue;
+			const target = new URL(href, server.baseUrl).pathname.replace(/\/$/, "") || "/";
+			expect(exportedPaths.has(target), `${path} links to an unexported page: ${href}`).toBe(true);
+			const isLanguageSwitch = $(element).attr("hreflang");
+			if (!isLanguageSwitch)
+				expect(target.startsWith("/en"), `${path} loses its language: ${href}`).toBe(lang === "en");
+		}
 	}
 });
 
@@ -105,14 +119,21 @@ test("all source routes enforce first-party visibility and missing routes return
 	}
 }, 20000);
 
-test("sitemap has the existing public routes, language alternates and cache headers", async () => {
+test("static sitemap has both language URLs, alternates and cache headers", async () => {
 	const response = await fetch(`${server.baseUrl}/sitemap.xml`);
 	expect(response.status).toBe(200);
 	expect(response.headers.get("content-type")).toContain("application/xml");
 	expect(response.headers.get("cache-control")).toBe("public, max-age=86400");
 	const $ = load(await response.text(), { xml: true });
-	expect($("url")).toHaveLength(4);
-	expect($("xhtml\\:link")).toHaveLength(12);
+	expect($("url")).toHaveLength(8);
+	expect($("xhtml\\:link")).toHaveLength(24);
+	for (const path of Object.values(PAGES).filter((path) => !path.startsWith("/forras"))) {
+		expect(
+			$("loc")
+				.map((_, element) => $(element).text())
+				.toArray(),
+		).toContain(`${SITE_URL}${localizePath(path, "en")}`);
+	}
 });
 
 test("every published static asset is served byte-for-byte", async () => {
@@ -122,6 +143,7 @@ test("every published static asset is served byte-for-byte", async () => {
 			entries.map(async (entry) => {
 				const relative = `${directory}${entry.name}`;
 				if (entry.isDirectory()) return checkDirectory(`${relative}/`);
+				if (entry.name === "_headers") return; // Pages interprets this configuration; it is not a public asset.
 				const response = await fetch(`${server.baseUrl}/${relative}`);
 				expect(response.status, relative).toBe(200);
 				expect(Buffer.from(await response.arrayBuffer()), relative).toEqual(await readFile(`static/${relative}`));

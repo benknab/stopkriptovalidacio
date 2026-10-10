@@ -1,16 +1,17 @@
-import { createFileRoute, useLocation } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { usePagePath } from "../../hooks/use-page-path.ts";
 import type { JSX } from "react";
-import { ExternalLink } from "../components/external-link.tsx";
-import { H2 } from "../components/h2.tsx";
-import { Layout } from "../components/layout.tsx";
-import { Link } from "../components/link.tsx";
-import { getPageHead } from "../utils/page-head.ts";
-import { type SupportedLanguage, t } from "../i18n/index.ts";
+import { ExternalLink } from "../../components/external-link.tsx";
+import { H2 } from "../../components/h2.tsx";
+import { Layout } from "../../components/layout.tsx";
+import { Link } from "../../components/link.tsx";
+import { getPageHead } from "../../utils/page-head.ts";
+import { type SupportedLanguage, t } from "../../i18n/index.ts";
 
 // Helper to parse text with embedded links like <emailLink>...</emailLink>
 function parseTextWithLinks(
 	text: string,
-	_lang: SupportedLanguage,
+	lang: SupportedLanguage,
 	linkMap: Record<string, { href: string; external?: boolean }>,
 ): JSX.Element {
 	const parts: (string | JSX.Element)[] = [];
@@ -38,7 +39,7 @@ function parseTextWithLinks(
 				);
 			} else {
 				parts.push(
-					<Link key={key++} href={linkInfo.href}>
+					<Link key={key++} href={linkInfo.href} lang={lang}>
 						{content}
 					</Link>,
 				);
@@ -57,14 +58,14 @@ function parseTextWithLinks(
 	return <>{parts}</>;
 }
 
-export const Route = createFileRoute("/rolunk")({
+export const Route = createFileRoute("/{-$lang}/rolunk")({
 	head: ({ matches }) => getPageHead(matches[0].context.lang, "about", "/rolunk"),
 	component: About,
 });
 
 function About(): JSX.Element {
 	const { lang } = Route.useRouteContext();
-	const currentPath = useLocation({ select: (location) => location.pathname + location.searchStr });
+	const currentPath = usePagePath();
 
 	return (
 		<Layout lang={lang} currentPath={currentPath}>

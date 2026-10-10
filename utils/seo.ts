@@ -2,16 +2,17 @@ import type { SupportedLanguage } from "../i18n/index.ts";
 import { SITE_URL } from "../constants/seo.ts";
 import { events } from "../data/events.ts";
 import type { TimelineEvent } from "../data/types.ts";
+import { localizePath } from "./localized-path.ts";
 
-export function buildCanonicalUrl(path: string): string {
-	return `${SITE_URL}${path}`;
+export function buildCanonicalUrl(path: string, lang: SupportedLanguage = "hu"): string {
+	return `${SITE_URL}${localizePath(path, lang)}`;
 }
 
 export function buildHreflangUrls(path: string): Array<{ lang: SupportedLanguage | "x-default"; url: string }> {
 	return [
-		{ lang: "hu", url: `${SITE_URL}${path}` },
-		{ lang: "en", url: `${SITE_URL}${path}` },
-		{ lang: "x-default", url: `${SITE_URL}${path}` },
+		{ lang: "hu", url: buildCanonicalUrl(path, "hu") },
+		{ lang: "en", url: buildCanonicalUrl(path, "en") },
+		{ lang: "x-default", url: buildCanonicalUrl(path, "hu") },
 	];
 }
 

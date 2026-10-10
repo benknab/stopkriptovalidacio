@@ -58,7 +58,7 @@ test("timeline toggles update URL, retain campaign parameters/hash and survive h
 	await waitFor(() => expect(router.state.location.search.harmadlagos).toBe("true"));
 	expect(router.state.location.search.utm_source).toBe("telegram");
 	expect(router.state.location.hash).toBe("idovonal");
-	await router.navigate({ to: "/", search: { masodlagos: "true" } });
+	await router.navigate({ to: ".", search: { masodlagos: "true" } });
 	await waitFor(() => expect((related as HTMLInputElement).checked).toBe(true));
 	router.history.back();
 	await waitFor(() => expect((related as HTMLInputElement).checked).toBe(false));

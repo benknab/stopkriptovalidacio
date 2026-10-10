@@ -1,4 +1,5 @@
 import type { JSX } from "react";
+import { localizePath } from "../utils/localized-path.ts";
 import { TELEGRAM_CHANNEL_URL } from "../constants/seo.ts";
 import { exchanges } from "../data/exchanges.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
@@ -48,7 +49,7 @@ export function Hero({ lang }: HeroProps): JSX.Element {
 					<span>
 						{t("hero.description_line_1_before", lang)}
 						<a
-							href="/kriptovalidalas"
+							href={localizePath("/kriptovalidalas", lang)}
 							className="underline decoration-white/40 underline-offset-2 transition-colors hover:text-white hover:decoration-white"
 						>
 							{t("hero.description_link", lang)}

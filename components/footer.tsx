@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
+import { localizePath } from "../utils/localized-path.ts";
 
 interface FooterProps {
 	lang: SupportedLanguage;
@@ -14,16 +15,28 @@ export function Footer({ lang }: FooterProps): JSX.Element {
 						<span className="text-white font-semibold text-lg">Stop Kriptovalidáció</span>
 					</div>
 					<div className="flex flex-wrap items-center gap-6">
-						<a href="/rolunk" className="text-slate-400 hover:text-white transition-colors text-sm">
+						<a
+							href={localizePath("/rolunk", lang)}
+							className="text-slate-400 hover:text-white transition-colors text-sm"
+						>
 							{t("footer.aboutSite", lang)}
 						</a>
-						<a href="/rolunk#adatvedelem" className="text-slate-400 hover:text-white transition-colors text-sm">
+						<a
+							href={localizePath("/rolunk#adatvedelem", lang)}
+							className="text-slate-400 hover:text-white transition-colors text-sm"
+						>
 							{t("footer.privacy", lang)}
 						</a>
-						<a href="/rolunk#kontakt" className="text-slate-400 hover:text-white transition-colors text-sm">
+						<a
+							href={localizePath("/rolunk#kontakt", lang)}
+							className="text-slate-400 hover:text-white transition-colors text-sm"
+						>
 							{t("nav.contact", lang)}
 						</a>
-						<a href="/rolunk#kozremukodes" className="text-slate-400 hover:text-white transition-colors text-sm">
+						<a
+							href={localizePath("/rolunk#kozremukodes", lang)}
+							className="text-slate-400 hover:text-white transition-colors text-sm"
+						>
 							{t("footer.contributions", lang)}
 						</a>
 					</div>

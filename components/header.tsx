@@ -2,6 +2,7 @@ import type { ReactNode, JSX } from "react";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { MobileNav } from "../islands/mobile-nav.tsx";
 import { LanguageSwitch } from "./language-switch.tsx";
+import { getHomeAnchor, localizePath } from "../utils/localized-path.ts";
 
 interface NavLinkProps {
 	anchor: string;
@@ -9,15 +10,10 @@ interface NavLinkProps {
 	children: ReactNode;
 }
 
-function getAnchorHref(anchor: string, currentPath: string): string {
-	const isHomePage = currentPath === "/" || currentPath.startsWith("/?");
-	return isHomePage ? `#${anchor}` : `/#${anchor}`;
-}
-
 function NavLink({ anchor, currentPath, children }: NavLinkProps): JSX.Element {
 	return (
 		<a
-			href={getAnchorHref(anchor, currentPath)}
+			href={getHomeAnchor(anchor, currentPath)}
 			className="text-sm font-medium text-slate-600 hover:text-brand transition-colors"
 		>
 			{children}
@@ -34,7 +30,10 @@ export function Header({ lang, currentPath }: HeaderProps): JSX.Element {
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200">
 			<div className="mx-auto max-w-6xl px-4 sm:px-6 py-4 flex items-center justify-between">
-				<a href="/" className="text-xl font-bold text-slate-900 hover:text-brand transition-colors">
+				<a
+					href={localizePath("/", lang)}
+					className="text-xl font-bold text-slate-900 hover:text-brand transition-colors"
+				>
 					Stop Kriptovalidáció
 				</a>
 				<div className="flex items-center gap-4 sm:gap-6">

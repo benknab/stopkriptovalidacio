@@ -1,21 +1,22 @@
-import { createFileRoute, useLocation } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { usePagePath } from "../../hooks/use-page-path.ts";
 import type { JSX } from "react";
-import { ExchangesSection } from "../components/exchanges-section.tsx";
-import { H2 } from "../components/h2.tsx";
-import { Hero } from "../components/hero.tsx";
-import { Layout } from "../components/layout.tsx";
-import { getPageHead } from "../utils/page-head.ts";
-import { t } from "../i18n/index.ts";
-import TimelineSection from "../islands/timeline-section.tsx";
+import { ExchangesSection } from "../../components/exchanges-section.tsx";
+import { H2 } from "../../components/h2.tsx";
+import { Hero } from "../../components/hero.tsx";
+import { Layout } from "../../components/layout.tsx";
+import { getPageHead } from "../../utils/page-head.ts";
+import { t } from "../../i18n/index.ts";
+import TimelineSection from "../../islands/timeline-section.tsx";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/{-$lang}/")({
 	head: ({ matches }) => getPageHead(matches[0].context.lang, "home", "/"),
 	component: Home,
 });
 
 function Home(): JSX.Element {
 	const { lang } = Route.useRouteContext();
-	const currentPath = useLocation({ select: (location) => location.pathname + location.searchStr });
+	const currentPath = usePagePath();
 	const url = new URL(currentPath, "http://localhost");
 	const showSecondary = url.searchParams.get("masodlagos") !== "false";
 	const showTertiary = url.searchParams.get("harmadlagos") === "true";

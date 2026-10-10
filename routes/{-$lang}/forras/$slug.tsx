@@ -1,12 +1,13 @@
-import { createFileRoute, notFound, useLocation } from "@tanstack/react-router";
+import { createFileRoute, notFound } from "@tanstack/react-router";
+import { usePagePath } from "../../../hooks/use-page-path.ts";
 import type { JSX } from "react";
-import { Layout } from "../../components/layout.tsx";
-import { Link } from "../../components/link.tsx";
-import { getSourceHead } from "../../utils/page-head.ts";
-import { sources } from "../../data/sources.ts";
-import { t } from "../../i18n/index.ts";
+import { Layout } from "../../../components/layout.tsx";
+import { Link } from "../../../components/link.tsx";
+import { getSourceHead } from "../../../utils/page-head.ts";
+import { sources } from "../../../data/sources.ts";
+import { t } from "../../../i18n/index.ts";
 
-export const Route = createFileRoute("/forras/$slug")({
+export const Route = createFileRoute("/{-$lang}/forras/$slug")({
 	beforeLoad: ({ params }) => {
 		const source = sources[params.slug];
 		if (!source || source.originalUrl || source.internalUrl) throw notFound();
@@ -19,14 +20,14 @@ function SourceDetail(): JSX.Element {
 	const { slug } = Route.useParams();
 	const source = sources[slug];
 	const { lang } = Route.useRouteContext();
-	const currentPath = useLocation({ select: (location) => location.pathname + location.searchStr });
+	const currentPath = usePagePath();
 	const title = source.title[lang];
 
 	return (
 		<Layout lang={lang} currentPath={currentPath}>
 			{/* Back link */}
 			<div className="mb-6">
-				<Link href="/#idovonal" className="inline-flex items-center gap-1 text-sm">
+				<Link href="/#idovonal" lang={lang} className="inline-flex items-center gap-1 text-sm">
 					<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
 					</svg>

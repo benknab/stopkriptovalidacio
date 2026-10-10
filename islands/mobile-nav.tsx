@@ -3,6 +3,7 @@ import type { JSX } from "react";
 import { useEffect } from "react";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { LanguageSwitch } from "../components/language-switch.tsx";
+import { getHomeAnchor } from "../utils/localized-path.ts";
 
 const INITIAL_CLOSED = false;
 
@@ -19,9 +20,7 @@ interface NavLinkProps {
 }
 
 function NavLink({ anchor, currentPath, children, onClick }: NavLinkProps): JSX.Element {
-	// Use same-page anchor if on home, otherwise full path
-	const isHomePage = currentPath === "/" || currentPath.startsWith("/?");
-	const href = isHomePage ? `#${anchor}` : `/#${anchor}`;
+	const href = getHomeAnchor(anchor, currentPath);
 
 	return (
 		<a
