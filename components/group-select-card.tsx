@@ -1,15 +1,10 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 
 function CheckIcon(): JSX.Element {
 	return (
-		<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width={3}
-				d="M5 13l4 4L19 7"
-			/>
+		<svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
 		</svg>
 	);
 }
@@ -47,23 +42,23 @@ export function GroupSelectCard(props: GroupSelectCardProps): JSX.Element {
 		<button
 			type="button"
 			onClick={onToggle}
-			class={`relative rounded-xl p-4 transition-all duration-200 text-left w-full border-2 cursor-pointer ${styles.card} ${
+			className={`relative rounded-xl p-4 transition-all duration-200 text-left w-full border-2 cursor-pointer ${styles.card} ${
 				selected ? `${styles.border} ring-2 ring-current/20` : "border-transparent hover:border-slate-300"
 			}`}
 		>
 			{/* Checkbox indicator */}
 			<div
-				class={`absolute top-3 right-3 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
+				className={`absolute top-3 right-3 w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
 					selected ? styles.checkbox : "bg-slate-300"
 				}`}
 			>
 				{selected && <CheckIcon />}
 			</div>
 
-			<div class="pr-8">
-				<h4 class="font-semibold text-slate-900 text-lg">{title}</h4>
-				<p class="text-sm text-slate-600 mt-1">{subtitle}</p>
-				<p class="text-sm font-medium text-slate-700 mt-2">
+			<div className="pr-8">
+				<h4 className="font-semibold text-slate-900 text-lg">{title}</h4>
+				<p className="text-sm text-slate-600 mt-1">{subtitle}</p>
+				<p className="text-sm font-medium text-slate-700 mt-2">
 					{t("action.contacts_count", lang, { count: contactCount })}
 				</p>
 			</div>

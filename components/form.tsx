@@ -1,20 +1,21 @@
-import type { ComponentChildren, JSX } from "preact";
+import type { SyntheticEvent } from "react";
+import type { ReactNode, JSX } from "react";
 
 // Label
 interface LabelProps {
-	for: string;
-	children: ComponentChildren;
+	htmlFor: string;
+	children: ReactNode;
 	disabled?: boolean;
 	uppercase?: boolean;
 }
 
-export function Label({ for: htmlFor, children, disabled, uppercase }: LabelProps): JSX.Element {
+export function Label({ htmlFor, children, disabled, uppercase }: LabelProps): JSX.Element {
 	const baseClasses = "block text-sm font-semibold mb-2";
 	const colorClasses = disabled ? "text-slate-300" : "text-slate-700";
 	const uppercaseClasses = uppercase ? "text-xs uppercase tracking-wider mb-1.5" : "";
 
 	return (
-		<label for={htmlFor} class={`${baseClasses} ${colorClasses} ${uppercaseClasses}`.trim()}>
+		<label htmlFor={htmlFor} className={`${baseClasses} ${colorClasses} ${uppercaseClasses}`.trim()}>
 			{children}
 		</label>
 	);
@@ -25,19 +26,19 @@ interface InputProps {
 	id: string;
 	type?: string;
 	value: string;
-	onInput: (e: Event) => void;
+	onChange: (e: SyntheticEvent) => void;
 	placeholder?: string;
 }
 
-export function Input({ id, type = "text", value, onInput, placeholder }: InputProps): JSX.Element {
+export function Input({ id, type = "text", value, onChange, placeholder }: InputProps): JSX.Element {
 	return (
 		<input
 			id={id}
 			type={type}
 			value={value}
-			onInput={onInput}
+			onChange={onChange}
 			placeholder={placeholder}
-			class="w-full px-4 py-3 rounded-lg bg-white text-slate-900 border-2 border-slate-200 focus:border-brand focus:outline-none transition-colors"
+			className="w-full px-4 py-3 rounded-lg bg-white text-slate-900 border-2 border-slate-200 focus:border-brand focus:outline-none transition-colors"
 		/>
 	);
 }
@@ -46,9 +47,9 @@ export function Input({ id, type = "text", value, onInput, placeholder }: InputP
 interface SelectProps {
 	id: string;
 	value: string;
-	onChange: (e: Event) => void;
+	onChange: (e: SyntheticEvent) => void;
 	disabled?: boolean;
-	children: ComponentChildren;
+	children: ReactNode;
 }
 
 export function Select({ id, value, onChange, disabled, children }: SelectProps): JSX.Element {
@@ -62,7 +63,7 @@ export function Select({ id, value, onChange, disabled, children }: SelectProps)
 			value={value}
 			onChange={onChange}
 			disabled={disabled}
-			class={`w-full h-11 pl-3 pr-8 border-2 rounded-md text-sm font-medium appearance-none transition-all duration-150 focus:outline-none ${
+			className={`w-full h-11 pl-3 pr-8 border-2 rounded-md text-sm font-medium appearance-none transition-all duration-150 focus:outline-none ${
 				disabled ? disabledClasses : enabledClasses
 			}`}
 		>
@@ -75,13 +76,13 @@ export function Select({ id, value, onChange, disabled, children }: SelectProps)
 interface TextareaProps {
 	id: string;
 	value: string;
-	onInput?: (e: Event) => void;
+	onChange?: (e: SyntheticEvent) => void;
 	rows?: number;
 	disabled?: boolean;
 	resizable?: boolean;
 }
 
-export function Textarea({ id, value, onInput, rows = 6, disabled, resizable = true }: TextareaProps): JSX.Element {
+export function Textarea({ id, value, onChange, rows = 6, disabled, resizable = true }: TextareaProps): JSX.Element {
 	const baseClasses = "w-full px-4 py-3 rounded-lg border-2 focus:outline-none transition-colors";
 	const enabledClasses = "bg-white text-slate-900 border-slate-200 focus:border-brand";
 	const disabledClasses = "bg-slate-50 text-slate-600 border-slate-200";
@@ -91,10 +92,10 @@ export function Textarea({ id, value, onInput, rows = 6, disabled, resizable = t
 		<textarea
 			id={id}
 			value={value}
-			onInput={onInput}
+			onChange={onChange}
 			rows={rows}
 			disabled={disabled}
-			class={`${baseClasses} ${disabled ? disabledClasses : enabledClasses} ${resizeClass}`}
+			className={`${baseClasses} ${disabled ? disabledClasses : enabledClasses} ${resizeClass}`}
 		/>
 	);
 }
@@ -103,27 +104,27 @@ export function Textarea({ id, value, onInput, rows = 6, disabled, resizable = t
 interface SearchInputProps {
 	id: string;
 	value: string;
-	onInput: (e: Event) => void;
+	onChange: (e: SyntheticEvent) => void;
 	placeholder?: string;
 }
 
-export function SearchInput({ id, value, onInput, placeholder }: SearchInputProps): JSX.Element {
+export function SearchInput({ id, value, onChange, placeholder }: SearchInputProps): JSX.Element {
 	return (
-		<div class="relative">
+		<div className="relative">
 			<input
 				id={id}
 				type="text"
 				value={value}
-				onInput={onInput}
+				onChange={onChange}
 				placeholder={placeholder}
-				class="w-full h-11 pl-10 pr-4 bg-white border-2 border-slate-200 rounded-md text-sm text-slate-900 placeholder-slate-400 font-medium transition-all duration-150 hover:border-slate-300 focus:outline-none focus:border-brand"
+				className="w-full h-11 pl-10 pr-4 bg-white border-2 border-slate-200 rounded-md text-sm text-slate-900 placeholder-slate-400 font-medium transition-all duration-150 hover:border-slate-300 focus:outline-none focus:border-brand"
 			/>
-			<div class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2">
-				<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+			<div className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2">
+				<svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width={2}
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={2}
 						d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
 					/>
 				</svg>
@@ -134,17 +135,17 @@ export function SearchInput({ id, value, onInput, placeholder }: SearchInputProp
 
 // Select wrapper with chevron icon
 interface SelectWrapperProps {
-	children: ComponentChildren;
+	children: ReactNode;
 	disabled?: boolean;
 }
 
 export function SelectWrapper({ children, disabled }: SelectWrapperProps): JSX.Element {
 	return (
-		<div class="relative">
+		<div className="relative">
 			{children}
-			<div class={`pointer-events-none absolute right-3 bottom-3.5 ${disabled ? "opacity-30" : ""}`}>
-				<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-					<path stroke-linecap="round" stroke-linejoin="round" stroke-width={2} d="M19 9l-7 7-7-7" />
+			<div className={`pointer-events-none absolute right-3 bottom-3.5 ${disabled ? "opacity-30" : ""}`}>
+				<svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
 				</svg>
 			</div>
 		</div>

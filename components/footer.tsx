@@ -1,4 +1,4 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 
 interface FooterProps {
@@ -7,45 +7,29 @@ interface FooterProps {
 
 export function Footer({ lang }: FooterProps): JSX.Element {
 	return (
-		<footer class="bg-slate-900 mt-auto">
-			<div class="mx-auto max-w-6xl px-4 sm:px-6 py-12">
-				<div class="flex flex-col sm:flex-row sm:justify-between gap-8">
+		<footer className="bg-slate-900 mt-auto">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6 py-12">
+				<div className="flex flex-col sm:flex-row sm:justify-between gap-8">
 					<div>
-						<span class="text-white font-semibold text-lg">
-							Stop Kriptovalidáció
-						</span>
+						<span className="text-white font-semibold text-lg">Stop Kriptovalidáció</span>
 					</div>
-					<div class="flex flex-wrap items-center gap-6">
-						<a
-							href="/rolunk"
-							class="text-slate-400 hover:text-white transition-colors text-sm"
-						>
+					<div className="flex flex-wrap items-center gap-6">
+						<a href="/rolunk" className="text-slate-400 hover:text-white transition-colors text-sm">
 							{t("footer.aboutSite", lang)}
 						</a>
-						<a
-							href="/rolunk#adatvedelem"
-							class="text-slate-400 hover:text-white transition-colors text-sm"
-						>
+						<a href="/rolunk#adatvedelem" className="text-slate-400 hover:text-white transition-colors text-sm">
 							{t("footer.privacy", lang)}
 						</a>
-						<a
-							href="/rolunk#kontakt"
-							class="text-slate-400 hover:text-white transition-colors text-sm"
-						>
+						<a href="/rolunk#kontakt" className="text-slate-400 hover:text-white transition-colors text-sm">
 							{t("nav.contact", lang)}
 						</a>
-						<a
-							href="/rolunk#kozremukodes"
-							class="text-slate-400 hover:text-white transition-colors text-sm"
-						>
+						<a href="/rolunk#kozremukodes" className="text-slate-400 hover:text-white transition-colors text-sm">
 							{t("footer.contributions", lang)}
 						</a>
 					</div>
 				</div>
-				<div class="border-t border-slate-700 mt-8 pt-6">
-					<p class="text-slate-400 text-sm text-center">
-						{t("footer.citizenLed", lang)}
-					</p>
+				<div className="border-t border-slate-700 mt-8 pt-6">
+					<p className="text-slate-400 text-sm text-center">{t("footer.citizenLed", lang)}</p>
 				</div>
 			</div>
 		</footer>

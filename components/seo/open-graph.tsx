@@ -1,4 +1,4 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import type { SupportedLanguage } from "../../i18n/index.ts";
 import { t } from "../../i18n/index.ts";
 import { buildCanonicalUrl } from "../../utils/seo.ts";

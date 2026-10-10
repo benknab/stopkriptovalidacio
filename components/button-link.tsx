@@ -1,12 +1,12 @@
-import type { ComponentChildren, JSX } from "preact";
+import type { ReactNode, JSX } from "react";
 
 type ButtonVariant = "primary" | "secondary";
 
 interface ButtonLinkProps {
 	href: string;
 	variant?: ButtonVariant;
-	children: ComponentChildren;
-	class?: string;
+	children: ReactNode;
+	className?: string;
 	external?: boolean;
 }
 
@@ -19,7 +19,7 @@ export function ButtonLink({
 	href,
 	variant = "primary",
 	children,
-	class: className,
+	className,
 	external = false,
 }: ButtonLinkProps): JSX.Element {
 	const baseClasses = "inline-flex items-center justify-center px-6 py-3 font-semibold rounded-lg transition-colors";
@@ -27,7 +27,7 @@ export function ButtonLink({
 	return (
 		<a
 			href={href}
-			class={`${baseClasses} ${variantClasses[variant]}${className ? ` ${className}` : ""}`}
+			className={`${baseClasses} ${variantClasses[variant]}${className ? ` ${className}` : ""}`}
 			{...(external ? { target: "_blank", rel: "noopener" } : {})}
 		>
 			{children}

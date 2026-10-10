@@ -1,51 +1,70 @@
-import { type Signal, useSignal, useSignalEffect } from "@preact/signals";
+import { useLocation, useNavigate, useRouter } from "@tanstack/react-router";
 
-type BooleanParamConfig = {
+type ParamConfig<T> = {
 	key: string;
-	defaultValue: boolean;
-	initialValue: boolean;
+	defaultValue: T;
+	initialValue: T;
 };
 
-export function useBooleanQueryParam(config: BooleanParamConfig): Signal<boolean> {
-	const signal = useSignal(config.initialValue);
+const pendingUpdates = new WeakMap<object, Record<string, unknown>>();
 
-	useSignalEffect(() => {
-		if (typeof globalThis.history === "undefined") return;
-		const url = new URL(globalThis.location.href);
-
-		if (signal.value !== config.defaultValue) {
-			url.searchParams.set(config.key, String(signal.value));
-		} else {
-			url.searchParams.delete(config.key);
-		}
-
-		globalThis.history.replaceState({}, "", url);
-	});
-
-	return signal;
+// A county/district/representative change may set multiple keys in one event.
+// Commit them together: separate navigations race while async route context loads.
+function queueUpdate(
+	router: object,
+	currentSearch: Record<string, unknown>,
+	key: string,
+	value: string | boolean,
+	defaultValue: string | boolean,
+	commit: (search: Record<string, unknown>) => void,
+): void {
+	let search = pendingUpdates.get(router);
+	if (!search) {
+		search = { ...currentSearch };
+		pendingUpdates.set(router, search);
+		queueMicrotask(() => {
+			const pending = pendingUpdates.get(router);
+			pendingUpdates.delete(router);
+			if (pending) commit(pending);
+		});
+	}
+	if (value === defaultValue) delete search[key];
+	else search[key] = value;
 }
 
-type StringParamConfig = {
-	key: string;
-	defaultValue: string;
-	initialValue: string;
-};
+function useQuerySetter<T extends string | boolean>(config: ParamConfig<T>): (value: T) => void {
+	const router = useRouter();
+	const navigate = useNavigate();
 
-export function useStringQueryParam(config: StringParamConfig): Signal<string> {
-	const signal = useSignal(config.initialValue);
+	function commit(search: Record<string, unknown>): void {
+		void navigate({
+			to: ".",
+			search,
+			hash: (previous) => previous ?? "",
+			replace: true,
+			resetScroll: false,
+		});
+	}
 
-	useSignalEffect(() => {
-		if (typeof globalThis.history === "undefined") return;
-		const url = new URL(globalThis.location.href);
+	function setValue(value: T): void {
+		queueUpdate(router, router.latestLocation.search, config.key, value, config.defaultValue, commit);
+	}
+	return setValue;
+}
 
-		if (signal.value !== config.defaultValue) {
-			url.searchParams.set(config.key, signal.value);
-		} else {
-			url.searchParams.delete(config.key);
-		}
+// Router-owned state stays in sync with hydration, reloads and back/forward navigation.
+export function useBooleanQueryParam(config: ParamConfig<boolean>): [boolean, (value: boolean) => void] {
+	const searchStr = useLocation({ select: (location) => location.searchStr });
+	const setValue = useQuerySetter(config);
+	const rawValue = new URLSearchParams(searchStr).get(config.key);
+	const value =
+		rawValue === null ? config.initialValue : config.defaultValue ? rawValue !== "false" : rawValue === "true";
+	return [value, setValue];
+}
 
-		globalThis.history.replaceState({}, "", url);
-	});
-
-	return signal;
+export function useStringQueryParam(config: ParamConfig<string>): [string, (value: string) => void] {
+	const searchStr = useLocation({ select: (location) => location.searchStr });
+	const setValue = useQuerySetter(config);
+	const value = new URLSearchParams(searchStr).get(config.key) ?? config.initialValue;
+	return [value, setValue];
 }

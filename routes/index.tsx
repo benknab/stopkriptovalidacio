@@ -1,20 +1,24 @@
-import { Head } from "fresh/runtime";
-import { define } from "@/utils.ts";
-import type { JSX } from "preact";
+import { createFileRoute, useLocation } from "@tanstack/react-router";
+import type { JSX } from "react";
 import { ExchangesSection } from "../components/exchanges-section.tsx";
 import { H2 } from "../components/h2.tsx";
 import { Hero } from "../components/hero.tsx";
 import { Layout } from "../components/layout.tsx";
-import { SeoHead } from "../components/seo/seo-head.tsx";
-import { detectLanguage, t } from "../i18n/index.ts";
+import { getPageHead } from "../utils/page-head.ts";
+import { t } from "../i18n/index.ts";
 import TimelineSection from "../islands/timeline-section.tsx";
 
-export default define.page(function Home(ctx): JSX.Element {
-	const url = new URL(ctx.req.url);
-	const lang = detectLanguage(ctx.req);
+export const Route = createFileRoute("/")({
+	head: ({ matches }) => getPageHead(matches[0].context.lang, "home", "/"),
+	component: Home,
+});
+
+function Home(): JSX.Element {
+	const { lang } = Route.useRouteContext();
+	const currentPath = useLocation({ select: (location) => location.pathname + location.searchStr });
+	const url = new URL(currentPath, "http://localhost");
 	const showSecondary = url.searchParams.get("masodlagos") !== "false";
 	const showTertiary = url.searchParams.get("harmadlagos") === "true";
-	const currentPath = url.pathname + url.search;
 
 	return (
 		<Layout
@@ -27,17 +31,10 @@ export default define.page(function Home(ctx): JSX.Element {
 				</>
 			}
 		>
-			<Head>
-				<SeoHead lang={lang} pageId="home" path="/" />
-			</Head>
 			<section id="idovonal">
-				<H2 class="mb-6">{t("nav.timeline", lang)}</H2>
-				<TimelineSection
-					lang={lang}
-					showSecondary={showSecondary}
-					showTertiary={showTertiary}
-				/>
+				<H2 className="mb-6">{t("nav.timeline", lang)}</H2>
+				<TimelineSection lang={lang} showSecondary={showSecondary} showTertiary={showTertiary} />
 			</section>
 		</Layout>
 	);
-});
+}

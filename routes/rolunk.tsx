@@ -1,12 +1,11 @@
-import { Head } from "fresh/runtime";
-import { define } from "@/utils.ts";
-import type { JSX } from "preact";
+import { createFileRoute, useLocation } from "@tanstack/react-router";
+import type { JSX } from "react";
 import { ExternalLink } from "../components/external-link.tsx";
 import { H2 } from "../components/h2.tsx";
 import { Layout } from "../components/layout.tsx";
 import { Link } from "../components/link.tsx";
-import { SeoHead } from "../components/seo/seo-head.tsx";
-import { detectLanguage, type SupportedLanguage, t } from "../i18n/index.ts";
+import { getPageHead } from "../utils/page-head.ts";
+import { type SupportedLanguage, t } from "../i18n/index.ts";
 
 // Helper to parse text with embedded links like <emailLink>...</emailLink>
 function parseTextWithLinks(
@@ -33,7 +32,7 @@ function parseTextWithLinks(
 		if (linkInfo) {
 			if (linkInfo.external) {
 				parts.push(
-					<ExternalLink key={key++} href={linkInfo.href} class="underline">
+					<ExternalLink key={key++} href={linkInfo.href} className="underline">
 						{content}
 					</ExternalLink>,
 				);
@@ -58,26 +57,23 @@ function parseTextWithLinks(
 	return <>{parts}</>;
 }
 
-export default define.page(function About(ctx): JSX.Element {
-	const url = new URL(ctx.req.url);
-	const lang = detectLanguage(ctx.req);
-	const currentPath = url.pathname + url.search;
+export const Route = createFileRoute("/rolunk")({
+	head: ({ matches }) => getPageHead(matches[0].context.lang, "about", "/rolunk"),
+	component: About,
+});
+
+function About(): JSX.Element {
+	const { lang } = Route.useRouteContext();
+	const currentPath = useLocation({ select: (location) => location.pathname + location.searchStr });
 
 	return (
 		<Layout lang={lang} currentPath={currentPath}>
-			<Head>
-				<SeoHead lang={lang} pageId="about" path="/rolunk" />
-			</Head>
-			<h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-8">
-				{t("about.title", lang)}
-			</h1>
+			<h1 className="text-3xl font-bold tracking-tight text-slate-900 mb-8">{t("about.title", lang)}</h1>
 
 			{/* Mission Section */}
-			<section class="mb-12">
-				<H2 class="mb-4 text-left text-2xl sm:text-2xl">
-					{t("about.mission.title", lang)}
-				</H2>
-				<div class="space-y-4 text-slate-600 leading-relaxed">
+			<section className="mb-12">
+				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("about.mission.title", lang)}</H2>
+				<div className="space-y-4 text-slate-600 leading-relaxed">
 					<p>{t("about.mission.description", lang)}</p>
 					<p>{t("about.mission.privacy", lang)}</p>
 					<p>{t("about.mission.platform", lang)}</p>
@@ -89,16 +85,14 @@ export default define.page(function About(ctx): JSX.Element {
 							},
 						})}
 					</p>
-					<p class="font-medium">{t("about.mission.disclaimer", lang)}</p>
+					<p className="font-medium">{t("about.mission.disclaimer", lang)}</p>
 				</div>
 			</section>
 
 			{/* Privacy Policy Section */}
-			<section id="adatvedelem" class="mb-12">
-				<H2 class="mb-4 text-left text-2xl sm:text-2xl">
-					{t("about.privacy.title", lang)}
-				</H2>
-				<div class="space-y-4 text-slate-600 leading-relaxed">
+			<section id="adatvedelem" className="mb-12">
+				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("about.privacy.title", lang)}</H2>
+				<div className="space-y-4 text-slate-600 leading-relaxed">
 					<p>{t("about.privacy.email", lang)}</p>
 					<p>
 						{parseTextWithLinks(t("about.privacy.analytics", lang), lang, {
@@ -114,16 +108,14 @@ export default define.page(function About(ctx): JSX.Element {
 						})}
 					</p>
 					<p>{t("about.privacy.changes", lang)}</p>
-					<p class="text-sm text-slate-500">{t("about.privacy.updated", lang)}</p>
+					<p className="text-sm text-slate-500">{t("about.privacy.updated", lang)}</p>
 				</div>
 			</section>
 
 			{/* Contact Section */}
-			<section id="kontakt" class="mb-12">
-				<H2 class="mb-4 text-left text-2xl sm:text-2xl">
-					{t("about.contact.title", lang)}
-				</H2>
-				<p class="text-slate-600 leading-relaxed">
+			<section id="kontakt" className="mb-12">
+				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("about.contact.title", lang)}</H2>
+				<p className="text-slate-600 leading-relaxed">
 					{parseTextWithLinks(t("about.contact.description", lang), lang, {
 						emailLink: { href: "mailto:info@stopkriptovalidacio.hu" },
 					})}
@@ -132,10 +124,8 @@ export default define.page(function About(ctx): JSX.Element {
 
 			{/* Contributions Section */}
 			<section id="kozremukodes">
-				<H2 class="mb-4 text-left text-2xl sm:text-2xl">
-					{t("about.contributions.title", lang)}
-				</H2>
-				<div class="space-y-4 text-slate-600 leading-relaxed">
+				<H2 className="mb-4 text-left text-2xl sm:text-2xl">{t("about.contributions.title", lang)}</H2>
+				<div className="space-y-4 text-slate-600 leading-relaxed">
 					<p>
 						{parseTextWithLinks(t("about.contributions.description", lang), lang, {
 							githubLink: {
@@ -149,4 +139,4 @@ export default define.page(function About(ctx): JSX.Element {
 			</section>
 		</Layout>
 	);
-});
+}

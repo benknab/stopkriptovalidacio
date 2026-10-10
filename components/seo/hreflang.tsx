@@ -1,4 +1,4 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import { buildHreflangUrls } from "../../utils/seo.ts";
 
 interface HreflangProps {
@@ -10,7 +10,9 @@ export function Hreflang({ path }: HreflangProps): JSX.Element {
 
 	return (
 		<>
-			{hreflangUrls.map(({ lang, url }) => <link key={lang} rel="alternate" hrefLang={lang} href={url} />)}
+			{hreflangUrls.map(({ lang, url }) => (
+				<link key={lang} rel="alternate" hrefLang={lang} href={url} />
+			))}
 		</>
 	);
 }

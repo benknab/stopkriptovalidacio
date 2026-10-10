@@ -40,10 +40,9 @@ const coalitionDataSchema = z.object({
 	facebook: z.url().nullable(),
 });
 
-const coalitionsSchema = z.array(coalitionDataSchema).refine(
-	(arr) => new Set(arr.map((c) => c.slug)).size === arr.length,
-	{ message: "Duplicate coalition slugs found" },
-);
+const coalitionsSchema = z
+	.array(coalitionDataSchema)
+	.refine((arr) => new Set(arr.map((c) => c.slug)).size === arr.length, { message: "Duplicate coalition slugs found" });
 
 export type CoalitionData = z.infer<typeof coalitionDataSchema>;
 

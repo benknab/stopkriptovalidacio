@@ -1,0 +1,48 @@
+{
+	"name": "stopkriptovalidacio",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vp dev",
+		"build": "vp build",
+		"start": "node .output/server/index.mjs",
+		"check": "vp check && tsc --noEmit",
+		"fmt": "vp fmt",
+		"lint": "vp lint",
+		"test": "vp build && vp test run",
+		"test:browser": "node tests/browser-regression.ts",
+		"setup": "node scripts/setup-hooks.ts",
+		"inspect-current-winners": "node scripts/inspect-current-winners.ts",
+		"backfill-mps-kpn-ids": "node scripts/backfill-mps-kpn-ids.ts",
+		"post-telegram": "node --env-file-if-exists=.env scripts/post-telegram.ts",
+		"download-mp-images": "node scripts/download-mp-images.ts"
+	},
+	"dependencies": {
+		"@tanstack/react-router": "1.170.41",
+		"@tanstack/react-start": "1.168.60",
+		"react": "19.3.0",
+		"react-dom": "19.3.0",
+		"tailwind-merge": "^2.6.1",
+		"zod": "^4.3.6"
+	},
+	"devDependencies": {
+		"@tailwindcss/vite": "4.2.1",
+		"@testing-library/react": "^16.3.3",
+		"@types/node": "^24",
+		"@types/react": "19.3.0",
+		"@types/react-dom": "19.3.0",
+		"@vitejs/plugin-react": "6.1.2",
+		"cheerio": "1.2.0",
+		"jsdom": "^30.1.2",
+		"nitro": "3.0.260903-beta",
+		"sharp": "0.35.5",
+		"tailwindcss": "4.2.1",
+		"typescript": "7.0.2",
+		"vite": "npm:@voidzero-dev/vite-plus-core@1.1.0",
+		"vite-plus": "1.1.0"
+	},
+	"engines": {
+		"node": ">=24.21.0 <25"
+	},
+	"packageManager": "pnpm@12.10.1"
+}

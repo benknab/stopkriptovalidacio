@@ -1,4 +1,4 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import { twMerge } from "tailwind-merge";
 import type { MpSlug } from "../data/mps.ts";
 
@@ -9,7 +9,7 @@ interface MpImageProps {
 	name: string;
 	hasImage?: boolean;
 	size?: MpImageSize;
-	class?: string;
+	className?: string;
 }
 
 const sizeClasses: Record<MpImageSize, string> = {
@@ -24,9 +24,15 @@ const sizeDimensions: Record<MpImageSize, number> = {
 	lg: 128,
 };
 
-function PersonPlaceholder(
-	{ size, name, className }: { size: MpImageSize; name: string; className?: string },
-): JSX.Element {
+function PersonPlaceholder({
+	size,
+	name,
+	className,
+}: {
+	size: MpImageSize;
+	name: string;
+	className?: string;
+}): JSX.Element {
 	const dimension = sizeDimensions[size];
 
 	return (
@@ -37,11 +43,7 @@ function PersonPlaceholder(
 			viewBox="0 0 96 96"
 			role="img"
 			aria-label={name}
-			class={twMerge(
-				sizeClasses[size],
-				"rounded-full border-2 border-slate-200 bg-slate-100",
-				className,
-			)}
+			className={twMerge(sizeClasses[size], "rounded-full border-2 border-slate-200 bg-slate-100", className)}
 		>
 			<circle cx="48" cy="36" r="16" fill="#94a3b8" />
 			<ellipse cx="48" cy="82" rx="28" ry="22" fill="#94a3b8" />
@@ -49,9 +51,7 @@ function PersonPlaceholder(
 	);
 }
 
-export function MpImage(
-	{ slug, name, hasImage = true, size = "md", class: className }: MpImageProps,
-): JSX.Element {
+export function MpImage({ slug, name, hasImage = true, size = "md", className }: MpImageProps): JSX.Element {
 	if (!hasImage) {
 		return <PersonPlaceholder size={size} name={name} className={className} />;
 	}
@@ -66,7 +66,7 @@ export function MpImage(
 			width={dimension}
 			height={dimension}
 			loading="lazy"
-			class={twMerge(
+			className={twMerge(
 				sizeClasses[size],
 				"rounded-full object-cover border-2 border-slate-200 bg-slate-100",
 				className,

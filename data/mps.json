@@ -10,9 +10,7 @@
 				"district": "Jász-Nagykun-Szolnok 1. OEVK"
 			}
 		},
-		"emails": [
-			"kallai.maria@parlament.hu"
-		],
+		"emails": ["kallai.maria@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k153.jpg"
 	},
@@ -27,9 +25,7 @@
 				"district": "Békés 4. OEVK"
 			}
 		},
-		"emails": [
-			"gurzomaria@magyartisza.hu"
-		],
+		"emails": ["gurzomaria@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/gurzo-maria.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bekesmegye.04oevk"
@@ -45,9 +41,7 @@
 				"district": "Budapest 16. OEVK"
 			}
 		},
-		"emails": [
-			"istvan.hiller@parlament.hu"
-		],
+		"emails": ["istvan.hiller@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h026.jpg"
 	},
@@ -62,9 +56,7 @@
 				"district": "Veszprém 2. OEVK"
 			}
 		},
-		"emails": [
-			"forsthofferagnes@magyartisza.hu"
-		],
+		"emails": ["forsthofferagnes@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/forsthoffer-agnes.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.veszpremmegye.02oevk"
@@ -80,9 +72,7 @@
 				"district": "Veszprém 1. OEVK"
 			}
 		},
-		"emails": [
-			"gasparlevente@magyartisza.hu"
-		],
+		"emails": ["gasparlevente@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/gaspar-levente.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.veszpremmegye.01oevk"
@@ -103,9 +93,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"zsigmond.barna@parlament.hu"
-		],
+		"emails": ["zsigmond.barna@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/z015.jpg"
 	},
@@ -125,9 +113,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"demeter.andras@parlament.hu"
-		],
+		"emails": ["demeter.andras@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d042.jpg"
 	},
@@ -142,13 +128,8 @@
 				"district": "Budapest 15. OEVK"
 			}
 		},
-		"emails": [
-			"agnes.kunhalmi@mszp.hu",
-			"kunhalmi.agnes@parlament.hu"
-		],
-		"phones": [
-			"3612053054"
-		],
+		"emails": ["agnes.kunhalmi@mszp.hu", "kunhalmi.agnes@parlament.hu"],
+		"phones": ["3612053054"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k762.jpg",
 		"website": "https://kunhalmiagnes.hu"
 	},
@@ -163,9 +144,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"jojarterika@magyartisza.hu"
-		],
+		"emails": ["jojarterika@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/jojart-erika.jpg"
 	},
@@ -185,9 +164,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"agnes.molnar@parlament.hu"
-		],
+		"emails": ["agnes.molnar@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m039.jpg"
 	},
@@ -202,9 +179,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"nemethcsilla@magyartisza.hu"
-		],
+		"emails": ["nemethcsilla@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/nemeth-csilla.jpg"
 	},
@@ -224,13 +199,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"novak.elod@mihazank.hu",
-			"novak.elod@parlament.hu"
-		],
-		"phones": [
-			"36303582723"
-		],
+		"emails": ["novak.elod@mihazank.hu", "novak.elod@parlament.hu"],
+		"phones": ["36303582723"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n036.jpg"
 	},
 	"324308": {
@@ -244,9 +214,7 @@
 				"district": "Jász-Nagykun-Szolnok 1. OEVK"
 			}
 		},
-		"emails": [
-			"rostandrea@magyartisza.hu"
-		],
+		"emails": ["rostandrea@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/rost-andrea.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.jasznagykunszolnokmegye.01oevk"
@@ -262,9 +230,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"bicskeilaszlo@magyartisza.hu"
-		],
+		"emails": ["bicskeilaszlo@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bicskei-laszlo.jpg"
 	},
@@ -279,9 +245,7 @@
 				"district": "Pest 9. OEVK"
 			}
 		},
-		"emails": [
-			"bilisicszita@magyartisza.hu"
-		],
+		"emails": ["bilisicszita@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bilisics-zita.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.09oevk"
@@ -297,9 +261,7 @@
 				"district": "Pest 9. OEVK"
 			}
 		},
-		"emails": [
-			"gyorgy.czervan@parlament.hu"
-		],
+		"emails": ["gyorgy.czervan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/c003.jpg"
 	},
@@ -319,13 +281,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gulyas.gergely@budavar.hu",
-			"gergely.gulyas@parlament.hu"
-		],
-		"phones": [
-			"3617955000"
-		],
+		"emails": ["gulyas.gergely@budavar.hu", "gergely.gulyas@parlament.hu"],
+		"phones": ["3617955000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g053.jpg",
 		"website": "https://gulyasgergely.hu"
 	},
@@ -340,9 +297,7 @@
 				"district": "Pest 14. OEVK"
 			}
 		},
-		"emails": [
-			"muharigergely@magyartisza.hu"
-		],
+		"emails": ["muharigergely@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/muhari-gergely.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.14oevk"
@@ -358,9 +313,7 @@
 				"district": "Hajdú-Bihar 3. OEVK"
 			}
 		},
-		"emails": [
-			"tasolaszlo@parlament.hu"
-		],
+		"emails": ["tasolaszlo@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t021.jpg"
 	},
@@ -375,9 +328,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"havasibalazsmark@magyartisza.hu"
-		],
+		"emails": ["havasibalazsmark@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/havasi-balazs-mark.jpg"
 	},
@@ -392,13 +343,8 @@
 				"district": "Veszprém 1. OEVK"
 			}
 		},
-		"emails": [
-			"ovadi.peter@fidesz.hu",
-			"ovadi.peter@parlament.hu"
-		],
-		"phones": [
-			"36205533377"
-		],
+		"emails": ["ovadi.peter@fidesz.hu", "ovadi.peter@parlament.hu"],
+		"phones": ["36205533377"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/o014.jpg"
 	},
 	"632003": {
@@ -412,10 +358,7 @@
 				"district": "Pest 7. OEVK"
 			}
 		},
-		"emails": [
-			"lajos.szucs@fidesz.hu",
-			"lajos.szucs@parlament.hu"
-		],
+		"emails": ["lajos.szucs@fidesz.hu", "lajos.szucs@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s038.jpg"
 	},
@@ -430,9 +373,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"drlukacs@parlament.hu"
-		],
+		"emails": ["drlukacs@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/l042.jpg"
 	},
@@ -452,9 +393,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hejj.david@parlament.hu"
-		],
+		"emails": ["hejj.david@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h083.jpg"
 	},
@@ -469,9 +408,7 @@
 				"district": "Budapest 13. OEVK"
 			}
 		},
-		"emails": [
-			"mulleranna@magyartisza.hu"
-		],
+		"emails": ["mulleranna@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/muller-anna.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.13oevk"
@@ -492,9 +429,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"juhasz.hajnalka@parlament.hu"
-		],
+		"emails": ["juhasz.hajnalka@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k155.jpg"
 	},
@@ -509,9 +444,7 @@
 				"district": "Bács-Kiskun 1. OEVK"
 			}
 		},
-		"emails": [
-			"salacz.laszlo@parlament.hu"
-		],
+		"emails": ["salacz.laszlo@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s772.jpg"
 	},
@@ -526,9 +459,7 @@
 				"district": "Borsod-Abaúj-Zemplén 7. OEVK"
 			}
 		},
-		"emails": [
-			"csezierzsebet@magyartisza.hu"
-		],
+		"emails": ["csezierzsebet@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/csezi-erzsebet.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.borsodabaujzemplenmegye.07oevk"
@@ -544,9 +475,7 @@
 				"district": "Baranya 4. OEVK"
 			}
 		},
-		"emails": [
-			"nagy.csaba@parlament.hu"
-		],
+		"emails": ["nagy.csaba@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n032.jpg"
 	},
@@ -561,9 +490,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"schummerorsolya@magyartisza.hu"
-		],
+		"emails": ["schummerorsolya@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/schummer-orsolya.jpg"
 	},
@@ -578,9 +505,7 @@
 				"district": "Fejér 4. OEVK"
 			}
 		},
-		"emails": [
-			"meszaros.lajos@parlament.hu"
-		],
+		"emails": ["meszaros.lajos@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m071.jpg"
 	},
@@ -600,9 +525,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"sztojka.attila@parlament.hu"
-		],
+		"emails": ["sztojka.attila@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s183.jpg"
 	},
@@ -617,9 +540,7 @@
 				"district": "Pest 10. OEVK"
 			}
 		},
-		"emails": [
-			"perticsnekacsorandrea@magyartisza.hu"
-		],
+		"emails": ["perticsnekacsorandrea@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/perticsne-kacsor-andrea.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.10oevk"
@@ -635,9 +556,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"szabotibor@magyartisza.hu"
-		],
+		"emails": ["szabotibor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/szabo-tibor.jpg"
 	},
@@ -652,9 +571,7 @@
 				"district": "Fejér 2. OEVK"
 			}
 		},
-		"emails": [
-			"boricsmihaly@magyartisza.hu"
-		],
+		"emails": ["boricsmihaly@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/borics-mihaly.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.fejermegye.02oevk"
@@ -670,9 +587,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"dudas.robert@parlament.hu"
-		],
+		"emails": ["dudas.robert@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d039.jpg"
 	},
@@ -687,9 +602,7 @@
 				"district": "Hajdú-Bihar 6. OEVK"
 			}
 		},
-		"emails": [
-			"goroghnebocskaieva@magyartisza.hu"
-		],
+		"emails": ["goroghnebocskaieva@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/goroghne-bocskai-eva.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.hajdubiharmegye.06oevk"
@@ -705,9 +618,7 @@
 				"district": "Zala 2. OEVK"
 			}
 		},
-		"emails": [
-			"vargabalazs@magyartisza.hu"
-		],
+		"emails": ["vargabalazs@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/varga-balazs.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.zalamegye.02oevk"
@@ -723,9 +634,7 @@
 				"district": "Somogy 1. OEVK"
 			}
 		},
-		"emails": [
-			"lorinczviktoria@magyartisza.hu"
-		],
+		"emails": ["lorinczviktoria@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/lorincz-viktoria.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.somogymegye.01oevk"
@@ -746,13 +655,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"soltesz.miklos@me.gov.hu",
-			"miklos.soltesz@parlament.hu"
-		],
-		"phones": [
-			"3617955000"
-		],
+		"emails": ["soltesz.miklos@me.gov.hu", "miklos.soltesz@parlament.hu"],
+		"phones": ["3617955000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s051.jpg"
 	},
 	"950324": {
@@ -771,13 +675,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"orbanviktor@orbanviktor.hu",
-			"viktor.orban@parlament.hu"
-		],
-		"phones": [
-			"3617955000"
-		],
+		"emails": ["orbanviktor@orbanviktor.hu", "viktor.orban@parlament.hu"],
+		"phones": ["3617955000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/o320.jpg",
 		"website": "http://www.orbanviktor.hu"
 	},
@@ -792,9 +691,7 @@
 				"district": "Heves 2. OEVK"
 			}
 		},
-		"emails": [
-			"kissjanos976054@magyartisza.hu"
-		],
+		"emails": ["kissjanos976054@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kiss-janos-976054.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.hevesmegye.02oevk"
@@ -810,9 +707,7 @@
 				"district": "Pest 12. OEVK"
 			}
 		},
-		"emails": [
-			"laszlo.foldi@parlament.hu"
-		],
+		"emails": ["laszlo.foldi@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f026.jpg"
 	},
@@ -827,9 +722,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hollik.istvan@parlament.hu"
-		],
+		"emails": ["hollik.istvan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h078.jpg"
 	},
@@ -849,10 +742,7 @@
 				"district": "Vas 2. OEVK"
 			}
 		},
-		"emails": [
-			"agh.peter@fidesz.hu",
-			"peter.agh@parlament.hu"
-		],
+		"emails": ["agh.peter@fidesz.hu", "peter.agh@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a011.jpg",
 		"website": "http://www.aghpeter.hu"
@@ -868,9 +758,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kovacspetrajudit@magyartisza.hu"
-		],
+		"emails": ["kovacspetrajudit@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kovacs-petra-judit.jpg"
 	},
@@ -885,9 +773,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"imre.pesti@parlament.hu"
-		],
+		"emails": ["imre.pesti@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p032.jpg"
 	},
@@ -902,9 +788,7 @@
 				"district": "Borsod-Abaúj-Zemplén 1. OEVK"
 			}
 		},
-		"emails": [
-			"juhaszroland@magyartisza.hu"
-		],
+		"emails": ["juhaszroland@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/juhasz-roland.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.borsodabaujzemplenmegye.01oevk"
@@ -920,10 +804,7 @@
 				"list": "Országos nemzetiségi lista"
 			}
 		},
-		"emails": [
-			"ritter@t-online.hu",
-			"ritter.imre@parlament.hu"
-		],
+		"emails": ["ritter@t-online.hu", "ritter.imre@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/r036.jpg"
 	},
@@ -938,9 +819,7 @@
 				"district": "Baranya 1. OEVK"
 			}
 		},
-		"emails": [
-			"ruzsadiana@magyartisza.hu"
-		],
+		"emails": ["ruzsadiana@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/ruzsa-diana.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.baranyamegye.01oevk"
@@ -956,9 +835,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kalazdikerekeskinga@magyartisza.hu"
-		],
+		"emails": ["kalazdikerekeskinga@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kalazdi-kerekes-kinga.jpg"
 	},
@@ -978,12 +855,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"bence.retvari@parlament.hu"
-		],
-		"phones": [
-			"3614411000"
-		],
+		"emails": ["bence.retvari@parlament.hu"],
+		"phones": ["3614411000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/r023.jpg"
 	},
 	"1161037": {
@@ -1002,9 +875,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kover.laszlo@parlament.hu"
-		],
+		"emails": ["kover.laszlo@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k308.jpg",
 		"website": "http://www.koverlaszlo.hu"
@@ -1035,9 +906,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"pasztoranett@magyartisza.hu"
-		],
+		"emails": ["pasztoranett@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/pasztor-anett.jpg"
 	},
@@ -1052,9 +921,7 @@
 				"district": "Békés 3. OEVK"
 			}
 		},
-		"emails": [
-			"rakizsolt@magyartisza.hu"
-		],
+		"emails": ["rakizsolt@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/raki-zsolt.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bekesmegye.03oevk"
@@ -1075,9 +942,7 @@
 				"district": "Hajdú-Bihar 4. OEVK"
 			}
 		},
-		"emails": [
-			"istvan.vitanyi@parlament.hu"
-		],
+		"emails": ["istvan.vitanyi@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v008.jpg"
 	},
@@ -1092,9 +957,7 @@
 				"district": "Budapest 7. OEVK"
 			}
 		},
-		"emails": [
-			"hiszekeny.dezso@parlament.hu"
-		],
+		"emails": ["hiszekeny.dezso@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h743.jpg"
 	},
@@ -1109,9 +972,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 1. OEVK"
 			}
 		},
-		"emails": [
-			"szabo.tunde@parlament.hu"
-		],
+		"emails": ["szabo.tunde@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s148.jpg"
 	},
@@ -1126,9 +987,7 @@
 				"district": "Győr-Moson-Sopron 1. OEVK"
 			}
 		},
-		"emails": [
-			"simon.robert@parlament.hu"
-		],
+		"emails": ["simon.robert@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s774.jpg"
 	},
@@ -1143,12 +1002,8 @@
 				"district": "Budapest 4. OEVK"
 			}
 		},
-		"emails": [
-			"tordai.bence@parlament.hu"
-		],
-		"phones": [
-			"3614415593"
-		],
+		"emails": ["tordai.bence@parlament.hu"],
+		"phones": ["3614415593"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t054.jpg",
 		"website": "https://tordaibence.hu"
 	},
@@ -1168,9 +1023,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"foldesi.gyula@parlament.hu"
-		],
+		"emails": ["foldesi.gyula@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f031.jpg"
 	},
@@ -1185,9 +1038,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hornung.agnes@parlament.hu"
-		],
+		"emails": ["hornung.agnes@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h079.jpg"
 	},
@@ -1202,9 +1053,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hantosiistvan@magyartisza.hu"
-		],
+		"emails": ["hantosiistvan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/hantosi-istvan.jpg"
 	},
@@ -1219,9 +1068,7 @@
 				"district": "Hajdú-Bihar 6. OEVK"
 			}
 		},
-		"emails": [
-			"istvan.tiba@parlament.hu"
-		],
+		"emails": ["istvan.tiba@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t017.jpg"
 	},
@@ -1241,9 +1088,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gabor.kubatov@parlament.hu"
-		],
+		"emails": ["gabor.kubatov@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k072.jpg",
 		"website": "http://www.kubatovgabor.hu"
@@ -1259,9 +1104,7 @@
 				"district": "Budapest 11. OEVK"
 			}
 		},
-		"emails": [
-			"laszlo.varju@parlament.hu"
-		],
+		"emails": ["laszlo.varju@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v018.jpg"
 	},
@@ -1276,9 +1119,7 @@
 				"district": "Baranya 1. OEVK"
 			}
 		},
-		"emails": [
-			"mellar.tamas@parlament.hu"
-		],
+		"emails": ["mellar.tamas@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m064.jpg",
 		"website": "https://tamasmellar.hu"
@@ -1294,10 +1135,7 @@
 				"district": "Somogy 2. OEVK"
 			}
 		},
-		"emails": [
-			"laszlo.szaszfalvi@kim.gov.hu",
-			"laszlo.szaszfalvi@parlament.hu"
-		],
+		"emails": ["laszlo.szaszfalvi@kim.gov.hu", "laszlo.szaszfalvi@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s013.jpg"
 	},
@@ -1312,9 +1150,7 @@
 				"district": "Csongrád-Csanád 4. OEVK"
 			}
 		},
-		"emails": [
-			"ferenczigabor@magyartisza.hu"
-		],
+		"emails": ["ferenczigabor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/ferenczi-gabor.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.csongradcsanadmegye.04oevk"
@@ -1330,9 +1166,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"zsolt.molnar@parlament.hu"
-		],
+		"emails": ["zsolt.molnar@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m037.jpg"
 	},
@@ -1347,9 +1181,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"foldi.judit@parlament.hu"
-		],
+		"emails": ["foldi.judit@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/r046.jpg"
 	},
@@ -1364,9 +1196,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"komaromi.zoltan@parlament.hu"
-		],
+		"emails": ["komaromi.zoltan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k171.jpg"
 	},
@@ -1381,9 +1211,7 @@
 				"district": "Fejér 1. OEVK"
 			}
 		},
-		"emails": [
-			"tamas.vargha@parlament.hu"
-		],
+		"emails": ["tamas.vargha@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v045.jpg"
 	},
@@ -1403,10 +1231,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kocsis.mate@fidesz.hu",
-			"kocsis.mate@parlament.hu"
-		],
+		"emails": ["kocsis.mate@fidesz.hu", "kocsis.mate@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k100.jpg",
 		"website": "https://kocsismate.hu"
@@ -1422,12 +1247,8 @@
 				"district": "Budapest 1. OEVK"
 			}
 		},
-		"emails": [
-			"csardi.antal@parlament.hu"
-		],
-		"phones": [
-			"36301580471"
-		],
+		"emails": ["csardi.antal@parlament.hu"],
+		"phones": ["36301580471"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/c044.jpg",
 		"website": "https://csardiantal.hu"
 	},
@@ -1442,9 +1263,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kapitanyistvan@magyartisza.hu"
-		],
+		"emails": ["kapitanyistvan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kapitany-istvan.jpg"
 	},
@@ -1464,9 +1283,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"szilard.nemeth@parlament.hu"
-		],
+		"emails": ["szilard.nemeth@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n020.jpg"
 	},
@@ -1481,9 +1298,7 @@
 				"district": "Pest 8. OEVK"
 			}
 		},
-		"emails": [
-			"bona.zoltan@parlament.hu"
-		],
+		"emails": ["bona.zoltan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b764.jpg",
 		"website": "http://www.bonazoltan.hu"
@@ -1513,9 +1328,7 @@
 				"district": "Fejér 2. OEVK"
 			}
 		},
-		"emails": [
-			"gabor.toro@parlament.hu"
-		],
+		"emails": ["gabor.toro@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t036.jpg"
 	},
@@ -1530,9 +1343,7 @@
 				"district": "Jász-Nagykun-Szolnok 4. OEVK"
 			}
 		},
-		"emails": [
-			"herczeg.zsolt@parlament.hu"
-		],
+		"emails": ["herczeg.zsolt@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h089.jpg"
 	},
@@ -1552,9 +1363,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"menczer.tamas@parlament.hu"
-		],
+		"emails": ["menczer.tamas@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m066.jpg",
 		"website": "https://menczertamas.hu"
@@ -1570,13 +1379,8 @@
 				"district": "Somogy 4. OEVK"
 			}
 		},
-		"emails": [
-			"witzmannmihaly@fidesz.hu",
-			"witzmann.mihaly@parlament.hu"
-		],
-		"phones": [
-			"36202618330"
-		],
+		"emails": ["witzmannmihaly@fidesz.hu", "witzmann.mihaly@parlament.hu"],
+		"phones": ["36202618330"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/w704.jpg",
 		"website": "https://witzmannmihaly.hu"
 	},
@@ -1596,9 +1400,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"zsolt.nyitrai@parlament.hu"
-		],
+		"emails": ["zsolt.nyitrai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n018.jpg"
 	},
@@ -1613,9 +1415,7 @@
 				"district": "Fejér 1. OEVK"
 			}
 		},
-		"emails": [
-			"csiszarbela@magyartisza.hu"
-		],
+		"emails": ["csiszarbela@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/csiszar-bela.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.fejermegye.01oevk"
@@ -1631,9 +1431,7 @@
 				"district": "Komárom-Esztergom 2. OEVK"
 			}
 		},
-		"emails": [
-			"radnaimark@magyartisza.hu"
-		],
+		"emails": ["radnaimark@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/radnai-mark.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.komaromesztergommegye.02oevk"
@@ -1649,9 +1447,7 @@
 				"district": "Zala 1. OEVK"
 			}
 		},
-		"emails": [
-			"laszlo.vigh@parlament.hu"
-		],
+		"emails": ["laszlo.vigh@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v038.jpg",
 		"website": "https://vighlaszlo.hu"
@@ -1667,9 +1463,7 @@
 				"district": "Bács-Kiskun 3. OEVK"
 			}
 		},
-		"emails": [
-			"sandor.font@parlament.hu"
-		],
+		"emails": ["sandor.font@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f010.jpg"
 	},
@@ -1689,9 +1483,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"istvan.simicsko@parlament.hu"
-		],
+		"emails": ["istvan.simicsko@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s011.jpg"
 	},
@@ -1706,9 +1498,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 6. OEVK"
 			}
 		},
-		"emails": [
-			"miklos.simon@parlament.hu"
-		],
+		"emails": ["miklos.simon@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s012.jpg"
 	},
@@ -1723,9 +1513,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gy.nemeth.erzsebet@parlament.hu"
-		],
+		"emails": ["gy.nemeth.erzsebet@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g024.jpg"
 	},
@@ -1740,9 +1528,7 @@
 				"district": "Komárom-Esztergom 3. OEVK"
 			}
 		},
-		"emails": [
-			"arvaynikolett@magyartisza.hu"
-		],
+		"emails": ["arvaynikolett@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/arvay-nikolett.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.komaromesztergommegye.03oevk"
@@ -1758,9 +1544,7 @@
 				"district": "Borsod-Abaúj-Zemplén 2. OEVK"
 			}
 		},
-		"emails": [
-			"kiss.janos@parlament.hu"
-		],
+		"emails": ["kiss.janos@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k166.jpg"
 	},
@@ -1775,9 +1559,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 6. OEVK"
 			}
 		},
-		"emails": [
-			"barnaszabotimea@magyartisza.hu"
-		],
+		"emails": ["barnaszabotimea@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/barna-szabo-timea.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.szabolcsszatmarberegmegye.06oevk"
@@ -1793,9 +1575,7 @@
 				"district": "Budapest 14. OEVK"
 			}
 		},
-		"emails": [
-			"dunai.monika@parlament.hu"
-		],
+		"emails": ["dunai.monika@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d751.jpg"
 	},
@@ -1810,9 +1590,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"veresadamlaszlo@magyartisza.hu"
-		],
+		"emails": ["veresadamlaszlo@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/veres-adam-laszlo.jpg"
 	},
@@ -1827,9 +1605,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"komjathi.imre@parlament.hu"
-		],
+		"emails": ["komjathi.imre@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k169.jpg"
 	},
@@ -1844,9 +1620,7 @@
 				"district": "Tolna 2. OEVK"
 			}
 		},
-		"emails": [
-			"csibi.krisztina@parlament.hu"
-		],
+		"emails": ["csibi.krisztina@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/0005.jpg"
 	},
@@ -1861,13 +1635,8 @@
 				"district": "Pest 5. OEVK"
 			}
 		},
-		"emails": [
-			"tuzson.bence@fidesz.hu",
-			"tuzson.bence@parlament.hu"
-		],
-		"phones": [
-			"36705538043"
-		],
+		"emails": ["tuzson.bence@fidesz.hu", "tuzson.bence@parlament.hu"],
+		"phones": ["36705538043"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t687.jpg",
 		"website": "https://tuzsonbence.hu"
 	},
@@ -1882,9 +1651,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 1. OEVK"
 			}
 		},
-		"emails": [
-			"gajdoslaszlo@magyartisza.hu"
-		],
+		"emails": ["gajdoslaszlo@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/gajdos-laszlo.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.szabolcsszatmarberegmegye.01oevk"
@@ -1900,9 +1667,7 @@
 				"district": "Pest 7. OEVK"
 			}
 		},
-		"emails": [
-			"tromplerildiko@magyartisza.hu"
-		],
+		"emails": ["tromplerildiko@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/trompler-ildiko.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.07oevk"
@@ -1923,12 +1688,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"zsolt.semjen@parlament.hu"
-		],
-		"phones": [
-			"3617955000"
-		],
+		"emails": ["zsolt.semjen@parlament.hu"],
+		"phones": ["3617955000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s323.jpg",
 		"website": "https://semjenzsolt.hu"
 	},
@@ -1948,10 +1709,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"docs.david@mihazank.hu",
-			"docs.david@parlament.hu"
-		],
+		"emails": ["docs.david@mihazank.hu", "docs.david@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d040.jpg"
 	},
@@ -1966,9 +1724,7 @@
 				"district": "Tolna 1. OEVK"
 			}
 		},
-		"emails": [
-			"istvan.horvath@parlament.hu"
-		],
+		"emails": ["istvan.horvath@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h042.jpg"
 	},
@@ -1983,13 +1739,8 @@
 				"district": "Hajdú-Bihar 5. OEVK"
 			}
 		},
-		"emails": [
-			"bodo.sandor@fidesz.hu",
-			"bodo.sandor@parlament.hu"
-		],
-		"phones": [
-			"36205132653"
-		],
+		"emails": ["bodo.sandor@fidesz.hu", "bodo.sandor@parlament.hu"],
+		"phones": ["36205132653"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b103.jpg"
 	},
 	"2611520": {
@@ -2008,9 +1759,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gyorgy.balla@parlament.hu"
-		],
+		"emails": ["gyorgy.balla@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b007.jpg"
 	},
@@ -2030,10 +1779,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"duro.dora@mihazank.hu",
-			"duro.dora@parlament.hu"
-		],
+		"emails": ["duro.dora@mihazank.hu", "duro.dora@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d028.jpg"
 	},
@@ -2048,10 +1794,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"tompos.marton@momentum.hu",
-			"tompos.marton@parlament.hu"
-		],
+		"emails": ["tompos.marton@momentum.hu", "tompos.marton@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t060.jpg"
 	},
@@ -2071,9 +1814,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kovacszsolt@parlament.hu"
-		],
+		"emails": ["kovacszsolt@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k167.jpg"
 	},
@@ -2088,9 +1829,7 @@
 				"district": "Vas 1. OEVK"
 			}
 		},
-		"emails": [
-			"raplirobert@magyartisza.hu"
-		],
+		"emails": ["raplirobert@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/rapli-robert.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.vasmegye.01oevk"
@@ -2106,9 +1845,7 @@
 				"district": "Zala 3. OEVK"
 			}
 		},
-		"emails": [
-			"lovkocsaba@magyartisza.hu"
-		],
+		"emails": ["lovkocsaba@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/lovko-csaba.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.zalamegye.03oevk"
@@ -2129,9 +1866,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gabriella.selmeczi@parlament.hu"
-		],
+		"emails": ["gabriella.selmeczi@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s322.jpg"
 	},
@@ -2151,9 +1886,7 @@
 				"district": "Borsod-Abaúj-Zemplén 3. OEVK"
 			}
 		},
-		"emails": [
-			"csuzda.gabor@parlament.hu"
-		],
+		"emails": ["csuzda.gabor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/000E.jpg"
 	},
@@ -2168,9 +1901,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"farkas.ors@parlament.hu"
-		],
+		"emails": ["farkas.ors@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f051.jpg"
 	},
@@ -2185,14 +1916,8 @@
 				"district": "Győr-Moson-Sopron 5. OEVK"
 			}
 		},
-		"emails": [
-			"istvan.nagy@am.gov.hu",
-			"istvan.nagydr@parlament.hu"
-		],
-		"phones": [
-			"3617952000",
-			"3617952532"
-		],
+		"emails": ["istvan.nagy@am.gov.hu", "istvan.nagydr@parlament.hu"],
+		"phones": ["3617952000", "3617952532"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n031.jpg",
 		"website": "https://drnagyistvan.hu"
 	},
@@ -2207,13 +1932,8 @@
 				"district": "Budapest 9. OEVK"
 			}
 		},
-		"emails": [
-			"gergely.arato.kepviselo@gmail.com",
-			"arato.gergely@parlament.hu"
-		],
-		"phones": [
-			"36304076369"
-		],
+		"emails": ["gergely.arato.kepviselo@gmail.com", "arato.gergely@parlament.hu"],
+		"phones": ["36304076369"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a008.jpg"
 	},
 	"2838852": {
@@ -2227,9 +1947,7 @@
 				"district": "Győr-Moson-Sopron 2. OEVK"
 			}
 		},
-		"emails": [
-			"neherandras@magyartisza.hu"
-		],
+		"emails": ["neherandras@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/neher-andras.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.gyormosonsopronmegye.02oevk"
@@ -2245,9 +1963,7 @@
 				"district": "Pest 11. OEVK"
 			}
 		},
-		"emails": [
-			"szimonrenata@magyartisza.hu"
-		],
+		"emails": ["szimonrenata@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/szimon-renata.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.11oevk"
@@ -2263,10 +1979,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"locsei.lajos@momentum.hu",
-			"locsei.lajos@parlament.hu"
-		],
+		"emails": ["locsei.lajos@momentum.hu", "locsei.lajos@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/l046.jpg"
 	},
@@ -2281,9 +1994,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 2. OEVK"
 			}
 		},
-		"emails": [
-			"gyozo.vinnai@parlament.hu"
-		],
+		"emails": ["gyozo.vinnai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v056.jpg"
 	},
@@ -2298,9 +2009,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"sas.zoltan@parlament.hu"
-		],
+		"emails": ["sas.zoltan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s186.jpg"
 	},
@@ -2315,9 +2024,7 @@
 				"district": "Zala 1. OEVK"
 			}
 		},
-		"emails": [
-			"nagymarta@magyartisza.hu"
-		],
+		"emails": ["nagymarta@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/nagy-marta.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.zalamegye.01oevk"
@@ -2333,14 +2040,8 @@
 				"district": "Bács-Kiskun 6. OEVK"
 			}
 		},
-		"emails": [
-			"zsigorobert@zsigorobert.hu",
-			"robert.zsigo@parlament.hu"
-		],
-		"phones": [
-			"3679422034",
-			"36706321595"
-		],
+		"emails": ["zsigorobert@zsigorobert.hu", "robert.zsigo@parlament.hu"],
+		"phones": ["3679422034", "36706321595"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/z004.jpg",
 		"website": "https://zsigorobert.hu"
 	},
@@ -2360,9 +2061,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"orban.balazs@parlament.hu"
-		],
+		"emails": ["orban.balazs@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/o015.jpg",
 		"website": "http://www.orbanbalazsandras.hu"
@@ -2378,9 +2077,7 @@
 				"district": "Pest 4. OEVK"
 			}
 		},
-		"emails": [
-			"tothmajorbalazs@magyartisza.hu"
-		],
+		"emails": ["tothmajorbalazs@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/tothmajor-balazs.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.04oevk"
@@ -2396,10 +2093,7 @@
 				"district": "Budapest 2. OEVK"
 			}
 		},
-		"emails": [
-			"stummer.janos@momentum.hu",
-			"janos.stummer@parlament.hu"
-		],
+		"emails": ["stummer.janos@momentum.hu", "janos.stummer@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s156.jpg"
 	},
@@ -2414,9 +2108,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gyukzsolt@magyartisza.hu"
-		],
+		"emails": ["gyukzsolt@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/gyuk-zsolt.jpg"
 	},
@@ -2431,9 +2123,7 @@
 				"district": "Budapest 8. OEVK"
 			}
 		},
-		"emails": [
-			"viraghgabriella@magyartisza.hu"
-		],
+		"emails": ["viraghgabriella@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/viragh-gabriella.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.08oevk"
@@ -2449,9 +2139,7 @@
 				"district": "Bács-Kiskun 5. OEVK"
 			}
 		},
-		"emails": [
-			"karsaijuhaszkatalin@magyartisza.hu"
-		],
+		"emails": ["karsaijuhaszkatalin@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/karsai-juhasz-katalin.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bacskiskunmegye.05oevk"
@@ -2467,9 +2155,7 @@
 				"district": "Budapest 6. OEVK"
 			}
 		},
-		"emails": [
-			"velkeygyorgylaszlo@magyartisza.hu"
-		],
+		"emails": ["velkeygyorgylaszlo@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/velkey-gyorgy-laszlo.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.06oevk"
@@ -2490,9 +2176,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 4. OEVK"
 			}
 		},
-		"emails": [
-			"attila.tilki@parlament.hu"
-		],
+		"emails": ["attila.tilki@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t023.jpg"
 	},
@@ -2507,9 +2191,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"zsolt.nemeth@parlament.hu"
-		],
+		"emails": ["zsolt.nemeth@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n322.jpg"
 	},
@@ -2524,9 +2206,7 @@
 				"district": "Somogy 1. OEVK"
 			}
 		},
-		"emails": [
-			"attila.gelencser@parlament.hu"
-		],
+		"emails": ["attila.gelencser@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g049.jpg"
 	},
@@ -2541,9 +2221,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"janos.fonagy@parlament.hu"
-		],
+		"emails": ["janos.fonagy@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f006.jpg",
 		"website": "https://fonagyjanos.hu"
@@ -2559,9 +2237,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gurmai.zita@parlament.hu"
-		],
+		"emails": ["gurmai.zita@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g022.jpg"
 	},
@@ -2576,9 +2252,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"ronai.sandor@parlament.hu"
-		],
+		"emails": ["ronai.sandor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/r042.jpg"
 	},
@@ -2593,9 +2267,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"janos.halasz@parlament.hu"
-		],
+		"emails": ["janos.halasz@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h004.jpg",
 		"website": "https://halaszjanos.hu"
@@ -2611,9 +2283,7 @@
 				"district": "Csongrád-Csanád 1. OEVK"
 			}
 		},
-		"emails": [
-			"stumpfpeter@magyartisza.hu"
-		],
+		"emails": ["stumpfpeter@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/stumpf-peter.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.csongradcsanadmegye.01oevk"
@@ -2629,9 +2299,7 @@
 				"district": "Győr-Moson-Sopron 5. OEVK"
 			}
 		},
-		"emails": [
-			"porpaczykrisztina@magyartisza.hu"
-		],
+		"emails": ["porpaczykrisztina@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/porpaczy-krisztina.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.gyormosonsopronmegye.05oevk"
@@ -2647,9 +2315,7 @@
 				"district": "Heves 1. OEVK"
 			}
 		},
-		"emails": [
-			"pajtok.gabor@parlament.hu"
-		],
+		"emails": ["pajtok.gabor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p066.jpg"
 	},
@@ -2664,9 +2330,7 @@
 				"district": "Zala 2. OEVK"
 			}
 		},
-		"emails": [
-			"nagy.balint@parlament.hu"
-		],
+		"emails": ["nagy.balint@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n053.jpg"
 	},
@@ -2681,9 +2345,7 @@
 				"district": "Tolna 2. OEVK"
 			}
 		},
-		"emails": [
-			"szijjartogabor@magyartisza.hu"
-		],
+		"emails": ["szijjartogabor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/szijjarto-gabor.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.tolnamegye.02oevk"
@@ -2699,9 +2361,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"imre.vejkey@parlament.hu"
-		],
+		"emails": ["imre.vejkey@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v055.jpg"
 	},
@@ -2716,9 +2376,7 @@
 				"district": "Győr-Moson-Sopron 4. OEVK"
 			}
 		},
-		"emails": [
-			"barcza.attila@parlament.hu"
-		],
+		"emails": ["barcza.attila@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b121.jpg"
 	},
@@ -2733,9 +2391,7 @@
 				"district": "Hajdú-Bihar 1. OEVK"
 			}
 		},
-		"emails": [
-			"tarkanyizsolt@magyartisza.hu"
-		],
+		"emails": ["tarkanyizsolt@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/tarkanyi-zsolt.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.hajdubiharmegye.01oevk"
@@ -2751,9 +2407,7 @@
 				"district": "Bács-Kiskun 4. OEVK"
 			}
 		},
-		"emails": [
-			"kovacsgyula@magyartisza.hu"
-		],
+		"emails": ["kovacsgyula@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kovacs-gyula.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bacskiskunmegye.04oevk"
@@ -2769,9 +2423,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"sandor.fazekas@parlament.hu"
-		],
+		"emails": ["sandor.fazekas@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f002.jpg"
 	},
@@ -2791,9 +2443,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 5. OEVK"
 			}
 		},
-		"emails": [
-			"kovacs.sandor@parlament.hu"
-		],
+		"emails": ["kovacs.sandor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k765.jpg"
 	},
@@ -2808,9 +2458,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"greczizsolt@parlament.hu"
-		],
+		"emails": ["greczizsolt@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g070.jpg"
 	},
@@ -2830,9 +2478,7 @@
 				"district": "Jász-Nagykun-Szolnok 3. OEVK"
 			}
 		},
-		"emails": [
-			"f.kovacs.sandor@parlament.hu"
-		],
+		"emails": ["f.kovacs.sandor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k151.jpg"
 	},
@@ -2847,9 +2493,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"varga.zoltan.imre@parlament.hu"
-		],
+		"emails": ["varga.zoltan.imre@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v070.jpg"
 	},
@@ -2864,9 +2508,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hegeduszsolt@magyartisza.hu"
-		],
+		"emails": ["hegeduszsolt@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/hegedus-zsolt.jpg"
 	},
@@ -2881,9 +2523,7 @@
 				"district": "Hajdú-Bihar 2. OEVK"
 			}
 		},
-		"emails": [
-			"laszlo.posan@parlament.hu"
-		],
+		"emails": ["laszlo.posan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p012.jpg"
 	},
@@ -2903,10 +2543,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"lajos.kosa@fidesz.hu",
-			"lajos.kosa@parlament.hu"
-		],
+		"emails": ["lajos.kosa@fidesz.hu", "lajos.kosa@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k325.jpg"
 	},
@@ -2921,12 +2558,8 @@
 				"district": "Budapest 5. OEVK"
 			}
 		},
-		"emails": [
-			"lajos.olah@parlament.hu"
-		],
-		"phones": [
-			"36307091102"
-		],
+		"emails": ["lajos.olah@parlament.hu"],
+		"phones": ["36307091102"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/o007.jpg",
 		"website": "https://olahlajos.hu"
 	},
@@ -2941,9 +2574,7 @@
 				"district": "Pest 1. OEVK"
 			}
 		},
-		"emails": [
-			"jelencsikjozsef@magyartisza.hu"
-		],
+		"emails": ["jelencsikjozsef@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/jelencsik-jozsef.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.01oevk"
@@ -2964,9 +2595,7 @@
 				"district": "Vas 3. OEVK"
 			}
 		},
-		"emails": [
-			"zsolt.vnemeth@parlament.hu"
-		],
+		"emails": ["zsolt.vnemeth@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n004.jpg"
 	},
@@ -2981,9 +2610,7 @@
 				"district": "Bács-Kiskun 2. OEVK"
 			}
 		},
-		"emails": [
-			"szeberenyi.gyula@parlament.hu"
-		],
+		"emails": ["szeberenyi.gyula@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s182.jpg"
 	},
@@ -2998,9 +2625,7 @@
 				"district": "Somogy 3. OEVK"
 			}
 		},
-		"emails": [
-			"jozsef.moring@parlament.hu"
-		],
+		"emails": ["jozsef.moring@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m028.jpg"
 	},
@@ -3048,9 +2673,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gyula.budai@parlament.hu"
-		],
+		"emails": ["gyula.budai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b076.jpg"
 	},
@@ -3065,9 +2688,7 @@
 				"district": "Bács-Kiskun 1. OEVK"
 			}
 		},
-		"emails": [
-			"csosziattila@magyartisza.hu"
-		],
+		"emails": ["csosziattila@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/csoszi-attila.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bacskiskunmegye.01oevk"
@@ -3083,9 +2704,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"toth.bertalan@parlament.hu"
-		],
+		"emails": ["toth.bertalan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t025.jpg"
 	},
@@ -3100,10 +2719,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kalmanolga@kalmanolga.hu",
-			"kalman.olga@parlament.hu"
-		],
+		"emails": ["kalmanolga@kalmanolga.hu", "kalman.olga@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k170.jpg",
 		"website": "https://kalmanolga.hu"
@@ -3119,9 +2735,7 @@
 				"district": "Somogy 3. OEVK"
 			}
 		},
-		"emails": [
-			"bakoscsabaattila@magyartisza.hu"
-		],
+		"emails": ["bakoscsabaattila@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bakos-csaba-attila.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.somogymegye.03oevk"
@@ -3137,9 +2751,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kristof.szatmary@parlament.hu"
-		],
+		"emails": ["kristof.szatmary@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s070.jpg"
 	},
@@ -3154,9 +2766,7 @@
 				"district": "Budapest 6. OEVK"
 			}
 		},
-		"emails": [
-			"jambor.andras@parlament.hu"
-		],
+		"emails": ["jambor.andras@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/j024.jpg",
 		"website": "https://jamborandras.hu"
@@ -3172,13 +2782,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"szabadi.istvan@mihazank.hu",
-			"szabadi.istvan@parlament.hu"
-		],
-		"phones": [
-			"36708508795"
-		],
+		"emails": ["szabadi.istvan@mihazank.hu", "szabadi.istvan@parlament.hu"],
+		"phones": ["36708508795"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s184.jpg",
 		"website": "https://szabadiistvan.hu"
 	},
@@ -3193,9 +2798,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"bugyalaszlo@magyartisza.hu"
-		],
+		"emails": ["bugyalaszlo@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bugya-laszlo.jpg"
 	},
@@ -3215,9 +2818,7 @@
 				"district": "Nógrád 2. OEVK"
 			}
 		},
-		"emails": [
-			"mihaly.balla@parlament.hu"
-		],
+		"emails": ["mihaly.balla@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b008.jpg",
 		"website": "https://www.ballamihaly.hu"
@@ -3233,9 +2834,7 @@
 				"district": "Borsod-Abaúj-Zemplén 4. OEVK"
 			}
 		},
-		"emails": [
-			"zoltan.demeter@parlament.hu"
-		],
+		"emails": ["zoltan.demeter@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d026.jpg"
 	},
@@ -3250,9 +2849,7 @@
 				"district": "Győr-Moson-Sopron 2. OEVK"
 			}
 		},
-		"emails": [
-			"akos.kara@parlament.hu"
-		],
+		"emails": ["akos.kara@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k098.jpg"
 	},
@@ -3267,9 +2864,7 @@
 				"district": "Békés 1. OEVK"
 			}
 		},
-		"emails": [
-			"herczeg.tamas@parlament.hu"
-		],
+		"emails": ["herczeg.tamas@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h081.jpg"
 	},
@@ -3284,9 +2879,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gyomberdavid@magyartisza.hu"
-		],
+		"emails": ["gyomberdavid@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/gyomber-david.jpg"
 	},
@@ -3301,9 +2894,7 @@
 				"district": "Budapest 2. OEVK"
 			}
 		},
-		"emails": [
-			"bodiskriszta@magyartisza.hu"
-		],
+		"emails": ["bodiskriszta@magyartisza.hu"],
 		"phones": [],
 		"facebookUrl": "https://www.facebook.com/bodiskrisztaofficial",
 		"imageUrl": "/kepek/bodis-kriszta.jpg"
@@ -3319,9 +2910,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"orbananita@magyartisza.hu"
-		],
+		"emails": ["orbananita@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/orban-anita.jpg"
 	},
@@ -3336,9 +2925,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 3. OEVK"
 			}
 		},
-		"emails": [
-			"dicsoviktoria@magyartisza.hu"
-		],
+		"emails": ["dicsoviktoria@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/dicso-viktoria.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.szabolcsszatmarberegmegye.03oevk"
@@ -3354,10 +2941,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"jakabpeterdenes@gmail.com",
-			"jakab.peter@parlament.hu"
-		],
+		"emails": ["jakabpeterdenes@gmail.com", "jakab.peter@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/j020.jpg"
 	},
@@ -3372,9 +2956,7 @@
 				"district": "Hajdú-Bihar 2. OEVK"
 			}
 		},
-		"emails": [
-			"tompaeniko@magyartisza.hu"
-		],
+		"emails": ["tompaeniko@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/tompa-eniko.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.hajdubiharmegye.02oevk"
@@ -3390,13 +2972,8 @@
 				"district": "Budapest 3. OEVK"
 			}
 		},
-		"emails": [
-			"hajnal.miklos@momentum.hu",
-			"hajnal.miklos@parlament.hu"
-		],
-		"phones": [
-			"36305910713"
-		],
+		"emails": ["hajnal.miklos@momentum.hu", "hajnal.miklos@parlament.hu"],
+		"phones": ["36305910713"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h090.jpg"
 	},
 	"4257604": {
@@ -3410,9 +2987,7 @@
 				"district": "Budapest 3. OEVK"
 			}
 		},
-		"emails": [
-			"magyarpeter@magyartisza.hu"
-		],
+		"emails": ["magyarpeter@magyartisza.hu"],
 		"phones": [],
 		"facebookUrl": "https://www.facebook.com/peter.magyar.102",
 		"imageUrl": "/kepek/magyar-peter.jpg"
@@ -3428,9 +3003,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kanasz-nagy.mate@parlament.hu"
-		],
+		"emails": ["kanasz-nagy.mate@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k168.jpg"
 	},
@@ -3445,9 +3018,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kaprinyaktibor@magyartisza.hu"
-		],
+		"emails": ["kaprinyaktibor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kaprinyak-tibor.jpg"
 	},
@@ -3462,9 +3033,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"illes.boglarka@parlament.hu"
-		],
+		"emails": ["illes.boglarka@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/i011.jpg"
 	},
@@ -3479,9 +3048,7 @@
 				"district": "Heves 3. OEVK"
 			}
 		},
-		"emails": [
-			"zsolt.szabo@parlament.hu"
-		],
+		"emails": ["zsolt.szabo@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s124.jpg"
 	},
@@ -3496,9 +3063,7 @@
 				"district": "Hajdú-Bihar 3. OEVK"
 			}
 		},
-		"emails": [
-			"csaklaszlo@magyartisza.hu"
-		],
+		"emails": ["csaklaszlo@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/csak-laszlo.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.hajdubiharmegye.03oevk"
@@ -3514,9 +3079,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"brenner.koloman@parlament.hu"
-		],
+		"emails": ["brenner.koloman@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b120.jpg"
 	},
@@ -3531,13 +3094,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"sebok.eva@momentum.hu",
-			"sebok.eva@parlament.hu"
-		],
-		"phones": [
-			"36705109988"
-		],
+		"emails": ["sebok.eva@momentum.hu", "sebok.eva@parlament.hu"],
+		"phones": ["36705109988"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s185.jpg",
 		"website": "https://sebokeva.hu"
 	},
@@ -3552,13 +3110,8 @@
 				"district": "Baranya 2. OEVK"
 			}
 		},
-		"emails": [
-			"baranya02@fidesz.hu",
-			"peter.hoppal@parlament.hu"
-		],
-		"phones": [
-			"3672481319"
-		],
+		"emails": ["baranya02@fidesz.hu", "peter.hoppal@parlament.hu"],
+		"phones": ["3672481319"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h050.jpg"
 	},
 	"4360192": {
@@ -3587,9 +3140,7 @@
 				"district": "Békés 2. OEVK"
 			}
 		},
-		"emails": [
-			"bela.danko@parlament.hu"
-		],
+		"emails": ["bela.danko@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d030.jpg"
 	},
@@ -3604,9 +3155,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"simonzsuzsanna@magyartisza.hu"
-		],
+		"emails": ["simonzsuzsanna@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/simon-zsuzsanna.jpg"
 	},
@@ -3621,9 +3170,7 @@
 				"district": "Pest 12. OEVK"
 			}
 		},
-		"emails": [
-			"polgargyorgy@magyartisza.hu"
-		],
+		"emails": ["polgargyorgy@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/polgar-gyorgy.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.12oevk"
@@ -3639,9 +3186,7 @@
 				"district": "Pest 13. OEVK"
 			}
 		},
-		"emails": [
-			"hendemate@magyartisza.hu"
-		],
+		"emails": ["hendemate@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/hende-mate.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.13oevk"
@@ -3657,9 +3202,7 @@
 				"district": "Pest 10. OEVK"
 			}
 		},
-		"emails": [
-			"tibor.pogacsas@parlament.hu"
-		],
+		"emails": ["tibor.pogacsas@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p006.jpg"
 	},
@@ -3674,9 +3217,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"tothtamas@magyartisza.hu"
-		],
+		"emails": ["tothtamas@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/toth-tamas.jpg"
 	},
@@ -3691,9 +3232,7 @@
 				"district": "Fejér 3. OEVK"
 			}
 		},
-		"emails": [
-			"zoltan.tessely@parlament.hu"
-		],
+		"emails": ["zoltan.tessely@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t038.jpg"
 	},
@@ -3708,9 +3247,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"rakrichard@magyartisza.hu"
-		],
+		"emails": ["rakrichard@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/rak-richard.jpg"
 	},
@@ -3725,9 +3262,7 @@
 				"district": "Baranya 4. OEVK"
 			}
 		},
-		"emails": [
-			"kapronczaibalazs@magyartisza.hu"
-		],
+		"emails": ["kapronczaibalazs@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kapronczai-balazs.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.baranyamegye.04oevk"
@@ -3743,9 +3278,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hegedus.barbara@parlament.hu"
-		],
+		"emails": ["hegedus.barbara@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/0002.jpg"
 	},
@@ -3760,9 +3293,7 @@
 				"district": "Tolna 3. OEVK"
 			}
 		},
-		"emails": [
-			"csehtamas@magyartisza.hu"
-		],
+		"emails": ["csehtamas@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/cseh-tamas.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.tolnamegye.03oevk"
@@ -3778,9 +3309,7 @@
 				"district": "Somogy 2. OEVK"
 			}
 		},
-		"emails": [
-			"benkejozsef@magyartisza.hu"
-		],
+		"emails": ["benkejozsef@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/benke-jozsef.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.somogymegye.02oevk"
@@ -3796,9 +3325,7 @@
 				"district": "Budapest 4. OEVK"
 			}
 		},
-		"emails": [
-			"konczaron@magyartisza.hu"
-		],
+		"emails": ["konczaron@magyartisza.hu"],
 		"phones": [],
 		"facebookUrl": "https://www.facebook.com/drkonczaron/",
 		"imageUrl": "/kepek/koncz-aron.jpg"
@@ -3814,9 +3341,7 @@
 				"district": "Jász-Nagykun-Szolnok 4. OEVK"
 			}
 		},
-		"emails": [
-			"farkascsongor@magyartisza.hu"
-		],
+		"emails": ["farkascsongor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/farkas-csongor.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.jasznagykunszolnokmegye.04oevk"
@@ -3832,13 +3357,8 @@
 				"district": "Budapest 12. OEVK"
 			}
 		},
-		"emails": [
-			"barkoczi.balazs@dkp.hu",
-			"barkoczi.balazs@parlament.hu"
-		],
-		"phones": [
-			"36308992663"
-		],
+		"emails": ["barkoczi.balazs@dkp.hu", "barkoczi.balazs@parlament.hu"],
+		"phones": ["36308992663"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b170.jpg"
 	},
 	"4798863": {
@@ -3852,9 +3372,7 @@
 				"district": "Somogy 4. OEVK"
 			}
 		},
-		"emails": [
-			"csatarierno@magyartisza.hu"
-		],
+		"emails": ["csatarierno@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/csatari-erno.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.somogymegye.04oevk"
@@ -3870,9 +3388,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"karmanandras@magyartisza.hu"
-		],
+		"emails": ["karmanandras@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/karman-andras.jpg"
 	},
@@ -3887,9 +3403,7 @@
 				"district": "Pest 6. OEVK"
 			}
 		},
-		"emails": [
-			"laszloendremarton@magyartisza.hu"
-		],
+		"emails": ["laszloendremarton@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/laszlo-endre-marton.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.06oevk"
@@ -3905,9 +3419,7 @@
 				"district": "Bács-Kiskun 5. OEVK"
 			}
 		},
-		"emails": [
-			"banyai@parlament.hu"
-		],
+		"emails": ["banyai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b053.jpg"
 	},
@@ -3922,9 +3434,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"lang.zsolt@parlament.hu"
-		],
+		"emails": ["lang.zsolt@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/l034.jpg"
 	},
@@ -3939,9 +3449,7 @@
 				"district": "Veszprém 4. OEVK"
 			}
 		},
-		"emails": [
-			"ujvariszilvia@magyartisza.hu"
-		],
+		"emails": ["ujvariszilvia@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/ujvari-szilvia.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.veszpremmegye.04oevk"
@@ -3957,9 +3465,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"peter.harrach@parlament.hu"
-		],
+		"emails": ["peter.harrach@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h007.jpg",
 		"website": "https://harrachpeter.kdnp.hu"
@@ -3975,9 +3481,7 @@
 				"district": "Békés 4. OEVK"
 			}
 		},
-		"emails": [
-			"erdos.norbert@parlament.hu"
-		],
+		"emails": ["erdos.norbert@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/e006.jpg"
 	},
@@ -3992,9 +3496,7 @@
 				"district": "Budapest 16. OEVK"
 			}
 		},
-		"emails": [
-			"tarrzoltan@magyartisza.hu"
-		],
+		"emails": ["tarrzoltan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/tarr-zoltan.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.16oevk"
@@ -4015,9 +3517,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hidveghi.balazs@parlament.hu"
-		],
+		"emails": ["hidveghi.balazs@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h074.jpg"
 	},
@@ -4046,9 +3546,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"lukacsgabor@magyartisza.hu"
-		],
+		"emails": ["lukacsgabor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/lukacs-gabor.jpg"
 	},
@@ -4063,9 +3561,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"ferencz.orsolya@parlament.hu"
-		],
+		"emails": ["ferencz.orsolya@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f049.jpg"
 	},
@@ -4080,9 +3576,7 @@
 				"district": "Győr-Moson-Sopron 4. OEVK"
 			}
 		},
-		"emails": [
-			"hallernenagyaniko@magyartisza.hu"
-		],
+		"emails": ["hallernenagyaniko@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/hallerne-nagy-aniko.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.gyormosonsopronmegye.04oevk"
@@ -4098,9 +3592,7 @@
 				"district": "Tolna 3. OEVK"
 			}
 		},
-		"emails": [
-			"suli.janos@parlament.hu"
-		],
+		"emails": ["suli.janos@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s154.jpg"
 	},
@@ -4115,9 +3607,7 @@
 				"district": "Nógrád 1. OEVK"
 			}
 		},
-		"emails": [
-			"szafkozoltanpeter@magyartisza.hu"
-		],
+		"emails": ["szafkozoltanpeter@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/szafko-zoltan-peter.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.nogradmegye.01oevk"
@@ -4133,9 +3623,7 @@
 				"district": "Heves 3. OEVK"
 			}
 		},
-		"emails": [
-			"juhaszaron@magyartisza.hu"
-		],
+		"emails": ["juhaszaron@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/juhasz-aron.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.hevesmegye.03oevk"
@@ -4151,12 +3639,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"ander.balazs@parlament.hu"
-		],
-		"phones": [
-			"36303806989"
-		],
+		"emails": ["ander.balazs@parlament.hu"],
+		"phones": ["36303806989"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a716.jpg"
 	},
 	"5084856": {
@@ -4170,9 +3654,7 @@
 				"district": "Veszprém 3. OEVK"
 			}
 		},
-		"emails": [
-			"balatinczpeter@magyartisza.hu"
-		],
+		"emails": ["balatinczpeter@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/balatincz-peter.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.veszpremmegye.03oevk"
@@ -4188,9 +3670,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"marta.matrai@parlament.hu"
-		],
+		"emails": ["marta.matrai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m006.jpg"
 	},
@@ -4205,9 +3685,7 @@
 				"district": "Budapest 14. OEVK"
 			}
 		},
-		"emails": [
-			"szaboalexandra@magyartisza.hu"
-		],
+		"emails": ["szaboalexandra@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/szabo-alexandra.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.14oevk"
@@ -4223,9 +3701,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"vargaferenc@parlament.hu"
-		],
+		"emails": ["vargaferenc@parlament.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/varga-ferenc.jpg"
 	},
@@ -4240,9 +3716,7 @@
 				"district": "Borsod-Abaúj-Zemplén 4. OEVK"
 			}
 		},
-		"emails": [
-			"hatalaoroszcsaba@magyartisza.hu"
-		],
+		"emails": ["hatalaoroszcsaba@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/hatala-orosz-csaba.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.borsodabaujzemplenmegye.04oevk"
@@ -4258,9 +3732,7 @@
 				"district": "Hajdú-Bihar 5. OEVK"
 			}
 		},
-		"emails": [
-			"ruszinszendiromulusz@magyartisza.hu"
-		],
+		"emails": ["ruszinszendiromulusz@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/ruszin-szendi-romulusz.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.hajdubiharmegye.05oevk"
@@ -4276,9 +3748,7 @@
 				"district": "Borsod-Abaúj-Zemplén 1. OEVK"
 			}
 		},
-		"emails": [
-			"csobor.katalin@parlament.hu"
-		],
+		"emails": ["csobor.katalin@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/c030.jpg"
 	},
@@ -4293,9 +3763,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"agnes.vadai@parlament.hu"
-		],
+		"emails": ["agnes.vadai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v013.jpg"
 	},
@@ -4310,9 +3778,7 @@
 				"district": "Budapest 9. OEVK"
 			}
 		},
-		"emails": [
-			"katainemethvilmos@magyartisza.hu"
-		],
+		"emails": ["katainemethvilmos@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/katai-nemeth-vilmos.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.09oevk"
@@ -4328,9 +3794,7 @@
 				"district": "Győr-Moson-Sopron 1. OEVK"
 			}
 		},
-		"emails": [
-			"dioszegijudit@magyartisza.hu"
-		],
+		"emails": ["dioszegijudit@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/dioszegi-judit.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.gyormosonsopronmegye.01oevk"
@@ -4346,13 +3810,8 @@
 				"district": "Budapest 8. OEVK"
 			}
 		},
-		"emails": [
-			"hadhazyakos@gmail.com",
-			"hadhazy.akos@parlament.hu"
-		],
-		"phones": [
-			"36204378108"
-		],
+		"emails": ["hadhazyakos@gmail.com", "hadhazy.akos@parlament.hu"],
+		"phones": ["36204378108"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h080.jpg",
 		"website": "https://hadhazyakos.hu"
 	},
@@ -4367,9 +3826,7 @@
 				"district": "Komárom-Esztergom 2. OEVK"
 			}
 		},
-		"emails": [
-			"eros.gabor@parlament.hu"
-		],
+		"emails": ["eros.gabor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/e016.jpg"
 	},
@@ -4384,13 +3841,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"bakos.bernadett@lehetmas.hu",
-			"bakos.bernadett@parlament.hu"
-		],
-		"phones": [
-			"36305910727"
-		],
+		"emails": ["bakos.bernadett@lehetmas.hu", "bakos.bernadett@parlament.hu"],
+		"phones": ["36305910727"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b138.jpg"
 	},
 	"5603100": {
@@ -4404,9 +3856,7 @@
 				"district": "Borsod-Abaúj-Zemplén 3. OEVK"
 			}
 		},
-		"emails": [
-			"riz.gabor@parlament.hu"
-		],
+		"emails": ["riz.gabor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/r027.jpg"
 	},
@@ -4421,9 +3871,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"sasinagyedit@magyartisza.hu"
-		],
+		"emails": ["sasinagyedit@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/sasi-nagy-edit.jpg"
 	},
@@ -4438,9 +3886,7 @@
 				"district": "Komárom-Esztergom 3. OEVK"
 			}
 		},
-		"emails": [
-			"judit.bertalan@parlament.hu"
-		],
+		"emails": ["judit.bertalan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/c029.jpg"
 	},
@@ -4455,9 +3901,7 @@
 				"district": "Bács-Kiskun 2. OEVK"
 			}
 		},
-		"emails": [
-			"molnarjanos@magyartisza.hu"
-		],
+		"emails": ["molnarjanos@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/molnar-janos.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bacskiskunmegye.02oevk"
@@ -4473,9 +3917,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"simonkrisztianmark@magyartisza.hu"
-		],
+		"emails": ["simonkrisztianmark@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/simon-krisztian-mark.jpg"
 	},
@@ -4490,10 +3932,7 @@
 				"district": "Csongrád 3. OEVK"
 			}
 		},
-		"emails": [
-			"szentes@fidesz.hu",
-			"sandor.farkas@parlament.hu"
-		],
+		"emails": ["szentes@fidesz.hu", "sandor.farkas@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f001.jpg"
 	},
@@ -4508,9 +3947,7 @@
 				"district": "Budapest 10. OEVK"
 			}
 		},
-		"emails": [
-			"kulcsarkrisztian@magyartisza.hu"
-		],
+		"emails": ["kulcsarkrisztian@magyartisza.hu"],
 		"phones": [],
 		"facebookUrl": "https://www.facebook.com/kulcsarkrisztianofficial",
 		"imageUrl": "/kepek/kulcsar-krisztian.jpg"
@@ -4526,9 +3963,7 @@
 				"district": "Pest 2. OEVK"
 			}
 		},
-		"emails": [
-			"posfaigabor@magyartisza.hu"
-		],
+		"emails": ["posfaigabor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/posfai-gabor.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.02oevk"
@@ -4544,9 +3979,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"szucsdora@magyartisza.hu"
-		],
+		"emails": ["szucsdora@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/szucs-dora.jpg"
 	},
@@ -4561,9 +3994,7 @@
 				"district": "Budapest 11. OEVK"
 			}
 		},
-		"emails": [
-			"bodanikoletta@magyartisza.hu"
-		],
+		"emails": ["bodanikoletta@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/boda-nikoletta.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.11oevk"
@@ -4579,9 +4010,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"koszegikrisztian@magyartisza.hu"
-		],
+		"emails": ["koszegikrisztian@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/koszegi-krisztian.jpg"
 	},
@@ -4596,12 +4025,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hegedus.andrea@parlament.hu"
-		],
-		"phones": [
-			"36303974555"
-		],
+		"emails": ["hegedus.andrea@parlament.hu"],
+		"phones": ["36303974555"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h091.jpg"
 	},
 	"6023229": {
@@ -4620,9 +4045,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gergely.tapolczai@parlament.hu"
-		],
+		"emails": ["gergely.tapolczai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t044.jpg"
 	},
@@ -4637,9 +4060,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"monika.bartos@parlament.hu"
-		],
+		"emails": ["monika.bartos@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b087.jpg"
 	},
@@ -4654,9 +4075,7 @@
 				"district": "Békés 3. OEVK"
 			}
 		},
-		"emails": [
-			"jozsef.kovacs@parlament.hu"
-		],
+		"emails": ["jozsef.kovacs@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k093.jpg"
 	},
@@ -4671,12 +4090,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"ungar.peter@parlament.hu"
-		],
-		"phones": [
-			"3614414000"
-		],
+		"emails": ["ungar.peter@parlament.hu"],
+		"phones": ["3614414000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/u006.jpg"
 	},
 	"6124857": {
@@ -4690,9 +4105,7 @@
 				"district": "Budapest 12. OEVK"
 			}
 		},
-		"emails": [
-			"jakabzsuzsanna@magyartisza.hu"
-		],
+		"emails": ["jakabzsuzsanna@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/jakab-zsuzsanna.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.12oevk"
@@ -4713,13 +4126,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"lorinc.nacsa@me.gov.hu",
-			"nacsa.lorinc@parlament.hu"
-		],
-		"phones": [
-			"3617955000"
-		],
+		"emails": ["lorinc.nacsa@me.gov.hu", "nacsa.lorinc@parlament.hu"],
+		"phones": ["3617955000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n048.jpg"
 	},
 	"6151717": {
@@ -4733,13 +4141,8 @@
 				"district": "Budapest 18. OEVK"
 			}
 		},
-		"emails": [
-			"toth.endre@momentum.hu",
-			"toth.endre@parlament.hu"
-		],
-		"phones": [
-			"36305910735"
-		],
+		"emails": ["toth.endre@momentum.hu", "toth.endre@parlament.hu"],
+		"phones": ["36305910735"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t061.jpg"
 	},
 	"6178593": {
@@ -4758,13 +4161,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"antal.rogan@mk.gov.hu",
-			"antal.rogan@parlament.hu"
-		],
-		"phones": [
-			"3617959000"
-		],
+		"emails": ["antal.rogan@mk.gov.hu", "antal.rogan@parlament.hu"],
+		"phones": ["3617959000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/r008.jpg"
 	},
 	"6219628": {
@@ -4778,9 +4176,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"bencze.janos@parlament.hu"
-		],
+		"emails": ["bencze.janos@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b172.jpg"
 	},
@@ -4795,9 +4191,7 @@
 				"district": "Csongrád 1. OEVK"
 			}
 		},
-		"emails": [
-			"szabo.sandor@parlament.hu"
-		],
+		"emails": ["szabo.sandor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s773.jpg",
 		"website": "https://szabosandorogyk.hu"
@@ -4813,9 +4207,7 @@
 				"district": "Komárom-Esztergom 1. OEVK"
 			}
 		},
-		"emails": [
-			"janos.bencsik@parlament.hu"
-		],
+		"emails": ["janos.bencsik@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b034.jpg",
 		"website": "https://bencsikjanos.hu"
@@ -4845,9 +4237,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kissmate@magyartisza.hu"
-		],
+		"emails": ["kissmate@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kiss-mate.jpg"
 	},
@@ -4862,9 +4252,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 2. OEVK"
 			}
 		},
-		"emails": [
-			"szakacspeterlajos@magyartisza.hu"
-		],
+		"emails": ["szakacspeterlajos@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/szakacs-peter-lajos.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.szabolcsszatmarberegmegye.02oevk"
@@ -4880,9 +4268,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"keresztes.laszlo@parlament.hu"
-		],
+		"emails": ["keresztes.laszlo@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k154.jpg"
 	},
@@ -4897,9 +4283,7 @@
 				"district": "Budapest 13. OEVK"
 			}
 		},
-		"emails": [
-			"vajda.zoltan@parlament.hu"
-		],
+		"emails": ["vajda.zoltan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v073.jpg"
 	},
@@ -4919,9 +4303,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"janos.latorcai@parlament.hu"
-		],
+		"emails": ["janos.latorcai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/l001.jpg"
 	},
@@ -4936,12 +4318,8 @@
 				"district": "Budapest 10. OEVK"
 			}
 		},
-		"emails": [
-			"timea.szabo@parlament.hu"
-		],
-		"phones": [
-			"3614415175"
-		],
+		"emails": ["timea.szabo@parlament.hu"],
+		"phones": ["3614415175"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s113.jpg"
 	},
 	"6520887": {
@@ -4955,9 +4333,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"sotianikozsuzsanna@magyartisza.hu"
-		],
+		"emails": ["sotianikozsuzsanna@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/soti-aniko-zsuzsanna.jpg"
 	},
@@ -4972,9 +4348,7 @@
 				"district": "Budapest 1. OEVK"
 			}
 		},
-		"emails": [
-			"tanacszoltan@magyartisza.hu"
-		],
+		"emails": ["tanacszoltan@magyartisza.hu"],
 		"phones": [],
 		"facebookUrl": "https://www.facebook.com/tanacszoltan.tisza",
 		"imageUrl": "/kepek/tanacs-zoltan.jpg"
@@ -4990,9 +4364,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"balassa.peter@parlament.hu"
-		],
+		"emails": ["balassa.peter@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b171.jpg"
 	},
@@ -5007,9 +4379,7 @@
 				"district": "Szabolcs-Szatmár-Bereg 3. OEVK"
 			}
 		},
-		"emails": [
-			"miklos.sesztak@parlament.hu"
-		],
+		"emails": ["miklos.sesztak@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s093.jpg"
 	},
@@ -5024,9 +4394,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"czakoczirbuspal@magyartisza.hu"
-		],
+		"emails": ["czakoczirbuspal@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/czako-czirbus-pal.jpg"
 	},
@@ -5041,9 +4409,7 @@
 				"district": "Csongrád-Csanád 3. OEVK"
 			}
 		},
-		"emails": [
-			"barkanyibence@magyartisza.hu"
-		],
+		"emails": ["barkanyibence@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/barkanyi-bence.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.csongradcsanadmegye.03oevk"
@@ -5059,10 +4425,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gelencser.ferenc@momentum.hu",
-			"gelencser.ferenc@parlament.hu"
-		],
+		"emails": ["gelencser.ferenc@momentum.hu", "gelencser.ferenc@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g077.jpg"
 	},
@@ -5082,10 +4445,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"banki.erik@fidesz.hu",
-			"erik.banki@parlament.hu"
-		],
+		"emails": ["banki.erik@fidesz.hu", "erik.banki@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b009.jpg"
 	},
@@ -5100,9 +4460,7 @@
 				"district": "Borsod-Abaúj-Zemplén 6. OEVK"
 			}
 		},
-		"emails": [
-			"koncz.zsofia@parlament.hu"
-		],
+		"emails": ["koncz.zsofia@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k163.jpg"
 	},
@@ -5117,9 +4475,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"molnarzoltan@magyartisza.hu"
-		],
+		"emails": ["molnarzoltan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/molnar-zoltan.jpg"
 	},
@@ -5134,9 +4490,7 @@
 				"district": "Budapest 15. OEVK"
 			}
 		},
-		"emails": [
-			"porcheraron@magyartisza.hu"
-		],
+		"emails": ["porcheraron@magyartisza.hu"],
 		"phones": [],
 		"facebookUrl": "https://www.facebook.com/profile.php?id=61566592741137",
 		"imageUrl": "/kepek/porcher-aron.jpg"
@@ -5152,9 +4506,7 @@
 				"district": "Heves 1. OEVK"
 			}
 		},
-		"emails": [
-			"bodispeter@magyartisza.hu"
-		],
+		"emails": ["bodispeter@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bodis-peter.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.hevesmegye.01oevk"
@@ -5170,9 +4522,7 @@
 				"district": "Budapest 7. OEVK"
 			}
 		},
-		"emails": [
-			"trentinbalazs@magyartisza.hu"
-		],
+		"emails": ["trentinbalazs@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/trentin-balazs.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.07oevk"
@@ -5188,9 +4538,7 @@
 				"district": "Fejér 4. OEVK"
 			}
 		},
-		"emails": [
-			"nagyervin@magyartisza.hu"
-		],
+		"emails": ["nagyervin@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/nagy-ervin.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.fejermegye.04oevk"
@@ -5211,9 +4559,7 @@
 				"district": "Győr-Moson-Sopron 3. OEVK"
 			}
 		},
-		"emails": [
-			"alpar.gyoparos@parlament.hu"
-		],
+		"emails": ["alpar.gyoparos@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/g048.jpg"
 	},
@@ -5228,9 +4574,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"melletheibarnamarton@magyartisza.hu"
-		],
+		"emails": ["melletheibarnamarton@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/mellethei-barna-marton.jpg"
 	},
@@ -5245,10 +4589,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"bedo.david@momentum.hu",
-			"bedo.david@parlament.hu"
-		],
+		"emails": ["bedo.david@momentum.hu", "bedo.david@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b139.jpg"
 	},
@@ -5263,11 +4604,7 @@
 				"district": "Veszprém 3. OEVK"
 			}
 		},
-		"emails": [
-			"navracsics@ajk.elte.hu",
-			"navracsics.tibor@uni-nke.hu",
-			"navracsics.tibor@parlament.hu"
-		],
+		"emails": ["navracsics@ajk.elte.hu", "navracsics.tibor@uni-nke.hu", "navracsics.tibor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/n026.jpg"
 	},
@@ -5282,9 +4619,7 @@
 				"district": "Csongrád 2. OEVK"
 			}
 		},
-		"emails": [
-			"mihalffy.bela@parlament.hu"
-		],
+		"emails": ["mihalffy.bela@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/m072.jpg"
 	},
@@ -5299,9 +4634,7 @@
 				"district": "Pest 1. OEVK"
 			}
 		},
-		"emails": [
-			"andras.aradszki@parlament.hu"
-		],
+		"emails": ["andras.aradszki@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a016.jpg"
 	},
@@ -5316,9 +4649,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"bokazsolt@magyartisza.hu"
-		],
+		"emails": ["bokazsolt@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/boka-zsolt.jpg"
 	},
@@ -5333,9 +4664,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"tamas.harangozo@parlament.hu"
-		],
+		"emails": ["tamas.harangozo@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h056.jpg",
 		"website": "https://harangozotamas.hu"
@@ -5351,9 +4680,7 @@
 				"district": "Baranya 2. OEVK"
 			}
 		},
-		"emails": [
-			"kovacsaron@magyartisza.hu"
-		],
+		"emails": ["kovacsaron@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kovacs-aron.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.baranyamegye.02oevk"
@@ -5369,13 +4696,8 @@
 				"district": "Heves 2. OEVK"
 			}
 		},
-		"emails": [
-			"horvath.laszlo@fidesz.hu",
-			"laszlo.horvath@parlament.hu"
-		],
-		"phones": [
-			"36208583037"
-		],
+		"emails": ["horvath.laszlo@fidesz.hu", "laszlo.horvath@parlament.hu"],
+		"phones": ["36208583037"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h366.jpg",
 		"website": "https://horvathlaszlo.hu"
 	},
@@ -5390,9 +4712,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"hajdumartonadam@magyartisza.hu"
-		],
+		"emails": ["hajdumartonadam@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/hajdu-marton-adam.jpg"
 	},
@@ -5407,12 +4727,8 @@
 				"district": "Veszprém 2. OEVK"
 			}
 		},
-		"emails": [
-			"karoly.kontrat@parlament.hu"
-		],
-		"phones": [
-			"36202733434"
-		],
+		"emails": ["karoly.kontrat@parlament.hu"],
+		"phones": ["36202733434"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/k029.jpg"
 	},
 	"7224823": {
@@ -5426,9 +4742,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"drcsehkatalin@parlament.hu"
-		],
+		"emails": ["drcsehkatalin@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/c047.jpg"
 	},
@@ -5443,9 +4757,7 @@
 				"district": "Pest 11. OEVK"
 			}
 		},
-		"emails": [
-			"karoly.panczel@parlament.hu"
-		],
+		"emails": ["karoly.panczel@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p003.jpg"
 	},
@@ -5460,9 +4772,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"strompovaviktoria@magyartisza.hu"
-		],
+		"emails": ["strompovaviktoria@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/strompova-viktoria.jpg"
 	},
@@ -5482,15 +4792,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"titkarsag@lazarjanos.hu",
-			"janos.lazar@ekm.gov.hu",
-			"janos.lazar@parlament.hu"
-		],
-		"phones": [
-			"36305713246",
-			"3662999040"
-		],
+		"emails": ["titkarsag@lazarjanos.hu", "janos.lazar@ekm.gov.hu", "janos.lazar@parlament.hu"],
+		"phones": ["36305713246", "3662999040"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/l016.jpg",
 		"website": "http://www.lazarjanos.hu"
 	},
@@ -5505,10 +4808,7 @@
 				"district": "Borsod-Abaúj-Zemplén 7. OEVK"
 			}
 		},
-		"emails": [
-			"andras.tallai@fidesz.hu",
-			"andras.tallai@parlament.hu"
-		],
+		"emails": ["andras.tallai@fidesz.hu", "andras.tallai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t002.jpg"
 	},
@@ -5523,9 +4823,7 @@
 				"district": "Baranya 3. OEVK"
 			}
 		},
-		"emails": [
-			"rozsahegyiaron@magyartisza.hu"
-		],
+		"emails": ["rozsahegyiaron@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/rozsahegyi-aron.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.baranyamegye.03oevk"
@@ -5541,9 +4839,7 @@
 				"district": "Komárom-Esztergom 1. OEVK"
 			}
 		},
-		"emails": [
-			"sopovildikoeva@magyartisza.hu"
-		],
+		"emails": ["sopovildikoeva@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/sopov-ildiko-eva.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.komaromesztergommegye.01oevk"
@@ -5559,9 +4855,7 @@
 				"district": "Pest 3. OEVK"
 			}
 		},
-		"emails": [
-			"bujdosoandreaanna@magyartisza.hu"
-		],
+		"emails": ["bujdosoandreaanna@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bujdoso-andrea-anna.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.03oevk"
@@ -5577,9 +4871,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"jarosipeter@magyartisza.hu"
-		],
+		"emails": ["jarosipeter@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/jarosi-peter.jpg"
 	},
@@ -5594,9 +4886,7 @@
 				"district": "Fejér 3. OEVK"
 			}
 		},
-		"emails": [
-			"bogiviktoria@magyartisza.hu"
-		],
+		"emails": ["bogiviktoria@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bogi-viktoria.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.fejermegye.03oevk"
@@ -5612,9 +4902,7 @@
 				"district": "Borsod-Abaúj-Zemplén 5. OEVK"
 			}
 		},
-		"emails": [
-			"lontaylaszlo@magyartisza.hu"
-		],
+		"emails": ["lontaylaszlo@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/lontay-laszlo.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.borsodabaujzemplenmegye.05oevk"
@@ -5630,9 +4918,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"borsosgabriella@magyartisza.hu"
-		],
+		"emails": ["borsosgabriella@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/borsos-gabriella.jpg"
 	},
@@ -5647,9 +4933,7 @@
 				"district": "Veszprém 4. OEVK"
 			}
 		},
-		"emails": [
-			"kiraly.nora@parlament.hu"
-		],
+		"emails": ["kiraly.nora@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/000D.jpg"
 	},
@@ -5664,9 +4948,7 @@
 				"district": "Zala 3. OEVK"
 			}
 		},
-		"emails": [
-			"peter.cseresnyes@parlament.hu"
-		],
+		"emails": ["peter.cseresnyes@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/c014.jpg"
 	},
@@ -5686,9 +4968,7 @@
 				"district": "Fejér 5. OEVK"
 			}
 		},
-		"emails": [
-			"gabor.varga@parlament.hu"
-		],
+		"emails": ["gabor.varga@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v048.jpg"
 	},
@@ -5708,12 +4988,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"peter.szijjarto@parlament.hu"
-		],
-		"phones": [
-			"3614581000"
-		],
+		"emails": ["peter.szijjarto@parlament.hu"],
+		"phones": ["3614581000"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s054.jpg"
 	},
 	"7813083": {
@@ -5727,9 +5003,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"berki.sandor@parlament.hu"
-		],
+		"emails": ["berki.sandor@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b163.jpg",
 		"website": "https://berkisandor.hu"
@@ -5745,9 +5019,7 @@
 				"district": "Tolna 1. OEVK"
 			}
 		},
-		"emails": [
-			"sarosijozsef@magyartisza.hu"
-		],
+		"emails": ["sarosijozsef@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/sarosi-jozsef.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.tolnamegye.01oevk"
@@ -5768,10 +5040,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"elnok@mihazank.hu",
-			"toroczkai.laszlo@parlament.hu"
-		],
+		"emails": ["elnok@mihazank.hu", "toroczkai.laszlo@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/t058.jpg",
 		"website": "https://toroczkailaszlo.hu"
@@ -5787,9 +5056,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"szabo.rebeka@parlament.hu"
-		],
+		"emails": ["szabo.rebeka@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s111.jpg"
 	},
@@ -5818,9 +5085,7 @@
 				"district": "Pest 5. OEVK"
 			}
 		},
-		"emails": [
-			"miskolcziorsolya@magyartisza.hu"
-		],
+		"emails": ["miskolcziorsolya@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/miskolczi-orsolya.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.05oevk"
@@ -5836,9 +5101,7 @@
 				"district": "Pest 8. OEVK"
 			}
 		},
-		"emails": [
-			"balajtiistvan@magyartisza.hu"
-		],
+		"emails": ["balajtiistvan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/balajti-istvan.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.pestmegye.08oevk"
@@ -5854,9 +5117,7 @@
 				"district": "Pest 6. OEVK"
 			}
 		},
-		"emails": [
-			"laszlo.vecsey@parlament.hu"
-		],
+		"emails": ["laszlo.vecsey@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/v044.jpg"
 	},
@@ -5876,10 +5137,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"apati.istvan@mihazank.hu",
-			"apati.istvan@parlament.hu"
-		],
+		"emails": ["apati.istvan@mihazank.hu", "apati.istvan@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/a018.jpg"
 	},
@@ -5899,9 +5157,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"istvan.jakab@parlament.hu"
-		],
+		"emails": ["istvan.jakab@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/j010.jpg"
 	},
@@ -5916,9 +5172,7 @@
 				"district": "Baranya 3. OEVK"
 			}
 		},
-		"emails": [
-			"janos.hargitai@parlament.hu"
-		],
+		"emails": ["janos.hargitai@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h006.jpg"
 	},
@@ -5933,9 +5187,7 @@
 				"district": "Jász-Nagykun-Szolnok 2. OEVK"
 			}
 		},
-		"emails": [
-			"halmaiferenctibor@magyartisza.hu"
-		],
+		"emails": ["halmaiferenctibor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/halmai-ferenc-tibor.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.jasznagykunszolnokmegye.02oevk"
@@ -5951,9 +5203,7 @@
 				"district": "Jász-Nagykun-Szolnok 2. OEVK"
 			}
 		},
-		"emails": [
-			"janos.pocs@parlament.hu"
-		],
+		"emails": ["janos.pocs@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/p041.jpg"
 	},
@@ -5968,9 +5218,7 @@
 				"district": "Nógrád 1. OEVK"
 			}
 		},
-		"emails": [
-			"zsolt.becso@parlament.hu"
-		],
+		"emails": ["zsolt.becso@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/b013.jpg"
 	},
@@ -5985,9 +5233,7 @@
 				"district": "Borsod-Abaúj-Zemplén 6. OEVK"
 			}
 		},
-		"emails": [
-			"biharizoltan@magyartisza.hu"
-		],
+		"emails": ["biharizoltan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bihari-zoltan.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.borsodabaujzemplenmegye.06oevk"
@@ -6003,9 +5249,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"sebian-petrovszki.laszlo@parlament.hu"
-		],
+		"emails": ["sebian-petrovszki.laszlo@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s175.jpg"
 	},
@@ -6020,9 +5264,7 @@
 				"district": "Békés 1. OEVK"
 			}
 		},
-		"emails": [
-			"bodocziistvan@magyartisza.hu"
-		],
+		"emails": ["bodocziistvan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/bodoczi-istvan.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bekesmegye.01oevk"
@@ -6038,9 +5280,7 @@
 				"district": "Budapest 5. OEVK"
 			}
 		},
-		"emails": [
-			"weigandistvan@magyartisza.hu"
-		],
+		"emails": ["weigandistvan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/weigand-istvan.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.budapest.05oevk"
@@ -6056,12 +5296,8 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"fulop.attila@parlament.hu"
-		],
-		"phones": [
-			"3612125030"
-		],
+		"emails": ["fulop.attila@parlament.hu"],
+		"phones": ["3612125030"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/f043.jpg"
 	},
 	"8203140": {
@@ -6075,14 +5311,8 @@
 				"district": "Budapest 17. OEVK"
 			}
 		},
-		"emails": [
-			"szabo.szabolcs@momentum.hu",
-			"szabo.szabolcs@parlament.hu"
-		],
-		"phones": [
-			"36202863668",
-			"36309775878"
-		],
+		"emails": ["szabo.szabolcs@momentum.hu", "szabo.szabolcs@parlament.hu"],
+		"phones": ["36202863668", "36309775878"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/s771.jpg",
 		"website": "https://szaboszabolcs.hu"
 	},
@@ -6097,9 +5327,7 @@
 				"district": "Borsod-Abaúj-Zemplén 5. OEVK"
 			}
 		},
-		"emails": [
-			"richard.horcsik@parlament.hu"
-		],
+		"emails": ["richard.horcsik@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/h275.jpg"
 	},
@@ -6114,13 +5342,8 @@
 				"district": "Pest 3. OEVK"
 			}
 		},
-		"emails": [
-			"vitalyos.eszter@fidesz.hu",
-			"vitalyos.eszter@parlament.hu"
-		],
-		"phones": [
-			"36202658801"
-		],
+		"emails": ["vitalyos.eszter@fidesz.hu", "vitalyos.eszter@parlament.hu"],
+		"phones": ["36202658801"],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/z014.jpg",
 		"website": "https://vitalyoseszter.hu"
 	},
@@ -6135,9 +5358,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"david.ferenc@parlament.hu"
-		],
+		"emails": ["david.ferenc@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/d041.jpg"
 	},
@@ -6152,9 +5373,7 @@
 				"district": "Bács-Kiskun 3. OEVK"
 			}
 		},
-		"emails": [
-			"judakzsolt@magyartisza.hu"
-		],
+		"emails": ["judakzsolt@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/judak-zsolt.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bacskiskunmegye.03oevk"
@@ -6175,9 +5394,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"sandor.lezsak@parlament.hu"
-		],
+		"emails": ["sandor.lezsak@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/l269.jpg",
 		"website": "http://www.lezsaksandor.hu"
@@ -6193,9 +5410,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"zkarpat.daniel@parlament.hu"
-		],
+		"emails": ["zkarpat.daniel@parlament.hu"],
 		"phones": [],
 		"imageUrl": "https://www.parlament.hu/kepv/kepek/z012.jpg",
 		"website": "https://zkarpatdaniel.hu"
@@ -6211,9 +5426,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"tothnorbert@magyartisza.hu"
-		],
+		"emails": ["tothnorbert@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/toth-norbert.jpg"
 	},
@@ -6228,9 +5441,7 @@
 				"district": "Csongrád-Csanád 2. OEVK"
 			}
 		},
-		"emails": [
-			"gajdaattila@magyartisza.hu"
-		],
+		"emails": ["gajdaattila@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/gajda-attila.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.csongradcsanadmegye.02oevk"
@@ -6246,9 +5457,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"csaszarmartin@magyartisza.hu"
-		],
+		"emails": ["csaszarmartin@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/csaszar-martin.jpg"
 	},
@@ -6263,9 +5472,7 @@
 				"district": "Békés 2. OEVK"
 			}
 		},
-		"emails": [
-			"gombardavid@magyartisza.hu"
-		],
+		"emails": ["gombardavid@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/gombar-david.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bekesmegye.02oevk"
@@ -6281,9 +5488,7 @@
 				"district": "Bács-Kiskun 6. OEVK"
 			}
 		},
-		"emails": [
-			"csontosbence@magyartisza.hu"
-		],
+		"emails": ["csontosbence@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/csontos-bence.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.bacskiskunmegye.06oevk"
@@ -6299,9 +5504,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"gyongyosiistvan@magyartisza.hu"
-		],
+		"emails": ["gyongyosiistvan@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/gyongyosi-istvan.jpg"
 	},
@@ -6316,9 +5519,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"horvathnandorzsolt@magyartisza.hu"
-		],
+		"emails": ["horvathnandorzsolt@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/horvath-nandor-zsolt.jpg"
 	},
@@ -6333,9 +5534,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"kincsecsongor@magyartisza.hu"
-		],
+		"emails": ["kincsecsongor@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/kincse-csongor.jpg"
 	},
@@ -6350,9 +5549,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"vargalorincmihaly@magyartisza.hu"
-		],
+		"emails": ["vargalorincmihaly@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/varga-lorinc-mihaly.jpg"
 	},
@@ -6367,9 +5564,7 @@
 				"district": "Borsod-Abaúj-Zemplén 2. OEVK"
 			}
 		},
-		"emails": [
-			"czipaandras@magyartisza.hu"
-		],
+		"emails": ["czipaandras@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/czipa-andras.jpg",
 		"facebookUrl": "https://www.facebook.com/tisza.borsodabaujzemplenmegye.02oevk"
@@ -6385,9 +5580,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"baloghmihaly@magyartisza.hu"
-		],
+		"emails": ["baloghmihaly@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/balogh-mihaly.jpg"
 	},
@@ -6402,9 +5595,7 @@
 				"list": "Országos lista"
 			}
 		},
-		"emails": [
-			"berkiakos@magyartisza.hu"
-		],
+		"emails": ["berkiakos@magyartisza.hu"],
 		"phones": [],
 		"imageUrl": "/kepek/berki-akos.jpg"
 	}

@@ -1,5 +1,5 @@
-import { useSignal } from "@preact/signals";
-import type { JSX } from "preact";
+import { useState } from "react";
+import type { JSX } from "react";
 import { type CoalitionData, coalitions, type RepealSupport } from "../data/coalitions.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
@@ -57,10 +57,10 @@ const extraParties = sortedParties.filter((p) => p.listRank === null);
 
 function EmailIcon(): JSX.Element {
 	return (
-		<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+		<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
 			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
+				strokeLinecap="round"
+				strokeLinejoin="round"
 				d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
 			/>
 		</svg>
@@ -69,7 +69,7 @@ function EmailIcon(): JSX.Element {
 
 function FacebookIcon(): JSX.Element {
 	return (
-		<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+		<svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
 			<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
 		</svg>
 	);
@@ -77,8 +77,8 @@ function FacebookIcon(): JSX.Element {
 
 function ArrowDownIcon(): JSX.Element {
 	return (
-		<svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-			<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+		<svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+			<path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 		</svg>
 	);
 }
@@ -97,33 +97,31 @@ function PartyCard({ coalition, lang }: PartyCardProps): JSX.Element {
 
 	return (
 		<div
-			class={`bg-white rounded-xl border-2 ${colors.border} p-5 transition-all duration-200 hover:shadow-md flex flex-col`}
+			className={`bg-white rounded-xl border-2 ${colors.border} p-5 transition-all duration-200 hover:shadow-md flex flex-col`}
 		>
 			{/* Stance Badge */}
-			<div class="flex justify-end mb-3">
-				<span
-					class={`text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}
-				>
+			<div className="flex justify-end mb-3">
+				<span className={`text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}>
 					{t(`candidates.stance.${stanceKey}`, lang)}
 				</span>
 			</div>
 
 			{/* Logo */}
 			{coalition.slug && (
-				<div class="flex justify-center mb-3">
+				<div className="flex justify-center mb-3">
 					<img
 						src={`/kepek/${coalition.slug}.png`}
 						alt={coalition.name}
-						class="h-12 w-auto object-contain"
+						className="h-12 w-auto object-contain"
 						loading="lazy"
 					/>
 				</div>
 			)}
 
 			{/* Content */}
-			<div class="flex-1 space-y-1 text-center">
-				<h3 class="font-bold text-slate-900 text-lg leading-tight">{coalition.name}</h3>
-				<p class="text-sm text-slate-500">
+			<div className="flex-1 space-y-1 text-center">
+				<h3 className="font-bold text-slate-900 text-lg leading-tight">{coalition.name}</h3>
+				<p className="text-sm text-slate-500">
 					{coalition.listRank !== null
 						? t("parties.candidates_count_with_list", lang, { count: String(coalition.candidateCount) })
 						: t("parties.candidates_count", lang, { count: String(coalition.candidateCount) })}
@@ -132,7 +130,7 @@ function PartyCard({ coalition, lang }: PartyCardProps): JSX.Element {
 
 			{/* Summary */}
 			<p
-				class={`mt-3 text-sm text-center leading-relaxed line-clamp-3 h-[3lh] ${
+				className={`mt-3 text-sm text-center leading-relaxed line-clamp-3 h-[3lh] ${
 					summary ? "text-slate-600" : "text-slate-400 italic"
 				}`}
 			>
@@ -140,59 +138,53 @@ function PartyCard({ coalition, lang }: PartyCardProps): JSX.Element {
 			</p>
 
 			{/* Event Details Link */}
-			{coalition.eventSlug
-				? (
-					<a
-						href={`#${coalition.eventSlug}`}
-						class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-colors"
-					>
-						<ArrowDownIcon />
-						{t("parties.event_details", lang)}
-					</a>
-				)
-				: (
-					<span class="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
-						<ArrowDownIcon />
-						{t("parties.event_details", lang)}
-					</span>
-				)}
+			{coalition.eventSlug ? (
+				<a
+					href={`#${coalition.eventSlug}`}
+					className="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 text-sm font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-lg hover:bg-emerald-100 transition-colors"
+				>
+					<ArrowDownIcon />
+					{t("parties.event_details", lang)}
+				</a>
+			) : (
+				<span className="mt-4 inline-flex items-center justify-center gap-1.5 w-full px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+					<ArrowDownIcon />
+					{t("parties.event_details", lang)}
+				</span>
+			)}
 
 			{/* Button Row */}
-			<div class="flex gap-2 mt-2">
-				{coalition.emails.length > 0
-					? (
-						<a
-							href={`mailto:${coalition.emails.join(",")}`}
-							class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
-						>
-							<EmailIcon />
-							{t("parties.email", lang)}
-						</a>
-					)
-					: (
-						<span class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
-							<EmailIcon />
-							{t("parties.email", lang)}
-						</span>
-					)}
-				{coalition.facebook
-					? (
-						<a
-							href={coalition.facebook}
-							target="_blank"
-							rel="noopener"
-							class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
-						>
-							<FacebookIcon />
-							{t("parties.facebook", lang)}
-						</a>
-					)
-					: (
-						<span class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
-							<FacebookIcon />
-							{t("parties.facebook", lang)}
-						</span>
-					)}
+			<div className="flex gap-2 mt-2">
+				{coalition.emails.length > 0 ? (
+					<a
+						href={`mailto:${coalition.emails.join(",")}`}
+						className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+					>
+						<EmailIcon />
+						{t("parties.email", lang)}
+					</a>
+				) : (
+					<span className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+						<EmailIcon />
+						{t("parties.email", lang)}
+					</span>
+				)}
+				{coalition.facebook ? (
+					<a
+						href={coalition.facebook}
+						target="_blank"
+						rel="noopener"
+						className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+					>
+						<FacebookIcon />
+						{t("parties.facebook", lang)}
+					</a>
+				) : (
+					<span className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+						<FacebookIcon />
+						{t("parties.facebook", lang)}
+					</span>
+				)}
 			</div>
 		</div>
 	);
@@ -207,59 +199,47 @@ interface PartiesSectionProps {
 const INITIAL_COLLAPSED = false;
 
 export default function PartiesSection({ lang }: PartiesSectionProps): JSX.Element {
-	const showAll = useSignal(INITIAL_COLLAPSED);
+	const [showAll, setShowAll] = useState(INITIAL_COLLAPSED);
 
-	const visibleParties = showAll.value ? sortedParties : mainParties;
+	const visibleParties = showAll ? sortedParties : mainParties;
 	const hasExtra = extraParties.length > 0;
 
 	return (
-		<section id="valasztas-2026" class="bg-slate-50 py-10 sm:py-12">
-			<div class="mx-auto max-w-6xl px-4 sm:px-6">
+		<section id="valasztas-2026" className="bg-slate-50 py-10 sm:py-12">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<H2>{t("parties.title", lang)}</H2>
-				<div class="mt-2 text-center space-y-2">
-					<p class="text-slate-600 text-balance">
-						{t("parties.description", lang)}
-					</p>
-					<p class="text-sm text-slate-500 text-balance">
-						{t("parties.methodology", lang)}
-					</p>
-					<p class="text-sm text-slate-500 italic text-balance">
-						{t("parties.outreach", lang)}
-					</p>
+				<div className="mt-2 text-center space-y-2">
+					<p className="text-slate-600 text-balance">{t("parties.description", lang)}</p>
+					<p className="text-sm text-slate-500 text-balance">{t("parties.methodology", lang)}</p>
+					<p className="text-sm text-slate-500 italic text-balance">{t("parties.outreach", lang)}</p>
 				</div>
 
-				<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 					{visibleParties.map((coalition) => (
-						<PartyCard
-							key={coalition.slug}
-							coalition={coalition}
-							lang={lang}
-						/>
+						<PartyCard key={coalition.slug} coalition={coalition} lang={lang} />
 					))}
 				</div>
 
 				{/* Threshold note + show all button */}
 				{hasExtra && (
-					<div class="mt-8 text-center">
-						<p class="text-sm text-slate-500">
-							{t("parties.threshold_note", lang)}
-						</p>
+					<div className="mt-8 text-center">
+						<p className="text-sm text-slate-500">{t("parties.threshold_note", lang)}</p>
 						<button
 							type="button"
 							onClick={() => {
-								showAll.value = !showAll.value;
+								setShowAll(!showAll);
 							}}
-							class="mt-3 inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+							className="mt-3 inline-flex items-center gap-1.5 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
 						>
-							{showAll.value ? t("parties.show_fewer", lang) : t("parties.show_all", lang)}
+							{showAll ? t("parties.show_fewer", lang) : t("parties.show_all", lang)}
 							<svg
-								class={`w-4 h-4 transition-transform duration-200 ${showAll.value ? "rotate-180" : ""}`}
+								className={`w-4 h-4 transition-transform duration-200 ${showAll ? "rotate-180" : ""}`}
 								fill="none"
 								viewBox="0 0 24 24"
 								stroke="currentColor"
-								stroke-width="2"
+								strokeWidth="2"
 							>
-								<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+								<path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
 							</svg>
 						</button>
 					</div>

@@ -1,4 +1,4 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import type { SupportedLanguage } from "../i18n/index.ts";
 
 interface LanguageSwitchProps {
@@ -13,9 +13,9 @@ export function LanguageSwitch({ currentLang, currentPath }: LanguageSwitchProps
 	return (
 		<a
 			href={`/set-lang?lang=${otherLang}&redirect=${encodeURIComponent(currentPath)}`}
-			class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-full hover:border-slate-300 hover:bg-slate-50 transition-colors"
+			className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-200 rounded-full hover:border-slate-300 hover:bg-slate-50 transition-colors"
 		>
-			<span class="text-brand">🌐</span>
+			<span className="text-brand">🌐</span>
 			<span>{label}</span>
 		</a>
 	);

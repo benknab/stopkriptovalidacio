@@ -2,17 +2,17 @@
  * Telegram Bot for posting timeline events
  *
  * Usage:
- *   deno task post-telegram                    # Post all unsent events
- *   deno task post-telegram <slug>             # Post specific event
- *   deno task post-telegram --dry-run          # Preview without posting
- *   deno task post-telegram <slug> --dry-run   # Preview specific event
+ *   pnpm post-telegram                    # Post all unsent events
+ *   pnpm post-telegram <slug>             # Post specific event
+ *   pnpm post-telegram --dry-run          # Preview without posting
+ *   pnpm post-telegram <slug> --dry-run   # Preview specific event
  *
  * Telegram-only events:
  *   Events with type="telegram" are posted to Telegram but link to the
  *   timeline section instead of a specific timeline entry.
  */
 
-import "@std/dotenv/load";
+import { writeFile } from "node:fs/promises";
 import { SITE_URL, TELEGRAM_CHANNEL_URL } from "../constants/seo.ts";
 import { events } from "../data/events.ts";
 import sentEventsJson from "../data/sent-telegram-events.json" with { type: "json" };
@@ -77,30 +77,28 @@ function loadSentEvents(): Set<string> {
 
 function isDue(event: (typeof events)[string]): boolean {
 	const today = new Date();
-	const todayInBudapest = new Date(
-		today.toLocaleDateString("en-CA", { timeZone: "Europe/Budapest" }),
-	);
+	const todayInBudapest = new Date(today.toLocaleDateString("en-CA", { timeZone: "Europe/Budapest" }));
 
 	return event.date <= todayInBudapest;
 }
 
 async function saveSentEvents(sentEvents: Set<string>): Promise<void> {
 	const slugs = [...sentEvents].sort();
-	await Deno.writeTextFile(SENT_EVENTS_PATH, JSON.stringify(slugs, null, "\t") + "\n");
+	await writeFile(SENT_EVENTS_PATH, JSON.stringify(slugs, null, "\t") + "\n");
 }
 
 async function postToTelegram(message: string): Promise<boolean> {
-	const token = Deno.env.get("TELEGRAM_BOT_TOKEN");
+	const token = process.env.TELEGRAM_BOT_TOKEN;
 	if (!token) {
 		console.error("Error: TELEGRAM_BOT_TOKEN environment variable not set");
-		Deno.exit(1);
+		process.exit(1);
 	}
 
 	// Extract channel username from URL (e.g., "https://t.me/stopkriptovalidacio" -> "@stopkriptovalidacio")
 	const channelMatch = TELEGRAM_CHANNEL_URL.match(/t\.me\/(.+)/);
 	if (!channelMatch) {
 		console.error("Error: Invalid TELEGRAM_CHANNEL_URL");
-		Deno.exit(1);
+		process.exit(1);
 	}
 	const chatId = `@${channelMatch[1]}`;
 
@@ -140,7 +138,7 @@ async function postSingleEvent(slug: string, dryRun: boolean): Promise<void> {
 	if (!events[slug]) {
 		console.error(`Event not found: ${slug}`);
 		printAvailableSlugs();
-		Deno.exit(1);
+		process.exit(1);
 	}
 
 	const sentEvents = loadSentEvents();
@@ -163,7 +161,7 @@ async function postSingleEvent(slug: string, dryRun: boolean): Promise<void> {
 		console.log("✓ Posted successfully");
 	} else {
 		console.error("✗ Failed to post");
-		Deno.exit(1);
+		process.exit(1);
 	}
 }
 
@@ -205,7 +203,7 @@ async function postAllUnsentEvents(dryRun: boolean): Promise<void> {
 			}
 		} else {
 			console.error("✗ Failed to post, stopping\n");
-			Deno.exit(1);
+			process.exit(1);
 		}
 	}
 
@@ -213,8 +211,8 @@ async function postAllUnsentEvents(dryRun: boolean): Promise<void> {
 }
 
 async function main(): Promise<void> {
-	const args = Deno.args.filter((arg) => !arg.startsWith("--"));
-	const dryRun = Deno.args.includes("--dry-run");
+	const args = process.argv.slice(2).filter((arg) => !arg.startsWith("--"));
+	const dryRun = process.argv.slice(2).includes("--dry-run");
 	const slug = args[0];
 
 	if (slug) {

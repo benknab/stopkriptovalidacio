@@ -1,4 +1,4 @@
-#!/usr/bin/env -S deno run --allow-net --allow-read --allow-write --allow-run
+#!/usr/bin/env node
 
 /**
  * Temporary script to download MP candidate photos from valasztas.hu
@@ -10,8 +10,15 @@
  * 4. Downloads and optimizes images using sharp (via npm)
  *
  * Usage:
- *   deno run --allow-net --allow-read --allow-write --allow-run scripts/download-mp-images.ts
+ *   pnpm download-mp-images
  */
+
+import { mkdir, readFile, rename, rm, stat, writeFile } from "node:fs/promises";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+import sharp from "sharp";
+
+const executeFile = promisify(execFile);
 
 // Configuration
 const DATA_VERSION = "04112100";
@@ -21,15 +28,15 @@ const OUTPUT_DIR = "./static/kepek";
 
 // Types
 interface ValasztasCandidate {
-	"kpn_id": number;
+	kpn_id: number;
 	neve: string;
 	fenykep?: number;
-	"kep_tipus"?: string;
+	kep_tipus?: string;
 }
 
 interface ValasztasList {
-	"tl_id": number;
-	"jlcs_nev": string;
+	tl_id: number;
+	jlcs_nev: string;
 	jeloltek: ValasztasCandidate[];
 }
 
@@ -68,7 +75,7 @@ async function fetchJson<T>(url: string): Promise<T> {
 	if (!response.ok) {
 		throw new Error(`HTTP error! status: ${response.status} for ${url}`);
 	}
-	return await response.json() as T;
+	return (await response.json()) as T;
 }
 
 // Download image and save to file
@@ -82,7 +89,7 @@ async function downloadImage(url: string, outputPath: string): Promise<boolean> 
 		}
 
 		const data = new Uint8Array(await response.arrayBuffer());
-		await Deno.writeFile(outputPath, data);
+		await writeFile(outputPath, data);
 		console.log(`  Saved to: ${outputPath}`);
 		return true;
 	} catch (error) {
@@ -94,26 +101,9 @@ async function downloadImage(url: string, outputPath: string): Promise<boolean> 
 // Optimize image using sharp (requires npm sharp package)
 async function optimizeImage(inputPath: string, outputPath: string): Promise<boolean> {
 	try {
-		// Check if sharp is available
-		const command = new Deno.Command("npx", {
-			args: [
-				"sharp",
-				inputPath,
-				"--resize",
-				"400",
-				"--output",
-				outputPath,
-			],
-			stdout: "piped",
-			stderr: "piped",
-		});
-
-		const { success } = await command.output();
-		if (success) {
-			console.log(`  Optimized: ${outputPath}`);
-			return true;
-		}
-		return false;
+		await sharp(inputPath).resize({ width: 400, withoutEnlargement: true }).jpeg({ quality: 85 }).toFile(outputPath);
+		console.log(`  Optimized: ${outputPath}`);
+		return true;
 	} catch {
 		// sharp not available, skip optimization
 		return false;
@@ -123,25 +113,9 @@ async function optimizeImage(inputPath: string, outputPath: string): Promise<boo
 // Alternative: Use ImageMagick if available
 async function optimizeWithImageMagick(inputPath: string, outputPath: string): Promise<boolean> {
 	try {
-		const command = new Deno.Command("convert", {
-			args: [
-				inputPath,
-				"-resize",
-				"400x400>",
-				"-quality",
-				"85",
-				outputPath,
-			],
-			stdout: "piped",
-			stderr: "piped",
-		});
-
-		const { success } = await command.output();
-		if (success) {
-			console.log(`  Optimized with ImageMagick: ${outputPath}`);
-			return true;
-		}
-		return false;
+		await executeFile("convert", [inputPath, "-resize", "400x400>", "-quality", "85", outputPath]);
+		console.log(`  Optimized with ImageMagick: ${outputPath}`);
+		return true;
 	} catch {
 		return false;
 	}
@@ -149,13 +123,7 @@ async function optimizeWithImageMagick(inputPath: string, outputPath: string): P
 
 // Ensure directory exists helper
 async function ensureDir(dir: string): Promise<void> {
-	try {
-		await Deno.mkdir(dir, { recursive: true });
-	} catch (error) {
-		if (!(error instanceof Deno.errors.AlreadyExists)) {
-			throw error;
-		}
-	}
+	await mkdir(dir, { recursive: true });
 }
 
 // Main function
@@ -167,7 +135,7 @@ async function main(): Promise<void> {
 
 	// Load MPs data
 	console.log("Loading MPs data...");
-	const mpsData = await Deno.readTextFile("./data/mps.json");
+	const mpsData = await readFile("./data/mps.json", "utf8");
 	const mps: MpsJson = JSON.parse(mpsData);
 
 	// Fetch valasztas.hu data
@@ -215,7 +183,7 @@ async function main(): Promise<void> {
 		const outputPath = `${OUTPUT_DIR}/${mpData.slug}.jpg`;
 
 		try {
-			await Deno.stat(outputPath);
+			await stat(outputPath);
 			console.log(`Already exists: ${mpData.name} -> ${outputPath}`);
 			skipped++;
 			continue;
@@ -247,12 +215,12 @@ async function main(): Promise<void> {
 
 			// If no optimization available, just rename
 			if (!optimized) {
-				await Deno.rename(tempPath, outputPath);
+				await rename(tempPath, outputPath);
 				console.log(`  Saved (no optimization): ${outputPath}`);
 			} else {
 				// Clean up temp file if optimization succeeded
 				try {
-					await Deno.remove(tempPath);
+					await rm(tempPath);
 				} catch {
 					// Ignore cleanup errors
 				}
@@ -264,7 +232,7 @@ async function main(): Promise<void> {
 			failed++;
 			// Clean up temp file on failure
 			try {
-				await Deno.remove(tempPath);
+				await rm(tempPath);
 			} catch {
 				// Ignore cleanup errors
 			}
@@ -281,7 +249,7 @@ async function main(): Promise<void> {
 		}
 
 		// Write updated mps.json
-		await Deno.writeTextFile("./data/mps.json", JSON.stringify(mps, null, "\t"));
+		await writeFile("./data/mps.json", JSON.stringify(mps, null, "\t"));
 		console.log("Updated mps.json with new image URLs");
 	}
 
@@ -292,24 +260,12 @@ async function main(): Promise<void> {
 	console.log(`Downloaded: ${downloaded}`);
 	console.log(`Skipped (no photo/existing): ${skipped}`);
 	console.log(`Failed: ${failed}`);
-
-	// Close browser if we opened one
-	try {
-		const closeCmd = new Deno.Command("npx", {
-			args: ["agent-browser", "close"],
-			stdout: "piped",
-			stderr: "piped",
-		});
-		await closeCmd.output();
-	} catch {
-		// Ignore
-	}
 }
 
 // Run main function
 if (import.meta.main) {
 	main().catch((error) => {
 		console.error("Script failed:", error);
-		Deno.exit(1);
+		process.exit(1);
 	});
 }

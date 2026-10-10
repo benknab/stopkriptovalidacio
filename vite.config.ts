@@ -1,33 +1,35 @@
-import { defineConfig, type Plugin } from "vite";
-import { fresh } from "@fresh/plugin-vite";
+import { defineConfig } from "vite-plus";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
+import { nitro } from "nitro/vite";
+import { fileURLToPath } from "node:url";
 
-function reloadOnDataChange(): Plugin {
-	return {
-		name: "reload-on-data-change",
-		configureServer(server): void {
-			server.watcher.on("change", (file) => {
-				if (file.includes("/i18n/locales/") || file.includes("/data/")) {
-					// Restart the server to reload SSR modules with new data
-					server.restart();
-				}
-			});
-		},
-	};
-}
-
-export default defineConfig({
-	environments: {
-		client: {
-			build: {
-				target: "baseline-widely-available",
-			},
-		},
-		ssr: {
-			build: {
-				target: "esnext",
-			},
-		},
+export default defineConfig(({ mode }) => ({
+	publicDir: "static",
+	resolve: { tsconfigPaths: true },
+	plugins:
+		mode === "test"
+			? [react()]
+			: [
+					tailwindcss(),
+					tanstackStart({
+						srcDirectory: ".",
+						router: { generatedRouteTree: "route-tree.gen.ts" },
+					}),
+					nitro({
+						preset: "node-server",
+						publicAssets: [{ dir: fileURLToPath(new URL("./static", import.meta.url)), baseURL: "/" }],
+					}),
+					react(),
+				],
+	build: { target: "baseline-widely-available" },
+	test: { include: ["tests/**/*.test.{ts,tsx}"] },
+	lint: { ignorePatterns: ["route-tree.gen.ts", "dist/**", ".output/**"] },
+	fmt: {
+		useTabs: true,
+		printWidth: 120,
+		ignorePatterns: ["route-tree.gen.ts", "dist/**", ".output/**", "archive/**", "emails/**", ".agents/**"],
 	},
-	plugins: [fresh({ serverEntry: "main.tsx" }), tailwindcss(), reloadOnDataChange()],
-});
+	staged: { "*": "vp check --fix" },
+}));

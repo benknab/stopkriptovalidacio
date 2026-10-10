@@ -7,9 +7,7 @@ export function buildCanonicalUrl(path: string): string {
 	return `${SITE_URL}${path}`;
 }
 
-export function buildHreflangUrls(
-	path: string,
-): Array<{ lang: SupportedLanguage | "x-default"; url: string }> {
+export function buildHreflangUrls(path: string): Array<{ lang: SupportedLanguage | "x-default"; url: string }> {
 	return [
 		{ lang: "hu", url: `${SITE_URL}${path}` },
 		{ lang: "en", url: `${SITE_URL}${path}` },
@@ -22,7 +20,7 @@ export function formatISODate(date: Date): string {
 }
 
 export function getPrimaryEvents(): Array<[string, TimelineEvent]> {
-	return Object.entries(events).filter(([_, event]) => event.type === "primary");
+	return Object.entries(events).filter(([, event]) => event.type === "primary");
 }
 
 export function getLastModifiedDate(): Date {

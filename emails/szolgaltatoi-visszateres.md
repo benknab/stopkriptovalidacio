@@ -1,4 +1,3 @@
-<!-- deno-fmt-ignore-file -->
 
 # Szolgáltatói visszatérés - Email sablon
 

@@ -14,11 +14,12 @@ will include:
 
 ## Tech Stack
 
-- **Runtime**: Deno
-- **Framework**: Fresh 2.0 with islands architecture
-- **UI**: Preact (with Preact Signals for state)
+- **Runtime**: Node.js 24.21.0 LTS (native TypeScript for scripts)
+- **Framework**: TanStack Start with TanStack Router and Nitro's Node.js production server
+- **UI**: React with native hooks; URL-backed filter state uses TanStack Router
 - **Styling**: Tailwind CSS v4
-- **Build**: Vite
+- **Toolchain**: Vite+ (build, Vitest, Oxlint, Oxfmt)
+- **Package manager**: pnpm 12.10.1; commit `pnpm-lock.yaml`
 - **Internationalization**: Custom i18n with `t(key, lang)` function
 
 ## Git
@@ -28,12 +29,15 @@ will include:
 ## Development Commands
 
 ```bash
-deno task dev         # Start dev server (Vite)
-deno task build       # Build for production
-deno task start       # Start production server
-deno task check       # Format, lint, and type check
-deno fmt              # Format code
-deno lint             # Lint code
+pnpm install --frozen-lockfile  # Install dependencies
+pnpm dev                       # Start dev server
+pnpm build                     # Build for production
+pnpm start                     # Start production Node.js server
+pnpm check                     # Format, lint, and type check
+pnpm fmt                       # Format code
+pnpm lint                      # Lint code
+pnpm test                      # Build and run unit/component/HTTP tests
+pnpm test:browser              # Production browser tests (agent-browser)
 ```
 
 ## Code Style
@@ -51,37 +55,40 @@ deno lint             # Lint code
 
 ## Architecture
 
-- `main.ts` - Fresh server entry point
-- `utils.ts` - Fresh `define` helper created with `createDefine<State>()`
-- `vite.config.ts` - Vite configuration with Fresh and Tailwind plugins
-- `routes/` - File-based routing (Fresh 2.0)
-- `islands/` - Interactive components that ship JavaScript to client
-- `components/` - Static components (no client JS)
+- `router.tsx` - TanStack Router factory and public query serialization
+- `routes/__root.tsx` - HTML document, request language context, metadata, hydration scripts
+- `vite.config.ts` - Vite+ configuration with Start, React, Tailwind and Nitro plugins
+- `routes/` - TanStack file routes and HTTP handlers
+- `route-tree.gen.ts` - Generated route tree (tracked for type checking on clean checkouts; do not edit manually)
+- `islands/` - Interactive React components (historical directory name; no islands runtime)
+- `components/` - Shared React components
+- `utils/language.ts` - Server function for request-specific language detection
+- `utils/page-head.ts` - Route metadata, canonical/hreflang links and structured data
 - `data/` - Data files (events, mps, exchanges, sources)
 - `i18n/` - Translation system with `t(key, lang)` function
 - `constants/` - Shared constants
 - `static/` - Static assets
 
-## Fresh 2.0 Patterns
+## TanStack Start Patterns
 
-Routes use `define.page()` pattern:
+Routes export `Route` with `createFileRoute()`; root context supplies the request's language:
 
 ```tsx
-import { define } from "@/utils.ts";
+import { createFileRoute } from "@tanstack/react-router";
 
-export default define.page(function PageName(ctx): JSX.Element {
-	const lang = detectLanguage(ctx.req);
-	return <Layout lang={lang}>...</Layout>;
-});
+export const Route = createFileRoute("/rolunk")({ component: PageName });
+
+function PageName() {
+	const { lang } = Route.useRouteContext();
+	return <div>{t("about.title", lang)}</div>;
+}
 ```
 
-Handlers use `define.handlers()`:
+HTTP handlers use the route's `server.handlers`:
 
 ```tsx
-export const handler = define.handlers({
-	GET(): Response {
-		return new Response("...");
-	},
+export const Route = createFileRoute("/set-lang")({
+	server: { handlers: { GET: ({ request }) => new Response(request.url) } },
 });
 ```
 
@@ -116,9 +123,9 @@ When writing summaries, event descriptions, or any user-facing content:
 
 ## Verification
 
-- Run `deno lint` after making code changes to verify no lint errors were introduced
-- Never run `deno task dev` unprompted - let the developer verify manually
-- Only run `deno task dev` if the developer explicitly asks
+- Run `pnpm check` and the relevant regression tests after code changes
+- Never run `pnpm dev` unprompted - let the developer verify manually
+- Only run `pnpm dev` if the developer explicitly asks; production servers may be used for verification
 - Never offer to commit changes unless explicitly asked - let the developer decide when to commit
 - When adding new content that requires i18n (exchanges, events, etc.), verify corresponding entries exist in both
   `i18n/locales/hu.json` and `i18n/locales/en.json`

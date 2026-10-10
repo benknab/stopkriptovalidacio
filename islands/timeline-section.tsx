@@ -1,4 +1,5 @@
-import type { JSX } from "preact";
+import type { SyntheticEvent } from "react";
+import type { JSX } from "react";
 import { ExternalLink } from "../components/external-link.tsx";
 import { TelegramIcon } from "../components/telegram-icon.tsx";
 import { TELEGRAM_CHANNEL_URL } from "../constants/seo.ts";
@@ -22,21 +23,27 @@ function getTodayInBudapest(): Date {
 	return new Date(today.toLocaleDateString("en-CA", { timeZone: "Europe/Budapest" }));
 }
 
-function TimelineSource(
-	{ slug, source, lang }: { slug: string; source: Source; lang: SupportedLanguage },
-): JSX.Element | null {
+function TimelineSource({
+	slug,
+	source,
+	lang,
+}: {
+	slug: string;
+	source: Source;
+	lang: SupportedLanguage;
+}): JSX.Element | null {
 	if (source.internalUrl) {
 		return (
 			<a
 				href={source.internalUrl}
-				class="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover transition-colors hover:underline"
+				className="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover transition-colors hover:underline"
 			>
 				<span>{source.title[lang]}</span>
-				<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width={2}
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={2}
 						d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
 					/>
 				</svg>
@@ -46,13 +53,13 @@ function TimelineSource(
 
 	if (source.originalUrl) {
 		return (
-			<ExternalLink href={source.originalUrl} class="inline-flex items-center gap-1 text-sm hover:underline">
+			<ExternalLink href={source.originalUrl} className="inline-flex items-center gap-1 text-sm hover:underline">
 				<span>{source.title[lang]}</span>
-				<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width={2}
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={2}
 						d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
 					/>
 				</svg>
@@ -65,14 +72,14 @@ function TimelineSource(
 		return (
 			<a
 				href={`/forras/${slug}`}
-				class="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover transition-colors hover:underline"
+				className="inline-flex items-center gap-1 text-sm text-brand hover:text-brand-hover transition-colors hover:underline"
 			>
 				<span>{source.title[lang]}</span>
-				<svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width={2}
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth={2}
 						d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
 					/>
 				</svg>
@@ -102,11 +109,7 @@ interface TimelineDotProps {
 }
 
 function TimelineDot({ type, size = "md" }: TimelineDotProps): JSX.Element {
-	return (
-		<div
-			class={`rounded-full border-2 shrink-0 ${dotSizeClasses[size]} ${dotColorClasses[type] ?? ""}`}
-		/>
-	);
+	return <div className={`rounded-full border-2 shrink-0 ${dotSizeClasses[size]} ${dotColorClasses[type] ?? ""}`} />;
 }
 
 function getTitleClassName(type: TimelineEvent["type"]): string {
@@ -132,42 +135,33 @@ function TimelineItem({
 	lang: SupportedLanguage;
 }): JSX.Element {
 	return (
-		<div id={slug} class="relative pl-8 pb-8 last:pb-0 scroll-mt-24">
+		<div id={slug} className="relative pl-8 pb-8 last:pb-0 scroll-mt-24">
 			{/* Vertical line */}
-			<div class="absolute left-[11px] top-3 bottom-0 w-px bg-slate-200" />
+			<div className="absolute left-[11px] top-3 bottom-0 w-px bg-slate-200" />
 
 			{/* Dot */}
-			<div class="absolute left-0 top-1.5">
+			<div className="absolute left-0 top-1.5">
 				<TimelineDot type={event.type} />
 			</div>
 
 			{/* Content */}
-			<div class="space-y-2">
-				<time class="text-sm text-slate-500">{formatDate(event.date, lang)}</time>
+			<div className="space-y-2">
+				<time className="text-sm text-slate-500">{formatDate(event.date, lang)}</time>
 
-				<h3 class={`text-lg font-medium ${getTitleClassName(event.type)}`}>
-					<a href={`#${slug}`} class="hover:underline underline-offset-2">
+				<h3 className={`text-lg font-medium ${getTitleClassName(event.type)}`}>
+					<a href={`#${slug}`} className="hover:underline underline-offset-2">
 						{event.title[lang]}
 					</a>
 				</h3>
 
 				{event.summary && (
-					<p
-						class="text-slate-600 leading-relaxed"
-						// deno-lint-ignore react-no-danger
-						dangerouslySetInnerHTML={{ __html: event.summary[lang] }}
-					/>
+					<p className="text-slate-600 leading-relaxed" dangerouslySetInnerHTML={{ __html: event.summary[lang] }} />
 				)}
 
 				{event.sourceSlugs.size > 0 && (
-					<div class="flex flex-wrap gap-3 pt-1">
+					<div className="flex flex-wrap gap-3 pt-1">
 						{[...event.sourceSlugs].map((sourceSlug) => (
-							<TimelineSource
-								key={sourceSlug}
-								slug={sourceSlug}
-								source={sources[sourceSlug]}
-								lang={lang}
-							/>
+							<TimelineSource key={sourceSlug} slug={sourceSlug} source={sources[sourceSlug]} lang={lang} />
 						))}
 					</div>
 				)}
@@ -185,12 +179,12 @@ interface TimelineSectionProps {
 export default function TimelineSection(props: TimelineSectionProps): JSX.Element {
 	const { lang } = props;
 	const today = getTodayInBudapest();
-	const showSecondary = useBooleanQueryParam({
+	const [showSecondary, setShowSecondary] = useBooleanQueryParam({
 		key: "masodlagos",
 		defaultValue: true,
 		initialValue: props.showSecondary,
 	});
-	const showTertiary = useBooleanQueryParam({
+	const [showTertiary, setShowTertiary] = useBooleanQueryParam({
 		key: "harmadlagos",
 		defaultValue: false,
 		initialValue: props.showTertiary,
@@ -201,8 +195,8 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 			if (event.date > today) return false;
 			if (event.type === "telegram") return false;
 			if (event.type === "primary") return true;
-			if (event.type === "secondary") return showSecondary.value;
-			if (event.type === "tertiary") return showTertiary.value;
+			if (event.type === "secondary") return showSecondary;
+			if (event.type === "tertiary") return showTertiary;
 			return false;
 		})
 		.sort(([, a], [, b]) => {
@@ -212,24 +206,24 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 			return (b.sortOrder ?? 0) - (a.sortOrder ?? 0);
 		});
 
-	function handleSecondaryChange(e: Event): void {
-		showSecondary.value = (e.target as HTMLInputElement).checked;
+	function handleSecondaryChange(e: SyntheticEvent): void {
+		setShowSecondary((e.target as HTMLInputElement).checked);
 	}
 
-	function handleTertiaryChange(e: Event): void {
-		showTertiary.value = (e.target as HTMLInputElement).checked;
+	function handleTertiaryChange(e: SyntheticEvent): void {
+		setShowTertiary((e.target as HTMLInputElement).checked);
 	}
 
 	return (
 		<div>
 			{/* Telegram CTA */}
-			<div class="mb-6 p-4 bg-sky-50 border border-sky-200 rounded-lg flex items-center gap-3">
-				<TelegramIcon class="w-6 h-6 text-sky-500 shrink-0" />
-				<div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-					<span class="text-slate-700 font-medium">{t("timeline.telegram_cta", lang)}</span>
+			<div className="mb-6 p-4 bg-sky-50 border border-sky-200 rounded-lg flex items-center gap-3">
+				<TelegramIcon className="w-6 h-6 text-sky-500 shrink-0" />
+				<div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+					<span className="text-slate-700 font-medium">{t("timeline.telegram_cta", lang)}</span>
 					<ExternalLink
 						href={TELEGRAM_CHANNEL_URL}
-						class="text-sky-600 hover:text-sky-700 hover:underline font-semibold"
+						className="text-sky-600 hover:text-sky-700 hover:underline font-semibold"
 					>
 						@stopkriptovalidacio
 					</ExternalLink>
@@ -237,48 +231,43 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 			</div>
 
 			{/* Filter checkboxes */}
-			<div class="flex flex-wrap gap-4 mb-6">
-				<label class="inline-flex items-center gap-2 select-none cursor-default">
+			<div className="flex flex-wrap gap-4 mb-6">
+				<label className="inline-flex items-center gap-2 select-none cursor-default">
 					<input
 						type="checkbox"
 						checked
 						disabled
-						class="w-4 h-4 rounded border-slate-300 text-brand cursor-default"
+						className="w-4 h-4 rounded border-slate-300 text-brand cursor-default"
 					/>
 					<TimelineDot type="primary" size="sm" />
-					<span class="text-sm text-slate-700">{t("timeline.filter.primary", lang)}</span>
+					<span className="text-sm text-slate-700">{t("timeline.filter.primary", lang)}</span>
 				</label>
-				<label class="inline-flex items-center gap-2 cursor-pointer select-none">
+				<label className="inline-flex items-center gap-2 cursor-pointer select-none">
 					<input
 						type="checkbox"
-						checked={showSecondary.value}
+						checked={showSecondary}
 						onChange={handleSecondaryChange}
-						class="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
+						className="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
 					/>
 					<TimelineDot type="secondary" size="sm" />
-					<span class="text-sm text-slate-700">{t("timeline.filter.related", lang)}</span>
+					<span className="text-sm text-slate-700">{t("timeline.filter.related", lang)}</span>
 				</label>
-				<label class="inline-flex items-center gap-2 cursor-pointer select-none">
+				<label className="inline-flex items-center gap-2 cursor-pointer select-none">
 					<input
 						type="checkbox"
-						checked={showTertiary.value}
+						checked={showTertiary}
 						onChange={handleTertiaryChange}
-						class="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
+						className="w-4 h-4 rounded border-slate-300 text-brand focus:ring-brand/20 cursor-pointer"
 					/>
 					<TimelineDot type="tertiary" size="sm" />
-					<span class="text-sm text-slate-700">{t("timeline.filter.background", lang)}</span>
+					<span className="text-sm text-slate-700">{t("timeline.filter.background", lang)}</span>
 				</label>
 			</div>
 
 			{/* Timeline events */}
-			<div class="space-y-0">
+			<div className="space-y-0">
 				{filteredEvents.map(([slug, event]) => (
-					<TimelineItem
-						key={slug}
-						slug={slug}
-						event={event}
-						lang={lang}
-					/>
+					<TimelineItem key={slug} slug={slug} event={event} lang={lang} />
 				))}
 			</div>
 		</div>

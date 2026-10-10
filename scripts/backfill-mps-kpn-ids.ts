@@ -1,3 +1,5 @@
+import { mkdir, readFile, writeFile } from "node:fs/promises";
+
 const BASE_URL_2022 = "https://vtr.valasztas.hu/ogy2022/data";
 const BASE_URL_2026 = "https://vtr.valasztas.hu/ogy2026/data";
 const DEFAULT_INPUT_PATH = new URL("../data/mps.json", import.meta.url).pathname;
@@ -74,32 +76,32 @@ type ListEnvelope<T> = {
 };
 
 type DistrictCandidate = {
-	"ej_id": number;
-	"kpn_id": number;
-	"dr_jelzo"?: string;
+	ej_id: number;
+	kpn_id: number;
+	dr_jelzo?: string;
 	neve: string;
 	maz: string;
 	evk: string;
 };
 
 type ListCandidate = {
-	"tj_id": number;
-	"kpn_id": number;
-	"dr_jelzo"?: string;
+	tj_id: number;
+	kpn_id: number;
+	dr_jelzo?: string;
 	neve: string;
 };
 
 type CandidateList = {
-	"tl_id": number;
-	"lista_tip": string;
+	tl_id: number;
+	lista_tip: string;
 	jeloltek?: ListCandidate[];
 };
 
 type Constituency = {
 	maz: string;
-	"maz_nev": string;
+	maz_nev: string;
 	evk: string;
-	"evk_nev": string;
+	evk_nev: string;
 };
 
 type Winner2022 = {
@@ -136,10 +138,8 @@ function parseOptions(args: string[]): Options {
 		}
 
 		if (arg === "--help") {
-			console.log(
-				`Usage: deno run --allow-read --allow-write --allow-net scripts/backfill-mps-kpn-ids.ts [--input=path] [--output=path]`,
-			);
-			Deno.exit(0);
+			console.log(`Usage: pnpm backfill-mps-kpn-ids [--input=path] [--output=path]`);
+			process.exit(0);
 		}
 
 		throw new Error(`Unknown argument: ${arg}`);
@@ -154,18 +154,18 @@ async function fetchJson<T>(url: string): Promise<T> {
 		throw new Error(`Failed to fetch ${url}: HTTP ${response.status} ${response.statusText}`);
 	}
 
-	return await response.json() as T;
+	return (await response.json()) as T;
 }
 
 async function readJson<T>(filePath: string): Promise<T> {
-	return JSON.parse(await Deno.readTextFile(filePath)) as T;
+	return JSON.parse(await readFile(filePath, "utf8")) as T;
 }
 
 async function writeJson(filePath: string, data: unknown): Promise<void> {
 	const lastSlashIndex = filePath.lastIndexOf("/");
 	const parentPath = lastSlashIndex === -1 ? "." : filePath.slice(0, lastSlashIndex);
-	await Deno.mkdir(parentPath, { recursive: true });
-	await Deno.writeTextFile(filePath, `${JSON.stringify(data, null, "\t")}\n`);
+	await mkdir(parentPath, { recursive: true });
+	await writeFile(filePath, `${JSON.stringify(data, null, "\t")}\n`);
 }
 
 function formatDistrictLabel(constituency: Constituency): string {
@@ -177,20 +177,25 @@ function formatDistrictLabel(constituency: Constituency): string {
 }
 
 function normalizeNameForMatch(value: string): string {
-	const normalized = value.normalize("NFD")
+	const normalized = value
+		.normalize("NFD")
 		.replace(/\p{Diacritic}/gu, "")
 		.toLowerCase()
 		.replace(/[^a-z0-9\s.-]/g, " ")
 		.replace(/[.]/g, " ")
 		.trim();
-	const tokens = normalized.split(/\s+/).filter(Boolean).filter((token) => {
-		return token !== "dr" && token !== "ifj" && token !== "id" && token !== "ozv";
-	});
+	const tokens = normalized
+		.split(/\s+/)
+		.filter(Boolean)
+		.filter((token) => {
+			return token !== "dr" && token !== "ifj" && token !== "id" && token !== "ozv";
+		});
 	return tokens.join(" ");
 }
 
 function normalizeLabelForMatch(value: string): string {
-	return value.normalize("NFD")
+	return value
+		.normalize("NFD")
 		.replace(/\p{Diacritic}/gu, "")
 		.toLowerCase()
 		.replace(/[^a-z0-9\s.-]/g, " ")
@@ -283,9 +288,7 @@ function buildCandidatesByName(
 	constituencies: ListEnvelope<Constituency>,
 ): Map<string, Winner2022[]> {
 	const constituenciesByKey = new Map(
-		constituencies.list.map((
-			constituency,
-		) => [getConstituencyKey(constituency.maz, constituency.evk), constituency]),
+		constituencies.list.map((constituency) => [getConstituencyKey(constituency.maz, constituency.evk), constituency]),
 	);
 
 	const winnersByName = new Map<string, Winner2022[]>();
@@ -343,11 +346,11 @@ function resolveWinnerForMp(
 	}
 
 	const nameMatchKeys = buildNameMatchKeys(mp.name);
-	const winners = Array.from(new Map(
-		nameMatchKeys
-			.flatMap((key) => winnersByName.get(key) ?? [])
-			.map((winner) => [winner.kpnId, winner]),
-	).values());
+	const winners = Array.from(
+		new Map(
+			nameMatchKeys.flatMap((key) => winnersByName.get(key) ?? []).map((winner) => [winner.kpnId, winner]),
+		).values(),
+	);
 	const normalizedCurrentLabel = normalizeLabelForMatch(currentLabel);
 	const matchingLabel = winners.filter((winner) => normalizeLabelForMatch(winner.label) === normalizedCurrentLabel);
 
@@ -368,11 +371,13 @@ function resolveWinnerForMp(
 		throw new Error(`Ambiguous NVI match for ${slug} (${mp.name}).`);
 	}
 
-	const fallbackMatches = Array.from(new Map(
-		nameMatchKeys
-			.flatMap((key) => fallbackCandidateIds.get(key) ?? [])
-			.map((candidate) => [candidate.kpnId, candidate]),
-	).values());
+	const fallbackMatches = Array.from(
+		new Map(
+			nameMatchKeys
+				.flatMap((key) => fallbackCandidateIds.get(key) ?? [])
+				.map((candidate) => [candidate.kpnId, candidate]),
+		).values(),
+	);
 
 	if (fallbackMatches.length === 1) {
 		console.log(`Fallback 2026 kpn_id for ${slug} (${mp.name}) -> ${fallbackMatches[0].kpnId}`);
@@ -463,7 +468,7 @@ async function loadFallbackCandidateIds(): Promise<Map<string, CandidateIdLookup
 }
 
 async function main(): Promise<void> {
-	const options = parseOptions(Deno.args);
+	const options = parseOptions(process.argv.slice(2));
 	const rawInput = await readJson<Record<string, unknown>>(options.inputPath);
 	const firstRecord = Object.values(rawInput)[0] as Record<string, unknown> | undefined;
 	if (firstRecord && typeof firstRecord === "object" && "slug" in firstRecord && "elections" in firstRecord) {

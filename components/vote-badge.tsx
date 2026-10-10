@@ -1,4 +1,4 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import type { VoteType } from "../data/mps.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 
@@ -19,11 +19,11 @@ export const voteColors: Record<VoteType, { badge: string; border: string }> = {
 		badge: "bg-slate-100 text-slate-600",
 		border: "border-red-400",
 	},
-	"not_voted": {
+	not_voted: {
 		badge: "bg-slate-100 text-slate-600",
 		border: "border-red-400",
 	},
-	"not_in_parliament": {
+	not_in_parliament: {
 		badge: "bg-sky-100 text-sky-700",
 		border: "border-slate-200",
 	},
@@ -36,15 +36,13 @@ export const voteColors: Record<VoteType, { badge: string; border: string }> = {
 interface VoteBadgeProps {
 	vote: VoteType;
 	lang: SupportedLanguage;
-	class?: string;
+	className?: string;
 }
 
-export function VoteBadge({ vote, lang, class: className }: VoteBadgeProps): JSX.Element {
+export function VoteBadge({ vote, lang, className }: VoteBadgeProps): JSX.Element {
 	const colors = voteColors[vote];
 	return (
-		<span
-			class={`text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge} ${className ?? ""}`}
-		>
+		<span className={`text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge} ${className ?? ""}`}>
 			{t(`mps.vote.${vote}`, lang)}
 		</span>
 	);

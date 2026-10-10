@@ -1,4 +1,4 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import type { SupportedLanguage } from "../../i18n/index.ts";
 import { PAGE_SEO_CONFIG, type PageId } from "../../constants/seo.ts";
 import { MetaTags } from "./meta-tags.tsx";

@@ -1,5 +1,6 @@
-import type { JSX } from "preact";
-import { useSignal, useSignalEffect } from "@preact/signals";
+import type { SyntheticEvent } from "react";
+import type { JSX } from "react";
+import { useState, useEffect } from "react";
 import { useStringQueryParam } from "../hooks/use-root-query-params.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "../components/h2.tsx";
@@ -46,100 +47,91 @@ export default function TakeActionSection({
 	selectedRep: initialRep,
 }: TakeActionSectionProps): JSX.Element {
 	// Message state (Hungarian only)
-	const subject = useSignal(DEFAULT_SUBJECT);
-	const message = useSignal(DEFAULT_MESSAGE);
+	const [subject, setSubject] = useState(DEFAULT_SUBJECT);
+	const [message, setMessage] = useState(DEFAULT_MESSAGE);
 
 	// Selection state - single representative synced to query params
-	const selectedRep = useStringQueryParam({
+	const [selectedRep, setSelectedRep] = useStringQueryParam({
 		key: "kepviselo",
 		defaultValue: "",
 		initialValue: initialRep,
 	});
 
 	// Group selection state (default: include minority list)
-	const includeMinorityList = useSignal(DEFAULT_INCLUDE_LISTS);
+	const [includeMinorityList, setIncludeMinorityList] = useState(DEFAULT_INCLUDE_LISTS);
 
 	// Filter state synced to query params
-	const selectedCounty = useStringQueryParam({
+	const [selectedCounty, setSelectedCounty] = useStringQueryParam({
 		key: "megye",
 		defaultValue: "",
 		initialValue: initialCounty,
 	});
-	const selectedDistrict = useStringQueryParam({
+	const [selectedDistrict, setSelectedDistrict] = useStringQueryParam({
 		key: "kerulet",
 		defaultValue: "",
 		initialValue: initialDistrict,
 	});
 
 	// Search is local-only, not synced to URL
-	const searchQuery = useSignal("");
+	const [searchQuery, setSearchQuery] = useState("");
 
 	// Scroll to filters so the selected card is visible below them
-	useSignalEffect(() => {
-		if (selectedRep.value && typeof globalThis.document !== "undefined") {
+	useEffect(() => {
+		if (selectedRep && typeof globalThis.document !== "undefined") {
 			const element = globalThis.document.getElementById("action-filters");
 			if (element) {
 				element.scrollIntoView({ behavior: "smooth", block: "start" });
 			}
 		}
-	});
+	}, [selectedRep]);
 
-	function handleSubjectInput(e: Event): void {
-		subject.value = (e.target as HTMLInputElement).value;
+	function handleSubjectInput(e: SyntheticEvent): void {
+		setSubject((e.target as HTMLInputElement).value);
 	}
 
-	function handleMessageInput(e: Event): void {
-		message.value = (e.target as HTMLTextAreaElement).value;
+	function handleMessageInput(e: SyntheticEvent): void {
+		setMessage((e.target as HTMLTextAreaElement).value);
 	}
 
 	return (
-		<section id="cselekedj" class="bg-brand text-white py-16 sm:py-24">
-			<div class="mx-auto max-w-6xl px-4 sm:px-6">
-				<H2 class="text-white">{t("action.title", lang)}</H2>
-				<p class="mt-4 text-white/90 text-center max-w-2xl mx-auto font-semibold text-lg whitespace-pre-line">
+		<section id="cselekedj" className="bg-brand text-white py-16 sm:py-24">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6">
+				<H2 className="text-white">{t("action.title", lang)}</H2>
+				<p className="mt-4 text-white/90 text-center max-w-2xl mx-auto font-semibold text-lg whitespace-pre-line">
 					{t("action.intro", lang)}
 				</p>
 
 				{/* White content container */}
-				<div class="mt-10 bg-white rounded-2xl p-6 sm:p-8 text-slate-900">
+				<div className="mt-10 bg-white rounded-2xl p-6 sm:p-8 text-slate-900">
 					{/* Search/Filter Section with integrated selection display */}
 					<MpSelector
-						selectedRep={selectedRep}
-						selectedCounty={selectedCounty}
-						selectedDistrict={selectedDistrict}
-						searchQuery={searchQuery}
-						includeMinorityList={includeMinorityList}
+						selectedRep={[selectedRep, setSelectedRep]}
+						selectedCounty={[selectedCounty, setSelectedCounty]}
+						selectedDistrict={[selectedDistrict, setSelectedDistrict]}
+						searchQuery={[searchQuery, setSearchQuery]}
+						includeMinorityList={[includeMinorityList, setIncludeMinorityList]}
 						lang={lang}
 					/>
 
 					{/* Email Form */}
-					<div class="mt-8 border-t border-slate-200 pt-8 space-y-6">
+					<div className="mt-8 border-t border-slate-200 pt-8 space-y-6">
 						<div>
-							<Label for="action-subject">{t("action.subject_label", lang)}</Label>
-							<Input
-								id="action-subject"
-								value={subject.value}
-								onInput={handleSubjectInput}
-							/>
+							<Label htmlFor="action-subject">{t("action.subject_label", lang)}</Label>
+							<Input id="action-subject" value={subject} onChange={handleSubjectInput} />
 						</div>
 
 						<div>
-							<Label for="action-message">{t("action.message_label", lang)}</Label>
-							<Textarea
-								id="action-message"
-								value={message.value}
-								onInput={handleMessageInput}
-								rows={10}
-							/>
+							<Label htmlFor="action-message">{t("action.message_label", lang)}</Label>
+							<Textarea id="action-message" value={message} onChange={handleMessageInput} rows={10} />
 						</div>
 					</div>
 
 					{/* Action Buttons */}
 					<ActionButtons
-						selectedRep={selectedRep.value || null}
-						includeMinorityList={includeMinorityList.value}
-						subject={subject.value}
-						message={message.value}
+						selectedRep={selectedRep || null}
+						includeMinorityList={includeMinorityList}
+						subject={subject}
+						message={message}
 						lang={lang}
 					/>
 				</div>

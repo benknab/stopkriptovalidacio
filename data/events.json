@@ -10,12 +10,8 @@
 			"hu": "Az eToro a Stop Kriptovalidáció megkeresésére e-mailben megerősítette, hogy szeptember 7-től ismét elérhetők kriptoszolgáltatásai a magyarországi felhasználók számára. Ez magában foglalja a tényleges kriptoeszközökre vonatkozó pozíciók nyitását és zárását, a kripto-staking programot és az eToro Crypto Wallet használatát.",
 			"en": "In an email response to Stop Kriptovalidáció, eToro confirmed that it restored crypto services for users in Hungary on September 7. This includes opening and closing positions on underlying cryptoassets, access to the crypto staking programme, and access to the eToro Crypto Wallet."
 		},
-		"sourceSlugs": [
-			"etoro-email-visszateres"
-		],
-		"exchangeSlugs": [
-			"etoro"
-		]
+		"sourceSlugs": ["etoro-email-visszateres"],
+		"exchangeSlugs": ["etoro"]
 	},
 	"bull-bitcoin-magyarorszagi-elerhetoseg-megerositese": {
 		"date": "2026-09-16",
@@ -28,12 +24,8 @@
 			"hu": "A Bull Bitcoin a Stop Kriptovalidáció megkeresésére e-mailben megerősítette, hogy szolgáltatásai jelenleg elérhetők a magyarországi lakosok számára, eurós befizetési lehetőséggel.",
 			"en": "In an email response to Stop Kriptovalidáció, Bull Bitcoin confirmed that its services are currently available to residents of Hungary, with EUR funding options."
 		},
-		"sourceSlugs": [
-			"bull-bitcoin-email-elerhetoseg"
-		],
-		"exchangeSlugs": [
-			"bull-bitcoin"
-		]
+		"sourceSlugs": ["bull-bitcoin-email-elerhetoseg"],
+		"exchangeSlugs": ["bull-bitcoin"]
 	},
 	"t-11922-benyujtva": {
 		"date": "2025-05-13",
@@ -46,10 +38,7 @@
 			"hu": "A Kormány benyújtotta a Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényjavaslatot. A kriptoeszköz-átváltást validáló szolgáltatásra vonatkozó szabályozás még nem szerepel ebben a változatban.",
 			"en": "The Government submitted a bill on the amendment of certain laws to improve Hungary's competitiveness. Regulations on crypto-asset exchange validation services are not yet included in this version."
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922"],
 		"exchangeSlugs": []
 	},
 	"t-11922-13-egysegesirasba": {
@@ -63,10 +52,7 @@
 			"hu": "A Törvényalkotási Bizottság benyújtotta a túlterjeszkedő módosító javaslatot tartalmazó egységes javaslatot. <b>A dokumentum első alkalommal tartalmazza a kriptoeszköz-átváltást validáló szolgáltatásra és a kriptoeszközzel visszaélés bűncselekményére vonatkozó rendelkezéseket. A törvény nem definiálja a validálás fogalmát.</b>",
 			"en": "The Legislation Committee submitted the unified proposal containing overreaching amendments. <b>The document contains provisions on crypto-asset exchange validation services and the criminal offense of crypto-asset abuse for the first time. The law does not define what validation means.</b>"
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922-13"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922-13"],
 		"exchangeSlugs": []
 	},
 	"t-11922-ind03": {
@@ -80,10 +66,7 @@
 			"hu": "Az egységes javaslathoz készített előterjesztői indokolás részletezi a kriptoeszközzel visszaélés bűncselekményi tényállását (Btk. 408/A. §), valamint a kriptoeszköz-átváltást validáló szolgáltatókra vonatkozó követelményeket.",
 			"en": "The explanatory memorandum for the unified proposal details the criminal offense of crypto-asset abuse (Criminal Code Section 408/A) and requirements for crypto-asset exchange validation service providers."
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922-ind03"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922-ind03"],
 		"exchangeSlugs": []
 	},
 	"t-11922-ind05": {
@@ -97,10 +80,7 @@
 			"hu": "Az elfogadott törvényhez készített előterjesztői indokolás megjelent az Indokolások Tárában. A kriptoeszközökre vonatkozó rendelkezések változatlanok maradtak.",
 			"en": "The explanatory memorandum for the adopted law was published in the Indokolások Tára. Provisions on crypto-assets remained unchanged."
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922-ind05"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922-ind05"],
 		"exchangeSlugs": []
 	},
 	"t-11922-szavazas": {
@@ -114,11 +94,7 @@
 			"hu": "<b>Az Országgyűlés rendkívüli ülésén elfogadta a törvényjavaslatot anélkül, hogy bármely módosító javaslat definiálta volna a validálás fogalmát.</b> Minősített többséget igénylő rész: 162 igen, 94 nem (14:39:54). Egyszerű többséget igénylő rész: 162 igen, 94 nem (14:40:29).",
 			"en": "<b>The National Assembly adopted the bill at an extraordinary session without any amendment defining what validation means.</b> Qualified majority part: 162 yes, 94 no (14:39:54). Simple majority part: 162 yes, 94 no (14:40:29)."
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922-ind05",
-			"stopkriptovalidacio-szavazasi-adatok"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922-ind05", "stopkriptovalidacio-szavazasi-adatok"],
 		"exchangeSlugs": []
 	},
 	"t-11922-hazelnok-alairas": {
@@ -132,10 +108,7 @@
 			"hu": "Az Országgyűlés elnöke aláírta a Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényjavaslatot és megküldte a köztársasági elnöknek.",
 			"en": "The Speaker of the National Assembly signed the bill on the amendment of certain laws to improve Hungary's competitiveness and sent it to the President of the Republic."
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922-ind05"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922-ind05"],
 		"exchangeSlugs": []
 	},
 	"t-11922-koztarsasagi-elnok-alairas": {
@@ -149,10 +122,7 @@
 			"hu": "A köztársasági elnök aláírta a Magyarország versenyképességének javítása érdekében egyes törvények módosításáról szóló törvényt.",
 			"en": "The President of the Republic signed the Act on the amendment of certain laws to improve Hungary's competitiveness."
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922-ind05"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922-ind05"],
 		"exchangeSlugs": []
 	},
 	"t-11922-kihirdetes": {
@@ -166,10 +136,7 @@
 			"hu": "A törvény megjelent a Magyar Közlöny 2025/75. számában mint 2025. évi LXVII. törvény Magyarország versenyképességének javítása érdekében egyes törvények módosításáról.",
 			"en": "The law was published in Magyar Közlöny issue 2025/75 as Act LXVII of 2025 on the amendment of certain laws to improve Hungary's competitiveness."
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922-ind05"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922-ind05"],
 		"exchangeSlugs": []
 	},
 	"t-11922-hatalyba-lepes": {
@@ -183,11 +150,7 @@
 			"hu": "A törvény hatályba lépett. <b>A kriptoeszköz-átváltást validáló szolgáltatásra vonatkozó végrehajtási rendelet az SZTFH részéről ekkor még nem létezett.</b> A törvény 259. §-a szerint a validálási kötelezettség az SZTFH elnöki rendelet hatálybalépését követő 60. naptól alkalmazandó.",
 			"en": "The law entered into force. <b>The implementing regulation for crypto-asset exchange validation services from SZTFH did not exist at this time.</b> According to Section 259 of the law, the validation requirement applies from the 60th day after the SZTFH presidential decree enters into force."
 		},
-		"sourceSlugs": [
-			"parlament-11922-oldal",
-			"parlament-11922-ind03",
-			"parlament-11922-ind05"
-		],
+		"sourceSlugs": ["parlament-11922-oldal", "parlament-11922-ind03", "parlament-11922-ind05"],
 		"exchangeSlugs": []
 	},
 	"revolut-korlatozas-kezdete": {
@@ -201,12 +164,8 @@
 			"hu": "A Revolut értesítette magyar ügyfeleit a kriptovaluta-szolgáltatások részleges szüneteltetéséről. A vételi megbízások, staking indítása és befizetések nem voltak elérhetők.",
 			"en": "Revolut notified Hungarian customers about partial suspension of cryptocurrency services. Buy orders, staking initiation, and deposits were unavailable."
 		},
-		"sourceSlugs": [
-			"revolut-24hu-2025-07-04"
-		],
-		"exchangeSlugs": [
-			"revolut"
-		]
+		"sourceSlugs": ["revolut-24hu-2025-07-04"],
+		"exchangeSlugs": ["revolut"]
 	},
 	"revolut-befagyasztas": {
 		"date": "2025-07-07",
@@ -219,12 +178,8 @@
 			"hu": "A korlátozások a legszigorúbbá váltak: a meglévő ügyfelek kiszolgálása is leállt. Sem vásárlás, sem eladás, sem átutalás nem volt lehetséges.",
 			"en": "Restrictions reached their strictest level: service to existing customers also stopped. No purchases, sales, or transfers were possible."
 		},
-		"sourceSlugs": [
-			"revolut-telex-2025-07-09"
-		],
-		"exchangeSlugs": [
-			"revolut"
-		]
+		"sourceSlugs": ["revolut-telex-2025-07-09"],
+		"exchangeSlugs": ["revolut"]
 	},
 	"sztfh-rendelet-kihirdetes": {
 		"date": "2025-10-27",
@@ -237,10 +192,7 @@
 			"hu": "Megjelent a kripto validátor szolgáltatók engedélyezésének és nyilvántartásának részletes szabályairól szóló 10/2025. (X. 27.) SZTFH rendelet. A rendelet a kihirdetést követő 3. napon lép hatályba, alkalmazni a 60. naptól kell. <b>A kripto validálás és validátor fogalma továbbra sincs definiálva.</b>",
 			"en": "SZTFH Regulation 10/2025 (X. 27.) on detailed rules for licensing and registration of crypto validator service providers was published. The regulation enters into force on the 3rd day after publication, applicable from the 60th day. <b>The terms crypto validation and validator remain undefined.</b>"
 		},
-		"sourceSlugs": [
-			"sztfh-rendelet-10-2025",
-			"sztfh-kozlemeny-2025-10-27"
-		],
+		"sourceSlugs": ["sztfh-rendelet-10-2025", "sztfh-kozlemeny-2025-10-27"],
 		"exchangeSlugs": []
 	},
 	"sztfh-rendelet-12-2025-kihirdetes": {
@@ -254,9 +206,7 @@
 			"hu": "Megjelent a kriptoeszköz-átváltást validáló szolgáltató engedélyezésével összefüggő eljárások igazgatási szolgáltatási díjairól szóló rendelet. Az engedélyezési eljárás díja 620 000 Ft. A rendelet a kihirdetést követő 31. napon lép hatályba.",
 			"en": "The regulation on administrative service fees for crypto-asset exchange validation service provider licensing procedures was published. The licensing fee is 620,000 HUF. The regulation enters into force on the 31st day after publication."
 		},
-		"sourceSlugs": [
-			"sztfh-rendelet-12-2025"
-		],
+		"sourceSlugs": ["sztfh-rendelet-12-2025"],
 		"exchangeSlugs": []
 	},
 	"caduceus-alapitas": {
@@ -270,12 +220,7 @@
 			"hu": "Megalakult a Caduceus Zártkörűen Működő Részvénytársaság 100 millió Ft jegyzett tőkével. Igazgatóság elnöke és többségi tulajdonos: Vesszős Bence Marcell. Igazgatósági tagok: Kollár József és Hatvani Andrea. <b>A vezetőségnek nincs ismert kriptovaluta- vagy pénzügyi szektorbeli tapasztalata.</b> Az elnök testvére, Vesszős Gergely, a NAV Bűnügyi Főigazgatóságának egykori munkatársa, aki a virtuális fizetőeszközök szabályozásában vett részt.",
 			"en": "Caduceus Private Limited Company was founded with 100 million HUF registered capital. Chairman and majority owner: Bence Marcell Vesszős. Board members: József Kollár and Andrea Hatvani. <b>The leadership has no known cryptocurrency or financial sector experience.</b> The chairman's brother, Gergely Vesszős, is a former employee of NAV's Criminal Directorate who worked on virtual currency regulation."
 		},
-		"sourceSlugs": [
-			"caduceus-cegkivonat",
-			"caduceus-cegbetekintes",
-			"caduceus-cegkozlony",
-			"bitcoinbazis-caduceus"
-		],
+		"sourceSlugs": ["caduceus-cegkivonat", "caduceus-cegbetekintes", "caduceus-cegkozlony", "bitcoinbazis-caduceus"],
 		"exchangeSlugs": []
 	},
 	"caduceus-bejegyzes": {
@@ -289,12 +234,7 @@
 			"hu": "A Caduceus Zrt.-t bejegyezték a cégnyilvántartásba. A cég a bejegyzés előtt ismeretlen volt a kriptovaluta-iparágban: nem volt jelen helyi kriptotalálkozókon, fórumokon, és nem rendelkezett jelentős szakmai múlttal a szektorban.",
 			"en": "Caduceus Zrt. was registered in the company registry. Prior to registration, the company was unknown in the crypto industry: it had no presence at local crypto meetups, forums, and no notable track record in the sector."
 		},
-		"sourceSlugs": [
-			"caduceus-cegkivonat",
-			"caduceus-cegbetekintes",
-			"caduceus-cegkozlony",
-			"bitcoinbazis-caduceus"
-		],
+		"sourceSlugs": ["caduceus-cegkivonat", "caduceus-cegbetekintes", "caduceus-cegkozlony", "bitcoinbazis-caduceus"],
 		"exchangeSlugs": []
 	},
 	"sztfh-elso-validator": {
@@ -348,9 +288,7 @@
 			"en": "Bull Bitcoin is currently unavailable in Hungary."
 		},
 		"sourceSlugs": [],
-		"exchangeSlugs": [
-			"bull-bitcoin"
-		]
+		"exchangeSlugs": ["bull-bitcoin"]
 	},
 	"caduceus-weboldal": {
 		"date": "2025-12-19",
@@ -363,10 +301,7 @@
 			"hu": "Caduceus elindította weboldalát (caduceus.hu) – mindössze napokkal az új szabályok hatálybalépése előtt. A weboldal minimális információt tartalmazott: hiányoztak az EU-s előírásoknak megfelelő adatvédelmi és süti-szabályzatok, részletes szolgáltatásleírások. Csak bejelentkezési portál, ÁSZF és elérhetőség volt elérhető.",
 			"en": "Caduceus launched its website (caduceus.hu) – just days before the new rules took effect. The website was minimal, lacking EU-compliant privacy and cookie policies as well as detailed service descriptions. Only a login portal, terms of service, and contact information were available."
 		},
-		"sourceSlugs": [
-			"caduceus-weboldal",
-			"bitcoinbazis-caduceus"
-		],
+		"sourceSlugs": ["caduceus-weboldal", "bitcoinbazis-caduceus"],
 		"exchangeSlugs": []
 	},
 	"revolut-bejelentes": {
@@ -380,14 +315,8 @@
 			"hu": "A Revolut bejelentette kriptovaluta-szolgáltatásainak teljes megszüntetését Magyarországon. Az ügyfeleknek december 18-ig kell rendelkezniük kriptoeszközeikről.",
 			"en": "Revolut announced the complete termination of cryptocurrency services in Hungary. Customers must manage their crypto assets by December 18."
 		},
-		"sourceSlugs": [
-			"revolut-telex-2025-12-08",
-			"revolut-help-hu",
-			"revolut-24hu-2025-12-08"
-		],
-		"exchangeSlugs": [
-			"revolut"
-		]
+		"sourceSlugs": ["revolut-telex-2025-12-08", "revolut-help-hu", "revolut-24hu-2025-12-08"],
+		"exchangeSlugs": ["revolut"]
 	},
 	"revolut-kivonulas": {
 		"date": "2025-12-18",
@@ -400,14 +329,8 @@
 			"hu": "A Revolut kriptovaluta-szolgáltatásai megszűntek Magyarországon. A határidőig el nem adott kriptoeszközök automatikus értékesítésre kerültek.",
 			"en": "Revolut cryptocurrency services ended in Hungary. Crypto assets not sold by the deadline were automatically liquidated."
 		},
-		"sourceSlugs": [
-			"revolut-telex-2025-12-08",
-			"revolut-help-hu",
-			"revolut-24hu-2025-12-08"
-		],
-		"exchangeSlugs": [
-			"revolut"
-		]
+		"sourceSlugs": ["revolut-telex-2025-12-08", "revolut-help-hu", "revolut-24hu-2025-12-08"],
+		"exchangeSlugs": ["revolut"]
 	},
 	"strike-bejelentes": {
 		"date": "2026-01-07",
@@ -421,9 +344,7 @@
 			"en": "Strike notified customers that starting January 9, 2026, only EUR and BTC withdrawals will be available in Hungary. Buy and sell features will be discontinued."
 		},
 		"sourceSlugs": [],
-		"exchangeSlugs": [
-			"strike"
-		]
+		"exchangeSlugs": ["strike"]
 	},
 	"strike-kivonulas": {
 		"date": "2026-01-09",
@@ -437,9 +358,7 @@
 			"en": "Strike discontinued buy and sell features in Hungary. Only EUR and BTC withdrawals remain available."
 		},
 		"sourceSlugs": [],
-		"exchangeSlugs": [
-			"strike"
-		]
+		"exchangeSlugs": ["strike"]
 	},
 	"etoro-bejelentes": {
 		"date": "2025-12-18",
@@ -452,13 +371,8 @@
 			"hu": "Az eToro bejelentette, hogy december 26-tól megszünteti a hagyományos kriptovaluta vásárlást és eladást Magyarországon. A kripto CFD-k továbbra is elérhetők maradnak.",
 			"en": "eToro announced that it will discontinue traditional cryptocurrency buying and selling in Hungary from December 26. Crypto CFDs will remain available."
 		},
-		"sourceSlugs": [
-			"etoro-portfolio-2025-12-19",
-			"etoro-vg-2025-12-18"
-		],
-		"exchangeSlugs": [
-			"etoro"
-		]
+		"sourceSlugs": ["etoro-portfolio-2025-12-19", "etoro-vg-2025-12-18"],
+		"exchangeSlugs": ["etoro"]
 	},
 	"etoro-kivonulas": {
 		"date": "2025-12-26",
@@ -471,12 +385,8 @@
 			"hu": "Az eToro-nál megszűnt a hagyományos kriptovaluta-kereskedés Magyarországon. A felhasználók lezárhatták pozícióikat, ezt követően csak kripto CFD-k maradtak elérhetők.",
 			"en": "Traditional cryptocurrency trading ended at eToro in Hungary. Users could close their positions, after which only crypto CFDs remained available."
 		},
-		"sourceSlugs": [
-			"etoro-portfolio-2025-12-19"
-		],
-		"exchangeSlugs": [
-			"etoro"
-		]
+		"sourceSlugs": ["etoro-portfolio-2025-12-19"],
+		"exchangeSlugs": ["etoro"]
 	},
 	"ahang-peticio": {
 		"date": "2025-07-08",
@@ -489,9 +399,7 @@
 			"hu": "Civil petíció indult az Országgyűléshez a kriptovaluta-szabályozás felülvizsgálatáért. A petíció szerint a törvény sérti a jogbiztonság és arányosság elvét, ellehetetleníti a magyar kriptoszektort, és az EU-s szabályozásnál szigorúbb, aránytalan szankciókat vezet be.",
 			"en": "A civil petition was launched to the Parliament requesting a review of cryptocurrency regulation. The petition argues the law violates principles of legal certainty and proportionality, makes the Hungarian crypto sector impossible, and introduces disproportionately strict sanctions exceeding EU standards."
 		},
-		"sourceSlugs": [
-			"ahang-peticio-2025-07-08"
-		],
+		"sourceSlugs": ["ahang-peticio-2025-07-08"],
 		"exchangeSlugs": []
 	},
 	"coincash-regisztracio-szunetel": {
@@ -505,13 +413,8 @@
 			"hu": "A CoinCash felfüggesztette az új regisztrációkat, de a meglévő ügyfelek továbbra is használhatták a webes váltási szolgáltatást.",
 			"en": "CoinCash suspended new registrations, but existing customers could continue using the web exchange service."
 		},
-		"sourceSlugs": [
-			"coincash-blog-2025-07-08",
-			"coincash-telex-2025-07-08"
-		],
-		"exchangeSlugs": [
-			"coincash"
-		]
+		"sourceSlugs": ["coincash-blog-2025-07-08", "coincash-telex-2025-07-08"],
+		"exchangeSlugs": ["coincash"]
 	},
 	"coincash-bejelentes": {
 		"date": "2025-12-17",
@@ -524,12 +427,8 @@
 			"hu": "A CoinCash bejelentette, hogy december 18-tól ideiglenesen felfüggeszti szolgáltatásait Magyarországon.",
 			"en": "CoinCash announced the temporary suspension of services in Hungary from December 18."
 		},
-		"sourceSlugs": [
-			"coincash-blog-2025-12-17"
-		],
-		"exchangeSlugs": [
-			"coincash"
-		]
+		"sourceSlugs": ["coincash-blog-2025-12-17"],
+		"exchangeSlugs": ["coincash"]
 	},
 	"coincash-felfuggesztes": {
 		"date": "2025-12-18",
@@ -542,14 +441,8 @@
 			"hu": "A CoinCash ideiglenesen felfüggesztette szolgáltatásait Magyarországon. Új váltási megbízás nem adható le a felületeken.",
 			"en": "CoinCash temporarily suspended services in Hungary. New exchange orders cannot be placed on the platforms."
 		},
-		"sourceSlugs": [
-			"coincash-telex-2025-12-18",
-			"coincash-portfolio-2025-12-18",
-			"coincash-hvg-2025-12-18"
-		],
-		"exchangeSlugs": [
-			"coincash"
-		]
+		"sourceSlugs": ["coincash-telex-2025-12-18", "coincash-portfolio-2025-12-18", "coincash-hvg-2025-12-18"],
+		"exchangeSlugs": ["coincash"]
 	},
 	"bitstamp-kereskedes-felfuggesztve": {
 		"date": "2025-07-09",
@@ -562,14 +455,8 @@
 			"hu": "A Bitstamp felfüggesztette a kriptoeszközök vételét és eladását magyar ügyfelek számára. A befizetés, kiutalás, staking és kölcsönzés ideiglenesen elérhető maradt.",
 			"en": "Bitstamp suspended buying and selling of crypto assets for Hungarian customers. Deposits, withdrawals, staking, and lending temporarily remained available."
 		},
-		"sourceSlugs": [
-			"bitstamp-kriptoakademia-2025-07-09",
-			"bitstamp-cryptofalka-2025-07-09",
-			"bitstamp-origo-2025-07"
-		],
-		"exchangeSlugs": [
-			"bitstamp"
-		]
+		"sourceSlugs": ["bitstamp-kriptoakademia-2025-07-09", "bitstamp-cryptofalka-2025-07-09", "bitstamp-origo-2025-07"],
+		"exchangeSlugs": ["bitstamp"]
 	},
 	"uphold-uj-fiokok-korlatozva": {
 		"date": "2025-08-13",
@@ -582,12 +469,8 @@
 			"hu": "Az Uphold felvette Magyarországot azon országok listájára, ahol nem nyithatók új fiókok. A meglévő ügyfelek korlátozott hozzáféréssel továbbra is használhatják a szolgáltatást.",
 			"en": "Uphold added Hungary to its list of countries where new accounts cannot be opened. Existing customers may continue using the service with limited access."
 		},
-		"sourceSlugs": [
-			"uphold-non-supported-jurisdictions"
-		],
-		"exchangeSlugs": [
-			"uphold"
-		]
+		"sourceSlugs": ["uphold-non-supported-jurisdictions"],
+		"exchangeSlugs": ["uphold"]
 	},
 	"swissborg-magyarorszag-eltavolitva": {
 		"date": "2025-09-10",
@@ -600,12 +483,8 @@
 			"hu": "A SwissBorg eltávolította Magyarországot a támogatott országok listájáról. A szolgáltatás új és meglévő magyar ügyfelek számára egyaránt megszűnt.",
 			"en": "SwissBorg removed Hungary from its list of supported countries. The service is no longer available for new or existing Hungarian customers."
 		},
-		"sourceSlugs": [
-			"swissborg-supported-countries"
-		],
-		"exchangeSlugs": [
-			"swissborg"
-		]
+		"sourceSlugs": ["swissborg-supported-countries"],
+		"exchangeSlugs": ["swissborg"]
 	},
 	"kriptomat-bejelentes": {
 		"date": "2025-12-22",
@@ -618,13 +497,8 @@
 			"hu": "A Kriptomat bejelentette, hogy december 26-tól 23:00-tól ideiglenesen felfüggeszti kereskedési szolgáltatásait Magyarországon.",
 			"en": "Kriptomat announced the temporary suspension of trading services in Hungary from December 26 at 23:00 CET."
 		},
-		"sourceSlugs": [
-			"kriptomat-official-2025-12-22",
-			"kriptomat-revb-2025-12-24"
-		],
-		"exchangeSlugs": [
-			"kriptomat"
-		]
+		"sourceSlugs": ["kriptomat-official-2025-12-22", "kriptomat-revb-2025-12-24"],
+		"exchangeSlugs": ["kriptomat"]
 	},
 	"kriptomat-felfuggesztes": {
 		"date": "2025-12-26",
@@ -637,13 +511,8 @@
 			"hu": "A Kriptomat ideiglenesen felfüggesztette kereskedési szolgáltatásait Magyarországon. A vétel, eladás, váltás, KriptoEarn és Intelligent Portfolios szünetel, de a kifizetések elérhetők maradnak.",
 			"en": "Kriptomat temporarily suspended trading services in Hungary. Buy, sell, exchange, KriptoEarn, and Intelligent Portfolios paused, but withdrawals remain available."
 		},
-		"sourceSlugs": [
-			"kriptomat-index-2025-12-25",
-			"kriptomat-privatbankar-2025-12-25"
-		],
-		"exchangeSlugs": [
-			"kriptomat"
-		]
+		"sourceSlugs": ["kriptomat-index-2025-12-25", "kriptomat-privatbankar-2025-12-25"],
+		"exchangeSlugs": ["kriptomat"]
 	},
 	"bitvavo-bejelentes": {
 		"date": "2025-12-20",
@@ -656,12 +525,8 @@
 			"hu": "A Bitvavo bejelentette, hogy december 26-tól (17:00 CET) felfüggeszti a kereskedést és befizetést magyar ügyfelek számára. A kereskedési célú (trade-only) eszközöket a határidőig el kell adni.",
 			"en": "Bitvavo announced the suspension of trading and deposits for Hungarian customers from December 26 (17:00 CET). Trade-only assets must be sold before the deadline."
 		},
-		"sourceSlugs": [
-			"bitvavo-support-2025-12"
-		],
-		"exchangeSlugs": [
-			"bitvavo"
-		]
+		"sourceSlugs": ["bitvavo-support-2025-12"],
+		"exchangeSlugs": ["bitvavo"]
 	},
 	"bitvavo-felfuggesztes": {
 		"date": "2025-12-26",
@@ -674,12 +539,8 @@
 			"hu": "A Bitvavo felfüggesztette a kereskedést és befizetést magyar ügyfelek számára. Csak euró kifizetés és kriptoeszközök külső tárcába utalása lehetséges. A kereskedési célú eszközök eladhatatlanná váltak.",
 			"en": "Bitvavo suspended trading and deposits for Hungarian customers. Only euro withdrawals and crypto transfers to external wallets remain available. Trade-only assets became unsellable."
 		},
-		"sourceSlugs": [
-			"bitvavo-support-2025-12"
-		],
-		"exchangeSlugs": [
-			"bitvavo"
-		]
+		"sourceSlugs": ["bitvavo-support-2025-12"],
+		"exchangeSlugs": ["bitvavo"]
 	},
 	"moonpay-nem-tamogatott": {
 		"date": "2026-01-02",
@@ -692,12 +553,8 @@
 			"hu": "A MoonPay hivatalos oldala szerint Magyarország a nem támogatott országok listáján szerepel. A szolgáltatás – beleértve a kriptovaluta vásárlást bankkártyával – nem elérhető magyar ügyfelek számára.",
 			"en": "According to MoonPay's official page, Hungary is listed as an unsupported country. The service – including cryptocurrency purchases via card – is not available to Hungarian customers."
 		},
-		"sourceSlugs": [
-			"moonpay-unsupported-countries"
-		],
-		"exchangeSlugs": [
-			"moonpay"
-		]
+		"sourceSlugs": ["moonpay-unsupported-countries"],
+		"exchangeSlugs": ["moonpay"]
 	},
 	"vsbz-indulas": {
 		"date": "2026-01-08",
@@ -710,9 +567,7 @@
 			"hu": "Elindult a VSBZ (vsbz.wikilegia.org), egy közösségi tudásbázis a kriptoeszköz-validálási kötelezettségről. A weboldal kérdéseket, e-mail sablonokat, anonimizált hatósági levelezéseket és piaci elemzéseket tartalmaz.",
 			"en": "VSBZ (vsbz.wikilegia.org) launched as a community knowledge base about crypto-asset validation requirements. The website contains questions, email templates, anonymized regulatory correspondence, and market analyses."
 		},
-		"sourceSlugs": [
-			"vsbz-wikilegia"
-		],
+		"sourceSlugs": ["vsbz-wikilegia"],
 		"exchangeSlugs": []
 	},
 	"nebeus-magyarorszag-korlatozva": {
@@ -726,12 +581,8 @@
 			"hu": "Magyarország felkerült a Nebeus korlátozott országainak listájára. Új fiók létrehozása nem engedélyezett magyar felhasználók számára.",
 			"en": "Nebeus added Hungary to its list of restricted countries. Hungarian users cannot create new accounts on the platform."
 		},
-		"sourceSlugs": [
-			"nebeus-restricted-countries"
-		],
-		"exchangeSlugs": [
-			"nebeus"
-		]
+		"sourceSlugs": ["nebeus-restricted-countries"],
+		"exchangeSlugs": ["nebeus"]
 	},
 	"k-13426-benyujtva": {
 		"date": "2026-01-12",
@@ -744,10 +595,7 @@
 			"hu": "Varju László (DK) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés 8 pontban vizsgálja a validáló szolgáltatói rendszer problémáit, beleértve a végrehajtási moratórium lehetőségét, a versenyjogi aggályokat, és a nemzetbiztonsági kockázatokat.",
 			"en": "László Varju (DK) submitted a written question to Prime Minister Viktor Orbán. The question examines in 8 points the problems of the validation service provider system, including the possibility of an implementation moratorium, competition law concerns, and national security risks."
 		},
-		"sourceSlugs": [
-			"parlament-k-13426",
-			"parlament-k-13426-oldal"
-		],
+		"sourceSlugs": ["parlament-k-13426", "parlament-k-13426-oldal"],
 		"exchangeSlugs": []
 	},
 	"k-13436-benyujtva": {
@@ -761,10 +609,7 @@
 			"hu": "Szabadi István (Mi Hazánk) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés 5 pontban firtatja a kriptoeszköz-szabályozás következményeit, beleértve a végrehajtási moratórium lehetőségét, az akkori validátorhiányból eredő jogbizonytalanságot, és a MiCA-engedéllyel rendelkező szolgáltatók kizárását.",
 			"en": "István Szabadi (Our Homeland Movement) submitted a written question to Prime Minister Viktor Orbán. The question addresses 5 points about the consequences of crypto-asset regulation, including the possibility of an implementation moratorium, legal uncertainty from the then-existing validator shortage, and exclusion of MiCA-licensed providers."
 		},
-		"sourceSlugs": [
-			"parlament-k-13436",
-			"parlament-k-13436-oldal"
-		],
+		"sourceSlugs": ["parlament-k-13436", "parlament-k-13436-oldal"],
 		"exchangeSlugs": []
 	},
 	"k-13444-benyujtva": {
@@ -778,10 +623,7 @@
 			"hu": "Gelencsér Ferenc (Momentum) írásbeli kérdést nyújtott be Orbán Viktor miniszterelnökhöz. A kérdés a végrehajtási moratórium bevezetésének lehetőségét firtatja, amíg több validáló szolgáltató nem áll rendelkezésre és az SZTFH nem tesz közzé gyakorlati útmutatót.",
 			"en": "Ferenc Gelencsér (Momentum) submitted a written question to Prime Minister Viktor Orbán. The question asks about introducing an implementation moratorium until more validation service providers become available and SZTFH publishes practical guidance."
 		},
-		"sourceSlugs": [
-			"parlament-k-13444",
-			"parlament-k-13444-oldal"
-		],
+		"sourceSlugs": ["parlament-k-13444", "parlament-k-13444-oldal"],
 		"exchangeSlugs": []
 	},
 	"frissites-2026-01-14": {
@@ -796,11 +638,7 @@
 			"en": "We updated the site with Uphold, SwissBorg and Nebeus restrictions in Hungary."
 		},
 		"sourceSlugs": [],
-		"exchangeSlugs": [
-			"uphold",
-			"swissborg",
-			"nebeus"
-		]
+		"exchangeSlugs": ["uphold", "swissborg", "nebeus"]
 	},
 	"k-13448-benyujtva": {
 		"date": "2026-01-16",
@@ -813,10 +651,7 @@
 			"hu": "Tordai Bence (Párbeszéd) írásbeli kérdést nyújtott be Nagy Márton István nemzetgazdasági miniszterhez. A kérdés a végrehajtási moratórium bevezetésének lehetőségét firtatja, valamint rákérdez, miért szükséges a magyar validátor, ha a MiCA-reguláció már kötelezi a centralizált tőzsdéket hasonló ellenőrzésekre.",
 			"en": "Bence Tordai (Dialogue) submitted a written question to Minister of National Economy Márton István Nagy. The question asks about introducing an implementation moratorium, and questions why Hungarian validators are necessary when MiCA regulation already requires centralized exchanges to perform similar checks."
 		},
-		"sourceSlugs": [
-			"parlament-k-13448",
-			"parlament-k-13448-oldal"
-		],
+		"sourceSlugs": ["parlament-k-13448", "parlament-k-13448-oldal"],
 		"exchangeSlugs": []
 	},
 	"kormany-valaszok-irasbeli-kerdesekre": {
@@ -851,10 +686,7 @@
 			"hu": "Az Európai Bizottság kötelezettségszegési eljárást indított Magyarország ellen (INFR(2025)2174), mert a 2025. évi LXVII. törvény nem teljesíti maradéktalanul a MiCA-rendeletet. <b>A Bizottság szerint az új „kriptoeszköz-átváltást validáló szolgáltatásokra\" vonatkozó engedélyezési rendszer büntetőjogi felelősséggel nem összeegyeztethető a MiCA-val.</b> A Bizottság megjegyezte, hogy a szabályozás miatt kriptoeszköz-szolgáltatók felfüggesztették szolgáltatásaikat, ami károsította az ügyfeleket és jogbizonytalanságot teremtett. Magyarországnak két hónapja van válaszolni.",
 			"en": "The European Commission has opened an infringement procedure against Hungary (INFR(2025)2174), as Act LXVII of 2025 fails to fully comply with MiCA regulation. <b>According to the Commission, the new authorisation regime for 'exchange validation services' with criminal liability is incompatible with MiCA.</b> The Commission noted that the regulation has led crypto-asset service providers to suspend services, prejudicing clients and creating legal uncertainty. Hungary has two months to respond."
 		},
-		"sourceSlugs": [
-			"ec-inf-26-115",
-			"telex-eu-kotelezettszeges-eljaras-2026-01-30"
-		],
+		"sourceSlugs": ["ec-inf-26-115", "telex-eu-kotelezettszeges-eljaras-2026-01-30"],
 		"exchangeSlugs": []
 	},
 	"bitpanda-megfelel": {
@@ -868,13 +700,8 @@
 			"hu": "A Bitpanda az első kriptoeszköz-kereskedő, amely a Caduceus Zrt. validátorral kötött szerződéssel teljesíti a hazai előírásokat.",
 			"en": "Bitpanda is the first crypto-asset exchange to become officially compliant in Hungary, having signed a contract with the Caduceus Zrt. validator."
 		},
-		"sourceSlugs": [
-			"telex-kripto-validacio-2026-02-03",
-			"caduceus-partners"
-		],
-		"exchangeSlugs": [
-			"bitpanda"
-		]
+		"sourceSlugs": ["telex-kripto-validacio-2026-02-03", "caduceus-partners"],
+		"exchangeSlugs": ["bitpanda"]
 	},
 	"tisza-program-kriptoszabalyozas": {
 		"date": "2026-02-07",
@@ -905,12 +732,8 @@
 			"hu": "A Coinbase szóvivője megkeresésünkre közölte, hogy a vállalat belső vizsgálatot és helyi magyar jogi tanácsadóval egyeztetést követően megállapította, hogy jelenlegi határokon átnyúló szolgáltatásai Magyarországon nem esnek az új törvény hatálya alá. A Coinbase továbbra is figyelemmel kíséri a szabályozási helyzetet.",
 			"en": "A Coinbase spokesperson stated in response to our inquiry that, following a thorough internal review and consultation with specialist local Hungarian counsel, the company has determined that its current cross-border services in Hungary do not fall within the new law's remit. Coinbase is continuing to closely monitor the regulatory situation."
 		},
-		"sourceSlugs": [
-			"coinbase-szovivo-nyilatkozat-2026-03-10"
-		],
-		"exchangeSlugs": [
-			"coinbase"
-		]
+		"sourceSlugs": ["coinbase-szovivo-nyilatkozat-2026-03-10"],
+		"exchangeSlugs": ["coinbase"]
 	},
 	"mi-hazank-valasz-kriptovalidacio": {
 		"date": "2026-03-23",
@@ -923,9 +746,7 @@
 			"hu": "A Mi Hazánk pártigazgatója megkeresésünkre kifejtette, hogy a párt a készpénzt és a kriptoeszközöket egyaránt a vagyoni szabadság eszközének tekinti. A hatályos törvényt jelenlegi formájában nem támogatják, a magánszemélyeket érintő büntetőjogi szankciókat elfogadhatatlannak tartják, és átlátható szabályozást követelnek.",
 			"en": "Mi Hazánk's party director stated in response to our inquiry that the party considers both cash and crypto assets as instruments of financial freedom. They do not support the current law in its present form, consider the criminal sanctions affecting individuals unacceptable, and demand transparent regulation."
 		},
-		"sourceSlugs": [
-			"mi-hazank-valasz-2026-03-23"
-		],
+		"sourceSlugs": ["mi-hazank-valasz-2026-03-23"],
 		"exchangeSlugs": []
 	},
 	"blockben-caduceus-partner": {
@@ -939,13 +760,8 @@
 			"hu": "A BlockBen a második kriptoeszköz-szolgáltató, amely megjelent a Caduceus Zrt. partneri oldalán. A kötelező validálási rendszer bevezetése óta ekkor összesen két szolgáltató kötött szerződést az akkor egyetlen engedélyezett validátorral.",
 			"en": "BlockBen became the second crypto-asset service provider listed on the Caduceus Zrt. partners page. At that point, since the mandatory validation system was introduced, only two service providers had signed a contract with the then-sole licensed validator."
 		},
-		"sourceSlugs": [
-			"bitcoinbazis-blockben-caduceus-2026-04-01",
-			"caduceus-partners"
-		],
-		"exchangeSlugs": [
-			"blockben"
-		]
+		"sourceSlugs": ["bitcoinbazis-blockben-caduceus-2026-04-01", "caduceus-partners"],
+		"exchangeSlugs": ["blockben"]
 	},
 	"frissites-2026-03-24": {
 		"date": "2026-03-24",
@@ -1041,9 +857,7 @@
 			"hu": "Megjelent a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló törvény tervezete; a véleményezési határidő 2026. június 19. A javaslat szerint a validálási kötelezettség nincs összhangban a MiCA-rendelettel, ezért <b>hatályon kívül helyezné a kapcsolódó Btk.-tényállásokat, kivezetné a validátori rendszert és az SZTFH kapcsolódó hatásköreit</b>. Az átmeneti szabályok megszüntetnék a folyamatban lévő validátori eljárásokat, és 3 munkanapos határidővel előírnák a validátoroknál és az SZTFH-nál lévő kapcsolódó adatok vissza nem állítható törlését.",
 			"en": "The draft bill repealing certain statutory provisions concerning crypto-asset exchange services was published; comments are due by June 19, 2026. The proposal states that the validation obligation is not aligned with MiCA, and would therefore <b>repeal the related Criminal Code offenses, remove the validator system, and eliminate related SZTFH powers</b>. Transitional rules would terminate ongoing validator proceedings and require related data held by validators and SZTFH to be irreversibly deleted within 3 working days."
 		},
-		"sourceSlugs": [
-			"kormany-tarsadalmi-egyeztetes-kriptoeszkoz-atvaltas-2026-06-11"
-		],
+		"sourceSlugs": ["kormany-tarsadalmi-egyeztetes-kriptoeszkoz-atvaltas-2026-06-11"],
 		"exchangeSlugs": []
 	},
 	"t-305-benyujtva": {
@@ -1057,9 +871,7 @@
 			"hu": "A Kormány T/305 számon benyújtotta a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló törvényjavaslatot. <b>A javaslat szerint hatályát veszti a kriptoeszközzel visszaélés és a jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása Btk.-alcíme, valamint megszűnik a validátori rendszer.</b> A folyamatban lévő validátori eljárásokat az SZTFH megszünteti, az engedélyek hatályukat vesztik, és a kapcsolódó adatokat 3 munkanapon belül törölni kell.",
 			"en": "The Government submitted bill T/305 on repealing certain statutory provisions concerning crypto-asset exchange services. <b>The proposal would repeal the Criminal Code headings on crypto-asset abuse and providing unauthorized crypto-asset exchange services, and would terminate the validator system.</b> Ongoing validator proceedings would be closed, licenses would expire, and related data would have to be deleted within 3 working days."
 		},
-		"sourceSlugs": [
-			"parlament-305"
-		],
+		"sourceSlugs": ["parlament-305"],
 		"exchangeSlugs": []
 	},
 	"coincash-visszateres-bejelentese": {
@@ -1073,13 +885,8 @@
 			"hu": "Miután megkapta az MNB MiCA-engedélyét, a CoinCash megkezdte szolgáltatásainak fokozatos újraindítását. A pontos menetrendről közvetlenül értesítik a meglévő ügyfeleket.",
 			"en": "After receiving its MiCA licence from the National Bank of Hungary, CoinCash began restoring its services gradually. Existing customers will be informed directly about the detailed schedule."
 		},
-		"sourceSlugs": [
-			"coincash-portfolio-2026-07-23",
-			"coincash-galantai-linkedin-2026-07-24"
-		],
-		"exchangeSlugs": [
-			"coincash"
-		]
+		"sourceSlugs": ["coincash-portfolio-2026-07-23", "coincash-galantai-linkedin-2026-07-24"],
+		"exchangeSlugs": ["coincash"]
 	},
 	"t-305-szavazas": {
 		"date": "2026-07-28",
@@ -1092,10 +899,7 @@
 			"hu": "<b>Az Országgyűlés elfogadta a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló T/305. számú törvényjavaslatot.</b> Minősített többséget igénylő rész: 143 igen, 46 nem, 1 tartózkodás (10:38:09). Egyszerű többséget igénylő rész: 143 igen, 46 nem, 1 tartózkodás (10:38:43).",
 			"en": "<b>The National Assembly adopted bill T/305 on repealing certain statutory provisions concerning crypto-asset exchange services.</b> Qualified-majority part: 143 yes, 46 no, 1 abstention (10:38:09). Simple-majority part: 143 yes, 46 no, 1 abstention (10:38:43)."
 		},
-		"sourceSlugs": [
-			"parlament-t-305-minositett-tobbsegu-szavazas",
-			"parlament-t-305-egyszeru-tobbsegu-szavazas"
-		],
+		"sourceSlugs": ["parlament-t-305-minositett-tobbsegu-szavazas", "parlament-t-305-egyszeru-tobbsegu-szavazas"],
 		"exchangeSlugs": []
 	},
 	"2026-evi-xxxviii-torveny-kihirdetese": {
@@ -1109,9 +913,7 @@
 			"hu": "A Magyar Közlönyben megjelent a kriptoeszköz-átváltási szolgáltatást érintő egyes törvényi rendelkezések hatályon kívül helyezéséről szóló 2026. évi XXXVIII. törvény. <b>A törvény hatályon kívül helyezi a kriptoeszközzel visszaélés és a jogosulatlan kriptoeszköz-átváltási szolgáltatás nyújtása Btk.-alcímeit, valamint megszünteti a validátori rendszer jogszabályi alapját.</b> A törvény 2026. augusztus 7-én lép hatályba; ekkor a validátori engedélyek hatályukat vesztik, a folyamatban lévő eljárásokat pedig az SZTFH megszünteti.",
 			"en": "Act XXXVIII of 2026 on repealing certain statutory provisions concerning crypto-asset exchange services was published in the Hungarian Gazette. <b>The Act repeals the Criminal Code headings on crypto-asset abuse and providing unauthorized crypto-asset exchange services, and removes the statutory basis for the validator system.</b> It enters into force on August 7, 2026; validator licences will then cease to have effect and SZTFH will terminate pending proceedings."
 		},
-		"sourceSlugs": [
-			"magyar-kozlony-2026-102"
-		],
+		"sourceSlugs": ["magyar-kozlony-2026-102"],
 		"exchangeSlugs": []
 	},
 	"2026-evi-xxxviii-torveny-hatalybalepese": {
@@ -1153,9 +955,7 @@
 			"hu": "Tanács Zoltán tudományos és technológiai miniszter külön posztban részletezte, mit jelent a kriptovaluták kriminalizálásának megszüntetése. A poszt a validátori kapuőrrendszert aránytalan, piacszűkítő szabályozásként írta le, és arányosabb, kiszámíthatóbb szabályozást ígért a pénzmosás elleni és fogyasztóvédelmi szempontok fenntartása mellett.",
 			"en": "Zoltán Tanács, Minister of Science and Technology, detailed in a separate post what ending the criminalization of cryptocurrencies means. The post described the validator gatekeeper system as disproportionate, market-restricting regulation and promised more proportionate, predictable regulation while maintaining anti-money-laundering and consumer-protection safeguards."
 		},
-		"sourceSlugs": [
-			"tanacs-zoltan-facebook-kriptovalutak-kriminalizalasa-2026-06-10"
-		],
+		"sourceSlugs": ["tanacs-zoltan-facebook-kriptovalutak-kriminalizalasa-2026-06-10"],
 		"exchangeSlugs": []
 	},
 	"kriptomat-nem-ter-vissza-magyarorszagra": {
@@ -1169,11 +969,7 @@
 			"hu": "A Kriptomat bejelentette, hogy 2026. június 30-ig megszünteti kriptoeszköz-szolgáltatásait. A vállalat a MiCA-engedélyezési kérelme visszavonásával, az eljárás elhúzódásával és követelményeinek bizonytalanságával indokolta a döntést.",
 			"en": "Kriptomat announced that it would cease its crypto-asset services by June 30, 2026. The company cited the withdrawal of its MiCA authorization application, the extended process, and unclear requirements as reasons for the decision."
 		},
-		"sourceSlugs": [
-			"kriptomat-wind-down-2026-05-19"
-		],
-		"exchangeSlugs": [
-			"kriptomat"
-		]
+		"sourceSlugs": ["kriptomat-wind-down-2026-05-19"],
+		"exchangeSlugs": ["kriptomat"]
 	}
 }

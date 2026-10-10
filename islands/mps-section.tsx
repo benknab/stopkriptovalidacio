@@ -1,5 +1,6 @@
-import type { JSX } from "preact";
-import { useSignal } from "@preact/signals";
+import type { SyntheticEvent } from "react";
+import type { JSX } from "react";
+import { useState } from "react";
 import {
 	getLatestMandate,
 	getMandateForYear,
@@ -25,9 +26,9 @@ import { buildMailtoUrl } from "../utils/mailto.ts";
 
 const votePriority: Record<VoteType, number> = {
 	yes: 0,
-	"not_voted": 1,
+	not_voted: 1,
 	abstain: 2,
-	"not_in_parliament": 3,
+	not_in_parliament: 3,
 	absent: 4,
 	no: 5,
 	banned: 6,
@@ -165,11 +166,11 @@ export const currentMinorityListMps = getMpsByList(MINORITY_LIST, currentMps);
 
 function EmailIcon(): JSX.Element {
 	return (
-		<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+		<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width={2}
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth={2}
 				d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
 			/>
 		</svg>
@@ -178,11 +179,11 @@ function EmailIcon(): JSX.Element {
 
 function PhoneIcon(): JSX.Element {
 	return (
-		<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+		<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width={2}
+				strokeLinecap="round"
+				strokeLinejoin="round"
+				strokeWidth={2}
 				d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
 			/>
 		</svg>
@@ -196,7 +197,7 @@ interface MpCardProps {
 	lang: SupportedLanguage;
 }
 
-function MpCard({ mpId: _, mp, mandate, lang }: MpCardProps): JSX.Element {
+function MpCard({ mp, mandate, lang }: MpCardProps): JSX.Element {
 	const colors = voteColors[mp.vote];
 	const mailtoUrl = mp.emails.size > 0 ? buildMailtoUrl({ to: Array.from(mp.emails) }) : null;
 	const firstPhone = mp.phones.size > 0 ? Array.from(mp.phones)[0] : null;
@@ -205,65 +206,59 @@ function MpCard({ mpId: _, mp, mandate, lang }: MpCardProps): JSX.Element {
 
 	return (
 		<div
-			class={`relative bg-white rounded-xl border-2 ${colors.border} p-5 transition-all duration-200 hover:shadow-md flex flex-col`}
+			className={`relative bg-white rounded-xl border-2 ${colors.border} p-5 transition-all duration-200 hover:shadow-md flex flex-col`}
 		>
 			{/* Vote Badge - Top Right */}
-			<span
-				class={`absolute top-4 right-4 text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}
-			>
+			<span className={`absolute top-4 right-4 text-xs font-medium px-2.5 py-1 rounded-full ${colors.badge}`}>
 				{t(`mps.vote.${mp.vote}`, lang)}
 			</span>
 
 			{/* Photo */}
-			<div class="flex justify-center mb-4">
+			<div className="flex justify-center mb-4">
 				<MpImage slug={mp.slug} name={mp.name} hasImage={!!mp.imageUrl} size="sm" />
 			</div>
 
 			{/* Content */}
-			<div class="flex-1 space-y-1 text-center">
-				<h3 class="font-bold text-slate-900 text-lg leading-tight">{mp.name}</h3>
+			<div className="flex-1 space-y-1 text-center">
+				<h3 className="font-bold text-slate-900 text-lg leading-tight">{mp.name}</h3>
 				{currentParty && (
-					<p class="text-sm text-slate-500">
+					<p className="text-sm text-slate-500">
 						{t(`mps.party.${currentParty}`, lang, { defaultValue: currentParty })}
 					</p>
 				)}
-				{currentDistrictOrList && <p class="text-sm text-slate-600">{currentDistrictOrList}</p>}
+				{currentDistrictOrList && <p className="text-sm text-slate-600">{currentDistrictOrList}</p>}
 			</div>
 
 			{/* Button Row */}
-			<div class="flex gap-2 mt-4">
-				{mailtoUrl
-					? (
-						<a
-							href={mailtoUrl}
-							class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
-						>
-							<EmailIcon />
-							{t("mps.email", lang)}
-						</a>
-					)
-					: (
-						<span class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
-							<EmailIcon />
-							{t("mps.email", lang)}
-						</span>
-					)}
-				{firstPhone
-					? (
-						<a
-							href={`tel:+${firstPhone}`}
-							class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-white bg-brand rounded-lg hover:bg-brand-hover transition-colors"
-						>
-							<PhoneIcon />
-							{t("mps.phone", lang)}
-						</a>
-					)
-					: (
-						<span class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
-							<PhoneIcon />
-							{t("mps.phone", lang)}
-						</span>
-					)}
+			<div className="flex gap-2 mt-4">
+				{mailtoUrl ? (
+					<a
+						href={mailtoUrl}
+						className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+					>
+						<EmailIcon />
+						{t("mps.email", lang)}
+					</a>
+				) : (
+					<span className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+						<EmailIcon />
+						{t("mps.email", lang)}
+					</span>
+				)}
+				{firstPhone ? (
+					<a
+						href={`tel:+${firstPhone}`}
+						className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-white bg-brand rounded-lg hover:bg-brand-hover transition-colors"
+					>
+						<PhoneIcon />
+						{t("mps.phone", lang)}
+					</a>
+				) : (
+					<span className="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 bg-slate-50 border border-slate-200 rounded-lg cursor-not-allowed">
+						<PhoneIcon />
+						{t("mps.phone", lang)}
+					</span>
+				)}
 			</div>
 		</div>
 	);
@@ -288,163 +283,143 @@ export interface MpsSectionProps {
 
 export default function MpsSection(props: MpsSectionProps): JSX.Element {
 	const { lang, electionYear, sectionId = "kepviselok", showHeading = true } = props;
-	const selectedCounty = useStringQueryParam({
+	const [selectedCounty, setSelectedCounty] = useStringQueryParam({
 		key: "megye",
-		defaultValue: "",
+		defaultValue: electionYear === 2022 ? ALL_OPTION : "",
 		initialValue: props.selectedCounty,
 	});
-	const selectedDistrict = useStringQueryParam({
+	const [selectedDistrict, setSelectedDistrict] = useStringQueryParam({
 		key: "kerulet",
 		defaultValue: "",
 		initialValue: props.selectedDistrict,
 	});
-	const searchQuery = useSignal("");
+	const [searchQuery, setSearchQuery] = useState("");
 	const voteSource = sources["parlament-szavazas-11922"];
 	const sectionMps = electionYear !== undefined ? getSortedMps(electionYear) : sortedMps;
 	const sectionCountyData = electionYear !== undefined ? buildCountyData(sectionMps) : countyData;
 	const mpDirectorySource = electionYear === 2022 ? historicalMpListSource : mpListSource;
 
-	const isAllSelected = selectedCounty.value === ALL_OPTION;
-	const currentCountyData = sectionCountyData.find((c) => c.name === selectedCounty.value);
+	const isAllSelected = selectedCounty === ALL_OPTION;
+	const currentCountyData = sectionCountyData.find((c) => c.name === selectedCounty);
 	const isNationalList = currentCountyData?.isNationalList ?? false;
 
 	const filteredMps = sectionMps.filter(({ mp, mandate }) => {
 		// Name search filter (always applied if set)
-		if (searchQuery.value) {
-			const query = searchQuery.value.toLowerCase();
+		if (searchQuery) {
+			const query = searchQuery.toLowerCase();
 			if (!mp.name.toLowerCase().includes(query)) {
 				return false;
 			}
 		}
 
 		// If only search query is set (no county), show matching results
-		if (!selectedCounty.value && searchQuery.value) {
+		if (!selectedCounty && searchQuery) {
 			return true;
 		}
 
 		if (isAllSelected) return true;
-		if (!selectedCounty.value) return false;
+		if (!selectedCounty) return false;
 
 		const parsed = parseDistrict(getMandateLabel(mandate));
 		if (!parsed) return false;
 
 		if (isNationalList) {
-			return parsed.county === selectedCounty.value;
+			return parsed.county === selectedCounty;
 		}
 
-		if (parsed.county !== selectedCounty.value) return false;
-		if (selectedDistrict.value && parsed.districtNum !== selectedDistrict.value) return false;
+		if (parsed.county !== selectedCounty) return false;
+		if (selectedDistrict && parsed.districtNum !== selectedDistrict) return false;
 
 		return true;
 	});
 
-	function handleCountyChange(e: Event): void {
-		selectedCounty.value = (e.target as HTMLSelectElement).value;
-		selectedDistrict.value = "";
+	function handleCountyChange(e: SyntheticEvent): void {
+		setSelectedCounty((e.target as HTMLSelectElement).value);
+		setSelectedDistrict("");
 	}
 
-	function handleDistrictChange(e: Event): void {
-		selectedDistrict.value = (e.target as HTMLSelectElement).value;
+	function handleDistrictChange(e: SyntheticEvent): void {
+		setSelectedDistrict((e.target as HTMLSelectElement).value);
 	}
 
-	function handleSearchInput(e: Event): void {
-		searchQuery.value = (e.target as HTMLInputElement).value;
+	function handleSearchInput(e: SyntheticEvent): void {
+		setSearchQuery((e.target as HTMLInputElement).value);
 	}
 
 	return (
-		<section id={sectionId} class="bg-slate-50 py-16 sm:py-20">
-			<div class="mx-auto max-w-6xl px-4 sm:px-6">
+		<section id={sectionId} className="bg-slate-50 py-16 sm:py-20">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				{showHeading && (
 					<>
 						<H2>{t("mps.title", lang)}</H2>
-						<p class="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
-							{t("mps.description", lang)}
-						</p>
+						<p className="mt-4 text-slate-600 text-center max-w-2xl mx-auto">{t("mps.description", lang)}</p>
 					</>
 				)}
 
-				<div class={`${showHeading ? "mt-8 " : ""}p-4 bg-white rounded-lg border border-slate-200`}>
-					<p class="text-sm text-slate-600">
-						<strong>{t("mps.source", lang)}:</strong> {voteSource.originalUrl
-							? (
-								<ExternalLink href={voteSource.originalUrl} class="underline">
-									{voteSource.title[lang]}
-								</ExternalLink>
-							)
-							: <span>{voteSource.title[lang]}</span>}
+				<div className={`${showHeading ? "mt-8 " : ""}p-4 bg-white rounded-lg border border-slate-200`}>
+					<p className="text-sm text-slate-600">
+						<strong>{t("mps.source", lang)}:</strong>{" "}
+						{voteSource.originalUrl ? (
+							<ExternalLink href={voteSource.originalUrl} className="underline">
+								{voteSource.title[lang]}
+							</ExternalLink>
+						) : (
+							<span>{voteSource.title[lang]}</span>
+						)}
 						{" | "}
-						<ExternalLink href={mpDirectorySource.url} class="underline">
-							{electionYear === 2022
-								? t("mps.election_source_2022", lang)
-								: t("mps.mp_list_source", lang)}
+						<ExternalLink href={mpDirectorySource.url} className="underline">
+							{electionYear === 2022 ? t("mps.election_source_2022", lang) : t("mps.mp_list_source", lang)}
 						</ExternalLink>
 					</p>
 				</div>
 
-				<div class="mt-6 grid grid-cols-2 gap-3">
-					<div class="relative">
+				<div className="mt-6 grid grid-cols-2 gap-3">
+					<div className="relative">
 						<label
-							for="mp-county-select"
-							class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5"
+							htmlFor="mp-county-select"
+							className="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5"
 						>
 							{t("mps.filter.county", lang)}
 						</label>
 						<select
 							id="mp-county-select"
-							value={selectedCounty.value}
+							value={selectedCounty}
 							onChange={handleCountyChange}
-							class="w-full h-11 pl-3 pr-8 bg-white border-2 border-slate-200 rounded-md text-sm text-slate-900 font-medium appearance-none cursor-pointer transition-all duration-150 hover:border-brand/50 focus:outline-none focus:border-brand focus:ring-4 focus:ring-brand/10"
+							className="w-full h-11 pl-3 pr-8 bg-white border-2 border-slate-200 rounded-md text-sm text-slate-900 font-medium appearance-none cursor-pointer transition-all duration-150 hover:border-brand/50 focus:outline-none focus:border-brand focus:ring-4 focus:ring-brand/10"
 						>
 							<option value="">{t("mps.filter.select_county", lang)}</option>
 							<option value={ALL_OPTION}>{t("mps.filter.all", lang)}</option>
 							{sectionCountyData.map((county) => (
 								<option key={county.name} value={county.name}>
 									{county.isNationalList
-										? t(
-											`mps.filter.${
-												county.name === NATIONAL_LIST ? "national_list" : "minority_list"
-											}`,
-											lang,
-										)
+										? t(`mps.filter.${county.name === NATIONAL_LIST ? "national_list" : "minority_list"}`, lang)
 										: county.name}
 								</option>
 							))}
 						</select>
-						<div class="pointer-events-none absolute right-3 bottom-3.5">
-							<svg
-								class="w-4 h-4 text-slate-400"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width={2}
-									d="M19 9l-7 7-7-7"
-								/>
+						<div className="pointer-events-none absolute right-3 bottom-3.5">
+							<svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
 							</svg>
 						</div>
 					</div>
 
-					<div class="relative">
+					<div className="relative">
 						<label
-							for="mp-district-select"
-							class={`block text-xs font-semibold uppercase tracking-wider mb-1.5 transition-colors ${
-								!selectedCounty.value || isNationalList || isAllSelected
-									? "text-slate-300"
-									: "text-slate-500"
+							htmlFor="mp-district-select"
+							className={`block text-xs font-semibold uppercase tracking-wider mb-1.5 transition-colors ${
+								!selectedCounty || isNationalList || isAllSelected ? "text-slate-300" : "text-slate-500"
 							}`}
 						>
 							{t("mps.filter.district", lang)}
 						</label>
 						<select
 							id="mp-district-select"
-							value={selectedDistrict.value}
-							disabled={!selectedCounty.value || isNationalList || isAllSelected}
+							value={selectedDistrict}
+							disabled={!selectedCounty || isNationalList || isAllSelected}
 							onChange={handleDistrictChange}
-							class={`w-full h-11 pl-3 pr-8 border-2 rounded-md text-sm font-medium appearance-none transition-all duration-150 focus:outline-none ${
-								!selectedCounty.value || isNationalList || isAllSelected
+							className={`w-full h-11 pl-3 pr-8 border-2 rounded-md text-sm font-medium appearance-none transition-all duration-150 focus:outline-none ${
+								!selectedCounty || isNationalList || isAllSelected
 									? "bg-slate-50 border-slate-100 text-slate-300 cursor-not-allowed"
 									: "bg-white border-slate-200 text-slate-900 cursor-pointer hover:border-brand/50 focus:border-brand focus:ring-4 focus:ring-brand/10"
 							}`}
@@ -457,38 +432,28 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 							))}
 						</select>
 						<div
-							class={`pointer-events-none absolute right-3 bottom-3.5 transition-opacity ${
-								!selectedCounty.value || isNationalList || isAllSelected ? "opacity-30" : ""
+							className={`pointer-events-none absolute right-3 bottom-3.5 transition-opacity ${
+								!selectedCounty || isNationalList || isAllSelected ? "opacity-30" : ""
 							}`}
 						>
-							<svg
-								class="w-4 h-4 text-slate-400"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-							>
-								<path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width={2}
-									d="M19 9l-7 7-7-7"
-								/>
+							<svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
 							</svg>
 						</div>
 					</div>
 				</div>
 
-				<div class="mt-3">
+				<div className="mt-3">
 					<SearchInput
 						id="mp-search"
-						value={searchQuery.value}
-						onInput={handleSearchInput}
+						value={searchQuery}
+						onChange={handleSearchInput}
 						placeholder={t("mps.search_placeholder", lang)}
 					/>
 				</div>
 
-				{(selectedCounty.value || searchQuery.value) && (
-					<p class="mt-4 text-sm text-slate-600 text-center">
+				{(selectedCounty || searchQuery) && (
+					<p className="mt-4 text-sm text-slate-600 text-center">
 						{t("mps.showing", lang, {
 							shown: filteredMps.length.toString(),
 							total: sectionMps.length.toString(),
@@ -496,30 +461,20 @@ export default function MpsSection(props: MpsSectionProps): JSX.Element {
 					</p>
 				)}
 
-				{!selectedCounty.value && !searchQuery.value && (
-					<p class="mt-8 text-slate-500 text-center">
-						{t("mps.filter.select_to_show", lang)}
-					</p>
+				{!selectedCounty && !searchQuery && (
+					<p className="mt-8 text-slate-500 text-center">{t("mps.filter.select_to_show", lang)}</p>
 				)}
 
-				{(selectedCounty.value || searchQuery.value) && filteredMps.length > 0 && (
-					<div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+				{(selectedCounty || searchQuery) && filteredMps.length > 0 && (
+					<div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
 						{filteredMps.map(({ mpId, mp, mandate }) => (
-							<MpCard
-								key={mpId}
-								mpId={mpId}
-								mp={mp}
-								mandate={mandate}
-								lang={lang}
-							/>
+							<MpCard key={mpId} mpId={mpId} mp={mp} mandate={mandate} lang={lang} />
 						))}
 					</div>
 				)}
 
-				{(selectedCounty.value || searchQuery.value) && filteredMps.length === 0 && (
-					<p class="mt-8 text-slate-500 text-center">
-						{t("mps.no_results", lang)}
-					</p>
+				{(selectedCounty || searchQuery) && filteredMps.length === 0 && (
+					<p className="mt-8 text-slate-500 text-center">{t("mps.no_results", lang)}</p>
 				)}
 			</div>
 		</section>

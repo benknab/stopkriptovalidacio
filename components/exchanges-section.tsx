@@ -1,4 +1,4 @@
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import { type Exchange, exchanges, type ExchangeSlug, type ExchangeStatus } from "../data/exchanges.ts";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
 import { H2 } from "./h2.tsx";
@@ -38,13 +38,13 @@ function getSortedExchanges(): Array<{ slug: ExchangeSlug; exchange: Exchange }>
 	const entries = Object.entries(exchanges) as Array<[ExchangeSlug, Exchange]>;
 
 	return entries
-		.filter(([, exchange]) =>
-			exchange.status === "restricted" || exchange.status === "closed" || exchange.returnStatus !== undefined
+		.filter(
+			([, exchange]) =>
+				exchange.status === "restricted" || exchange.status === "closed" || exchange.returnStatus !== undefined,
 		)
 		.map(([slug, exchange]) => ({ slug, exchange }))
 		.sort((a, b) => {
-			const returnDiff = Number(a.exchange.returnStatus === undefined) -
-				Number(b.exchange.returnStatus === undefined);
+			const returnDiff = Number(a.exchange.returnStatus === undefined) - Number(b.exchange.returnStatus === undefined);
 			if (returnDiff !== 0) return returnDiff;
 
 			const priorityDiff = statusPriority[a.exchange.status] - statusPriority[b.exchange.status];
@@ -75,54 +75,46 @@ function ExchangeCard({ slug, exchange, lang }: ExchangeCardProps): JSX.Element 
 
 	return (
 		<div
-			class={`bg-white rounded-xl border border-slate-200 border-t-4 ${colors.border} p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full`}
+			className={`bg-white rounded-xl border border-slate-200 border-t-4 ${colors.border} p-5 transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg flex flex-col h-full`}
 		>
-			<div class="flex justify-between items-start gap-3 mb-2">
-				<h3 class="font-semibold text-slate-900">{exchange.name}</h3>
-				<div class="flex flex-wrap justify-end gap-1.5">
-					{exchange.returnStatus
-						? (
-							<span
-								class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}
-							>
-								{t(`exchanges.return_status.${exchange.returnStatus}`, lang)}
-							</span>
-						)
-						: (
-							<span
-								class={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}
-							>
-								{t(`exchanges.status.${exchange.status}`, lang)}
-							</span>
-						)}
+			<div className="flex justify-between items-start gap-3 mb-2">
+				<h3 className="font-semibold text-slate-900">{exchange.name}</h3>
+				<div className="flex flex-wrap justify-end gap-1.5">
+					{exchange.returnStatus ? (
+						<span className={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}>
+							{t(`exchanges.return_status.${exchange.returnStatus}`, lang)}
+						</span>
+					) : (
+						<span className={`text-xs font-medium px-2 py-1 rounded-full whitespace-nowrap ${colors.badge}`}>
+							{t(`exchanges.status.${exchange.status}`, lang)}
+						</span>
+					)}
 				</div>
 			</div>
-			<p class="text-sm text-slate-600 leading-relaxed mb-4">
-				{t(`exchanges.${slug}.summary`, lang)}
-			</p>
-			{(exchange.leaveDate || exchange.returnDate || exchange.returnAnnouncementDate ||
+			<p className="text-sm text-slate-600 leading-relaxed mb-4">{t(`exchanges.${slug}.summary`, lang)}</p>
+			{(exchange.leaveDate ||
+				exchange.returnDate ||
+				exchange.returnAnnouncementDate ||
 				exchange.returnConfirmationDate) && (
-				<div class="mt-auto space-y-1 text-xs font-medium">
+				<div className="mt-auto space-y-1 text-xs font-medium">
 					{exchange.leaveDate && (
-						<p class="text-slate-500">
+						<p className="text-slate-500">
 							{t("exchanges.left_on", lang)} {formatDate(exchange.leaveDate, lang)}
 						</p>
 					)}
 					{exchange.returnDate && (
-						<p class="text-emerald-700">
+						<p className="text-emerald-700">
 							{t("exchanges.returned_on", lang)} {formatDate(exchange.returnDate, lang)}
 						</p>
 					)}
 					{exchange.returnAnnouncementDate && (
-						<p class="text-emerald-700">
-							{t("exchanges.return_announced_on", lang)}{" "}
-							{formatDate(exchange.returnAnnouncementDate, lang)}
+						<p className="text-emerald-700">
+							{t("exchanges.return_announced_on", lang)} {formatDate(exchange.returnAnnouncementDate, lang)}
 						</p>
 					)}
 					{exchange.returnConfirmationDate && (
-						<p class="text-emerald-700">
-							{t("exchanges.return_confirmed_on", lang)}{" "}
-							{formatDate(exchange.returnConfirmationDate, lang)}
+						<p className="text-emerald-700">
+							{t("exchanges.return_confirmed_on", lang)} {formatDate(exchange.returnConfirmationDate, lang)}
 						</p>
 					)}
 				</div>
@@ -137,14 +129,12 @@ interface ExchangesSectionProps {
 
 export function ExchangesSection({ lang }: ExchangesSectionProps): JSX.Element {
 	return (
-		<section id="tozsdek" class="bg-slate-50 py-16 sm:py-20">
-			<div class="mx-auto max-w-6xl px-4 sm:px-6">
+		<section id="tozsdek" className="bg-slate-50 py-16 sm:py-20">
+			<div className="mx-auto max-w-6xl px-4 sm:px-6">
 				<H2>{t("exchanges.title", lang)}</H2>
-				<p class="mt-4 text-slate-600 text-center max-w-2xl mx-auto">
-					{t("exchanges.description", lang)}
-				</p>
+				<p className="mt-4 text-slate-600 text-center max-w-2xl mx-auto">{t("exchanges.description", lang)}</p>
 
-				<div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				<div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 					{sortedExchanges.map(({ slug, exchange }) => (
 						<ExchangeCard key={slug} slug={slug} exchange={exchange} lang={lang} />
 					))}

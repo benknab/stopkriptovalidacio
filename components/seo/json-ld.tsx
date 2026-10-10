@@ -1,5 +1,4 @@
-// deno-lint-ignore-file react-no-danger
-import type { JSX } from "preact";
+import type { JSX } from "react";
 import type { SupportedLanguage } from "../../i18n/index.ts";
 import { t } from "../../i18n/index.ts";
 import { type PageId, SITE_NAME, SITE_URL } from "../../constants/seo.ts";
@@ -21,20 +20,8 @@ function buildWebSiteSchema(siteName: string): object {
 }
 
 const KEYWORDS = {
-	hu: [
-		"kripto validálás",
-		"kripto validátor",
-		"kripto validáció",
-		"kripto szabályozás",
-		"kripto törvény",
-	],
-	en: [
-		"crypto validation",
-		"crypto validator",
-		"crypto validation",
-		"crypto regulation",
-		"crypto law",
-	],
+	hu: ["kripto validálás", "kripto validátor", "kripto validáció", "kripto szabályozás", "kripto törvény"],
+	en: ["crypto validation", "crypto validator", "crypto validation", "crypto regulation", "crypto law"],
 } as const;
 
 function buildArticleSchema(
@@ -112,7 +99,7 @@ function buildBreadcrumbSchema(items: Array<{ name: string; url: string }>): obj
 	};
 }
 
-export function JsonLd({ lang, pageId }: JsonLdProps): JSX.Element {
+export function buildJsonLd({ lang, pageId }: JsonLdProps) {
 	const graph: object[] = [];
 	const siteTitle = t("site.title", lang);
 
@@ -124,7 +111,7 @@ export function JsonLd({ lang, pageId }: JsonLdProps): JSX.Element {
 	if (pageId === "home") {
 		const primaryEvents = getPrimaryEvents();
 
-		const dates = primaryEvents.map(([_, e]) => e.date);
+		const dates = primaryEvents.map(([, event]) => event.date);
 		const earliest = new Date(Math.min(...dates.map((d) => d.getTime())));
 		const latest = new Date(Math.max(...dates.map((d) => d.getTime())));
 
@@ -139,13 +126,7 @@ export function JsonLd({ lang, pageId }: JsonLdProps): JSX.Element {
 		);
 
 		const newsArticles = primaryEvents.map(([slug, event]) =>
-			buildNewsArticleSchema(
-				slug,
-				event.title[lang],
-				event.summary?.[lang] || "",
-				event.date.toISOString(),
-				lang,
-			)
+			buildNewsArticleSchema(slug, event.title[lang], event.summary?.[lang] || "", event.date.toISOString(), lang),
 		);
 
 		graph.push(buildItemListSchema(newsArticles));
@@ -196,15 +177,17 @@ export function JsonLd({ lang, pageId }: JsonLdProps): JSX.Element {
 		graph.push(buildBreadcrumbSchema(breadcrumbItems));
 	}
 
-	const jsonLd = {
+	return {
 		"@context": "https://schema.org",
 		"@graph": graph,
 	};
+}
 
+export function JsonLd(props: JsonLdProps): JSX.Element {
 	return (
 		<script
 			type="application/ld+json"
-			dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(props)).replaceAll("<", "\\u003c") }}
 		/>
 	);
 }

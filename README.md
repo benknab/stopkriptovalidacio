@@ -29,19 +29,52 @@ This website tracks Hungary's crypto asset regulations:
 
 ## Development
 
-Requires [Deno](https://deno.com/) v2+
+Requires [Node.js](https://nodejs.org/) **24.21.0 LTS** and **pnpm 12.10.1** (pinned in `package.json`).
+The runtime is pinned in `.node-version` and `.nvmrc`.
+If you use nvm, run `nvm install` from this directory to install and select the pinned runtime.
 
 ```bash
-deno install          # Install dependencies
-deno task dev         # Development server
-deno task build       # Production build
-deno task start       # Start production server
-deno task check       # Format, lint, type check
+pnpm install --frozen-lockfile  # Install dependencies
+pnpm dev                       # Development server
+pnpm build                     # Production build
+pnpm start                     # Start production Node.js server
+pnpm check                     # Format, lint, type check
+pnpm test                      # Production build + unit/component/HTTP regression tests
+pnpm test:browser              # Browser regression tests (requires agent-browser)
+pnpm setup                     # Install the optional pre-commit hook
 ```
 
 ## Tech Stack
 
-Deno, Fresh 2.0, Preact, Tailwind CSS v4, Vite
+Node.js LTS, TanStack Start/Router, React, Tailwind CSS v4, Vite+ (build, lint, format, test), pnpm.
+
+### Production
+
+`pnpm build` produces a standalone Nitro Node.js server in `.output/server/index.mjs` and static assets in
+`.output/public`. Deploy the **entire `.output` directory** together, then run `node .output/server/index.mjs`.
+The default port is 3000; set `PORT` and `HOST` for your hosting environment. No build tools or package manager are
+required to run the built server.
+
+### Maintenance scripts
+
+All maintenance scripts run directly with Node's native TypeScript support:
+
+```bash
+pnpm inspect-current-winners --help
+pnpm backfill-mps-kpn-ids --help
+pnpm download-mp-images
+pnpm post-telegram --dry-run
+```
+
+`post-telegram` reads an optional `.env` file and requires `TELEGRAM_BOT_TOKEN` only when actually posting.
+Image optimization uses the project-local Sharp dependency, with ImageMagick as a fallback.
+
+### Regression coverage
+
+Tests cover both languages, page/SEO parity with the pre-migration production site, timeline visibility,
+representative filtering and selection, email editing/copying, cookie redirects, 404 responses, sitemap and static assets.
+The browser suite exercises the production build on desktop/mobile and checks for hydration/runtime errors.
+Migration baseline fingerprints are intentionally fixed; review them when changing published content or styling.
 
 ## License
 

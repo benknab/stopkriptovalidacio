@@ -2,14 +2,16 @@
  * Inspects current parliamentary winners from the official NVI 2026 results app.
  *
  * Usage:
- *   deno task inspect-current-winners
- *   deno task inspect-current-winners --json
- *   deno task inspect-current-winners --output=data/nvi-current-winners-2026.json
- *   deno task inspect-current-winners --merge-mps-output=data/mps.json
- *   deno task inspect-current-winners --final-only
- *   deno task inspect-current-winners --include-spokespeople
- *   deno task inspect-current-winners --election=ogy2026
+ *   pnpm inspect-current-winners
+ *   pnpm inspect-current-winners --json
+ *   pnpm inspect-current-winners --output=data/nvi-current-winners-2026.json
+ *   pnpm inspect-current-winners --merge-mps-output=data/mps.json
+ *   pnpm inspect-current-winners --final-only
+ *   pnpm inspect-current-winners --include-spokespeople
+ *   pnpm inspect-current-winners --election=ogy2026
  */
+
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 
 const DEFAULT_ELECTION = "ogy2026";
 const BASE_URL = "https://vtr.valasztas.hu";
@@ -32,13 +34,13 @@ type DataEnvelope<T> = {
 };
 
 type PatkoMandate = {
-	"jlcs_kod": number;
-	"mand_tip": string;
+	jlcs_kod: number;
+	mand_tip: string;
 	maz?: string;
 	evk?: string;
-	"ej_id"?: number;
-	"tl_id"?: number;
-	"tj_id"?: number;
+	ej_id?: number;
+	tl_id?: number;
+	tj_id?: number;
 };
 
 type PatkoData = {
@@ -46,14 +48,14 @@ type PatkoData = {
 };
 
 type DistrictResultItem = {
-	"ej_id": number;
+	ej_id: number;
 	mandatum?: number;
 };
 
 type DistrictResult = {
 	feldar: number;
 	jogeros: string;
-	"ujraszam_erintett": string;
+	ujraszam_erintett: string;
 	eredm: string;
 	tetelek: DistrictResultItem[];
 };
@@ -61,7 +63,7 @@ type DistrictResult = {
 type DistrictResultRow = {
 	maz: string;
 	evk: string;
-	"egyeni_jkv": DistrictResult;
+	egyeni_jkv: DistrictResult;
 };
 
 type NationalListResultRow = {
@@ -73,31 +75,31 @@ type NationalListResultRow = {
 
 type Constituency = {
 	maz: string;
-	"maz_nev": string;
+	maz_nev: string;
 	evk: string;
-	"evk_nev": string;
+	evk_nev: string;
 };
 
 type DistrictCandidate = {
-	"ej_id": number;
-	"kpn_id": number;
+	ej_id: number;
+	kpn_id: number;
 	maz: string;
 	evk: string;
 	neve: string;
-	"jlcs_nev": string;
+	jlcs_nev: string;
 };
 
 type ListCandidate = {
-	"tj_id": number;
-	"kpn_id": number;
+	tj_id: number;
+	kpn_id: number;
 	sorsz: number;
 	neve: string;
 };
 
 type CandidateList = {
-	"tl_id": number;
-	"jlcs_nev": string;
-	"lista_tip": string;
+	tl_id: number;
+	jlcs_nev: string;
+	lista_tip: string;
 	jeloltek?: ListCandidate[];
 };
 
@@ -174,15 +176,17 @@ type CurrentParty =
 	| "független"
 	| "nemzetiségi";
 
-type CurrentMandate = {
-	type: "district";
-	party: CurrentParty;
-	district: string;
-} | {
-	type: "list";
-	party: CurrentParty;
-	list: string;
-};
+type CurrentMandate =
+	| {
+			type: "district";
+			party: CurrentParty;
+			district: string;
+	  }
+	| {
+			type: "list";
+			party: CurrentParty;
+			list: string;
+	  };
 
 type RawMpRecord = {
 	slug: string;
@@ -251,7 +255,7 @@ function printUsage(): void {
 	console.log(`Inspect current NVI parliamentary winners.
 
 Usage:
-	deno task inspect-current-winners [options]
+	pnpm inspect-current-winners [options]
 
 Options:
 	--json                   Print full JSON output
@@ -309,7 +313,7 @@ function parseOptions(args: string[]): Options {
 
 		if (arg === "--help") {
 			printUsage();
-			Deno.exit(0);
+			process.exit(0);
 		}
 
 		if (arg.startsWith("--election=")) {
@@ -330,12 +334,12 @@ function parseOptions(args: string[]): Options {
 async function ensureParentDir(filePath: string): Promise<void> {
 	const lastSlashIndex = filePath.lastIndexOf("/");
 	const parentPath = lastSlashIndex === -1 ? "." : filePath.slice(0, lastSlashIndex);
-	await Deno.mkdir(parentPath, { recursive: true });
+	await mkdir(parentPath, { recursive: true });
 }
 
 async function writeOutput(filePath: string, data: unknown): Promise<void> {
 	await ensureParentDir(filePath);
-	await Deno.writeTextFile(
+	await writeFile(
 		filePath,
 		`${JSON.stringify(data, null, "\t")}
 `,
@@ -348,7 +352,7 @@ async function fetchJson<T>(url: string): Promise<T> {
 		throw new Error(`Failed to fetch ${url}: HTTP ${response.status} ${response.statusText}`);
 	}
 
-	return await response.json() as T;
+	return (await response.json()) as T;
 }
 
 function buildSourceUrls(election: string, config: NviConfig): SourceUrls {
@@ -414,15 +418,19 @@ function formatDistrictLabel(constituency: Constituency): string {
 }
 
 function normalizeNameForMatch(value: string): string {
-	const normalized = value.normalize("NFD")
+	const normalized = value
+		.normalize("NFD")
 		.replace(/\p{Diacritic}/gu, "")
 		.toLowerCase()
 		.replace(/[^a-z0-9\s.-]/g, " ")
 		.replace(/[.]/g, " ")
 		.trim();
-	const tokens = normalized.split(/\s+/).filter(Boolean).filter((token) => {
-		return token !== "dr" && token !== "ifj" && token !== "id" && token !== "ozv";
-	});
+	const tokens = normalized
+		.split(/\s+/)
+		.filter(Boolean)
+		.filter((token) => {
+			return token !== "dr" && token !== "ifj" && token !== "id" && token !== "ozv";
+		});
 	return tokens.join(" ");
 }
 
@@ -431,13 +439,17 @@ function slugify(value: string): string {
 }
 
 function formatWinnerName(value: string): string {
-	return value.toLowerCase().split(/([ -])/).map((part) => {
-		if (part === " " || part === "-") {
-			return part;
-		}
+	return value
+		.toLowerCase()
+		.split(/([ -])/)
+		.map((part) => {
+			if (part === " " || part === "-") {
+				return part;
+			}
 
-		return part.length === 0 ? part : `${part[0].toUpperCase()}${part.slice(1)}`;
-	}).join("");
+			return part.length === 0 ? part : `${part[0].toUpperCase()}${part.slice(1)}`;
+		})
+		.join("");
 }
 
 function mapWinnerParty(party: string): CurrentParty {
@@ -558,7 +570,7 @@ function orderMpRecord(mp: RawMpRecord): Record<string, unknown> {
 }
 
 async function readMps(filePath: string): Promise<RawMps> {
-	const content = await Deno.readTextFile(filePath);
+	const content = await readFile(filePath, "utf8");
 	return JSON.parse(content) as RawMps;
 }
 
@@ -573,14 +585,17 @@ function getLatestMandate(mp: RawMpRecord): CurrentMandate | null {
 	return mp.elections[String(years[years.length - 1])] ?? null;
 }
 
-function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear: number, outputPath: string): {
+function mergeWinnersIntoMps(
+	winners: WinnerRecord[],
+	mps: RawMps,
+	electionYear: number,
+	outputPath: string,
+): {
 	mergedMps: Record<string, unknown>;
 	summary: MergeSummary;
 } {
 	const electionYearKey = String(electionYear);
-	const merged = Object.fromEntries(
-		Object.entries(mps).map(([mpId, mp]) => [mpId, normalizeExistingMp(mp)]),
-	) as RawMps;
+	const merged = Object.fromEntries(Object.entries(mps).map(([mpId, mp]) => [mpId, normalizeExistingMp(mp)])) as RawMps;
 	const existingSlugs = new Set(Object.values(merged).map((mp) => mp.slug));
 	const winnerIds = new Set(winners.map((winner) => winner.kpnId));
 	let matchedExisting = 0;
@@ -595,8 +610,7 @@ function mergeWinnersIntoMps(winners: WinnerRecord[], mps: RawMps, electionYear:
 			const latestMandate = getLatestMandate(existingMp);
 			if (
 				latestMandate &&
-				(latestMandate.party !== nextMandate.party ||
-					getMandateLabel(latestMandate) !== getMandateLabel(nextMandate))
+				(latestMandate.party !== nextMandate.party || getMandateLabel(latestMandate) !== getMandateLabel(nextMandate))
 			) {
 				reviewCount++;
 			}
@@ -927,7 +941,7 @@ function printMergeSummary(summary: MergeSummary): void {
 }
 
 async function main(): Promise<void> {
-	const options = parseOptions(Deno.args);
+	const options = parseOptions(process.argv.slice(2));
 	const data = await loadData(options.election);
 	const result = buildInspectResult(data, options);
 	let mergeSummary: MergeSummary | null = null;

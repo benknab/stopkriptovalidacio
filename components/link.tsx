@@ -1,15 +1,15 @@
-import type { ComponentChildren, JSX } from "preact";
+import type { ReactNode, JSX } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface LinkProps {
 	href: string;
-	children: ComponentChildren;
-	class?: string;
+	children: ReactNode;
+	className?: string;
 }
 
-export function Link({ href, children, class: className }: LinkProps): JSX.Element {
+export function Link({ href, children, className }: LinkProps): JSX.Element {
 	return (
-		<a href={href} class={twMerge("text-brand hover:text-brand-hover transition-colors", className)}>
+		<a href={href} className={twMerge("text-brand hover:text-brand-hover transition-colors", className)}>
 			{children}
 		</a>
 	);

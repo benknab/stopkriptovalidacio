@@ -1,5 +1,5 @@
-import type { JSX } from "preact";
-import { useSignal } from "@preact/signals";
+import type { JSX } from "react";
+import { useState } from "react";
 import { getLatestParty, type MpId, mps } from "../data/mps.ts";
 import { currentMinorityListMps } from "../islands/mps-section.tsx";
 import { type SupportedLanguage, t } from "../i18n/index.ts";
@@ -17,7 +17,7 @@ function CopyButton({ onClick, disabled, children }: CopyButtonProps): JSX.Eleme
 			type="button"
 			onClick={onClick}
 			disabled={disabled}
-			class="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg cursor-pointer hover:bg-brand/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400"
+			className="px-4 py-2 border-2 border-brand text-brand font-medium rounded-lg cursor-pointer hover:bg-brand/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-400"
 		>
 			{children}
 		</button>
@@ -26,7 +26,7 @@ function CopyButton({ onClick, disabled, children }: CopyButtonProps): JSX.Eleme
 
 function FacebookIcon(): JSX.Element {
 	return (
-		<svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+		<svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
 			<path d="M13.5 21v-7h2.3l.4-3h-2.7V9.1c0-.9.3-1.6 1.7-1.6H16V4.8c-.3 0-.9-.1-1.8-.1-1.8 0-3.1 1.1-3.1 3.3V11H9v3h2.3v7h2.2Z" />
 		</svg>
 	);
@@ -38,10 +38,7 @@ interface EmailLists {
 	all: string[];
 }
 
-function getEmailLists(
-	selectedRep: MpId | null,
-	includeMinorityList: boolean,
-): EmailLists {
+function getEmailLists(selectedRep: MpId | null, includeMinorityList: boolean): EmailLists {
 	const toEmails: Set<string> = new Set();
 	const ccEmails: Set<string> = new Set();
 
@@ -87,7 +84,7 @@ interface ActionButtonsProps {
 
 export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 	const { selectedRep, includeMinorityList, subject, message, lang } = props;
-	const copyFeedback = useSignal<"emails" | "message" | "subject" | null>(null);
+	const [copyFeedback, setCopyFeedback] = useState<"emails" | "message" | "subject" | null>(null);
 
 	const emailLists = getEmailLists(selectedRep, includeMinorityList);
 	const selectedMp = selectedRep ? mps[selectedRep] : null;
@@ -100,57 +97,57 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 
 	async function copyEmails(): Promise<void> {
 		await navigator.clipboard.writeText(emailLists.all.join(","));
-		copyFeedback.value = "emails";
+		setCopyFeedback("emails");
 		setTimeout(() => {
-			copyFeedback.value = null;
+			setCopyFeedback(null);
 		}, 2000);
 	}
 
 	async function copyMessage(): Promise<void> {
 		await navigator.clipboard.writeText(message);
-		copyFeedback.value = "message";
+		setCopyFeedback("message");
 		setTimeout(() => {
-			copyFeedback.value = null;
+			setCopyFeedback(null);
 		}, 2000);
 	}
 
 	async function copySubject(): Promise<void> {
 		await navigator.clipboard.writeText(subject);
-		copyFeedback.value = "subject";
+		setCopyFeedback("subject");
 		setTimeout(() => {
-			copyFeedback.value = null;
+			setCopyFeedback(null);
 		}, 2000);
 	}
 
 	return (
-		<div class="mt-8 space-y-4">
+		<div className="mt-8 space-y-4">
 			{isSelectedRepTisza && shouldShowFacebookAction && (
-				<p class="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
+				<p className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-600">
 					{t("action.tisza_contact_note", lang)}
 				</p>
 			)}
 			{/* Main button */}
-			<div class="flex flex-wrap justify-center gap-3">
-				{hasEmails
-					? (
-						<a
-							href={mailtoUrl ?? ""}
-							class="px-6 py-3 bg-brand text-white font-semibold rounded-lg hover:bg-brand/90 transition-colors"
-						>
-							{t("action.send", lang)}
-						</a>
-					)
-					: !shouldShowFacebookAction && (
-						<span class="px-6 py-3 bg-slate-200 text-slate-400 font-semibold rounded-lg cursor-not-allowed">
+			<div className="flex flex-wrap justify-center gap-3">
+				{hasEmails ? (
+					<a
+						href={mailtoUrl ?? ""}
+						className="px-6 py-3 bg-brand text-white font-semibold rounded-lg hover:bg-brand/90 transition-colors"
+					>
+						{t("action.send", lang)}
+					</a>
+				) : (
+					!shouldShowFacebookAction && (
+						<span className="px-6 py-3 bg-slate-200 text-slate-400 font-semibold rounded-lg cursor-not-allowed">
 							{t("action.send", lang)}
 						</span>
-					)}
+					)
+				)}
 				{shouldShowFacebookAction && selectedRepFacebookUrl && (
 					<a
 						href={selectedRepFacebookUrl}
 						target="_blank"
 						rel="noopener"
-						class="inline-flex items-center gap-2 px-6 py-3 bg-[#1877F2] text-white font-semibold rounded-lg hover:bg-[#1669d5] transition-colors"
+						className="inline-flex items-center gap-2 px-6 py-3 bg-[#1877F2] text-white font-semibold rounded-lg hover:bg-[#1669d5] transition-colors"
 					>
 						<FacebookIcon />
 						{t("action.open_facebook", lang)}
@@ -159,18 +156,18 @@ export function ActionButtons(props: ActionButtonsProps): JSX.Element {
 			</div>
 
 			{/* Copy section */}
-			<p class="text-slate-500 text-sm text-center mt-6">
+			<p className="text-slate-500 text-sm text-center mt-6">
 				{hasEmails ? t("action.copy_manual_hint", lang) : t("action.facebook_manual_hint", lang)}
 			</p>
-			<div class="flex flex-wrap justify-center gap-3 mt-3">
+			<div className="flex flex-wrap justify-center gap-3 mt-3">
 				<CopyButton onClick={copyEmails} disabled={!hasEmails}>
-					{copyFeedback.value === "emails" ? t("action.copied", lang) : t("action.copy_emails", lang)}
+					{copyFeedback === "emails" ? t("action.copied", lang) : t("action.copy_emails", lang)}
 				</CopyButton>
 				<CopyButton onClick={copySubject}>
-					{copyFeedback.value === "subject" ? t("action.copied", lang) : t("action.copy_subject", lang)}
+					{copyFeedback === "subject" ? t("action.copied", lang) : t("action.copy_subject", lang)}
 				</CopyButton>
 				<CopyButton onClick={copyMessage}>
-					{copyFeedback.value === "message" ? t("action.copied", lang) : t("action.copy_message", lang)}
+					{copyFeedback === "message" ? t("action.copied", lang) : t("action.copy_message", lang)}
 				</CopyButton>
 			</div>
 		</div>

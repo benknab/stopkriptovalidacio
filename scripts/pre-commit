@@ -1,7 +1,4 @@
 #!/bin/sh
 
-# Format staged files with deno fmt
-deno fmt
-
-# Add any files that were reformatted back to staging
-git add -u
+# Check only staged files; do not stage unrelated working-tree changes.
+pnpm exec vp staged
