@@ -12,13 +12,14 @@ import baseline from "./fixtures/migration-baseline.json" with { type: "json" };
 
 const executeFile = promisify(execFile);
 const SESSION = `crypto-regression-${process.pid}`;
+let activeSession = SESSION;
 const ARTIFACT_DIRECTORY = resolve("tmp/browser-regression");
 const server = await startProductionServer();
 let checks = 0;
 let activeLanguage: "hu" | "en" = "hu";
 
 async function browser(...args: string[]) {
-	const { stdout } = await executeFile("agent-browser", ["--session", SESSION, "--json", ...args], {
+	const { stdout } = await executeFile("agent-browser", ["--session", activeSession, "--json", ...args], {
 		timeout: 30000,
 		maxBuffer: 4 * 1024 * 1024,
 	});
@@ -69,6 +70,53 @@ async function checkTimelineDeepLink(): Promise<void> {
 		"Scrolling to the event changed the deep link",
 	);
 	await checkErrors();
+}
+
+async function checkTimelineHistoryScroll(hasFragment: boolean): Promise<void> {
+	await open("/rolunk");
+	if (hasFragment) await checkTimelineDeepLink();
+	else {
+		await open("/?harmadlagos=true");
+		const bottomPosition = await evaluate<number>("document.documentElement.scrollHeight - innerHeight");
+		await browser("scroll", "down", String(bottomPosition));
+		await browser("wait", "--fn", `Math.abs(scrollY - ${bottomPosition}) < 1`);
+	}
+	const targetPosition = await evaluate<number>("scrollY");
+	// Saving an offset away from the fragment catches fixes that merely jump
+	// back to the event instead of restoring the reader's actual position.
+	await browser("scroll", "up", "450");
+	await browser("wait", "--fn", `Math.abs(scrollY - ${targetPosition - 450}) < 1`);
+	const savedPosition = await evaluate<number>("scrollY");
+	const savedHistoryKey = await evaluate<string>("history.state.__TSR_key");
+	await open("/rolunk");
+	await browser("back");
+	await browser("wait", "--load", "networkidle");
+	await assertRestoredPosition();
+	await browser("back");
+	await browser("wait", "--load", "networkidle");
+	await browser("forward");
+	await browser("wait", "--load", "networkidle");
+	await assertRestoredPosition();
+
+	async function assertRestoredPosition(): Promise<void> {
+		await check(
+			"performance.getEntriesByType('navigation')[0].type === 'back_forward'",
+			"History scrolling must be tested with a document reload, not BFCache",
+		);
+		await check(
+			`Math.abs(scrollY - ${savedPosition}) < 1`,
+			"History navigation did not restore the reader's position after timeline filters hydrated",
+		);
+		await check(
+			`history.state.__TSR_key === ${JSON.stringify(savedHistoryKey)}`,
+			"Hydration replaced the restored history entry and lost its scroll-restoration key",
+		);
+		await check(
+			`location.hash === ${JSON.stringify(hasFragment ? "#t-11922-ind03" : "")} && !!document.getElementById('t-11922-ind03')`,
+			"History restoration lost the fragment or filtered event",
+		);
+		await checkErrors();
+	}
 }
 
 async function checkMissingPages(): Promise<void> {
@@ -261,13 +309,30 @@ try {
 		await checkTimelineDeepLink();
 		await browser("set", "viewport", "1280", "577");
 	}
+	await browser("close");
+	// BFCache retains the already-filtered DOM and hides hydration/restoration
+	// races. Use a separate browser process to exercise real history reloads.
+	activeSession = `${SESSION}-history`;
+	await browser("--args", "--disable-features=BackForwardCache", "open", "about:blank");
+	await browser("network", "route", "https://tomato.hospitablealpaca.com/**", "--body", "");
+	for (const lang of ["hu", "en"] as const) {
+		activeLanguage = lang;
+		for (const [width, height] of [
+			[1280, 577],
+			[390, 844],
+		]) {
+			await browser("set", "viewport", String(width), String(height));
+			await checkTimelineHistoryScroll(true);
+			await checkTimelineHistoryScroll(false);
+		}
+	}
 	console.log(`Passed ${checks} production browser checks in Hungarian and English (desktop/mobile).`);
 	console.log(`Screenshots: ${ARTIFACT_DIRECTORY}`);
 } catch (error) {
 	console.error(
 		"Browser state at failure:",
 		await evaluate(
-			"({ url: location.href, county: document.querySelector('#mp-county-select')?.value, district: document.querySelector('#mp-district-select')?.value, search: document.querySelector('#mp-search')?.value, images: document.querySelectorAll('#szavazas img').length, text: document.querySelector('#szavazas')?.textContent?.slice(-400) })",
+			"({ url: location.href, scrollY, navigationType: performance.getEntriesByType('navigation')[0]?.type, timelineTargetTop: document.getElementById('t-11922-ind03')?.getBoundingClientRect().top, county: document.querySelector('#mp-county-select')?.value, district: document.querySelector('#mp-district-select')?.value, search: document.querySelector('#mp-search')?.value, images: document.querySelectorAll('#szavazas img').length, text: document.querySelector('#szavazas')?.textContent?.slice(-400) })",
 		),
 	);
 	await browser("screenshot", resolve(ARTIFACT_DIRECTORY, "failure.png"));

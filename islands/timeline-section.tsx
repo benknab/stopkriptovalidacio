@@ -1,7 +1,7 @@
 import type { SyntheticEvent } from "react";
 import type { JSX } from "react";
-import { useEffect } from "react";
-import { useHydrated } from "@tanstack/react-router";
+import { useEffect, useRef } from "react";
+import { useElementScrollRestoration, useHydrated } from "@tanstack/react-router";
 import { BUILD_DATE } from "../constants/build.ts";
 import { ExternalLink } from "../components/external-link.tsx";
 import { TelegramIcon } from "../components/telegram-icon.tsx";
@@ -182,6 +182,12 @@ interface TimelineSectionProps {
 export default function TimelineSection(props: TimelineSectionProps): JSX.Element {
 	const { lang } = props;
 	const hydrated = useHydrated();
+	const scrollRestoration = useElementScrollRestoration({
+		getElement: () => (typeof window === "undefined" ? undefined : window),
+	});
+	// Capture the destination entry before subsequent filter/hash navigations
+	// update the router's cache. This effect only corrects the initial hydration.
+	const savedScroll = useRef(scrollRestoration).current;
 	const today = getTodayInBudapest(hydrated ? new Date() : BUILD_DATE);
 	const [showSecondary, setShowSecondary] = useBooleanQueryParam({
 		key: "masodlagos",
@@ -196,9 +202,17 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 
 	useEffect(() => {
 		if (!hydrated) return;
-		// Back/forward navigation should keep the browser's restored scroll position.
 		const navigation = performance.getEntriesByType?.("navigation")[0] as PerformanceNavigationTiming | undefined;
-		if (navigation?.type === "back_forward") return;
+		if (navigation?.type === "back_forward") {
+			// A history reload restores against the shorter static timeline before
+			// filters hydrate. Retry the saved position, not the original fragment:
+			// the reader may have scrolled away from that event before leaving.
+			if (!savedScroll) return;
+			const frame = requestAnimationFrame(() => {
+				window.scrollTo({ left: savedScroll.scrollX, top: savedScroll.scrollY, behavior: "instant" });
+			});
+			return () => cancelAnimationFrame(frame);
+		}
 		let slug: string;
 		try {
 			slug = decodeURIComponent(window.location.hash.slice(1));
@@ -210,9 +224,11 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 		if (!target) return;
 		// Filtered events may not exist during the browser's initial fragment scroll.
 		// Wait until hydration and the router's initial scroll restoration have finished.
-		const frame = requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+		const frame = requestAnimationFrame(() => {
+			target.scrollIntoView({ block: "start", behavior: "instant" });
+		});
 		return () => cancelAnimationFrame(frame);
-	}, [hydrated]);
+	}, [hydrated, savedScroll]);
 
 	const filteredEvents = Object.entries(events)
 		.filter(([, event]) => {
