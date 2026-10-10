@@ -54,6 +54,23 @@ async function checkBaseline(name: string): Promise<void> {
 	checks++;
 }
 
+async function checkTimelineDeepLink(): Promise<void> {
+	await open("/?harmadlagos=true#t-11922-ind03");
+	const targetVisible = `(() => {
+		const target = document.getElementById('t-11922-ind03');
+		if (!target) return false;
+		const top = target.getBoundingClientRect().top;
+		return top >= document.querySelector('header').getBoundingClientRect().bottom && top < innerHeight;
+	})()`;
+	await browser("wait", "--fn", targetVisible);
+	await check(targetVisible, "The filtered timeline deep link did not scroll its event below the fixed header");
+	await check(
+		"location.hash === '#t-11922-ind03' && new URL(location.href).searchParams.get('harmadlagos') === 'true'",
+		"Scrolling to the event changed the deep link",
+	);
+	await checkErrors();
+}
+
 async function checkErrors(): Promise<void> {
 	const errors = (await browser("errors")).errors;
 	assert.deepEqual(errors, [], "The production browser reported runtime errors");
@@ -111,6 +128,7 @@ try {
 		await open("/szavazas?megye=Budapest&kerulet=01");
 		await browser("wait", "--fn", "document.querySelectorAll('#szavazas img').length === 0");
 		await checkBaseline("county");
+		await checkTimelineDeepLink();
 
 		await open("/?utm_source=regression#idovonal");
 		const originalCount = await evaluate<number>("document.querySelectorAll('#idovonal h3').length");
@@ -209,6 +227,7 @@ try {
 			"Mobile anchor navigation did not close the menu",
 		);
 		await checkErrors();
+		await checkTimelineDeepLink();
 		await browser("set", "viewport", "1280", "577");
 	}
 	console.log(`Passed ${checks} production browser checks in Hungarian and English (desktop/mobile).`);

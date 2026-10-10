@@ -1,5 +1,6 @@
 import type { SyntheticEvent } from "react";
 import type { JSX } from "react";
+import { useEffect } from "react";
 import { useHydrated } from "@tanstack/react-router";
 import { BUILD_DATE } from "../constants/build.ts";
 import { ExternalLink } from "../components/external-link.tsx";
@@ -192,6 +193,26 @@ export default function TimelineSection(props: TimelineSectionProps): JSX.Elemen
 		defaultValue: false,
 		initialValue: props.showTertiary,
 	});
+
+	useEffect(() => {
+		if (!hydrated) return;
+		// Back/forward navigation should keep the browser's restored scroll position.
+		const navigation = performance.getEntriesByType?.("navigation")[0] as PerformanceNavigationTiming | undefined;
+		if (navigation?.type === "back_forward") return;
+		let slug: string;
+		try {
+			slug = decodeURIComponent(window.location.hash.slice(1));
+		} catch {
+			return;
+		}
+		if (!Object.hasOwn(events, slug)) return;
+		const target = document.getElementById(slug);
+		if (!target) return;
+		// Filtered events may not exist during the browser's initial fragment scroll.
+		// Wait until hydration and the router's initial scroll restoration have finished.
+		const frame = requestAnimationFrame(() => target.scrollIntoView({ block: "start", behavior: "instant" }));
+		return () => cancelAnimationFrame(frame);
+	}, [hydrated]);
 
 	const filteredEvents = Object.entries(events)
 		.filter(([, event]) => {
