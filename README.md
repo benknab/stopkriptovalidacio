@@ -77,9 +77,11 @@ deployment pointer so Wrangler Pages reads the static configuration.
 
 ### Languages and static behavior
 
-Hungarian URLs are unchanged (`/`, `/rolunk`, `/szavazas`, ...). English versions use `/en/`, `/en/rolunk`,
-`/en/szavazas`, etc. Language links preserve the page, query filters and fragment; cookie/Accept-Language-based rendering
-and `/set-lang` are no longer used. Canonical URLs, hreflang alternates and the sitemap include language-specific URLs.
+Page URLs use trailing slashes to match Cloudflare Pages' directory serving: Hungarian pages use `/`, `/rolunk/`,
+`/szavazas/`, etc.; English versions use `/en/`, `/en/rolunk/`, `/en/szavazas/`, etc. Old slashless URLs redirect to these
+pages. Navigation, canonical URLs, hreflang alternates and the sitemap use the same language-specific directory URLs.
+Language links preserve the page, query filters and fragment; cookie/Accept-Language-based rendering and `/set-lang`
+are no longer used.
 
 The default page content is present in the exported HTML without JavaScript. Query filters apply immediately after
 hydration and continue to support reloads and browser history. Content changes require a rebuild/redeployment.

@@ -3,7 +3,8 @@ import { execFile } from "node:child_process";
 import { mkdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import { promisify } from "node:util";
-import { t } from "../i18n/index.ts";
+import { type SupportedLanguage, t } from "../i18n/index.ts";
+import { SITE_URL } from "../constants/seo.ts";
 import { startProductionServer } from "./production-server.ts";
 import { localizePath } from "../utils/localized-path.ts";
 import { pageFingerprint } from "./page-fingerprint.ts";
@@ -16,7 +17,7 @@ let activeSession = SESSION;
 const ARTIFACT_DIRECTORY = resolve("tmp/browser-regression");
 const server = await startProductionServer();
 let checks = 0;
-let activeLanguage: "hu" | "en" = "hu";
+let activeLanguage: SupportedLanguage = "hu";
 
 async function browser(...args: string[]) {
 	const { stdout } = await executeFile("agent-browser", ["--session", activeSession, "--json", ...args], {
@@ -40,6 +41,14 @@ async function check(condition: string, message: string): Promise<void> {
 async function open(path: string): Promise<void> {
 	await browser("open", `${server.baseUrl}${localizePath(path, activeLanguage)}`);
 	await browser("wait", "--load", "networkidle");
+}
+
+async function checkCanonical(path: string, lang: SupportedLanguage = activeLanguage): Promise<void> {
+	const expectedPath = localizePath(path, lang);
+	await check(
+		`document.querySelectorAll('head link[rel=canonical]').length === 1 && document.querySelector('head link[rel=canonical]').getAttribute('href') === ${JSON.stringify(`${SITE_URL}${expectedPath}`)} && location.pathname === ${JSON.stringify(expectedPath)}`,
+		`${path} (${lang}): the canonical URL differs from the served URL after hydration`,
+	);
 }
 
 async function checkBaseline(name: string): Promise<void> {
@@ -194,6 +203,7 @@ try {
 				"!!document.querySelector('head link[rel=canonical]') && !!document.querySelector('head meta[name=description]')",
 				`${path}: SEO missing after hydration`,
 			);
+			await checkCanonical(path);
 			await checkErrors();
 		}
 		await checkMissingPages();
@@ -252,6 +262,7 @@ try {
 			"document.querySelectorAll('#szavazas img').length === 1",
 			"Language switching lost the selected constituency",
 		);
+		await checkCanonical("/szavazas", otherLanguage);
 
 		await open("/szavazas?utm_source=regression#szavazas");
 		await check(

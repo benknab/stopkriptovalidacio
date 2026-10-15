@@ -1,6 +1,4 @@
-import { SITE_URL } from "../constants/seo.ts";
-import { buildHreflangUrls } from "./seo.ts";
-import { localizePath } from "./localized-path.ts";
+import { buildCanonicalUrl, buildHreflangUrls } from "./seo.ts";
 
 const SITEMAP_PAGES = [
 	{ path: "/", priority: "1.0", changefreq: "weekly" },
@@ -17,7 +15,7 @@ export function buildSitemap(): string {
 				.map(({ lang, url }) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${url}" />`)
 				.join("\n");
 			return `  <url>
-    <loc>${SITE_URL}${localizePath(path, lang)}</loc>
+    <loc>${buildCanonicalUrl(path, lang)}</loc>
     <changefreq>${changefreq}</changefreq>
     <priority>${priority}</priority>
 ${alternates}

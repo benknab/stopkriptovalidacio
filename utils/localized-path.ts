@@ -12,9 +12,13 @@ export function stripLanguagePrefix(path: string): string {
 // Only site-relative page links are localized; assets and external links stay untouched.
 export function localizePath(path: string, lang: SupportedLanguage): string {
 	if (!path.startsWith("/") || path.startsWith("//")) return path;
-	const barePath = stripLanguagePrefix(path);
-	if (lang === "hu") return barePath;
-	return `/en${barePath}`;
+	const suffixStart = path.search(/[?#]/);
+	const pathname = suffixStart === -1 ? path : path.slice(0, suffixStart);
+	if (/\.[^/]+$/.test(pathname)) return path;
+	const suffix = path.slice(pathname.length);
+	// Cloudflare Pages serves the exported <path>/index.html at <path>/.
+	const pagePath = `${stripLanguagePrefix(pathname).replace(/\/+$/, "")}/`;
+	return `${lang === "en" ? "/en" : ""}${pagePath}${suffix}`;
 }
 
 export function getHomeAnchor(anchor: string, currentPath: string): string {

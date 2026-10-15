@@ -1,6 +1,8 @@
 import { createHash } from "node:crypto";
 import { load } from "cheerio";
 
+const SITE_URL = "https://stopkriptovalidacio.hu";
+
 function hash(value: unknown): string {
 	return createHash("sha256").update(JSON.stringify(value)).digest("hex");
 }
@@ -12,14 +14,15 @@ export function pageFingerprint(html: string) {
 	// Language-specific URLs intentionally replace the old cookie-selected URLs.
 	for (const element of $("a[href], link[href], meta[property='og:url']").toArray()) {
 		const attribute = element.tagName === "meta" ? "content" : "href";
-		const value = $(element).attr(attribute);
-		if (value?.startsWith("/en/")) $(element).attr(attribute, value.slice(3));
-		else if (value?.startsWith("https://stopkriptovalidacio.hu/en/")) {
-			$(element).attr(
-				attribute,
-				value.replace("https://stopkriptovalidacio.hu/en/", "https://stopkriptovalidacio.hu/"),
-			);
+		let value = $(element).attr(attribute);
+		if (value?.startsWith("/en/")) value = value.slice(3);
+		else if (value?.startsWith(`${SITE_URL}/en/`)) value = value.replace(`${SITE_URL}/en/`, `${SITE_URL}/`);
+		// Directory URLs intentionally replace the old slashless page links.
+		if (value && ((value.startsWith("/") && !value.startsWith("//")) || value.startsWith(`${SITE_URL}/`))) {
+			const { pathname } = new URL(value, SITE_URL);
+			if (pathname !== "/" && pathname.endsWith("/")) value = value.replace(/\/(?=[?#]|$)/, "");
 		}
+		if (value) $(element).attr(attribute, value);
 	}
 	// First-party pages now have language alternates too; verify them independently.
 	if ($("meta[name=robots]").attr("content") === "noindex, nofollow") $("link[rel=alternate]").remove();

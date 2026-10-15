@@ -23,9 +23,9 @@ describe("public query format", () => {
 });
 
 test("language URLs keep Hungarian paths, query parameters and anchors without double prefixes", () => {
-	expect(localizePath("/szavazas?kerulet=01#szavazas", "en")).toBe("/en/szavazas?kerulet=01#szavazas");
-	expect(localizePath("/en/szavazas?kerulet=01#szavazas", "hu")).toBe("/szavazas?kerulet=01#szavazas");
-	expect(localizePath("/en/rolunk", "en")).toBe("/en/rolunk");
+	expect(localizePath("/szavazas?kerulet=01#szavazas", "en")).toBe("/en/szavazas/?kerulet=01#szavazas");
+	expect(localizePath("/en/szavazas?kerulet=01#szavazas", "hu")).toBe("/szavazas/?kerulet=01#szavazas");
+	expect(localizePath("/en/rolunk", "en")).toBe("/en/rolunk/");
 	expect(localizePath("https://example.com", "en")).toBe("https://example.com");
 	expect(localizePath("//example.com", "en")).toBe("//example.com");
 	expect(stripLanguagePrefix("/en?masodlagos=false")).toBe("/?masodlagos=false");
@@ -33,6 +33,34 @@ test("language URLs keep Hungarian paths, query parameters and anchors without d
 	expect(getPathLanguage("/en")).toBe("en");
 	expect(getHomeAnchor("idovonal", "/en/?utm_source=test")).toBe("#idovonal");
 	expect(getHomeAnchor("idovonal", "/en/rolunk")).toBe("/en/#idovonal");
+});
+
+test.each([
+	["/", "hu", "/"],
+	["/", "en", "/en/"],
+	["/en", "hu", "/"],
+	["/en?masodlagos=false#idovonal", "en", "/en/?masodlagos=false#idovonal"],
+	["/rolunk", "hu", "/rolunk/"],
+	["/rolunk/", "en", "/en/rolunk/"],
+	["/en/rolunk/", "hu", "/rolunk/"],
+	["/en/rolunk/", "en", "/en/rolunk/"],
+	["/rolunk#adatvedelem", "hu", "/rolunk/#adatvedelem"],
+	["/forras/etoro-email-visszateres", "en", "/en/forras/etoro-email-visszateres/"],
+] as const)("page URL %s (%s) uses the exported directory path", (path, lang, expected) => {
+	expect(localizePath(path, lang)).toBe(expected);
+	expect(localizePath(expected, lang)).toBe(expected);
+});
+
+test.each([
+	"/bitcoin.pdf",
+	"/kepek/logo.png?size=48#preview",
+	"/sitemap.xml",
+	"https://example.com/page?lang=hu#section",
+	"//example.com/page",
+	"mailto:info@stopkriptovalidacio.hu",
+	"#idovonal",
+])("asset, external or fragment URL %s is not localized or given a trailing slash", (path) => {
+	for (const lang of ["hu", "en"] as const) expect(localizePath(path, lang)).toBe(path);
 });
 
 test("both languages contain the same translation keys", () => {

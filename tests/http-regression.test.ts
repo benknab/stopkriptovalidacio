@@ -9,7 +9,7 @@ import { pageFingerprint } from "./page-fingerprint.ts";
 import { startProductionServer } from "./production-server.ts";
 import { sources } from "../data/sources.ts";
 import { localizePath } from "../utils/localized-path.ts";
-import { STATIC_PAGE_PATHS } from "../utils/static-pages.ts";
+import { PUBLIC_PAGE_PATHS, STATIC_PAGE_PATHS } from "../utils/static-pages.ts";
 import { SITE_URL } from "../constants/seo.ts";
 
 const executeFile = promisify(execFile);
@@ -45,7 +45,7 @@ describe("production page parity", () => {
 				expect($("head title")).toHaveLength(1);
 				expect($("link[rel=canonical]").attr("href")).toBe(`${SITE_URL}${localizePath(path, lang)}`);
 				expect($("link[hreflang=en]").attr("href")).toBe(`${SITE_URL}${localizePath(path, "en")}`);
-				expect($("link[hreflang=hu]").attr("href")).toBe(`${SITE_URL}${path}`);
+				expect($("link[hreflang=hu]").attr("href")).toBe(`${SITE_URL}${localizePath(path, "hu")}`);
 				if (name !== "source") {
 					const jsonLd = JSON.parse($("head script[type='application/ld+json']").text());
 					expect(jsonLd["@context"]).toBe("https://schema.org");
@@ -53,6 +53,35 @@ describe("production page parity", () => {
 				}
 			});
 		}
+	}
+});
+
+test("every exported page and language alternate has a self-canonical URL without redirects", async () => {
+	const exportedUrls = new Set(STATIC_PAGE_PATHS.map((path) => `${SITE_URL}${path}`));
+	for (const path of STATIC_PAGE_PATHS) {
+		const response = await fetch(`${server.baseUrl}${path}`, { redirect: "manual" });
+		expect(response.status, path).toBe(200);
+		const $ = load(await response.text());
+		expect($("link[rel=canonical]")).toHaveLength(1);
+		expect($("link[rel=canonical]").attr("href"), path).toBe(`${SITE_URL}${path}`);
+		if ($("meta[property='og:url']").length)
+			expect($("meta[property='og:url']").attr("content")).toBe(`${SITE_URL}${path}`);
+		expect($("link[rel=alternate]")).toHaveLength(3);
+		for (const element of $("link[rel=alternate]").toArray()) {
+			const href = $(element).attr("href") ?? "";
+			expect(exportedUrls.has(href), `${path} has a redirecting or unexported alternate: ${href}`).toBe(true);
+		}
+	}
+});
+
+test("legacy slashless URLs redirect permanently without losing encoded query parameters", async () => {
+	const query = "?utm_source=regression&megye=B%C3%A9k%C3%A9s&kerulet=01";
+	for (const path of STATIC_PAGE_PATHS.filter((path) => path !== "/")) {
+		const response = await fetch(`${server.baseUrl}${path.slice(0, -1)}${query}`, { redirect: "manual" });
+		expect([301, 308], path).toContain(response.status);
+		const location = new URL(response.headers.get("location") ?? "", server.baseUrl);
+		expect(location.pathname).toBe(path);
+		expect(location.search).toBe(query);
 	}
 });
 
@@ -68,14 +97,16 @@ test("language is isolated between concurrently requested static URLs", async ()
 });
 
 test("static documents depend only on path, not cookies, headers or query filters", async () => {
-	for (const lang of ["hu", "en"] as const) {
-		const path = localizePath("/", lang);
-		const plain = await (await fetch(`${server.baseUrl}${path}`)).text();
-		const response = await fetch(`${server.baseUrl}${path}?masodlagos=false&harmadlagos=true`, {
-			headers: { cookie: `lang=${lang === "hu" ? "en" : "hu"}`, "accept-language": "en-US" },
-		});
-		expect(await response.text()).toBe(plain);
-		expect(response.headers.get("set-cookie")).toBeNull();
+	for (const page of PUBLIC_PAGE_PATHS) {
+		for (const lang of ["hu", "en"] as const) {
+			const path = localizePath(page, lang);
+			const plain = await (await fetch(`${server.baseUrl}${path}`)).text();
+			const response = await fetch(`${server.baseUrl}${path}?masodlagos=false&harmadlagos=true`, {
+				headers: { cookie: `lang=${lang === "hu" ? "en" : "hu"}`, "accept-language": "en-US" },
+			});
+			expect(await response.text()).toBe(plain);
+			expect(response.headers.get("set-cookie")).toBeNull();
+		}
 	}
 });
 
@@ -92,7 +123,7 @@ test("every public page is real build-time HTML and needs no runtime server func
 });
 
 test("all internal navigation links target exported pages in the same language", async () => {
-	const exportedPaths = new Set(STATIC_PAGE_PATHS.map((path) => path.replace(/\/$/, "") || "/"));
+	const exportedPaths = new Set(STATIC_PAGE_PATHS);
 	for (const path of STATIC_PAGE_PATHS) {
 		const response = await fetch(`${server.baseUrl}${path}`);
 		const $ = load(await response.text());
@@ -100,8 +131,8 @@ test("all internal navigation links target exported pages in the same language",
 		for (const element of $("a[href]").toArray()) {
 			const href = $(element).attr("href");
 			if (!href?.startsWith("/") || href.startsWith("//")) continue;
-			const target = new URL(href, server.baseUrl).pathname.replace(/\/$/, "") || "/";
-			expect(exportedPaths.has(target), `${path} links to an unexported page: ${href}`).toBe(true);
+			const target = new URL(href, server.baseUrl).pathname;
+			expect(exportedPaths.has(target), `${path} links to a redirecting or unexported page: ${href}`).toBe(true);
 			const isLanguageSwitch = $(element).attr("hreflang");
 			if (!isLanguageSwitch)
 				expect(target.startsWith("/en"), `${path} loses its language: ${href}`).toBe(lang === "en");
@@ -139,12 +170,24 @@ test("static sitemap has both language URLs, alternates and cache headers", asyn
 	const $ = load(await response.text(), { xml: true });
 	expect($("url")).toHaveLength(8);
 	expect($("xhtml\\:link")).toHaveLength(24);
-	for (const path of Object.values(PAGES).filter((path) => !path.startsWith("/forras"))) {
-		expect(
-			$("loc")
-				.map((_, element) => $(element).text())
-				.toArray(),
-		).toContain(`${SITE_URL}${localizePath(path, "en")}`);
+	const locations = new Set(
+		$("loc")
+			.map((_, element) => $(element).text())
+			.toArray(),
+	);
+	for (const path of PUBLIC_PAGE_PATHS) {
+		for (const lang of ["hu", "en"] as const) {
+			expect(locations.has(`${SITE_URL}${localizePath(path, lang)}`)).toBe(true);
+		}
+	}
+	for (const url of locations) {
+		const path = new URL(url).pathname;
+		const page = await fetch(`${server.baseUrl}${path}`, { redirect: "manual" });
+		expect(page.status, url).toBe(200);
+		expect(load(await page.text())("link[rel=canonical]").attr("href")).toBe(url);
+	}
+	for (const element of $("xhtml\\:link").toArray()) {
+		expect(locations.has($(element).attr("href") ?? "")).toBe(true);
 	}
 });
 
